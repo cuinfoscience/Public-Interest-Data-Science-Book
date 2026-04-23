@@ -1,0 +1,216 @@
+---
+title: "Critical Data Studies, Data Justice, and Refusal"
+execute:
+  eval: false
+---
+
+# Critical Data Studies, Data Justice, and Refusal {#sec-ch-16-critical-data-studies-refusal}
+
+This chapter is the hinge of the book. For fifteen chapters you have been building an installed base: records that link, categories that can be interpreted, evidence that persists, researchers who can scrutinize, authorities who can act, and people who can seek remedy [@keegan2026]. The argument of Chapters 2 through 15 is that a working public-interest data practice needs all six. The argument here is that, for some of the people this installed base is supposed to serve, any one of those six can also be the mechanism by which harm arrives. A record that links is a record that surveils. A category that can be interpreted is one that was once imposed. Evidence that persists can be subpoenaed a decade later by an agency that did not exist when the data was collected. Scrutiny can be predatory. Authority can be carceral. Remedy can be a pretext for further data collection.
+
+Critical data studies holds these possibilities in view. Data justice asks who decides, under what conditions, on whose terms. Refusal is what you do when the answer to those questions is that the data should not exist in the form proposed. This chapter introduces all three and asks you to do two things with the same municipal dataset: audit its classification schema, and write a refusal specification for it. The pair is the point. Neither alone does the work.
+
+Part IV has been about neighbors: public interest technology, data-for-good, GovTech, civic tech. This final chapter sits next to a neighbor who is less comfortable. Critical data studies does not build platforms and is not in the career pipeline @sec-ch-14-pit-data-for-good describes. But the practice you will learn in Part V is stronger when it can absorb the critique honestly, including the parts that undercut this book's own starting framework.
+
+## The starting canon: boyd and Crawford
+
+Begin with @boyd2012, "Critical questions for big data." Still the most cited essay in the field because it named six provocations every chapter of this book has implicitly answered. Big data changes the definition of knowledge. Claims to objectivity are misleading. Bigger is not always better. Out of context, big data lose meaning. Accessibility is not ethicality. Limited access creates new digital divides.
+
+The provocation that matters most here is the fifth. Accessibility is not consent. The fact that a record exists in a public dataset and is legally available for analysis does not settle whether you should use it. Homeless Management Information System (HMIS) data, the running example for this chapter, is a tight case. HMIS exists because the US Department of Housing and Urban Development requires it as a condition of Continuum of Care funding [@hudofsudrs]. The records are real, detailed, and, under certain conditions, available to researchers. The people documented in them did not consent in any sense a research ethics board would recognize. They sought shelter, and documentation was the price.
+
+## The political work of classification
+
+@bowker2000, *Sorting Things Out*, is the second book you need. Classification is never neutral. Every category system is a historical artifact produced by some authority, for some purpose, at some moment. The ICD encoded homosexuality as mental illness until 1973. The US Census's race categories have been rewritten roughly every decade since 1790, each time to serve a different administrative project. Classification does not describe the world. It imposes a shape on it, and the shape tends to serve whoever did the imposing.
+
+The consequence for data science is specific. When you call `value_counts()` on a column labeled `race` or `gender` or `veteran_status` and see five or six buckets, you are not seeing the distribution of human variation. You are seeing the surviving output of a classification pipeline that, at some earlier stage, had more, fewer, or different categories with boundaries that did not match the ones you now see. The flattening happened upstream, usually at intake, often because a reporting template required a fixed list. Your descriptive statistics inherit the politics of that template whether or not you read it.
+
+@denton2021 make this concrete for machine learning. Their genealogy of ImageNet traces how a dataset assembled in 2006 to 2009, using WordNet's 1980s synset hierarchy, carried into the 2010s a taxonomy of human kinds that encoded racial pseudoscience, categories for "failure" and "loser," ethnic slurs, and an implicit theory that the visual world is a tree of discrete kinds. When ImageNet became the benchmark for a generation of computer vision models, those decisions propagated into production systems that never revisited the WordNet assumptions. The dataset was a historical artifact. The benchmarks trained on it made the artifact load-bearing.
+
+## Data justice and the question of for whom
+
+@taylor2017 puts a different question on the table. The fairness literature that Chapter 7 reviewed asks whether an algorithm treats different groups equivalently. Data justice asks something prior: what counts as justice in this context, for whom, through what mechanisms? An algorithm can satisfy demographic parity across race categories and still be unjust, because the deeper question is whether the decision system itself should exist, whether the people subject to it had any say in its design, and whether the categories used to sort them are categories they recognize. @dignazio2020, *Data Feminism*, extends this framing into seven principles, of which "examine power" and "elevate emotion and embodiment" are the ones most likely to make an engineering audience uncomfortable, and therefore the ones most likely to be doing real work.
+
+You met openness in @sec-ch-06-openness and ownership in @sec-ch-08-ownership. Data justice says those values are not sufficient. Openness can be the mechanism by which a community's vulnerability becomes indexable by anyone with a laptop. Ownership can be a contract that extracts data from people under conditions they had no power to negotiate. Neither value is wrong; both are incomplete without the prior question of for whom.
+
+## Refusal as design
+
+@zong2024 and @garcia2022 develop the concept this chapter is built around. Refusal is not the absence of data practice. It is a design move. To refuse is to specify what would not be collected, what would be collected differently, what would be collected only under conditions the affected community controls, and who gets to make each call. A well-written refusal spec is as detailed as a data management plan and does similar work: it commits authors to particular operations and can be held to account if they are violated. The output is not a dataset. It is an absence that has been designed.
+
+The key move, which students miss the first time, is that refusal is generative. A refusal spec is not a protest document. It says: if we were not collecting this, what *would* we do to answer the underlying question? That substitution is where the intellectual work lives.
+
+## The installed base, revisited
+
+This is where the book's framework binds. The installed base is built around the premise that records should link, persist, be interpretable, and be available for scrutiny. @carroll2020 and the Te Mana Raraunga network propose something different. The CARE Principles for Indigenous Data Governance (Collective Benefit, Authority to Control, Responsibility, Ethics) were articulated as a companion, and corrective, to FAIR (Findable, Accessible, Interoperable, Reusable), the default standard for scientific data stewardship [@wilkinson2016]. CARE does not reject FAIR. It says FAIR is necessary and insufficient. A dataset can satisfy every letter of FAIR and still be in the wrong relationship with the community it describes.
+
+Māori data sovereignty, as Te Mana Raraunga articulates it [@temanararaunga], begins with the premise that data about Māori communities are a Māori responsibility. Who holds the data, who decides what questions get asked of it, who benefits from the use, are not methodological concerns downstream of the research question. They are the question. The US Indigenous Data Sovereignty Network [@usidsn] has made a parallel argument in the United States context.
+
+This is the honest moment. The installed-base framing assumes the default should be linkable, persistent, interpretable records under conditions of scrutiny. CARE and Indigenous data sovereignty say that default is itself a political choice reflecting the settler colonial state's interest in legibility more than any universal principle of good governance. You can take the critique seriously without abandoning the framework. You cannot take it seriously while pretending the framework is neutral.
+
+## Running example: Denver HMIS
+
+The Denver metro region, like every US Continuum of Care, operates an HMIS as a condition of HUD funding [@hudofsudrs]. HMIS records client-level data for anyone entering homelessness services: intake demographics, shelter stays, case notes, exits, returns. A researcher working with a CoC partner can, under a Data Use Agreement, obtain de-identified extracts.
+
+The tension is stark. Without HMIS, continuums cannot document who they served, cannot qualify for HUD funding, and cannot produce the Point-in-Time counts that drive resource allocation. With HMIS, people experiencing homelessness are among the most heavily documented populations in the United States per capita, and that documentation is potentially available to immigration enforcement, family court, criminal justice agencies, and any other state actor with a sufficiently motivated subpoena [@eubanks2014]. The audit is not academic. The refusal is not rhetorical.
+
+::: {.callout-tip title="The Missing Manual"}
+The HMIS Data Standards manual names the categories. It does not name the decisions that produced them. The "Race" field allows American Indian or Alaska Native, Asian, Black or African American, Native Hawaiian or Pacific Islander, White, and Client Doesn't Know / Client Refused / Data Not Collected. When you run `df["race"].value_counts()` and see six buckets, there were almost certainly more at intake. A client who identified as Oaxaqueño, Somali Bantu, Rohingya, or Dakota was collapsed upstream into one of the HUD-allowable codes by the intake worker, because the HMIS validation rules reject anything else. The documentation will tell you what the codes mean. It will not tell you what was lost when the intake worker had three seconds to pick one.
+:::
+
+## Technical component 1: the category audit
+
+The first artifact is a notebook that inventories the categorical fields, traces each to an administrative source, and documents what the collapsing does.
+
+```python
+import pandas as pd
+
+df = pd.read_csv("data/hmis_extract.csv", low_memory=False)
+
+CATEGORICAL_FIELDS = [
+    "race", "ethnicity", "gender", "veteran_status",
+    "project_type", "destination", "disabling_condition",
+    "prior_living_situation",
+]
+
+def audit_field(series):
+    counts = series.value_counts(dropna=False).to_frame("n")
+    counts["pct"] = (counts["n"] / len(series) * 100).round(2)
+    counts["field"] = series.name
+    return counts.reset_index(names="value")
+
+audit = pd.concat([audit_field(df[f]) for f in CATEGORICAL_FIELDS])
+audit.to_csv("out/category_audit.csv", index=False)
+# => One row per (field, value) pair with counts and pct.
+```
+
+That gives you the frequencies. It does not give you the provenance. For each field, write a one-paragraph provenance note that answers four questions. Who defined the categories, when, for what administrative need, and what changed from the prior version? The HMIS manual is your source for the first three; HUD's Federal Register notices from each update cycle are your source for the fourth.
+
+```python
+PROVENANCE = {
+    "race": {
+        "authority": "OMB Directive 15 (1997), implemented in HMIS 2014",
+        "known_flattening": (
+            "Collapses Indigenous identities (Dine, Dakota, Lumbee) "
+            "into 'American Indian or Alaska Native'. Collapses South, "
+            "Southeast, and East Asian into 'Asian'. No MENA category."
+        ),
+        "purpose": "Federal civil-rights reporting, not service-matching.",
+    },
+    # Repeat for each field.
+}
+```
+
+Cross-tabulate categories against missingness. A provenance note is worth more when you can show the rate at which "Data Not Collected" is selected and how that rate varies by intake site.
+
+```python
+missing_by_site = (
+    df.assign(race_missing=df["race"].isin(
+        ["Client doesn't know", "Client refused", "Data not collected"]
+    ))
+    .groupby("intake_site")["race_missing"]
+    .mean()
+    .sort_values(ascending=False)
+)
+# => High "Data Not Collected" rates often track sites where clients
+# distrust documentation; the distrust is itself data.
+```
+
+Notice what that last snippet did. It treated absence as a finding. @dignazio2020 call this counting what is missing, and counting why. A site with 40% missingness on race is not a site with poor data quality. It is a site where 40% of clients, faced with a form, chose not to answer. That refusal is a signal. A competent audit surfaces it.
+
+## Technical component 2: the refusal specification
+
+The second artifact is a structured refusal specification. The spec is a markdown document with a YAML preamble. The YAML commits the authors to specific operations; the markdown explains each. Below is a skeleton you can adapt.
+
+```yaml
+---
+dataset: denver_metro_hmis_2024
+governance_body: denver_lived_experience_advisory_board
+review_cycle: annual
+
+would_not_collect:
+  - field: full_legal_name
+    rationale: |
+      Legal name enables cross-system linkage with criminal-
+      justice and immigration databases. Replace with a
+      salted pseudonymous ID generated at intake.
+  - field: social_security_number
+    rationale: |
+      HUD requires SSN only for specific subpopulations.
+      Defaulting to SSN collection exceeds the federal
+      minimum and creates a subpoena target.
+
+collect_differently:
+  - field: race
+    current: HUD six-category closed list
+    proposed: |
+      Free-text self-identification, with HUD codes as an
+      administrative mapping applied only when required
+      for federal reporting. The raw self-id is retained
+      under community control; only the mapping leaves the
+      Continuum.
+
+collect_under_community_governance:
+  - field: case_management_notes
+    governance: |
+      Notes are retained by the direct-service provider,
+      not uploaded to the shared HMIS instance. Aggregate
+      statistics derived from notes are reviewed by the
+      Lived Experience Advisory Board before release.
+
+decision_process:
+  who_decides: |
+    The Lived Experience Advisory Board, which includes at
+    least five currently- or recently-unhoused members with
+    voting rights equal to agency staff.
+  by_what_process: |
+    Changes require a majority vote at a noticed public
+    meeting. Emergency additions can be enacted by the
+    chair pending ratification at the next meeting.
+  appeals: |
+    A client may request removal of their own record from
+    any downstream analytic extract. The request is honored
+    within 30 days and logged in aggregate.
+---
+```
+
+The structure is load-bearing. Each section answers a specific question: what would you not collect, what would you collect differently, what would you collect only under community-controlled conditions, who makes the call when the spec needs to change, by what process, and with what appeals. A refusal spec that skips the decision-process section is a wish list, not a governance document.
+
+The deliverable is the pair. The audit shows what is in the data and what the categories are doing. The refusal shows what would be different, and under whose authority, if the audit's findings were taken seriously. Neither on its own forces the question. Together they do.
+
+## Refusal in the wild: the Algorithmic Ecology
+
+The Stop LAPD Spying Coalition, in partnership with the Free Radicals collective, published "The Algorithmic Ecology" in 2020 [@stoplapdspying2020]. Its method is to map an algorithmic system (LAPD's predictive policing program at the time) as an ecology: community, institutional, and political-economic levels. The refusal it articulates is not "fix the algorithm" but "dismantle the conditions that make the algorithm legible as a solution to anything." The coalition's earlier "Before the Bullet Hits the Body" [@stoplapdspying2018] did the groundwork by showing how LAPD's data-driven programs routed back to the same neighborhoods regardless of the model's claims to neutrality. When LAPD discontinued PredPol in 2020 and the LASER program shortly after, the coalition's organizing was a proximate cause.
+
+That is refusal as generative, in the sense @zong2024 intend. It did not settle for a seat at the table. It specified the conditions under which the table should not exist in its current form, and built the political capacity to enforce the specification. Your spec in Exercise 16.2 is modest by comparison. The move is the same.
+
+::: {.callout-note title="In the Public Interest"}
+Chapter 6 argued openness is interpretive legibility: data you can read, re-read, and link. Chapter 8 argued ownership is the authority to determine use, including the authority to *not* be owned. This chapter asks what happens when those two framings conflict. A dataset can be maximally open, perfectly interpretable, and exhaustively linkable, and still violate CARE because the community it describes never had authority over whether it should exist. Openness as you met it in @sec-ch-06-openness breaks down when the community is not the author of the opening. Ownership as you met it in @sec-ch-08-ownership breaks down when it can only be asserted by entities the installed base recognizes. Indigenous data sovereignty names both breakdowns. Your refusal specification is where you do something about them, not by rejecting openness or ownership, but by rebuilding both on the prior question of authority.
+:::
+
+## Exercises
+
+**Exercise 16.1 (Guided).** Obtain a public HMIS-derived dataset. Many Continuums of Care publish de-identified aggregate extracts, HUD AHAR reports contain analyzable tables, and the Denver Metro CoC publishes dashboards with extractable tables. If no HMIS analog is accessible, use Denver Police stop data or Boulder's eviction-filings feed. Produce the category audit: a table of field frequencies, a provenance note for each field, and a missingness cross-tab by at least one stratifying variable. Commit as `audit.ipynb`.
+
+**Exercise 16.2 (Applied).** Write a refusal specification for the same dataset, following the YAML skeleton. Include at least two `would_not_collect` entries, two `collect_differently` entries, one `collect_under_community_governance` entry, and a full `decision_process` section. Each entry needs a rationale you would defend in a public meeting. Commit as `refusal.md`.
+
+**Exercise 16.3 (Reading).** Read the CARE Principles [@carroll2020] and FAIR [@wilkinson2016]. Write 400 words comparing them on three dimensions: who each treats as the data-governance authority, what each says about reuse, and where they conflict in practice. Do not pretend they are compatible where they are not.
+
+**Exercise 16.4 (Analytic).** Pick a refusal in the wild: the Algorithmic Ecology from Stop LAPD Spying, the Detroit Community Technology Project's work on Project Green Light [@detroitcommunitytech], a recent Indigenous data sovereignty initiative tracked by USIDSN, or another case your instructor approves. Write 500 words on what is being refused, who is doing the refusing, what alternative the refusal proposes, and what made it effective or not. Cite at least three primary sources.
+
+**Exercise 16.5 (Open-ended).** Return to the project sketch from Exercise 1.5. Identify one question where refusal is the right answer. Write two paragraphs: what you would not collect or analyze, and what substitutes for the refused collection. The substitute may be a different research question, a different unit of analysis, a governance structure, or a partnership. Save as `ch16_project_refusal.md`. Carry this forward into Part V.
+
+## Looking ahead
+
+Part V begins in Chapter 17 (@sec-ch-17-op-eds) with the op-ed, the first of six genres through which data scientists contribute to public conversations. The audit and refusal you produced here are internal artifacts, the kind of document a research team circulates to set its own terms. The op-ed is their public counterpart: a form that addresses an audience that is not a research team, in a language that is not YAML, with a claim that is not hedged. Part V is the pivot from seeing to doing. This chapter is the last moment to settle what you see.
+
+## Further Reading and Resources
+
+- Bowker and Star (2000), *Sorting Things Out: Classification and Its Consequences*. MIT Press. Start here.
+- D'Ignazio and Klein (2020), *Data Feminism*. MIT Press. Open-access at <https://data-feminism.mitpress.mit.edu/>. Seven principles and the case studies that make them mean something.
+- The CARE Principles for Indigenous Data Governance: <https://www.gida-global.org/care>. Short, specific, a direct complement to FAIR.
+- Te Mana Raraunga, "Principles of Māori Data Sovereignty": <https://www.temanararaunga.maori.nz/tutohinga>.
+- Stop LAPD Spying Coalition, "The Algorithmic Ecology" (2020): <https://stoplapdspying.org/the-algorithmic-ecology-an-abolitionist-tool-for-organizing-against-algorithms/>. A short essay and a diagram that will change how you read algorithmic systems.
+- Audra Simpson (2014), *Mohawk Interruptus*. Duke University Press. The book that made refusal a theoretical term in contemporary Indigenous studies.
+- Simone Browne (2015), *Dark Matters: On the Surveillance of Blackness*. Duke University Press. The prehistory of the surveillance systems this chapter's audit targets.
+- Safiya Umoja Noble (2018), *Algorithms of Oppression*. NYU Press. A canonical treatment of search as a site of racial formation.
+- US Indigenous Data Sovereignty Network: <https://usindigenousdata.org/>.
+- HUD HMIS Data Standards manual: <https://www.hudexchange.info/resource/3824/hmis-data-dictionary/>. Read the introduction and the Race field documentation before Exercise 16.1.
