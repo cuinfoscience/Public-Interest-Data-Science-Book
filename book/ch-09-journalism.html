@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
+
+<title>10&nbsp; Journalism – Public Interest Data Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch-10-law.html" rel="next">
+<link href="./ch-08-ownership.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3960f907883494f1151aa7142734774f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d783d5094f66403aace2499abad0c8ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3960f907883494f1151aa7142734774f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch-09-journalism.html">Lineages</a></li><li class="breadcrumb-item"><a href="./ch-09-journalism.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Journalism</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Public Interest Data Science</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Public-Interest-Data-Science.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Public-Interest-Data-Science.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Pressures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-02-enclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure: Who Can Observe?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-03-exemption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-04-erosion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Erosion: What Can Be Remembered?</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Values</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-05-installed-base.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Installed Base</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-06-openness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Openness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-07-oversight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Oversight</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-08-ownership.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ownership</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lineages</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-09-journalism.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-10-law.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Law</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-11-accounting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-12-planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-13-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Engineering</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Adjacent Conversations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-14-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-15-govtech-civic-tech.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-16-critical-data-studies-refusal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Genres</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-17-op-eds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Op-Eds</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-18-reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-19-research-proposals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Research Proposals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-20-testimony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Testimony</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-21-public-comments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Public Comments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-22-archival-deposits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Archival Deposits</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#sec-ch-09-journalism" id="toc-sec-ch-09-journalism" class="nav-link active" data-scroll-target="#sec-ch-09-journalism"><span class="header-section-number">11</span> Journalism</a>
+  <ul class="collapse">
+  <li><a href="#the-watchdog-role-operationalized" id="toc-the-watchdog-role-operationalized" class="nav-link" data-scroll-target="#the-watchdog-role-operationalized"><span class="header-section-number">11.1</span> The watchdog role, operationalized</a></li>
+  <li><a href="#foia-as-infrastructure" id="toc-foia-as-infrastructure" class="nav-link" data-scroll-target="#foia-as-infrastructure"><span class="header-section-number">11.2</span> FOIA as infrastructure</a></li>
+  <li><a href="#cross-border-collaboration-as-a-scaling-strategy" id="toc-cross-border-collaboration-as-a-scaling-strategy" class="nav-link" data-scroll-target="#cross-border-collaboration-as-a-scaling-strategy"><span class="header-section-number">11.3</span> Cross-border collaboration as a scaling strategy</a></li>
+  <li><a href="#the-running-example-reproducing-machine-bias" id="toc-the-running-example-reproducing-machine-bias" class="nav-link" data-scroll-target="#the-running-example-reproducing-machine-bias"><span class="header-section-number">11.4</span> The running example: reproducing <em>Machine Bias</em></a></li>
+  <li><a href="#flores-bechtel-and-lowenkamp-the-rejoinder" id="toc-flores-bechtel-and-lowenkamp-the-rejoinder" class="nav-link" data-scroll-target="#flores-bechtel-and-lowenkamp-the-rejoinder"><span class="header-section-number">11.5</span> Flores, Bechtel, and Lowenkamp: the rejoinder</a></li>
+  <li><a href="#what-academic-researchers-can-learn" id="toc-what-academic-researchers-can-learn" class="nav-link" data-scroll-target="#what-academic-researchers-can-learn"><span class="header-section-number">11.6</span> What academic researchers can learn</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">11.7</span> Looking ahead</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">11.8</span> Exercises</a></li>
+  <li><a href="#further-reading-and-resources" id="toc-further-reading-and-resources" class="nav-link" data-scroll-target="#further-reading-and-resources"><span class="header-section-number">11.9</span> Further Reading and Resources</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-09-journalism.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch-09-journalism.html">Lineages</a></li><li class="breadcrumb-item"><a href="./ch-09-journalism.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Journalism</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Journalism</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-ch-09-journalism" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Journalism</h1>
+<p>Part II closed with ownership as stewardship. Part III opens with a profession that has been stewarding sensitive public documents since well before data science named itself. A reporter who sits on a leaked database for six months while corroborating the identities of the people inside it is doing, as routine practice, the work the last four chapters spent pages trying to name. The tradition is called journalism, and if you want to make data science useful to the public, journalism is the lineage most worth reading as a set of instructions rather than as inspiration.</p>
+<p>This chapter is not a history of journalism. It is a prompt to notice things the data science field, including its academic algorithmic-accountability wing, continues to rediscover a decade late. Newsrooms worked out methods for verifying records against sources, for publishing under legal threat, for collaborating across borders on datasets no one outlet could analyze alone, and for extending right of reply to the subjects of an investigation before the article ran. These are verification routines that, when you import them into academic or civic data practice, raise the evidentiary floor of the work in ways the field’s internal conversations about “reproducibility” rarely manage on their own.</p>
+<p>The chapter’s running case is the one that pulled the fairness-in-machine-learning conversation into public view in 2016: ProPublica’s <em>Machine Bias</em> investigation of the COMPAS recidivism risk score <span class="citation" data-cites="angwin2016">(<a href="#ref-angwin2016" role="doc-biblioref">Angwin et al. 2016</a>)</span>. You will download ProPublica’s published data and notebook, reproduce one of its central statistics, compare your numbers to the article’s, and read the methodological rejoinder from Flores, Bechtel, and Lowenkamp <span class="citation" data-cites="flores2016">(<a href="#ref-flores2016" role="doc-biblioref">2016</a>)</span>. The point is not to adjudicate the dispute. The point is to notice what made the dispute possible, and what it cost ProPublica to invite it.</p>
+<section id="the-watchdog-role-operationalized" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="the-watchdog-role-operationalized"><span class="header-section-number">11.1</span> The watchdog role, operationalized</h2>
+<p>The “Fourth Estate” is a metaphor that carries more than it can cash out. A fourth branch of government exists nowhere in any constitution. What does exist, across jurisdictions, is a loose professional arrangement: newsrooms with libel insurance, public-records statutes that force documents into the open, editors who can say no to a story, and a readership that funds the operation, imperfectly and with worsening economics, through subscriptions and advertising. The watchdog function is that arrangement working well enough to subject powerful institutions to scrutiny they would prefer to avoid.</p>
+<p>Data journalism is the computational specialization of that function. Diakopoulos <span class="citation" data-cites="diakopoulos2019">(<a href="#ref-diakopoulos2019" role="doc-biblioref">2019</a>)</span> documents how algorithmic accountability reporting emerged as newsrooms learned to treat software as a beat: not a tool for telling stories faster, but a subject of investigation in its own right. The investigative journalism tradition he chronicles, institutionalized in organizations like Investigative Reporters and Editors (IRE) and its data-focused conference NICAR, developed verification standards that predate and, in important respects, outpace the academic literature on algorithmic audits.</p>
+<p>Four of those standards bear naming here, because you will use them in the tutorial.</p>
+<p><strong>Sourcing</strong> means a claim in a published story is traceable to a document, a dataset, or a named human. A reporter’s notebook is a provenance chain. When a reporter writes that the city’s benefits portal denied 12 percent of applicants for a missing signature, someone can ask which 12 percent, from which table, queried on which date, and the answer exists.</p>
+<p><strong>Corroboration</strong> means a claim that matters rests on more than one independent piece of evidence. The dataset says X. A former employee also said X. A public filing from a different year also said X. Single-source claims are not forbidden, but they are flagged and carefully worded.</p>
+<p><strong>Right of reply</strong> means the subjects of an investigation, including the institutions whose data is under scrutiny, receive the findings before publication and have an opportunity to respond. The response may be a correction, a denial, a contextual statement, or silence. Each has an editorial consequence.</p>
+<p><strong>Publication with documentation</strong> means the story travels with its evidence, or with enough of its evidence that readers and other newsrooms can follow the inference. Not every dataset can be released. The inference chain, the decisions made in cleaning the data, the variables selected, and the judgment calls made are documented somewhere readers can inspect.</p>
+<p>Academic researchers use none of these consistently. Peer review substitutes, poorly, for the last and makes almost no demands on the first three. One of this chapter’s claims is that academic data science, when it engages public systems, should steal from journalism rather than reinvent.</p>
+</section>
+<section id="foia-as-infrastructure" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="foia-as-infrastructure"><span class="header-section-number">11.2</span> FOIA as infrastructure</h2>
+<p>One piece of journalism’s installed base deserves separate mention because Chapter 10 (<a href="ch-10-law.html" class="quarto-xref"><span>Chapter 12</span></a>) takes it up in detail: the Freedom of Information Act and its state equivalents. FOIA turns the watchdog function from a polite request into a procedural right. A reporter writes, the agency has a statutory deadline to respond, and a denial can be appealed to a court. The infrastructure is imperfect, underfunded, and routinely abused through delay and overbroad exemption. It is also the mechanism by which much of the material a data journalist analyzes comes into the world in the first place.</p>
+<p>For the purposes of this chapter, notice two things. First, FOIA is what Chapter 5 (<a href="ch-05-installed-base.html" class="quarto-xref"><span>Chapter 7</span></a>) calls safe scrutiny with a statutory backbone: the reporter does not have to trust the agency’s goodwill, because the statute provides a lever. Second, the datasets journalists release through their reporting are often FOIA products that the agency itself never voluntarily published. ProPublica’s COMPAS data is not a FOIA release (it came through a public-records request to Broward County, Florida, and a handful of correspondences with the vendor), but its genealogy sits in the same family of documents-prised-loose-through-procedure that the next chapter will train you to file.</p>
+</section>
+<section id="cross-border-collaboration-as-a-scaling-strategy" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="cross-border-collaboration-as-a-scaling-strategy"><span class="header-section-number">11.3</span> Cross-border collaboration as a scaling strategy</h2>
+<p>A single newsroom can handle a dataset of several thousand rows. It cannot handle 11.5 million documents. The Panama Papers leak, published by the International Consortium of Investigative Journalists (ICIJ) in 2016, distributed the analysis across more than a hundred newsrooms in dozens of jurisdictions, each working on the documents relevant to their country, under coordinated publication embargoes. The Paradise Papers (2017) and the Pandora Papers (2021) used the same template. Forbidden Stories, a separate consortium, exists specifically to continue the work of journalists who have been killed or imprisoned, distributing their unpublished material among member newsrooms so that silencing any single reporter does not silence the story. Lighthouse Reports, based in the Netherlands, has built a collaborative model for algorithmic-accountability reporting across European outlets, including the Rotterdam welfare-algorithm investigation you saw in Chapter 3.</p>
+<p>The method is worth importing to academic data work. A multi-country welfare-algorithm analysis is not, structurally, a different problem from a multi-site clinical trial. What cross-border journalism has worked out that academic consortia often have not is the governance stack that makes the collaboration survive leaks, legal threats, and deadline pressure: secure document-sharing platforms, shared style guides, coordinated fact-checking, joint legal review, and, critically, the right of any newsroom to pull out without burning the rest of it down. Zeng, Chan, and Schafer <span class="citation" data-cites="zeng2022">(<a href="#ref-zeng2022" role="doc-biblioref">2022</a>)</span> show how much of this infrastructure is culturally located: what works in a consortium of Western European outlets is not portable to a newsroom operating under tighter state control, and an academic collaboration needs to understand transferability before it assumes the model scales.</p>
+</section>
+<section id="the-running-example-reproducing-machine-bias" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="the-running-example-reproducing-machine-bias"><span class="header-section-number">11.4</span> The running example: reproducing <em>Machine Bias</em></h2>
+<p>ProPublica’s 2016 investigation of the COMPAS risk-assessment tool, used by courts across the United States to inform pretrial and sentencing decisions, argued that the score was biased against Black defendants. The finding that drew the most attention was a disparity in false-positive rates: among defendants who did not reoffend within two years, Black defendants were roughly twice as likely as white defendants to have been classified as high-risk by COMPAS. The article ran with its dataset and Jupyter notebook posted to GitHub at <code>propublica/compas-analysis</code>, an act of methodological transparency that was, in 2016, unusually generous by newsroom standards.</p>
+<p>The tutorial walks you through reproducing the two-year recidivism-rate statistic and comparing your numbers to the article’s. You will find small divergences. You will then read Flores and colleagues’ rejoinder <span class="citation" data-cites="flores2016">(<a href="#ref-flores2016" role="doc-biblioref">2016</a>)</span> and identify which divergences matter for the argument.</p>
+<section id="pulling-the-data" class="level3" data-number="11.4.1">
+<h3 data-number="11.4.1" class="anchored" data-anchor-id="pulling-the-data"><span class="header-section-number">11.4.1</span> Pulling the data</h3>
+<p>The dataset lives in the repository as <code>compas-scores-two-years.csv</code>. You can clone the repo or download the file directly.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>URL <span class="op">=</span> (</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://raw.githubusercontent.com/propublica/"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"compas-analysis/master/compas-scores-two-years.csv"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(URL)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df.shape</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (7214, 53)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"sex"</span>, <span class="st">"race"</span>, <span class="st">"age"</span>, <span class="st">"priors_count"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"decile_score"</span>, <span class="st">"two_year_recid"</span>]].head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>ProPublica applied filters to this file before running their analysis. The notebook documents them. Cases where the COMPAS assessment was not drawn within 30 days of arrest were excluded, along with cases missing key fields. Replicate the filter before you replicate the statistic:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> (</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    (df[<span class="st">"days_b_screening_arrest"</span>] <span class="op">&lt;=</span> <span class="dv">30</span>) <span class="op">&amp;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    (df[<span class="st">"days_b_screening_arrest"</span>] <span class="op">&gt;=</span> <span class="op">-</span><span class="dv">30</span>) <span class="op">&amp;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    (df[<span class="st">"is_recid"</span>] <span class="op">!=</span> <span class="op">-</span><span class="dv">1</span>) <span class="op">&amp;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    (df[<span class="st">"c_charge_degree"</span>] <span class="op">!=</span> <span class="st">"O"</span>) <span class="op">&amp;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    (df[<span class="st">"score_text"</span>] <span class="op">!=</span> <span class="st">"N/A"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> df[mask].copy()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>filtered.shape</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (6172, 53)   # matches the ProPublica notebook's post-filter count</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="reproducing-the-statistic" class="level3" data-number="11.4.2">
+<h3 data-number="11.4.2" class="anchored" data-anchor-id="reproducing-the-statistic"><span class="header-section-number">11.4.2</span> Reproducing the statistic</h3>
+<p>The headline finding compared false-positive and false-negative rates across racial groups. A false positive here is a defendant labeled medium or high risk by COMPAS who did not reoffend within two years. Recode the score and compute the contingency table:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>filtered[<span class="st">"high_risk"</span>] <span class="op">=</span> (</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    filtered[<span class="st">"score_text"</span>].isin([<span class="st">"High"</span>, <span class="st">"Medium"</span>]).astype(<span class="bu">int</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>by_race <span class="op">=</span> (</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    filtered.groupby(<span class="st">"race"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>            .<span class="bu">apply</span>(<span class="kw">lambda</span> g: pd.Series({</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                <span class="st">"n"</span>: <span class="bu">len</span>(g),</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                <span class="st">"fp_rate"</span>: (</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                    ((g[<span class="st">"high_risk"</span>] <span class="op">==</span> <span class="dv">1</span>) <span class="op">&amp;</span> (g[<span class="st">"two_year_recid"</span>] <span class="op">==</span> <span class="dv">0</span>)).<span class="bu">sum</span>()</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                    <span class="op">/</span> (g[<span class="st">"two_year_recid"</span>] <span class="op">==</span> <span class="dv">0</span>).<span class="bu">sum</span>()</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                ),</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                <span class="st">"fn_rate"</span>: (</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                    ((g[<span class="st">"high_risk"</span>] <span class="op">==</span> <span class="dv">0</span>) <span class="op">&amp;</span> (g[<span class="st">"two_year_recid"</span>] <span class="op">==</span> <span class="dv">1</span>)).<span class="bu">sum</span>()</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                    <span class="op">/</span> (g[<span class="st">"two_year_recid"</span>] <span class="op">==</span> <span class="dv">1</span>).<span class="bu">sum</span>()</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>                ),</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>            }))</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>            .reset_index()</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>by_race.query(<span class="st">"race in ['African-American', 'Caucasian']"</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; African-American  fp_rate ~ 0.45, fn_rate ~ 0.28</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Caucasian         fp_rate ~ 0.23, fn_rate ~ 0.48</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="checking-for-divergence" class="level3" data-number="11.4.3">
+<h3 data-number="11.4.3" class="anchored" data-anchor-id="checking-for-divergence"><span class="header-section-number">11.4.3</span> Checking for divergence</h3>
+<p>Your numbers will land close to the published rates but not identical. Possible sources of divergence, all worth documenting:</p>
+<ul>
+<li>Pandas has changed <code>.apply</code> semantics between versions, which can alter group ordering and rounding.</li>
+<li>The underlying CSV has been touched since 2016; you can pin to a specific commit hash if your analysis needs to be stable.</li>
+<li>The “Medium or High” threshold is one of two reasonable ways to binarize <code>score_text</code>; the notebook uses this one, but the article’s prose occasionally shifts definitions.</li>
+<li>Rows with missing <code>two_year_recid</code> flags are handled inconsistently across replications in the literature.</li>
+</ul>
+<p>Write a brief methods note, in plain prose, documenting what you did: the commit hash you pinned to, the filter you applied, the binarization rule you chose, and the precise numbers you got. This note is not a formality. It is the artifact that lets a future reader distinguish a substantive disagreement with ProPublica’s argument from a transcription error in your pipeline.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The Missing Manual
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When a newsroom publishes a methods notebook, the interesting methodological disputes are always in the details the article’s prose does not cover. Read the notebook before you read the article, not after. You will see which filters were applied, which variables were dropped, and which binarization decisions the reporter made. These are the decisions the methodological rejoinders will land on. The practice of “right of reply” that journalists offer to the subjects of an investigation is not merely a courtesy; it is a verification mechanism. An institution given a chance to point out an error before publication often will, and the correction improves the final story. Academic researchers should steal this. Send your draft analysis to the institution whose system you are auditing, with a specific deadline and specific questions. Do it even when you are under no obligation to.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="flores-bechtel-and-lowenkamp-the-rejoinder" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="flores-bechtel-and-lowenkamp-the-rejoinder"><span class="header-section-number">11.5</span> Flores, Bechtel, and Lowenkamp: the rejoinder</h2>
+<p>Flores and colleagues <span class="citation" data-cites="flores2016">(<a href="#ref-flores2016" role="doc-biblioref">2016</a>)</span> published a direct response to ProPublica in <em>Federal Probation</em>, arguing that ProPublica’s framing confused several distinct fairness criteria and that, on the criteria relevant to how risk assessments are actually used in court, COMPAS performed reasonably across racial groups. Their critique turned on the distinction between equal false-positive rates (ProPublica’s focus) and equal positive predictive value (the vendor’s focus). Subsequent literature, especially Chouldechova <span class="citation" data-cites="chouldechova2018">(<a href="#ref-chouldechova2018" role="doc-biblioref">2018</a>)</span> and the broader fair-ML community, established that these criteria cannot simultaneously hold when base rates differ across groups. The impossibility result is not an escape hatch. It is a forcing function: choose which fairness criterion matters for the decision the tool informs, and own the choice.</p>
+<p>Read the rejoinder alongside your reproduction. Notice which of its criticisms your replication can speak to (the binarization choice, the filter selection) and which require different data than ProPublica released. Notice also that the rejoinder exists at all because the data was public. A privately held investigation of a proprietary tool with a gag order on the dataset would not have generated the follow-up literature that now occupies six hundred entries in the FAccT bibliography.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>In the Public Interest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Chapter 6 (<a href="ch-06-openness.html" class="quarto-xref"><span>Chapter 8</span></a>) argued that openness is not the absence of friction but the presence of a legible publication. ProPublica’s decision to publish the COMPAS dataset alongside the <em>Machine Bias</em> article is the move that made the dispute with Flores and colleagues possible. An enclosed analysis, with the data held internally and the findings communicated only through the article, would have foreclosed the rejoinder. The methodological disagreement would have remained a matter of he-said-she-said between a newsroom and a vendor, and the fair-ML literature that grew from the case would not have had an empirical object to work on. Openness here does not just serve ProPublica’s credibility. It serves the capacity of the field to argue with ProPublica and improve on its work. Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> names this configuration as safe scrutiny reinforced by linkable provenance. Enclosure in the name of protecting a finding is a defensive posture that damages the finding’s standing over time. Chapters 7 (<a href="ch-07-oversight.html" class="quarto-xref"><span>Chapter 9</span></a>) and 8 built on this: oversight requires an object to oversee, and the object has to survive long enough to be overseen.</p>
+</div>
+</div>
+</section>
+<section id="what-academic-researchers-can-learn" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="what-academic-researchers-can-learn"><span class="header-section-number">11.6</span> What academic researchers can learn</h2>
+<p>Two practices from the newsroom side will not fit on a single syllabus, but both belong in your working repertoire.</p>
+<p>The first is provenance as a default, not an exception. A reporter who cannot cite a claim cannot publish the claim. An academic researcher who cannot trace a number back through the cleaning pipeline to a source row is, in the newsroom’s frame, not yet ready to publish either. The reproducibility frameworks you will meet in Chapter 11 (<a href="ch-11-accounting.html" class="quarto-xref"><span>Chapter 13</span></a>) encode this habit formally. The journalism version is older and more severe: you do not publish unless you can show your work, and “show your work” is not a virtue, it is the floor.</p>
+<p>The second is the right of reply, already named in the callout above. When you audit a public system, send a draft of your findings to the institution responsible for the system, with a specific deadline and specific questions, and document whatever response you receive. You will get three kinds of reply. A silence, which you note. A correction, which you incorporate. A substantive disagreement, which you either argue with in the text or adopt as a limitation. All three improve the final work. The institutional pressure against this practice, in academic settings, is that it can look like giving subjects a veto. It is not a veto. It is a verification step that produces a better paper and a defensible defense when the paper is challenged.</p>
+</section>
+<section id="looking-ahead" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">11.7</span> Looking ahead</h2>
+<p>Chapter 10 (<a href="ch-10-law.html" class="quarto-xref"><span>Chapter 12</span></a>) takes up the legal infrastructure that journalism has been navigating for a century and a half and that data science, when it engages public systems, is now learning to navigate. FOIA and its state equivalents, open-meetings statutes, research exceptions to the Computer Fraud and Abuse Act, and the threat environment documented in <em>Sandvig v. Barr</em> all constrain what you can observe, publish, and discover. Journalism’s tradition is older than academic algorithmic accountability and more politically mature, and the political maturity is inseparable from decades of litigation about what a reporter is allowed to do. Chapter 17 (<a href="ch-17-op-eds.html" class="quarto-xref"><span>Chapter 19</span></a>) picks up the translation question from the other side: how to turn a data investigation into a piece of public writing that a non-specialist reader can act on.</p>
+</section>
+<section id="exercises" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="exercises"><span class="header-section-number">11.8</span> Exercises</h2>
+<p><strong>Exercise 9.1 (Guided).</strong> Clone <code>propublica/compas-analysis</code> from GitHub. Run the filter described above against <code>compas-scores-two-years.csv</code> and reproduce the false-positive and false-negative rates by race. Write a one-page methods note documenting the commit hash you pinned to, the filter you applied, the binarization rule you used, and the numbers you obtained. Save the note as <code>exercises/ch09_compas_methods.md</code>. Submit a link to your git commit.</p>
+<p><strong>Exercise 9.2 (Analytic).</strong> Read Flores, Bechtel, and Lowenkamp <span class="citation" data-cites="flores2016">(<a href="#ref-flores2016" role="doc-biblioref">2016</a>)</span>. In 500 to 700 words, identify the three criticisms the rejoinder makes that your Exercise 9.1 replication can speak to, and the criticisms it makes that would require different data. Your reply does not need to take a side; it needs to distinguish what the released dataset can and cannot settle.</p>
+<p><strong>Exercise 9.3 (Comparative).</strong> Find a data journalism investigation from a non-U.S. outlet published in the last three years. Candidates include Forbidden Stories, Lighthouse Reports, Der Spiegel’s data desk, Suddeutsche Zeitung, CORRECTIV, or the ICIJ. In 400 to 600 words, analyze the piece’s structure: what is the central claim, what data supports it, what was published alongside the story, which collaborators are credited, and what verification practices are visible in the methodology note (if any). Compare the published methods transparency to the ProPublica standard.</p>
+<p><strong>Exercise 9.4 (Research).</strong> Locate a methods notebook from a recent investigation by The Markup, ProPublica, The Pudding, Reveal, or Bellingcat. Document the notebook in 300 words: which filters it applied, which decisions it records in comments, and one decision it makes without documenting. Submit the notebook URL and your documentation together. The point is to practice reading a notebook as a reviewer, not just as a user.</p>
+<p><strong>Exercise 9.5 (Open-ended, project-linked).</strong> Identify a story from your own community, city, county, campus, or professional field, that would benefit from data journalism methods. In two to three paragraphs: name the story, name the data that would be required, identify the likely source (FOIA, scraping a public portal, a dataset already open), and name one person or institution who would be the subject of right-of-reply. Add the result to your <code>ch01_project_sketch.md</code> file. If the story overlaps with something you are already planning for a later chapter’s exercise, say so.</p>
+</section>
+<section id="further-reading-and-resources" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="further-reading-and-resources"><span class="header-section-number">11.9</span> Further Reading and Resources</h2>
+<ul>
+<li>Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner (2016), “Machine Bias,” ProPublica: <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing" class="uri">https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing</a>. Read the article, then read the companion methodology at <a href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm" class="uri">https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm</a>.</li>
+<li>ProPublica’s <code>compas-analysis</code> repository: <a href="https://github.com/propublica/compas-analysis" class="uri">https://github.com/propublica/compas-analysis</a>. The Jupyter notebook in the repository root is the canonical object for this chapter.</li>
+<li>Anthony W. Flores, Kristin Bechtel, and Christopher T. Lowenkamp (2016), “False positives, false negatives, and false analyses: A rejoinder to ‘Machine Bias,’” <em>Federal Probation</em>, 80(2): 38 to 46.</li>
+<li>Nicholas Diakopoulos (2019), <em>Automating the News: How Algorithms Are Rewriting the Media</em>. Harvard University Press. The standing academic treatment of algorithmic accountability reporting.</li>
+<li>The Markup’s “Show Your Work” series: <a href="https://themarkup.org/series/show-your-work" class="uri">https://themarkup.org/series/show-your-work</a>. Each investigation publishes its methodology as a standalone piece; read three of them back to back.</li>
+<li>Investigative Reporters and Editors (IRE) and the National Institute for Computer-Assisted Reporting (NICAR): <a href="https://www.ire.org" class="uri">https://www.ire.org</a>. The professional home of U.S. data journalism; the NICAR conference proceedings are an underappreciated methods literature.</li>
+<li>International Consortium of Investigative Journalists (ICIJ): <a href="https://www.icij.org" class="uri">https://www.icij.org</a>. The Panama, Paradise, and Pandora Papers investigations, with extensive documentation of the cross-border collaboration model.</li>
+<li>Lighthouse Reports: <a href="https://www.lighthousereports.com" class="uri">https://www.lighthousereports.com</a>. European consortium specializing in algorithmic-accountability investigations; the Rotterdam welfare-algorithm piece is a useful companion to Chapter 3.</li>
+<li>Forbidden Stories: <a href="https://forbiddenstories.org" class="uri">https://forbiddenstories.org</a>. The consortium that continues the work of journalists who have been silenced.</li>
+<li><em>The Data Journalism Handbook 2</em>, edited by Jonathan Gray and Liliana Bounegru (2021), open-access at <a href="https://datajournalism.com/read/handbook/two" class="uri">https://datajournalism.com/read/handbook/two</a>. The field’s living textbook, with chapters by practitioners on verification, scraping, collaboration, and ethics.</li>
+<li>The Pudding: <a href="https://pudding.cool" class="uri">https://pudding.cool</a>. For a lighter complement: visual essays whose source code ships with the story.</li>
+</ul>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-angwin2016" class="csl-entry" role="listitem">
+Angwin, Julia, Jeff Larson, Surya Mattu, and Lauren Kirchner. 2016. <em>Machine Bias: There’s Software Used Across the Country to Predict Future Criminals. And It’s Biased Against Blacks</em>. ProPublica. <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing</a>.
+</div>
+<div id="ref-chouldechova2018" class="csl-entry" role="listitem">
+Chouldechova, Alexandra, Diana Benavides-Prado, Oleksandr Fialko, and Rhema Vaithianathan. 2018. <em>A Case Study of Algorithm-Assisted Decision Making in Child Maltreatment Hotline Screening</em>. Proceedings of the 1st Conference on Fairness, Accountability,; Transparency.
+</div>
+<div id="ref-diakopoulos2019" class="csl-entry" role="listitem">
+Diakopoulos, Nicholas. 2019. <em>Automating the News: How Algorithms Are Rewriting the Media</em>. Harvard University Press.
+</div>
+<div id="ref-flores2016" class="csl-entry" role="listitem">
+Flores, Anthony W., Kristin Bechtel, and Christopher T. Lowenkamp. 2016. <span>“False Positives, False Negatives, and False Analyses: A Rejoinder to <span><span>‘Machine Bias’</span></span>.”</span> <em>Federal Probation</em> 80 (2): 38–46.
+</div>
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Information, Communication <span>&amp;</span> Society</em>.
+</div>
+<div id="ref-zeng2022" class="csl-entry" role="listitem">
+Zeng, Jing, Chung-Hong Chan, and Mike S. Schäfer. 2022. <span>“Contested Chinese Dreams of <span>AI</span>?: Public Discourse about Artificial Intelligence on <span>WeChat</span> and <span class="nocase">People’s Daily Online</span>.”</span> <em>Information, Communication <span>&amp;</span> Society</em> 25 (3): 319–40.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch-08-ownership.html" class="pagination-link" aria-label="Ownership">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ownership</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch-10-law.html" class="pagination-link" aria-label="Law">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Law</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Journalism"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># Journalism {#sec-ch-09-journalism}</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>Part II closed with ownership as stewardship. Part III opens with a profession that has been stewarding sensitive public documents since well before data science named itself. A reporter who sits on a leaked database for six months while corroborating the identities of the people inside it is doing, as routine practice, the work the last four chapters spent pages trying to name. The tradition is called journalism, and if you want to make data science useful to the public, journalism is the lineage most worth reading as a set of instructions rather than as inspiration.</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>This chapter is not a history of journalism. It is a prompt to notice things the data science field, including its academic algorithmic-accountability wing, continues to rediscover a decade late. Newsrooms worked out methods for verifying records against sources, for publishing under legal threat, for collaborating across borders on datasets no one outlet could analyze alone, and for extending right of reply to the subjects of an investigation before the article ran. These are verification routines that, when you import them into academic or civic data practice, raise the evidentiary floor of the work in ways the field's internal conversations about "reproducibility" rarely manage on their own.</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>The chapter's running case is the one that pulled the fairness-in-machine-learning conversation into public view in 2016: ProPublica's *Machine Bias* investigation of the COMPAS recidivism risk score <span class="co">[</span><span class="ot">@angwin2016</span><span class="co">]</span>. You will download ProPublica's published data and notebook, reproduce one of its central statistics, compare your numbers to the article's, and read the methodological rejoinder from Flores, Bechtel, and Lowenkamp <span class="co">[</span><span class="ot">-@flores2016</span><span class="co">]</span>. The point is not to adjudicate the dispute. The point is to notice what made the dispute possible, and what it cost ProPublica to invite it.</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## The watchdog role, operationalized</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>The "Fourth Estate" is a metaphor that carries more than it can cash out. A fourth branch of government exists nowhere in any constitution. What does exist, across jurisdictions, is a loose professional arrangement: newsrooms with libel insurance, public-records statutes that force documents into the open, editors who can say no to a story, and a readership that funds the operation, imperfectly and with worsening economics, through subscriptions and advertising. The watchdog function is that arrangement working well enough to subject powerful institutions to scrutiny they would prefer to avoid.</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Data journalism is the computational specialization of that function. Diakopoulos <span class="co">[</span><span class="ot">-@diakopoulos2019</span><span class="co">]</span> documents how algorithmic accountability reporting emerged as newsrooms learned to treat software as a beat: not a tool for telling stories faster, but a subject of investigation in its own right. The investigative journalism tradition he chronicles, institutionalized in organizations like Investigative Reporters and Editors (IRE) and its data-focused conference NICAR, developed verification standards that predate and, in important respects, outpace the academic literature on algorithmic audits.</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>Four of those standards bear naming here, because you will use them in the tutorial.</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>**Sourcing** means a claim in a published story is traceable to a document, a dataset, or a named human. A reporter's notebook is a provenance chain. When a reporter writes that the city's benefits portal denied 12 percent of applicants for a missing signature, someone can ask which 12 percent, from which table, queried on which date, and the answer exists.</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>**Corroboration** means a claim that matters rests on more than one independent piece of evidence. The dataset says X. A former employee also said X. A public filing from a different year also said X. Single-source claims are not forbidden, but they are flagged and carefully worded.</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>**Right of reply** means the subjects of an investigation, including the institutions whose data is under scrutiny, receive the findings before publication and have an opportunity to respond. The response may be a correction, a denial, a contextual statement, or silence. Each has an editorial consequence.</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>**Publication with documentation** means the story travels with its evidence, or with enough of its evidence that readers and other newsrooms can follow the inference. Not every dataset can be released. The inference chain, the decisions made in cleaning the data, the variables selected, and the judgment calls made are documented somewhere readers can inspect.</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>Academic researchers use none of these consistently. Peer review substitutes, poorly, for the last and makes almost no demands on the first three. One of this chapter's claims is that academic data science, when it engages public systems, should steal from journalism rather than reinvent.</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## FOIA as infrastructure</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>One piece of journalism's installed base deserves separate mention because Chapter 10 (@sec-ch-10-law) takes it up in detail: the Freedom of Information Act and its state equivalents. FOIA turns the watchdog function from a polite request into a procedural right. A reporter writes, the agency has a statutory deadline to respond, and a denial can be appealed to a court. The infrastructure is imperfect, underfunded, and routinely abused through delay and overbroad exemption. It is also the mechanism by which much of the material a data journalist analyzes comes into the world in the first place.</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>For the purposes of this chapter, notice two things. First, FOIA is what Chapter 5 (@sec-ch-05-installed-base) calls safe scrutiny with a statutory backbone: the reporter does not have to trust the agency's goodwill, because the statute provides a lever. Second, the datasets journalists release through their reporting are often FOIA products that the agency itself never voluntarily published. ProPublica's COMPAS data is not a FOIA release (it came through a public-records request to Broward County, Florida, and a handful of correspondences with the vendor), but its genealogy sits in the same family of documents-prised-loose-through-procedure that the next chapter will train you to file.</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cross-border collaboration as a scaling strategy</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>A single newsroom can handle a dataset of several thousand rows. It cannot handle 11.5 million documents. The Panama Papers leak, published by the International Consortium of Investigative Journalists (ICIJ) in 2016, distributed the analysis across more than a hundred newsrooms in dozens of jurisdictions, each working on the documents relevant to their country, under coordinated publication embargoes. The Paradise Papers (2017) and the Pandora Papers (2021) used the same template. Forbidden Stories, a separate consortium, exists specifically to continue the work of journalists who have been killed or imprisoned, distributing their unpublished material among member newsrooms so that silencing any single reporter does not silence the story. Lighthouse Reports, based in the Netherlands, has built a collaborative model for algorithmic-accountability reporting across European outlets, including the Rotterdam welfare-algorithm investigation you saw in Chapter 3.</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>The method is worth importing to academic data work. A multi-country welfare-algorithm analysis is not, structurally, a different problem from a multi-site clinical trial. What cross-border journalism has worked out that academic consortia often have not is the governance stack that makes the collaboration survive leaks, legal threats, and deadline pressure: secure document-sharing platforms, shared style guides, coordinated fact-checking, joint legal review, and, critically, the right of any newsroom to pull out without burning the rest of it down. Zeng, Chan, and Schafer <span class="co">[</span><span class="ot">-@zeng2022</span><span class="co">]</span> show how much of this infrastructure is culturally located: what works in a consortium of Western European outlets is not portable to a newsroom operating under tighter state control, and an academic collaboration needs to understand transferability before it assumes the model scales.</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## The running example: reproducing *Machine Bias*</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>ProPublica's 2016 investigation of the COMPAS risk-assessment tool, used by courts across the United States to inform pretrial and sentencing decisions, argued that the score was biased against Black defendants. The finding that drew the most attention was a disparity in false-positive rates: among defendants who did not reoffend within two years, Black defendants were roughly twice as likely as white defendants to have been classified as high-risk by COMPAS. The article ran with its dataset and Jupyter notebook posted to GitHub at <span class="in">`propublica/compas-analysis`</span>, an act of methodological transparency that was, in 2016, unusually generous by newsroom standards.</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>The tutorial walks you through reproducing the two-year recidivism-rate statistic and comparing your numbers to the article's. You will find small divergences. You will then read Flores and colleagues' rejoinder <span class="co">[</span><span class="ot">-@flores2016</span><span class="co">]</span> and identify which divergences matter for the argument.</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pulling the data</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>The dataset lives in the repository as <span class="in">`compas-scores-two-years.csv`</span>. You can clone the repo or download the file directly.</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>URL <span class="op">=</span> (</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://raw.githubusercontent.com/propublica/"</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>    <span class="st">"compas-analysis/master/compas-scores-two-years.csv"</span></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(URL)</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>df.shape</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (7214, 53)</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"sex"</span>, <span class="st">"race"</span>, <span class="st">"age"</span>, <span class="st">"priors_count"</span>,</span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>    <span class="st">"decile_score"</span>, <span class="st">"two_year_recid"</span>]].head()</span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>ProPublica applied filters to this file before running their analysis. The notebook documents them. Cases where the COMPAS assessment was not drawn within 30 days of arrest were excluded, along with cases missing key fields. Replicate the filter before you replicate the statistic:</span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> (</span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>    (df[<span class="st">"days_b_screening_arrest"</span>] <span class="op">&lt;=</span> <span class="dv">30</span>) <span class="op">&amp;</span></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>    (df[<span class="st">"days_b_screening_arrest"</span>] <span class="op">&gt;=</span> <span class="op">-</span><span class="dv">30</span>) <span class="op">&amp;</span></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>    (df[<span class="st">"is_recid"</span>] <span class="op">!=</span> <span class="op">-</span><span class="dv">1</span>) <span class="op">&amp;</span></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>    (df[<span class="st">"c_charge_degree"</span>] <span class="op">!=</span> <span class="st">"O"</span>) <span class="op">&amp;</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>    (df[<span class="st">"score_text"</span>] <span class="op">!=</span> <span class="st">"N/A"</span>)</span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> df[mask].copy()</span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>filtered.shape</span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (6172, 53)   # matches the ProPublica notebook's post-filter count</span></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reproducing the statistic</span></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>The headline finding compared false-positive and false-negative rates across racial groups. A false positive here is a defendant labeled medium or high risk by COMPAS who did not reoffend within two years. Recode the score and compute the contingency table:</span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a>filtered[<span class="st">"high_risk"</span>] <span class="op">=</span> (</span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>    filtered[<span class="st">"score_text"</span>].isin([<span class="st">"High"</span>, <span class="st">"Medium"</span>]).astype(<span class="bu">int</span>)</span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>by_race <span class="op">=</span> (</span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>    filtered.groupby(<span class="st">"race"</span>)</span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>            .<span class="bu">apply</span>(<span class="kw">lambda</span> g: pd.Series({</span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>                <span class="st">"n"</span>: <span class="bu">len</span>(g),</span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>                <span class="st">"fp_rate"</span>: (</span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>                    ((g[<span class="st">"high_risk"</span>] <span class="op">==</span> <span class="dv">1</span>) <span class="op">&amp;</span> (g[<span class="st">"two_year_recid"</span>] <span class="op">==</span> <span class="dv">0</span>)).<span class="bu">sum</span>()</span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>                    <span class="op">/</span> (g[<span class="st">"two_year_recid"</span>] <span class="op">==</span> <span class="dv">0</span>).<span class="bu">sum</span>()</span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>                ),</span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>                <span class="st">"fn_rate"</span>: (</span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>                    ((g[<span class="st">"high_risk"</span>] <span class="op">==</span> <span class="dv">0</span>) <span class="op">&amp;</span> (g[<span class="st">"two_year_recid"</span>] <span class="op">==</span> <span class="dv">1</span>)).<span class="bu">sum</span>()</span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>                    <span class="op">/</span> (g[<span class="st">"two_year_recid"</span>] <span class="op">==</span> <span class="dv">1</span>).<span class="bu">sum</span>()</span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>                ),</span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>            }))</span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>            .reset_index()</span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>by_race.query(<span class="st">"race in ['African-American', 'Caucasian']"</span>)</span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; African-American  fp_rate ~ 0.45, fn_rate ~ 0.28</span></span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Caucasian         fp_rate ~ 0.23, fn_rate ~ 0.48</span></span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a><span class="fu">### Checking for divergence</span></span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>Your numbers will land close to the published rates but not identical. Possible sources of divergence, all worth documenting:</span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pandas has changed <span class="in">`.apply`</span> semantics between versions, which can alter group ordering and rounding.</span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The underlying CSV has been touched since 2016; you can pin to a specific commit hash if your analysis needs to be stable.</span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The "Medium or High" threshold is one of two reasonable ways to binarize <span class="in">`score_text`</span>; the notebook uses this one, but the article's prose occasionally shifts definitions.</span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Rows with missing <span class="in">`two_year_recid`</span> flags are handled inconsistently across replications in the literature.</span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>Write a brief methods note, in plain prose, documenting what you did: the commit hash you pinned to, the filter you applied, the binarization rule you chose, and the precise numbers you got. This note is not a formality. It is the artifact that lets a future reader distinguish a substantive disagreement with ProPublica's argument from a transcription error in your pipeline.</span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="The Missing Manual"}</span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a>When a newsroom publishes a methods notebook, the interesting methodological disputes are always in the details the article's prose does not cover. Read the notebook before you read the article, not after. You will see which filters were applied, which variables were dropped, and which binarization decisions the reporter made. These are the decisions the methodological rejoinders will land on. The practice of "right of reply" that journalists offer to the subjects of an investigation is not merely a courtesy; it is a verification mechanism. An institution given a chance to point out an error before publication often will, and the correction improves the final story. Academic researchers should steal this. Send your draft analysis to the institution whose system you are auditing, with a specific deadline and specific questions. Do it even when you are under no obligation to.</span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a><span class="fu">## Flores, Bechtel, and Lowenkamp: the rejoinder</span></span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a>Flores and colleagues <span class="co">[</span><span class="ot">-@flores2016</span><span class="co">]</span> published a direct response to ProPublica in *Federal Probation*, arguing that ProPublica's framing confused several distinct fairness criteria and that, on the criteria relevant to how risk assessments are actually used in court, COMPAS performed reasonably across racial groups. Their critique turned on the distinction between equal false-positive rates (ProPublica's focus) and equal positive predictive value (the vendor's focus). Subsequent literature, especially Chouldechova <span class="co">[</span><span class="ot">-@chouldechova2018</span><span class="co">]</span> and the broader fair-ML community, established that these criteria cannot simultaneously hold when base rates differ across groups. The impossibility result is not an escape hatch. It is a forcing function: choose which fairness criterion matters for the decision the tool informs, and own the choice.</span>
+<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a>Read the rejoinder alongside your reproduction. Notice which of its criticisms your replication can speak to (the binarization choice, the filter selection) and which require different data than ProPublica released. Notice also that the rejoinder exists at all because the data was public. A privately held investigation of a proprietary tool with a gag order on the dataset would not have generated the follow-up literature that now occupies six hundred entries in the FAccT bibliography.</span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="In the Public Interest"}</span>
+<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a>Chapter 6 (@sec-ch-06-openness) argued that openness is not the absence of friction but the presence of a legible publication. ProPublica's decision to publish the COMPAS dataset alongside the *Machine Bias* article is the move that made the dispute with Flores and colleagues possible. An enclosed analysis, with the data held internally and the findings communicated only through the article, would have foreclosed the rejoinder. The methodological disagreement would have remained a matter of he-said-she-said between a newsroom and a vendor, and the fair-ML literature that grew from the case would not have had an empirical object to work on. Openness here does not just serve ProPublica's credibility. It serves the capacity of the field to argue with ProPublica and improve on its work. Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> names this configuration as safe scrutiny reinforced by linkable provenance. Enclosure in the name of protecting a finding is a defensive posture that damages the finding's standing over time. Chapters 7 (@sec-ch-07-oversight) and 8 built on this: oversight requires an object to oversee, and the object has to survive long enough to be overseen.</span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a><span class="fu">## What academic researchers can learn</span></span>
+<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a>Two practices from the newsroom side will not fit on a single syllabus, but both belong in your working repertoire.</span>
+<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>The first is provenance as a default, not an exception. A reporter who cannot cite a claim cannot publish the claim. An academic researcher who cannot trace a number back through the cleaning pipeline to a source row is, in the newsroom's frame, not yet ready to publish either. The reproducibility frameworks you will meet in Chapter 11 (@sec-ch-11-accounting) encode this habit formally. The journalism version is older and more severe: you do not publish unless you can show your work, and "show your work" is not a virtue, it is the floor.</span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a>The second is the right of reply, already named in the callout above. When you audit a public system, send a draft of your findings to the institution responsible for the system, with a specific deadline and specific questions, and document whatever response you receive. You will get three kinds of reply. A silence, which you note. A correction, which you incorporate. A substantive disagreement, which you either argue with in the text or adopt as a limitation. All three improve the final work. The institutional pressure against this practice, in academic settings, is that it can look like giving subjects a veto. It is not a veto. It is a verification step that produces a better paper and a defensible defense when the paper is challenged.</span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking ahead</span></span>
+<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a>Chapter 10 (@sec-ch-10-law) takes up the legal infrastructure that journalism has been navigating for a century and a half and that data science, when it engages public systems, is now learning to navigate. FOIA and its state equivalents, open-meetings statutes, research exceptions to the Computer Fraud and Abuse Act, and the threat environment documented in *Sandvig v. Barr* all constrain what you can observe, publish, and discover. Journalism's tradition is older than academic algorithmic accountability and more politically mature, and the political maturity is inseparable from decades of litigation about what a reporter is allowed to do. Chapter 17 (@sec-ch-17-op-eds) picks up the translation question from the other side: how to turn a data investigation into a piece of public writing that a non-specialist reader can act on.</span>
+<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
+<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a>**Exercise 9.1 (Guided).** Clone <span class="in">`propublica/compas-analysis`</span> from GitHub. Run the filter described above against <span class="in">`compas-scores-two-years.csv`</span> and reproduce the false-positive and false-negative rates by race. Write a one-page methods note documenting the commit hash you pinned to, the filter you applied, the binarization rule you used, and the numbers you obtained. Save the note as <span class="in">`exercises/ch09_compas_methods.md`</span>. Submit a link to your git commit.</span>
+<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a>**Exercise 9.2 (Analytic).** Read Flores, Bechtel, and Lowenkamp <span class="co">[</span><span class="ot">-@flores2016</span><span class="co">]</span>. In 500 to 700 words, identify the three criticisms the rejoinder makes that your Exercise 9.1 replication can speak to, and the criticisms it makes that would require different data. Your reply does not need to take a side; it needs to distinguish what the released dataset can and cannot settle.</span>
+<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a>**Exercise 9.3 (Comparative).** Find a data journalism investigation from a non-U.S. outlet published in the last three years. Candidates include Forbidden Stories, Lighthouse Reports, Der Spiegel's data desk, Suddeutsche Zeitung, CORRECTIV, or the ICIJ. In 400 to 600 words, analyze the piece's structure: what is the central claim, what data supports it, what was published alongside the story, which collaborators are credited, and what verification practices are visible in the methodology note (if any). Compare the published methods transparency to the ProPublica standard.</span>
+<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a>**Exercise 9.4 (Research).** Locate a methods notebook from a recent investigation by The Markup, ProPublica, The Pudding, Reveal, or Bellingcat. Document the notebook in 300 words: which filters it applied, which decisions it records in comments, and one decision it makes without documenting. Submit the notebook URL and your documentation together. The point is to practice reading a notebook as a reviewer, not just as a user.</span>
+<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a>**Exercise 9.5 (Open-ended, project-linked).** Identify a story from your own community, city, county, campus, or professional field, that would benefit from data journalism methods. In two to three paragraphs: name the story, name the data that would be required, identify the likely source (FOIA, scraping a public portal, a dataset already open), and name one person or institution who would be the subject of right-of-reply. Add the result to your <span class="in">`ch01_project_sketch.md`</span> file. If the story overlaps with something you are already planning for a later chapter's exercise, say so.</span>
+<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading and Resources</span></span>
+<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner (2016), "Machine Bias," ProPublica: <span class="ot">&lt;https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing&gt;</span>. Read the article, then read the companion methodology at <span class="ot">&lt;https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm&gt;</span>.</span>
+<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>ProPublica's <span class="in">`compas-analysis`</span> repository: <span class="ot">&lt;https://github.com/propublica/compas-analysis&gt;</span>. The Jupyter notebook in the repository root is the canonical object for this chapter.</span>
+<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Anthony W. Flores, Kristin Bechtel, and Christopher T. Lowenkamp (2016), "False positives, false negatives, and false analyses: A rejoinder to 'Machine Bias,'" *Federal Probation*, 80(2): 38 to 46.</span>
+<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Nicholas Diakopoulos (2019), *Automating the News: How Algorithms Are Rewriting the Media*. Harvard University Press. The standing academic treatment of algorithmic accountability reporting.</span>
+<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The Markup's "Show Your Work" series: <span class="ot">&lt;https://themarkup.org/series/show-your-work&gt;</span>. Each investigation publishes its methodology as a standalone piece; read three of them back to back.</span>
+<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Investigative Reporters and Editors (IRE) and the National Institute for Computer-Assisted Reporting (NICAR): <span class="ot">&lt;https://www.ire.org&gt;</span>. The professional home of U.S. data journalism; the NICAR conference proceedings are an underappreciated methods literature.</span>
+<span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>International Consortium of Investigative Journalists (ICIJ): <span class="ot">&lt;https://www.icij.org&gt;</span>. The Panama, Paradise, and Pandora Papers investigations, with extensive documentation of the cross-border collaboration model.</span>
+<span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lighthouse Reports: <span class="ot">&lt;https://www.lighthousereports.com&gt;</span>. European consortium specializing in algorithmic-accountability investigations; the Rotterdam welfare-algorithm piece is a useful companion to Chapter 3.</span>
+<span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Forbidden Stories: <span class="ot">&lt;https://forbiddenstories.org&gt;</span>. The consortium that continues the work of journalists who have been silenced.</span>
+<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*The Data Journalism Handbook 2*, edited by Jonathan Gray and Liliana Bounegru (2021), open-access at <span class="ot">&lt;https://datajournalism.com/read/handbook/two&gt;</span>. The field's living textbook, with chapters by practitioners on verification, scraping, collaboration, and ethics.</span>
+<span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The Pudding: <span class="ot">&lt;https://pudding.cool&gt;</span>. For a lighter complement: visual essays whose source code ships with the story.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-09-journalism.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

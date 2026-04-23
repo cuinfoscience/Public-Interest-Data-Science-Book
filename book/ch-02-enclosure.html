@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
+
+<title>3&nbsp; Enclosure: Who Can Observe? – Public Interest Data Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch-03-exemption.html" rel="next">
+<link href="./ch-01-introduction.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3960f907883494f1151aa7142734774f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d783d5094f66403aace2499abad0c8ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3960f907883494f1151aa7142734774f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch-01-introduction.html">Pressures</a></li><li class="breadcrumb-item"><a href="./ch-02-enclosure.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure: Who Can Observe?</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Public Interest Data Science</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Public-Interest-Data-Science.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Public-Interest-Data-Science.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Pressures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-02-enclosure.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure: Who Can Observe?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-03-exemption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-04-erosion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Erosion: What Can Be Remembered?</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Values</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-05-installed-base.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Installed Base</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-06-openness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Openness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-07-oversight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Oversight</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-08-ownership.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ownership</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lineages</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-09-journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-10-law.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Law</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-11-accounting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-12-planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-13-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Engineering</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Adjacent Conversations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-14-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-15-govtech-civic-tech.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-16-critical-data-studies-refusal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Genres</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-17-op-eds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Op-Eds</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-18-reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-19-research-proposals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Research Proposals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-20-testimony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Testimony</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-21-public-comments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Public Comments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-22-archival-deposits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Archival Deposits</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#sec-ch-02-enclosure" id="toc-sec-ch-02-enclosure" class="nav-link active" data-scroll-target="#sec-ch-02-enclosure"><span class="header-section-number">4</span> Enclosure: Who Can Observe?</a>
+  <ul class="collapse">
+  <li><a href="#the-last-ten-years-briefly" id="toc-the-last-ten-years-briefly" class="nav-link" data-scroll-target="#the-last-ten-years-briefly"><span class="header-section-number">4.1</span> The last ten years, briefly</a></li>
+  <li><a href="#reading-what-the-platform-tells-you-you-can-do" id="toc-reading-what-the-platform-tells-you-you-can-do" class="nav-link" data-scroll-target="#reading-what-the-platform-tells-you-you-can-do"><span class="header-section-number">4.2</span> Reading what the platform tells you you can do</a></li>
+  <li><a href="#a-responsible-scraper-from-scratch" id="toc-a-responsible-scraper-from-scratch" class="nav-link" data-scroll-target="#a-responsible-scraper-from-scratch"><span class="header-section-number">4.3</span> A responsible scraper, from scratch</a></li>
+  <li><a href="#a-worked-timeline-reddit-access-20152024" id="toc-a-worked-timeline-reddit-access-20152024" class="nav-link" data-scroll-target="#a-worked-timeline-reddit-access-20152024"><span class="header-section-number">4.4</span> A worked timeline: Reddit access, 2015–2024</a></li>
+  <li><a href="#the-asymmetry-of-observation" id="toc-the-asymmetry-of-observation" class="nav-link" data-scroll-target="#the-asymmetry-of-observation"><span class="header-section-number">4.5</span> The asymmetry of observation</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">4.6</span> Exercises</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">4.7</span> Looking ahead</a></li>
+  <li><a href="#further-reading-and-resources" id="toc-further-reading-and-resources" class="nav-link" data-scroll-target="#further-reading-and-resources"><span class="header-section-number">4.8</span> Further Reading and Resources</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-02-enclosure.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch-01-introduction.html">Pressures</a></li><li class="breadcrumb-item"><a href="./ch-02-enclosure.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure: Who Can Observe?</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure: Who Can Observe?</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-ch-02-enclosure" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Enclosure: Who Can Observe?</h1>
+<p>In the sixteenth and seventeenth centuries, across England and Scotland, common pastures and woodlands that had been used collectively for generations were fenced off by landowners and Parliament. The legal instruments were workmanlike. The consequences were not. Villagers who had grazed sheep on the commons, gathered firewood from shared stands, and gleaned fallen grain from open fields found themselves dependent on wage labor, migrating to cities, or both. Enclosure was not a failure of the commons. It was a project, by those with power, to convert shared resources into private ones, often with the language of improvement attached.</p>
+<p>James Boyle <span class="citation" data-cites="boyle2017">(<a href="#ref-boyle2017" role="doc-biblioref">2017</a>)</span> argued two decades ago that a “second enclosure movement” was underway, this time over ideas, code, and data. Patents expanded. Copyright terms stretched. Public-domain materials were fenced behind paywalls and click-through agreements. That framing remains useful, but the enclosure most relevant to this book has moved past ideas and into observation itself. The question public interest data science asks is not only <em>what can I license?</em> but <em>what can I see in the first place?</em> The answer, for a researcher in the mid-2020s, is less than it was a decade ago, and the trajectory is not accidental. Following Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span>, you can read the withdrawal of research access as an attack on the installed base introduced in <a href="ch-01-introduction.html" class="quarto-xref"><span>Chapter 3</span></a>: when linkability, interpretability, and safe scrutiny are removed, “public interest” becomes a slogan without an operational grip.</p>
+<section id="the-last-ten-years-briefly" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="the-last-ten-years-briefly"><span class="header-section-number">4.1</span> The last ten years, briefly</h2>
+<p>The easiest way to feel enclosure as a data scientist is to list retrievals you could have done ten years ago and try them today. A decent starter list:</p>
+<ul>
+<li>Pull one percent of public tweets through the Twitter streaming API, filtered by keyword, for a dissertation on political discourse.</li>
+<li>Fetch the complete comment history of a subreddit from Pushshift, with timestamps and scores, for a study of moderation.</li>
+<li>Download the pre-2017 version of the EPA’s environmental-justice screening data, with the variable definitions as of that date.</li>
+<li>Query Facebook’s Graph API for public-page posts about a municipal election.</li>
+<li>Retrieve CrowdTangle data on viral content during a disaster.</li>
+</ul>
+<p>Each was a routine graduate-student assignment within the last decade. None is routine now. Some are technically possible through partnerships most researchers cannot access. Some are impossible. Some have been replaced by expensive commercial products whose terms forbid the reuse the original data supported. Bruns <span class="citation" data-cites="bruns2019">(<a href="#ref-bruns2019" role="doc-biblioref">2019</a>)</span> called this shift the <strong>APIcalypse</strong>: platforms that depended on researcher goodwill in their growth phase have, in their extraction phase, decided that goodwill is an expensive luxury.</p>
+<p>Twitter (now X) is the sharpest case because the timeline is easiest to reconstruct. From 2006 through early 2023, the platform’s API included a credible research tier, and an enormous empirical literature grew out of it. In February 2023 the company announced that free API access would end; the replacement pricing tiers start in the tens of thousands of dollars per month for the volumes a real research project requires. Academics who had built longitudinal panels over a decade watched them become unrenewable.</p>
+<p>Reddit’s trajectory followed, faster and with more open advocacy against researchers. Pushshift, a volunteer-run archive that had collected and served Reddit data since 2015, shut down its public API in April 2023 after Reddit revoked its credentials. Reddit’s own API pricing, announced weeks later, pushed third-party clients (including accessibility tools like Apollo) out of the ecosystem and put researcher access behind tiers that, for any nontrivial use, meant six-figure bills. Gaffney and Matias <span class="citation" data-cites="gaffney2018">(<a href="#ref-gaffney2018" role="doc-biblioref">2018</a>)</span> had already documented silent gaps in Pushshift’s mirror, which compounded the loss: not only is the new data expensive, the old data you thought you had is incomplete, and you cannot fill it in.</p>
+<p>Government data portals are a quieter case and, for that reason, one you should watch more carefully. When a federal agency reorganizes, variable names change. When a political appointee prefers different framings, dataset landing pages are rewritten. When budgets contract, legacy portals stop updating and older vintages are “archived,” which is sometimes a euphemism for delisted. The 2017 withdrawal of climate-change pages from the EPA website was the loud case; the quiet cases happen constantly, and <a href="ch-04-erosion.html" class="quarto-xref"><span>Chapter 6</span></a> treats the failure mode in detail. Enclosure and erosion are siblings: one restricts access, the other dissolves the object of access, and both shift the ground under public-interest work.</p>
+<p>The political economy underneath these cases is not mysterious. Wu <span class="citation" data-cites="wu2021">(<a href="#ref-wu2021" role="doc-biblioref">2021</a>)</span> describes the current configuration as a new Gilded Age of concentrated platform power. A handful of firms hold the data that describes contemporary public life. Their incentives run toward monetizing that data through advertising, model training, and partnerships, and away from letting outsiders audit it. “Partnership” is doing a lot of work in that sentence. It means the firms will sometimes share data with other firms, with favored labs, and with governments, under NDAs. It almost never means they will share it with journalists, civil-society researchers, or the public.</p>
+</section>
+<section id="reading-what-the-platform-tells-you-you-can-do" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="reading-what-the-platform-tells-you-you-can-do"><span class="header-section-number">4.2</span> Reading what the platform tells you you can do</h2>
+<p>Before you write any code, read what the platform says about your presence. There are two documents every serious scraper consults: <code>robots.txt</code> and the site’s Terms of Service. Neither is a law. Both are signals, and you ignore them at your peril, both ethically and practically.</p>
+<p>A <code>robots.txt</code> file is served at the root of a domain and tells automated agents which paths are and are not welcome. The Robots Exclusion Protocol dates to 1994 and was standardized as RFC 9309 in 2022. It lives at <code>https://example.com/robots.txt</code>. Fetching it is a one-line task:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> urllib.robotparser</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>rp <span class="op">=</span> urllib.robotparser.RobotFileParser()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>rp.set_url(<span class="st">"https://en.wikipedia.org/robots.txt"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>rp.read()</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>rp.can_fetch(<span class="st">"PublicInterestDataScience/0.1"</span>, <span class="st">"/wiki/Public_interest"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; True</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>rp.can_fetch(<span class="st">"PublicInterestDataScience/0.1"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>             <span class="st">"/w/index.php?title=Special:Export"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; False (or True; check what Wikipedia's file actually says today)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Python’s standard library parser returns <code>True</code> or <code>False</code> for a given path and user agent. It will also surface the crawl-delay the site suggests, if one is present, and the sitemap URL if the file advertises one.</p>
+<p>Terms of Service are the harder document because they are written by lawyers who assume you will not read them. Researchers have lived in the shadow of the U.S. Computer Fraud and Abuse Act (CFAA) on this point, because for a long time it was unclear whether violating a ToS could be prosecuted as “unauthorized access” under the statute. The <em>Sandvig v. Barr</em> litigation <span class="citation" data-cites="aclu2019">(<a href="#ref-aclu2019" role="doc-biblioref">American Civil Liberties Union 2019</a>)</span> established in 2020 that academic research violating a ToS is not by that fact alone a criminal CFAA violation. That is a meaningful ruling and not a blanket license. You can still be sued in civil court, banned from the platform, served with a cease-and-desist, or (if your institution values its industry relationships) quietly asked to stop. Read the ToS, document what you read, and know which clauses you are relying on and which you are departing from and why.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The Missing Manual
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A request from <code>requests.get(url)</code> with no <code>User-Agent</code> header does not arrive at a modern server as “anonymous.” It arrives as <code>python-requests/2.31.0</code>, which is the default and is the single fastest way to get 403’d by a CDN that has blocklisted it by policy. Cloudflare, Fastly, and Akamai maintain lists of default agents used by common scraping libraries. Set a descriptive <code>User-Agent</code> that names your project and a contact email. If the server operator needs to tell you to stop, you want them to be able to email you rather than silently ban your subnet. A polite scraper is also a scraper that keeps running.</p>
+</div>
+</div>
+</section>
+<section id="a-responsible-scraper-from-scratch" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="a-responsible-scraper-from-scratch"><span class="header-section-number">4.3</span> A responsible scraper, from scratch</h2>
+<p>You will reuse the function below, in one form or another, across the remaining chapters. The design goals are plain: every request identifies itself, respects <code>robots.txt</code> by default, rate-limits, retries on transient errors, and fails loudly on permanent ones.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logging</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> urlparse</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.robotparser <span class="im">import</span> RobotFileParser</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>log <span class="op">=</span> logging.getLogger(<span class="st">"responsible_scraper"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>DEFAULT_UA <span class="op">=</span> (</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PublicInterestDataScience/0.1 "</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"(+https://github.com/yourname/pids-book; you@example.edu)"</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> check_robots(url, user_agent<span class="op">=</span>DEFAULT_UA):</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return True if robots.txt allows user_agent to fetch url."""</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    parsed <span class="op">=</span> urlparse(url)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    robots_url <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>parsed<span class="sc">.</span>scheme<span class="sc">}</span><span class="ss">://</span><span class="sc">{</span>parsed<span class="sc">.</span>netloc<span class="sc">}</span><span class="ss">/robots.txt"</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    rp <span class="op">=</span> RobotFileParser()</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        rp.set_url(robots_url)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        rp.read()</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> exc:</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        log.warning(<span class="st">"Could not read </span><span class="sc">%s</span><span class="st">: </span><span class="sc">%s</span><span class="st">"</span>, robots_url, exc)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Conservative default: if we can't read robots.txt, assume we</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        <span class="co"># should not fetch. Override explicitly if you know better.</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> rp.can_fetch(user_agent, url)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> polite_get(</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    url,</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    headers<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    params<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    user_agent<span class="op">=</span>DEFAULT_UA,</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    min_interval<span class="op">=</span><span class="fl">1.0</span>,</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    max_retries<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    backoff<span class="op">=</span><span class="fl">2.0</span>,</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    timeout<span class="op">=</span><span class="dv">30</span>,</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    respect_robots<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>):</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Fetch a URL with rate limiting, retries, and a named User-Agent.</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns a requests.Response on success.</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co">    Raises requests.HTTPError on non-retryable failure.</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> respect_robots <span class="kw">and</span> <span class="kw">not</span> check_robots(url, user_agent<span class="op">=</span>user_agent):</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">PermissionError</span>(<span class="ss">f"robots.txt disallows fetching </span><span class="sc">{</span>url<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    hdrs <span class="op">=</span> {<span class="st">"User-Agent"</span>: user_agent, <span class="st">"Accept"</span>: <span class="st">"application/json"</span>}</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> headers:</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>        hdrs.update(headers)</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    last_err <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> attempt <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, max_retries <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>            response <span class="op">=</span> requests.get(</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>                url, headers<span class="op">=</span>hdrs, params<span class="op">=</span>params, timeout<span class="op">=</span>timeout</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> requests.RequestException <span class="im">as</span> exc:</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>            last_err <span class="op">=</span> exc</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>            log.warning(<span class="st">"Attempt </span><span class="sc">%d</span><span class="st">: network error </span><span class="sc">%s</span><span class="st">"</span>, attempt, exc)</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> response.status_code <span class="kw">in</span> (<span class="dv">429</span>, <span class="dv">500</span>, <span class="dv">502</span>, <span class="dv">503</span>, <span class="dv">504</span>):</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>                log.warning(</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Attempt </span><span class="sc">%d</span><span class="st">: status </span><span class="sc">%s</span><span class="st"> from </span><span class="sc">%s</span><span class="st">"</span>,</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>                    attempt, response.status_code, url,</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>                last_err <span class="op">=</span> requests.HTTPError(response<span class="op">=</span>response)</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>                response.raise_for_status()</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>                time.sleep(min_interval)</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> response</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>        time.sleep(backoff <span class="op">**</span> attempt)</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> last_err <span class="kw">or</span> <span class="pp">RuntimeError</span>(<span class="st">"polite_get exhausted retries"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A few design choices are worth naming. The function accepts a <code>respect_robots</code> flag that defaults to <code>True</code>. You should need a reason to flip it, and you should write that reason into a comment in the calling code, not just your head. The function treats 429 and 5xx responses as retryable with exponential backoff, and 4xx responses as permanent failures. It sleeps a minimum interval after every successful call, which is the crudest form of rate limiting and the one that gets you the furthest. A production version would honor the <code>Retry-After</code> header, cache responses to disk, and emit structured logs. Your exercises will push you toward those features.</p>
+<p>Using it looks like any other <code>requests</code> call, with a politer footprint:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> polite_get(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"en.wikipedia/all-access/user/Enclosure/monthly/"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2015010100/2024123100"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>items <span class="op">=</span> response.json()[<span class="st">"items"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you want to scrape a site whose <code>robots.txt</code> disallows you, stop and think. Sometimes there is a legitimate scholarly reason to proceed (a platform has disallowed a path that is uncontroversially public, a journalism project has counsel’s blessing, a court order is in hand). More often the disallow signals a norm you should respect. The function makes respecting it the default. Refusal, as <a href="ch-16-critical-data-studies-refusal.html" class="quarto-xref"><span>Chapter 18</span></a> will develop, runs in both directions: platforms can refuse researchers, and researchers can refuse requests even when a platform invites them. Zong and Matias <span class="citation" data-cites="zong2024">(<a href="#ref-zong2024" role="doc-biblioref">2024</a>)</span> treat refusal by data subjects as a legitimate counter-move within an asymmetric information environment.</p>
+</section>
+<section id="a-worked-timeline-reddit-access-20152024" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="a-worked-timeline-reddit-access-20152024"><span class="header-section-number">4.4</span> A worked timeline: Reddit access, 2015–2024</h2>
+<p>Pick one platform and write its access history as a structured timeline. The exercise forces you to treat enclosure as a series of concrete decisions rather than a diffuse climate. Reddit is useful because the dates are public and the consequences are well-documented. The table below is a first pass; Exercise 2.4 asks you to extend and verify it.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 16%">
+<col style="width: 69%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>Event</th>
+<th>Consequence for researchers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2015</td>
+<td>Pushshift begins continuous archiving of Reddit submissions and comments.</td>
+<td>A reasonably complete corpus of Reddit becomes queryable through a free API.</td>
+</tr>
+<tr class="even">
+<td>2018</td>
+<td>Gaffney and Matias <span class="citation" data-cites="gaffney2018">(<a href="#ref-gaffney2018" role="doc-biblioref">2018</a>)</span> document silent gaps in the Pushshift mirror.</td>
+<td>Researchers learn the archive is incomplete; many published studies rest on the incomplete slice.</td>
+</tr>
+<tr class="odd">
+<td>2020</td>
+<td>COVID-19 drives a surge in computational social science using Reddit data.</td>
+<td>Demand on Pushshift grows; the corpus becomes de facto infrastructure for a subfield.</td>
+</tr>
+<tr class="even">
+<td>April 2023</td>
+<td>Reddit revokes Pushshift’s API credentials. Reddit announces API pricing.</td>
+<td>The public Pushshift API goes dark. Third-party clients (Apollo, Reddit Enhancement Suite) exit or retreat.</td>
+</tr>
+<tr class="odd">
+<td>June 2023</td>
+<td>Large subreddits go private in protest (“the blackout”).</td>
+<td>Moderator labor, the free substrate of Reddit’s data, becomes briefly legible as labor.</td>
+</tr>
+<tr class="even">
+<td>Late 2023</td>
+<td>Reddit signs data-licensing deal with Google for model training.</td>
+<td>Data refused to researchers is sold, as training data, to a firm that can afford it.</td>
+</tr>
+<tr class="odd">
+<td>2024</td>
+<td>Reddit files for IPO; discloses API licensing as revenue.</td>
+<td>The economic logic of enclosure is explicit in the S-1: researcher access was competing with shareholder value.</td>
+</tr>
+</tbody>
+</table>
+<p>Two observations follow from the table. First, the shutdown was not only a loss of new data. It was a loss of old data, because the archive that held the historical corpus lost the credential it needed to keep serving what it had already collected. The object of study and the infrastructure of study collapsed together. <a href="ch-22-archival-deposits.html" class="quarto-xref"><span>Chapter 24</span></a> pushes you toward archival deposits you control rather than ones you rent.</p>
+<p>Second, the same data the platform withdrew from researchers was, in the same calendar year, sold to a commercial AI firm. That is the asymmetry to sit with. Enclosure is not simply “the platform closed up.” It is “the platform closed <em>you</em> out while opening further to capital.” Acker and Kreisberg <span class="citation" data-cites="acker2019">(<a href="#ref-acker2019" role="doc-biblioref">2019</a>)</span> saw this pattern coming in their work on social-media archives; Suzor and colleagues <span class="citation" data-cites="suzor2018">(<a href="#ref-suzor2018" role="doc-biblioref">2018</a>)</span> locate it within a broader problem of platform governance legitimacy.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>In the Public Interest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What is at stake here is <strong>openness</strong> as defined in <a href="ch-06-openness.html" class="quarto-xref"><span>Chapter 8</span></a>: the condition under which a public can scrutinize the systems that affect it. Openness is not a synonym for “the data is downloadable.” It is a working arrangement in which researchers, journalists, regulators, and affected communities can observe enough to raise evidence-based questions. When platforms cut off independent researchers while retaining partnerships with large firms and governments, they do not abolish observation. They reallocate it. Observation continues, but it flows toward private interests and away from public ones. Naming this as an openness failure, rather than a business decision, is the first move that lets you push back. <a href="ch-07-oversight.html" class="quarto-xref"><span>Chapter 9</span></a> and <a href="ch-08-ownership.html" class="quarto-xref"><span>Chapter 10</span></a> extend the argument into regulatory and distributional registers.</p>
+</div>
+</div>
+</section>
+<section id="the-asymmetry-of-observation" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="the-asymmetry-of-observation"><span class="header-section-number">4.5</span> The asymmetry of observation</h2>
+<p>The previous two sections should have left you with an uncomfortable picture. The firms that hold the data describing contemporary public life can observe their users in extraordinary detail. They partner with other firms and with governments to extend that observation. They cut off the outside parties whose scrutiny would be inconvenient. The parties who remain (journalists, academics, civil-society groups) are left with robots.txt files, HTML-scraped fragments, and the occasional leaked dataset. The asymmetry is not between observers and the unobserved. It is between two classes of observers.</p>
+<p>That asymmetry has consequences for what you should try to build. First, assume your access is temporary and plan for its withdrawal: <a href="ch-05-installed-base.html" class="quarto-xref"><span>Chapter 7</span></a> and <a href="ch-22-archival-deposits.html" class="quarto-xref"><span>Chapter 24</span></a> push you toward architectures where your data has a resolvable identifier and a home that outlives any single platform. Second, be honest about the limits of what you can observe: a study that conditions on platform-provided data is a study of what the platform chose to show you, and naming that is part of the work rather than a methods-section apology. Third, refusal is available. If the terms of access are corrosive (an NDA that prevents you from naming the firm, an exclusivity clause that bars you from sharing derived data with colleagues), you can decline, and <a href="ch-16-critical-data-studies-refusal.html" class="quarto-xref"><span>Chapter 18</span></a> will argue that sometimes you should.</p>
+<p>Public-interest data science cannot rely exclusively on large commercial platforms. The installed base this book is building toward includes government open data, civic datasets, court records, FOIA-wrested documents, historical archives, and the output of researchers willing to publish collected data under permissive licenses. Each of those sources has its own pressures (Chapter 3 takes up exemption, Chapter 4 takes up erosion), but none of them has an S-1 that treats your access as lost revenue. Diversifying your substrate of observation is a strategic response to enclosure.</p>
+</section>
+<section id="exercises" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">4.6</span> Exercises</h2>
+<p><strong>Exercise 2.1 (Guided).</strong> Fetch and read the <code>robots.txt</code> files for three platforms. Recommended triple: Wikipedia, Reddit, and a large newspaper site (for example, nytimes.com). Use <code>urllib.robotparser</code> to check whether your <code>User-Agent</code> would be permitted on five paths per site. Write a 200-word comparison: which site is most permissive, which most restrictive, and which surprised you.</p>
+<p><strong>Exercise 2.2 (Guided).</strong> Implement the <code>polite_get</code> function from scratch, without copying the listing above. Add one feature the book’s version lacks: either honor the <code>Retry-After</code> header on 429 responses, or cache successful responses to a local SQLite database keyed by URL so that repeated fetches during development do not re-hit the server. Commit the function with a docstring explaining your added feature and a test that exercises it against a public endpoint.</p>
+<p><strong>Exercise 2.3 (Analytic).</strong> Pick one platform whose data you expect to use in your final project. Download its current Terms of Service to a dated file (for example, <code>exercises/ch02_tos/reddit_2026-04-23.txt</code>). Annotate paragraph by paragraph with four marks: <strong>R</strong> for clauses that restrict research uses, <strong>P</strong> for clauses that permit them, <strong>A</strong> for ambiguity you would need counsel to resolve, and <strong>L</strong> for language that relies on unstable definitions (“public content,” “non-commercial,” “API partner”). Submit the annotated file and a 300-word summary of what a research plan can and cannot do under the current ToS.</p>
+<p><strong>Exercise 2.4 (Analytic).</strong> Extend the Reddit timeline. Add three rows from publicly reported events since 2024, with citations. Then write a second timeline, in the same format, for a different platform (Twitter/X, Facebook, TikTok, YouTube, or a government data portal). Cover at least eight years and at least five distinct access events. Cite the source for each date; prefer primary documents (official announcements, court filings, congressional testimony) over secondary reporting where both exist.</p>
+<p><strong>Exercise 2.5 (Open-ended).</strong> Revisit the project sketch from Exercise 1.5. Identify the single dataset whose availability would most determine whether your project is possible. Write a 500-word accessibility memo covering: who controls the data; under what terms it is accessible; what pathways exist (public download, API, FOIA request, institutional partnership, commercial license); the cost and timeline of each pathway; what has happened to the data’s accessibility over the last five years; and what fallback datasets you would use if the primary became unavailable. Save as <code>exercises/ch02_access_memo.md</code>. You will return to this memo in Chapter 19 and Chapter 22.</p>
+</section>
+<section id="looking-ahead" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">4.7</span> Looking ahead</h2>
+<p>Enclosure is the first of three pressures this part diagnoses. Chapter 3 takes up exemption: even when data can be observed, certain actors are under no obligation to answer for what it describes. Law-enforcement agencies exempt from FOIA. Vendors whose contracts shield them from disclosure. Private actors performing public functions without the accountability attached. If enclosure asks <em>who can observe?</em>, exemption asks <em>who must answer?</em></p>
+</section>
+<section id="further-reading-and-resources" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="further-reading-and-resources"><span class="header-section-number">4.8</span> Further Reading and Resources</h2>
+<ul>
+<li>Axel Bruns (2019), “After the ‘APIcalypse’: Social media platforms and their fight against critical scholarly research,” <em>Information, Communication &amp; Society</em> 22(11). The article that gave the post-2018 shift its name.</li>
+<li>James Boyle (2008), <em>The Public Domain: Enclosing the Commons of the Mind</em>. Duke University Press. Open-access at <a href="https://www.thepublicdomain.org/" class="uri">https://www.thepublicdomain.org/</a>. The enclosure analogy in its fullest form.</li>
+<li>Robots Exclusion Protocol, RFC 9309 (2022): <a href="https://www.rfc-editor.org/rfc/rfc9309.html" class="uri">https://www.rfc-editor.org/rfc/rfc9309.html</a>. A short, readable standardization most scrapers violate out of ignorance.</li>
+<li>Jonathan Zong and J. Nathan Matias (2024), “Data refusal from below.” The complement to this chapter: when enclosure is not the problem, refusal might be.</li>
+<li>Reddit’s API pricing announcement (June 2023) and the original Pushshift shutdown notice, both reachable from <a href="https://www.reddit.com/r/modnews/" class="uri">https://www.reddit.com/r/modnews/</a> archives. Primary documents for Exercise 2.4.</li>
+<li>The Internet Archive’s Wayback Machine, <a href="https://web.archive.org/" class="uri">https://web.archive.org/</a>. When a platform retires a dataset, often the only remaining record of what was public. You will use it constantly.</li>
+<li>Electronic Frontier Foundation, “Coders’ Rights Project,” <a href="https://www.eff.org/issues/coders" class="uri">https://www.eff.org/issues/coders</a>. Plain-language summaries of the CFAA, DMCA, and related statutes.</li>
+<li>Knight First Amendment Institute, <a href="https://knightcolumbia.org/research" class="uri">https://knightcolumbia.org/research</a>. Ongoing litigation and policy work on the legal scaffolding of observation.</li>
+<li>Wikimedia Foundation’s research ethics and tool policies, <a href="https://meta.wikimedia.org/wiki/Research:Ethics" class="uri">https://meta.wikimedia.org/wiki/Research:Ethics</a>. An instructive contrast: what a platform looks like when it wants researchers to study it.</li>
+</ul>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-acker2019" class="csl-entry" role="listitem">
+Acker, Amelia, and Adam Kreisberg. 2019. <span>“Social Media Data Archives in an <span>API</span>-Driven World.”</span> <em>Archival Science</em>.
+</div>
+<div id="ref-aclu2019" class="csl-entry" role="listitem">
+American Civil Liberties Union. 2019. <em><span class="nocase">Sandvig v. Barr</span>: Researchers’ Right to Investigate Algorithmic Discrimination</em>. ACLU. <a href="https://www.aclu.org/cases/sandvig-v-barr-challenge-cfaa-prohibition-uncovering-racial-discrimination-online">https://www.aclu.org/cases/sandvig-v-barr-challenge-cfaa-prohibition-uncovering-racial-discrimination-online</a>.
+</div>
+<div id="ref-boyle2017" class="csl-entry" role="listitem">
+Boyle, James. 2017. <span>“The Public Domain: Enclosing the Commons of the Mind.”</span> <em>Yale Law Journal</em>.
+</div>
+<div id="ref-bruns2019" class="csl-entry" role="listitem">
+Bruns, Axel. 2019. <span>“After the <span><span>‘APIcalypse’</span></span>: Social Media Platforms and Their Fight Against Critical Scholarly Research.”</span> <em>Information, Communication <span>&amp;</span> Society</em> 22 (11): 1544–66.
+</div>
+<div id="ref-gaffney2018" class="csl-entry" role="listitem">
+Gaffney, Devin, and J. Nathan Matias. 2018. <span>“Caveat Emptor, Computational Social Science: Large-Scale Missing Data in a Widely-Published <span>Reddit</span> Corpus.”</span> <em>PLoS ONE</em> 13 (7): e0200162.
+</div>
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Information, Communication <span>&amp;</span> Society</em>.
+</div>
+<div id="ref-suzor2018" class="csl-entry" role="listitem">
+Suzor, Nicolas P., Tess Van Geelen, and Sarah Myers West. 2018. <span>“Evaluating the Legitimacy of Platform Governance: A Review of Research and a Shared Research Agenda.”</span> <em>International Communication Gazette</em> 80 (4): 385–405.
+</div>
+<div id="ref-wu2021" class="csl-entry" role="listitem">
+Wu, Tim. 2021. <span>“The Curse of Bigness: Antitrust in the New <span>Gilded Age</span>.”</span> <em>Columbia Law Review</em>.
+</div>
+<div id="ref-zong2024" class="csl-entry" role="listitem">
+Zong, Jonathan, and J. Nathan Matias. 2024. <span>“Data Refusal from Below: A Framework for Resisting Institutional Data Harms.”</span> <em>ACM Journal on Responsible Computing</em>.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch-01-introduction.html" class="pagination-link" aria-label="Introduction to Public Interest Data Science">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch-03-exemption.html" class="pagination-link" aria-label="Exemption: Who Must Answer?">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Enclosure: Who Can Observe?"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># Enclosure: Who Can Observe? {#sec-ch-02-enclosure}</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>In the sixteenth and seventeenth centuries, across England and Scotland, common pastures and woodlands that had been used collectively for generations were fenced off by landowners and Parliament. The legal instruments were workmanlike. The consequences were not. Villagers who had grazed sheep on the commons, gathered firewood from shared stands, and gleaned fallen grain from open fields found themselves dependent on wage labor, migrating to cities, or both. Enclosure was not a failure of the commons. It was a project, by those with power, to convert shared resources into private ones, often with the language of improvement attached.</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>James Boyle <span class="co">[</span><span class="ot">-@boyle2017</span><span class="co">]</span> argued two decades ago that a "second enclosure movement" was underway, this time over ideas, code, and data. Patents expanded. Copyright terms stretched. Public-domain materials were fenced behind paywalls and click-through agreements. That framing remains useful, but the enclosure most relevant to this book has moved past ideas and into observation itself. The question public interest data science asks is not only *what can I license?* but *what can I see in the first place?* The answer, for a researcher in the mid-2020s, is less than it was a decade ago, and the trajectory is not accidental. Following Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span>, you can read the withdrawal of research access as an attack on the installed base introduced in @sec-ch-01-introduction: when linkability, interpretability, and safe scrutiny are removed, "public interest" becomes a slogan without an operational grip.</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## The last ten years, briefly</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>The easiest way to feel enclosure as a data scientist is to list retrievals you could have done ten years ago and try them today. A decent starter list:</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pull one percent of public tweets through the Twitter streaming API, filtered by keyword, for a dissertation on political discourse.</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Fetch the complete comment history of a subreddit from Pushshift, with timestamps and scores, for a study of moderation.</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Download the pre-2017 version of the EPA's environmental-justice screening data, with the variable definitions as of that date.</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Query Facebook's Graph API for public-page posts about a municipal election.</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Retrieve CrowdTangle data on viral content during a disaster.</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>Each was a routine graduate-student assignment within the last decade. None is routine now. Some are technically possible through partnerships most researchers cannot access. Some are impossible. Some have been replaced by expensive commercial products whose terms forbid the reuse the original data supported. Bruns <span class="co">[</span><span class="ot">-@bruns2019</span><span class="co">]</span> called this shift the **APIcalypse**: platforms that depended on researcher goodwill in their growth phase have, in their extraction phase, decided that goodwill is an expensive luxury.</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>Twitter (now X) is the sharpest case because the timeline is easiest to reconstruct. From 2006 through early 2023, the platform's API included a credible research tier, and an enormous empirical literature grew out of it. In February 2023 the company announced that free API access would end; the replacement pricing tiers start in the tens of thousands of dollars per month for the volumes a real research project requires. Academics who had built longitudinal panels over a decade watched them become unrenewable.</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>Reddit's trajectory followed, faster and with more open advocacy against researchers. Pushshift, a volunteer-run archive that had collected and served Reddit data since 2015, shut down its public API in April 2023 after Reddit revoked its credentials. Reddit's own API pricing, announced weeks later, pushed third-party clients (including accessibility tools like Apollo) out of the ecosystem and put researcher access behind tiers that, for any nontrivial use, meant six-figure bills. Gaffney and Matias <span class="co">[</span><span class="ot">-@gaffney2018</span><span class="co">]</span> had already documented silent gaps in Pushshift's mirror, which compounded the loss: not only is the new data expensive, the old data you thought you had is incomplete, and you cannot fill it in.</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>Government data portals are a quieter case and, for that reason, one you should watch more carefully. When a federal agency reorganizes, variable names change. When a political appointee prefers different framings, dataset landing pages are rewritten. When budgets contract, legacy portals stop updating and older vintages are "archived," which is sometimes a euphemism for delisted. The 2017 withdrawal of climate-change pages from the EPA website was the loud case; the quiet cases happen constantly, and @sec-ch-04-erosion treats the failure mode in detail. Enclosure and erosion are siblings: one restricts access, the other dissolves the object of access, and both shift the ground under public-interest work.</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>The political economy underneath these cases is not mysterious. Wu <span class="co">[</span><span class="ot">-@wu2021</span><span class="co">]</span> describes the current configuration as a new Gilded Age of concentrated platform power. A handful of firms hold the data that describes contemporary public life. Their incentives run toward monetizing that data through advertising, model training, and partnerships, and away from letting outsiders audit it. "Partnership" is doing a lot of work in that sentence. It means the firms will sometimes share data with other firms, with favored labs, and with governments, under NDAs. It almost never means they will share it with journalists, civil-society researchers, or the public.</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reading what the platform tells you you can do</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>Before you write any code, read what the platform says about your presence. There are two documents every serious scraper consults: <span class="in">`robots.txt`</span> and the site's Terms of Service. Neither is a law. Both are signals, and you ignore them at your peril, both ethically and practically.</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>A <span class="in">`robots.txt`</span> file is served at the root of a domain and tells automated agents which paths are and are not welcome. The Robots Exclusion Protocol dates to 1994 and was standardized as RFC 9309 in 2022. It lives at <span class="in">`https://example.com/robots.txt`</span>. Fetching it is a one-line task:</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> urllib.robotparser</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>rp <span class="op">=</span> urllib.robotparser.RobotFileParser()</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>rp.set_url(<span class="st">"https://en.wikipedia.org/robots.txt"</span>)</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>rp.read()</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>rp.can_fetch(<span class="st">"PublicInterestDataScience/0.1"</span>, <span class="st">"/wiki/Public_interest"</span>)</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; True</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>rp.can_fetch(<span class="st">"PublicInterestDataScience/0.1"</span>,</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>             <span class="st">"/w/index.php?title=Special:Export"</span>)</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; False (or True; check what Wikipedia's file actually says today)</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>Python's standard library parser returns <span class="in">`True`</span> or <span class="in">`False`</span> for a given path and user agent. It will also surface the crawl-delay the site suggests, if one is present, and the sitemap URL if the file advertises one.</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>Terms of Service are the harder document because they are written by lawyers who assume you will not read them. Researchers have lived in the shadow of the U.S. Computer Fraud and Abuse Act (CFAA) on this point, because for a long time it was unclear whether violating a ToS could be prosecuted as "unauthorized access" under the statute. The *Sandvig v. Barr* litigation <span class="co">[</span><span class="ot">@aclu2019</span><span class="co">]</span> established in 2020 that academic research violating a ToS is not by that fact alone a criminal CFAA violation. That is a meaningful ruling and not a blanket license. You can still be sued in civil court, banned from the platform, served with a cease-and-desist, or (if your institution values its industry relationships) quietly asked to stop. Read the ToS, document what you read, and know which clauses you are relying on and which you are departing from and why.</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="The Missing Manual"}</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>A request from <span class="in">`requests.get(url)`</span> with no <span class="in">`User-Agent`</span> header does not arrive at a modern server as "anonymous." It arrives as <span class="in">`python-requests/2.31.0`</span>, which is the default and is the single fastest way to get 403'd by a CDN that has blocklisted it by policy. Cloudflare, Fastly, and Akamai maintain lists of default agents used by common scraping libraries. Set a descriptive <span class="in">`User-Agent`</span> that names your project and a contact email. If the server operator needs to tell you to stop, you want them to be able to email you rather than silently ban your subnet. A polite scraper is also a scraper that keeps running.</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## A responsible scraper, from scratch</span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>You will reuse the function below, in one form or another, across the remaining chapters. The design goals are plain: every request identifies itself, respects <span class="in">`robots.txt`</span> by default, rate-limits, retries on transient errors, and fails loudly on permanent ones.</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logging</span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> urlparse</span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.robotparser <span class="im">import</span> RobotFileParser</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>log <span class="op">=</span> logging.getLogger(<span class="st">"responsible_scraper"</span>)</span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>DEFAULT_UA <span class="op">=</span> (</span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PublicInterestDataScience/0.1 "</span></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>    <span class="st">"(+https://github.com/yourname/pids-book; you@example.edu)"</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> check_robots(url, user_agent<span class="op">=</span>DEFAULT_UA):</span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return True if robots.txt allows user_agent to fetch url."""</span></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>    parsed <span class="op">=</span> urlparse(url)</span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>    robots_url <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>parsed<span class="sc">.</span>scheme<span class="sc">}</span><span class="ss">://</span><span class="sc">{</span>parsed<span class="sc">.</span>netloc<span class="sc">}</span><span class="ss">/robots.txt"</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>    rp <span class="op">=</span> RobotFileParser()</span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>        rp.set_url(robots_url)</span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>        rp.read()</span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> exc:</span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a>        log.warning(<span class="st">"Could not read </span><span class="sc">%s</span><span class="st">: </span><span class="sc">%s</span><span class="st">"</span>, robots_url, exc)</span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Conservative default: if we can't read robots.txt, assume we</span></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>        <span class="co"># should not fetch. Override explicitly if you know better.</span></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> rp.can_fetch(user_agent, url)</span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> polite_get(</span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>    url,</span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>    headers<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>    params<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>    user_agent<span class="op">=</span>DEFAULT_UA,</span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>    min_interval<span class="op">=</span><span class="fl">1.0</span>,</span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>    max_retries<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>    backoff<span class="op">=</span><span class="fl">2.0</span>,</span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>    timeout<span class="op">=</span><span class="dv">30</span>,</span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>    respect_robots<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>):</span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Fetch a URL with rate limiting, retries, and a named User-Agent.</span></span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns a requests.Response on success.</span></span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a><span class="co">    Raises requests.HTTPError on non-retryable failure.</span></span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> respect_robots <span class="kw">and</span> <span class="kw">not</span> check_robots(url, user_agent<span class="op">=</span>user_agent):</span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">PermissionError</span>(<span class="ss">f"robots.txt disallows fetching </span><span class="sc">{</span>url<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>    hdrs <span class="op">=</span> {<span class="st">"User-Agent"</span>: user_agent, <span class="st">"Accept"</span>: <span class="st">"application/json"</span>}</span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> headers:</span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>        hdrs.update(headers)</span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>    last_err <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> attempt <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, max_retries <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>            response <span class="op">=</span> requests.get(</span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>                url, headers<span class="op">=</span>hdrs, params<span class="op">=</span>params, timeout<span class="op">=</span>timeout</span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> requests.RequestException <span class="im">as</span> exc:</span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>            last_err <span class="op">=</span> exc</span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>            log.warning(<span class="st">"Attempt </span><span class="sc">%d</span><span class="st">: network error </span><span class="sc">%s</span><span class="st">"</span>, attempt, exc)</span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> response.status_code <span class="kw">in</span> (<span class="dv">429</span>, <span class="dv">500</span>, <span class="dv">502</span>, <span class="dv">503</span>, <span class="dv">504</span>):</span>
+<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a>                log.warning(</span>
+<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Attempt </span><span class="sc">%d</span><span class="st">: status </span><span class="sc">%s</span><span class="st"> from </span><span class="sc">%s</span><span class="st">"</span>,</span>
+<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a>                    attempt, response.status_code, url,</span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a>                last_err <span class="op">=</span> requests.HTTPError(response<span class="op">=</span>response)</span>
+<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>                response.raise_for_status()</span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>                time.sleep(min_interval)</span>
+<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> response</span>
+<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a>        time.sleep(backoff <span class="op">**</span> attempt)</span>
+<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> last_err <span class="kw">or</span> <span class="pp">RuntimeError</span>(<span class="st">"polite_get exhausted retries"</span>)</span>
+<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a>A few design choices are worth naming. The function accepts a <span class="in">`respect_robots`</span> flag that defaults to <span class="in">`True`</span>. You should need a reason to flip it, and you should write that reason into a comment in the calling code, not just your head. The function treats 429 and 5xx responses as retryable with exponential backoff, and 4xx responses as permanent failures. It sleeps a minimum interval after every successful call, which is the crudest form of rate limiting and the one that gets you the furthest. A production version would honor the <span class="in">`Retry-After`</span> header, cache responses to disk, and emit structured logs. Your exercises will push you toward those features.</span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>Using it looks like any other <span class="in">`requests`</span> call, with a politer footprint:</span>
+<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> polite_get(</span>
+<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/"</span></span>
+<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a>    <span class="st">"en.wikipedia/all-access/user/Enclosure/monthly/"</span></span>
+<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2015010100/2024123100"</span></span>
+<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a>items <span class="op">=</span> response.json()[<span class="st">"items"</span>]</span>
+<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a>If you want to scrape a site whose <span class="in">`robots.txt`</span> disallows you, stop and think. Sometimes there is a legitimate scholarly reason to proceed (a platform has disallowed a path that is uncontroversially public, a journalism project has counsel's blessing, a court order is in hand). More often the disallow signals a norm you should respect. The function makes respecting it the default. Refusal, as @sec-ch-16-critical-data-studies-refusal will develop, runs in both directions: platforms can refuse researchers, and researchers can refuse requests even when a platform invites them. Zong and Matias <span class="co">[</span><span class="ot">-@zong2024</span><span class="co">]</span> treat refusal by data subjects as a legitimate counter-move within an asymmetric information environment.</span>
+<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a><span class="fu">## A worked timeline: Reddit access, 2015–2024</span></span>
+<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a>Pick one platform and write its access history as a structured timeline. The exercise forces you to treat enclosure as a series of concrete decisions rather than a diffuse climate. Reddit is useful because the dates are public and the consequences are well-documented. The table below is a first pass; Exercise 2.4 asks you to extend and verify it.</span>
+<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Year <span class="pp">|</span> Event <span class="pp">|</span> Consequence for researchers <span class="pp">|</span></span>
+<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|-------|------------------------------|</span></span>
+<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2015 <span class="pp">|</span> Pushshift begins continuous archiving of Reddit submissions and comments. <span class="pp">|</span> A reasonably complete corpus of Reddit becomes queryable through a free API. <span class="pp">|</span></span>
+<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2018 <span class="pp">|</span> Gaffney and Matias <span class="co">[</span><span class="ot">-@gaffney2018</span><span class="co">]</span> document silent gaps in the Pushshift mirror. <span class="pp">|</span> Researchers learn the archive is incomplete; many published studies rest on the incomplete slice. <span class="pp">|</span></span>
+<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2020 <span class="pp">|</span> COVID-19 drives a surge in computational social science using Reddit data. <span class="pp">|</span> Demand on Pushshift grows; the corpus becomes de facto infrastructure for a subfield. <span class="pp">|</span></span>
+<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> April 2023 <span class="pp">|</span> Reddit revokes Pushshift's API credentials. Reddit announces API pricing. <span class="pp">|</span> The public Pushshift API goes dark. Third-party clients (Apollo, Reddit Enhancement Suite) exit or retreat. <span class="pp">|</span></span>
+<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> June 2023 <span class="pp">|</span> Large subreddits go private in protest ("the blackout"). <span class="pp">|</span> Moderator labor, the free substrate of Reddit's data, becomes briefly legible as labor. <span class="pp">|</span></span>
+<span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Late 2023 <span class="pp">|</span> Reddit signs data-licensing deal with Google for model training. <span class="pp">|</span> Data refused to researchers is sold, as training data, to a firm that can afford it. <span class="pp">|</span></span>
+<span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2024 <span class="pp">|</span> Reddit files for IPO; discloses API licensing as revenue. <span class="pp">|</span> The economic logic of enclosure is explicit in the S-1: researcher access was competing with shareholder value. <span class="pp">|</span></span>
+<span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a>Two observations follow from the table. First, the shutdown was not only a loss of new data. It was a loss of old data, because the archive that held the historical corpus lost the credential it needed to keep serving what it had already collected. The object of study and the infrastructure of study collapsed together. @sec-ch-22-archival-deposits pushes you toward archival deposits you control rather than ones you rent.</span>
+<span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-177"><a href="#cb4-177" aria-hidden="true" tabindex="-1"></a>Second, the same data the platform withdrew from researchers was, in the same calendar year, sold to a commercial AI firm. That is the asymmetry to sit with. Enclosure is not simply "the platform closed up." It is "the platform closed *you* out while opening further to capital." Acker and Kreisberg <span class="co">[</span><span class="ot">-@acker2019</span><span class="co">]</span> saw this pattern coming in their work on social-media archives; Suzor and colleagues <span class="co">[</span><span class="ot">-@suzor2018</span><span class="co">]</span> locate it within a broader problem of platform governance legitimacy.</span>
+<span id="cb4-178"><a href="#cb4-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-179"><a href="#cb4-179" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="In the Public Interest"}</span>
+<span id="cb4-180"><a href="#cb4-180" aria-hidden="true" tabindex="-1"></a>What is at stake here is **openness** as defined in @sec-ch-06-openness: the condition under which a public can scrutinize the systems that affect it. Openness is not a synonym for "the data is downloadable." It is a working arrangement in which researchers, journalists, regulators, and affected communities can observe enough to raise evidence-based questions. When platforms cut off independent researchers while retaining partnerships with large firms and governments, they do not abolish observation. They reallocate it. Observation continues, but it flows toward private interests and away from public ones. Naming this as an openness failure, rather than a business decision, is the first move that lets you push back. @sec-ch-07-oversight and @sec-ch-08-ownership extend the argument into regulatory and distributional registers.</span>
+<span id="cb4-181"><a href="#cb4-181" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-182"><a href="#cb4-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-183"><a href="#cb4-183" aria-hidden="true" tabindex="-1"></a><span class="fu">## The asymmetry of observation</span></span>
+<span id="cb4-184"><a href="#cb4-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-185"><a href="#cb4-185" aria-hidden="true" tabindex="-1"></a>The previous two sections should have left you with an uncomfortable picture. The firms that hold the data describing contemporary public life can observe their users in extraordinary detail. They partner with other firms and with governments to extend that observation. They cut off the outside parties whose scrutiny would be inconvenient. The parties who remain (journalists, academics, civil-society groups) are left with robots.txt files, HTML-scraped fragments, and the occasional leaked dataset. The asymmetry is not between observers and the unobserved. It is between two classes of observers.</span>
+<span id="cb4-186"><a href="#cb4-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-187"><a href="#cb4-187" aria-hidden="true" tabindex="-1"></a>That asymmetry has consequences for what you should try to build. First, assume your access is temporary and plan for its withdrawal: @sec-ch-05-installed-base and @sec-ch-22-archival-deposits push you toward architectures where your data has a resolvable identifier and a home that outlives any single platform. Second, be honest about the limits of what you can observe: a study that conditions on platform-provided data is a study of what the platform chose to show you, and naming that is part of the work rather than a methods-section apology. Third, refusal is available. If the terms of access are corrosive (an NDA that prevents you from naming the firm, an exclusivity clause that bars you from sharing derived data with colleagues), you can decline, and @sec-ch-16-critical-data-studies-refusal will argue that sometimes you should.</span>
+<span id="cb4-188"><a href="#cb4-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-189"><a href="#cb4-189" aria-hidden="true" tabindex="-1"></a>Public-interest data science cannot rely exclusively on large commercial platforms. The installed base this book is building toward includes government open data, civic datasets, court records, FOIA-wrested documents, historical archives, and the output of researchers willing to publish collected data under permissive licenses. Each of those sources has its own pressures (Chapter 3 takes up exemption, Chapter 4 takes up erosion), but none of them has an S-1 that treats your access as lost revenue. Diversifying your substrate of observation is a strategic response to enclosure.</span>
+<span id="cb4-190"><a href="#cb4-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-191"><a href="#cb4-191" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
+<span id="cb4-192"><a href="#cb4-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-193"><a href="#cb4-193" aria-hidden="true" tabindex="-1"></a>**Exercise 2.1 (Guided).** Fetch and read the <span class="in">`robots.txt`</span> files for three platforms. Recommended triple: Wikipedia, Reddit, and a large newspaper site (for example, nytimes.com). Use <span class="in">`urllib.robotparser`</span> to check whether your <span class="in">`User-Agent`</span> would be permitted on five paths per site. Write a 200-word comparison: which site is most permissive, which most restrictive, and which surprised you.</span>
+<span id="cb4-194"><a href="#cb4-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-195"><a href="#cb4-195" aria-hidden="true" tabindex="-1"></a>**Exercise 2.2 (Guided).** Implement the <span class="in">`polite_get`</span> function from scratch, without copying the listing above. Add one feature the book's version lacks: either honor the <span class="in">`Retry-After`</span> header on 429 responses, or cache successful responses to a local SQLite database keyed by URL so that repeated fetches during development do not re-hit the server. Commit the function with a docstring explaining your added feature and a test that exercises it against a public endpoint.</span>
+<span id="cb4-196"><a href="#cb4-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-197"><a href="#cb4-197" aria-hidden="true" tabindex="-1"></a>**Exercise 2.3 (Analytic).** Pick one platform whose data you expect to use in your final project. Download its current Terms of Service to a dated file (for example, `exercises/ch02_tos/reddit_2026-04-23.txt`). Annotate paragraph by paragraph with four marks: **R** for clauses that restrict research uses, **P** for clauses that permit them, **A** for ambiguity you would need counsel to resolve, and **L** for language that relies on unstable definitions ("public content," "non-commercial," "API partner"). Submit the annotated file and a 300-word summary of what a research plan can and cannot do under the current ToS.</span>
+<span id="cb4-198"><a href="#cb4-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-199"><a href="#cb4-199" aria-hidden="true" tabindex="-1"></a>**Exercise 2.4 (Analytic).** Extend the Reddit timeline. Add three rows from publicly reported events since 2024, with citations. Then write a second timeline, in the same format, for a different platform (Twitter/X, Facebook, TikTok, YouTube, or a government data portal). Cover at least eight years and at least five distinct access events. Cite the source for each date; prefer primary documents (official announcements, court filings, congressional testimony) over secondary reporting where both exist.</span>
+<span id="cb4-200"><a href="#cb4-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-201"><a href="#cb4-201" aria-hidden="true" tabindex="-1"></a>**Exercise 2.5 (Open-ended).** Revisit the project sketch from Exercise 1.5. Identify the single dataset whose availability would most determine whether your project is possible. Write a 500-word accessibility memo covering: who controls the data; under what terms it is accessible; what pathways exist (public download, API, FOIA request, institutional partnership, commercial license); the cost and timeline of each pathway; what has happened to the data's accessibility over the last five years; and what fallback datasets you would use if the primary became unavailable. Save as <span class="in">`exercises/ch02_access_memo.md`</span>. You will return to this memo in Chapter 19 and Chapter 22.</span>
+<span id="cb4-202"><a href="#cb4-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-203"><a href="#cb4-203" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking ahead</span></span>
+<span id="cb4-204"><a href="#cb4-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-205"><a href="#cb4-205" aria-hidden="true" tabindex="-1"></a>Enclosure is the first of three pressures this part diagnoses. Chapter 3 takes up exemption: even when data can be observed, certain actors are under no obligation to answer for what it describes. Law-enforcement agencies exempt from FOIA. Vendors whose contracts shield them from disclosure. Private actors performing public functions without the accountability attached. If enclosure asks *who can observe?*, exemption asks *who must answer?*</span>
+<span id="cb4-206"><a href="#cb4-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-207"><a href="#cb4-207" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading and Resources</span></span>
+<span id="cb4-208"><a href="#cb4-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-209"><a href="#cb4-209" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Axel Bruns (2019), "After the 'APIcalypse': Social media platforms and their fight against critical scholarly research," *Information, Communication &amp; Society* 22(11). The article that gave the post-2018 shift its name.</span>
+<span id="cb4-210"><a href="#cb4-210" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>James Boyle (2008), *The Public Domain: Enclosing the Commons of the Mind*. Duke University Press. Open-access at <span class="ot">&lt;https://www.thepublicdomain.org/&gt;</span>. The enclosure analogy in its fullest form.</span>
+<span id="cb4-211"><a href="#cb4-211" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Robots Exclusion Protocol, RFC 9309 (2022): <span class="ot">&lt;https://www.rfc-editor.org/rfc/rfc9309.html&gt;</span>. A short, readable standardization most scrapers violate out of ignorance.</span>
+<span id="cb4-212"><a href="#cb4-212" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Jonathan Zong and J. Nathan Matias (2024), "Data refusal from below." The complement to this chapter: when enclosure is not the problem, refusal might be.</span>
+<span id="cb4-213"><a href="#cb4-213" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Reddit's API pricing announcement (June 2023) and the original Pushshift shutdown notice, both reachable from <span class="ot">&lt;https://www.reddit.com/r/modnews/&gt;</span> archives. Primary documents for Exercise 2.4.</span>
+<span id="cb4-214"><a href="#cb4-214" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The Internet Archive's Wayback Machine, <span class="ot">&lt;https://web.archive.org/&gt;</span>. When a platform retires a dataset, often the only remaining record of what was public. You will use it constantly.</span>
+<span id="cb4-215"><a href="#cb4-215" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Electronic Frontier Foundation, "Coders' Rights Project," <span class="ot">&lt;https://www.eff.org/issues/coders&gt;</span>. Plain-language summaries of the CFAA, DMCA, and related statutes.</span>
+<span id="cb4-216"><a href="#cb4-216" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Knight First Amendment Institute, <span class="ot">&lt;https://knightcolumbia.org/research&gt;</span>. Ongoing litigation and policy work on the legal scaffolding of observation.</span>
+<span id="cb4-217"><a href="#cb4-217" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Wikimedia Foundation's research ethics and tool policies, <span class="ot">&lt;https://meta.wikimedia.org/wiki/Research:Ethics&gt;</span>. An instructive contrast: what a platform looks like when it wants researchers to study it.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-02-enclosure.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

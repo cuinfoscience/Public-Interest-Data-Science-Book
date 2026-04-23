@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
+
+<title>4&nbsp; Exemption: Who Must Answer? – Public Interest Data Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch-04-erosion.html" rel="next">
+<link href="./ch-02-enclosure.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3960f907883494f1151aa7142734774f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d783d5094f66403aace2499abad0c8ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3960f907883494f1151aa7142734774f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch-01-introduction.html">Pressures</a></li><li class="breadcrumb-item"><a href="./ch-03-exemption.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Public Interest Data Science</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Public-Interest-Data-Science.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Public-Interest-Data-Science.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Pressures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-02-enclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure: Who Can Observe?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-03-exemption.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-04-erosion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Erosion: What Can Be Remembered?</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Values</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-05-installed-base.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Installed Base</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-06-openness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Openness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-07-oversight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Oversight</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-08-ownership.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ownership</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lineages</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-09-journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-10-law.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Law</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-11-accounting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-12-planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-13-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Engineering</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Adjacent Conversations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-14-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-15-govtech-civic-tech.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-16-critical-data-studies-refusal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Genres</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-17-op-eds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Op-Eds</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-18-reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-19-research-proposals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Research Proposals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-20-testimony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Testimony</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-21-public-comments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Public Comments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-22-archival-deposits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Archival Deposits</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#sec-ch-03-exemption" id="toc-sec-ch-03-exemption" class="nav-link active" data-scroll-target="#sec-ch-03-exemption"><span class="header-section-number">5</span> Exemption: Who Must Answer?</a>
+  <ul class="collapse">
+  <li><a href="#two-kinds-of-exemption" id="toc-two-kinds-of-exemption" class="nav-link" data-scroll-target="#two-kinds-of-exemption"><span class="header-section-number">5.1</span> Two kinds of exemption</a></li>
+  <li><a href="#allegheny-family-screening-tool-as-a-public-object" id="toc-allegheny-family-screening-tool-as-a-public-object" class="nav-link" data-scroll-target="#allegheny-family-screening-tool-as-a-public-object"><span class="header-section-number">5.2</span> Allegheny Family Screening Tool, as a public object</a></li>
+  <li><a href="#the-evidence-ledger" id="toc-the-evidence-ledger" class="nav-link" data-scroll-target="#the-evidence-ledger"><span class="header-section-number">5.3</span> The evidence ledger</a></li>
+  <li><a href="#reading-the-deployed-model-from-the-outside" id="toc-reading-the-deployed-model-from-the-outside" class="nav-link" data-scroll-target="#reading-the-deployed-model-from-the-outside"><span class="header-section-number">5.4</span> Reading the deployed model from the outside</a></li>
+  <li><a href="#when-the-state-is-the-adversary-syri-and-after" id="toc-when-the-state-is-the-adversary-syri-and-after" class="nav-link" data-scroll-target="#when-the-state-is-the-adversary-syri-and-after"><span class="header-section-number">5.5</span> When the state is the adversary: SyRI and after</a></li>
+  <li><a href="#practical-exemption-as-a-design-choice" id="toc-practical-exemption-as-a-design-choice" class="nav-link" data-scroll-target="#practical-exemption-as-a-design-choice"><span class="header-section-number">5.6</span> Practical exemption as a design choice</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5.7</span> Exercises</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">5.8</span> Looking ahead</a></li>
+  <li><a href="#further-reading-and-resources" id="toc-further-reading-and-resources" class="nav-link" data-scroll-target="#further-reading-and-resources"><span class="header-section-number">5.9</span> Further Reading and Resources</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-03-exemption.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch-01-introduction.html">Pressures</a></li><li class="breadcrumb-item"><a href="./ch-03-exemption.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-ch-03-exemption" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Exemption: Who Must Answer?</h1>
+<p>Chapter 2 described a world in which what a researcher can observe is shrinking. This chapter is about a related but distinct problem. Suppose you <em>can</em> observe the outputs of a system. They are already on a published spreadsheet, or in a press release, or scrolling through a caseworker’s terminal. Who is obliged to explain how they were produced? Who has to answer when they go wrong? In the United States in the mid-2020s, the honest answer for a remarkable share of consequential automated decisions is: no one with enforceable authority, on any clock a parent or a journalist or a state legislator can use.</p>
+<p>Enclosure asks <em>who can observe?</em> Exemption asks <em>who must answer?</em> Enclosure operates through the terms of access to data. Exemption operates through trade-secret law, procurement contracts, qualified immunity, sovereign immunity, statutory carve-outs from freedom-of-information regimes, and the simple fact that many public agencies run proprietary software they did not build and cannot fully inspect. Pasquale <span class="citation" data-cites="pasquale2016">(<a href="#ref-pasquale2016" role="doc-biblioref">2016</a>)</span> named this the <em>black box society</em>: a condition in which the scoring and sorting machinery that organizes credit, insurance, hiring, and policing is legally and practically sealed off from the people it sorts. A decade later, the black box has migrated further into the machinery of the state itself. When the exempt actor is a commercial platform, you can at least pretend to buy your way in or shame your way in. When the exempt actor is the state, using a vendor’s system to decide who gets a benefit, the pretense collapses.</p>
+<p>This chapter takes up two cases. The long example is the Allegheny Family Screening Tool (AFST), a risk-scoring system used by the Allegheny County, Pennsylvania child-welfare hotline since 2016. AFST is unusually well-documented for a government-deployed risk score, and you will build an evidence ledger for it from public sources. The short comparison is the Dutch state’s Systeem Risico Indicatie (SyRI) and the childcare-benefits fraud detection system that prompted the <em>toeslagenaffaire</em> scandal. The Dutch cases matter because they are the rare examples in which a national court found an automated decision system unlawful and shut it down <span class="citation" data-cites="syri2020">(<a href="#ref-syri2020" role="doc-biblioref">District Court of The Hague 2020</a>)</span>. Reading the U.S. case against the Dutch one tells you which claims about opacity have purchase, and in which legal climates.</p>
+<section id="two-kinds-of-exemption" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="two-kinds-of-exemption"><span class="header-section-number">5.1</span> Two kinds of exemption</h2>
+<p>Separate <strong>legal exemption</strong> from <strong>practical exemption</strong> before you go near a keyboard.</p>
+<p>Legal exemption is the carved-out space where disclosure obligations do not reach. Trade-secret protections under the Defend Trade Secrets Act and state analogues travel with a vendor into a public agency’s procurement file. FOIA exemptions 4 (trade secrets) and 7 (law enforcement) are routinely invoked to withhold model specifications, training data, and performance audits. The Computer Fraud and Abuse Act (CFAA) historically chilled independent testing: until <em>Sandvig v. Barr</em> <span class="citation" data-cites="aclu2019">(<a href="#ref-aclu2019" role="doc-biblioref">American Civil Liberties Union 2019</a>)</span>, academic auditors faced credible threat of federal criminal prosecution for creating test accounts that violated a platform’s terms. <em>Sandvig</em> narrowed that risk for academic research but did not eliminate civil exposure and did not reach state-level computer crime laws. Terms-of-service bindings tie back to <a href="ch-02-enclosure.html" class="quarto-xref"><span>Chapter 4</span></a>: what the vendor’s lawyers wrote at procurement time continues to govern what the public can ask later.</p>
+<p>Practical exemption is the larger space. Even where the law would require disclosure, the route is slow, fragmented, and under-enforced. A reporter who files a state open-records request for a vendor contract waits six months and receives a PDF with most of its text redacted. A parent whose family was screened out of services reads a denial letter citing an “assessment” without naming the model, the version, the features, or the threshold. The information exists. Nobody is obliged to aggregate it. Exemption does not require secrecy. It only requires that the cost of reconstructing the picture exceed what a citizen, a reporter, or an underfunded NGO can afford. Fragmentation is the weapon.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>In the Public Interest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Oversight</strong>, as <a href="ch-07-oversight.html" class="quarto-xref"><span>Chapter 9</span></a> will develop it, is not a property of a single document. It is a property of the <em>linkage</em> between documents: a procurement contract that names a vendor, a model card that describes that vendor’s system, a FOIA response that discloses subgroup performance, a court filing that tests a denied claim. Exemption thrives on fragmentation because each artifact taken alone is plausible. The contract does not mention the model by name. The model card does not mention the contract. The denial letter mentions neither. Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> calls this the <strong>linkability</strong> element of the installed base, and without it, oversight is a collection of disconnected complaints. Public-interest data science is, in part, the patient reconstruction of linkages the system was designed to leave broken.</p>
+</div>
+</div>
+</section>
+<section id="allegheny-family-screening-tool-as-a-public-object" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="allegheny-family-screening-tool-as-a-public-object"><span class="header-section-number">5.2</span> Allegheny Family Screening Tool, as a public object</h2>
+<p>Allegheny County’s Office of Children, Youth and Families receives roughly fifteen thousand child-welfare referrals a year. Since August 2016, hotline call screeners have seen, alongside the case narrative, a risk score produced by the Allegheny Family Screening Tool. The score estimates the probability that a child named in the referral will be re-referred, removed from the home, or placed in foster care within a defined window. A screener uses the score as one input in deciding whether to open a formal investigation.</p>
+<p>Eubanks <span class="citation" data-cites="eubanks2018">(<a href="#ref-eubanks2018" role="doc-biblioref">2018</a>)</span> treated AFST in <em>Automating Inequality</em> as a paradigmatic case of a predictive instrument that extends state surveillance into poor families under the rubric of decision support. The county and the research team have disputed some characterizations and affirmed others. AFST is unusual in that a reader who wants to know how the system works can assemble a nontrivial picture from public sources. It is also typical in that the picture is incomplete, and the incompleteness is not random.</p>
+</section>
+<section id="the-evidence-ledger" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="the-evidence-ledger"><span class="header-section-number">5.3</span> The evidence ledger</h2>
+<p>The technique is deliberately unglamorous. Read every public document you can find about the system. For each, record what it tells you and, just as importantly, what it does not. The <code>pandas</code> DataFrame below is an <em>evidence ledger</em>: a structured record of provenance that makes gaps visible on the same footing as findings.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> [</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"source"</span>: <span class="st">"Allegheny County RFP and vendor selection memo"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"date"</span>: <span class="st">"2014-11"</span>, <span class="st">"type"</span>: <span class="st">"procurement"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_tells_us"</span>: <span class="st">"Names Auckland University of Technology's "</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Centre for Social Data Analytics as the selected team; "</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">"lists the data systems to be integrated."</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_doesnt"</span>: <span class="st">"Does not disclose the price, the model "</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">"family, or the performance targets the vendor was "</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">"expected to meet."</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"source"</span>: <span class="st">"Vaithianathan et al. methodology report"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"date"</span>: <span class="st">"2019-04"</span>, <span class="st">"type"</span>: <span class="st">"technical_report"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_tells_us"</span>: <span class="st">"Describes feature engineering on 131 "</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            <span class="st">"variables from the county data warehouse; reports AUC "</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>            <span class="st">"and calibration on historical data."</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_doesnt"</span>: <span class="st">"Does not disclose the production decision "</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>            <span class="st">"threshold, the retraining cadence, or subgroup "</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>            <span class="st">"performance on race and ethnicity as deployed."</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"source"</span>: <span class="st">"Chouldechova et al., FAccT 2018"</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"date"</span>: <span class="st">"2018-02"</span>, <span class="st">"type"</span>: <span class="st">"peer_reviewed"</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_tells_us"</span>: <span class="st">"Subgroup accuracy and error-rate "</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>            <span class="st">"disparity analysis on a research version of the model."</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_doesnt"</span>: <span class="st">"Research version is not identical to the "</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>            <span class="st">"fielded tool; ground-truth labels are proxies, which "</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>            <span class="st">"the authors acknowledge."</span>,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">"source"</span>: <span class="st">"Eubanks, Automating Inequality, ch. 4"</span>,</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>        <span class="st">"date"</span>: <span class="st">"2018-01"</span>, <span class="st">"type"</span>: <span class="st">"book"</span>,</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_tells_us"</span>: <span class="st">"Situates AFST within the county's "</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>            <span class="st">"broader data integration project; documents community "</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>            <span class="st">"concerns and the surveillance/referral feedback loop."</span>,</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_doesnt"</span>: <span class="st">"Cannot speak to model changes after 2017 "</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>            <span class="st">"fieldwork; the tool has been revised multiple times."</span>,</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>        <span class="st">"source"</span>: <span class="st">"Associated Press / Ho and Burke"</span>,</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">"date"</span>: <span class="st">"2022-04"</span>, <span class="st">"type"</span>: <span class="st">"press"</span>,</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_tells_us"</span>: <span class="st">"Reports DOJ civil-rights inquiry into "</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>            <span class="st">"disability-based discrimination in the tool's deployment."</span>,</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_doesnt"</span>: <span class="st">"DOJ inquiry materials are not public; we "</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>            <span class="st">"learn an inquiry exists but not what it found."</span>,</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>evidence <span class="op">=</span> pd.DataFrame(rows)</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>evidence[<span class="st">"date"</span>] <span class="op">=</span> pd.to_datetime(evidence[<span class="st">"date"</span>])</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>evidence <span class="op">=</span> evidence.sort_values(<span class="st">"date"</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; 5 rows, columns: source, date, type, what_it_tells_us, what_it_doesnt</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>gaps <span class="op">=</span> evidence[[<span class="st">"date"</span>, <span class="st">"source"</span>, <span class="st">"what_it_doesnt"</span>]]</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>gaps.to_csv(<span class="st">"afst_gaps.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Five rows is not a lot. That is the point. A mature ledger for a deployed municipal system might contain thirty or forty rows, organized by procurement, technical documentation, peer review, press, litigation, and community record. The two columns matter. <code>what_it_tells_us</code> is the affirmative claim you can source-cite. <code>what_it_doesnt</code> is the negative space that tells you what you would still need to file, subpoena, or discover in order to make a stronger claim. A one-column ledger is a bibliography. A two-column ledger is the beginning of an accountability argument.</p>
+<p>Two observations follow. The most technically detailed document (Vaithianathan and colleagues’ methodology report <span class="citation" data-cites="vaithianathan2019">(<a href="#ref-vaithianathan2019" role="doc-biblioref">Vaithianathan et al. 2019</a>)</span>) is useful for understanding the research-time model but silent on the deployed threshold and retraining schedule. The most politically charged finding (the DOJ civil-rights inquiry reported by Ho and Burke <span class="citation" data-cites="ho2022">(<a href="#ref-ho2022" role="doc-biblioref">2022</a>)</span>) is the one where the underlying record is least available: we know an inquiry opened, not what it concluded.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The Missing Manual
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The model card does not say. The methodology report does not say. The procurement memo does not say. Those three silences are themselves data. A standard failure mode of algorithmic-accountability writing is to treat the absence as a rhetorical flourish (“notably, the county does not disclose…”) and move on. Do not move on. Write the absence into the ledger as an object with a date, a source, and a <code>what_it_doesnt</code> entry. You will use it later when you file a records request, when you testify, or when you draft a rulemaking comment. An absence that has a citation is an absence you can litigate. An absence you only gestured at in prose is a complaint.</p>
+</div>
+</div>
+</section>
+<section id="reading-the-deployed-model-from-the-outside" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="reading-the-deployed-model-from-the-outside"><span class="header-section-number">5.4</span> Reading the deployed model from the outside</h2>
+<p>The ledger tells you what documentation exists. It does not tell you how the model is behaving today. For a deployed system, three kinds of external inference are available without breaking any law.</p>
+<p>The first is <strong>decision-record inspection</strong>. Some jurisdictions, including Allegheny County at various points, release aggregate screening statistics: calls screened in, screened out, and referred, broken down by some subset of demographic variables. Those aggregates let you compute, crudely, whether the score’s introduction shifted selection rates overall. They do not let you recover individual decisions.</p>
+<p>The second is <strong>disparate-impact analysis on outcomes</strong>. If you can obtain downstream placement data (via FOIA, a collaborator inside the agency, academic partnership), you can estimate whether scored referrals have different outcomes by race, age, or disability than unscored referrals. The Chouldechova and colleagues FAccT paper <span class="citation" data-cites="chouldechova2018">(<a href="#ref-chouldechova2018" role="doc-biblioref">Chouldechova et al. 2018</a>)</span> is an example of this kind of work on a pre-deployment version.</p>
+<p>The third is <strong>audit-by-adversarial-use</strong>: submitting test cases through the live interface. CFAA exposure still matters here. You would need counsel’s sign-off, institutional cover, and a clear understanding of which <em>Sandvig</em> protections reach your facts. Most municipal child-welfare systems do not expose an API you could query, which is why audit-by-use is rare in this domain and common in hiring and advertising contexts.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Illustrative skeleton only. Do not run against a live agency system.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_selection_rates(decisions):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Aggregate screen-in rates by demographic group.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Input: one row per referral with columns</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">        {referral_id, group, score, screened_in}.</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    g <span class="op">=</span> decisions.groupby(<span class="st">"group"</span>).agg(</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        n<span class="op">=</span>(<span class="st">"referral_id"</span>, <span class="st">"count"</span>),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        screened_in<span class="op">=</span>(<span class="st">"screened_in"</span>, <span class="st">"sum"</span>),</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    g[<span class="st">"rate"</span>] <span class="op">=</span> g[<span class="st">"screened_in"</span>] <span class="op">/</span> g[<span class="st">"n"</span>]</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> g.reset_index()</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected output columns: group, n, screened_in, rate</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>None of this code is the audit. The code is the scaffolding you build so that, when a data-sharing agreement is in place or an agency publishes aggregates, you have somewhere to put the numbers. The substantive work is upstream: negotiating the sharing agreement, filing the records request, obtaining IRB approval. <a href="ch-10-law.html" class="quarto-xref"><span>Chapter 12</span></a> takes up the legal scaffolding in detail.</p>
+</section>
+<section id="when-the-state-is-the-adversary-syri-and-after" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="when-the-state-is-the-adversary-syri-and-after"><span class="header-section-number">5.5</span> When the state is the adversary: SyRI and after</h2>
+<p>The Dutch case inverts a habit U.S. readers bring to these problems. In the United States, the usual adversary in an algorithmic accountability story is a commercial vendor whose system has been adopted by a public agency. The vendor holds the trade-secret claim; the agency carries the disclosure obligation; advocates play them against each other. In SyRI, the adversary was the state itself.</p>
+<p>Systeem Risico Indicatie was a cross-agency data-integration tool that scored households for fraud risk across welfare, taxation, labor, and housing data. It was deployed in targeted neighborhoods beginning in 2014. In February 2020, the District Court of The Hague ruled that SyRI violated Article 8 of the European Convention on Human Rights because the state’s interest in fraud detection did not justify the opacity and breadth of the system <span class="citation" data-cites="syri2020">(<a href="#ref-syri2020" role="doc-biblioref">District Court of The Hague 2020</a>)</span>. The ruling did not turn on the accuracy of the model. It turned on the state’s failure to make the system legible enough for citizens to understand and challenge how they were being assessed. Dutch scholars reading the aftermath <span class="citation" data-cites="deArruda2024">(<a href="#ref-deArruda2024" role="doc-biblioref"><span class="nocase">Arruda and van Schendel</span> 2024</a>)</span> note that successor systems have adapted the legal wrapper without fully abandoning the underlying practice, and that the <em>toeslagenaffaire</em> childcare-benefits scandal exposed a parallel, more damaging pattern in the tax administration.</p>
+<p>Read the childcare-benefits scandal alongside AFST. Amnesty International’s report <span class="citation" data-cites="amnesty2021">(<a href="#ref-amnesty2021" role="doc-biblioref">Amnesty International 2021</a>)</span> documents how the Dutch tax authority used a risk-classification model that flagged dual-nationality applicants at elevated rates, triggering aggressive clawbacks that pushed tens of thousands of families into debt and, in many cases, into losing their children to state care. The Rutte cabinet eventually resigned over it. Opacity was not incidental to the harm: families could not learn why they had been flagged, which made it impossible to contest individual decisions or to surface the pattern until journalism and parliamentary inquiry reconstructed it from outside <span class="citation" data-cites="rotterdam_lighthouse2023">(<a href="#ref-rotterdam_lighthouse2023" role="doc-biblioref">Geiger and Braun 2023</a>)</span>.</p>
+<p>Three contrasts with AFST matter. First, the Dutch regime provided a forum (the Article 8 claim) in which system-level opacity could be litigated directly, rather than through the U.S. habit of challenging individual denials. Second, the affected class was organized enough, through civil-society groups and parliamentary allies, to press the claim to a national court. Third, the remedy was shutdown, not disclosure: the court did not order SyRI to open its model. It ordered the state to stop running it. <a href="ch-10-law.html" class="quarto-xref"><span>Chapter 12</span></a> asks under what U.S. doctrinal conditions an equivalent remedy would be available, and the answer is: under very few, and none at the federal level as of this writing.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The Missing Manual
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When the state is the exempt actor, strategies that assume the state is a neutral arbiter between citizen and vendor stop working. Most algorithmic-accountability tooling (model cards, datasheets for datasets, fairness audits) is designed for a world in which the state is the party demanding accountability from a vendor. In the SyRI and <em>toeslagenaffaire</em> cases, the party deploying the system, the party holding the data, and the party refusing disclosure were all the same ministry. The governance textbook does not cover that case, because the governance textbook was written by people employed by the ministry. Notice when you are inside that scenario, and notice that your methods have to change.</p>
+</div>
+</div>
+</section>
+<section id="practical-exemption-as-a-design-choice" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="practical-exemption-as-a-design-choice"><span class="header-section-number">5.6</span> Practical exemption as a design choice</h2>
+<p>Exemption is not fate. It is a set of design and procurement choices that can be made differently. The European Union’s 2024 AI Act, New York City’s Local Law 144, and a growing list of state-level algorithmic-accountability bills are attempts to legislate a floor under transparency. Whether any produces working oversight depends on the same six elements <a href="ch-05-installed-base.html" class="quarto-xref"><span>Chapter 7</span></a> will name: linkable records, interpretable categories, persistent evidence, safe scrutiny, authority that can act, and remedy that reaches the affected. A statute that requires a “model card” without specifying linkage to deployment records produces compliance artifacts and no oversight.</p>
+<p>The public-interest response to exemption has two parts. The first is the patient work this chapter has rehearsed: building evidence ledgers that make absences visible, linking artifacts across silos, naming the gaps in terms a lawyer or a legislator can use. The second is designing forward: when you have authority to shape a procurement, a contract, or a rulemaking, writing linkability in as a requirement rather than a nice-to-have. <a href="ch-07-oversight.html" class="quarto-xref"><span>Chapter 9</span></a> and <a href="ch-22-archival-deposits.html" class="quarto-xref"><span>Chapter 24</span></a> develop both moves.</p>
+</section>
+<section id="exercises" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5.7</span> Exercises</h2>
+<p><strong>Exercise 3.1 (Guided).</strong> Extend the AFST evidence ledger from five rows to at least twelve. Candidate sources: the Allegheny County impact evaluation reports published between 2019 and 2024, at least one state-level audit or oversight report, the research protocol that governed the tool’s introduction, any litigation related to the tool, and community-organization responses. For each new row, fill both <code>what_it_tells_us</code> and <code>what_it_doesnt</code>. Save as <code>exercises/ch03_afst_ledger.csv</code> and write a 300-word summary of the three largest gaps.</p>
+<p><strong>Exercise 3.2 (Guided).</strong> Pick a different deployed automated decision system: a state’s Medicaid eligibility system, a city’s pretrial risk instrument, a school district’s early-warning system, a federal agency’s fraud-detection tool. Build an evidence ledger with at least eight rows using the same schema. Save as <code>exercises/ch03_&lt;system&gt;_ledger.csv</code>. In 400 words, compare the shape of the absences to the AFST ledger: what documents exist for one system but not the other, and what does that asymmetry suggest about which actors face the most pressure to produce records?</p>
+<p><strong>Exercise 3.3 (Analytic).</strong> Read the SyRI judgment (ECLI:NL:RBDHA:2020:1878), available in English translation through Rechtspraak.nl. Identify the specific legal theory the court used to find the system unlawful. In 500 words, summarize the theory in your own words, name the treaty article or statute on which it rested, and explain whether an equivalent argument would be available in a U.S. federal court. If you are not sure, name the sources of your uncertainty.</p>
+<p><strong>Exercise 3.4 (Comparative).</strong> Pair a U.S. automated decision system and a European one addressing similar policy problems (child welfare, unemployment fraud, immigration risk, predictive policing). Build a side-by-side transparency comparison covering: vendor disclosure, model documentation, performance reporting, subgroup auditing, notice to affected persons, appeal pathways, external oversight, and publicly documented harms. Submit as <code>exercises/ch03_comparison.md</code>. Identify the single transparency commitment that would be most transformative if transplanted from one regime to the other, and say what would prevent that transplant.</p>
+<p><strong>Exercise 3.5 (Open-ended).</strong> For the system you chose in Exercise 3.2, propose what would need to change for it to be <em>observable</em> in this chapter’s sense. Write a 1,000-word memo addressed to a named accountability actor (a specific state legislator, a city auditor, a named reporter, an advocacy organization). Specify which changes require legislation, which require agency rulemaking, which require litigation, and which could be achieved through procurement reform alone. Save as <code>exercises/ch03_observability_memo.md</code>. You will reuse this memo in <a href="ch-10-law.html" class="quarto-xref"><span>Chapter 12</span></a> and, revised, as a public comment in <a href="ch-21-public-comments.html" class="quarto-xref"><span>Chapter 23</span></a>.</p>
+</section>
+<section id="looking-ahead" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">5.8</span> Looking ahead</h2>
+<p>Enclosure takes data out of reach. Exemption keeps the people and institutions that use data out of reach. Chapter 4 takes up the third pressure in Part I: <strong>erosion</strong>. Even when data is accessible and decision-makers are nominally accountable, the record of what happened can dissolve. Databases are reorganized without migration paths. Web pages are silently edited. Legacy systems are decommissioned faster than their contents can be archived. If enclosure asks <em>who can observe?</em> and exemption asks <em>who must answer?</em>, erosion asks <em>what can be remembered?</em></p>
+</section>
+<section id="further-reading-and-resources" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="further-reading-and-resources"><span class="header-section-number">5.9</span> Further Reading and Resources</h2>
+<ul>
+<li>Frank Pasquale (2016), <em>The Black Box Society</em>. Harvard University Press. The foundational treatment of scored decision-making and the legal architecture of its opacity.</li>
+<li>Virginia Eubanks (2018), <em>Automating Inequality</em>. St.&nbsp;Martin’s Press. Chapter 4 treats AFST in ethnographic depth. Read with and against the research team’s published responses.</li>
+<li>Amnesty International (2021), <em>Xenophobic Machines</em>, <a href="https://www.amnesty.org/en/documents/eur35/4686/2021/en/" class="uri">https://www.amnesty.org/en/documents/eur35/4686/2021/en/</a>. The canonical documentation of the <em>toeslagenaffaire</em>.</li>
+<li>District Court of The Hague (2020), SyRI judgment, ECLI:NL:RBDHA:2020:1878. Read with an English translation alongside the Dutch original.</li>
+<li>Lighthouse Reports / WIRED (2023), “Inside the Suspicion Machine,” <a href="https://www.lighthousereports.com/investigation/inside-the-suspicion-machine/" class="uri">https://www.lighthousereports.com/investigation/inside-the-suspicion-machine/</a>. Reverse-engineered feature importance for Rotterdam’s welfare-fraud scoring.</li>
+<li>Allegheny County Department of Human Services reports, <a href="https://www.alleghenycountyanalytics.us/" class="uri">https://www.alleghenycountyanalytics.us/</a>. The county’s own documentation, read critically and in date order.</li>
+<li>AI Now Institute, <em>Algorithmic Accountability for the Public Sector</em>, <a href="https://ainowinstitute.org/publication/algorithmic-accountability-for-the-public-sector" class="uri">https://ainowinstitute.org/publication/algorithmic-accountability-for-the-public-sector</a>. Comparative survey of procurement, disclosure, and audit regimes.</li>
+<li>Knight First Amendment Institute, <em>Sandvig v. Barr</em> case page, <a href="https://knightcolumbia.org/cases/sandvig-v-sessions" class="uri">https://knightcolumbia.org/cases/sandvig-v-sessions</a>. Primary documents for the CFAA ruling that shaped current U.S. research-access conditions.</li>
+<li>Ada Lovelace Institute, <em>Regulatory Inspection of Algorithmic Systems</em>, <a href="https://www.adalovelaceinstitute.org/report/inspecting-algorithms/" class="uri">https://www.adalovelaceinstitute.org/report/inspecting-algorithms/</a>. A European comparative perspective on inspection regimes.</li>
+</ul>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-aclu2019" class="csl-entry" role="listitem">
+American Civil Liberties Union. 2019. <em><span class="nocase">Sandvig v. Barr</span>: Researchers’ Right to Investigate Algorithmic Discrimination</em>. ACLU. <a href="https://www.aclu.org/cases/sandvig-v-barr-challenge-cfaa-prohibition-uncovering-racial-discrimination-online">https://www.aclu.org/cases/sandvig-v-barr-challenge-cfaa-prohibition-uncovering-racial-discrimination-online</a>.
+</div>
+<div id="ref-amnesty2021" class="csl-entry" role="listitem">
+Amnesty International. 2021. <em>Xenophobic Machines: Discrimination Through Unregulated Use of Algorithms in the <span>Dutch</span> Childcare Benefits Scandal</em>. Amnesty International. <a href="https://www.amnesty.org/en/documents/eur35/4686/2021/en/">https://www.amnesty.org/en/documents/eur35/4686/2021/en/</a>.
+</div>
+<div id="ref-deArruda2024" class="csl-entry" role="listitem">
+<span class="nocase">Arruda, Beatriz de, and Sascha van Schendel</span>. 2024. <span>“After <span>SyRI</span>: The Post-Judgment Landscape of Algorithmic Welfare Surveillance in the <span>Netherlands</span>.”</span> <em>European Journal of Risk Regulation</em>.
+</div>
+<div id="ref-chouldechova2018" class="csl-entry" role="listitem">
+Chouldechova, Alexandra, Diana Benavides-Prado, Oleksandr Fialko, and Rhema Vaithianathan. 2018. <em>A Case Study of Algorithm-Assisted Decision Making in Child Maltreatment Hotline Screening</em>. Proceedings of the 1st Conference on Fairness, Accountability,; Transparency.
+</div>
+<div id="ref-syri2020" class="csl-entry" role="listitem">
+District Court of The Hague. 2020. <em><span class="nocase">NJCM et al. v. The State of the Netherlands</span> (SyRI Judgment), ECLI:NL:RBDHA:2020:1878</em>. Rechtspraak.nl. <a href="https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2020:1878">https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2020:1878</a>.
+</div>
+<div id="ref-eubanks2018" class="csl-entry" role="listitem">
+Eubanks, Virginia. 2018. <em>Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor</em>. St. Martin’s Press.
+</div>
+<div id="ref-rotterdam_lighthouse2023" class="csl-entry" role="listitem">
+Geiger, Gabriel, and Justin-Casimir Braun. 2023. <em>Inside the Suspicion Machine</em>. Lighthouse Reports / WIRED. <a href="https://www.lighthousereports.com/investigation/inside-the-suspicion-machine/">https://www.lighthousereports.com/investigation/inside-the-suspicion-machine/</a>.
+</div>
+<div id="ref-ho2022" class="csl-entry" role="listitem">
+Ho, Sally, and Garance Burke. 2022. <em>An Algorithm That Screens for Child Neglect Raises Concerns</em>. Associated Press. <a href="https://apnews.com/article/child-welfare-algorithm-investigation-9497ee937e0053ad4144a86c68241ef1">https://apnews.com/article/child-welfare-algorithm-investigation-9497ee937e0053ad4144a86c68241ef1</a>.
+</div>
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Information, Communication <span>&amp;</span> Society</em>.
+</div>
+<div id="ref-pasquale2016" class="csl-entry" role="listitem">
+Pasquale, Frank. 2016. <em>The Black Box Society: The Secret Algorithms That Control Money and Information</em>. Harvard University Press.
+</div>
+<div id="ref-vaithianathan2019" class="csl-entry" role="listitem">
+Vaithianathan, Rhema, Emily Putnam-Hornstein, Nan Jiang, Parma Nand, and Tim Maloney. 2019. <em>Developing Predictive Models to Support Child Maltreatment Hotline Screening Decisions: <span>Allegheny County</span> Methodology and Implementation</em>. Centre for Social Data Analytics, Auckland University of Technology.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch-02-enclosure.html" class="pagination-link" aria-label="Enclosure: Who Can Observe?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure: Who Can Observe?</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch-04-erosion.html" class="pagination-link" aria-label="Erosion: What Can Be Remembered?">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Erosion: What Can Be Remembered?</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Exemption: Who Must Answer?"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exemption: Who Must Answer? {#sec-ch-03-exemption}</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>Chapter 2 described a world in which what a researcher can observe is shrinking. This chapter is about a related but distinct problem. Suppose you *can* observe the outputs of a system. They are already on a published spreadsheet, or in a press release, or scrolling through a caseworker's terminal. Who is obliged to explain how they were produced? Who has to answer when they go wrong? In the United States in the mid-2020s, the honest answer for a remarkable share of consequential automated decisions is: no one with enforceable authority, on any clock a parent or a journalist or a state legislator can use.</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>Enclosure asks *who can observe?* Exemption asks *who must answer?* Enclosure operates through the terms of access to data. Exemption operates through trade-secret law, procurement contracts, qualified immunity, sovereign immunity, statutory carve-outs from freedom-of-information regimes, and the simple fact that many public agencies run proprietary software they did not build and cannot fully inspect. Pasquale [-@pasquale2016] named this the *black box society*: a condition in which the scoring and sorting machinery that organizes credit, insurance, hiring, and policing is legally and practically sealed off from the people it sorts. A decade later, the black box has migrated further into the machinery of the state itself. When the exempt actor is a commercial platform, you can at least pretend to buy your way in or shame your way in. When the exempt actor is the state, using a vendor's system to decide who gets a benefit, the pretense collapses.</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>This chapter takes up two cases. The long example is the Allegheny Family Screening Tool (AFST), a risk-scoring system used by the Allegheny County, Pennsylvania child-welfare hotline since 2016. AFST is unusually well-documented for a government-deployed risk score, and you will build an evidence ledger for it from public sources. The short comparison is the Dutch state's Systeem Risico Indicatie (SyRI) and the childcare-benefits fraud detection system that prompted the *toeslagenaffaire* scandal. The Dutch cases matter because they are the rare examples in which a national court found an automated decision system unlawful and shut it down <span class="co">[</span><span class="ot">@syri2020</span><span class="co">]</span>. Reading the U.S. case against the Dutch one tells you which claims about opacity have purchase, and in which legal climates.</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Two kinds of exemption</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>Separate **legal exemption** from **practical exemption** before you go near a keyboard.</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>Legal exemption is the carved-out space where disclosure obligations do not reach. Trade-secret protections under the Defend Trade Secrets Act and state analogues travel with a vendor into a public agency's procurement file. FOIA exemptions 4 (trade secrets) and 7 (law enforcement) are routinely invoked to withhold model specifications, training data, and performance audits. The Computer Fraud and Abuse Act (CFAA) historically chilled independent testing: until *Sandvig v. Barr* [@aclu2019], academic auditors faced credible threat of federal criminal prosecution for creating test accounts that violated a platform's terms. *Sandvig* narrowed that risk for academic research but did not eliminate civil exposure and did not reach state-level computer crime laws. Terms-of-service bindings tie back to @sec-ch-02-enclosure: what the vendor's lawyers wrote at procurement time continues to govern what the public can ask later.</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>Practical exemption is the larger space. Even where the law would require disclosure, the route is slow, fragmented, and under-enforced. A reporter who files a state open-records request for a vendor contract waits six months and receives a PDF with most of its text redacted. A parent whose family was screened out of services reads a denial letter citing an "assessment" without naming the model, the version, the features, or the threshold. The information exists. Nobody is obliged to aggregate it. Exemption does not require secrecy. It only requires that the cost of reconstructing the picture exceed what a citizen, a reporter, or an underfunded NGO can afford. Fragmentation is the weapon.</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="In the Public Interest"}</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>**Oversight**, as @sec-ch-07-oversight will develop it, is not a property of a single document. It is a property of the *linkage* between documents: a procurement contract that names a vendor, a model card that describes that vendor's system, a FOIA response that discloses subgroup performance, a court filing that tests a denied claim. Exemption thrives on fragmentation because each artifact taken alone is plausible. The contract does not mention the model by name. The model card does not mention the contract. The denial letter mentions neither. Keegan [-@keegan2026] calls this the **linkability** element of the installed base, and without it, oversight is a collection of disconnected complaints. Public-interest data science is, in part, the patient reconstruction of linkages the system was designed to leave broken.</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Allegheny Family Screening Tool, as a public object</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>Allegheny County's Office of Children, Youth and Families receives roughly fifteen thousand child-welfare referrals a year. Since August 2016, hotline call screeners have seen, alongside the case narrative, a risk score produced by the Allegheny Family Screening Tool. The score estimates the probability that a child named in the referral will be re-referred, removed from the home, or placed in foster care within a defined window. A screener uses the score as one input in deciding whether to open a formal investigation.</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>Eubanks <span class="co">[</span><span class="ot">-@eubanks2018</span><span class="co">]</span> treated AFST in *Automating Inequality* as a paradigmatic case of a predictive instrument that extends state surveillance into poor families under the rubric of decision support. The county and the research team have disputed some characterizations and affirmed others. AFST is unusual in that a reader who wants to know how the system works can assemble a nontrivial picture from public sources. It is also typical in that the picture is incomplete, and the incompleteness is not random.</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## The evidence ledger</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>The technique is deliberately unglamorous. Read every public document you can find about the system. For each, record what it tells you and, just as importantly, what it does not. The <span class="in">`pandas`</span> DataFrame below is an *evidence ledger*: a structured record of provenance that makes gaps visible on the same footing as findings.</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> [</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>        <span class="st">"source"</span>: <span class="st">"Allegheny County RFP and vendor selection memo"</span>,</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>        <span class="st">"date"</span>: <span class="st">"2014-11"</span>, <span class="st">"type"</span>: <span class="st">"procurement"</span>,</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_tells_us"</span>: <span class="st">"Names Auckland University of Technology's "</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Centre for Social Data Analytics as the selected team; "</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>            <span class="st">"lists the data systems to be integrated."</span>,</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_doesnt"</span>: <span class="st">"Does not disclose the price, the model "</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>            <span class="st">"family, or the performance targets the vendor was "</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>            <span class="st">"expected to meet."</span>,</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>        <span class="st">"source"</span>: <span class="st">"Vaithianathan et al. methodology report"</span>,</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>        <span class="st">"date"</span>: <span class="st">"2019-04"</span>, <span class="st">"type"</span>: <span class="st">"technical_report"</span>,</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_tells_us"</span>: <span class="st">"Describes feature engineering on 131 "</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>            <span class="st">"variables from the county data warehouse; reports AUC "</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>            <span class="st">"and calibration on historical data."</span>,</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_doesnt"</span>: <span class="st">"Does not disclose the production decision "</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>            <span class="st">"threshold, the retraining cadence, or subgroup "</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>            <span class="st">"performance on race and ethnicity as deployed."</span>,</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>        <span class="st">"source"</span>: <span class="st">"Chouldechova et al., FAccT 2018"</span>,</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>        <span class="st">"date"</span>: <span class="st">"2018-02"</span>, <span class="st">"type"</span>: <span class="st">"peer_reviewed"</span>,</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_tells_us"</span>: <span class="st">"Subgroup accuracy and error-rate "</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>            <span class="st">"disparity analysis on a research version of the model."</span>,</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_doesnt"</span>: <span class="st">"Research version is not identical to the "</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>            <span class="st">"fielded tool; ground-truth labels are proxies, which "</span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>            <span class="st">"the authors acknowledge."</span>,</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>        <span class="st">"source"</span>: <span class="st">"Eubanks, Automating Inequality, ch. 4"</span>,</span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>        <span class="st">"date"</span>: <span class="st">"2018-01"</span>, <span class="st">"type"</span>: <span class="st">"book"</span>,</span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_tells_us"</span>: <span class="st">"Situates AFST within the county's "</span></span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>            <span class="st">"broader data integration project; documents community "</span></span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>            <span class="st">"concerns and the surveillance/referral feedback loop."</span>,</span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_doesnt"</span>: <span class="st">"Cannot speak to model changes after 2017 "</span></span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>            <span class="st">"fieldwork; the tool has been revised multiple times."</span>,</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>        <span class="st">"source"</span>: <span class="st">"Associated Press / Ho and Burke"</span>,</span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>        <span class="st">"date"</span>: <span class="st">"2022-04"</span>, <span class="st">"type"</span>: <span class="st">"press"</span>,</span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_tells_us"</span>: <span class="st">"Reports DOJ civil-rights inquiry into "</span></span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>            <span class="st">"disability-based discrimination in the tool's deployment."</span>,</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>        <span class="st">"what_it_doesnt"</span>: <span class="st">"DOJ inquiry materials are not public; we "</span></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>            <span class="st">"learn an inquiry exists but not what it found."</span>,</span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>evidence <span class="op">=</span> pd.DataFrame(rows)</span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>evidence[<span class="st">"date"</span>] <span class="op">=</span> pd.to_datetime(evidence[<span class="st">"date"</span>])</span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>evidence <span class="op">=</span> evidence.sort_values(<span class="st">"date"</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; 5 rows, columns: source, date, type, what_it_tells_us, what_it_doesnt</span></span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>gaps <span class="op">=</span> evidence[[<span class="st">"date"</span>, <span class="st">"source"</span>, <span class="st">"what_it_doesnt"</span>]]</span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>gaps.to_csv(<span class="st">"afst_gaps.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>Five rows is not a lot. That is the point. A mature ledger for a deployed municipal system might contain thirty or forty rows, organized by procurement, technical documentation, peer review, press, litigation, and community record. The two columns matter. <span class="in">`what_it_tells_us`</span> is the affirmative claim you can source-cite. <span class="in">`what_it_doesnt`</span> is the negative space that tells you what you would still need to file, subpoena, or discover in order to make a stronger claim. A one-column ledger is a bibliography. A two-column ledger is the beginning of an accountability argument.</span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>Two observations follow. The most technically detailed document (Vaithianathan and colleagues' methodology report <span class="co">[</span><span class="ot">@vaithianathan2019</span><span class="co">]</span>) is useful for understanding the research-time model but silent on the deployed threshold and retraining schedule. The most politically charged finding (the DOJ civil-rights inquiry reported by Ho and Burke <span class="co">[</span><span class="ot">-@ho2022</span><span class="co">]</span>) is the one where the underlying record is least available: we know an inquiry opened, not what it concluded.</span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="The Missing Manual"}</span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>The model card does not say. The methodology report does not say. The procurement memo does not say. Those three silences are themselves data. A standard failure mode of algorithmic-accountability writing is to treat the absence as a rhetorical flourish ("notably, the county does not disclose...") and move on. Do not move on. Write the absence into the ledger as an object with a date, a source, and a <span class="in">`what_it_doesnt`</span> entry. You will use it later when you file a records request, when you testify, or when you draft a rulemaking comment. An absence that has a citation is an absence you can litigate. An absence you only gestured at in prose is a complaint.</span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reading the deployed model from the outside</span></span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>The ledger tells you what documentation exists. It does not tell you how the model is behaving today. For a deployed system, three kinds of external inference are available without breaking any law.</span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a>The first is **decision-record inspection**. Some jurisdictions, including Allegheny County at various points, release aggregate screening statistics: calls screened in, screened out, and referred, broken down by some subset of demographic variables. Those aggregates let you compute, crudely, whether the score's introduction shifted selection rates overall. They do not let you recover individual decisions.</span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>The second is **disparate-impact analysis on outcomes**. If you can obtain downstream placement data (via FOIA, a collaborator inside the agency, academic partnership), you can estimate whether scored referrals have different outcomes by race, age, or disability than unscored referrals. The Chouldechova and colleagues FAccT paper <span class="co">[</span><span class="ot">@chouldechova2018</span><span class="co">]</span> is an example of this kind of work on a pre-deployment version.</span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>The third is **audit-by-adversarial-use**: submitting test cases through the live interface. CFAA exposure still matters here. You would need counsel's sign-off, institutional cover, and a clear understanding of which *Sandvig* protections reach your facts. Most municipal child-welfare systems do not expose an API you could query, which is why audit-by-use is rare in this domain and common in hiring and advertising contexts.</span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a><span class="co"># Illustrative skeleton only. Do not run against a live agency system.</span></span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_selection_rates(decisions):</span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Aggregate screen-in rates by demographic group.</span></span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a><span class="co">    Input: one row per referral with columns</span></span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a><span class="co">        {referral_id, group, score, screened_in}.</span></span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a>    g <span class="op">=</span> decisions.groupby(<span class="st">"group"</span>).agg(</span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a>        n<span class="op">=</span>(<span class="st">"referral_id"</span>, <span class="st">"count"</span>),</span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>        screened_in<span class="op">=</span>(<span class="st">"screened_in"</span>, <span class="st">"sum"</span>),</span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a>    g[<span class="st">"rate"</span>] <span class="op">=</span> g[<span class="st">"screened_in"</span>] <span class="op">/</span> g[<span class="st">"n"</span>]</span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> g.reset_index()</span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected output columns: group, n, screened_in, rate</span></span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a>None of this code is the audit. The code is the scaffolding you build so that, when a data-sharing agreement is in place or an agency publishes aggregates, you have somewhere to put the numbers. The substantive work is upstream: negotiating the sharing agreement, filing the records request, obtaining IRB approval. @sec-ch-10-law takes up the legal scaffolding in detail.</span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a><span class="fu">## When the state is the adversary: SyRI and after</span></span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a>The Dutch case inverts a habit U.S. readers bring to these problems. In the United States, the usual adversary in an algorithmic accountability story is a commercial vendor whose system has been adopted by a public agency. The vendor holds the trade-secret claim; the agency carries the disclosure obligation; advocates play them against each other. In SyRI, the adversary was the state itself.</span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a>Systeem Risico Indicatie was a cross-agency data-integration tool that scored households for fraud risk across welfare, taxation, labor, and housing data. It was deployed in targeted neighborhoods beginning in 2014. In February 2020, the District Court of The Hague ruled that SyRI violated Article 8 of the European Convention on Human Rights because the state's interest in fraud detection did not justify the opacity and breadth of the system <span class="co">[</span><span class="ot">@syri2020</span><span class="co">]</span>. The ruling did not turn on the accuracy of the model. It turned on the state's failure to make the system legible enough for citizens to understand and challenge how they were being assessed. Dutch scholars reading the aftermath <span class="co">[</span><span class="ot">@deArruda2024</span><span class="co">]</span> note that successor systems have adapted the legal wrapper without fully abandoning the underlying practice, and that the *toeslagenaffaire* childcare-benefits scandal exposed a parallel, more damaging pattern in the tax administration.</span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a>Read the childcare-benefits scandal alongside AFST. Amnesty International's report <span class="co">[</span><span class="ot">@amnesty2021</span><span class="co">]</span> documents how the Dutch tax authority used a risk-classification model that flagged dual-nationality applicants at elevated rates, triggering aggressive clawbacks that pushed tens of thousands of families into debt and, in many cases, into losing their children to state care. The Rutte cabinet eventually resigned over it. Opacity was not incidental to the harm: families could not learn why they had been flagged, which made it impossible to contest individual decisions or to surface the pattern until journalism and parliamentary inquiry reconstructed it from outside <span class="co">[</span><span class="ot">@rotterdam_lighthouse2023</span><span class="co">]</span>.</span>
+<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a>Three contrasts with AFST matter. First, the Dutch regime provided a forum (the Article 8 claim) in which system-level opacity could be litigated directly, rather than through the U.S. habit of challenging individual denials. Second, the affected class was organized enough, through civil-society groups and parliamentary allies, to press the claim to a national court. Third, the remedy was shutdown, not disclosure: the court did not order SyRI to open its model. It ordered the state to stop running it. @sec-ch-10-law asks under what U.S. doctrinal conditions an equivalent remedy would be available, and the answer is: under very few, and none at the federal level as of this writing.</span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="The Missing Manual"}</span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a>When the state is the exempt actor, strategies that assume the state is a neutral arbiter between citizen and vendor stop working. Most algorithmic-accountability tooling (model cards, datasheets for datasets, fairness audits) is designed for a world in which the state is the party demanding accountability from a vendor. In the SyRI and *toeslagenaffaire* cases, the party deploying the system, the party holding the data, and the party refusing disclosure were all the same ministry. The governance textbook does not cover that case, because the governance textbook was written by people employed by the ministry. Notice when you are inside that scenario, and notice that your methods have to change.</span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a><span class="fu">## Practical exemption as a design choice</span></span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a>Exemption is not fate. It is a set of design and procurement choices that can be made differently. The European Union's 2024 AI Act, New York City's Local Law 144, and a growing list of state-level algorithmic-accountability bills are attempts to legislate a floor under transparency. Whether any produces working oversight depends on the same six elements @sec-ch-05-installed-base will name: linkable records, interpretable categories, persistent evidence, safe scrutiny, authority that can act, and remedy that reaches the affected. A statute that requires a "model card" without specifying linkage to deployment records produces compliance artifacts and no oversight.</span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a>The public-interest response to exemption has two parts. The first is the patient work this chapter has rehearsed: building evidence ledgers that make absences visible, linking artifacts across silos, naming the gaps in terms a lawyer or a legislator can use. The second is designing forward: when you have authority to shape a procurement, a contract, or a rulemaking, writing linkability in as a requirement rather than a nice-to-have. @sec-ch-07-oversight and @sec-ch-22-archival-deposits develop both moves.</span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a>**Exercise 3.1 (Guided).** Extend the AFST evidence ledger from five rows to at least twelve. Candidate sources: the Allegheny County impact evaluation reports published between 2019 and 2024, at least one state-level audit or oversight report, the research protocol that governed the tool's introduction, any litigation related to the tool, and community-organization responses. For each new row, fill both <span class="in">`what_it_tells_us`</span> and <span class="in">`what_it_doesnt`</span>. Save as <span class="in">`exercises/ch03_afst_ledger.csv`</span> and write a 300-word summary of the three largest gaps.</span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a>**Exercise 3.2 (Guided).** Pick a different deployed automated decision system: a state's Medicaid eligibility system, a city's pretrial risk instrument, a school district's early-warning system, a federal agency's fraud-detection tool. Build an evidence ledger with at least eight rows using the same schema. Save as <span class="in">`exercises/ch03_&lt;system&gt;_ledger.csv`</span>. In 400 words, compare the shape of the absences to the AFST ledger: what documents exist for one system but not the other, and what does that asymmetry suggest about which actors face the most pressure to produce records?</span>
+<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a>**Exercise 3.3 (Analytic).** Read the SyRI judgment (ECLI<span class="sc">:NL:</span>RBDHA<span class="sc">:2020:</span>1878), available in English translation through Rechtspraak.nl. Identify the specific legal theory the court used to find the system unlawful. In 500 words, summarize the theory in your own words, name the treaty article or statute on which it rested, and explain whether an equivalent argument would be available in a U.S. federal court. If you are not sure, name the sources of your uncertainty.</span>
+<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a>**Exercise 3.4 (Comparative).** Pair a U.S. automated decision system and a European one addressing similar policy problems (child welfare, unemployment fraud, immigration risk, predictive policing). Build a side-by-side transparency comparison covering: vendor disclosure, model documentation, performance reporting, subgroup auditing, notice to affected persons, appeal pathways, external oversight, and publicly documented harms. Submit as <span class="in">`exercises/ch03_comparison.md`</span>. Identify the single transparency commitment that would be most transformative if transplanted from one regime to the other, and say what would prevent that transplant.</span>
+<span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a>**Exercise 3.5 (Open-ended).** For the system you chose in Exercise 3.2, propose what would need to change for it to be *observable* in this chapter's sense. Write a 1,000-word memo addressed to a named accountability actor (a specific state legislator, a city auditor, a named reporter, an advocacy organization). Specify which changes require legislation, which require agency rulemaking, which require litigation, and which could be achieved through procurement reform alone. Save as <span class="in">`exercises/ch03_observability_memo.md`</span>. You will reuse this memo in @sec-ch-10-law and, revised, as a public comment in @sec-ch-21-public-comments.</span>
+<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking ahead</span></span>
+<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a>Enclosure takes data out of reach. Exemption keeps the people and institutions that use data out of reach. Chapter 4 takes up the third pressure in Part I: **erosion**. Even when data is accessible and decision-makers are nominally accountable, the record of what happened can dissolve. Databases are reorganized without migration paths. Web pages are silently edited. Legacy systems are decommissioned faster than their contents can be archived. If enclosure asks *who can observe?* and exemption asks *who must answer?*, erosion asks *what can be remembered?*</span>
+<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading and Resources</span></span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Frank Pasquale (2016), *The Black Box Society*. Harvard University Press. The foundational treatment of scored decision-making and the legal architecture of its opacity.</span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Virginia Eubanks (2018), *Automating Inequality*. St. Martin's Press. Chapter 4 treats AFST in ethnographic depth. Read with and against the research team's published responses.</span>
+<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Amnesty International (2021), *Xenophobic Machines*, &lt;https://www.amnesty.org/en/documents/eur35/4686/2021/en/&gt;. The canonical documentation of the *toeslagenaffaire*.</span>
+<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>District Court of The Hague (2020), SyRI judgment, ECLI<span class="sc">:NL:</span>RBDHA<span class="sc">:2020:</span>1878. Read with an English translation alongside the Dutch original.</span>
+<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lighthouse Reports / WIRED (2023), "Inside the Suspicion Machine," <span class="ot">&lt;https://www.lighthousereports.com/investigation/inside-the-suspicion-machine/&gt;</span>. Reverse-engineered feature importance for Rotterdam's welfare-fraud scoring.</span>
+<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Allegheny County Department of Human Services reports, <span class="ot">&lt;https://www.alleghenycountyanalytics.us/&gt;</span>. The county's own documentation, read critically and in date order.</span>
+<span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>AI Now Institute, *Algorithmic Accountability for the Public Sector*, <span class="ot">&lt;https://ainowinstitute.org/publication/algorithmic-accountability-for-the-public-sector&gt;</span>. Comparative survey of procurement, disclosure, and audit regimes.</span>
+<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Knight First Amendment Institute, *Sandvig v. Barr* case page, <span class="ot">&lt;https://knightcolumbia.org/cases/sandvig-v-sessions&gt;</span>. Primary documents for the CFAA ruling that shaped current U.S. research-access conditions.</span>
+<span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ada Lovelace Institute, *Regulatory Inspection of Algorithmic Systems*, <span class="ot">&lt;https://www.adalovelaceinstitute.org/report/inspecting-algorithms/&gt;</span>. A European comparative perspective on inspection regimes.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-03-exemption.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

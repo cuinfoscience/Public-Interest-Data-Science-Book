@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: _book
+  output-dir: book
 
 book:
   title: "Public Interest Data Science"
@@ -14,7 +14,7 @@ book:
     contributing to public conversations through the genres that make
     analysis accountable.
   license: "MIT"
-  repo-url: "https://github.com/brianckeegan/Public-Interest-Data-Science-Book"
+  repo-url: "https://github.com/cuinfoscience/Public-Interest-Data-Science-Book"
   repo-actions: [edit, issue]
   sharing: [twitter, linkedin]
   search: true

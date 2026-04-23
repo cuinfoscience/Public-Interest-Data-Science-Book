@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
+
+<title>19&nbsp; Reports – Public Interest Data Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch-19-research-proposals.html" rel="next">
+<link href="./ch-17-op-eds.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3960f907883494f1151aa7142734774f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d783d5094f66403aace2499abad0c8ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3960f907883494f1151aa7142734774f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch-17-op-eds.html">Genres</a></li><li class="breadcrumb-item"><a href="./ch-18-reports.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Reports</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Public Interest Data Science</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Public-Interest-Data-Science.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Public-Interest-Data-Science.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Pressures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-02-enclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure: Who Can Observe?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-03-exemption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-04-erosion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Erosion: What Can Be Remembered?</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Values</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-05-installed-base.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Installed Base</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-06-openness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Openness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-07-oversight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Oversight</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-08-ownership.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ownership</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lineages</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-09-journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-10-law.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Law</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-11-accounting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-12-planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-13-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Engineering</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Adjacent Conversations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-14-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-15-govtech-civic-tech.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-16-critical-data-studies-refusal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Genres</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-17-op-eds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Op-Eds</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-18-reports.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-19-research-proposals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Research Proposals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-20-testimony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Testimony</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-21-public-comments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Public Comments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-22-archival-deposits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Archival Deposits</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#sec-ch-18-reports" id="toc-sec-ch-18-reports" class="nav-link active" data-scroll-target="#sec-ch-18-reports"><span class="header-section-number">20</span> Reports</a>
+  <ul class="collapse">
+  <li><a href="#a-short-political-economy-of-the-think-tank-report" id="toc-a-short-political-economy-of-the-think-tank-report" class="nav-link" data-scroll-target="#a-short-political-economy-of-the-think-tank-report"><span class="header-section-number">20.1</span> A short political economy of the think-tank report</a></li>
+  <li><a href="#reports-that-inform-and-reports-that-mobilize" id="toc-reports-that-inform-and-reports-that-mobilize" class="nav-link" data-scroll-target="#reports-that-inform-and-reports-that-mobilize"><span class="header-section-number">20.2</span> Reports that inform and reports that mobilize</a></li>
+  <li><a href="#the-executive-summary-is-the-report" id="toc-the-executive-summary-is-the-report" class="nav-link" data-scroll-target="#the-executive-summary-is-the-report"><span class="header-section-number">20.3</span> The executive summary is the report</a></li>
+  <li><a href="#methods-transparency-as-a-credibility-move" id="toc-methods-transparency-as-a-credibility-move" class="nav-link" data-scroll-target="#methods-transparency-as-a-credibility-move"><span class="header-section-number">20.4</span> Methods transparency as a credibility move</a></li>
+  <li><a href="#the-translation-gap" id="toc-the-translation-gap" class="nav-link" data-scroll-target="#the-translation-gap"><span class="header-section-number">20.5</span> The translation gap</a></li>
+  <li><a href="#quarto-as-a-report-stack" id="toc-quarto-as-a-report-stack" class="nav-link" data-scroll-target="#quarto-as-a-report-stack"><span class="header-section-number">20.6</span> Quarto as a report stack</a></li>
+  <li><a href="#institutional-audiences-named" id="toc-institutional-audiences-named" class="nav-link" data-scroll-target="#institutional-audiences-named"><span class="header-section-number">20.7</span> Institutional audiences, named</a></li>
+  <li><a href="#reports-across-the-lineages" id="toc-reports-across-the-lineages" class="nav-link" data-scroll-target="#reports-across-the-lineages"><span class="header-section-number">20.8</span> Reports across the lineages</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">20.9</span> Exercises</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">20.10</span> Looking ahead</a></li>
+  <li><a href="#further-reading-and-resources" id="toc-further-reading-and-resources" class="nav-link" data-scroll-target="#further-reading-and-resources"><span class="header-section-number">20.11</span> Further Reading and Resources</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-18-reports.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch-17-op-eds.html">Genres</a></li><li class="breadcrumb-item"><a href="./ch-18-reports.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Reports</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Reports</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-ch-18-reports" class="level1" data-number="20">
+<h1 data-number="20"><span class="header-section-number">20</span> Reports</h1>
+<p>The op-ed you drafted in <a href="ch-17-op-eds.html" class="quarto-xref"><span>Chapter 19</span></a> travels light: it reaches a commuter, a council member, or a reporter already circling the story, and gets one decision out of them before the next tab loads. The report is the opposite instrument: long, footnoted, designed to be excerpted and cited three years later in a brief you will never see, and written because some institutional reader (a program officer, a legislative staffer, a regulator’s policy advisor, an advocacy research director) needs a document they can put in a folder and hand to their general counsel. The op-ed is a knock on the door. The report is the evidence you leave behind after being let in.</p>
+<p>This chapter treats the report as a distinct genre with its own history, political economy, and load-bearing conventions. The chapter’s artifact is a 10-to-15-page report draft, with a real executive summary, one completed section, at least one reproducible figure built from a committed notebook, and a one-paragraph cover note addressed to a named institutional reader. The starting material is the topic you pitched as an op-ed in <a href="ch-17-op-eds.html" class="quarto-xref"><span>Chapter 19</span></a>; the audience shifts, but most of the argument does not.</p>
+<section id="a-short-political-economy-of-the-think-tank-report" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="a-short-political-economy-of-the-think-tank-report"><span class="header-section-number">20.1</span> A short political economy of the think-tank report</h2>
+<p>The modern think-tank report is a twentieth-century invention shaped by a funding ecology of foundation grants, corporate sponsorship, occasional government contracts, and a small number of large philanthropic commitments to AI and internet policy. The shops you will cite most often (AI Now, Data &amp; Society, EPIC, CDT, Mozilla, Brookings, New America, Ada Lovelace) sit between academic research and advocacy, and each calibrates that space differently: AI Now is argumentative, Data &amp; Society explanatory, Brookings academic with a policy preamble, Mozilla a designed magazine with citations. Read three before you write your own.</p>
+<p>They share a structure: a one-to-two-page executive summary, findings organized by claim, methods folded in or in an appendix, recommendations aimed at a specific institutional actor, and a bibliography. Proportions matter: AI Now spends half its pages on argument and a quarter on evidence; Brookings inverts those; Mozilla spends more on design and less on methods than either. Before you draft, look at where your model report spends its pages. That is where its authors believe the argument lives.</p>
+<p>Each report has a reader in mind who is not you: a Brookings paper on generative AI in the federal workforce is written for a senior civil servant at OMB; a Data &amp; Society primer on worker surveillance for a program officer at a labor-focused foundation; an Access Now report for a UN Special Rapporteur’s staff. Reports that read as if written for a general audience are almost without exception worse reports.</p>
+</section>
+<section id="reports-that-inform-and-reports-that-mobilize" class="level2" data-number="20.2">
+<h2 data-number="20.2" class="anchored" data-anchor-id="reports-that-inform-and-reports-that-mobilize"><span class="header-section-number">20.2</span> Reports that inform and reports that mobilize</h2>
+<p>There is a useful distinction most authors do not draw explicitly: reports whose job is to inform versus reports whose job is to mobilize. An informing report surveys a field, names the actors, and leaves the reader better oriented. A mobilizing report builds to a demand: a rule the regulator should write, a line-item the legislator should add, a disclosure the company should make. Both are legitimate, and they are not interchangeable. A mobilizing report that reads as merely informing will be ignored by those who could have acted on it; an informing report that reads as mobilizing will be discounted by those who trusted it as a survey.</p>
+<p>You can usually tell the difference by reading the recommendations. An informing report hedges (“policymakers should consider a range of approaches”); a mobilizing report is specific (“the Federal Trade Commission should open a Section 6(b) study into the five named vendors within 180 days”). If your recommendations could be photocopied into a different report on a different topic without changing meaning, you have written a report that will not cause anything to happen. That may be the correct choice. Be sure it is a choice.</p>
+<p>Non-US exemplars clarify the range. Access Now’s #KeepItOn report is mobilizing, giving UN human rights mechanisms and national-level litigants a shared evidentiary record. Derechos Digitales (Santiago) publishes reports that work as regional advocacy, academic reference, and inputs to Inter-American Court proceedings. Paradigm Initiative (Lagos) publishes Londa to equip African civil society with country-by-country baselines <span class="citation" data-cites="paradigm_londa">(<a href="#ref-paradigm_londa" role="doc-biblioref">Paradigm Initiative 2024</a>)</span>. The political economy differs: less foundation money, more distributed authorship, tighter integration with litigation and legislative work.</p>
+</section>
+<section id="the-executive-summary-is-the-report" class="level2" data-number="20.3">
+<h2 data-number="20.3" class="anchored" data-anchor-id="the-executive-summary-is-the-report"><span class="header-section-number">20.3</span> The executive summary is the report</h2>
+<p>Most readers will read exactly three things: the title, the executive summary, and the recommendations. Some will glance at the figures. Almost none will read the methods. This is not a failure of the readers: a foundation program officer reads fifteen reports a week, a legislative staffer thirty. They are triaging, and the executive summary is where the triage happens.</p>
+<p>The implication is direct. The executive summary is not a summary of the report; it is the argument of the report, compressed to one and a half pages, with the evidence pointers inline. It must stand alone: if a reader forwards only the executive summary to their general counsel, the general counsel should be able to decide whether to recommend a meeting. The recommendations belong in the executive summary, not saved for a climactic reveal. If they are not in the executive summary, they are invisible.</p>
+<p>Headings are the report’s second skeleton. A skimming reader reads section headings and figure captions, and if the headings read as a coherent outline, the reader will trust the document enough to read further. “Findings” is a weak heading; “Three ways the scoring system diverges from its stated criteria” is a strong one. Write headings as if they were the nut grafs of the sections they introduce.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The Missing Manual
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Most readers will read the executive summary, the headings, and the charts. Write those three layers as if they were the whole report. The executive summary is not a summary; it is the argument compressed to one and a half pages, with evidence pointers inline. If recommendations are not in the executive summary, they are invisible. Test this before sending: print the executive summary, the table of contents, and the figure captions, and hand them to a colleague who has not seen the report. If they can tell you what you found, what you want done, and who should do it, the three-layer skeleton works. If they cannot, your argument lives in places no one will read.</p>
+</div>
+</div>
+</section>
+<section id="methods-transparency-as-a-credibility-move" class="level2" data-number="20.4">
+<h2 data-number="20.4" class="anchored" data-anchor-id="methods-transparency-as-a-credibility-move"><span class="header-section-number">20.4</span> Methods transparency as a credibility move</h2>
+<p>A report is not a peer-reviewed article and does not need to be. What it needs is methods transparency a skeptical reader can audit in an afternoon: a one-page description of how you obtained your data, when, from which endpoint, and with which parameters; a link to a public code repository with the scripts that produced each figure; a datasheet-style note for each dataset you relied on, following the template proposed by Gebru and colleagues <span class="citation" data-cites="gebru2021">(<a href="#ref-gebru2021" role="doc-biblioref">Gebru et al. 2021</a>)</span>; and a clear statement of what the analysis cannot support. The last item separates reports people cite from reports people weaponize.</p>
+<p>Methods transparency connects to the accountability infrastructure of <a href="ch-11-accounting.html" class="quarto-xref"><span>Chapter 13</span></a> and the authority-and-remedy framework of <a href="ch-07-oversight.html" class="quarto-xref"><span>Chapter 9</span></a>. A report whose claims can be reproduced against public data by a third party survives contact with a hostile reader; a report whose claims rest on private datasets, undocumented pipelines, or one-off notebooks lasts exactly as long as no one asks. You have already learned how to produce the first kind; the report is where you show that you did.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>In the Public Interest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Oversight requires documentation that can travel, and reports are the documentation that travels. The op-ed in <a href="ch-17-op-eds.html" class="quarto-xref"><span>Chapter 19</span></a> gave a reader a reason to care; the report gives an institution something it can act on, cite, attach to a brief, and hand to counsel. This is <strong>authority</strong> and <strong>remedy</strong> in the sense of <a href="ch-07-oversight.html" class="quarto-xref"><span>Chapter 9</span></a>: a report without methods transparency gives a reader no grounds to trust it, and a report without specific recommendations gives no actor a path to act. The reproducibility discipline of <a href="ch-11-accounting.html" class="quarto-xref"><span>Chapter 13</span></a> (documented notebooks, committed code, pinned dependencies, datasheets) is not academic ornament; it is the load-bearing infrastructure that lets your findings travel from your laptop to a rulemaking record to a brief to a ruling without degrading at each step. The credibility of the field depends on that infrastructure holding.</p>
+</div>
+</div>
+</section>
+<section id="the-translation-gap" class="level2" data-number="20.5">
+<h2 data-number="20.5" class="anchored" data-anchor-id="the-translation-gap"><span class="header-section-number">20.5</span> The translation gap</h2>
+<p>You already have the findings and the evidence. Writing a report is overwhelmingly the work of translating those findings into terms an institutional reader can act on, and that translation has three moves first-time authors consistently underestimate.</p>
+<p>First, naming the actor. “Someone should regulate this” is not a recommendation; it is a complaint. The recommendation is: the Colorado Department of Regulatory Agencies should open an investigation under C.R.S. section X into the vendor’s scoring practices; the legislative staffer should draft language for the next session’s HB-25-XXXX. Name the body, the authority, and the calendar.</p>
+<p>Second, naming the remedy. An institutional reader cannot act on “transparency”; they can act on a specific disclosure requirement, a specific records release, or a specific audit provision added to a procurement contract. Your recommendation should be copy-pasteable into a draft rule or draft bill. If it is not, it is not yet a recommendation.</p>
+<p>Third, naming the trade-off. Every institutional reader has someone in the next room whose job is to poke holes in the recommendation. Your report is stronger if it names the most plausible objection, treats it seriously, and explains why the recommendation still stands. Reports that pretend their recommendations are free lunches get dismissed by the people who know the lunches are not free.</p>
+</section>
+<section id="quarto-as-a-report-stack" class="level2" data-number="20.6">
+<h2 data-number="20.6" class="anchored" data-anchor-id="quarto-as-a-report-stack"><span class="header-section-number">20.6</span> Quarto as a report stack</h2>
+<p>Most of the technical apparatus is what you already know. A report is a Quarto project with its own YAML header (not the book’s), a main <code>report.qmd</code>, one or more <code>figures.qmd</code> partials, a <code>references.bib</code>, and a directory of committed notebooks that generated each figure. Quarto renders the same source to HTML, PDF (for program officers who print everything), and, via Pandoc, <code>.docx</code> (for the policy staffer who runs Track Changes on your recommendations).</p>
+<p>A minimal project layout:</p>
+<pre><code>report/
+  _quarto.yml
+  report.qmd
+  figures.qmd
+  references.bib
+  notebooks/
+    fig_01_referral_rates.ipynb
+    fig_02_geographic.ipynb
+  data/
+    hmis_extract_2024q3.csv
+    datasheet.md
+  README.md</code></pre>
+<p>A minimal <code>_quarto.yml</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> _output</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Scoring disparities in Boulder County's homelessness response system"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your Name"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">affiliation</span><span class="kw">:</span><span class="at"> </span><span class="st">"INFO 46XX, University of Colorado Boulder"</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2026-05-15"</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">,</span><span class="at"> </span><span class="fu">embed-resources</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">,</span><span class="at"> </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span><span class="kw">}</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> scrartcl</span><span class="kw">,</span><span class="at"> </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">,</span><span class="at"> </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">}</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">reference-doc</span><span class="kw">:</span><span class="at"> templates/report-template.docx</span><span class="kw">}</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> https://www.zotero.org/styles/chicago-author-date</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="kw">,</span><span class="at"> </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="kw">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A minimal <code>report.qmd</code> with an executive-summary callout and an included figures partial:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Scoring disparities in Boulder County's homelessness response system</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>::: {.callout-important title="Executive summary"}</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>This report documents three ways the vendor's scoring system used by</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Boulder County's Coordinated Entry process diverges from its stated</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>criteria. Using HMIS records from July 2023 through June 2024, we find</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>that households with recent out-of-state addresses are referred to</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>shelter beds at 23 percent, compared to 58 percent for in-state</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>households with more than a year of residency (@fig-referral-rates).</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>We recommend that the Boulder City Council pause the December 2026</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>contract renewal vote, commission an external audit, and release the</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>vendor's scoring logic under CORA.</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Three ways the scoring system diverges from its stated criteria</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>{{&lt; include figures.qmd &gt;}}</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods {#sec-methods}</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>The HMIS extract was obtained through a CORA request (BC-2024-0912).</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>The pipeline is committed at</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="in">`https://github.com/yourname/boulder-coord-entry-audit`</span>; the</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>datasheet follows the template of @gebru2021.</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Recommendations</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Pause the December 2026 contract-renewal vote.</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Commission an external audit with a disaggregation specification</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>   modeled on @sec-ch-07-oversight.</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Release the vendor's scoring logic under CORA.</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## References {.unnumbered}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>figures.qmd</code> partial loads and labels reproducible charts produced by notebooks in <code>notebooks/</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-referral-rates</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Shelter referral rate by residency group, Boulder County</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#|   Coordinated Entry, July 2023 to June 2024. Notebook:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#|   notebooks/fig_01_referral_rates.ipynb"</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/referral_rates_by_group.csv"</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">6.5</span>, <span class="fl">3.8</span>))</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>ax.barh(df[<span class="st">"group"</span>], df[<span class="st">"referral_rate"</span>])</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Referral rate"</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To render as HTML, PDF, and <code>.docx</code> in one pass: <code>quarto render report.qmd --to html,pdf,docx</code>. The <code>.docx</code> output is the one the policy staffer runs Track Changes on; build for it from day one, since retrofitting a Word-compatible template at the last minute is a Friday-afternoon surprise you can avoid.</p>
+</section>
+<section id="institutional-audiences-named" class="level2" data-number="20.7">
+<h2 data-number="20.7" class="anchored" data-anchor-id="institutional-audiences-named"><span class="header-section-number">20.7</span> Institutional audiences, named</h2>
+<p>The report is not written for “policymakers” any more than the op-ed was written for “the public.” It is written for specific humans in specific roles. Four audiences recur.</p>
+<p><strong>Foundation program officers</strong> fund the work that follows your report. They read for whether the argument fits the portfolio, whether you are the right grantee, and whether the recommendations are actionable. Time budget: ten minutes. First read: executive summary and recommendations.</p>
+<p><strong>Legislative staffers</strong> draft the bills and committee questions. They read for statutory language, a named committee with jurisdiction, and a witness list. Time budget: under ten minutes. First read: executive summary and whatever sidebar most resembles a witness list.</p>
+<p><strong>Regulatory policy advisors</strong> work inside agencies considering a rulemaking or responding to a petition. They read for whether your report supplies evidence that would survive a challenge in the rulemaking record. Their time budget is longer (they will read the methods) but their standard is stricter. They are auditing you.</p>
+<p><strong>Advocacy organization research directors</strong> are the readers most likely to build on your work, reading for fit with their litigation, campaign, or next report, and whether you are a potential collaborator. Their time budget is the longest, and they are most likely to ask for your data.</p>
+<p>Identify which of these four your report is primarily for before you draft. Write the executive summary and recommendations to that reader. You cannot serve all four as the primary reader.</p>
+</section>
+<section id="reports-across-the-lineages" class="level2" data-number="20.8">
+<h2 data-number="20.8" class="anchored" data-anchor-id="reports-across-the-lineages"><span class="header-section-number">20.8</span> Reports across the lineages</h2>
+<p>The report does not belong to data science. It is a shared form across the lineages of Part III: an accounting report (<a href="ch-11-accounting.html" class="quarto-xref"><span>Chapter 13</span></a>) documents trust through procedural rigor, a planning report (<a href="ch-12-planning.html" class="quarto-xref"><span>Chapter 14</span></a>) documents a decision through stakeholder mapping, and a public-interest technology report (<a href="ch-14-pit-data-for-good.html" class="quarto-xref"><span>Chapter 16</span></a>) documents a deployment through user research. When your report borrows from all three, say so. A report visibly self-aware about its genre reads as adult.</p>
+</section>
+<section id="exercises" class="level2" data-number="20.9">
+<h2 data-number="20.9" class="anchored" data-anchor-id="exercises"><span class="header-section-number">20.9</span> Exercises</h2>
+<p><strong>Exercise 18.1 (Structural analysis, US).</strong> Pick a recent AI Now or Data &amp; Society report (2023 or later). Map its structure: how many pages are executive summary, findings, methods, recommendations, appendices? Where does the argument live? Who is the implied institutional reader, and what evidence tells you? Write 400 words. Save as <code>exercises/ch18_structural_analysis_us.md</code>. You may use <span class="citation" data-cites="mcguinness2021">McGuinness and Schank (<a href="#ref-mcguinness2021" role="doc-biblioref">2021</a>)</span> as a framing reference for what “public interest technology” reports are trying to accomplish and how.</p>
+<p><strong>Exercise 18.2 (Structural analysis, non-US).</strong> Do the same for a recent report from Access Now, Derechos Digitales, or Paradigm Initiative. Pay particular attention to where the report assumes a reader who is not the US federal government. Compare to your US report from Exercise 18.1 in one paragraph at the end: what conventions differ, and what does that tell you about the political economy of each report’s audience? Save as <code>exercises/ch18_structural_analysis_nonus.md</code>.</p>
+<p><strong>Exercise 18.3 (Executive summary, outline, one full section).</strong> Take the op-ed topic you drafted in <a href="ch-17-op-eds.html" class="quarto-xref"><span>Chapter 19</span></a> and expand it into a report. Produce three deliverables: (a) a one-and-a-half-page executive summary that includes the recommendations inline; (b) a full section-by-section outline with one-sentence nut grafs for each section; (c) one section (three to five pages) written in full, with figures inline and citations against <code>references.bib</code>. Save as <code>report/report.qmd</code> in your class repository. Follow the YAML-and-layout conventions in this chapter. This is the core of your Part V artifact. See <span class="citation" data-cites="gray2021handbook">Gray and Bounegru (<a href="#ref-gray2021handbook" role="doc-biblioref">2021</a>)</span> on writing for policy audiences.</p>
+<p><strong>Exercise 18.4 (Reproducible figure with a committed notebook).</strong> Produce at least one figure for your report from a notebook committed to the repository at <code>report/notebooks/</code>. The notebook must: load data from a documented path, document every filter or transformation with a comment, and render the figure to <code>report/figures/</code>. Add a datasheet-style provenance note (one page, following <span class="citation" data-cites="gebru2021">Gebru et al. (<a href="#ref-gebru2021" role="doc-biblioref">2021</a>)</span>) for the dataset the notebook uses. Commit the notebook, the datasheet, and the figure. The figure caption in <code>figures.qmd</code> should cite the notebook by filename. Tie this explicitly to the reproducibility discipline you built in <a href="ch-11-accounting.html" class="quarto-xref"><span>Chapter 13</span></a>.</p>
+<p><strong>Exercise 18.5 (Cover notes to three named humans).</strong> Identify three humans (by role, and by name if you can) who would need to read your report for it to matter. At least one must be a foundation program officer or an advocacy research director; at least one must be a legislative staffer or a regulatory policy advisor. For each, draft a one-paragraph cover note tailored to that reader. The cover notes should differ substantively: a program officer’s note points to the portfolio fit and the follow-on work; a staffer’s note points to the pending bill or hearing; a regulator’s note points to the open docket or petition. Save all three as <code>report/cover_notes.md</code>. This draws directly on the stakeholder-mapping logic of <a href="ch-14-pit-data-for-good.html" class="quarto-xref"><span>Chapter 16</span></a> and <a href="ch-12-planning.html" class="quarto-xref"><span>Chapter 14</span></a>.</p>
+<p>Exercises 18.3, 18.4, and 18.5 together produce the Part V artifact: a report draft with an executive summary, one completed section, at least one reproducible figure built from a committed notebook with a datasheet-style provenance note, and three cover notes addressed to named institutional readers. When you have all four components in your class repository, tag the commit <code>ch18-artifact-v1</code>. The artifact is the chapter.</p>
+</section>
+<section id="looking-ahead" class="level2" data-number="20.10">
+<h2 data-number="20.10" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">20.10</span> Looking ahead</h2>
+<p>Chapter 19 (<a href="ch-19-research-proposals.html" class="quarto-xref"><span>Chapter 21</span></a>) takes the genre into the academic and grantmaking ecosystems. A report documents what you found; a research proposal argues for what you will find if someone funds you. The conventions overlap and diverge in ways that catch first-time authors off guard: the specific-aims page borrows from the executive summary, but the theory of change runs the opposite direction. The work you did on the report’s recommendations has already produced most of the proposal’s significance section. From there, <a href="ch-20-testimony.html" class="quarto-xref"><span>Chapter 22</span></a> turns your recommendations into a five-minute spoken statement, and <a href="ch-22-archival-deposits.html" class="quarto-xref"><span>Chapter 24</span></a> gives your report and its data a permanent address.</p>
+</section>
+<section id="further-reading-and-resources" class="level2" data-number="20.11">
+<h2 data-number="20.11" class="anchored" data-anchor-id="further-reading-and-resources"><span class="header-section-number">20.11</span> Further Reading and Resources</h2>
+<ul>
+<li>AI Now Institute, annual reports, <a href="https://ainowinstitute.org/publications" class="uri">https://ainowinstitute.org/publications</a>. The canonical example of the mobilizing report in the US technology-policy ecosystem; read at least one cover to cover before drafting your own.</li>
+<li>Data &amp; Society Research Institute, reports, <a href="https://datasociety.net/library/" class="uri">https://datasociety.net/library/</a>. A wider range of report types (primers, case studies, ethnographies). Pay attention to how each is structured for its implied reader.</li>
+<li>Access Now, #KeepItOn annual internet shutdowns report, <a href="https://www.accessnow.org/campaign/keepiton/" class="uri">https://www.accessnow.org/campaign/keepiton/</a>. Canonical non-US advocacy report; note the integration with UN human rights mechanisms.</li>
+<li>Mozilla Foundation, <em>Internet Health Report</em>, <a href="https://internethealthreport.org" class="uri">https://internethealthreport.org</a>. Design-forward, magazine-style report that rewards reading for layout and voice.</li>
+<li>Paradigm Initiative, <em>Londa</em> report on digital rights in Africa <span class="citation" data-cites="paradigm_londa">(<a href="#ref-paradigm_londa" role="doc-biblioref">Paradigm Initiative 2024</a>)</span>, <a href="https://paradigmhq.org/londa" class="uri">https://paradigmhq.org/londa</a>. Distributed-authorship model with country-level reporting; the opposite of the single-institute think-tank report.</li>
+<li>Quarto project and book documentation, <a href="https://quarto.org/docs/projects/quarto-projects.html" class="uri">https://quarto.org/docs/projects/quarto-projects.html</a> and <a href="https://quarto.org/docs/books/" class="uri">https://quarto.org/docs/books/</a>. The authoritative reference for multi-format rendering; the book you are reading is built with it.</li>
+<li>Pandoc’s Word output documentation, <a href="https://pandoc.org/MANUAL.html#option--reference-doc" class="uri">https://pandoc.org/MANUAL.html#option--reference-doc</a>. The two-page guide that fixes ninety percent of <code>.docx</code> formatting surprises, especially how to use a reference document for headings and styles.</li>
+<li>Tara Dawson McGuinness and Hana Schank, <em>Power to the Public</em> <span class="citation" data-cites="mcguinness2021">(<a href="#ref-mcguinness2021" role="doc-biblioref">McGuinness and Schank 2021</a>)</span>, for the political economy of public-interest technology reports and the foundations that fund them.</li>
+<li><em>The Data Journalism Handbook 2</em> <span class="citation" data-cites="gray2021handbook">(<a href="#ref-gray2021handbook" role="doc-biblioref">Gray and Bounegru 2021</a>)</span>, particularly the chapters on report-length investigative projects; the conventions travel.</li>
+<li>Timnit Gebru and colleagues, “Datasheets for datasets” <span class="citation" data-cites="gebru2021">(<a href="#ref-gebru2021" role="doc-biblioref">Gebru et al. 2021</a>)</span>. The provenance-note template you should adapt for every dataset your report relies on.</li>
+<li>Keegan (2026) <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">Keegan 2026</a>)</span>, on the six elements of the installed base and why reports are the genre in which they most often travel.</li>
+</ul>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-gebru2021" class="csl-entry" role="listitem">
+Gebru, Timnit, Jamie Morgenstern, Briana Vecchione, et al. 2021. <span>“Datasheets for Datasets.”</span> <em>Communications of the ACM</em> 64 (12): 86–92.
+</div>
+<div id="ref-gray2021handbook" class="csl-entry" role="listitem">
+Gray, Jonathan, and Liliana Bounegru, eds. 2021. <em>The Data Journalism Handbook: Towards a Critical Data Practice</em>. Amsterdam University Press.
+</div>
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Information, Communication <span>&amp;</span> Society</em>.
+</div>
+<div id="ref-mcguinness2021" class="csl-entry" role="listitem">
+McGuinness, Tara Dawson, and Hana Schank. 2021. <em>Power to the Public: The Promise of Public Interest Technology</em>. Princeton University Press.
+</div>
+<div id="ref-paradigm_londa" class="csl-entry" role="listitem">
+Paradigm Initiative. 2024. <em>Londa: Digital Rights and Inclusion in <span>Africa</span> Report</em>. Paradigm Initiative. <a href="https://paradigmhq.org/londa">https://paradigmhq.org/londa</a>.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch-17-op-eds.html" class="pagination-link" aria-label="Op-Eds">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Op-Eds</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch-19-research-proposals.html" class="pagination-link" aria-label="Research Proposals">
+        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Research Proposals</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Reports"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># Reports {#sec-ch-18-reports}</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>The op-ed you drafted in @sec-ch-17-op-eds travels light: it reaches a commuter, a council member, or a reporter already circling the story, and gets one decision out of them before the next tab loads. The report is the opposite instrument: long, footnoted, designed to be excerpted and cited three years later in a brief you will never see, and written because some institutional reader (a program officer, a legislative staffer, a regulator's policy advisor, an advocacy research director) needs a document they can put in a folder and hand to their general counsel. The op-ed is a knock on the door. The report is the evidence you leave behind after being let in.</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>This chapter treats the report as a distinct genre with its own history, political economy, and load-bearing conventions. The chapter's artifact is a 10-to-15-page report draft, with a real executive summary, one completed section, at least one reproducible figure built from a committed notebook, and a one-paragraph cover note addressed to a named institutional reader. The starting material is the topic you pitched as an op-ed in @sec-ch-17-op-eds; the audience shifts, but most of the argument does not.</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## A short political economy of the think-tank report</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>The modern think-tank report is a twentieth-century invention shaped by a funding ecology of foundation grants, corporate sponsorship, occasional government contracts, and a small number of large philanthropic commitments to AI and internet policy. The shops you will cite most often (AI Now, Data &amp; Society, EPIC, CDT, Mozilla, Brookings, New America, Ada Lovelace) sit between academic research and advocacy, and each calibrates that space differently: AI Now is argumentative, Data &amp; Society explanatory, Brookings academic with a policy preamble, Mozilla a designed magazine with citations. Read three before you write your own.</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>They share a structure: a one-to-two-page executive summary, findings organized by claim, methods folded in or in an appendix, recommendations aimed at a specific institutional actor, and a bibliography. Proportions matter: AI Now spends half its pages on argument and a quarter on evidence; Brookings inverts those; Mozilla spends more on design and less on methods than either. Before you draft, look at where your model report spends its pages. That is where its authors believe the argument lives.</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>Each report has a reader in mind who is not you: a Brookings paper on generative AI in the federal workforce is written for a senior civil servant at OMB; a Data &amp; Society primer on worker surveillance for a program officer at a labor-focused foundation; an Access Now report for a UN Special Rapporteur's staff. Reports that read as if written for a general audience are almost without exception worse reports.</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reports that inform and reports that mobilize</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>There is a useful distinction most authors do not draw explicitly: reports whose job is to inform versus reports whose job is to mobilize. An informing report surveys a field, names the actors, and leaves the reader better oriented. A mobilizing report builds to a demand: a rule the regulator should write, a line-item the legislator should add, a disclosure the company should make. Both are legitimate, and they are not interchangeable. A mobilizing report that reads as merely informing will be ignored by those who could have acted on it; an informing report that reads as mobilizing will be discounted by those who trusted it as a survey.</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>You can usually tell the difference by reading the recommendations. An informing report hedges ("policymakers should consider a range of approaches"); a mobilizing report is specific ("the Federal Trade Commission should open a Section 6(b) study into the five named vendors within 180 days"). If your recommendations could be photocopied into a different report on a different topic without changing meaning, you have written a report that will not cause anything to happen. That may be the correct choice. Be sure it is a choice.</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>Non-US exemplars clarify the range. Access Now's #KeepItOn report is mobilizing, giving UN human rights mechanisms and national-level litigants a shared evidentiary record. Derechos Digitales (Santiago) publishes reports that work as regional advocacy, academic reference, and inputs to Inter-American Court proceedings. Paradigm Initiative (Lagos) publishes Londa to equip African civil society with country-by-country baselines <span class="co">[</span><span class="ot">@paradigm_londa</span><span class="co">]</span>. The political economy differs: less foundation money, more distributed authorship, tighter integration with litigation and legislative work.</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## The executive summary is the report</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>Most readers will read exactly three things: the title, the executive summary, and the recommendations. Some will glance at the figures. Almost none will read the methods. This is not a failure of the readers: a foundation program officer reads fifteen reports a week, a legislative staffer thirty. They are triaging, and the executive summary is where the triage happens.</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>The implication is direct. The executive summary is not a summary of the report; it is the argument of the report, compressed to one and a half pages, with the evidence pointers inline. It must stand alone: if a reader forwards only the executive summary to their general counsel, the general counsel should be able to decide whether to recommend a meeting. The recommendations belong in the executive summary, not saved for a climactic reveal. If they are not in the executive summary, they are invisible.</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>Headings are the report's second skeleton. A skimming reader reads section headings and figure captions, and if the headings read as a coherent outline, the reader will trust the document enough to read further. "Findings" is a weak heading; "Three ways the scoring system diverges from its stated criteria" is a strong one. Write headings as if they were the nut grafs of the sections they introduce.</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="The Missing Manual"}</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>Most readers will read the executive summary, the headings, and the charts. Write those three layers as if they were the whole report. The executive summary is not a summary; it is the argument compressed to one and a half pages, with evidence pointers inline. If recommendations are not in the executive summary, they are invisible. Test this before sending: print the executive summary, the table of contents, and the figure captions, and hand them to a colleague who has not seen the report. If they can tell you what you found, what you want done, and who should do it, the three-layer skeleton works. If they cannot, your argument lives in places no one will read.</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods transparency as a credibility move</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>A report is not a peer-reviewed article and does not need to be. What it needs is methods transparency a skeptical reader can audit in an afternoon: a one-page description of how you obtained your data, when, from which endpoint, and with which parameters; a link to a public code repository with the scripts that produced each figure; a datasheet-style note for each dataset you relied on, following the template proposed by Gebru and colleagues <span class="co">[</span><span class="ot">@gebru2021</span><span class="co">]</span>; and a clear statement of what the analysis cannot support. The last item separates reports people cite from reports people weaponize.</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>Methods transparency connects to the accountability infrastructure of @sec-ch-11-accounting and the authority-and-remedy framework of @sec-ch-07-oversight. A report whose claims can be reproduced against public data by a third party survives contact with a hostile reader; a report whose claims rest on private datasets, undocumented pipelines, or one-off notebooks lasts exactly as long as no one asks. You have already learned how to produce the first kind; the report is where you show that you did.</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="In the Public Interest"}</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>Oversight requires documentation that can travel, and reports are the documentation that travels. The op-ed in @sec-ch-17-op-eds gave a reader a reason to care; the report gives an institution something it can act on, cite, attach to a brief, and hand to counsel. This is **authority** and **remedy** in the sense of @sec-ch-07-oversight: a report without methods transparency gives a reader no grounds to trust it, and a report without specific recommendations gives no actor a path to act. The reproducibility discipline of @sec-ch-11-accounting (documented notebooks, committed code, pinned dependencies, datasheets) is not academic ornament; it is the load-bearing infrastructure that lets your findings travel from your laptop to a rulemaking record to a brief to a ruling without degrading at each step. The credibility of the field depends on that infrastructure holding.</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## The translation gap</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>You already have the findings and the evidence. Writing a report is overwhelmingly the work of translating those findings into terms an institutional reader can act on, and that translation has three moves first-time authors consistently underestimate.</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>First, naming the actor. "Someone should regulate this" is not a recommendation; it is a complaint. The recommendation is: the Colorado Department of Regulatory Agencies should open an investigation under C.R.S. section X into the vendor's scoring practices; the legislative staffer should draft language for the next session's HB-25-XXXX. Name the body, the authority, and the calendar.</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>Second, naming the remedy. An institutional reader cannot act on "transparency"; they can act on a specific disclosure requirement, a specific records release, or a specific audit provision added to a procurement contract. Your recommendation should be copy-pasteable into a draft rule or draft bill. If it is not, it is not yet a recommendation.</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>Third, naming the trade-off. Every institutional reader has someone in the next room whose job is to poke holes in the recommendation. Your report is stronger if it names the most plausible objection, treats it seriously, and explains why the recommendation still stands. Reports that pretend their recommendations are free lunches get dismissed by the people who know the lunches are not free.</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quarto as a report stack</span></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>Most of the technical apparatus is what you already know. A report is a Quarto project with its own YAML header (not the book's), a main <span class="in">`report.qmd`</span>, one or more <span class="in">`figures.qmd`</span> partials, a <span class="in">`references.bib`</span>, and a directory of committed notebooks that generated each figure. Quarto renders the same source to HTML, PDF (for program officers who print everything), and, via Pandoc, <span class="in">`.docx`</span> (for the policy staffer who runs Track Changes on your recommendations).</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>A minimal project layout:</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a><span class="in">report/</span></span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a><span class="in">  _quarto.yml</span></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="in">  report.qmd</span></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a><span class="in">  figures.qmd</span></span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a><span class="in">  references.bib</span></span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a><span class="in">  notebooks/</span></span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a><span class="in">    fig_01_referral_rates.ipynb</span></span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a><span class="in">    fig_02_geographic.ipynb</span></span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a><span class="in">  data/</span></span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a><span class="in">    hmis_extract_2024q3.csv</span></span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a><span class="in">    datasheet.md</span></span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a><span class="in">  README.md</span></span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>A minimal <span class="in">`_quarto.yml`</span>:</span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> _output</span></span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Scoring disparities in Boulder County's homelessness response system"</span></span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span></span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your Name"</span></span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">affiliation</span><span class="kw">:</span><span class="at"> </span><span class="st">"INFO 46XX, University of Colorado Boulder"</span></span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2026-05-15"</span></span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">,</span><span class="at"> </span><span class="fu">embed-resources</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">,</span><span class="at"> </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span><span class="kw">}</span></span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> scrartcl</span><span class="kw">,</span><span class="at"> </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">,</span><span class="at"> </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">}</span></span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">reference-doc</span><span class="kw">:</span><span class="at"> templates/report-template.docx</span><span class="kw">}</span></span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> https://www.zotero.org/styles/chicago-author-date</span></span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="kw">,</span><span class="at"> </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="kw">}</span></span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a>A minimal <span class="in">`report.qmd`</span> with an executive-summary callout and an included figures partial:</span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a><span class="fu"># Scoring disparities in Boulder County's homelessness response system</span></span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a>::: {.callout-important title="Executive summary"}</span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>This report documents three ways the vendor's scoring system used by</span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a>Boulder County's Coordinated Entry process diverges from its stated</span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>criteria. Using HMIS records from July 2023 through June 2024, we find</span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a>that households with recent out-of-state addresses are referred to</span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>shelter beds at 23 percent, compared to 58 percent for in-state</span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>households with more than a year of residency (@fig-referral-rates).</span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>We recommend that the Boulder City Council pause the December 2026</span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>contract renewal vote, commission an external audit, and release the</span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a>vendor's scoring logic under CORA.</span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## Three ways the scoring system diverges from its stated criteria</span></span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>{{{&lt; include figures.qmd &gt;}}}</span>
+<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods {#sec-methods}</span></span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>The HMIS extract was obtained through a CORA request (BC-2024-0912).</span>
+<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a>The pipeline is committed at</span>
+<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a><span class="in">`https://github.com/yourname/boulder-coord-entry-audit`</span>; the</span>
+<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a>datasheet follows the template of @gebru2021.</span>
+<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a><span class="fu">## Recommendations</span></span>
+<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Pause the December 2026 contract-renewal vote.</span>
+<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Commission an external audit with a disaggregation specification</span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>   modeled on @sec-ch-07-oversight.</span>
+<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Release the vendor's scoring logic under CORA.</span>
+<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a><span class="fu">## References {.unnumbered}</span></span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>The <span class="in">`figures.qmd`</span> partial loads and labels reproducible charts produced by notebooks in <span class="in">`notebooks/`</span>:</span>
+<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-referral-rates</span></span>
+<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Shelter referral rate by residency group, Boulder County</span></span>
+<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a><span class="co">#|   Coordinated Entry, July 2023 to June 2024. Notebook:</span></span>
+<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a><span class="co">#|   notebooks/fig_01_referral_rates.ipynb"</span></span>
+<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/referral_rates_by_group.csv"</span>)</span>
+<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">6.5</span>, <span class="fl">3.8</span>))</span>
+<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a>ax.barh(df[<span class="st">"group"</span>], df[<span class="st">"referral_rate"</span>])</span>
+<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Referral rate"</span>)</span>
+<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a>To render as HTML, PDF, and <span class="in">`.docx`</span> in one pass: <span class="in">`quarto render report.qmd --to html,pdf,docx`</span>. The <span class="in">`.docx`</span> output is the one the policy staffer runs Track Changes on; build for it from day one, since retrofitting a Word-compatible template at the last minute is a Friday-afternoon surprise you can avoid.</span>
+<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a><span class="fu">## Institutional audiences, named</span></span>
+<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a>The report is not written for "policymakers" any more than the op-ed was written for "the public." It is written for specific humans in specific roles. Four audiences recur.</span>
+<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a>**Foundation program officers** fund the work that follows your report. They read for whether the argument fits the portfolio, whether you are the right grantee, and whether the recommendations are actionable. Time budget: ten minutes. First read: executive summary and recommendations.</span>
+<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a>**Legislative staffers** draft the bills and committee questions. They read for statutory language, a named committee with jurisdiction, and a witness list. Time budget: under ten minutes. First read: executive summary and whatever sidebar most resembles a witness list.</span>
+<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a>**Regulatory policy advisors** work inside agencies considering a rulemaking or responding to a petition. They read for whether your report supplies evidence that would survive a challenge in the rulemaking record. Their time budget is longer (they will read the methods) but their standard is stricter. They are auditing you.</span>
+<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a>**Advocacy organization research directors** are the readers most likely to build on your work, reading for fit with their litigation, campaign, or next report, and whether you are a potential collaborator. Their time budget is the longest, and they are most likely to ask for your data.</span>
+<span id="cb5-175"><a href="#cb5-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-176"><a href="#cb5-176" aria-hidden="true" tabindex="-1"></a>Identify which of these four your report is primarily for before you draft. Write the executive summary and recommendations to that reader. You cannot serve all four as the primary reader.</span>
+<span id="cb5-177"><a href="#cb5-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-178"><a href="#cb5-178" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reports across the lineages</span></span>
+<span id="cb5-179"><a href="#cb5-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-180"><a href="#cb5-180" aria-hidden="true" tabindex="-1"></a>The report does not belong to data science. It is a shared form across the lineages of Part III: an accounting report (@sec-ch-11-accounting) documents trust through procedural rigor, a planning report (@sec-ch-12-planning) documents a decision through stakeholder mapping, and a public-interest technology report (@sec-ch-14-pit-data-for-good) documents a deployment through user research. When your report borrows from all three, say so. A report visibly self-aware about its genre reads as adult.</span>
+<span id="cb5-181"><a href="#cb5-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-182"><a href="#cb5-182" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
+<span id="cb5-183"><a href="#cb5-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-184"><a href="#cb5-184" aria-hidden="true" tabindex="-1"></a>**Exercise 18.1 (Structural analysis, US).** Pick a recent AI Now or Data &amp; Society report (2023 or later). Map its structure: how many pages are executive summary, findings, methods, recommendations, appendices? Where does the argument live? Who is the implied institutional reader, and what evidence tells you? Write 400 words. Save as <span class="in">`exercises/ch18_structural_analysis_us.md`</span>. You may use @mcguinness2021 as a framing reference for what "public interest technology" reports are trying to accomplish and how.</span>
+<span id="cb5-185"><a href="#cb5-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-186"><a href="#cb5-186" aria-hidden="true" tabindex="-1"></a>**Exercise 18.2 (Structural analysis, non-US).** Do the same for a recent report from Access Now, Derechos Digitales, or Paradigm Initiative. Pay particular attention to where the report assumes a reader who is not the US federal government. Compare to your US report from Exercise 18.1 in one paragraph at the end: what conventions differ, and what does that tell you about the political economy of each report's audience? Save as <span class="in">`exercises/ch18_structural_analysis_nonus.md`</span>.</span>
+<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a>**Exercise 18.3 (Executive summary, outline, one full section).** Take the op-ed topic you drafted in @sec-ch-17-op-eds and expand it into a report. Produce three deliverables: (a) a one-and-a-half-page executive summary that includes the recommendations inline; (b) a full section-by-section outline with one-sentence nut grafs for each section; (c) one section (three to five pages) written in full, with figures inline and citations against <span class="in">`references.bib`</span>. Save as <span class="in">`report/report.qmd`</span> in your class repository. Follow the YAML-and-layout conventions in this chapter. This is the core of your Part V artifact. See @gray2021handbook on writing for policy audiences.</span>
+<span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a>**Exercise 18.4 (Reproducible figure with a committed notebook).** Produce at least one figure for your report from a notebook committed to the repository at <span class="in">`report/notebooks/`</span>. The notebook must: load data from a documented path, document every filter or transformation with a comment, and render the figure to <span class="in">`report/figures/`</span>. Add a datasheet-style provenance note (one page, following @gebru2021) for the dataset the notebook uses. Commit the notebook, the datasheet, and the figure. The figure caption in <span class="in">`figures.qmd`</span> should cite the notebook by filename. Tie this explicitly to the reproducibility discipline you built in @sec-ch-11-accounting.</span>
+<span id="cb5-191"><a href="#cb5-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-192"><a href="#cb5-192" aria-hidden="true" tabindex="-1"></a>**Exercise 18.5 (Cover notes to three named humans).** Identify three humans (by role, and by name if you can) who would need to read your report for it to matter. At least one must be a foundation program officer or an advocacy research director; at least one must be a legislative staffer or a regulatory policy advisor. For each, draft a one-paragraph cover note tailored to that reader. The cover notes should differ substantively: a program officer's note points to the portfolio fit and the follow-on work; a staffer's note points to the pending bill or hearing; a regulator's note points to the open docket or petition. Save all three as <span class="in">`report/cover_notes.md`</span>. This draws directly on the stakeholder-mapping logic of @sec-ch-14-pit-data-for-good and @sec-ch-12-planning.</span>
+<span id="cb5-193"><a href="#cb5-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-194"><a href="#cb5-194" aria-hidden="true" tabindex="-1"></a>Exercises 18.3, 18.4, and 18.5 together produce the Part V artifact: a report draft with an executive summary, one completed section, at least one reproducible figure built from a committed notebook with a datasheet-style provenance note, and three cover notes addressed to named institutional readers. When you have all four components in your class repository, tag the commit <span class="in">`ch18-artifact-v1`</span>. The artifact is the chapter.</span>
+<span id="cb5-195"><a href="#cb5-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking ahead</span></span>
+<span id="cb5-197"><a href="#cb5-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-198"><a href="#cb5-198" aria-hidden="true" tabindex="-1"></a>Chapter 19 (@sec-ch-19-research-proposals) takes the genre into the academic and grantmaking ecosystems. A report documents what you found; a research proposal argues for what you will find if someone funds you. The conventions overlap and diverge in ways that catch first-time authors off guard: the specific-aims page borrows from the executive summary, but the theory of change runs the opposite direction. The work you did on the report's recommendations has already produced most of the proposal's significance section. From there, @sec-ch-20-testimony turns your recommendations into a five-minute spoken statement, and @sec-ch-22-archival-deposits gives your report and its data a permanent address.</span>
+<span id="cb5-199"><a href="#cb5-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading and Resources</span></span>
+<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>AI Now Institute, annual reports, <span class="ot">&lt;https://ainowinstitute.org/publications&gt;</span>. The canonical example of the mobilizing report in the US technology-policy ecosystem; read at least one cover to cover before drafting your own.</span>
+<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Data &amp; Society Research Institute, reports, <span class="ot">&lt;https://datasociety.net/library/&gt;</span>. A wider range of report types (primers, case studies, ethnographies). Pay attention to how each is structured for its implied reader.</span>
+<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Access Now, #KeepItOn annual internet shutdowns report, <span class="ot">&lt;https://www.accessnow.org/campaign/keepiton/&gt;</span>. Canonical non-US advocacy report; note the integration with UN human rights mechanisms.</span>
+<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mozilla Foundation, *Internet Health Report*, <span class="ot">&lt;https://internethealthreport.org&gt;</span>. Design-forward, magazine-style report that rewards reading for layout and voice.</span>
+<span id="cb5-206"><a href="#cb5-206" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Paradigm Initiative, *Londa* report on digital rights in Africa <span class="co">[</span><span class="ot">@paradigm_londa</span><span class="co">]</span>, <span class="ot">&lt;https://paradigmhq.org/londa&gt;</span>. Distributed-authorship model with country-level reporting; the opposite of the single-institute think-tank report.</span>
+<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Quarto project and book documentation, <span class="ot">&lt;https://quarto.org/docs/projects/quarto-projects.html&gt;</span> and <span class="ot">&lt;https://quarto.org/docs/books/&gt;</span>. The authoritative reference for multi-format rendering; the book you are reading is built with it.</span>
+<span id="cb5-208"><a href="#cb5-208" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pandoc's Word output documentation, <span class="ot">&lt;https://pandoc.org/MANUAL.html#option--reference-doc&gt;</span>. The two-page guide that fixes ninety percent of <span class="in">`.docx`</span> formatting surprises, especially how to use a reference document for headings and styles.</span>
+<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tara Dawson McGuinness and Hana Schank, *Power to the Public* <span class="co">[</span><span class="ot">@mcguinness2021</span><span class="co">]</span>, for the political economy of public-interest technology reports and the foundations that fund them.</span>
+<span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*The Data Journalism Handbook 2* <span class="co">[</span><span class="ot">@gray2021handbook</span><span class="co">]</span>, particularly the chapters on report-length investigative projects; the conventions travel.</span>
+<span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Timnit Gebru and colleagues, "Datasheets for datasets" <span class="co">[</span><span class="ot">@gebru2021</span><span class="co">]</span>. The provenance-note template you should adapt for every dataset your report relies on.</span>
+<span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Keegan (2026) <span class="co">[</span><span class="ot">@keegan2026</span><span class="co">]</span>, on the six elements of the installed base and why reports are the genre in which they most often travel.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-18-reports.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

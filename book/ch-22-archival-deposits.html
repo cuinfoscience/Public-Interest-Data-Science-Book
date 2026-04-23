@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
+
+<title>23&nbsp; Archival Deposits – Public Interest Data Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./appendix-ai-disclosure.html" rel="next">
+<link href="./ch-21-public-comments.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3960f907883494f1151aa7142734774f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d783d5094f66403aace2499abad0c8ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3960f907883494f1151aa7142734774f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch-17-op-eds.html">Genres</a></li><li class="breadcrumb-item"><a href="./ch-22-archival-deposits.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Archival Deposits</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Public Interest Data Science</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Public-Interest-Data-Science.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Public-Interest-Data-Science.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Pressures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-02-enclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure: Who Can Observe?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-03-exemption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-04-erosion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Erosion: What Can Be Remembered?</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Values</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-05-installed-base.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Installed Base</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-06-openness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Openness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-07-oversight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Oversight</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-08-ownership.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ownership</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lineages</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-09-journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-10-law.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Law</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-11-accounting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-12-planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-13-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Engineering</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Adjacent Conversations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-14-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-15-govtech-civic-tech.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-16-critical-data-studies-refusal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Genres</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-17-op-eds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Op-Eds</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-18-reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-19-research-proposals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Research Proposals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-20-testimony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Testimony</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-21-public-comments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Public Comments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-22-archival-deposits.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Archival Deposits</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#sec-ch-22-archival-deposits" id="toc-sec-ch-22-archival-deposits" class="nav-link active" data-scroll-target="#sec-ch-22-archival-deposits"><span class="header-section-number">24</span> Archival Deposits</a>
+  <ul class="collapse">
+  <li><a href="#archives-and-climate-archives-and-memory" id="toc-archives-and-climate-archives-and-memory" class="nav-link" data-scroll-target="#archives-and-climate-archives-and-memory"><span class="header-section-number">24.1</span> Archives and climate, archives and memory</a></li>
+  <li><a href="#the-institutional-landscape" id="toc-the-institutional-landscape" class="nav-link" data-scroll-target="#the-institutional-landscape"><span class="header-section-number">24.2</span> The institutional landscape</a></li>
+  <li><a href="#federated-archiving-as-political-strategy" id="toc-federated-archiving-as-political-strategy" class="nav-link" data-scroll-target="#federated-archiving-as-political-strategy"><span class="header-section-number">24.3</span> Federated archiving as political strategy</a></li>
+  <li><a href="#the-running-example-epa-toxics-release-inventory" id="toc-the-running-example-epa-toxics-release-inventory" class="nav-link" data-scroll-target="#the-running-example-epa-toxics-release-inventory"><span class="header-section-number">24.4</span> The running example: EPA Toxics Release Inventory</a></li>
+  <li><a href="#preservation-appropriate-formats" id="toc-preservation-appropriate-formats" class="nav-link" data-scroll-target="#preservation-appropriate-formats"><span class="header-section-number">24.5</span> Preservation-appropriate formats</a></li>
+  <li><a href="#using-the-internet-archive-client" id="toc-using-the-internet-archive-client" class="nav-link" data-scroll-target="#using-the-internet-archive-client"><span class="header-section-number">24.6</span> Using the Internet Archive client</a></li>
+  <li><a href="#minting-a-doi-with-zenodo" id="toc-minting-a-doi-with-zenodo" class="nav-link" data-scroll-target="#minting-a-doi-with-zenodo"><span class="header-section-number">24.7</span> Minting a DOI with Zenodo</a></li>
+  <li><a href="#a-preservation-plan" id="toc-a-preservation-plan" class="nav-link" data-scroll-target="#a-preservation-plan"><span class="header-section-number">24.8</span> A preservation plan</a></li>
+  <li><a href="#weaving-the-book-together" id="toc-weaving-the-book-together" class="nav-link" data-scroll-target="#weaving-the-book-together"><span class="header-section-number">24.9</span> Weaving the book together</a></li>
+  <li><a href="#verifying-and-citing" id="toc-verifying-and-citing" class="nav-link" data-scroll-target="#verifying-and-citing"><span class="header-section-number">24.10</span> Verifying and citing</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">24.11</span> Exercises</a></li>
+  <li><a href="#a-coda" id="toc-a-coda" class="nav-link" data-scroll-target="#a-coda"><span class="header-section-number">24.12</span> A coda</a></li>
+  <li><a href="#further-reading-and-resources" id="toc-further-reading-and-resources" class="nav-link" data-scroll-target="#further-reading-and-resources"><span class="header-section-number">24.13</span> Further Reading and Resources</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-22-archival-deposits.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch-17-op-eds.html">Genres</a></li><li class="breadcrumb-item"><a href="./ch-22-archival-deposits.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Archival Deposits</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Archival Deposits</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-ch-22-archival-deposits" class="level1" data-number="24">
+<h1 data-number="24"><span class="header-section-number">24</span> Archival Deposits</h1>
+<p>Every other chapter in Part V has addressed an audience that already exists. The op-ed (<a href="ch-17-op-eds.html" class="quarto-xref"><span>Chapter 19</span></a>) argues to a reader holding tomorrow’s paper. The report (<a href="ch-18-reports.html" class="quarto-xref"><span>Chapter 20</span></a>) answers a funder in the room. The proposal (<a href="ch-19-research-proposals.html" class="quarto-xref"><span>Chapter 21</span></a>) speaks to reviewers convened this fiscal year. The testimony (<a href="ch-20-testimony.html" class="quarto-xref"><span>Chapter 22</span></a>) addresses a committee that invited you. The public comment (<a href="ch-21-public-comments.html" class="quarto-xref"><span>Chapter 23</span></a>) reaches an agency on a docket open for sixty days. Each of those publics was reachable because each is alive.</p>
+<p>An archival deposit is different. You are contributing to a conversation with a public that does not yet exist. A graduate student in 2048 reading old EPA Toxics Release Inventory data to reconstruct an environmental-justice claim. A city staffer in 2035 looking for Colorado groundwater trends that USGS stopped publishing in 2026. A journalist in 2060 writing a retrospective on federal climate portals reorganized during this decade. None of those readers can be pitched to, invited, or surveyed. They will find what you deposited if, and only if, it is still there.</p>
+<p>This is the final chapter, and the genre it teaches is the one in which openness, oversight, and ownership (<a href="ch-06-openness.html" class="quarto-xref"><span>Chapter 8</span></a>, <a href="ch-07-oversight.html" class="quarto-xref"><span>Chapter 9</span></a>, <a href="ch-08-ownership.html" class="quarto-xref"><span>Chapter 10</span></a>) come to rest in a single physical-digital object: a bitstream, a checksum, a resolvable identifier, a provenance record, held by an institution committed to keeping them. Everything the book has built points here. The datasheet from <a href="ch-04-erosion.html" class="quarto-xref"><span>Chapter 6</span></a>, the cleaned dataset from <a href="ch-06-openness.html" class="quarto-xref"><span>Chapter 8</span></a>, the tiered-access matrix from <a href="ch-08-ownership.html" class="quarto-xref"><span>Chapter 10</span></a>, the category audit from <a href="ch-16-critical-data-studies-refusal.html" class="quarto-xref"><span>Chapter 18</span></a>, and the five Part V artifacts can all be archived as one collection. You finish the chapter with that portfolio, deposited and citable.</p>
+<section id="archives-and-climate-archives-and-memory" class="level2" data-number="24.1">
+<h2 data-number="24.1" class="anchored" data-anchor-id="archives-and-climate-archives-and-memory"><span class="header-section-number">24.1</span> Archives and climate, archives and memory</h2>
+<p>It is tempting to treat archival deposit as a technical afterthought: you did the work, now you put it somewhere. The archival profession has been saying for a decade that this is wrong. Tansey <span class="citation" data-cites="tansey2015">(<a href="#ref-tansey2015" role="doc-biblioref">2015</a>)</span> argues that climate change is an archival problem because the floods, fires, and storms that threaten records are the events that make those records most urgently needed. Mazurczyk and colleagues <span class="citation" data-cites="mazurczyk2018">(<a href="#ref-mazurczyk2018" role="doc-biblioref">2018</a>)</span> extend the argument quantitatively, mapping American archives against projected sea-level rise and showing how much institutional memory sits in places the country’s institutions are not planning to protect. Blanke <span class="citation" data-cites="blanke2024">(<a href="#ref-blanke2024" role="doc-biblioref">2024</a>)</span> takes it digital: the Anthropocene is also a problem for server rooms, for migrations across storage media, and for the economics of keeping bits online for a century.</p>
+<p>Bluntly: the federal agencies whose datasets document the climate crisis are the same agencies whose data-retention budgets are most exposed to it. An EPA dataset is at risk from two directions. The weather can take the building. A single administration can take the dataset. The archive hedges both.</p>
+<p>Ghaddar <span class="citation" data-cites="ghaddar2016">(<a href="#ref-ghaddar2016" role="doc-biblioref">2016</a>)</span> and Robinson-Sweet <span class="citation" data-cites="robinsonsweet2018">(<a href="#ref-robinsonsweet2018" role="doc-biblioref">2018</a>)</span> describe a second horizon: truth-and-reconciliation futures in which publics will want to examine what present governments recorded, classified, suppressed, or destroyed. What you deposit, and what you decline to deposit, is part of what a later public can say about us. Someone will go looking. Either your work is there or it is not.</p>
+</section>
+<section id="the-institutional-landscape" class="level2" data-number="24.2">
+<h2 data-number="24.2" class="anchored" data-anchor-id="the-institutional-landscape"><span class="header-section-number">24.2</span> The institutional landscape</h2>
+<p>A “durable” archive is not a synonym for “a server you rent.” Durability is an institutional property: a mandate to preserve, a budget funded across political cycles, a succession plan, and federated backup so the loss of one building does not destroy the collection. A handful of institutions meet that standard. Several more claim to and do not.</p>
+<p><strong>The Internet Archive</strong> operates the Wayback Machine and a general items repository <span class="citation" data-cites="ia_docs">(<a href="#ref-ia_docs" role="doc-biblioref">Internet Archive 2024</a>)</span>. It accepts almost anything, mints durable URLs, and exposes a Python client. Its legal status has been repeatedly challenged in court, a sign of how much it matters.</p>
+<p><strong>Zenodo</strong>, operated by CERN, accepts datasets, code, and papers up to 50GB, mints a Digital Object Identifier (DOI) on publication, and preserves what it holds on CERN’s long-term infrastructure <span class="citation" data-cites="zenodo_api">(<a href="#ref-zenodo_api" role="doc-biblioref">CERN 2024</a>)</span>. A Zenodo DOI is the shortest path from a student laptop to a citable identifier.</p>
+<p><strong>Figshare</strong> and <strong>OSF</strong> play similar roles; OSF integrates tightly with research-project workflows <span class="citation" data-cites="osf_docs">(<a href="#ref-osf_docs" role="doc-biblioref">Center for Open Science 2024</a>)</span>. <strong>ICPSR</strong> at the University of Michigan is the oldest social-science data archive and the standard for survey data and restricted-use materials <span class="citation" data-cites="icpsr_about">(<a href="#ref-icpsr_about" role="doc-biblioref">Inter-university Consortium for Political and Social Research 2024</a>)</span>. <strong>Dryad</strong> is the preferred repository for the life sciences <span class="citation" data-cites="dryad_about">(<a href="#ref-dryad_about" role="doc-biblioref">Dryad 2024</a>)</span>. <strong>Dataverse</strong> is a federated platform at dozens of universities; <strong>DASH</strong> at NCAR is the domain archive for atmospheric data.</p>
+<p><strong>Software Heritage</strong> archives source code at scale <span class="citation" data-cites="softwareheritage">(<a href="#ref-softwareheritage" role="doc-biblioref">Software Heritage 2024</a>)</span>. <strong>LOCKSS</strong> (“Lots of Copies Keep Stuff Safe”) is the federated-preservation backbone used by libraries <span class="citation" data-cites="lockss">(<a href="#ref-lockss" role="doc-biblioref">Stanford University Libraries 2024</a>)</span>. <strong>Perma.cc</strong> captures web pages for legal citation <span class="citation" data-cites="permacc">(<a href="#ref-permacc" role="doc-biblioref">Harvard Library Innovation Lab 2024</a>)</span>. <strong>EDGI</strong> coordinates volunteer archiving of federal environmental data at risk of removal <span class="citation" data-cites="edgi">(<a href="#ref-edgi" role="doc-biblioref">Environmental Data and Governance Initiative 2024</a>)</span>.</p>
+<p>Notice what is not on this list. GitHub is not a preservation institution; its retention guarantees are a product roadmap, not a mandate. Hugging Face is the same. Google Drive, Dropbox, S3, and personal websites are the same. They can be links in a preservation chain; they cannot be the last link. If the only copy of your dataset lives on a platform whose survival depends on next quarter’s earnings, it is not archived. It is stored.</p>
+</section>
+<section id="federated-archiving-as-political-strategy" class="level2" data-number="24.3">
+<h2 data-number="24.3" class="anchored" data-anchor-id="federated-archiving-as-political-strategy"><span class="header-section-number">24.3</span> Federated archiving as political strategy</h2>
+<p>That list is also a political arrangement. LOCKSS’s founding claim is in its name: safety comes from redundancy across independent custodians <span class="citation" data-cites="lockss">(<a href="#ref-lockss" role="doc-biblioref">Stanford University Libraries 2024</a>)</span>. When the EPA’s climate pages were reorganized in 2017, EDGI’s volunteer “data rescue” events moved copies of at-risk datasets into Internet Archive items before the changes took effect. No single institution was going to do that; a federation did.</p>
+<p>An archival deposit is therefore political as well as technical. Depositing the same dataset in two independent repositories, in two jurisdictions, hedges against any one failing, being captured, or being compelled. The exercise below asks you to deposit to both the Internet Archive and Zenodo. That redundancy is not theater; it is the minimum viable federation.</p>
+</section>
+<section id="the-running-example-epa-toxics-release-inventory" class="level2" data-number="24.4">
+<h2 data-number="24.4" class="anchored" data-anchor-id="the-running-example-epa-toxics-release-inventory"><span class="header-section-number">24.4</span> The running example: EPA Toxics Release Inventory</h2>
+<p>The Toxics Release Inventory (TRI), mandated by the Emergency Planning and Community Right-to-Know Act of 1986, collects annual self-reports from industrial facilities on releases of listed toxic chemicals to air, water, and land <span class="citation" data-cites="epa_tri">(<a href="#ref-epa_tri" role="doc-biblioref">US Environmental Protection Agency 2024</a>)</span>. It is one of the most-cited environmental-justice datasets in the United States and has run continuously since 1987. Like every federal environmental dataset, it is subject to threshold changes, definitional revisions, and occasional quiet removal of historical files when schemas are updated.</p>
+<p>Pick a TRI reporting year’s facility-level file (the 2022 Basic Data File is small enough for a laptop), download it, keep the original bytes. The workflow below transfers to any at-risk federal environmental dataset: NOAA Climate Data Online, USGS groundwater, EPA AirData, NOAA GHCN-D.</p>
+</section>
+<section id="preservation-appropriate-formats" class="level2" data-number="24.5">
+<h2 data-number="24.5" class="anchored" data-anchor-id="preservation-appropriate-formats"><span class="header-section-number">24.5</span> Preservation-appropriate formats</h2>
+<p>Before any upload, convert your artifacts into formats still readable in fifty years. This is the highest-leverage decision in the workflow. The Library of Congress’s “Sustainability of Digital Formats” registry rates formats on openness, adoption, transparency, and self-documentation <span class="citation" data-cites="loc_sustainability">(<a href="#ref-loc_sustainability" role="doc-biblioref">Library of Congress 2024</a>)</span>. The short version:</p>
+<ul>
+<li><strong>Tabular data</strong>: CSV (UTF-8, RFC 4180) as primary; Parquet as companion for large tables. Not Excel; its binary format is semi-proprietary and its date handling is notorious.</li>
+<li><strong>Documentation</strong>: plain text or Markdown. Not Word. A <code>.docx</code> opened in 2045 will render in ways neither you nor your reader can predict.</li>
+<li><strong>Images</strong>: TIFF or PNG. Not JPEG; every re-save degrades it.</li>
+<li><strong>Geospatial</strong>: GeoJSON or GeoPackage primary; Shapefile as companion (its 10-character field-name limit truncates columns).</li>
+<li><strong>Code</strong>: plain-text source files, not notebooks, with an HTML export attached. A <code>.py</code> is more likely to parse in 2050 than an <code>.ipynb</code>.</li>
+</ul>
+<p>You will work harder than you want on this step. Do it anyway. Format choice is the variable most strongly associated with whether your deposit is legible in thirty years.</p>
+</section>
+<section id="using-the-internet-archive-client" class="level2" data-number="24.6">
+<h2 data-number="24.6" class="anchored" data-anchor-id="using-the-internet-archive-client"><span class="header-section-number">24.6</span> Using the Internet Archive client</h2>
+<p>The <code>internetarchive</code> Python client and its <code>ia</code> command-line companion are the fastest way to deposit <span class="citation" data-cites="ia_docs">(<a href="#ref-ia_docs" role="doc-biblioref">Internet Archive 2024</a>)</span>. Run <code>ia configure</code> once to store your credentials, then upload. The item identifier is a short unique string that becomes part of the URL (<code>https://archive.org/details/&lt;identifier&gt;</code>). Identifiers are forever; choose one that describes the content.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> internetarchive <span class="im">import</span> upload, get_item</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>metadata <span class="op">=</span> {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"title"</span>: <span class="st">"EPA Toxics Release Inventory, 2022 Basic Data File (mirror)"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"creator"</span>: <span class="st">"Your Name, University of Colorado Boulder"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"date"</span>: <span class="st">"2026-04-23"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"subject"</span>: [<span class="st">"environment"</span>, <span class="st">"toxics"</span>, <span class="st">"EPA"</span>, <span class="st">"TRI"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                <span class="st">"environmental justice"</span>],</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"language"</span>: <span class="st">"eng"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"licenseurl"</span>: <span class="st">"https://creativecommons.org/publicdomain/mark/1.0/"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"description"</span>: (</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Mirror of the US EPA Toxics Release Inventory 2022 Basic "</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Data File, retrieved from epa.gov on 2026-04-20. See the "</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"attached preservation plan."</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"mediatype"</span>: <span class="st">"data"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"collection"</span>: <span class="st">"opensource"</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>files <span class="op">=</span> [<span class="st">"tri_2022_us.csv"</span>, <span class="st">"tri_2022_us.parquet"</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>         <span class="st">"datasheet.md"</span>, <span class="st">"README.md"</span>, <span class="st">"LICENSE.txt"</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>         <span class="st">"preservation_plan.md"</span>]</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>upload(<span class="st">"epa-tri-2022-basic-mirror"</span>, files<span class="op">=</span>files, metadata<span class="op">=</span>metadata)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; [&lt;Response [200]&gt;, &lt;Response [200]&gt;, ...] on success</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify the deposit. Compare server SHA-1 to what you computed locally.</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>item <span class="op">=</span> get_item(<span class="st">"epa-tri-2022-basic-mirror"</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> item.files:</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(f[<span class="st">"name"</span>], f[<span class="st">"size"</span>], f.get(<span class="st">"sha1"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>HTTP 200 does not guarantee the files are actually there. Fetch the item back and confirm each file has non-zero size and a matching SHA-1. That verification is what most tutorials skip.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The Missing Manual
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>internetarchive</code> client returns success codes on uploads that silently failed: the item is created, the files are listed with size 0, and the HTTP layer looks fine. Always verify by fetching the item back with <code>ia metadata &lt;item_id&gt;</code> or <code>get_item(id)</code> and comparing the server’s SHA-1 to yours. Separately, Zenodo DOIs take up to an hour to resolve after minting; do not panic when a fresh DOI returns “not found” ten seconds after publishing. The other silent killer is format choice. The difference between a file that survives fifty years and one that does not is usually not storage redundancy but format: CSV beats Excel, TIFF beats JPEG, Markdown beats Word, plain source beats a bundled notebook. Storage is easy. Legibility is hard.</p>
+</div>
+</div>
+</section>
+<section id="minting-a-doi-with-zenodo" class="level2" data-number="24.7">
+<h2 data-number="24.7" class="anchored" data-anchor-id="minting-a-doi-with-zenodo"><span class="header-section-number">24.7</span> Minting a DOI with Zenodo</h2>
+<p>Zenodo’s REST API issues a DOI on publication, which is what makes it the right second archive in the federated pair <span class="citation" data-cites="zenodo_api">(<a href="#ref-zenodo_api" role="doc-biblioref">CERN 2024</a>)</span>. Request a personal access token from <code>zenodo.org/account/settings/applications/</code>, scope it to <code>deposit:write</code> and <code>deposit:actions</code>, and treat it like a password.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, requests</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ZENODO <span class="op">=</span> <span class="st">"https://zenodo.org/api"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>PARAMS <span class="op">=</span> {<span class="st">"access_token"</span>: os.environ[<span class="st">"ZENODO_TOKEN"</span>]}</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>HEADERS <span class="op">=</span> {<span class="st">"Content-Type"</span>: <span class="st">"application/json"</span>}</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create an empty deposition.</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> requests.post(<span class="ss">f"</span><span class="sc">{</span>ZENODO<span class="sc">}</span><span class="ss">/deposit/depositions"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                  params<span class="op">=</span>PARAMS, headers<span class="op">=</span>HEADERS, json<span class="op">=</span>{})</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>r.raise_for_status()</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>dep <span class="op">=</span> r.json()</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Upload files into the deposition bucket.</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> path <span class="kw">in</span> [<span class="st">"tri_2022_us.csv"</span>, <span class="st">"tri_2022_us.parquet"</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>             <span class="st">"datasheet.md"</span>, <span class="st">"README.md"</span>, <span class="st">"preservation_plan.md"</span>]:</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">"rb"</span>) <span class="im">as</span> fh:</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        requests.put(<span class="ss">f"</span><span class="sc">{</span>dep[<span class="st">'links'</span>][<span class="st">'bucket'</span>]<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>os<span class="sc">.</span>path<span class="sc">.</span>basename(path)<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                     data<span class="op">=</span>fh, params<span class="op">=</span>PARAMS).raise_for_status()</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Attach Dublin Core metadata.</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>meta <span class="op">=</span> {<span class="st">"metadata"</span>: {</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"title"</span>: <span class="st">"EPA Toxics Release Inventory, 2022 Basic Data File (mirror)"</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"upload_type"</span>: <span class="st">"dataset"</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"description"</span>: <span class="st">"Mirror of the US EPA TRI 2022 Basic Data File..."</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">"creators"</span>: [{<span class="st">"name"</span>: <span class="st">"Your Name"</span>,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"affiliation"</span>: <span class="st">"University of Colorado Boulder"</span>}],</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"keywords"</span>: [<span class="st">"environment"</span>, <span class="st">"toxics"</span>, <span class="st">"EPA"</span>, <span class="st">"TRI"</span>,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"environmental justice"</span>, <span class="st">"at-risk data"</span>],</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">"license"</span>: <span class="st">"cc-zero"</span>, <span class="st">"language"</span>: <span class="st">"eng"</span>,</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">"related_identifiers"</span>: [</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        {<span class="st">"identifier"</span>: <span class="st">"https://archive.org/details/epa-tri-2022-basic-mirror"</span>,</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>         <span class="st">"relation"</span>: <span class="st">"isIdenticalTo"</span>, <span class="st">"resource_type"</span>: <span class="st">"dataset"</span>},</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        {<span class="st">"identifier"</span>: <span class="st">"https://www.epa.gov/toxics-release-inventory-tri-program"</span>,</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>         <span class="st">"relation"</span>: <span class="st">"isDerivedFrom"</span>, <span class="st">"resource_type"</span>: <span class="st">"other"</span>},</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>}}</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>requests.put(<span class="ss">f"</span><span class="sc">{</span>ZENODO<span class="sc">}</span><span class="ss">/deposit/depositions/</span><span class="sc">{</span>dep[<span class="st">'id'</span>]<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>             params<span class="op">=</span>PARAMS, headers<span class="op">=</span>HEADERS, json<span class="op">=</span>meta).raise_for_status()</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Publish. This mints the DOI and makes the record immutable.</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> requests.post(</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>ZENODO<span class="sc">}</span><span class="ss">/deposit/depositions/</span><span class="sc">{</span>dep[<span class="st">'id'</span>]<span class="sc">}</span><span class="ss">/actions/publish"</span>,</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    params<span class="op">=</span>PARAMS)</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(r.json()[<span class="st">"doi"</span>])  <span class="co"># =&gt; 10.5281/zenodo.XXXXXXX</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>related_identifiers</code> field is where federation becomes legible. You are telling Zenodo that its record is identical to the Internet Archive item and derived from the EPA source. A future user landing on any of the three can follow the chain to the others. Before going live, test against <code>sandbox.zenodo.org</code>: the API is identical, the DOIs are not real, the mistakes are free.</p>
+</section>
+<section id="a-preservation-plan" class="level2" data-number="24.8">
+<h2 data-number="24.8" class="anchored" data-anchor-id="a-preservation-plan"><span class="header-section-number">24.8</span> A preservation plan</h2>
+<p>A deposit without a preservation plan is a bet that someone else will figure out what you meant. A plan makes the bet explicit by answering four questions.</p>
+<p><strong>Retention.</strong> How long do you intend the deposit to remain accessible, and under what conditions would it be withdrawn? “Indefinite, absent legal compulsion” is acceptable. So is “Ten years, then re-evaluate.” Specify something.</p>
+<p><strong>Migration.</strong> What happens when the format becomes unreadable? Parquet in 2026 will not be Parquet in 2056. State whether migration is the depositor’s responsibility (usually yes for the first generation), the repository’s (sometimes yes for major archives), or unresolved. Name a review interval; five years is reasonable.</p>
+<p><strong>Custodianship.</strong> Who is responsible when you move, change institutions, or leave the work? Karasti and Blomberg <span class="citation" data-cites="karasti2018">(<a href="#ref-karasti2018" role="doc-biblioref">2018</a>)</span> call this “maintenance across decades,” and their infrastructure studies (<a href="ch-05-installed-base.html" class="quarto-xref"><span>Chapter 7</span></a>) is the backbone of the answer. Designate a successor, an institution, or a community. “My GitHub account” is not an answer. “The University of Colorado Boulder libraries’ digital preservation program, with EDGI as federated redundancy” is.</p>
+<p><strong>Access and refusal.</strong> Tie back to the tiered-access matrix from <a href="ch-08-ownership.html" class="quarto-xref"><span>Chapter 10</span></a>. Open access or tiered (DUA, embargo windows)? Refusal conditions from <a href="ch-16-critical-data-studies-refusal.html" class="quarto-xref"><span>Chapter 18</span></a> under which portions should be withdrawn? Make the rules legible before a future dispute requires them.</p>
+<p>A plan that answers those four questions, committed alongside the dataset in the same deposit, is a preservation plan and a governance document. Someone will need it.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>In the Public Interest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The public interest includes people who do not yet exist. That is not a metaphor. The graduate student in 2048, the council staffer in 2035, the journalist in 2060: they are the public your deposit serves, and the archive is how you speak to them. This is the chapter where the book’s three values come to rest. <strong>Openness</strong> (<a href="ch-06-openness.html" class="quarto-xref"><span>Chapter 8</span></a>) lets future readers find the bits, read them, and cite them. <strong>Oversight</strong> (<a href="ch-07-oversight.html" class="quarto-xref"><span>Chapter 9</span></a>) lets them hold present institutions accountable using records the institutions did not destroy. <strong>Ownership</strong> (<a href="ch-08-ownership.html" class="quarto-xref"><span>Chapter 10</span></a>) binds the deposit to a custodianship chain that does not evaporate with a funding cycle. The installed base (<a href="ch-05-installed-base.html" class="quarto-xref"><span>Chapter 7</span></a>) was never only about the present; it was always about whether the future could read us.</p>
+</div>
+</div>
+</section>
+<section id="weaving-the-book-together" class="level2" data-number="24.9">
+<h2 data-number="24.9" class="anchored" data-anchor-id="weaving-the-book-together"><span class="header-section-number">24.9</span> Weaving the book together</h2>
+<p>The previous twenty-one chapters each contribute a piece of the portfolio. The datasheet from <a href="ch-04-erosion.html" class="quarto-xref"><span>Chapter 6</span></a> is the provenance document. The cleaning pipeline from <a href="ch-06-openness.html" class="quarto-xref"><span>Chapter 8</span></a> produced the CSV and Parquet versions. The tiered-access matrix from <a href="ch-08-ownership.html" class="quarto-xref"><span>Chapter 10</span></a> sits inside the preservation plan. The tests from <a href="ch-13-engineering.html" class="quarto-xref"><span>Chapter 15</span></a> evidence that the pipeline still runs. The sustainability reflection from <a href="ch-14-pit-data-for-good.html" class="quarto-xref"><span>Chapter 16</span></a> is why you chose a federated pair. The category audit from <a href="ch-16-critical-data-studies-refusal.html" class="quarto-xref"><span>Chapter 18</span></a> sits in the README as a note about what the dataset does and does not enumerate.</p>
+<p>The five Part V artifacts cluster around the deposit. The op-ed argues the dataset matters. The report is the analysis a future reader will consult. The proposal is the forward-looking plan. The testimony is the record of saying so in public. The public comment is the administrative record. All five, alongside the dataset, archive as one collection. Exercise 22.4 asks you to build it.</p>
+</section>
+<section id="verifying-and-citing" class="level2" data-number="24.10">
+<h2 data-number="24.10" class="anchored" data-anchor-id="verifying-and-citing"><span class="header-section-number">24.10</span> Verifying and citing</h2>
+<p>A deposit that cannot be cited is a backup. A deposit that can be cited is a contribution. After publication, resolve the DOI and confirm it lands. Paste the Internet Archive URL into a fresh logged-out session and confirm you can download the files. Compute their SHA-256 and compare to what you deposited. Then write the citation in the form your future readers will paste:</p>
+<blockquote class="blockquote">
+<p>Your Name (2026). <em>EPA Toxics Release Inventory, 2022 Basic Data File (mirror)</em> [Dataset]. Zenodo. <code>https://doi.org/10.5281/zenodo.XXXXXXX</code>. Also at Internet Archive: <code>https://archive.org/details/epa-tri-2022-basic-mirror</code>.</p>
+</blockquote>
+<p>That citation, on your CV and project pages, is the shortest route from “I did the work” to “here is the permanent link.” It is the minimum unit of public-interest infrastructure Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> describes. Write it.</p>
+</section>
+<section id="exercises" class="level2" data-number="24.11">
+<h2 data-number="24.11" class="anchored" data-anchor-id="exercises"><span class="header-section-number">24.11</span> Exercises</h2>
+<p><strong>Exercise 22.1 (Guided).</strong> Install the <code>internetarchive</code> client and register at archive.org. Pick an at-risk federal environmental dataset (EPA TRI 2022, a NOAA Climate Data Online file, or a USGS groundwater extract). Download it, convert to CSV and Parquet, write a one-page datasheet following <a href="ch-04-erosion.html" class="quarto-xref"><span>Chapter 6</span></a>, and deposit the bundle as an Internet Archive item with full Dublin Core metadata. Verify with <code>ia metadata &lt;item_id&gt;</code> that every file has non-zero size and a matching SHA-1. Submit the item URL and verification output.</p>
+<p><strong>Exercise 22.2 (Guided).</strong> Create a Zenodo account, request an access token, and test the deposit flow against <code>sandbox.zenodo.org</code> before going live. Then deposit to production Zenodo with a <code>related_identifiers</code> entry pointing back to your Internet Archive item. Verify the DOI resolves (allow up to an hour). Submit the DOI, the resolved URL, and a note on how long resolution took.</p>
+<p><strong>Exercise 22.3 (Reflective).</strong> Write a two-to-three-page preservation plan for the dataset. Address retention, migration, custodianship, and access and refusal (tying back to <a href="ch-08-ownership.html" class="quarto-xref"><span>Chapter 10</span></a> and <a href="ch-16-critical-data-studies-refusal.html" class="quarto-xref"><span>Chapter 18</span></a>). Commit it into the deposit as <code>preservation_plan.md</code> and update the metadata to reference it.</p>
+<p><strong>Exercise 22.4 (Portfolio synthesis).</strong> Archive your op-ed (<a href="ch-17-op-eds.html" class="quarto-xref"><span>Chapter 19</span></a>), report (<a href="ch-18-reports.html" class="quarto-xref"><span>Chapter 20</span></a>), proposal (<a href="ch-19-research-proposals.html" class="quarto-xref"><span>Chapter 21</span></a>), testimony (<a href="ch-20-testimony.html" class="quarto-xref"><span>Chapter 22</span></a>), and public comment (<a href="ch-21-public-comments.html" class="quarto-xref"><span>Chapter 23</span></a>) as a coherent collection alongside your dataset deposit. Write a collection-level README introducing the project, summarizing each artifact in two to three sentences, giving full citations with DOIs or permanent URLs, and explaining how the artifacts relate. Deposit to both the Internet Archive and Zenodo. This is your end-of-book portfolio.</p>
+<p><strong>Exercise 22.5 (Open-ended).</strong> Propose a public-interest data infrastructure that should exist in 2035 but does not. A federated archive of state benefits-administration audit logs, a repository of municipal algorithmic impact assessments, a climate-resilient mirror of at-risk federal datasets: anything you have wanted to see while working through this book. Three to five pages. Address what it is, what publics it serves, what the first five years of building it look like year by year, what an archival-deposit strategy for its outputs entails, and who bears the maintenance labor across decades. You are not committing to build it; you are demonstrating that you can imagine one and describe what imagining it seriously requires.</p>
+</section>
+<section id="a-coda" class="level2" data-number="24.12">
+<h2 data-number="24.12" class="anchored" data-anchor-id="a-coda"><span class="header-section-number">24.12</span> A coda</h2>
+<p>The book began with three line plots of Wikipedia pageviews and a claim that “public interest” is operational rather than a slogan. It ends with a dataset, a DOI, a preservation plan, and five other artifacts that describe a project you can point to. That is the difference between reading about the practice and entering it.</p>
+<p>What you have built, if you did the exercises honestly, is a working theory of yourself as a public-interest data scientist, tested against a named dataset, a real docket, a real funder, a real rulemaking, carrying a citation chain. You will change your mind about parts of it; the practice assumes you will. But you now have a first version, committed to the record, that a future version of you can read and argue with.</p>
+<p>There is more work. The federal datasets keep disappearing. The dockets keep opening and closing. The benefits algorithms keep being procured. Someone has to keep doing this, and the book’s argument from page one is that “someone” includes you. Not alone, not as a hero, but as a practitioner inside a federation, in conversation with journalists, lawyers, accountants, planners, and engineers, with the critics who sharpen the practice and the refusers who bound it. Do the work. Deposit the artifacts. Cite the chain. Invite the next person in. That is what the installed base needs, and what the next public is counting on.</p>
+</section>
+<section id="further-reading-and-resources" class="level2" data-number="24.13">
+<h2 data-number="24.13" class="anchored" data-anchor-id="further-reading-and-resources"><span class="header-section-number">24.13</span> Further Reading and Resources</h2>
+<ul>
+<li>Internet Archive, <em>Python library documentation</em>: <a href="https://archive.org/developers/internetarchive/" class="uri">https://archive.org/developers/internetarchive/</a>. The canonical reference for the client used throughout this chapter.</li>
+<li>Zenodo, <em>REST API documentation</em>: <a href="https://developers.zenodo.org" class="uri">https://developers.zenodo.org</a>. Authoritative for the deposit flow; test in the sandbox at <a href="https://sandbox.zenodo.org" class="uri">https://sandbox.zenodo.org</a> before going live.</li>
+<li>ICPSR, <em>Guide to social science data preparation and archiving</em>: <a href="https://www.icpsr.umich.edu/files/deposit/dataprep.pdf" class="uri">https://www.icpsr.umich.edu/files/deposit/dataprep.pdf</a>. Sixty years of social-science data stewardship, distilled.</li>
+<li>Open Science Framework, <em>OSF help documentation</em>: <a href="https://help.osf.io/" class="uri">https://help.osf.io/</a>. The project-scaffolded alternative to Zenodo.</li>
+<li>Software Heritage: <a href="https://www.softwareheritage.org/" class="uri">https://www.softwareheritage.org/</a>. The Internet Archive of source code; if your deposit includes code, cite its SWHID alongside the DOI.</li>
+<li>LOCKSS, <em>Program documentation</em>: <a href="https://www.lockss.org/" class="uri">https://www.lockss.org/</a>. The federated-preservation backbone the chapter’s federation claim leans on.</li>
+<li>Environmental Data and Governance Initiative: <a href="https://envirodatagov.org/" class="uri">https://envirodatagov.org/</a>. Volunteer-driven federal environmental archiving; join a data-rescue event.</li>
+<li>Digital Preservation Coalition, <em>Digital Preservation Handbook</em>: <a href="https://www.dpconline.org/handbook" class="uri">https://www.dpconline.org/handbook</a>. The practitioner reference for everything this chapter only sketches.</li>
+<li>Library of Congress, <em>Sustainability of Digital Formats</em>: <a href="https://www.loc.gov/preservation/digital/formats/" class="uri">https://www.loc.gov/preservation/digital/formats/</a>. The registry that tells you, for any format, how scared to be about using it.</li>
+<li>Perma.cc: <a href="https://perma.cc/" class="uri">https://perma.cc/</a>. For preserving web citations in a form that will resolve when the original URL rots.</li>
+</ul>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-blanke2024" class="csl-entry" role="listitem">
+Blanke, Tobias. 2024. <span>“Digital Archives and the <span>Anthropocene</span>.”</span> <em>Archival Science</em>.
+</div>
+<div id="ref-osf_docs" class="csl-entry" role="listitem">
+Center for Open Science. 2024. <em><span>Open Science Framework</span> Documentation</em>. Center for Open Science. <a href="https://help.osf.io/">https://help.osf.io/</a>.
+</div>
+<div id="ref-zenodo_api" class="csl-entry" role="listitem">
+CERN. 2024. <em><span>Zenodo</span> <span>REST</span> <span>API</span> Documentation</em>. CERN. <a href="https://developers.zenodo.org">https://developers.zenodo.org</a>.
+</div>
+<div id="ref-dryad_about" class="csl-entry" role="listitem">
+Dryad. 2024. <em><span>Dryad</span>: Publish and Preserve Your Data</em>. Dryad Digital Repository. <a href="https://datadryad.org/">https://datadryad.org/</a>.
+</div>
+<div id="ref-edgi" class="csl-entry" role="listitem">
+Environmental Data and Governance Initiative. 2024. <em><span>EDGI</span>: Archiving Environmental Data and Documenting Changes to Federal Websites</em>. EDGI. <a href="https://envirodatagov.org/">https://envirodatagov.org/</a>.
+</div>
+<div id="ref-ghaddar2016" class="csl-entry" role="listitem">
+Ghaddar, J. J. 2016. <span>“The Spectre in the Archive: Truth, Reconciliation, and Indigenous Archival Memory.”</span> <em>Archivaria</em> 82: 3–26.
+</div>
+<div id="ref-permacc" class="csl-entry" role="listitem">
+Harvard Library Innovation Lab. 2024. <em><span class="nocase">Perma.cc</span>: Websites Change. Perma Links Don’t.</em> Harvard Law School. <a href="https://perma.cc/">https://perma.cc/</a>.
+</div>
+<div id="ref-ia_docs" class="csl-entry" role="listitem">
+Internet Archive. 2024. <em>Internet <span>Archive</span> <span>Python</span> Library Documentation</em>. Internet Archive. <a href="https://archive.org/developers/internetarchive/">https://archive.org/developers/internetarchive/</a>.
+</div>
+<div id="ref-icpsr_about" class="csl-entry" role="listitem">
+Inter-university Consortium for Political and Social Research. 2024. <em><span>ICPSR</span>: Advancing Research Through Data</em>. University of Michigan. <a href="https://www.icpsr.umich.edu/">https://www.icpsr.umich.edu/</a>.
+</div>
+<div id="ref-karasti2018" class="csl-entry" role="listitem">
+Karasti, Helena, and Jeanette Blomberg. 2018. <span>“Studying Infrastructuring Ethnographically.”</span> <em>Computer Supported Cooperative Work</em> 27: 233–65.
+</div>
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Information, Communication <span>&amp;</span> Society</em>.
+</div>
+<div id="ref-loc_sustainability" class="csl-entry" role="listitem">
+Library of Congress. 2024. <em>Sustainability of Digital Formats: Planning for <span class="nocase">Library of Congress</span> Collections</em>. Library of Congress. <a href="https://www.loc.gov/preservation/digital/formats/">https://www.loc.gov/preservation/digital/formats/</a>.
+</div>
+<div id="ref-mazurczyk2018" class="csl-entry" role="listitem">
+Mazurczyk, Tara, Nathan Piekielek, Eira Tansey, and Benjamin Goldman. 2018. <span>“<span>American</span> Archives and Climate Change: Risks and Adaptation.”</span> <em>Climate Risk Management</em> 20: 111–25.
+</div>
+<div id="ref-robinsonsweet2018" class="csl-entry" role="listitem">
+Robinson-Sweet, Anna. 2018. <span>“Truth and Reconciliation: Archivists as Reparations Activists.”</span> <em>The American Archivist</em> 81 (1): 23–37.
+</div>
+<div id="ref-softwareheritage" class="csl-entry" role="listitem">
+Software Heritage. 2024. <em>Software <span>Heritage</span>: The Universal Archive of Source Code</em>. Inria and UNESCO. <a href="https://www.softwareheritage.org/">https://www.softwareheritage.org/</a>.
+</div>
+<div id="ref-lockss" class="csl-entry" role="listitem">
+Stanford University Libraries. 2024. <em><span>LOCKSS</span>: Lots of Copies Keep Stuff Safe</em>. Stanford University. <a href="https://www.lockss.org/">https://www.lockss.org/</a>.
+</div>
+<div id="ref-tansey2015" class="csl-entry" role="listitem">
+Tansey, Eira. 2015. <span>“Archival Adaptation to Climate Change.”</span> <em>Sustainability: Science, Practice, and Policy</em> 11 (2): 45–56.
+</div>
+<div id="ref-epa_tri" class="csl-entry" role="listitem">
+US Environmental Protection Agency. 2024. <em>Toxics <span>Release</span> <span>Inventory</span> (<span>TRI</span>) Program</em>. US Environmental Protection Agency. <a href="https://www.epa.gov/toxics-release-inventory-tri-program">https://www.epa.gov/toxics-release-inventory-tri-program</a>.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch-21-public-comments.html" class="pagination-link" aria-label="Public Comments">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Public Comments</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./appendix-ai-disclosure.html" class="pagination-link" aria-label="Appendix A: AI Assistance Disclosure">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Archival Deposits"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># Archival Deposits {#sec-ch-22-archival-deposits}</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>Every other chapter in Part V has addressed an audience that already exists. The op-ed (@sec-ch-17-op-eds) argues to a reader holding tomorrow's paper. The report (@sec-ch-18-reports) answers a funder in the room. The proposal (@sec-ch-19-research-proposals) speaks to reviewers convened this fiscal year. The testimony (@sec-ch-20-testimony) addresses a committee that invited you. The public comment (@sec-ch-21-public-comments) reaches an agency on a docket open for sixty days. Each of those publics was reachable because each is alive.</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>An archival deposit is different. You are contributing to a conversation with a public that does not yet exist. A graduate student in 2048 reading old EPA Toxics Release Inventory data to reconstruct an environmental-justice claim. A city staffer in 2035 looking for Colorado groundwater trends that USGS stopped publishing in 2026. A journalist in 2060 writing a retrospective on federal climate portals reorganized during this decade. None of those readers can be pitched to, invited, or surveyed. They will find what you deposited if, and only if, it is still there.</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>This is the final chapter, and the genre it teaches is the one in which openness, oversight, and ownership (@sec-ch-06-openness, @sec-ch-07-oversight, @sec-ch-08-ownership) come to rest in a single physical-digital object: a bitstream, a checksum, a resolvable identifier, a provenance record, held by an institution committed to keeping them. Everything the book has built points here. The datasheet from @sec-ch-04-erosion, the cleaned dataset from @sec-ch-06-openness, the tiered-access matrix from @sec-ch-08-ownership, the category audit from @sec-ch-16-critical-data-studies-refusal, and the five Part V artifacts can all be archived as one collection. You finish the chapter with that portfolio, deposited and citable.</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Archives and climate, archives and memory</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>It is tempting to treat archival deposit as a technical afterthought: you did the work, now you put it somewhere. The archival profession has been saying for a decade that this is wrong. Tansey <span class="co">[</span><span class="ot">-@tansey2015</span><span class="co">]</span> argues that climate change is an archival problem because the floods, fires, and storms that threaten records are the events that make those records most urgently needed. Mazurczyk and colleagues <span class="co">[</span><span class="ot">-@mazurczyk2018</span><span class="co">]</span> extend the argument quantitatively, mapping American archives against projected sea-level rise and showing how much institutional memory sits in places the country's institutions are not planning to protect. Blanke <span class="co">[</span><span class="ot">-@blanke2024</span><span class="co">]</span> takes it digital: the Anthropocene is also a problem for server rooms, for migrations across storage media, and for the economics of keeping bits online for a century.</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>Bluntly: the federal agencies whose datasets document the climate crisis are the same agencies whose data-retention budgets are most exposed to it. An EPA dataset is at risk from two directions. The weather can take the building. A single administration can take the dataset. The archive hedges both.</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>Ghaddar <span class="co">[</span><span class="ot">-@ghaddar2016</span><span class="co">]</span> and Robinson-Sweet <span class="co">[</span><span class="ot">-@robinsonsweet2018</span><span class="co">]</span> describe a second horizon: truth-and-reconciliation futures in which publics will want to examine what present governments recorded, classified, suppressed, or destroyed. What you deposit, and what you decline to deposit, is part of what a later public can say about us. Someone will go looking. Either your work is there or it is not.</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## The institutional landscape</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>A "durable" archive is not a synonym for "a server you rent." Durability is an institutional property: a mandate to preserve, a budget funded across political cycles, a succession plan, and federated backup so the loss of one building does not destroy the collection. A handful of institutions meet that standard. Several more claim to and do not.</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>**The Internet Archive** operates the Wayback Machine and a general items repository <span class="co">[</span><span class="ot">@ia_docs</span><span class="co">]</span>. It accepts almost anything, mints durable URLs, and exposes a Python client. Its legal status has been repeatedly challenged in court, a sign of how much it matters.</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>**Zenodo**, operated by CERN, accepts datasets, code, and papers up to 50GB, mints a Digital Object Identifier (DOI) on publication, and preserves what it holds on CERN's long-term infrastructure <span class="co">[</span><span class="ot">@zenodo_api</span><span class="co">]</span>. A Zenodo DOI is the shortest path from a student laptop to a citable identifier.</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>**Figshare** and **OSF** play similar roles; OSF integrates tightly with research-project workflows [@osf_docs]. **ICPSR** at the University of Michigan is the oldest social-science data archive and the standard for survey data and restricted-use materials [@icpsr_about]. **Dryad** is the preferred repository for the life sciences [@dryad_about]. **Dataverse** is a federated platform at dozens of universities; **DASH** at NCAR is the domain archive for atmospheric data.</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>**Software Heritage** archives source code at scale [@softwareheritage]. **LOCKSS** ("Lots of Copies Keep Stuff Safe") is the federated-preservation backbone used by libraries [@lockss]. **Perma.cc** captures web pages for legal citation [@permacc]. **EDGI** coordinates volunteer archiving of federal environmental data at risk of removal <span class="co">[</span><span class="ot">@edgi</span><span class="co">]</span>.</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>Notice what is not on this list. GitHub is not a preservation institution; its retention guarantees are a product roadmap, not a mandate. Hugging Face is the same. Google Drive, Dropbox, S3, and personal websites are the same. They can be links in a preservation chain; they cannot be the last link. If the only copy of your dataset lives on a platform whose survival depends on next quarter's earnings, it is not archived. It is stored.</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Federated archiving as political strategy</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>That list is also a political arrangement. LOCKSS's founding claim is in its name: safety comes from redundancy across independent custodians <span class="co">[</span><span class="ot">@lockss</span><span class="co">]</span>. When the EPA's climate pages were reorganized in 2017, EDGI's volunteer "data rescue" events moved copies of at-risk datasets into Internet Archive items before the changes took effect. No single institution was going to do that; a federation did.</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>An archival deposit is therefore political as well as technical. Depositing the same dataset in two independent repositories, in two jurisdictions, hedges against any one failing, being captured, or being compelled. The exercise below asks you to deposit to both the Internet Archive and Zenodo. That redundancy is not theater; it is the minimum viable federation.</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## The running example: EPA Toxics Release Inventory</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>The Toxics Release Inventory (TRI), mandated by the Emergency Planning and Community Right-to-Know Act of 1986, collects annual self-reports from industrial facilities on releases of listed toxic chemicals to air, water, and land <span class="co">[</span><span class="ot">@epa_tri</span><span class="co">]</span>. It is one of the most-cited environmental-justice datasets in the United States and has run continuously since 1987. Like every federal environmental dataset, it is subject to threshold changes, definitional revisions, and occasional quiet removal of historical files when schemas are updated.</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>Pick a TRI reporting year's facility-level file (the 2022 Basic Data File is small enough for a laptop), download it, keep the original bytes. The workflow below transfers to any at-risk federal environmental dataset: NOAA Climate Data Online, USGS groundwater, EPA AirData, NOAA GHCN-D.</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## Preservation-appropriate formats</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>Before any upload, convert your artifacts into formats still readable in fifty years. This is the highest-leverage decision in the workflow. The Library of Congress's "Sustainability of Digital Formats" registry rates formats on openness, adoption, transparency, and self-documentation <span class="co">[</span><span class="ot">@loc_sustainability</span><span class="co">]</span>. The short version:</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Tabular data**: CSV (UTF-8, RFC 4180) as primary; Parquet as companion for large tables. Not Excel; its binary format is semi-proprietary and its date handling is notorious.</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Documentation**: plain text or Markdown. Not Word. A <span class="in">`.docx`</span> opened in 2045 will render in ways neither you nor your reader can predict.</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Images**: TIFF or PNG. Not JPEG; every re-save degrades it.</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Geospatial**: GeoJSON or GeoPackage primary; Shapefile as companion (its 10-character field-name limit truncates columns).</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Code**: plain-text source files, not notebooks, with an HTML export attached. A <span class="in">`.py`</span> is more likely to parse in 2050 than an <span class="in">`.ipynb`</span>.</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>You will work harder than you want on this step. Do it anyway. Format choice is the variable most strongly associated with whether your deposit is legible in thirty years.</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## Using the Internet Archive client</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>The <span class="in">`internetarchive`</span> Python client and its <span class="in">`ia`</span> command-line companion are the fastest way to deposit <span class="co">[</span><span class="ot">@ia_docs</span><span class="co">]</span>. Run <span class="in">`ia configure`</span> once to store your credentials, then upload. The item identifier is a short unique string that becomes part of the URL (<span class="in">`https://archive.org/details/&lt;identifier&gt;`</span>). Identifiers are forever; choose one that describes the content.</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> internetarchive <span class="im">import</span> upload, get_item</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>metadata <span class="op">=</span> {</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>    <span class="st">"title"</span>: <span class="st">"EPA Toxics Release Inventory, 2022 Basic Data File (mirror)"</span>,</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>    <span class="st">"creator"</span>: <span class="st">"Your Name, University of Colorado Boulder"</span>,</span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>    <span class="st">"date"</span>: <span class="st">"2026-04-23"</span>,</span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>    <span class="st">"subject"</span>: [<span class="st">"environment"</span>, <span class="st">"toxics"</span>, <span class="st">"EPA"</span>, <span class="st">"TRI"</span>,</span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>                <span class="st">"environmental justice"</span>],</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>    <span class="st">"language"</span>: <span class="st">"eng"</span>,</span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>    <span class="st">"licenseurl"</span>: <span class="st">"https://creativecommons.org/publicdomain/mark/1.0/"</span>,</span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>    <span class="st">"description"</span>: (</span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Mirror of the US EPA Toxics Release Inventory 2022 Basic "</span></span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Data File, retrieved from epa.gov on 2026-04-20. See the "</span></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>        <span class="st">"attached preservation plan."</span></span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>    <span class="st">"mediatype"</span>: <span class="st">"data"</span>,</span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>    <span class="st">"collection"</span>: <span class="st">"opensource"</span>,</span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>files <span class="op">=</span> [<span class="st">"tri_2022_us.csv"</span>, <span class="st">"tri_2022_us.parquet"</span>,</span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>         <span class="st">"datasheet.md"</span>, <span class="st">"README.md"</span>, <span class="st">"LICENSE.txt"</span>,</span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>         <span class="st">"preservation_plan.md"</span>]</span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>upload(<span class="st">"epa-tri-2022-basic-mirror"</span>, files<span class="op">=</span>files, metadata<span class="op">=</span>metadata)</span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; [&lt;Response [200]&gt;, &lt;Response [200]&gt;, ...] on success</span></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify the deposit. Compare server SHA-1 to what you computed locally.</span></span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>item <span class="op">=</span> get_item(<span class="st">"epa-tri-2022-basic-mirror"</span>)</span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> item.files:</span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(f[<span class="st">"name"</span>], f[<span class="st">"size"</span>], f.get(<span class="st">"sha1"</span>))</span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>HTTP 200 does not guarantee the files are actually there. Fetch the item back and confirm each file has non-zero size and a matching SHA-1. That verification is what most tutorials skip.</span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="The Missing Manual"}</span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>The <span class="in">`internetarchive`</span> client returns success codes on uploads that silently failed: the item is created, the files are listed with size 0, and the HTTP layer looks fine. Always verify by fetching the item back with <span class="in">`ia metadata &lt;item_id&gt;`</span> or <span class="in">`get_item(id)`</span> and comparing the server's SHA-1 to yours. Separately, Zenodo DOIs take up to an hour to resolve after minting; do not panic when a fresh DOI returns "not found" ten seconds after publishing. The other silent killer is format choice. The difference between a file that survives fifty years and one that does not is usually not storage redundancy but format: CSV beats Excel, TIFF beats JPEG, Markdown beats Word, plain source beats a bundled notebook. Storage is easy. Legibility is hard.</span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a><span class="fu">## Minting a DOI with Zenodo</span></span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>Zenodo's REST API issues a DOI on publication, which is what makes it the right second archive in the federated pair <span class="co">[</span><span class="ot">@zenodo_api</span><span class="co">]</span>. Request a personal access token from <span class="in">`zenodo.org/account/settings/applications/`</span>, scope it to <span class="in">`deposit:write`</span> and <span class="in">`deposit:actions`</span>, and treat it like a password.</span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, requests</span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>ZENODO <span class="op">=</span> <span class="st">"https://zenodo.org/api"</span></span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>PARAMS <span class="op">=</span> {<span class="st">"access_token"</span>: os.environ[<span class="st">"ZENODO_TOKEN"</span>]}</span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a>HEADERS <span class="op">=</span> {<span class="st">"Content-Type"</span>: <span class="st">"application/json"</span>}</span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create an empty deposition.</span></span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> requests.post(<span class="ss">f"</span><span class="sc">{</span>ZENODO<span class="sc">}</span><span class="ss">/deposit/depositions"</span>,</span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a>                  params<span class="op">=</span>PARAMS, headers<span class="op">=</span>HEADERS, json<span class="op">=</span>{})</span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a>r.raise_for_status()</span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a>dep <span class="op">=</span> r.json()</span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Upload files into the deposition bucket.</span></span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> path <span class="kw">in</span> [<span class="st">"tri_2022_us.csv"</span>, <span class="st">"tri_2022_us.parquet"</span>,</span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a>             <span class="st">"datasheet.md"</span>, <span class="st">"README.md"</span>, <span class="st">"preservation_plan.md"</span>]:</span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">"rb"</span>) <span class="im">as</span> fh:</span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a>        requests.put(<span class="ss">f"</span><span class="sc">{</span>dep[<span class="st">'links'</span>][<span class="st">'bucket'</span>]<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>os<span class="sc">.</span>path<span class="sc">.</span>basename(path)<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>                     data<span class="op">=</span>fh, params<span class="op">=</span>PARAMS).raise_for_status()</span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Attach Dublin Core metadata.</span></span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a>meta <span class="op">=</span> {<span class="st">"metadata"</span>: {</span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>    <span class="st">"title"</span>: <span class="st">"EPA Toxics Release Inventory, 2022 Basic Data File (mirror)"</span>,</span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a>    <span class="st">"upload_type"</span>: <span class="st">"dataset"</span>,</span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>    <span class="st">"description"</span>: <span class="st">"Mirror of the US EPA TRI 2022 Basic Data File..."</span>,</span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a>    <span class="st">"creators"</span>: [{<span class="st">"name"</span>: <span class="st">"Your Name"</span>,</span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"affiliation"</span>: <span class="st">"University of Colorado Boulder"</span>}],</span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>    <span class="st">"keywords"</span>: [<span class="st">"environment"</span>, <span class="st">"toxics"</span>, <span class="st">"EPA"</span>, <span class="st">"TRI"</span>,</span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"environmental justice"</span>, <span class="st">"at-risk data"</span>],</span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a>    <span class="st">"license"</span>: <span class="st">"cc-zero"</span>, <span class="st">"language"</span>: <span class="st">"eng"</span>,</span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a>    <span class="st">"related_identifiers"</span>: [</span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a>        {<span class="st">"identifier"</span>: <span class="st">"https://archive.org/details/epa-tri-2022-basic-mirror"</span>,</span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a>         <span class="st">"relation"</span>: <span class="st">"isIdenticalTo"</span>, <span class="st">"resource_type"</span>: <span class="st">"dataset"</span>},</span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a>        {<span class="st">"identifier"</span>: <span class="st">"https://www.epa.gov/toxics-release-inventory-tri-program"</span>,</span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a>         <span class="st">"relation"</span>: <span class="st">"isDerivedFrom"</span>, <span class="st">"resource_type"</span>: <span class="st">"other"</span>},</span>
+<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a>}}</span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a>requests.put(<span class="ss">f"</span><span class="sc">{</span>ZENODO<span class="sc">}</span><span class="ss">/deposit/depositions/</span><span class="sc">{</span>dep[<span class="st">'id'</span>]<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a>             params<span class="op">=</span>PARAMS, headers<span class="op">=</span>HEADERS, json<span class="op">=</span>meta).raise_for_status()</span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Publish. This mints the DOI and makes the record immutable.</span></span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> requests.post(</span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>ZENODO<span class="sc">}</span><span class="ss">/deposit/depositions/</span><span class="sc">{</span>dep[<span class="st">'id'</span>]<span class="sc">}</span><span class="ss">/actions/publish"</span>,</span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a>    params<span class="op">=</span>PARAMS)</span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(r.json()[<span class="st">"doi"</span>])  <span class="co"># =&gt; 10.5281/zenodo.XXXXXXX</span></span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a>The <span class="in">`related_identifiers`</span> field is where federation becomes legible. You are telling Zenodo that its record is identical to the Internet Archive item and derived from the EPA source. A future user landing on any of the three can follow the chain to the others. Before going live, test against <span class="in">`sandbox.zenodo.org`</span>: the API is identical, the DOIs are not real, the mistakes are free.</span>
+<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a><span class="fu">## A preservation plan</span></span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a>A deposit without a preservation plan is a bet that someone else will figure out what you meant. A plan makes the bet explicit by answering four questions.</span>
+<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a>**Retention.** How long do you intend the deposit to remain accessible, and under what conditions would it be withdrawn? "Indefinite, absent legal compulsion" is acceptable. So is "Ten years, then re-evaluate." Specify something.</span>
+<span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a>**Migration.** What happens when the format becomes unreadable? Parquet in 2026 will not be Parquet in 2056. State whether migration is the depositor's responsibility (usually yes for the first generation), the repository's (sometimes yes for major archives), or unresolved. Name a review interval; five years is reasonable.</span>
+<span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a>**Custodianship.** Who is responsible when you move, change institutions, or leave the work? Karasti and Blomberg <span class="co">[</span><span class="ot">-@karasti2018</span><span class="co">]</span> call this "maintenance across decades," and their infrastructure studies (@sec-ch-05-installed-base) is the backbone of the answer. Designate a successor, an institution, or a community. "My GitHub account" is not an answer. "The University of Colorado Boulder libraries' digital preservation program, with EDGI as federated redundancy" is.</span>
+<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a>**Access and refusal.** Tie back to the tiered-access matrix from @sec-ch-08-ownership. Open access or tiered (DUA, embargo windows)? Refusal conditions from @sec-ch-16-critical-data-studies-refusal under which portions should be withdrawn? Make the rules legible before a future dispute requires them.</span>
+<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a>A plan that answers those four questions, committed alongside the dataset in the same deposit, is a preservation plan and a governance document. Someone will need it.</span>
+<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="In the Public Interest"}</span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a>The public interest includes people who do not yet exist. That is not a metaphor. The graduate student in 2048, the council staffer in 2035, the journalist in 2060: they are the public your deposit serves, and the archive is how you speak to them. This is the chapter where the book's three values come to rest. **Openness** (@sec-ch-06-openness) lets future readers find the bits, read them, and cite them. **Oversight** (@sec-ch-07-oversight) lets them hold present institutions accountable using records the institutions did not destroy. **Ownership** (@sec-ch-08-ownership) binds the deposit to a custodianship chain that does not evaporate with a funding cycle. The installed base (@sec-ch-05-installed-base) was never only about the present; it was always about whether the future could read us.</span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a><span class="fu">## Weaving the book together</span></span>
+<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a>The previous twenty-one chapters each contribute a piece of the portfolio. The datasheet from @sec-ch-04-erosion is the provenance document. The cleaning pipeline from @sec-ch-06-openness produced the CSV and Parquet versions. The tiered-access matrix from @sec-ch-08-ownership sits inside the preservation plan. The tests from @sec-ch-13-engineering evidence that the pipeline still runs. The sustainability reflection from @sec-ch-14-pit-data-for-good is why you chose a federated pair. The category audit from @sec-ch-16-critical-data-studies-refusal sits in the README as a note about what the dataset does and does not enumerate.</span>
+<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a>The five Part V artifacts cluster around the deposit. The op-ed argues the dataset matters. The report is the analysis a future reader will consult. The proposal is the forward-looking plan. The testimony is the record of saying so in public. The public comment is the administrative record. All five, alongside the dataset, archive as one collection. Exercise 22.4 asks you to build it.</span>
+<span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a><span class="fu">## Verifying and citing</span></span>
+<span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a>A deposit that cannot be cited is a backup. A deposit that can be cited is a contribution. After publication, resolve the DOI and confirm it lands. Paste the Internet Archive URL into a fresh logged-out session and confirm you can download the files. Compute their SHA-256 and compare to what you deposited. Then write the citation in the form your future readers will paste:</span>
+<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Your Name (2026). *EPA Toxics Release Inventory, 2022 Basic Data File (mirror)* </span><span class="co">[</span><span class="ot">Dataset</span><span class="co">]</span><span class="at">. Zenodo. </span><span class="in">`https://doi.org/10.5281/zenodo.XXXXXXX`</span><span class="at">. Also at Internet Archive: </span><span class="in">`https://archive.org/details/epa-tri-2022-basic-mirror`</span><span class="at">.</span></span>
+<span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a>That citation, on your CV and project pages, is the shortest route from "I did the work" to "here is the permanent link." It is the minimum unit of public-interest infrastructure Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> describes. Write it.</span>
+<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
+<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a>**Exercise 22.1 (Guided).** Install the <span class="in">`internetarchive`</span> client and register at archive.org. Pick an at-risk federal environmental dataset (EPA TRI 2022, a NOAA Climate Data Online file, or a USGS groundwater extract). Download it, convert to CSV and Parquet, write a one-page datasheet following @sec-ch-04-erosion, and deposit the bundle as an Internet Archive item with full Dublin Core metadata. Verify with <span class="in">`ia metadata &lt;item_id&gt;`</span> that every file has non-zero size and a matching SHA-1. Submit the item URL and verification output.</span>
+<span id="cb3-192"><a href="#cb3-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a>**Exercise 22.2 (Guided).** Create a Zenodo account, request an access token, and test the deposit flow against <span class="in">`sandbox.zenodo.org`</span> before going live. Then deposit to production Zenodo with a <span class="in">`related_identifiers`</span> entry pointing back to your Internet Archive item. Verify the DOI resolves (allow up to an hour). Submit the DOI, the resolved URL, and a note on how long resolution took.</span>
+<span id="cb3-194"><a href="#cb3-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-195"><a href="#cb3-195" aria-hidden="true" tabindex="-1"></a>**Exercise 22.3 (Reflective).** Write a two-to-three-page preservation plan for the dataset. Address retention, migration, custodianship, and access and refusal (tying back to @sec-ch-08-ownership and @sec-ch-16-critical-data-studies-refusal). Commit it into the deposit as <span class="in">`preservation_plan.md`</span> and update the metadata to reference it.</span>
+<span id="cb3-196"><a href="#cb3-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-197"><a href="#cb3-197" aria-hidden="true" tabindex="-1"></a>**Exercise 22.4 (Portfolio synthesis).** Archive your op-ed (@sec-ch-17-op-eds), report (@sec-ch-18-reports), proposal (@sec-ch-19-research-proposals), testimony (@sec-ch-20-testimony), and public comment (@sec-ch-21-public-comments) as a coherent collection alongside your dataset deposit. Write a collection-level README introducing the project, summarizing each artifact in two to three sentences, giving full citations with DOIs or permanent URLs, and explaining how the artifacts relate. Deposit to both the Internet Archive and Zenodo. This is your end-of-book portfolio.</span>
+<span id="cb3-198"><a href="#cb3-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-199"><a href="#cb3-199" aria-hidden="true" tabindex="-1"></a>**Exercise 22.5 (Open-ended).** Propose a public-interest data infrastructure that should exist in 2035 but does not. A federated archive of state benefits-administration audit logs, a repository of municipal algorithmic impact assessments, a climate-resilient mirror of at-risk federal datasets: anything you have wanted to see while working through this book. Three to five pages. Address what it is, what publics it serves, what the first five years of building it look like year by year, what an archival-deposit strategy for its outputs entails, and who bears the maintenance labor across decades. You are not committing to build it; you are demonstrating that you can imagine one and describe what imagining it seriously requires.</span>
+<span id="cb3-200"><a href="#cb3-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-201"><a href="#cb3-201" aria-hidden="true" tabindex="-1"></a><span class="fu">## A coda</span></span>
+<span id="cb3-202"><a href="#cb3-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a>The book began with three line plots of Wikipedia pageviews and a claim that "public interest" is operational rather than a slogan. It ends with a dataset, a DOI, a preservation plan, and five other artifacts that describe a project you can point to. That is the difference between reading about the practice and entering it.</span>
+<span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a>What you have built, if you did the exercises honestly, is a working theory of yourself as a public-interest data scientist, tested against a named dataset, a real docket, a real funder, a real rulemaking, carrying a citation chain. You will change your mind about parts of it; the practice assumes you will. But you now have a first version, committed to the record, that a future version of you can read and argue with.</span>
+<span id="cb3-206"><a href="#cb3-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-207"><a href="#cb3-207" aria-hidden="true" tabindex="-1"></a>There is more work. The federal datasets keep disappearing. The dockets keep opening and closing. The benefits algorithms keep being procured. Someone has to keep doing this, and the book's argument from page one is that "someone" includes you. Not alone, not as a hero, but as a practitioner inside a federation, in conversation with journalists, lawyers, accountants, planners, and engineers, with the critics who sharpen the practice and the refusers who bound it. Do the work. Deposit the artifacts. Cite the chain. Invite the next person in. That is what the installed base needs, and what the next public is counting on.</span>
+<span id="cb3-208"><a href="#cb3-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading and Resources</span></span>
+<span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Internet Archive, *Python library documentation*: <span class="ot">&lt;https://archive.org/developers/internetarchive/&gt;</span>. The canonical reference for the client used throughout this chapter.</span>
+<span id="cb3-212"><a href="#cb3-212" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Zenodo, *REST API documentation*: <span class="ot">&lt;https://developers.zenodo.org&gt;</span>. Authoritative for the deposit flow; test in the sandbox at <span class="ot">&lt;https://sandbox.zenodo.org&gt;</span> before going live.</span>
+<span id="cb3-213"><a href="#cb3-213" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>ICPSR, *Guide to social science data preparation and archiving*: <span class="ot">&lt;https://www.icpsr.umich.edu/files/deposit/dataprep.pdf&gt;</span>. Sixty years of social-science data stewardship, distilled.</span>
+<span id="cb3-214"><a href="#cb3-214" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Open Science Framework, *OSF help documentation*: <span class="ot">&lt;https://help.osf.io/&gt;</span>. The project-scaffolded alternative to Zenodo.</span>
+<span id="cb3-215"><a href="#cb3-215" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Software Heritage: <span class="ot">&lt;https://www.softwareheritage.org/&gt;</span>. The Internet Archive of source code; if your deposit includes code, cite its SWHID alongside the DOI.</span>
+<span id="cb3-216"><a href="#cb3-216" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>LOCKSS, *Program documentation*: <span class="ot">&lt;https://www.lockss.org/&gt;</span>. The federated-preservation backbone the chapter's federation claim leans on.</span>
+<span id="cb3-217"><a href="#cb3-217" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Environmental Data and Governance Initiative: <span class="ot">&lt;https://envirodatagov.org/&gt;</span>. Volunteer-driven federal environmental archiving; join a data-rescue event.</span>
+<span id="cb3-218"><a href="#cb3-218" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Digital Preservation Coalition, *Digital Preservation Handbook*: <span class="ot">&lt;https://www.dpconline.org/handbook&gt;</span>. The practitioner reference for everything this chapter only sketches.</span>
+<span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Library of Congress, *Sustainability of Digital Formats*: <span class="ot">&lt;https://www.loc.gov/preservation/digital/formats/&gt;</span>. The registry that tells you, for any format, how scared to be about using it.</span>
+<span id="cb3-220"><a href="#cb3-220" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Perma.cc: <span class="ot">&lt;https://perma.cc/&gt;</span>. For preserving web citations in a form that will resolve when the original URL rots.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-22-archival-deposits.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
