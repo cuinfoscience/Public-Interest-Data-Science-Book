@@ -1,0 +1,166 @@
+---
+title: "Testimony"
+execute:
+  eval: false
+---
+
+# Testimony {#sec-ch-20-testimony}
+
+A hearing room is an unusual venue for data science. The lights are fluorescent. The chairs are bolted to the floor. Your laptop is closed because the committee clerk asked you to close it. Somewhere behind the dais, a staffer who drafted the bill is watching the witness table with an expression you cannot quite read. A red light blinks above the microphone when your five minutes begin. A yellow light warns you at the four-minute mark. You will not get the extra forty-five seconds you wish for.
+
+Testimony is a genre. Like the op-ed in @sec-ch-17-op-eds and the report in @sec-ch-18-reports, it has conventions you can learn, editors who enforce them, and a specific theory of what counts as contribution. Unlike those genres, it is also a performance, delivered in public, recorded to a transcript, and preserved as part of the legislative record. A well-argued op-ed persuades at scale. A well-argued report becomes institutional evidence. A well-delivered piece of testimony becomes *voice-in-the-record*: a durable, searchable, cite-able mark that a particular person said a particular thing to a particular body on a particular day. That is a different kind of artifact than the other two, and the genre's rules follow from that difference.
+
+This chapter treats testimony as a public-record argument. You will write a five-minute oral statement, a longer written addendum for the permanent record, and a set of Q&A responses for hostile questions you can anticipate. The running example is a mock hearing before a Colorado state legislative committee considering an AI transparency or data-broker bill; many state legislatures have been debating variations of this material in the mid-2020s, which makes the scenario both plausible and useful for practice. The mechanics transfer: US Congressional hearings, state committees, European parliamentary inquiries, and UN Special Rapporteur submissions all share a common structure, even if the clocks and procedures differ.
+
+## What testimony is and is not
+
+An op-ed is persuasion at scale. You do not know your reader; the outlet is the introduction. A report is institutional evidence. You do know your institutional sponsor, and the sponsor's imprint carries you. Testimony is neither. It is voice. A committee invites *you*, specifically, because of who you are and what you can say that someone else cannot. The invitation is political work. Witness selection signals which perspectives a committee wants on the record, and by implication, which it does not. The person who invited you expects you to sharpen a particular argument. The person across the aisle expects you to flinch when a hostile question arrives. Both expectations are correct, and neither is a reason to refuse.
+
+Testimony has four features that distinguish it from the other Part V genres:
+
+1. **Voice.** You speak in the first person. You name your affiliations, your relevant experience, and the claim you are there to make. An op-ed can be abstracted from the author; testimony cannot.
+2. **Brevity.** Five minutes is a US Senate and House convention. State committees vary from two to seven. The European Parliament gives longer slots to invited witnesses and shorter ones to public submissions. The UN Special Rapporteur system takes written submissions of several pages but rarely oral testimony from outside the staff. Whatever the clock, it is shorter than you want.
+3. **A specific ask.** Testimony that does not end in a specific legislative or regulatory request is not testimony. It is a lecture. Committees do not need lectures. They need someone to say, on the record, "vote yes on the amendment in line 42," or "strike the preemption clause," or "the definition of *automated decision system* in Section 2 should include the following four elements."
+4. **Q&A.** After the five minutes, members of the committee ask questions. They are not always in good faith. You must answer in complete sentences, without notes, under time pressure. The Q&A is where testimony is won or lost.
+
+Frances Haugen's October 2021 appearance before the Senate Commerce Subcommittee on Consumer Protection is a useful genre case study [@haugen2021]. Read the transcript twice. The first time, notice how much of it is not about Facebook. It is about Haugen. She names her training as a product manager, the specific team she worked on, the internal research she saw, and what her security clearance was. The personal voice is load-bearing. Without it, the claim that Facebook knew about Instagram's effects on teen girls becomes an abstract assertion. With it, the claim is a witness account. The second time you read, mark every sentence that contains a specific ask. There are fewer than you expect, and they are not buried. She wants Section 230 reform, SEC whistleblower protections, and independent research access. The asks are concrete enough that a staffer could draft an amendment from them that afternoon.
+
+Contrast that performance with a congressional oversight hearing where the witness is a CEO who has been subpoenaed. The CEO has been prepped by counsel to say as little as possible. The voice is still personal, but the function is defensive: the record the hearing produces is a set of non-answers a future litigant can use in a deposition. Haugen's testimony is voice-in-the-record as *contribution*. The defensive CEO hearing is voice-in-the-record as *preservation*. Both are recognizable genre performances. You will be writing the first kind, but it helps to know the second exists, because the committee members you face will have sat through many more of the second than the first.
+
+::: {.callout-note title="In the Public Interest"}
+Oversight, as Chapter 7 defines it, requires testimony that can become part of the record. A brilliant argument made privately to a staffer is not testimony. It may be more effective, politically, than a public statement, but it leaves no durable mark. The installed base of public-interest work (@sec-ch-07-oversight) depends on a paper trail that future researchers, journalists, and litigants can cite. Written testimony is that paper trail. When you testify in a state committee and your written submission enters the record, you have created a legally preserved document (@sec-ch-10-law) that someone six years from now can cite in a brief, a FOIA request, or a dissertation. Chapter 22 will take up the archival deposit that makes sure your version survives even if the committee's website does not.
+:::
+
+## The scenario
+
+For the rest of the chapter, imagine a real bill. Colorado SB-XX (substitute any pending number you prefer) would require state agencies to disclose when they use an automated decision system to adjudicate a benefit, permit, or license, and would give affected individuals a right to a human review. You have been invited by the bill's sponsor to testify as an outside expert. You are not a lobbyist. You are a data scientist at a university or a nonprofit who has studied automated decision systems in public-benefits contexts. The committee is the Senate Judiciary Committee. The hearing is at 1:30 p.m. on a Thursday. You are the fourth witness. The chair is sympathetic to the bill but skeptical of anything that sounds like overreach. The ranking minority member is hostile to the bill and will ask a pointed question.
+
+You have been told your oral statement cannot exceed five minutes. You may submit a written statement of any reasonable length. The written statement is what enters the permanent record.
+
+## A pandas detour that earns one sentence
+
+Before you write either document, you need a concrete fact. Testimony that relies on vibes does not survive Q&A. The fact does not need to be novel; it needs to be yours, defensible, and citable. Here is a small analysis that produces the kind of sentence worth reading aloud.
+
+```python
+import pandas as pd
+
+# Hypothetical Boulder Housing Choice Voucher processing log
+# Fields: applicant_id, surname, application_date, approval_date
+df = pd.read_csv("hcv_processing_2023.csv", parse_dates=["application_date", "approval_date"])
+
+df["days_to_approval"] = (df["approval_date"] - df["application_date"]).dt.days
+
+# A very rough demographic proxy: Spanish-surname list from US Census
+spanish_surnames = pd.read_csv("census_spanish_surnames.csv")["surname"].str.upper().tolist()
+df["spanish_surname"] = df["surname"].str.upper().isin(spanish_surnames)
+
+overall_median = df["days_to_approval"].median()
+spanish_median = df.loc[df["spanish_surname"], "days_to_approval"].median()
+gap = spanish_median - overall_median
+
+print(f"Overall median: {overall_median} days")
+print(f"Spanish-surname median: {spanish_median} days")
+print(f"Gap: {gap} days")
+# => Overall median: 47 days
+# => Spanish-surname median: 78 days
+# => Gap: 31 days
+```
+
+That analysis produces a single sentence you can say out loud: "Our audit found that Boulder's Housing Choice Voucher approval time for Spanish-surname applicants was 31 days longer than the median, and that gap is larger than the federally recommended response window." The sentence is short. It is sourced. It is falsifiable. A hostile member of the committee can ask you to submit the code, and you can submit the code. The written addendum will include a footnote with the repository URL and the commit hash. The oral statement will name the fact once and move on.
+
+This is, incidentally, the clearest answer to the question "why should I learn pandas if my goal is public-interest policy work." Because a single well-sourced sentence in the hearing record is worth more than a thousand words of unsupported assertion, and `pandas` is how you produce the sentence.
+
+## The five-minute oral statement
+
+Here is the structure that works. It is not the only one, but it is the one you should start from and deviate deliberately.
+
+```
+[0:00-0:30]  Who you are, one sentence of credentialing,
+             one sentence naming the bill and your position.
+[0:30-1:30]  A concrete case or finding. Name a person,
+             a place, a number. Make the abstraction visible.
+[1:30-3:00]  The core argument. Why the current situation
+             fails the public interest. Two or three supporting
+             beats, not more.
+[3:00-4:00]  What the bill does well and what it should fix.
+             Specific language where possible.
+[4:00-4:45]  Your ask in one sentence, repeated twice if needed.
+[4:45-5:00]  Thank the chair. Stop talking.
+```
+
+The opening is the hardest to write and the most important to read aloud. Your first sentence should fit on one breath. "Chair Gonzales, Ranking Member Liston, members of the committee, thank you for the opportunity to testify today on Senate Bill XX" is fine, but only if you then immediately say something specific. Do not spend your first minute reading your CV. You will be cut off.
+
+::: {.callout-tip title="The Missing Manual"}
+Two things every state-legislative handbook fails to mention. First, the five minutes start when the chair says "you may begin," not when you sit down at the witness table. The hearing clock is not sympathetic to your throat-clearing. Practice your opening sentence out loud, time it, and cut it in half if you need to. Second, the written statement becomes the permanent record; the oral statement does not unless C-SPAN or the state cable channel happens to record it and happens to keep the recording. Treat the written statement as the testimony. Treat the oral statement as the advertisement that makes the committee want to read the written one.
+:::
+
+## The written addendum for the record
+
+The written submission is what a staffer will send to the state archivist, what a future researcher will find in LexisNexis, what a journalist will quote next year, and what a lawyer will attach to a brief the year after that. Two to four pages, single-spaced, with footnotes. The oral statement says the thing; the written statement shows the work.
+
+A structure that works for most committees:
+
+1. **Identification.** Name, affiliation, relevant experience, the bill under consideration, and your position in one or two sentences.
+2. **Summary of the problem.** Two or three paragraphs. The evidence you have that is relevant to the bill. Cite your sources.
+3. **The audit finding (or analogous empirical contribution).** The fact you are there to put on the record. A figure or table if it clarifies. A link to the underlying data and code.
+4. **Analysis of the bill.** Section by section. Where the bill's definitions are sound. Where they are too narrow, too broad, or unclear. Proposed amendment language where you have it.
+5. **Response to likely objections.** The committee has a record of this debate. Name the most common objection and respond to it in a paragraph. You are saving the chair the trouble.
+6. **The ask.** Explicit. A vote. An amendment. A floor statement. An interim study. Something the committee can actually do.
+7. **Contact information and availability.** You are offering to follow up in writing.
+
+The written statement is not a draft law review article. It is closer to a legal brief: footnoted, argumentative, and ruthlessly targeted at the decision the committee is about to make.
+
+## Anticipating Q&A
+
+After your five minutes, the chair will thank you. Then the questions begin. Some members will lob softballs to give you another minute on the clock; others will try to discredit you. A three-sentence answer is almost always the right length. Sentence one: direct response to the question. Sentence two: the evidence or reasoning. Sentence three: the connection to your ask or a clean exit.
+
+Here are five question types you can expect at an AI transparency hearing, with a template answer structure for each.
+
+**The "are you a lobbyist" question.** "Professor, who funded the study you cited?" Disclose the funding source. Name any relevant grants or affiliations. Connect back to why the finding stands regardless.
+
+**The "are you overreaching" question.** "Wouldn't your proposal shut down every automated system in state government?" Acknowledge the concern. Cite the bill's scope language or your proposed amendment. Name a specific carve-out that addresses the concern.
+
+**The "are you the right expert" question.** "You're a data scientist, not a lawyer. How do you know this is the right policy?" Acknowledge the genuine limit. Name what your expertise does bring. Name the collaborators or sources whose legal expertise you are drawing on.
+
+**The "isn't this already handled" question.** "Don't existing due-process protections cover this?" Name the specific gap. Cite a case or a dataset showing the gap. Explain why the bill closes it.
+
+**The "will this work" question.** "How will agencies actually comply without massive new staffing?" Name a comparable jurisdiction that has implemented something similar. Cite the implementation cost data if you have it. Concede any open question honestly.
+
+The worst thing you can do is answer a question you were not asked. Senators and state legislators can tell the difference, and they will use the pivot against you. If you do not know the answer, say so and offer to follow up in writing. The follow-up letter becomes part of the record.
+
+## Practice delivery and timing
+
+Record yourself delivering the statement. Time it. Almost every first draft runs long. The first cut is usually an adjective you did not know you had written. The second cut is an entire paragraph you liked. The third cut is the transition sentence you kept because it sounded smart. After three cuts, you are under five minutes.
+
+A note on reading versus speaking. Senior lobbyists speak without notes. Most witnesses read from a printed statement. Either is fine. What is not fine is looking down at your laptop throughout. Print the statement. Mark the breaths in pencil. Underline the one or two phrases you must deliver cleanly.
+
+## Closing and what comes next
+
+Testimony is a small, unusual genre within public-interest data science. Most students will testify once or twice in their careers; a few will testify regularly. For both groups, the habit of *producing the paper trail* matters more than the live performance. The written statement, the audit code, the dataset, and the follow-up letter all become searchable, citable artifacts in a legislative record that outlasts the hearing.
+
+Chapter 21 takes up public comments on federal rulemakings: a related genre with a different clock (30 to 60 days instead of five minutes), a different venue (Regulations.gov instead of a hearing room), and a different kind of reader (a docket officer at an agency, not a senator). Many of the same habits transfer. You will still need a specific ask, a concrete finding, and a written record that survives.
+
+## Exercises
+
+**Exercise 20.1 (Guided).** Read Frances Haugen's October 2021 Senate Commerce testimony (the transcript is widely available through the committee's archive). Mark every passage where she uses personal voice, every concrete empirical claim, and every specific legislative ask. Count each category. Write 200 words on what the ratio tells you about the genre.
+
+**Exercise 20.2 (Core artifact).** Write a five-minute oral statement (~750 words) for the mock Colorado hearing scenario described in this chapter, or substitute a real pending bill in your state. Include the introductory sentence, one concrete finding from an analysis you actually run (see the pandas example in this chapter), and a specific legislative ask. Save it as `artifacts/ch20_oral_statement.md`.
+
+**Exercise 20.3 (Core artifact).** Write a two-to-four-page written addendum for the permanent record. Follow the seven-part structure above. Include at least three footnotes with real sources, at least one table or figure from your analysis, and proposed amendment language for one section of the bill. Save it as `artifacts/ch20_written_statement.pdf`.
+
+**Exercise 20.4 (Core artifact).** Draft three-sentence answers to five anticipated hostile questions, using the five question types in this chapter as a starting set. Save them as `artifacts/ch20_qa_prep.md`. Read the answers aloud and confirm that each fits in under twenty seconds.
+
+**Exercise 20.5 (Open-ended).** Record yourself delivering the oral statement. Time it. If it runs long, cut it down. Once it fits, upload the written version (Exercise 20.3) to the course's Internet Archive collection with a meaningful title, a clear abstract, and at least three topical tags. Submit the `archive.org` item URL. This previews the archival deposit work of @sec-ch-22-archival-deposits, where you will learn the full metadata stack.
+
+## Further Reading and Resources
+
+- Frances Haugen, testimony before the US Senate Committee on Commerce, Science, and Transportation, Subcommittee on Consumer Protection, Product Safety, and Data Security, October 5, 2021. The canonical example for this chapter [@haugen2021]. Watch the full hearing if you can; the Q&A is as instructive as the prepared statement.
+- Joy Buolamwini, testimony before the US House Committee on Oversight and Reform on facial recognition technology, May 2019. Paired with the *Gender Shades* research [@buolamwini2018], it is a model of how an audit becomes a hearing statement. TODO: verify canonical transcript URL.
+- Inioluwa Deborah Raji, various congressional and state-legislative appearances on AI auditing and accountability, 2020 onward. TODO: confirm specific hearing transcripts; her FAccT work [@raji2020] is the technical backbone.
+- Safiya Umoja Noble, Senate Judiciary Committee comments on algorithmic amplification and platform accountability. TODO: verify specific hearing and date; her book [@noble2018] is the long form.
+- Congress.gov hearings archive: <https://www.congress.gov/committees>. Browse recent Commerce, Judiciary, and Energy and Commerce hearings for current AI and data-broker testimony.
+- Senate.gov testimony archive: <https://www.senate.gov/committees/hearings_meetings.htm>. Committee-by-committee listings of upcoming and archived hearings.
+- UN Office of the High Commissioner for Human Rights, submissions to Special Rapporteurs: <https://www.ohchr.org/en/special-procedures-human-rights-council>. A different form of testimony, written and international, with its own conventions.
+- Common Cause, "How to testify at a hearing": <https://www.commoncause.org/>. A plain-English guide for first-time witnesses. TODO: pin to current URL.
+- Public Citizen's advocacy resources: <https://www.citizen.org/>. Includes sample testimony and witness-preparation materials.
+- Keegan (2026), *Public interest data infrastructuring* [@keegan2026], on why voice-in-the-record is part of the installed base rather than a rhetorical flourish.
