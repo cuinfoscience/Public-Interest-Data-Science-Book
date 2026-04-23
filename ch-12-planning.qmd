@@ -1,0 +1,213 @@
+---
+title: "Planning"
+execute:
+  eval: false
+---
+
+# Planning {#sec-ch-12-planning}
+
+Every data project is a planning document in disguise. It proposes that some slice of the world is worth measuring, some category system worth applying, some decision worth making differently once the analysis is done. Planning has spent the last century learning the consequences of that kind of proposal. Data scientists have not. This chapter borrows from the planners.
+
+Part III treats the professions that figured out public-interest practice before data science existed. Chapter 9 handed you the journalist's habits of verification, Chapter 10 the lawyer's habits of record access, Chapter 11 the accountant's habits of audit and disaggregation. Planning, the fourth lineage, contributes the discipline of asking, before any decision is made, who is affected, who was in the room, who was not, and whose knowledge of the terrain counts as evidence.
+
+## A profession that learned from its mistakes
+
+Planning as you encounter it today is the downstream result of a public fight it mostly lost and then, slowly, learned from. Robert Moses ran New York's public works apparatus for four decades on a specific theory: the public interest could be computed by a qualified expert, expressed as a highway alignment, and imposed on neighborhoods whose residents could not contest it. Jane Jacobs [-@jacobs1961], as Chapter 1 noted, took the other side, insisting that people who lived on a block knew things no master plan could capture, and that a plan ignoring that knowledge was not a plan for the public.
+
+The work of codifying what Jacobs had demonstrated fell to a generation of planners who took the problem seriously *for* planning, not merely *against* it. Paul Davidoff's 1965 essay "Advocacy and Pluralism in Planning" [-@davidoff1965] is the founding document. Davidoff argued there is no single neutral public interest a competent planner discovers through analysis. There are many publics, with conflicting interests, and the planner's job is to make those conflicts legible rather than paper over them with a unitary plan. The profession should supply advocate planners to underserved communities the way the legal profession supplies public defenders.
+
+Advocacy planning did not become the default, but it changed what the default had to argue against. Sherry Arnstein's "ladder of citizen participation" [-@arnstein1969] followed four years later, giving planners a vocabulary for distinguishing real participation from its counterfeits (manipulation, therapy, information, consultation, placation, partnership, delegated power, citizen control). Marcus Lane's intellectual history [-@lane2005] traces how participation became a procedural requirement in most Western planning regimes, even when its substance was thin. Hashem Dadashpoor and Somayeh Ahani [-@dadashpoor2021] extend the inheritance in recent work on peri-urban change, insisting the forces reshaping a region are multiple and not reducible to what the master plan says.
+
+You inherit this tradition when you work with geographic data. The choropleth expresses a theory about which boundaries matter; the demographic overlay, a theory about which categories count; the stakeholder list, a theory about whose voice will be sought. Planning's contribution is to name these theories as theories and insist they be defended.
+
+## Back to the Allegheny Family Screening Tool
+
+Chapter 3 took up the Allegheny Family Screening Tool as a case of *exemption*: a risk-scoring system for child-welfare referrals that could not easily be audited from outside, because the administrative records feeding it were sealed. Read the same case through a planning lens and a different failure surfaces. The tool was designed by social scientists, procured by a county, and deployed on families. The families were not in the room. Neither were the front-line caseworkers whose judgment the tool was meant to augment, nor the neighborhoods whose referral rates it would amplify. The county ran a period of public comment. Comments were received. The deployment went forward.
+
+A planner recognizes this as a participation artifact on the lower rungs of Arnstein's ladder: information transmitted, consultation held, the decision made by the same people who would have made it without consultation. A participation process that does not feed back into who holds **authority** (Chapter 7) to change the decision, and that produces no path to **remedy** (Chapter 5) when it goes wrong, is a participation process in name only.
+
+## A running example: the Central 70 project
+
+You will practice the tools of this chapter on a real Denver decision: the Central 70 project, the reconstruction and widening of Interstate 70 through the Elyria-Swansea and Globeville neighborhoods north of downtown. The Colorado Department of Transportation published a final environmental impact statement and record of decision in 2017 [-@cdot_i70] and began construction shortly after. The project lowered the highway below grade, capped a four-block section with a park, and widened the traveled way. It also displaced residents, triggered lawsuits over environmental review, and intensified concerns about diesel exposure in neighborhoods that had already absorbed decades of pollution from 1960s highway decisions that cut the same neighborhoods in half [-@swansea2019].
+
+This is a planning case with a documented stakeholder process, contested boundaries, and rich public data. It is also heavy material. Students who find it draining may substitute the Alpine-Balsam redevelopment in Boulder [-@boulder_alpinebalsam] or another local case; the techniques transfer.
+
+## Stakeholders as a structured document
+
+A stakeholder map lists the parties to a decision, what each wants, can do, and can see. It reflects the mapper's theory of whose interests count; writing that theory down makes it contestable.
+
+Planners often produce stakeholder maps as tables. For a data science workflow, a structured, version-controlled document serves better. YAML reads like prose, diffs well in git, and loads into Python for downstream analysis. Here is a schema with one filled-in entry:
+
+```yaml
+# stakeholders_i70.yaml
+decision:
+  name: Central 70 reconstruction and widening
+  lead_agency: Colorado Department of Transportation
+  record_of_decision: 2017-01
+  geography:
+    primary_neighborhoods: [Elyria-Swansea, Globeville]
+    county: Denver
+    state: CO
+
+stakeholders:
+  - id: cdot
+    name: Colorado Department of Transportation
+    role: lead_agency
+    interests:
+      - completing federally-funded reconstruction on schedule
+      - maintaining I-70 freight and commuter capacity
+    power:
+      formal: high    # NEPA lead; owns the right of way
+      informal: high
+    access:
+      in_the_room: yes
+      documents_produced: [DEIS, FEIS, ROD, mitigation plan]
+    notes: |
+      Procedurally the decision-maker. Subject to FHWA oversight
+      and court review under NEPA.
+
+  - id: elyria_swansea_residents
+    name: Elyria-Swansea residents
+    role: affected_community
+    interests:
+      - reducing diesel particulate exposure
+      - avoiding displacement
+      - retaining neighborhood connectivity
+    power:
+      formal: low     # no veto over alignment
+      informal: medium  # organized through neighborhood associations
+    access:
+      in_the_room: partially
+      documents_produced: [public comments, litigation filings]
+    notes: |
+      Historically split by the 1964 I-70 viaduct. Limited
+      Spanish-language outreach in the early EIS phases.
+```
+
+A complete map for Central 70 would list twenty to thirty entries: CDOT, FHWA, the city and county of Denver, Denver Public Schools (whose Swansea Elementary sits within two hundred feet of the widened roadway), the EPA, neighborhood associations on both sides of the highway, the freight industry, commuter constituencies, public health researchers, legal aid organizations, and contractors.
+
+Notice what the schema forces. You cannot fill in `power.formal` without deciding what "formal" means here, or `access.in_the_room` without deciding what "the room" is. For Central 70, "the room" is at minimum five rooms: NEPA scoping meetings, technical advisory committees, city council chambers, federal court, and the CDOT executive offices where alignment decisions were actually made. A stakeholder with full access to one may be absent from another.
+
+## Who was missing from the room
+
+Once the map exists, a companion document lists whose perspectives are absent or under-represented, and says why. This "who was missing" analysis is short, uncomfortable to write, and the point of the exercise.
+
+For Central 70, a partial list would include renters whose landlords received displacement compensation but who received nothing; undocumented residents who did not attend public meetings for reasons unrelated to interest; children whose cumulative diesel exposure was the actual health outcome at stake but who had no standing in NEPA; the ghosts of households displaced by the original 1964 viaduct, whose descendants bore the continuing costs of a decision made before most 2017 stakeholders were born; and residents of neighborhoods *not* directly touched by I-70 whose regional air quality nonetheless changed.
+
+A "who was missing" analysis is a design input, not a ritual apology. If you can name whose perspective is missing, you can design the analysis to compensate: pulling in demographic data the formal process did not surface, weighting comments from less-represented zip codes, or publishing intermediate findings in formats a missing stakeholder could respond to. That last move is where planning bleeds into journalism (Chapter 9) and the report-writing of Chapter 18.
+
+## The geographic imagination
+
+Planning's other contribution is the habit of putting decisions on a map. A map is an argument about what counts as "the area," and every map excludes something the mapmaker did not think was relevant. Part of working with geographic data is learning to notice the exclusions.
+
+The Python library `geopandas` is the default tool for this work. It extends `pandas` with a `geometry` column, so a `GeoDataFrame` behaves like a `DataFrame` that knows where each row is on the surface of the earth. Underneath, it is a mixing bowl of `shapely` (geometry), `pyogrio` or `fiona` (file I/O), and `pyproj` (coordinate reference systems). You will spend more time with the third than you expect.
+
+```python
+import geopandas as gpd
+import contextily as ctx
+import matplotlib.pyplot as plt
+
+# Load a Colorado county shapefile from Census TIGER/Line
+counties = gpd.read_file(
+    "tl_2023_08_cousub/tl_2023_08_cousub.shp"
+)
+# => GeoDataFrame with columns including NAME, GEOID, geometry
+# => native CRS is typically EPSG:4269 (NAD83, lat/lon)
+
+# Load a block-group demographic overlay (ACS 5-year, 2018-2022)
+acs = gpd.read_file("acs_blockgroups_denver.geojson")
+
+# Load a project boundary (traced from the CDOT FEIS project description)
+i70 = gpd.read_file("central70_project_area.geojson")
+```
+
+Three layers, three files, three potential failure modes. The most common is a coordinate reference system (CRS) mismatch. A shapefile of Colorado counties in NAD83 (EPSG:4269) and a project boundary in Web Mercator (EPSG:3857) will plot together without raising an exception, because `matplotlib` does not know what a CRS is. The layers will not line up, because the underlying coordinate numbers mean different things. Before any spatial join, buffer, or distance calculation, project everything to a common CRS:
+
+```python
+# Project all three layers to Web Mercator for contextily basemaps
+target_crs = "EPSG:3857"
+counties = counties.to_crs(target_crs)
+acs = acs.to_crs(target_crs)
+i70 = i70.to_crs(target_crs)
+
+# For area or distance calculations, use a projected CRS
+# appropriate to the region. For the Front Range:
+#   EPSG:26913 (NAD83 / UTM zone 13N)
+# Distances in meters will be correct; Web Mercator distances will not.
+```
+
+The `to_crs()` method rewrites the geometry column so every coordinate is expressed in the target system; it does not change the underlying shapes, only how they are addressed. If you skip this step, your choropleth will still render, but it will be wrong in ways you cannot see.
+
+```python
+fig, ax = plt.subplots(figsize=(10, 10))
+
+# Choropleth: percent of population below poverty line, by block group
+acs.plot(
+    column="pct_poverty",
+    cmap="YlOrRd",
+    linewidth=0.1,
+    edgecolor="gray",
+    legend=True,
+    ax=ax,
+)
+
+# Project boundary on top
+i70.boundary.plot(ax=ax, color="black", linewidth=2)
+
+# Contextily basemap (OpenStreetMap tiles)
+ctx.add_basemap(ax, source=ctx.providers.OpenStreetMap.Mapnik)
+
+ax.set_axis_off()
+ax.set_title(
+    "Central 70 project area and block-group poverty rate\n"
+    "ACS 5-year 2018-2022; CDOT project boundary from 2017 FEIS"
+)
+fig.tight_layout()
+fig.savefig("ch12_i70_choropleth.png", dpi=150)
+```
+
+A choropleth with warmer colors clustering along the project corridor is not a causal claim; it is a descriptive statement about which communities surround the decision. Whether the project caused the poverty rate, was caused by historical decisions that also produced it, or is unrelated, is a separate analytical question. The map's job is to make the spatial question visible, not to close it.
+
+::: {.callout-tip title="The Missing Manual"}
+`geopandas` is a mixing bowl: `shapely` handles geometry, `fiona` or `pyogrio` reads files, `pyproj` handles CRSs, and `matplotlib` draws the result. When something breaks, the traceback can come from any of four libraries you did not explicitly import. The most common failure is a CRS mismatch, because `matplotlib` will cheerfully plot layers in incompatible coordinate systems without complaining. Always call `.to_crs()` to project every layer to a common CRS before you join, buffer, measure, or plot. The second most common failure: a shapefile arrives without its `.prj` sidecar about thirty percent of the time, leaving `geopandas` with no way to know what CRS the coordinates are in. Check for the `.prj` before you open the `.shp`; if it is missing, find out what projection the data was prepared in before you plot.
+:::
+
+## Community-informed categorization
+
+The demographic columns you drop into the map are themselves planning artifacts. "Percent below poverty line" is a federal category with a specific history. "Hispanic or Latino" was introduced as a Census category in 1970 after organized advocacy. "Two or more races" did not exist as a Census response option before 2000. Every category is a fossil of an earlier argument about who counted and as what.
+
+Bowker and Star [-@bowker2000], whose work returns in Chapter 16, call this the "torque" of classification: category systems that once fit the world now shape what the world is allowed to look like. Community-informed categorization treats category choice as participatory. If the community you are mapping has its own neighborhood boundaries that do not match Census tract lines, include both, labeled. If a demographic question the community cares about (length of residence, primary language at home) is not in standard ACS tables, say so in the caption rather than pretending those dimensions do not exist.
+
+This connects back to Chapter 8's treatment of ownership as stewardship. Treating the power to categorize as held in trust, rather than exercised unilaterally, is a planning ethic and an ownership ethic at once.
+
+::: {.callout-note title="In the Public Interest"}
+Ownership, in Chapter 8's sense, is about who has the standing and means to act as steward for data that describes them. Planning translates this into practice: the categories used to describe a place, and the boundaries used to define "the area of impact," should themselves be subject to participation. This is where the installed-base framework's **remedy** element (Chapter 5) gets geographic teeth. A community that cannot contest the map on which its displacement was planned has no path to remedy for the displacement itself. Audit-washing (Chapter 7) has a geographic cousin: participation-washing, where the map is drawn, the meeting is held, comments are noticed, and the decision proceeds as if none of it occurred. You can tell the difference by asking whether any document you produced could actually change the decision, or whether it was always going to be filed.
+:::
+
+## Exercises
+
+**Exercise 12.1 (Guided).** Pick a local decision in Boulder, Denver, or your home community: a rezoning, a transit line, a school consolidation, a development approval. Build a stakeholder map in YAML using the schema above. Include at least ten entries. Commit the file to `exercises/ch12_stakeholders_<slug>.yaml`. Include a two-paragraph `README.md` that states what the decision is, what records you used to identify stakeholders, and what you could not find.
+
+**Exercise 12.2 (Analytic).** For the decision you mapped in 12.1, write a 400-word "who was missing from the room" analysis. Name at least four stakeholder groups whose perspectives are absent or thinly represented in the documented process, and for each, name one document, dataset, or outreach method that would have surfaced them. Save as `exercises/ch12_missing_<slug>.md`.
+
+**Exercise 12.3 (Technical).** Produce a `geopandas` choropleth of your decision's geography. Use TIGER/Line shapefiles for the base geometry and an ACS 5-year table for the demographic overlay. Include at least three layers: the administrative base, the demographic variable, and the decision's boundary or corridor. Project all layers to a common CRS and document the CRS choice in the caption. Save the figure and the notebook to `exercises/ch12_map_<slug>/`. If a `.prj` file is missing from any shapefile, document how you determined the correct CRS.
+
+**Exercise 12.4 (Reflective).** Read one chapter from Eubanks [-@eubanks2018] (the Allegheny chapter or the Indiana eligibility chapter works well for this purpose). Apply her analytic framework to the case you have been working with in 12.1 through 12.3. Where does the decision's theory of the problem locate the cause of the harm? Where does Eubanks locate it? What would change in your stakeholder map if you adopted her framing? 500 words.
+
+**Exercise 12.5 (Open-ended).** Design a participatory process that would have produced a materially different outcome for your decision. "Materially different" means: a different alignment, a different boundary, a different set of mitigations, a different timeline, or a decision not to proceed. Specify what rung of Arnstein's ladder your process would occupy, who would hold what authority, and what the minimum infrastructure (time, money, translation, childcare, data access, legal support) the process would require. Then answer the harder question: what would have had to be true, structurally, about the lead agency, the funding source, or the political moment for this process to actually happen? 750 words. Save as `exercises/ch12_counterfactual_<slug>.md`. You will revisit this exercise in Chapter 15 when the reading pivots to procurement as planning by contract.
+
+## Looking ahead
+
+Planning gave you the habit of asking who was in the room and whose knowledge of the terrain counts. Chapter 13 turns to engineering, which asks, after a bridge falls down, what combination of design choice, material weakness, and organizational pressure produced the failure. Engineering's lineage for public interest data science is the post-incident review, the failure taxonomy, and the discipline of treating each deployed system as a potential failure in slow motion. You will build a test suite, introduce a bug on purpose, and write the post-mortem. Chapter 15 returns to planning when it treats government procurement as planning by contract, and Chapter 18 returns to it when it asks you to write a report for a stakeholder audience that is not the one you would have picked.
+
+## Further Reading and Resources
+
+- Paul Davidoff (1965), "Advocacy and Pluralism in Planning," *Journal of the American Institute of Planners* 31(4): 331–338. The founding essay for advocacy planning. Short, sharp, and still the clearest statement of the position.
+- Sherry R. Arnstein (1969), "A Ladder of Citizen Participation," *Journal of the American Institute of Planners* 35(4): 216–224. The eight-rung ladder you will use to diagnose participation processes for the rest of your career.
+- Virginia Eubanks (2018), *Automating Inequality*. The chapter on the Allegheny Family Screening Tool is directly relevant to Exercise 12.4; the Indiana eligibility and Los Angeles homelessness chapters both work as alternative readings.
+- The GeoPandas user guide: <https://geopandas.org/en/stable/docs.html>. The CRS handling section is worth reading end-to-end before you plot anything serious.
+- QGIS: <https://qgis.org/>. The free and open-source desktop GIS. When `geopandas` is not enough, or when you need to hand a reproducible map project to a non-Python collaborator, QGIS is the default.
+- U.S. Census TIGER/Line shapefiles: <https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html>. Most administrative boundaries you will plot in the United States come from here.
+- The Central 70 project record of decision and supporting environmental review documents, published by CDOT and FHWA. A substantial real-world planning archive, worth reading as an example of what a regulated public process produces and what it does not.
+- The City of Boulder's Alpine-Balsam area plan: <https://bouldercolorado.gov/projects/alpine-balsam>. A smaller-scale planning process with extensive documentation of its public engagement phases. Useful as a second case for students who find the Central 70 material heavy.
+- Marcus B. Lane (2005), "Public Participation in Planning: An Intellectual History," *Australian Geographer* 36(3): 283–299. The longer historical arc from which Arnstein and Davidoff are two nodes.
