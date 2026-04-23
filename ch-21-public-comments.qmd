@@ -1,0 +1,256 @@
+---
+title: "Public Comments"
+execute:
+  eval: false
+---
+
+# Public Comments {#sec-ch-21-public-comments}
+
+Federal rulemaking is where many of the country's most consequential data-policy fights are decided, and almost nobody you know has written a comment on one. The op-ed in @sec-ch-17-op-eds reaches a general reader. The report in @sec-ch-18-reports reaches a funder. The testimony in @sec-ch-20-testimony reaches a committee that invited you in advance. A public comment on a proposed rule reaches the federal agency drafting the rule, on the agency's schedule, in a form the agency is legally required to read, without anyone inviting you first. The door is open. Most of the profession walks past it.
+
+This chapter treats the public comment as a genre. You will read a Notice of Proposed Rulemaking (NPRM), find the specific questions the agency is asking, draft a substantive comment that cites the NPRM's section numbers, and (with instructor approval) submit it through regulations.gov. The running example is one of the mid-2020s' large algorithmic-accountability dockets: the Federal Trade Commission's Commercial Surveillance and Data Security ANPRM, or the National Institute of Standards and Technology's AI Risk Management Framework comment cycles. Both produced thousands of pages of public comment, much of it substantive, all of it now part of the administrative record. Pick either, or find a current docket that overlaps your project; a TODO note later explains how.
+
+## What a public comment is
+
+The Administrative Procedure Act of 1946 is the legal scaffolding under which most federal regulation happens. Its most-cited provision for our purposes is 5 U.S.C. § 553, "Rule making," which requires that when an agency proposes a substantive rule, it must publish notice in the Federal Register, give the public an opportunity to participate "through submission of written data, views, or arguments," and consider what it receives before issuing a final rule [@apa_553]. That sentence is short, but the obligations it creates are load-bearing. An agency that skips the public comment step, or that ignores comments raising a "significant" issue, risks having its rule vacated in court as "arbitrary and capricious." The comment period is the mechanism by which federal rules are made legally durable.
+
+The mechanics are standardized. An agency publishes an NPRM in the Federal Register. The NPRM names a docket number, describes the proposed rule, explains the agency's legal authority, summarizes the evidence, and almost always asks the public a series of specific questions. It announces a comment period, typically 30 to 90 days. During that window, anyone, US citizen or not, may submit comments through regulations.gov or directly to the agency. At the close, the agency reviews comments, addresses significant issues in the preamble, and publishes the final rule.
+
+Three features make comments worth your attention. They are written, which suits data scientists. They are on the agency's clock, not yours. And the substantive ones become part of the *administrative record*: the bundle of documents a reviewing court will examine if the rule is later challenged. A comment you wrote in 2024 may be cited in a 2029 opinion. That is an unusual half-life for a weekend's work.
+
+## Why data scientists underuse this genre
+
+Comments are lower-friction than testimony and higher-leverage than op-eds, and the profession submits shockingly few. Three reasons recur.
+
+First, nobody invited you. A congressional committee selects its witnesses; a newspaper commissions its op-eds. Rulemaking is the opposite: the agency publishes the NPRM, and the comment box sits waiting for whoever shows up. The lack of an invitation is the point. It is also, for a profession trained on peer review, psychologically disorienting.
+
+Second, the form is unfamiliar. Agencies do not publish style guides for comments the way newspapers publish pitch guidelines. You have to figure out on your own that a substantive comment cites the NPRM's section numbers, attaches supporting evidence, and ends with specific proposed changes. The conventions exist; they are just not written down where a student would find them.
+
+Third, the outcome is uncertain. You submit, and the agency either adopts your suggestion, partially adopts it, ignores it, or rejects it in a paragraph of the final rule's preamble. For a profession that likes metrics, a genre whose principal effect is cumulative can feel unrewarding. It is, nonetheless, how most federal regulation is shaped.
+
+## State and local equivalents
+
+Federal rulemaking is the best-documented system, but not the only one. Colorado's state rulemaking process runs through the Secretary of State's office, which publishes the *Colorado Register* and maintains a rules-in-process portal [TODO: confirm canonical URL]. Colorado attorney general opinions, Public Utilities Commission dockets, and Department of Regulatory Agencies rulemakings all follow an analogous notice-and-comment rhythm. City governments run their own processes: Boulder City Council hearings accept written comment before meetings, Denver zoning amendments go through formal periods, Boulder Valley School District policy revisions allow written comment before the board votes. The mechanics differ. The genre is the same: a written, time-bounded, substantive argument submitted into a governmental record.
+
+If federal rulemaking feels too abstract for your project, a state or city comment is a reasonable first artifact. The drafting discipline transfers, and the local audience is often more responsive.
+
+## The substantive comment standard
+
+Agencies distinguish, informally but consistently, between *substantive* and *form-letter* comments. A substantive comment does at least three things: it identifies itself as responding to specific provisions of the NPRM (by section and paragraph), it offers evidence or analysis the agency did not already have, and it proposes specific changes to the rule. A form letter repeats, verbatim, text that a campaign asked supporters to paste into the comment box. Both are counted, but differently. The administrative record treats a thousand identical form letters as evidence of public sentiment; it treats one substantive comment as potentially dispositive evidence the agency must address in the final rule. Courts reviewing a rule for arbitrariness will look for whether the agency engaged with substantive comments. They will not expect the agency to engage, paragraph by paragraph, with a form-letter campaign [@crs_public_comments].
+
+This is good news for the public-interest data scientist. You cannot out-organize a thousand-member advocacy group at volume. You can produce one comment the agency is legally obliged to take seriously, which is a much better return on your weekend.
+
+::: {.callout-tip title="The Missing Manual"}
+"Comment flooding" is what happens when a campaign tool posts the same text a thousand times under a thousand names. Agencies treat identical or near-identical comments as one comment with a thousand signatories, not a thousand substantive arguments. This cuts both ways: your one carefully written comment is not drowned out, but if your comment looks like a flood entry (no section citations, no evidence, no specifics), it is processed accordingly regardless of your credentials. Separately, the regulations.gov API has changed endpoints and authentication mechanisms several times across the past decade. Before writing code against it, open <https://open.gsa.gov/api/regulationsgov/> and confirm the current version matches what this chapter describes. TODO for students: verify the documented API at the start of the semester and note divergences in your exercise writeup.
+:::
+
+## The regulations.gov API
+
+Regulations.gov is the shared federal portal where most agencies post dockets and collect comments. It exposes a REST API through api.data.gov, which requires a free API key you request by email [@regulationsgov_api]. The three endpoints you will use most are the document search (`/v4/documents`), the docket retrieval (`/v4/dockets/{id}`), and the comment submission endpoint (which has had different names across API versions; verify before writing against it).
+
+The documentation has shifted. Older tutorials point at `/api/v3/documents` or at regulations.gov's internal API, neither of which is the current canonical entry point. Treat the GSA open API documentation as authoritative and any code sample older than a year as provisional.
+
+An illustrative search for open dockets matching a keyword:
+
+```python
+# TODO: verify endpoint and auth against https://open.gsa.gov/api/regulationsgov/
+# before running. The API has changed at least twice since 2020.
+
+import os
+import requests
+
+API_KEY = os.environ["REGULATIONS_GOV_API_KEY"]
+BASE = "https://api.regulations.gov/v4"
+
+HEADERS = {
+    "X-Api-Key": API_KEY,
+    "Accept": "application/vnd.api+json",
+    "User-Agent": "PublicInterestDataScience/0.1 (your-email@example.edu)",
+}
+
+def search_dockets(keyword, page_size=25):
+    params = {
+        "filter[searchTerm]": keyword,
+        "filter[documentType]": "Proposed Rule",
+        "page[size]": page_size,
+        "sort": "-postedDate",
+    }
+    r = requests.get(f"{BASE}/documents", headers=HEADERS,
+                     params=params, timeout=30)
+    r.raise_for_status()
+    return r.json()["data"]
+
+hits = search_dockets("algorithmic accountability")
+for h in hits[:5]:
+    attrs = h["attributes"]
+    print(attrs["docketId"], attrs["title"][:70],
+          attrs.get("commentEndDate", "no end date"))
+# => FTC-2022-0053 Trade Regulation Rule on Commercial Surveillance ...
+# => NIST-2023-0009 AI Risk Management Framework ...
+```
+
+The payload uses the JSON:API convention, nesting attributes under `attributes` and relationships under `relationships`. Read it once with `json.dumps(..., indent=2)` before writing parsing code against it.
+
+## Fetching and reading an NPRM
+
+The NPRM is usually a long PDF with a parallel HTML page. The Federal Register publishes a structured XML version easier to parse than the PDF; the regulations.gov API exposes it via the document's `fileFormats` attribute.
+
+```python
+def fetch_document(document_id):
+    r = requests.get(f"{BASE}/documents/{document_id}",
+                     headers=HEADERS, timeout=30)
+    r.raise_for_status()
+    return r.json()["data"]
+
+doc = fetch_document("FTC-2022-0053-0001")
+formats = doc["attributes"].get("fileFormats", [])
+```
+
+An NPRM has a predictable structure: preamble, background on statutory authority, alternatives analysis, proposed regulatory text, and almost always a numbered list of questions the agency is asking the public to address. Those numbered questions are the most valuable part of the document for a commenter. If the agency asked a question and you answered it with evidence, your comment is prima facie substantive.
+
+A routine to extract question paragraphs from the HTML version:
+
+```python
+# TODO: the Federal Register's HTML structure varies by document;
+# adjust selectors after inspecting the specific docket.
+
+from bs4 import BeautifulSoup
+import re
+
+def extract_questions(html_text):
+    soup = BeautifulSoup(html_text, "html.parser")
+    questions = []
+    for p in soup.find_all(["p", "li"]):
+        text = p.get_text(" ", strip=True)
+        if re.search(r"\?\s*$", text) and len(text) > 40:
+            questions.append(text)
+    return questions
+
+# Expect roughly 20-100 explicit questions in a substantive NPRM.
+# The FTC commercial surveillance ANPRM asked 95 numbered questions.
+```
+
+Ninety-five questions is a lot. You are not obliged to answer all of them. You are asking which two or three overlap your evidence base, and answering those with the best argument you can muster.
+
+## Tracking the docket over time
+
+A rule you are following will accumulate documents over months: the NPRM, comment-period extensions, supplemental notices, industry responses, occasionally a second NPRM. The SQLite tracker from @sec-ch-10-law adapts here with a small extension: add a `rulemakings` table and a `comments` table alongside the CORA schema.
+
+```python
+import sqlite3
+from pathlib import Path
+
+DB_PATH = Path("rulemaking_tracker.sqlite")
+
+SCHEMA = """
+CREATE TABLE IF NOT EXISTS rulemakings (
+    docket_id TEXT PRIMARY KEY,
+    agency TEXT NOT NULL,
+    title TEXT NOT NULL,
+    posted_date TEXT,
+    comment_end_date TEXT,
+    status TEXT NOT NULL
+        CHECK (status IN ('open','closed','final','withdrawn')),
+    notes TEXT
+);
+CREATE TABLE IF NOT EXISTS comments (
+    id INTEGER PRIMARY KEY,
+    docket_id TEXT NOT NULL REFERENCES rulemakings(docket_id),
+    submitter TEXT,
+    date_submitted TEXT,
+    substantive INTEGER,   -- 0 or 1
+    url TEXT,
+    notes TEXT
+);
+"""
+
+with sqlite3.connect(DB_PATH) as conn:
+    conn.executescript(SCHEMA)
+```
+
+Reuse the insert-and-query patterns from Chapter 10. A weekly cron that polls the docket, inserts new documents, and flags rules with `comment_end_date` within 14 days will stop you missing windows. Missing the window is the single most common failure mode for first-time commenters.
+
+## The shape of a substantive comment
+
+A comment has a header, an introduction, a body organized by the sections of the NPRM it addresses, and a conclusion with specific proposed changes. The first page looks like this, roughly:
+
+```
+[Your name, affiliation, and contact information]
+[Date]
+
+Re: Comment on [Agency] [Docket Number]
+    [Full title of the NPRM]
+    [Federal Register citation, e.g., 87 Fed. Reg. 51,273]
+
+Introduction
+
+I submit this comment on the [Agency]'s notice of proposed rulemaking
+("NPRM") concerning [topic]. I am a [researcher, data scientist,
+student] whose work focuses on [area]. I write in my individual
+capacity; the views expressed are my own and not those of my employer.
+```
+
+The introduction establishes standing, the sections you intend to address, and a one-paragraph summary of your position. The body then addresses specific questions:
+
+```
+Response to Question 12 ("How should the Commission define 'automated
+decision system' for purposes of this rule?")
+
+The Commission's proposed definition in Section 2(a)(4) excludes
+systems that are "advisory" rather than dispositive. This exclusion is
+too broad. [Evidence paragraph citing a public audit, a peer-reviewed
+study, or a dataset.] I propose the following revised text:
+
+  (a)(4) "Automated decision system" means any software, including
+  machine-learning models, that is used to make or materially support
+  a decision affecting a legally protected interest, whether the
+  decision is final or advisory.
+```
+
+Three things that paragraph does: names the question, cites the section, proposes concrete redlined text. Agency staff can draft a revised section from that paragraph without interpolation. That is the standard to aim for.
+
+The conclusion restates the proposed changes as a short numbered list and provides contact information for followup. Attach evidence as exhibits. A comment with four exhibits (an audit report, a dataset card, a letter of support, a bibliography) reads as materially different from one with none.
+
+## Coalition comments and individual voice
+
+Many of the most influential comments on the mid-2020s AI rulemakings were coalition submissions: ACLU with EFF and Upturn; the Leadership Conference on Civil and Human Rights with a dozen signatories; academic working groups coordinated through the AI Now Institute or the Center for Democracy & Technology. A coalition comment has institutional weight and authorial dilution. An individual comment has the opposite profile: thinner institutional authority, sharper voice.
+
+Neither dominates. If your argument rests on a technical audit you conducted, your individual signature is load-bearing and you should sign it yourself. If your argument matches thirty other civil-society groups' arguments, your signature adds to a coalition letter. A heuristic: if what you are saying has not been said in this exact form by any current coalition letter, submit it under your own name.
+
+::: {.callout-note title="In the Public Interest"}
+A public comment becomes part of the administrative record the moment the agency accepts it. That record is not an archive of opinions; it is the evidentiary base on which future litigation depends. When a rule is challenged in the D.C. Circuit, the court reviews the record for whether the agency adequately considered "significant" comments. A substantive comment you submit in 2026 may be cited in a 2030 opinion vacating a rule for failure to respond. This is oversight as @sec-ch-07-oversight defined it: the authority-and-remedy pair wired into the legal architecture of @sec-ch-10-law. Your comment is not a speech act but a durable artifact that gives courts, journalists, and scholars a reason to look at what the agency did and did not consider. Write it so it reads well out of context six years from now, because that is when it will be read.
+:::
+
+## A note on timing and the regulatory calendar
+
+The comment period is non-negotiable. A comment filed after the window closes is, as a legal matter, absent from the record. Watch the close date. Watch the Federal Register for extension notices (agencies sometimes extend after pressure, occasionally by weeks). Watch for supplemental NPRMs that reopen comment on a narrower issue. ProPublica and the Administrative Conference of the United States maintain rulemaking trackers that surface the high-impact dockets without you scanning the Federal Register daily.
+
+If you are drafting for a live federal docket, verify the docket is still open before you start. TODO for students: confirm your chosen docket has not closed, been withdrawn, or moved to final rule. The FTC commercial surveillance docket and the NIST AI RMF cycles cited here are from the 2022-2024 period and may no longer be open; your instructor will help you pick a current replacement if so.
+
+## Exercises
+
+**Exercise 21.1 (Guided).** Register for a regulations.gov API key through api.data.gov. Use the search endpoint to find three currently-open dockets relevant to your project's topic. Record the docket ID, agency, title, and comment end date for each in a short table. Paste the table into your exercise writeup.
+
+**Exercise 21.2 (Guided).** Pick one of the three dockets from Exercise 21.1 and read the NPRM carefully. Extract every numbered question the agency asks the public. List them in a document, grouped by the section of the NPRM they appear in. Write one sentence per question describing what kind of evidence would be responsive to it. Expect somewhere between 20 and 100 questions; if you find fewer than 10, your extraction is probably incomplete.
+
+**Exercise 21.3 (Analytic, Part V artifact).** Draft a substantive comment that answers at least two of the questions you identified in Exercise 21.2. Your comment must: (1) identify itself by docket number and NPRM section numbers; (2) cite at least one external source beyond the NPRM, such as a peer-reviewed paper, a public audit, or an agency dataset; (3) propose concrete revised regulatory text; and (4) fall between 800 and 2,500 words. Save the draft to `exercises/ch21_comment.md`. This is your Part V artifact for this chapter.
+
+**Exercise 21.4 (Analytic).** Retrieve three comments already submitted to your chosen docket. Classify each as (a) substantive, (b) form-letter, or (c) off-topic, using this chapter's substantive-comment criteria. Write 150 words per classification justifying your judgment with quotations from the comment.
+
+**Exercise 21.5 (Open-ended, optional).** With explicit instructor approval, submit your Exercise 21.3 comment through regulations.gov. Archive the submission confirmation (comment tracking number, date, acknowledgment email) in your exercise folder. Record the URL at which your comment appears on the docket once posted; agencies typically take 1-5 business days. Add the comment to your `rulemaking_tracker.sqlite` database. This exercise is optional because a submitted comment enters the permanent regulatory record under your name.
+
+## Looking ahead
+
+You now have, once Exercise 21.3 is drafted, the fifth of six Part V artifacts: a substantive comment on a live rulemaking, cited to section numbers, with concrete proposed text. @sec-ch-22-archival-deposits closes Part V and the book. The op-ed, the report, the proposal, the testimony, and the comment are durable only if someone can find them after your employer's website is reorganized, your university decommissions your faculty page, and the agency moves its docket to an archival system nobody remembers how to search. Chapter 22 teaches you to deposit each artifact into archival infrastructure (the Internet Archive and Zenodo) with resolvable identifiers, metadata, and a plan for the next decade. It is the final step in turning a portfolio of work into a public record.
+
+## Further Reading and Resources
+
+- Regulations.gov main portal: <https://www.regulations.gov/>. The shared federal docket system. Browse open dockets by agency and close date.
+- Federal Register's "How to comment effectively" guide: <https://www.federalregister.gov/uploads/2011/01/the_publics_guide.pdf>. TODO: verify current URL; this is the widely-cited public participation handbook. A short and practical primer on drafting substantive comments.
+- Congressional Research Service, *A Brief Overview of Rulemaking and Judicial Review*, CRS Report R41546 [@crs_public_comments]. The best short orientation to how notice-and-comment rulemaking produces legally durable federal regulation and where comments fit in the administrative record.
+- Regulations.gov API documentation at the GSA open data portal: <https://open.gsa.gov/api/regulationsgov/> [@regulationsgov_api]. The canonical developer documentation. Verify against the version posted at the start of your semester.
+- The Office of Information and Regulatory Affairs (OIRA) at OMB: <https://www.reginfo.gov/public/>. OIRA reviews "significant" federal rules before publication. Its public dashboard shows which rules are currently under review and where the bottlenecks are.
+- ProPublica's rulemaking tracker: <https://projects.propublica.org/represent/>. TODO: verify canonical URL for the current rulemaking tracker. ProPublica and the Administrative Conference of the United States maintain running indices of high-profile rulemakings.
+- FTC Commercial Surveillance ANPRM docket, FTC-2022-0053: <https://www.regulations.gov/docket/FTC-2022-0053>. An exemplar docket for algorithmic-accountability commenters. Read two or three of the substantive academic comments filed; they are a usable template for your own.
+- NIST AI Risk Management Framework comments: <https://www.nist.gov/itl/ai-risk-management-framework>. A second exemplar docket, useful for students whose evidence base leans toward technical standards rather than enforcement.
+- *Administrative Procedure Act*, 5 U.S.C. § 553 [@apa_553]. The two paragraphs of statute every commenter should have read at least once.
