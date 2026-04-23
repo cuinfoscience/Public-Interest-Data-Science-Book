@@ -1,0 +1,97 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Public Interest Data Science"
+  subtitle: "Pressures, Values, Lineages, and Genres"
+  author: "Brian C. Keegan"
+  date: "2026"
+  description: |
+    A textbook on doing data science for public-interest ends: diagnosing
+    the structural pressures on public knowledge, articulating the values
+    that push back, learning from the public-interest professions, and
+    contributing to public conversations through the genres that make
+    analysis accountable.
+  license: "MIT"
+  repo-url: "https://github.com/brianckeegan/Public-Interest-Data-Science-Book"
+  repo-actions: [edit, issue]
+  sharing: [twitter, linkedin]
+  search: true
+  page-navigation: true
+  downloads: [pdf, epub]
+  chapters:
+    - index.qmd
+    - part: "Pressures"
+      chapters:
+        - ch-01-introduction.qmd
+        - ch-02-enclosure.qmd
+        - ch-03-exemption.qmd
+        - ch-04-erosion.qmd
+    - part: "Values"
+      chapters:
+        - ch-05-installed-base.qmd
+        - ch-06-openness.qmd
+        - ch-07-oversight.qmd
+        - ch-08-ownership.qmd
+    - part: "Lineages"
+      chapters:
+        - ch-09-journalism.qmd
+        - ch-10-law.qmd
+        - ch-11-accounting.qmd
+        - ch-12-planning.qmd
+        - ch-13-engineering.qmd
+    - part: "Adjacent Conversations"
+      chapters:
+        - ch-14-pit-data-for-good.qmd
+        - ch-15-govtech-civic-tech.qmd
+        - ch-16-critical-data-studies-refusal.qmd
+    - part: "Genres"
+      chapters:
+        - ch-17-op-eds.qmd
+        - ch-18-reports.qmd
+        - ch-19-research-proposals.qmd
+        - ch-20-testimony.qmd
+        - ch-21-public-comments.qmd
+        - ch-22-archival-deposits.qmd
+  appendices:
+    - appendix-ai-disclosure.qmd
+    - appendix-further.qmd
+
+bibliography: references.bib
+citation: true
+citations-hover: true
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme-light.scss]
+      dark: [cosmo, theme-dark.scss]
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    code-link: true
+    code-fold: false
+    code-overflow: wrap
+    code-copy: true
+    code-tools: true
+    df-print: paged
+    fig-responsive: true
+    callout-appearance: default
+    highlight-style: github
+  pdf:
+    documentclass: scrbook
+    papersize: letter
+    toc-depth: 2
+    number-sections: true
+    colorlinks: true
+    keep-tex: false
+  epub:
+    toc: true
+    number-sections: false
+
+execute:
+  eval: false
+  echo: true
+  warning: false
+  cache: false
