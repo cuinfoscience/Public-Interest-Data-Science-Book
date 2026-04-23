@@ -1,0 +1,157 @@
+---
+title: "Research Proposals"
+execute:
+  eval: false
+---
+
+# Research Proposals {#sec-ch-19-research-proposals}
+
+The op-ed in @sec-ch-17-op-eds argued for a thing that already exists; the report in @sec-ch-18-reports documented a thing that had already happened. The research proposal is stranger than either. It argues, in the present tense, for the significance of work that does not yet exist, using evidence you cannot yet produce, on behalf of findings you cannot yet guarantee, to readers who will decide whether the work should exist at all. You are asking a funder to believe in a future that is currently a document.
+
+The hard part is not the methods, which you already have. It is translating a public-interest data question into a shape a funder can recognize, and translating your own working life into a budget that a program officer can defend to a board. By the end of the chapter you will have produced four artifacts: a one-page specific-aims document, a simple budget with a narrative justification, a data management plan (DMP), and a simulated Institutional Review Board (IRB) protocol. None is a submitted grant. All are the documents a submitted grant is made of.
+
+## The grant-proposal genre landscape
+
+The funders you might realistically approach divide into four ecologies, each with its own vocabulary and its own review cycle.
+
+**Federal science and humanities agencies** include NSF, NIH, IMLS, and NEH. They publish detailed proposal guides (NSF's PAPPG runs several hundred pages [@nsf_pappg]), use peer-review panels, require formal budgets with indirect-cost recovery, and expect data management plans and broader-impacts sections. As of 2025, they are volatile ground: appropriations uncertainty, agency restructuring at IMLS, and shifting priorities mean a proposal submitted under one quarter's rules may be reviewed under the next's [@imls_grants; @neh_grants; @nih_oer].
+
+**National private foundations** include Knight, MacArthur, Ford, and Robert Wood Johnson, plus a long tail of smaller outfits funding public-interest technology work. They run on program cycles, usually expect a letter of inquiry before a full proposal, and keep review standards less public than NSF's; you are writing for a program officer who is writing for a board [@knight_grants].
+
+**Regional and community foundations** include the Gates Family Foundation in Colorado, the Boettcher Foundation, the Denver Foundation, and analogues in every state [@gates_family; @boettcher]. Grants run smaller (often $10,000 to $75,000), cycles are shorter, and priorities are locally specific. For a first public-interest research proposal, they are often the right target.
+
+**University seed grants** are the quietest category and frequently the most accessible. A research development office will fund a $5,000 to $25,000 pilot with a two-page application. A pilot result is the strongest possible leverage for the next proposal up the chain.
+
+Behind all four ecologies sits the Foundation Directory Online [@foundation_directory], which maps private funders and their giving patterns. Spend an afternoon with it before you start writing.
+
+## The political economy of what gets funded
+
+The gap between the money available for public-interest research and the number of projects that could usefully spend it is large and does not close. Foundation endowments run on five-percent payout rules; federal budgets are set by political appropriations. The median program officer manages a portfolio in which most of the projects they would like to fund will not be funded.
+
+Two implications follow. Specificity beats scope: a proposal promising to solve algorithmic discrimination in public-benefits systems will lose to one promising to audit the adverse-action notices issued by one county's SNAP system over eighteen months, because the second is something a program officer can defend to a skeptical board. And if your specific aims are not legible in ninety seconds, your proposal will not get the second read.
+
+Political economy also shapes what counts as "research." A community-engaged audit whose primary output is a community report is harder to fund through NSF than through a regional foundation. A refusal specification whose output is a decision not to build a dataset is harder to fund than either. Part of the proposal-writing work is finding the funder for whom your project is recognizable.
+
+## The specific-aims page as sales pitch
+
+The specific-aims page is the single most important page of any research proposal. It is one page, the first thing a reviewer reads and often the last. For most foundation reviewers, it is the only thing they will read closely before forming an opinion that is then difficult to move. The report's executive summary from @sec-ch-18-reports is its closest sibling, but runs the opposite direction: the executive summary distills work already done; the specific-aims page promises work not yet done and argues that it is worth paying for.
+
+A conventional specific-aims page has four moves. First, a significance paragraph naming the public-interest problem in the vocabulary the funder uses. Second, a gap paragraph naming what is not yet known, or audited, or refused. Third, two or three numbered aims, each with a one-sentence hypothesis or deliverable. Fourth, an impact paragraph naming the actors who will act on the results.
+
+First-time authors miss the first move most often. The significance paragraph is not a general statement about why data matters; it is a claim written in the exact vocabulary of the funder's open call. If the NSF program says "trustworthy AI," your first paragraph says "trustworthy AI." If the Knight Foundation call says "local news ecosystems," your first paragraph says "local news ecosystems." This is not cynicism. It is translation.
+
+::: {.callout-tip title="The Missing Manual"}
+The specific-aims page is not a summary. It is a sales pitch, written in the vocabulary of the field you are selling to, by a person who has read the funder's last three years of awards and knows what rhymes with them. Rewrite it five times. Rewrite it once in the voice of the program officer's most recent annual-report letter. Rewrite it once as if you were the skeptic on the review panel. Show each draft to a colleague who does not work on your topic and ask them what you are proposing to do and why a funder should care. If they cannot tell you, the page is not done. And: the budget narrative matters more than the budget numbers. A plausible story about personnel time wins over a precise calculation that assumes the work will take half as long as it will actually take. Reviewers have seen the half-time calculation. They are not impressed by it.
+:::
+
+## Budgets and justifications
+
+A proposal budget has three components. **Personnel** covers salary and fringe for the people doing the work (PI, co-investigators, graduate students, hourly undergraduates, a contracted community liaison). **Direct costs** cover everything else accounted for line by line (software licenses, compute credits, travel, honoraria, transcription, modest equipment). **Indirect costs**, or facilities and administration (F\&A), are overhead the institution charges to keep the lights on. Federal indirect rates at research universities run from roughly 25 to 65 percent of modified total direct costs; foundations often cap indirects at 10 to 15 percent, and some refuse them entirely. Know the rate before you start.
+
+A simple one-year, $50,000 project budget, at a regional foundation that caps indirects at 15 percent, might look like this:
+
+```python
+import pandas as pd
+
+budget = pd.DataFrame([
+    {"category": "Personnel", "item": "PI (0.10 FTE, summer)", "amount": 14000},
+    {"category": "Personnel", "item": "Graduate RA (0.25 FTE, 9 mo)", "amount": 15000},
+    {"category": "Personnel", "item": "Fringe benefits (22%)", "amount": 6380},
+    {"category": "Direct", "item": "Community-liaison honorarium", "amount": 3000},
+    {"category": "Direct", "item": "Participant honoraria (10 x $75)", "amount": 750},
+    {"category": "Direct", "item": "Compute and storage (AWS / Zenodo)", "amount": 1200},
+    {"category": "Direct", "item": "Travel (2 site visits)", "amount": 1500},
+    {"category": "Direct", "item": "Publication and open-access fees", "amount": 1650},
+    {"category": "Indirect", "item": "F&A at 15% of MTDC", "amount": 6520},
+])
+
+totals = budget.groupby("category")["amount"].sum()
+print(totals)
+# => Direct        8100
+#    Indirect      6520
+#    Personnel    35380
+#    Name: amount, dtype: int64
+print("Total:", budget["amount"].sum())
+# => Total: 50000
+```
+
+The numbers are not the hard part; the narrative justification is. Every line needs a sentence or two in a companion document saying what the money pays for and why that level of effort is necessary. The graduate RA line is not "0.25 FTE for nine months at the university rate." It is "25 percent effort over nine academic months to conduct the FOIA log coding, build the reproducible pipeline described in Aim 2, and co-author the final community report." A reviewer should come away knowing what each person will actually do on each Tuesday afternoon.
+
+Program officers read the budget narrative before they read the budget. If the narrative is vague, they assume the numbers are vague. Write the narrative first and fit the numbers to it.
+
+## The data management plan
+
+Federal funders require a data management plan (DMP) in every proposal, and foundations increasingly ask for one [@dmptool]. The DMP is not a formality: it tells the funder, in two pages, what data your project will produce, where it will live, who can access it, for how long, and under what conditions. The DMPTool, operated by the California Digital Library, provides templates for most major funders [@dmptool].
+
+A serviceable DMP covers six sections.
+
+**Types of data.** What you will collect or generate. Be specific. "Administrative data from the Colorado Department of Human Services under a data use agreement" is specific. "Public records" is not.
+
+**Formats and standards.** CSV, Parquet, GeoJSON, JSON-LD, whatever applies. If you follow a community standard (HUD's HMIS data dictionary, or the FAIR Guiding Principles [@wilkinson2016]), name it.
+
+**Storage during the project.** University-managed storage under a DUA, encrypted at rest, with access restricted to named project personnel.
+
+**Retention and destruction.** How long you keep the data, and what you do with it at the end. A state-agency DUA typically requires destruction of identifiable data within ninety days of project close.
+
+**Sharing.** What you will make public, and where. A de-identified derived dataset on Zenodo [@zenodo_api] with a CC-BY license and a DOI; a code repository on GitHub linked from the dataset record; a datasheet following Gebru and colleagues [@gebru2021]. If something will not be shared, say why.
+
+**Preservation.** Where the shared outputs live after you stop paying attention. Zenodo and the Internet Archive provide preservation commitments (@sec-ch-22-archival-deposits treats these at length); a university institutional repository is another option. A GitHub repo you maintain is not a preservation plan.
+
+The DMP is where you operationalize the installed base for your own project: linkability in formats-and-standards, interpretability in the datasheet, continuity in preservation, safe scrutiny in sharing. Draft with those in mind and the document reads as more than compliance.
+
+## The IRB protocol as a sibling genre
+
+The IRB protocol sits beside the proposal but is not part of it. A proposal is a budget document; an IRB protocol is a risk document arguing the work, if funded, will not harm the humans it touches. Different office, different reader, different conventions.
+
+The framing texts are the Belmont Report [@belmont1978] and the revised Common Rule [@common_rule]. Belmont's three principles (respect for persons, beneficence, justice) structure every IRB form you will fill out. Your local IRB (at CU Boulder, the Office of Research Integrity [@ucb_orc]) operationalizes them through a protocol template covering study population, recruitment, consent, data handling, risks, benefits, and conflict-of-interest disclosures.
+
+Public-interest data science frequently works at the edge of the IRB's jurisdiction. An audit of administrative data under a DUA may be "not human subjects research." A community survey unambiguously requires full review. A scrape of public social-media posts lands in a contested middle ground whose answer depends on your institution, your IRB chair, and the year. When in doubt, ask. An IRB that tells you a project is exempt is a better friend than an IRB that finds out about your project in the press.
+
+The simulated protocol you will draft here is a student-level exercise in thinking through consent, risk, and benefit for a project that is probably exempt but worth describing as though it were not.
+
+## Community-engaged research as a proposal-design problem
+
+If the work involves a community partner (a neighborhood association, a legal-aid clinic, a union local, a tribal nation's data office), the proposal has a different shape. The partner is a collaborator, not a subject; their time is an in-kind contribution or a subcontracted line item; their name belongs on the proposal; their data governance sets the terms.
+
+Costanza-Chock's design-justice framing [@costanzachock2020] and the CARE Principles for Indigenous data governance [@carroll2020] are the two sources most worth reading before you draft a community-engaged proposal. They change the budget (honoraria become line items), the DMP (data-sovereignty provisions become load-bearing), and the aims (the community's question is Aim 1).
+
+## Broader impacts, taken seriously
+
+NSF requires a broader-impacts section; most private foundations require something analogous. First-time authors treat these as boilerplate: we will mentor undergraduates, publish open access, present at a conference. Reviewers read past this text without registering it.
+
+The strong version asks who will be better off if the project succeeds, in a way that would not have happened otherwise. It names community partners, open datasets, reproducible code, training opportunities for students who would not otherwise have had them, and downstream uses the research makes possible. It ties to the ownership question from @sec-ch-08-ownership: whose problem is this, and who gets to act on the answer? And it anticipates the sustainability question from @sec-ch-14-pit-data-for-good: when the grant money is gone, does the infrastructure continue, or evaporate with your last invoice?
+
+::: {.callout-note title="In the Public Interest"}
+The broader-impacts section is where "public interest" becomes concrete and accountable. Do not treat it as boilerplate. Tie it explicitly to **ownership** as you built it in @sec-ch-08-ownership: the community whose data you are using is a partner with a stake in the outcomes, not a population to be studied. Tie it explicitly to **sustainability** as you interrogated it in @sec-ch-14-pit-data-for-good: a funded pilot that dies when the grant ends has not advanced the installed base; it has displaced the attention of staff and community members who will be asked to engage the next funded pilot with less trust. A broader-impacts section that names the partners, names the deliverables they will own at the end, and names the maintenance plan that survives the grant is a broader-impacts section a reviewer will remember. A section that promises mentorship and open-access publication without naming who is mentored, by whom, or where the open-access version will live is a section that reads as filler.
+:::
+
+## Exercises
+
+**Exercise 19.1 (Structural reading).** Find a successful NSF proposal in your subfield. Many NSF awards publish a public abstract and, under FOIA, a redacted version of the full proposal; several repositories (including NSF's own Awards Search) make this accessible. Diagram the specific-aims structure: where does significance appear, where do the aims appear, where does the impact paragraph sit, and how does the language of the aims echo the language of the program solicitation? Write 400 words. Save as `exercises/ch19_nsf_aims_diagram.md`.
+
+**Exercise 19.2 (Specific-aims page).** Draft a one-page specific-aims document for a one-year, $50,000 research proposal that extends your Part II, III, or IV work (the audit, the refusal specification, the FOIA-tracked investigation, the stakeholder-mapped visualization, whichever is yours). Target a plausible regional funder: the Gates Family Foundation, the Boettcher Foundation, a relevant university seed-grant program. Read three of their recent awards before you write. Use the four-move structure (significance, gap, aims, impact) from this chapter. Rewrite five times. Save the fifth draft as `proposal/specific_aims.md`. This is the first of the chapter's four artifacts.
+
+**Exercise 19.3 (Budget and justification).** Produce a simple budget spreadsheet and a one-page narrative justification for the project in Exercise 19.2. Use either the pandas example in this chapter or a plain CSV in `proposal/budget.csv`. Include personnel (with FTE and fringe), direct costs, and indirect costs at the funder's actual cap. Write the narrative as if you were the PI explaining the numbers to a skeptical program officer. Save the narrative as `proposal/budget_justification.md`. This is the second artifact.
+
+**Exercise 19.4 (Data management plan).** Draft a two-page DMP for the project using the DMPTool template for your target funder [@dmptool]. Cover all six sections: types of data, formats and standards, storage during the project, retention and destruction, sharing, and preservation. Name the datasheet standard [@gebru2021] and the preservation host (Zenodo, Internet Archive, or institutional repository) explicitly. Save as `proposal/dmp.md`. This is the third artifact.
+
+**Exercise 19.5 (Simulated IRB protocol).** Draft a simulated IRB protocol for the project, covering consent, risk, data handling, benefits, and conflict-of-interest disclosure. Use your university's IRB template if you can find it; otherwise use the simulated template your instructor provides. Ground the consent and risk sections in the Belmont Report's three principles [@belmont1978] and the revised Common Rule [@common_rule]. If the project is probably exempt, say so, and explain your reasoning. This is a learning exercise, not a submission. Save as `proposal/irb_protocol.md`. This is the fourth artifact.
+
+Exercises 19.2, 19.3, 19.4, and 19.5 together produce the Part V artifact for this chapter: a specific-aims page, a budget with narrative justification, a data management plan, and a simulated IRB protocol. When all four files are committed, tag the commit `ch19-artifact-v1`. The artifact is the chapter [@keegan2026].
+
+## Looking ahead
+
+Chapter 20 (@sec-ch-20-testimony) turns the argument you just made in writing into one you can make out loud in five minutes in front of a legislative committee or a regulatory hearing. The specific-aims page has most of the content you will need; testimony will make you cut it to a tenth of its length and speak it to a room. Chapter 22 (@sec-ch-22-archival-deposits) gives the data your funded project produces a permanent address.
+
+## Further Reading and Resources
+
+- NSF *Proposal and Award Policies and Procedures Guide* (PAPPG) [@nsf_pappg], <https://www.nsf.gov/publications/pub_summ.jsp?ods_key=pappg>. The authoritative US federal reference. Skim once cover to cover; reread the specific-aims and broader-impacts sections before every submission.
+- DMPTool, California Digital Library [@dmptool], <https://dmptool.org>. The simplest way to draft a data management plan that fits the conventions of most major funders.
+- The Belmont Report [@belmont1978], <https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html>. The framing text for every IRB protocol you will ever write. It is short. Read it.
+- NIH Office of Extramural Research [@nih_oer], <https://grants.nih.gov/>. The NIH's grants portal; its policy guide is a useful counterpoint to NSF's PAPPG for projects adjacent to public health.
+- Knight Foundation grants page [@knight_grants], <https://knightfoundation.org/grants/>. Representative of the national private-foundation proposal ecology for journalism and civic-technology work.
+- Foundation Directory Online [@foundation_directory], via most research-library subscriptions. The map of the private-foundation landscape. Spend an afternoon with it before you start writing.
+- Gates Family Foundation [@gates_family] and Boettcher Foundation [@boettcher] grant pages. Representative Colorado regional foundations; the closest live targets for the specific-aims page you will draft in Exercise 19.2.
+- Goldsmith and Kleiman on proposal writing for public-interest technology projects [@goldsmith2017]; Robinson on grassroots grant-writing for small-budget public-interest projects [@robinson2017proposals]. Two very different books, both useful.
+- Revised Common Rule, 45 CFR 46 [@common_rule], <https://www.hhs.gov/ohrp/regulations-and-policy/regulations/45-cfr-46/>. The federal regulations behind every IRB protocol at a covered institution. Skim the subpart A definitions once before you draft Exercise 19.5.
+- Your university's research development office and its IRB template. For Colorado Boulder readers, the Office of Research Integrity [@ucb_orc]. The single most useful local resource, and the one most students discover too late.
