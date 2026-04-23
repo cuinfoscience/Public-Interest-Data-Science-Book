@@ -1,0 +1,259 @@
+---
+title: "The Installed Base"
+execute:
+  eval: false
+---
+
+# The Installed Base {#sec-ch-05-installed-base}
+
+Part I described three pressures on public knowledge: enclosure, exemption, erosion. Each names something that goes wrong. Part II turns to the arrangements that go right when accountability works, or that have to be repaired when it fails. Chapter 6 develops **openness**. Chapter 7 develops **oversight**. Chapter 8 develops **ownership**. Before any of those chapters, you need a shared vocabulary for what those values operate on, and why "add more dashboards" is not a sufficient answer.
+
+That vocabulary is the installed base. Star and Ruhleder [-@star1994] used the phrase to describe the way a new piece of infrastructure never lands on a blank site. It lands on top of prior commitments, prior wiring, prior data formats, prior labor. A new system inherits its predecessors' choices the way a neighborhood inherits its streets: you can pave them, but you cannot move them without moving everything connected to them. Karasti and Blomberg [-@karasti2018] pick up the idea to show that keeping infrastructure running ("infrastructuring," in their phrasing) is ongoing alignment between what the current system promises and what the installed base will tolerate. Aanestad and colleagues [-@aanestad2017] show the same dynamic in healthcare: national digital-health programs that ignore the installed base of paper forms, clinician workflows, and regional labs fail in the same way, every time.
+
+Keegan [-@keegan2026] extends the concept. For a public-interest data practice, the installed base is not just the technical stack. It is the socio-technical settlement that makes accountability possible: the records, the access rules, the interpretive conventions, the legal protections, the delegated authorities, and the remedies available to the people affected. When any of those is missing, the visible parts of the system (the dashboard, the API, the model card) are working on borrowed time. When they are in place, a dashboard is a tool. When they are absent, a dashboard is a performance.
+
+## Six elements
+
+Keegan's framework names six elements. Together they are the minimum conditions under which "public interest" can be said to be served by a data system, rather than invoked on its behalf.
+
+**Linkability.** Each record the system depends on has a stable identifier that allows it to be referenced, compared, and joined across time and across systems. A case number that changes when the case is moved between databases is not a case number. A dataset version that cannot be pinned is not a version. Linkability is what makes a record a record rather than an observation.
+
+**Interpretability.** The categories, units, and transformations the data encode are documented well enough that a qualified outsider can reason about what the numbers mean. Bowker and Star [-@bowker2000] is the canonical argument that classification schemes are never neutral; interpretability is the installed-base requirement that whoever uses the data can see the classification and argue with it. Without it, audits produce numbers without findings.
+
+**Continuity.** Evidence persists across political cycles, vendor changes, funding gaps, and administrative reorganizations. Chapter 4 gave you the technical shape: link-rot audits, datasheets, Wayback captures. Continuity is the property Karasti and Blomberg call "infrastructure time," maintained against the pull of project time.
+
+**Safe scrutiny.** Researchers, journalists, auditors, and affected communities can examine the system without being sued, arrested, deplatformed, or retaliated against. Safe scrutiny is the installed-base counterpart to the Computer Fraud and Abuse Act cases Chapter 7 will treat in detail. In its absence, openness is a trap: the data are technically available, but looking too hard is legally or institutionally punished.
+
+**Authority.** Someone, a named person or a named office, has the responsibility to act on what scrutiny reveals. An audit that lands on no one's desk is a training exercise. Authority turns a finding into a decision, a decision into a policy change, a policy change into an enforcement action. It is also the element public-interest technologists most often forget to design for, because the technologist's habit is to build the artifact and assume the institution will catch it.
+
+**Remedy.** The people affected have a path to contest decisions, correct the record, and receive reparation when the system has harmed them. Remedy is the element that most often has no software layer at all. It lives in ombuds offices, administrative appeals, class-action complaints, and community organizing. Any data system that offers no remedy is, for the people at the rough end of it, a system of unilateral power.
+
+Linkability, interpretability, continuity, safe scrutiny, authority, remedy. The order matters: later elements presuppose earlier ones. You cannot offer remedy over records that cannot be linked, and you cannot wield authority over findings nobody can interpret. The list also bakes in a theory of what the next three chapters are for. **Openness** (@sec-ch-06-openness) operationalizes linkability, interpretability, and parts of continuity. **Oversight** (@sec-ch-07-oversight) operationalizes safe scrutiny and authority. **Ownership** (@sec-ch-08-ownership) operationalizes remedy, and the stewardship that keeps continuity from collapsing into somebody's weekend hobby.
+
+## What goes wrong when an element is missing
+
+The framework earns its keep diagnostically. Consider the Allegheny County Family Screening Tool, introduced in @sec-ch-03-exemption and picked up in @sec-ch-07-oversight. Linkability is good: each hotline call is identified and joined to administrative records. Interpretability is partial: features are documented; weights are not always easy to reason about. Continuity is maintained by a named team at the county and at Auckland University of Technology. The system is weakest at the tail. Safe scrutiny is contingent on the county's willingness to cooperate with outside researchers, which has varied. Authority lives with call-screeners who can override the score but report social pressure not to. Remedy for a family flagged and investigated is almost nonexistent: you cannot unring a caseworker visit, and the administrative record persists. This is an unusually documented system by the standards of public-sector ML. The framework lets you name precisely where the weakness lives.
+
+Consider a contrasting case. A city publishes a real-time "open data" portal with dozens of datasets updated nightly. Linkability and interpretability are strong within each dataset. Continuity is weak: nobody has committed to preserving pre-publication raw data, the portal's vendor contract is up for rebid every three years, and every URL path will change the next time the vendor changes. Safe scrutiny is strong in the abstract and untested in practice. Authority is diffuse: the datasets are "owned" by a half-dozen departments, none of whom see responding to outside findings as their primary job. Remedy is absent. A glance at the portal would give you a five-star "open data" rating. The installed base underneath would give you a shrug.
+
+The framework does not tell you what to do about either failure. It tells you where to look, so that the intervention lands somewhere that will hold it.
+
+::: {.callout-note title="In the Public Interest"}
+The installed base is where openness, oversight, and ownership stop being rhetorical and become operational. **Openness** (@sec-ch-06-openness) is not a slogan about transparency; it is the working combination of linkability, interpretability, and the portions of continuity that let outsiders join and compare records over time. **Oversight** (@sec-ch-07-oversight) is not a regulator's aspiration; it is the working combination of safe scrutiny and authority. **Ownership** (@sec-ch-08-ownership) is not private property over data; it is the stewardship that sustains continuity and the remedy paths that connect records to people. When you see the three values named abstractly elsewhere, translate back to the six elements. That translation is the discipline this chapter teaches.
+:::
+
+## A minimum viable installed base
+
+Enough conceptual work. The rest of the chapter builds a concrete installed base for a small civic dataset. You cannot talk seriously about any of the six elements without doing a version of this work at least once.
+
+The dataset is a procurement log for a fictional small city the book provides: 500 rows of vendor, amount, award date, and award type. The book ships it with two deliberate failures. Some rows are missing identifiers. One transformation step, a mid-pipeline currency conversion, is undocumented. Your job is to fix both and, in doing so, touch every one of the six elements.
+
+### Linkability: persistent identifiers
+
+First, look at what you have.
+
+```python
+import pandas as pd
+
+df = pd.read_csv("data/smallcity_procurement.csv")
+df.head()
+# => columns: record_id, vendor, amount, award_date, award_type
+#    record_id is populated for 472 of 500 rows; 28 rows are blank.
+df["record_id"].isna().sum()
+# => 28
+```
+
+The 28 blank identifiers are the first gap. Two reasonable choices: a random UUID, or a hash derived from the record's own content. A UUID is opaque and will not change if the record is corrected; a content hash is deterministic and detects silent changes, but it shifts the moment anyone fixes a typo.
+
+For civic records, where correction is expected and auditability matters, a compromise works. Assign a UUID as the canonical identifier. Also compute a content hash, store it in a separate column, and keep a history of hash values as a change log.
+
+```python
+import hashlib
+import uuid
+
+def content_hash(row):
+    payload = f"{row['vendor']}|{row['amount']}|{row['award_date']}|{row['award_type']}"
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:16]
+
+missing = df["record_id"].isna()
+df.loc[missing, "record_id"] = [str(uuid.uuid4()) for _ in range(missing.sum())]
+df["content_hash"] = df.apply(content_hash, axis=1)
+df.to_csv("data/smallcity_procurement_v2.csv", index=False)
+```
+
+You now have a stable reference for every record and a side channel that flags when a record's substance has changed. That is linkability in minimum viable form. The social work of linkability, keeping the ID stable across vendor migrations and administrative reorganizations, is not solved by the code.
+
+::: {.callout-tip title="The Missing Manual"}
+UUIDs are the easy part. Every language ships a generator. The hard part is durable reference, and durable reference is social work. Somebody has to maintain the resolver (the service that turns an identifier into a record), negotiate the naming authority (who is allowed to mint identifiers), and make the migration commitment (when we move systems, we carry these identifiers forward). DOIs work because Crossref and DataCite exist as institutions, not because the string `10.1234/...` is clever. ORCIDs work because the ORCID consortium has a funding model. Your procurement log's identifiers will work if, and only if, some office commits to carrying them across the next three vendor contracts. If nobody has signed up, you have a UUID, not an identifier. The difference is everything.
+:::
+
+### Interpretability: a provenance document
+
+Now the undocumented transformation. Inspect the amount column and you will notice something:
+
+```python
+df["amount"].describe()
+# => min is suspiciously close to zero, max is an order of magnitude above
+#    reasonable small-city contracts. The column mixes USD and some EUR rows
+#    from a pass-through transformation nobody wrote down.
+```
+
+An outsider cannot know what the numbers mean. An auditor who assumes USD will misreport. The fix is not code; it is a provenance document committed alongside the data, in a format a human and a machine can both read.
+
+```yaml
+# data/provenance.yaml
+dataset: smallcity_procurement
+version: "2.0"
+upstream_source:
+  name: Small City Department of Finance, SAP export
+  accessed: 2026-03-12
+  contact: finance@smallcity.gov
+transformations:
+  - step: 01_extract
+    description: CSV export from SAP AP module, fields mapped per schema v4.
+  - step: 02_currency_normalize
+    description: >
+      Rows with vendor country code in {DE, FR, IE, NL} carry EUR amounts.
+      Converted to USD using ECB monthly reference rate for award_date month.
+    rate_source: https://www.ecb.europa.eu/stats/policy_and_exchange_rates/
+    applied_by: bkeegan
+    applied_on: 2026-03-13
+  - step: 03_identifier_assignment
+    description: UUID minted for 28 rows with missing record_id; content_hash added.
+  - step: 04_publication
+    channels:
+      - public_portal
+      - authenticated_api
+      - restricted_view
+known_issues:
+  - Pre-2022 rows inherited from legacy ERP; vendor spelling unnormalized.
+  - EUR-to-USD conversion uses monthly averages; daily rates not preserved.
+```
+
+This is the interpretability layer. Without it, the dataset is a column of numbers that behaves badly. With it, the dataset carries its own explanation. Commit the YAML to the same repository as the data.
+
+### Continuity: a retention policy
+
+Continuity without a retention policy is an act of faith. Write the policy down, in a format that would survive the person who wrote it leaving the job.
+
+```yaml
+# data/retention.yaml
+dataset: smallcity_procurement
+schedule:
+  raw_extracts:
+    retain_for: 10_years
+    storage: city_records_archive
+    medium: encrypted_s3_with_offline_tape_copy
+  published_versions:
+    retain_for: indefinite
+    storage: zenodo_deposit_plus_ia_mirror
+    minimum_review: annual
+  derivation_scripts:
+    retain_for: indefinite
+    storage: city_gitlab
+  access_logs:
+    retain_for: 2_years
+    storage: city_siem
+    purpose: audit_of_restricted_queries_only
+responsible_office: Department of Finance, Data Stewardship Lead
+review_cadence: annual
+escalation_contact: clerk@smallcity.gov
+```
+
+The values chapters that follow will press on each field. What matters here is that the document exists, names a responsible office, and survives independently of the person who set it up.
+
+### Safe scrutiny and authority: tiered access
+
+Not every field in a public dataset should be equally public. Vendor names and contract totals are public records in almost every jurisdiction. Bank account numbers and unredacted home addresses of sole proprietors often are not. A small, honest access tier lets you publish openly without publishing recklessly.
+
+Use SQLite views to express the tiers. The underlying table is the full record; each view is a lens on it, and access is governed by an application-layer credential.
+
+```python
+import sqlite3
+
+con = sqlite3.connect("data/smallcity_procurement.db")
+con.executescript("""
+DROP VIEW IF EXISTS v_public;
+DROP VIEW IF EXISTS v_authenticated;
+DROP VIEW IF EXISTS v_restricted;
+
+CREATE VIEW v_public AS
+SELECT record_id, vendor, amount, award_date, award_type
+FROM procurement;
+
+CREATE VIEW v_authenticated AS
+SELECT record_id, vendor, amount, award_date, award_type,
+       contact_email, contract_reference
+FROM procurement;
+
+CREATE VIEW v_restricted AS
+SELECT *
+FROM procurement;
+""")
+con.commit()
+```
+
+In production you would enforce the tiering with row-level security, OAuth scopes, or an API gateway. For a pedagogical installed base, the view definitions make the commitments legible. Anyone reading the schema can see what a public user, an authenticated user, and a restricted internal user are authorized to see. The access tier is the instrument that makes safe scrutiny possible without collapsing into either "publish everything" or "publish nothing."
+
+### Remedy: an escalation log
+
+Access without escalation is a suggestion box with no one watching it. The last piece is a record of who gets notified when which kind of query arrives. Keep it boring.
+
+```yaml
+# data/escalation.yaml
+routes:
+  - trigger: public view query volume > 10k/hour
+    notify: [data_stewardship_lead, comms]
+    purpose: anticipate press or scraping
+  - trigger: restricted view accessed
+    notify: [records_officer, audit_log]
+    purpose: per-access review
+  - trigger: correction request received
+    notify: [records_officer, affected_department]
+    sla: 10_business_days
+    remedy: issue corrected row, log in change_history
+  - trigger: removal request received (privacy or safety)
+    notify: [city_attorney, records_officer]
+    sla: 5_business_days
+    remedy: redaction + tombstone record retained
+```
+
+The point of the escalation log is to make explicit, in one file under version control, what happens after a query runs. Without it, the installed base routes everything to nobody. With it, the path from observation to remedy has at least been drawn.
+
+## What this demonstrates
+
+You have just built, in roughly a hundred lines of code and markup, a minimum viable installed base. Linkability: UUIDs and content hashes. Interpretability: a provenance document. Continuity: a retention policy. Safe scrutiny: tiered views. Authority and remedy: an escalation log with named offices and SLAs. Each artifact is a stand-in for a much larger professional practice you will meet again. None of them does its work without the others.
+
+Notice what this is not. It is not a dashboard. It is not a model. It is not an "AI governance" framework. It is the boring, legible plumbing under any of those things, and the book's argument is that without the plumbing, the dashboards and models and frameworks collapse the moment anyone tries to use them for what they claim to do. Keegan [-@keegan2026] calls this the infrastructuring move: treating what looks like a platform problem as an installed-base problem.
+
+Chapter 6 begins the values half of Part II by asking what openness actually requires, starting from linkability and interpretability as its operational components. The procurement dataset you have just instrumented will reappear there, extended into a Datasette-published artifact with a public URL. @sec-ch-07-oversight will come back to the same dataset through the lens of oversight, asking what it takes for a researcher or journalist to scrutinize it without legal risk. @sec-ch-08-ownership will return once more, asking who owns it, who stewards it, and how a person harmed by a procurement decision reaches a remedy.
+
+The installed base is how those three chapters connect. Carry the vocabulary forward.
+
+## Exercises
+
+**Exercise 5.1 (Guided).** Download the book's `smallcity_procurement.csv` dataset. Identify the 28 rows missing identifiers and assign a UUID to each, following the pattern in this chapter. Add a `content_hash` column for every row. Save the result as `exercises/ch05_procurement_v2.csv`. In 150 words, explain why you chose UUID rather than content hash as the canonical `record_id`.
+
+**Exercise 5.2 (Guided).** Write the `provenance.yaml` for the procurement dataset. Include at least the five transformation steps shown in this chapter, and add one additional step of your own (for example, a vendor name normalization pass, or a deduplication). Save as `exercises/ch05_provenance.yaml`. The document must name a responsible office and at least one known issue.
+
+**Exercise 5.3 (Guided).** Draft a retention policy for the same dataset. Use the template in this chapter as a starting point and adapt at least three values (retention periods, storage locations, responsible office) to a city or organization you know something about. Save as `exercises/ch05_retention.yaml`. In 200 words, justify the retention periods you chose, citing at least one real records-retention schedule (your city, your state, or a federal agency).
+
+**Exercise 5.4 (Applied).** Implement the three-tier access scheme as SQLite views in a real database built from the procurement CSV. For each of three example queries (a total by vendor, a lookup by contract reference, a full row export) say which tier can run it and why. Save the database as `exercises/ch05_procurement.db` and the writeup as `exercises/ch05_access.md`.
+
+**Exercise 5.5 (Open).** Design an escalation pathway and a threat model for a small civic dataset of your own choosing (a school board meeting minutes scrape, a local housing-permit feed, a campus crime log). Your pathway must name at least three triggers, the offices or individuals notified, and a service-level agreement for each. Your threat model must name at least three adversaries (not all of them malicious; an underfunded vendor is an adversary in this sense) and one failure mode for each. Save as `exercises/ch05_escalation.md`, 800 to 1,200 words. You will revisit this artifact in @sec-ch-07-oversight.
+
+## Looking ahead
+
+Part II continues in Chapter 6 with **openness**, the first of the three values. The chapter takes the linkability and interpretability pieces you have just built and asks what it takes to publish them in a form that an interested outsider can actually use. The procurement dataset will move from a local SQLite file to a Datasette instance with a resolvable URL, a license, and a documented schema, and the discussion will press on what "open" has to mean to count as open for public-interest purposes.
+
+## Further Reading and Resources
+
+- Brian C. Keegan (2026), "Public interest data infrastructuring," *Information, Communication & Society*. The paper that names the six-element framework. The rest of Part II leans on it constantly.
+- Susan Leigh Star and Karen Ruhleder (1994), "Steps toward an ecology of infrastructure," *CSCW 1994*, 253–264. The original "installed base" argument.
+- Helena Karasti and Jeanette Blomberg (2018), "Studying infrastructuring ethnographically," *CSCW* 27: 233–265. The clearest articulation of infrastructuring as alignment work.
+- Margunn Aanestad, Miria Grisot, Ole Hanseth, and Polyxeni Vassilakopoulou (2017), "Information infrastructures and the challenge of the installed base." The healthcare-systems reading that makes clear why ignoring the installed base is not a niche failure.
+- Geoffrey C. Bowker and Susan Leigh Star (2000), *Sorting Things Out*. Indispensable for the interpretability element.
+- Ben Hutchinson and colleagues (2021), "Towards accountability for machine learning datasets," *FAccT 2021*. A complementary framework for ML dataset governance.
+- The DataCite schema documentation: <https://schema.datacite.org>. A production-grade persistent-identifier standard backed by an institutional community.
+- UK Government Digital Service, "Service Manual," <https://www.gov.uk/service-manual>. An institution treating the installed base as a design problem.
+- The 18F "Before You Ship" checklist, <https://before-you-ship.18f.gov/>. A reference for what a minimal production installed base looks like.

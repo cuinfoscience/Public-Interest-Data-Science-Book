@@ -1,0 +1,29 @@
+---
+title: "Appendix A: AI Assistance Disclosure"
+---
+
+## What was AI-assisted
+
+Draft zero of this book was produced with substantial assistance from Claude, an assistant made by Anthropic. The assistant generated first-pass prose for all twenty-two chapters and the index, following a detailed editorial prompt written by the author. The author then reviewed, revised, and (in many places) rewrote the output. The book's framework, chapter scope, running examples, and exercise design originate with the author. The prose does not.
+
+This disclosure exists because a book about public interest data science should not hide how it was made. The same principle that asks a model card to document training data asks an author to document drafting practice.
+
+## What was not AI-assisted
+
+The bibliography's selection reflects the author's reading, not the assistant's. The running examples (Boulder and Denver municipal records, a synthetic worker-log fixture, a class-wide FOIA tracker, the regulations.gov walkthrough) are authorial choices grounded in the companion course. The "Missing Manual" and "In the Public Interest" callout convention is the author's. The Part V genre structure, and particularly its commitment to producing submittable artifacts, is the author's pedagogical argument.
+
+The assistant was asked not to invent citations. Where a suggested reference could not be verified, the bibliography contains a `TODO:` flag rather than a fabricated entry. Readers who find a citation that cannot be located should open an issue.
+
+## How to verify
+
+- The prompt used to generate draft zero is preserved in the repository's issue history under the label `prompt-archive`.
+- Each chapter's first commit is the AI-generated draft; subsequent commits are human revisions. Use `git log --follow ch-NN-slug.qmd` to inspect a chapter's editorial history.
+- Chapter-by-chapter revision notes are maintained in `claude.md` and in pull-request discussions.
+
+## Why disclose
+
+Because readers deserve to know. Because other authors deciding whether to use similar tools need honest reports of what worked and what did not. Because a book that argues for documentation of automated systems must document its own use of one. And because the professional lineages this book draws on (journalism, law, accounting, planning, engineering) all insist on provenance: whose work, whose hand, whose judgment.
+
+## Versioning
+
+This disclosure was last updated on the date of the most recent commit to this file. See `git log appendix-ai-disclosure.qmd` for the authoritative version history.

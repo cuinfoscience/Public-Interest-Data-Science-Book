@@ -1,0 +1,273 @@
+---
+title: "Engineering"
+execute:
+  eval: false
+---
+
+# Engineering {#sec-ch-13-engineering}
+
+Most bridges do not fall down. This is unremarkable until you notice how many there are, how heavy the trucks on them are, and how few civil engineers are on site at any given bridge on any given day. The low background rate of collapse is a professional accomplishment. It rests on standards, inspection schedules, conservative design margins, licensure, and the slow accumulation of what Henry Petroski [-@petroski1992] calls the knowledge of failure. Engineering became a profession in the nineteenth century partly by agreeing to pay close attention to its own disasters. The Tay Bridge. The Tacoma Narrows. The DC-10 cargo door. The hospitality of an engineer's bookshelf to a failure taxonomy is one of the most important cultural facts about the field.
+
+Data science does not yet have that bookshelf. It has conference papers on bias, a growing body of audit work (@sec-ch-07-oversight), and a scattered practice of post-incident reviews at the sites that run production systems at scale. What it lacks is a professional identity organized around the question "what failed, why, and what will we change so it does not fail again." This chapter, the last in Part III, proposes that engineering is the discipline most worth borrowing from on that question. From engineering, you take tests, incident reviews, and the cultural insistence that reliability is earned and paid for, not assumed.
+
+## The engineer's duty to the public
+
+Engineering's claim to be a profession rests on codes of ethics that give the engineer a duty of loyalty to the public that overrides the duty to the client. The canonical formulation, in the National Society of Professional Engineers code, puts "hold paramount the safety, health, and welfare of the public" at the top of the fundamental canons. An engineer who signs off on a bridge they know to be unsafe is not acting unprofessionally because they disappointed a customer. They are acting unprofessionally because they violated a duty to the people who will drive over it. That duty survives the contract.
+
+This matters for public interest data science because the closest analog, the duty of a financial auditor to the public investor (@sec-ch-11-accounting), is the reason accountancy works at all. Baker [-@baker2005] argues that the American accounting profession has spent decades rhetorically invoking "the public interest" while operating as a service industry for paying clients; engineering has managed the same tension slightly better, mostly because bridges are more visible than audit opinions. When you write a data pipeline that supports a public decision, you inherit a weaker version of the engineer's obligation. You cannot licensed-stamp a dataset. You can agree that the client's deadline does not overrule the public's exposure to a quietly broken number.
+
+## Normalization of deviance
+
+The second thing you borrow is a vocabulary for how safe systems go bad. Diane Vaughan's [-@vaughan1996] study of the *Challenger* launch decision introduced the phrase **normalization of deviance** to describe how NASA engineers, over a series of flights, came to treat O-ring erosion as acceptable despite it never being in the original design specification. Each individual decision to fly was defensible on the data NASA had. The drift was collective and gradual. By the night before the launch, the engineers who objected were the ones required to prove it was unsafe, rather than the other way around.
+
+The data-pipeline analog is familiar. A nightly job fails at 2 a.m. once a week. Someone reruns it by hand. Eventually the rerun is automated as a retry loop. Eventually the retry loop masks a schema change upstream for six months. Eventually someone notices that the numbers in a public dashboard are off. Nobody did anything wrong on any individual Tuesday. The deviance normalized. Incident reviews, done well, reverse that drift: they put the question "when did we stop noticing this" on the table and keep asking it.
+
+Karl Weick and Kathleen Sutcliffe's work on high-reliability organizations [@weick1999] generalizes the point. Organizations that run complex systems with low failure rates, like aircraft carriers and air traffic control, share cultural traits: preoccupation with failure, reluctance to simplify, sensitivity to operations, commitment to resilience, deference to expertise. No heroic engineer. No superhuman vigilance. A steady institutional refusal to relax. Charles Perrow [-@perrow1984] pushed back that some systems are so tightly coupled and interactively complex that accidents in them are "normal" rather than preventable. The debate is unresolved and productive. The takeaway for the data scientist is that reliability is organizational before it is technical. Tests do not run themselves.
+
+## Software engineering as inheritor
+
+Software engineering has sometimes claimed this tradition and sometimes been accused of squatting on the word. The Therac-25 radiation machine, the Ariane 5 rocket, the 737 MAX, the UK Post Office's Horizon accounting system: each is a software case the older engineering professions would recognize immediately as a safety-and-ethics failure. Data pipelines are a newer cousin, usually less safety-critical individually, often more consequential in aggregate. Raji et al. [-@raji2020] make the case that internal algorithmic auditing, done with engineering-style discipline, closes the accountability gap between aspirational ethics and operational practice. Their framework reads, deliberately, like an engineering standards document.
+
+What software and data work usually lack is the labor that sustains reliability in older engineering fields. There is no equivalent of the railway inspector walking the track. The people who maintain production data systems tend to be invisible in the way that Gray and Suri [-@gray2019] document ghost workers are invisible: present when something breaks, forgotten when it does not. @sec-ch-14-pit-data-for-good will return to this under the heading of sustainability. For now, notice that adding tests to a pipeline is a small, concrete way of making that invisible labor partly visible and transferable.
+
+## From the Ch 11 audit to a tested pipeline
+
+The running example is the reproducible audit pipeline from @sec-ch-11-accounting. That chapter gave you a manifest, a script, a Makefile, and a changelog. Now you add what converts workpapers from a genre into a discipline: a test suite. Add a `tests/` directory at the top of the project:
+
+```
+audit-pipeline/
+├── manifest.yaml
+├── audit.py
+├── Makefile
+├── tests/
+│   ├── fixtures/
+│   │   └── tiny_compas.csv
+│   ├── test_shape.py
+│   ├── test_ranges.py
+│   └── test_regression.py
+└── .github/
+    └── workflows/
+        └── ci.yml
+```
+
+The `tiny_compas.csv` is a fifty-row synthetic file, committed. It looks like the real input but is not. Its job is to let every test run in under a second, on any laptop, with no network access.
+
+### Shape tests
+
+The first tests you write catch the failure modes a data pipeline actually has. Not "does this function return 42." Closer to "does the table have the columns I expect, in roughly the row count I expect, with dtypes that will not silently coerce to nonsense."
+
+```python
+# tests/test_shape.py
+import pandas as pd
+import pytest
+
+from audit import load_input
+
+EXPECTED_COLUMNS = {
+    "person_id": "object",
+    "age": "int64",
+    "race": "object",
+    "sex": "object",
+    "score": "float64",
+    "assessment_date": "datetime64[ns]",
+}
+
+@pytest.fixture
+def df():
+    return load_input("tests/fixtures/tiny_compas.csv")
+
+def test_columns_present(df):
+    missing = set(EXPECTED_COLUMNS) - set(df.columns)
+    assert not missing, f"missing columns: {missing}"
+
+def test_column_dtypes(df):
+    for col, expected in EXPECTED_COLUMNS.items():
+        actual = str(df[col].dtype)
+        assert actual == expected, f"{col}: expected {expected}, got {actual}"
+
+def test_row_count_in_range(df):
+    # Fixture is a small slice; production run will be larger.
+    # For the fixture, we expect 40-60 rows.
+    assert 40 <= len(df) <= 60
+```
+
+The row-count assertion is deliberately a range, not an equality. In production, an equality test against a moving dataset is a future flaky test waiting to be disabled.
+
+### Range tests
+
+The second kind of test asserts that values fall in the ranges the domain actually permits. Percentages live in `[0, 1]` or `[0, 100]`, never both. Ages are non-negative and below some sane upper bound. Dates do not claim to be in 1899 or 2099 unless you are doing something unusual.
+
+```python
+# tests/test_ranges.py
+import pandas as pd
+import pytest
+from datetime import datetime, timedelta
+
+from audit import load_input
+
+@pytest.fixture
+def df():
+    return load_input("tests/fixtures/tiny_compas.csv")
+
+def test_score_is_probability(df):
+    assert df["score"].between(0, 1).all()
+
+def test_age_is_plausible(df):
+    assert df["age"].between(10, 110).all()
+
+def test_dates_within_window(df):
+    earliest = pd.Timestamp("2010-01-01")
+    latest = pd.Timestamp.now() + pd.Timedelta(days=1)
+    assert df["assessment_date"].between(earliest, latest).all()
+
+@pytest.mark.parametrize(
+    "column,low,high",
+    [
+        ("score", 0.0, 1.0),
+        ("age", 10, 110),
+    ],
+)
+def test_column_bounds(df, column, low, high):
+    assert df[column].between(low, high).all(), f"{column} out of [{low}, {high}]"
+```
+
+::: {.callout-tip title="The Missing Manual"}
+Tests for data pipelines are different from tests for web applications, and most testing tutorials teach the web-app kind. A web-app test asserts exact equality: the login endpoint returns status 200 and the body contains "Welcome." A data-pipeline test that asserts "there are exactly 18,472 rows" is the same test and almost always wrong, because the data moves. Your test for a historical dataset is closer to "the most recent row's timestamp is within 48 hours of the run time" or "the monthly row count is within two standard deviations of the trailing twelve-month mean." Write assertions in the shape of distributions and ranges, not exact values. And reach for `pytest.mark.parametrize` early: without it you will write fifteen near-identical "each column is in range" tests, and the fifteenth is where the bug lives. Parametrization is the feature that makes shape-and-range testing tractable. Nobody maintains the version written without it.
+:::
+
+### Regression tests on a fixture
+
+The third test keeps the pipeline's outputs stable against itself. Run the whole audit on the committed fixture, compute the disaggregated metrics, and compare to a snapshot in the repository. If the snapshot changes, someone has to explain why.
+
+```python
+# tests/test_regression.py
+import json
+from pathlib import Path
+import pytest
+
+from audit import run_audit
+
+FIXTURE = "tests/fixtures/tiny_compas.csv"
+SNAPSHOT = Path("tests/fixtures/expected_metrics.json")
+
+def test_audit_matches_snapshot(tmp_path):
+    results = run_audit_on_file(FIXTURE)
+    expected = json.loads(SNAPSHOT.read_text())
+    # Compare by group and metric, allow tiny float drift.
+    for group, metrics in expected.items():
+        for metric, value in metrics.items():
+            got = results[group][metric]
+            assert abs(got - value) < 1e-6, (
+                f"{group}.{metric}: expected {value}, got {got}"
+            )
+
+def run_audit_on_file(path):
+    # Thin wrapper around the manifest-driven pipeline; omitted for brevity.
+    ...
+```
+
+The snapshot file is human-readable JSON, small enough to diff in a pull request. When the numbers change, the diff itself becomes part of the documentation. A reviewer can see at a glance whether the change is a bug fix or a regression.
+
+## Deliberately introducing a bug
+
+You learn more from breaking the pipeline on purpose than from any amount of testing theory. Imagine the audit dataset includes a column `fine_amount_cents` and the pipeline converts it to dollars for reporting. Edit `audit.py`:
+
+```python
+def to_dollars(cents):
+    # Silent unit conversion error: dropped a zero.
+    return cents / 10   # should be / 100
+```
+
+Commit the change on a branch with a message that honestly labels it:
+
+```
+git checkout -b demo/unit-conversion-bug
+git commit -am "demo: introduce unit conversion bug (drop a zero)"
+```
+
+Run `pytest`. If the suite is doing its job, `test_audit_matches_snapshot` fails because the dollar amounts are ten times what the snapshot says. The failure message points at the specific metric and group. Now you have something concrete to investigate.
+
+Fix the bug (`cents / 100`), rerun the tests, commit. The two-commit sequence (bug introduced, bug fixed) is the minimum evidence that the test was doing real work.
+
+## The post-incident review
+
+The fix is not the end of the response. The review is. Engineering's specific contribution to the documentation genres of public-interest work is the post-incident review, sometimes called a post-mortem or, in aviation, an accident report. Its structure is stable across industries. A useful template has five sections.
+
+**Summary.** One paragraph. What broke, when it was detected, who was affected, what was done.
+
+**Timeline.** A minute-by-minute or day-by-day record, in UTC: detection, response start, each diagnostic step, mitigation, all-clear. Timestamps are non-negotiable.
+
+**Impact.** Quantified where possible. How many users, records, or dollars, over what window. For a public-facing pipeline: how many published numbers were wrong, for how long, and on what downstream decisions they might have been relied on.
+
+**Contributing factors.** Plural. What combination of design choice, process gap, missing test, insufficient alert, organizational pressure, and plain human error produced the failure. Blameless does not mean vague.
+
+**What we are changing.** Specific, assigned, dated. New tests. Process changes. Monitoring additions. A change that is not assigned to someone is not a change.
+
+For the unit-conversion bug, a three-page review is sufficient. The timeline shows the bug was introduced at 09:04, caught by `pytest` in a pre-merge CI run at 09:07, and never reached production. Impact is near zero. Contributing factors include the unit being encoded in the column name but not the type system, the absence of a sanity-check on dollar totals, and the pipeline's reliance on a reviewer noticing a number looked wrong. Changes include a range test on dollar totals, a refactor to a typed currency helper, and a note in `CONTRIBUTING.md` about unit discipline.
+
+Publishing, even for a demo bug, is the habit. Cloudflare, GitLab, Google, NASA, and the NTSB all publish. Writing for an external reader forces a different standard of clarity than writing for yourself.
+
+## Continuous integration
+
+Tests you do not run are decorations. The minimal configuration that makes `pytest` run on every push is a single YAML file.
+
+```yaml
+# .github/workflows/ci.yml
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest
+      - name: Run tests
+        run: pytest -v
+```
+
+Push a branch. Open a pull request. GitHub Actions runs the workflow, marks the check green or red next to the commit, and blocks the merge if branch protection is on. The cost is five minutes to set up. The return is that the entire test suite runs on a clean machine, with declared dependencies, every time anyone proposes a change. A test that runs only on the author's laptop does not, for the purposes of the installed base (@sec-ch-05-installed-base), exist.
+
+::: {.callout-note title="In the Public Interest"}
+Oversight, in the sense @sec-ch-07-oversight developed, is not a heroic intervention. It is routine scrutiny, organized so that the routine itself makes surprises visible. Tests and CI are that routine at the pipeline layer. They are how you earn the right to make a public claim about a number. The workpapers of @sec-ch-11-accounting and Raji et al.'s [-@raji2020] audit framework both presuppose that the numbers were produced by a process someone can vouch for. A tested pipeline with a CI check, a committed fixture, and a published post-incident review is what "vouching for it" looks like in code. The engineer's duty to public welfare, transposed into data work, is not larger or more dramatic than this; it is exactly this, done routinely, for every claim that leaves the repository with your name on it. Continuity, in the installed-base sense of @sec-ch-05-installed-base, is the practice of making sure the next person who inherits the pipeline can tell, from the tests and reviews alone, what it is for and when it is broken.
+:::
+
+## Exercises
+
+**Exercise 13.1 (Guided).** Clone the audit pipeline from your work for @sec-ch-11-accounting. Add the three test files shown above: a shape test, a range test (with at least one `pytest.mark.parametrize` block), and a regression test against a fifty-row synthetic fixture. The suite must run in under one second. Commit to `exercises/ch13_tests/` with a `README.md` listing what each test asserts and why.
+
+**Exercise 13.2 (Guided).** On a branch named `demo/bug`, introduce a deliberate silent error: a dropped-zero unit conversion, a wrong column in a groupby, a boolean reversed. Commit the introduction with a message that labels it a demo bug. Run the tests and confirm they fail. Commit the fix on a second commit. Push. Do not merge. The two-commit history is the artifact.
+
+**Exercise 13.3 (Analytic).** Write a post-incident review for the bug from 13.2, using the five-section template. Three to four pages. Name the pipeline, the commit SHAs, the timestamps, the impact (even if zero), the contributing factors, and the changes. Save as `exercises/ch13_incident_<date>.md`. Write it as though a reporter might read it, because in the public-interest version of this work they might.
+
+**Exercise 13.4 (Technical).** Add the `.github/workflows/ci.yml` shown above. Push a branch. Confirm the Actions tab shows the workflow running and that any test failure turns the check red. Screenshot the green check on a passing run and the red check on the bug-introducing commit from 13.2. Save both to `exercises/ch13_ci/`.
+
+**Exercise 13.5 (Open-ended).** Find a real-world data-pipeline incident review in the public record. Good sources: Cloudflare's incident archive, GitLab's post-mortems, NASA mission failure reports (Mars Climate Orbiter, Genesis), NYC 311 data-system outage reports, CERT vulnerability notes, AWS post-event summaries. In 300 words, summarize the five template sections as they appear in the source (the gaps are informative), identify one contributing factor that is organizational rather than technical, and say what this book's framework would have added. Save as `exercises/ch13_review_summary.md`.
+
+## Looking ahead
+
+Part III set out to show that data science is not the first field to struggle with accountability to a public it cannot see directly. Journalism gave you the habit of publishing and being wrong in public. Law gave you the mechanics of compelling a record. Accounting gave you workpapers and the auditor's duty to the investor. Planning gave you the stakeholder map and the uncomfortable question of who was not in the room. Engineering closes the part by giving you the failure mode, the test, and the post-incident review: the cultural technology for treating every deployed system as something that can and will break, and for making the breakage legible when it does. The preservation end of that cultural technology, how a failure record and the data it references survive long enough to matter, is taken up again in @sec-ch-22-archival-deposits.
+
+Part IV, Adjacent Conversations, turns from lineages you inherit to fields you sit beside. @sec-ch-14-pit-data-for-good opens with the one most likely to be confused with this book's project: public interest technology and the "data for good" movement. Both claim the public-interest label. Both do work this book respects. Both also carry assumptions about philanthropy, the state, and whose labor maintains the systems once the grant ends that are worth naming rather than absorbing. You will read those fields with the lineages of Part III still in hand, because sustainability is a reliability problem too. The pipeline that is not maintained is a pipeline that will eventually produce the wrong number, quietly, in a decision that matters.
+
+## Further Reading and Resources
+
+- Henry Petroski (1992), *To Engineer Is Human: The Role of Failure in Successful Design*. The accessible entry point to engineering's culture of learning from disaster. The Tacoma Narrows chapter pairs well with this one.
+- Diane Vaughan (1996), *The Challenger Launch Decision*. The canonical sociology-of-technology study of a high-consequence failure. Worth it for the "normalization of deviance" framing alone.
+- Charles Perrow (1984), *Normal Accidents: Living with High-Risk Technologies*. The counterweight to high-reliability optimism. Read alongside Weick and Sutcliffe.
+- Betsy Beyer et al., eds., *Site Reliability Engineering: How Google Runs Production Systems* (2016), free at <https://sre.google/books/>. The chapters on post-mortem culture and error budgets are directly relevant.
+- *Increment* magazine's "On-Call" and "Post-mortem" issues, at <https://increment.com/>. Short practitioner essays on running and reviewing systems at scale.
+- NTSB accident investigation reports, at <https://www.ntsb.gov/investigations/>. The gold standard for the post-incident review as a public document. Pick any completed report and read it end to end.
+- Cloudflare's public postmortem archive, at <https://blog.cloudflare.com/tag/postmortem/>. A corporate example of the genre done publicly.
+- GitLab's public incident postmortems, at <https://about.gitlab.com/handbook/engineering/infrastructure/incident-management/>. A SaaS shop that lost user data in 2017 and wrote about it in detail.
+- The pytest documentation, at <https://docs.pytest.org/>. The `parametrize`, `fixture`, and `tmp_path` sections are the ones you will reach for.
+- NSPE Code of Ethics for Engineers, at <https://www.nspe.org/career-growth/ethics/code-ethics>. Two pages. Read alongside Baker [-@baker2005] on accounting's parallel code.

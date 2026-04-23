@@ -1,0 +1,50 @@
+---
+title: "Appendix B: Further Resources"
+---
+
+This appendix collects external resources for readers who want to go further. Each chapter has its own curated "Further Reading and Resources" section; those lists are the place to start. This appendix aggregates the cross-cutting tools, communities, and training venues that appear in more than one chapter, plus a few that did not fit anywhere.
+
+## Cross-cutting tools
+
+- **Datasette** ([datasette.io](https://datasette.io)). Simon Willison's toolkit for publishing SQLite databases as inspectable web applications. Used in Chapters 6, 10, 11, and 22.
+- **Quarto** ([quarto.org](https://quarto.org)). The rendering framework this book is built with. Used implicitly throughout and explicitly in Chapter 18.
+- **The Wayback Machine** ([archive.org/web](https://web.archive.org)). The Internet Archive's web capture service. Used in Chapters 4 and 22.
+- **regulations.gov** ([regulations.gov](https://regulations.gov)). The federal rulemaking docket. Central to Chapter 21.
+- **DMPTool** ([dmptool.org](https://dmptool.org)). Templates for data management plans. Central to Chapter 19.
+- **Zenodo** ([zenodo.org](https://zenodo.org)). CERN's general-purpose research archive. Central to Chapter 22.
+- **fairlearn** ([fairlearn.org](https://fairlearn.org)). Python toolkit for disaggregated performance evaluation. Central to Chapters 7 and 11.
+- **geopandas** ([geopandas.org](https://geopandas.org)). Geographic data for pandas users. Central to Chapter 12.
+
+## Communities and networks
+
+- **Public Interest Technology University Network** (PIT-UN)
+- **Lines of Code for America** and local Code for X brigades
+- **OpenCorporates** and the Sunlight Foundation's archived work
+- **The Markup** and **ProPublica** (newsroom exemplars)
+- **Data {\&} Society**, **AI Now Institute**, **EPIC**, **Upturn**
+- **Access Now**, **Derechos Digitales**, **Paradigm Initiative** (non-US counterparts)
+- **Te Mana Raraunga** (Māori Data Sovereignty Network)
+- **United States Indigenous Data Sovereignty Network** (USIDSN)
+
+## Training venues
+
+- **IRE and NICAR**. Investigative Reporters and Editors / National Institute for Computer-Assisted Reporting.
+- **ICPSR Summer Program**. Social-science data training at the University of Michigan.
+- **Data Science for Social Good**. Summer fellowships hosted at various universities.
+- **FAccT** and **CSCW**. Academic venues where much of this book's source material lands.
+
+## Critical readings you did not meet in this book
+
+This book's framework focuses on records, openness, oversight, and ownership. Readers who want a sharper critique of that framing should start with:
+
+- Simone Browne, *Dark Matters: On the Surveillance of Blackness* (2015)
+- Ruha Benjamin, *Race After Technology* (2019)
+- Safiya Umoja Noble, *Algorithms of Oppression* (2018)
+- Sasha Costanza-Chock, *Design Justice* (2020)
+- Audra Simpson, *Mohawk Interruptus* (2014) on refusal as political stance
+
+These texts do not fit neatly into the chapter arc because they do not accept its premises. That is the point of reading them.
+
+## When things change
+
+External links break. Tools deprecate. APIs change. Report a broken link or a deprecated tool by opening an issue against the book's repository. Maintenance of this appendix is the point, not an afterthought.

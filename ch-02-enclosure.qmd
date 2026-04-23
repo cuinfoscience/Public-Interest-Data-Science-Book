@@ -1,0 +1,217 @@
+---
+title: "Enclosure: Who Can Observe?"
+execute:
+  eval: false
+---
+
+# Enclosure: Who Can Observe? {#sec-ch-02-enclosure}
+
+In the sixteenth and seventeenth centuries, across England and Scotland, common pastures and woodlands that had been used collectively for generations were fenced off by landowners and Parliament. The legal instruments were workmanlike. The consequences were not. Villagers who had grazed sheep on the commons, gathered firewood from shared stands, and gleaned fallen grain from open fields found themselves dependent on wage labor, migrating to cities, or both. Enclosure was not a failure of the commons. It was a project, by those with power, to convert shared resources into private ones, often with the language of improvement attached.
+
+James Boyle [-@boyle2017] argued two decades ago that a "second enclosure movement" was underway, this time over ideas, code, and data. Patents expanded. Copyright terms stretched. Public-domain materials were fenced behind paywalls and click-through agreements. That framing remains useful, but the enclosure most relevant to this book has moved past ideas and into observation itself. The question public interest data science asks is not only *what can I license?* but *what can I see in the first place?* The answer, for a researcher in the mid-2020s, is less than it was a decade ago, and the trajectory is not accidental. Following Keegan [-@keegan2026], you can read the withdrawal of research access as an attack on the installed base introduced in @sec-ch-01-introduction: when linkability, interpretability, and safe scrutiny are removed, "public interest" becomes a slogan without an operational grip.
+
+## The last ten years, briefly
+
+The easiest way to feel enclosure as a data scientist is to list retrievals you could have done ten years ago and try them today. A decent starter list:
+
+- Pull one percent of public tweets through the Twitter streaming API, filtered by keyword, for a dissertation on political discourse.
+- Fetch the complete comment history of a subreddit from Pushshift, with timestamps and scores, for a study of moderation.
+- Download the pre-2017 version of the EPA's environmental-justice screening data, with the variable definitions as of that date.
+- Query Facebook's Graph API for public-page posts about a municipal election.
+- Retrieve CrowdTangle data on viral content during a disaster.
+
+Each was a routine graduate-student assignment within the last decade. None is routine now. Some are technically possible through partnerships most researchers cannot access. Some are impossible. Some have been replaced by expensive commercial products whose terms forbid the reuse the original data supported. Bruns [-@bruns2019] called this shift the **APIcalypse**: platforms that depended on researcher goodwill in their growth phase have, in their extraction phase, decided that goodwill is an expensive luxury.
+
+Twitter (now X) is the sharpest case because the timeline is easiest to reconstruct. From 2006 through early 2023, the platform's API included a credible research tier, and an enormous empirical literature grew out of it. In February 2023 the company announced that free API access would end; the replacement pricing tiers start in the tens of thousands of dollars per month for the volumes a real research project requires. Academics who had built longitudinal panels over a decade watched them become unrenewable.
+
+Reddit's trajectory followed, faster and with more open advocacy against researchers. Pushshift, a volunteer-run archive that had collected and served Reddit data since 2015, shut down its public API in April 2023 after Reddit revoked its credentials. Reddit's own API pricing, announced weeks later, pushed third-party clients (including accessibility tools like Apollo) out of the ecosystem and put researcher access behind tiers that, for any nontrivial use, meant six-figure bills. Gaffney and Matias [-@gaffney2018] had already documented silent gaps in Pushshift's mirror, which compounded the loss: not only is the new data expensive, the old data you thought you had is incomplete, and you cannot fill it in.
+
+Government data portals are a quieter case and, for that reason, one you should watch more carefully. When a federal agency reorganizes, variable names change. When a political appointee prefers different framings, dataset landing pages are rewritten. When budgets contract, legacy portals stop updating and older vintages are "archived," which is sometimes a euphemism for delisted. The 2017 withdrawal of climate-change pages from the EPA website was the loud case; the quiet cases happen constantly, and @sec-ch-04-erosion treats the failure mode in detail. Enclosure and erosion are siblings: one restricts access, the other dissolves the object of access, and both shift the ground under public-interest work.
+
+The political economy underneath these cases is not mysterious. Wu [-@wu2021] describes the current configuration as a new Gilded Age of concentrated platform power. A handful of firms hold the data that describes contemporary public life. Their incentives run toward monetizing that data through advertising, model training, and partnerships, and away from letting outsiders audit it. "Partnership" is doing a lot of work in that sentence. It means the firms will sometimes share data with other firms, with favored labs, and with governments, under NDAs. It almost never means they will share it with journalists, civil-society researchers, or the public.
+
+## Reading what the platform tells you you can do
+
+Before you write any code, read what the platform says about your presence. There are two documents every serious scraper consults: `robots.txt` and the site's Terms of Service. Neither is a law. Both are signals, and you ignore them at your peril, both ethically and practically.
+
+A `robots.txt` file is served at the root of a domain and tells automated agents which paths are and are not welcome. The Robots Exclusion Protocol dates to 1994 and was standardized as RFC 9309 in 2022. It lives at `https://example.com/robots.txt`. Fetching it is a one-line task:
+
+```python
+import urllib.robotparser
+
+rp = urllib.robotparser.RobotFileParser()
+rp.set_url("https://en.wikipedia.org/robots.txt")
+rp.read()
+
+rp.can_fetch("PublicInterestDataScience/0.1", "/wiki/Public_interest")
+# => True
+
+rp.can_fetch("PublicInterestDataScience/0.1",
+             "/w/index.php?title=Special:Export")
+# => False (or True; check what Wikipedia's file actually says today)
+```
+
+Python's standard library parser returns `True` or `False` for a given path and user agent. It will also surface the crawl-delay the site suggests, if one is present, and the sitemap URL if the file advertises one.
+
+Terms of Service are the harder document because they are written by lawyers who assume you will not read them. Researchers have lived in the shadow of the U.S. Computer Fraud and Abuse Act (CFAA) on this point, because for a long time it was unclear whether violating a ToS could be prosecuted as "unauthorized access" under the statute. The *Sandvig v. Barr* litigation [@aclu2019] established in 2020 that academic research violating a ToS is not by that fact alone a criminal CFAA violation. That is a meaningful ruling and not a blanket license. You can still be sued in civil court, banned from the platform, served with a cease-and-desist, or (if your institution values its industry relationships) quietly asked to stop. Read the ToS, document what you read, and know which clauses you are relying on and which you are departing from and why.
+
+::: {.callout-tip title="The Missing Manual"}
+A request from `requests.get(url)` with no `User-Agent` header does not arrive at a modern server as "anonymous." It arrives as `python-requests/2.31.0`, which is the default and is the single fastest way to get 403'd by a CDN that has blocklisted it by policy. Cloudflare, Fastly, and Akamai maintain lists of default agents used by common scraping libraries. Set a descriptive `User-Agent` that names your project and a contact email. If the server operator needs to tell you to stop, you want them to be able to email you rather than silently ban your subnet. A polite scraper is also a scraper that keeps running.
+:::
+
+## A responsible scraper, from scratch
+
+You will reuse the function below, in one form or another, across the remaining chapters. The design goals are plain: every request identifies itself, respects `robots.txt` by default, rate-limits, retries on transient errors, and fails loudly on permanent ones.
+
+```python
+import time
+import logging
+from urllib.parse import urlparse
+from urllib.robotparser import RobotFileParser
+
+import requests
+
+log = logging.getLogger("responsible_scraper")
+
+DEFAULT_UA = (
+    "PublicInterestDataScience/0.1 "
+    "(+https://github.com/yourname/pids-book; you@example.edu)"
+)
+
+
+def check_robots(url, user_agent=DEFAULT_UA):
+    """Return True if robots.txt allows user_agent to fetch url."""
+    parsed = urlparse(url)
+    robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
+    rp = RobotFileParser()
+    try:
+        rp.set_url(robots_url)
+        rp.read()
+    except Exception as exc:
+        log.warning("Could not read %s: %s", robots_url, exc)
+        # Conservative default: if we can't read robots.txt, assume we
+        # should not fetch. Override explicitly if you know better.
+        return False
+    return rp.can_fetch(user_agent, url)
+
+
+def polite_get(
+    url,
+    headers=None,
+    params=None,
+    user_agent=DEFAULT_UA,
+    min_interval=1.0,
+    max_retries=3,
+    backoff=2.0,
+    timeout=30,
+    respect_robots=True,
+):
+    """Fetch a URL with rate limiting, retries, and a named User-Agent.
+
+    Returns a requests.Response on success.
+    Raises requests.HTTPError on non-retryable failure.
+    """
+    if respect_robots and not check_robots(url, user_agent=user_agent):
+        raise PermissionError(f"robots.txt disallows fetching {url}")
+
+    hdrs = {"User-Agent": user_agent, "Accept": "application/json"}
+    if headers:
+        hdrs.update(headers)
+
+    last_err = None
+    for attempt in range(1, max_retries + 1):
+        try:
+            response = requests.get(
+                url, headers=hdrs, params=params, timeout=timeout
+            )
+        except requests.RequestException as exc:
+            last_err = exc
+            log.warning("Attempt %d: network error %s", attempt, exc)
+        else:
+            if response.status_code in (429, 500, 502, 503, 504):
+                log.warning(
+                    "Attempt %d: status %s from %s",
+                    attempt, response.status_code, url,
+                )
+                last_err = requests.HTTPError(response=response)
+            else:
+                response.raise_for_status()
+                time.sleep(min_interval)
+                return response
+        time.sleep(backoff ** attempt)
+
+    raise last_err or RuntimeError("polite_get exhausted retries")
+```
+
+A few design choices are worth naming. The function accepts a `respect_robots` flag that defaults to `True`. You should need a reason to flip it, and you should write that reason into a comment in the calling code, not just your head. The function treats 429 and 5xx responses as retryable with exponential backoff, and 4xx responses as permanent failures. It sleeps a minimum interval after every successful call, which is the crudest form of rate limiting and the one that gets you the furthest. A production version would honor the `Retry-After` header, cache responses to disk, and emit structured logs. Your exercises will push you toward those features.
+
+Using it looks like any other `requests` call, with a politer footprint:
+
+```python
+response = polite_get(
+    "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/"
+    "en.wikipedia/all-access/user/Enclosure/monthly/"
+    "2015010100/2024123100"
+)
+items = response.json()["items"]
+```
+
+If you want to scrape a site whose `robots.txt` disallows you, stop and think. Sometimes there is a legitimate scholarly reason to proceed (a platform has disallowed a path that is uncontroversially public, a journalism project has counsel's blessing, a court order is in hand). More often the disallow signals a norm you should respect. The function makes respecting it the default. Refusal, as @sec-ch-16-critical-data-studies-refusal will develop, runs in both directions: platforms can refuse researchers, and researchers can refuse requests even when a platform invites them. Zong and Matias [-@zong2024] treat refusal by data subjects as a legitimate counter-move within an asymmetric information environment.
+
+## A worked timeline: Reddit access, 2015–2024
+
+Pick one platform and write its access history as a structured timeline. The exercise forces you to treat enclosure as a series of concrete decisions rather than a diffuse climate. Reddit is useful because the dates are public and the consequences are well-documented. The table below is a first pass; Exercise 2.4 asks you to extend and verify it.
+
+| Year | Event | Consequence for researchers |
+|------|-------|------------------------------|
+| 2015 | Pushshift begins continuous archiving of Reddit submissions and comments. | A reasonably complete corpus of Reddit becomes queryable through a free API. |
+| 2018 | Gaffney and Matias [-@gaffney2018] document silent gaps in the Pushshift mirror. | Researchers learn the archive is incomplete; many published studies rest on the incomplete slice. |
+| 2020 | COVID-19 drives a surge in computational social science using Reddit data. | Demand on Pushshift grows; the corpus becomes de facto infrastructure for a subfield. |
+| April 2023 | Reddit revokes Pushshift's API credentials. Reddit announces API pricing. | The public Pushshift API goes dark. Third-party clients (Apollo, Reddit Enhancement Suite) exit or retreat. |
+| June 2023 | Large subreddits go private in protest ("the blackout"). | Moderator labor, the free substrate of Reddit's data, becomes briefly legible as labor. |
+| Late 2023 | Reddit signs data-licensing deal with Google for model training. | Data refused to researchers is sold, as training data, to a firm that can afford it. |
+| 2024 | Reddit files for IPO; discloses API licensing as revenue. | The economic logic of enclosure is explicit in the S-1: researcher access was competing with shareholder value. |
+
+Two observations follow from the table. First, the shutdown was not only a loss of new data. It was a loss of old data, because the archive that held the historical corpus lost the credential it needed to keep serving what it had already collected. The object of study and the infrastructure of study collapsed together. @sec-ch-22-archival-deposits pushes you toward archival deposits you control rather than ones you rent.
+
+Second, the same data the platform withdrew from researchers was, in the same calendar year, sold to a commercial AI firm. That is the asymmetry to sit with. Enclosure is not simply "the platform closed up." It is "the platform closed *you* out while opening further to capital." Acker and Kreisberg [-@acker2019] saw this pattern coming in their work on social-media archives; Suzor and colleagues [-@suzor2018] locate it within a broader problem of platform governance legitimacy.
+
+::: {.callout-note title="In the Public Interest"}
+What is at stake here is **openness** as defined in @sec-ch-06-openness: the condition under which a public can scrutinize the systems that affect it. Openness is not a synonym for "the data is downloadable." It is a working arrangement in which researchers, journalists, regulators, and affected communities can observe enough to raise evidence-based questions. When platforms cut off independent researchers while retaining partnerships with large firms and governments, they do not abolish observation. They reallocate it. Observation continues, but it flows toward private interests and away from public ones. Naming this as an openness failure, rather than a business decision, is the first move that lets you push back. @sec-ch-07-oversight and @sec-ch-08-ownership extend the argument into regulatory and distributional registers.
+:::
+
+## The asymmetry of observation
+
+The previous two sections should have left you with an uncomfortable picture. The firms that hold the data describing contemporary public life can observe their users in extraordinary detail. They partner with other firms and with governments to extend that observation. They cut off the outside parties whose scrutiny would be inconvenient. The parties who remain (journalists, academics, civil-society groups) are left with robots.txt files, HTML-scraped fragments, and the occasional leaked dataset. The asymmetry is not between observers and the unobserved. It is between two classes of observers.
+
+That asymmetry has consequences for what you should try to build. First, assume your access is temporary and plan for its withdrawal: @sec-ch-05-installed-base and @sec-ch-22-archival-deposits push you toward architectures where your data has a resolvable identifier and a home that outlives any single platform. Second, be honest about the limits of what you can observe: a study that conditions on platform-provided data is a study of what the platform chose to show you, and naming that is part of the work rather than a methods-section apology. Third, refusal is available. If the terms of access are corrosive (an NDA that prevents you from naming the firm, an exclusivity clause that bars you from sharing derived data with colleagues), you can decline, and @sec-ch-16-critical-data-studies-refusal will argue that sometimes you should.
+
+Public-interest data science cannot rely exclusively on large commercial platforms. The installed base this book is building toward includes government open data, civic datasets, court records, FOIA-wrested documents, historical archives, and the output of researchers willing to publish collected data under permissive licenses. Each of those sources has its own pressures (Chapter 3 takes up exemption, Chapter 4 takes up erosion), but none of them has an S-1 that treats your access as lost revenue. Diversifying your substrate of observation is a strategic response to enclosure.
+
+## Exercises
+
+**Exercise 2.1 (Guided).** Fetch and read the `robots.txt` files for three platforms. Recommended triple: Wikipedia, Reddit, and a large newspaper site (for example, nytimes.com). Use `urllib.robotparser` to check whether your `User-Agent` would be permitted on five paths per site. Write a 200-word comparison: which site is most permissive, which most restrictive, and which surprised you.
+
+**Exercise 2.2 (Guided).** Implement the `polite_get` function from scratch, without copying the listing above. Add one feature the book's version lacks: either honor the `Retry-After` header on 429 responses, or cache successful responses to a local SQLite database keyed by URL so that repeated fetches during development do not re-hit the server. Commit the function with a docstring explaining your added feature and a test that exercises it against a public endpoint.
+
+**Exercise 2.3 (Analytic).** Pick one platform whose data you expect to use in your final project. Download its current Terms of Service to a dated file (for example, `exercises/ch02_tos/reddit_2026-04-23.txt`). Annotate paragraph by paragraph with four marks: **R** for clauses that restrict research uses, **P** for clauses that permit them, **A** for ambiguity you would need counsel to resolve, and **L** for language that relies on unstable definitions ("public content," "non-commercial," "API partner"). Submit the annotated file and a 300-word summary of what a research plan can and cannot do under the current ToS.
+
+**Exercise 2.4 (Analytic).** Extend the Reddit timeline. Add three rows from publicly reported events since 2024, with citations. Then write a second timeline, in the same format, for a different platform (Twitter/X, Facebook, TikTok, YouTube, or a government data portal). Cover at least eight years and at least five distinct access events. Cite the source for each date; prefer primary documents (official announcements, court filings, congressional testimony) over secondary reporting where both exist.
+
+**Exercise 2.5 (Open-ended).** Revisit the project sketch from Exercise 1.5. Identify the single dataset whose availability would most determine whether your project is possible. Write a 500-word accessibility memo covering: who controls the data; under what terms it is accessible; what pathways exist (public download, API, FOIA request, institutional partnership, commercial license); the cost and timeline of each pathway; what has happened to the data's accessibility over the last five years; and what fallback datasets you would use if the primary became unavailable. Save as `exercises/ch02_access_memo.md`. You will return to this memo in Chapter 19 and Chapter 22.
+
+## Looking ahead
+
+Enclosure is the first of three pressures this part diagnoses. Chapter 3 takes up exemption: even when data can be observed, certain actors are under no obligation to answer for what it describes. Law-enforcement agencies exempt from FOIA. Vendors whose contracts shield them from disclosure. Private actors performing public functions without the accountability attached. If enclosure asks *who can observe?*, exemption asks *who must answer?*
+
+## Further Reading and Resources
+
+- Axel Bruns (2019), "After the 'APIcalypse': Social media platforms and their fight against critical scholarly research," *Information, Communication & Society* 22(11). The article that gave the post-2018 shift its name.
+- James Boyle (2008), *The Public Domain: Enclosing the Commons of the Mind*. Duke University Press. Open-access at <https://www.thepublicdomain.org/>. The enclosure analogy in its fullest form.
+- Robots Exclusion Protocol, RFC 9309 (2022): <https://www.rfc-editor.org/rfc/rfc9309.html>. A short, readable standardization most scrapers violate out of ignorance.
+- Jonathan Zong and J. Nathan Matias (2024), "Data refusal from below." The complement to this chapter: when enclosure is not the problem, refusal might be.
+- Reddit's API pricing announcement (June 2023) and the original Pushshift shutdown notice, both reachable from <https://www.reddit.com/r/modnews/> archives. Primary documents for Exercise 2.4.
+- The Internet Archive's Wayback Machine, <https://web.archive.org/>. When a platform retires a dataset, often the only remaining record of what was public. You will use it constantly.
+- Electronic Frontier Foundation, "Coders' Rights Project," <https://www.eff.org/issues/coders>. Plain-language summaries of the CFAA, DMCA, and related statutes.
+- Knight First Amendment Institute, <https://knightcolumbia.org/research>. Ongoing litigation and policy work on the legal scaffolding of observation.
+- Wikimedia Foundation's research ethics and tool policies, <https://meta.wikimedia.org/wiki/Research:Ethics>. An instructive contrast: what a platform looks like when it wants researchers to study it.

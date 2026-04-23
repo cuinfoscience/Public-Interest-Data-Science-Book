@@ -1,0 +1,176 @@
+---
+title: "Journalism"
+execute:
+  eval: false
+---
+
+# Journalism {#sec-ch-09-journalism}
+
+Part II closed with ownership as stewardship. Part III opens with a profession that has been stewarding sensitive public documents since well before data science named itself. A reporter who sits on a leaked database for six months while corroborating the identities of the people inside it is doing, as routine practice, the work the last four chapters spent pages trying to name. The tradition is called journalism, and if you want to make data science useful to the public, journalism is the lineage most worth reading as a set of instructions rather than as inspiration.
+
+This chapter is not a history of journalism. It is a prompt to notice things the data science field, including its academic algorithmic-accountability wing, continues to rediscover a decade late. Newsrooms worked out methods for verifying records against sources, for publishing under legal threat, for collaborating across borders on datasets no one outlet could analyze alone, and for extending right of reply to the subjects of an investigation before the article ran. These are verification routines that, when you import them into academic or civic data practice, raise the evidentiary floor of the work in ways the field's internal conversations about "reproducibility" rarely manage on their own.
+
+The chapter's running case is the one that pulled the fairness-in-machine-learning conversation into public view in 2016: ProPublica's *Machine Bias* investigation of the COMPAS recidivism risk score [@angwin2016]. You will download ProPublica's published data and notebook, reproduce one of its central statistics, compare your numbers to the article's, and read the methodological rejoinder from Flores, Bechtel, and Lowenkamp [-@flores2016]. The point is not to adjudicate the dispute. The point is to notice what made the dispute possible, and what it cost ProPublica to invite it.
+
+## The watchdog role, operationalized
+
+The "Fourth Estate" is a metaphor that carries more than it can cash out. A fourth branch of government exists nowhere in any constitution. What does exist, across jurisdictions, is a loose professional arrangement: newsrooms with libel insurance, public-records statutes that force documents into the open, editors who can say no to a story, and a readership that funds the operation, imperfectly and with worsening economics, through subscriptions and advertising. The watchdog function is that arrangement working well enough to subject powerful institutions to scrutiny they would prefer to avoid.
+
+Data journalism is the computational specialization of that function. Diakopoulos [-@diakopoulos2019] documents how algorithmic accountability reporting emerged as newsrooms learned to treat software as a beat: not a tool for telling stories faster, but a subject of investigation in its own right. The investigative journalism tradition he chronicles, institutionalized in organizations like Investigative Reporters and Editors (IRE) and its data-focused conference NICAR, developed verification standards that predate and, in important respects, outpace the academic literature on algorithmic audits.
+
+Four of those standards bear naming here, because you will use them in the tutorial.
+
+**Sourcing** means a claim in a published story is traceable to a document, a dataset, or a named human. A reporter's notebook is a provenance chain. When a reporter writes that the city's benefits portal denied 12 percent of applicants for a missing signature, someone can ask which 12 percent, from which table, queried on which date, and the answer exists.
+
+**Corroboration** means a claim that matters rests on more than one independent piece of evidence. The dataset says X. A former employee also said X. A public filing from a different year also said X. Single-source claims are not forbidden, but they are flagged and carefully worded.
+
+**Right of reply** means the subjects of an investigation, including the institutions whose data is under scrutiny, receive the findings before publication and have an opportunity to respond. The response may be a correction, a denial, a contextual statement, or silence. Each has an editorial consequence.
+
+**Publication with documentation** means the story travels with its evidence, or with enough of its evidence that readers and other newsrooms can follow the inference. Not every dataset can be released. The inference chain, the decisions made in cleaning the data, the variables selected, and the judgment calls made are documented somewhere readers can inspect.
+
+Academic researchers use none of these consistently. Peer review substitutes, poorly, for the last and makes almost no demands on the first three. One of this chapter's claims is that academic data science, when it engages public systems, should steal from journalism rather than reinvent.
+
+## FOIA as infrastructure
+
+One piece of journalism's installed base deserves separate mention because Chapter 10 (@sec-ch-10-law) takes it up in detail: the Freedom of Information Act and its state equivalents. FOIA turns the watchdog function from a polite request into a procedural right. A reporter writes, the agency has a statutory deadline to respond, and a denial can be appealed to a court. The infrastructure is imperfect, underfunded, and routinely abused through delay and overbroad exemption. It is also the mechanism by which much of the material a data journalist analyzes comes into the world in the first place.
+
+For the purposes of this chapter, notice two things. First, FOIA is what Chapter 5 (@sec-ch-05-installed-base) calls safe scrutiny with a statutory backbone: the reporter does not have to trust the agency's goodwill, because the statute provides a lever. Second, the datasets journalists release through their reporting are often FOIA products that the agency itself never voluntarily published. ProPublica's COMPAS data is not a FOIA release (it came through a public-records request to Broward County, Florida, and a handful of correspondences with the vendor), but its genealogy sits in the same family of documents-prised-loose-through-procedure that the next chapter will train you to file.
+
+## Cross-border collaboration as a scaling strategy
+
+A single newsroom can handle a dataset of several thousand rows. It cannot handle 11.5 million documents. The Panama Papers leak, published by the International Consortium of Investigative Journalists (ICIJ) in 2016, distributed the analysis across more than a hundred newsrooms in dozens of jurisdictions, each working on the documents relevant to their country, under coordinated publication embargoes. The Paradise Papers (2017) and the Pandora Papers (2021) used the same template. Forbidden Stories, a separate consortium, exists specifically to continue the work of journalists who have been killed or imprisoned, distributing their unpublished material among member newsrooms so that silencing any single reporter does not silence the story. Lighthouse Reports, based in the Netherlands, has built a collaborative model for algorithmic-accountability reporting across European outlets, including the Rotterdam welfare-algorithm investigation you saw in Chapter 3.
+
+The method is worth importing to academic data work. A multi-country welfare-algorithm analysis is not, structurally, a different problem from a multi-site clinical trial. What cross-border journalism has worked out that academic consortia often have not is the governance stack that makes the collaboration survive leaks, legal threats, and deadline pressure: secure document-sharing platforms, shared style guides, coordinated fact-checking, joint legal review, and, critically, the right of any newsroom to pull out without burning the rest of it down. Zeng, Chan, and Schafer [-@zeng2022] show how much of this infrastructure is culturally located: what works in a consortium of Western European outlets is not portable to a newsroom operating under tighter state control, and an academic collaboration needs to understand transferability before it assumes the model scales.
+
+## The running example: reproducing *Machine Bias*
+
+ProPublica's 2016 investigation of the COMPAS risk-assessment tool, used by courts across the United States to inform pretrial and sentencing decisions, argued that the score was biased against Black defendants. The finding that drew the most attention was a disparity in false-positive rates: among defendants who did not reoffend within two years, Black defendants were roughly twice as likely as white defendants to have been classified as high-risk by COMPAS. The article ran with its dataset and Jupyter notebook posted to GitHub at `propublica/compas-analysis`, an act of methodological transparency that was, in 2016, unusually generous by newsroom standards.
+
+The tutorial walks you through reproducing the two-year recidivism-rate statistic and comparing your numbers to the article's. You will find small divergences. You will then read Flores and colleagues' rejoinder [-@flores2016] and identify which divergences matter for the argument.
+
+### Pulling the data
+
+The dataset lives in the repository as `compas-scores-two-years.csv`. You can clone the repo or download the file directly.
+
+```python
+import pandas as pd
+
+URL = (
+    "https://raw.githubusercontent.com/propublica/"
+    "compas-analysis/master/compas-scores-two-years.csv"
+)
+
+df = pd.read_csv(URL)
+df.shape
+# => (7214, 53)
+
+df[["sex", "race", "age", "priors_count",
+    "decile_score", "two_year_recid"]].head()
+```
+
+ProPublica applied filters to this file before running their analysis. The notebook documents them. Cases where the COMPAS assessment was not drawn within 30 days of arrest were excluded, along with cases missing key fields. Replicate the filter before you replicate the statistic:
+
+```python
+mask = (
+    (df["days_b_screening_arrest"] <= 30) &
+    (df["days_b_screening_arrest"] >= -30) &
+    (df["is_recid"] != -1) &
+    (df["c_charge_degree"] != "O") &
+    (df["score_text"] != "N/A")
+)
+filtered = df[mask].copy()
+filtered.shape
+# => (6172, 53)   # matches the ProPublica notebook's post-filter count
+```
+
+### Reproducing the statistic
+
+The headline finding compared false-positive and false-negative rates across racial groups. A false positive here is a defendant labeled medium or high risk by COMPAS who did not reoffend within two years. Recode the score and compute the contingency table:
+
+```python
+filtered["high_risk"] = (
+    filtered["score_text"].isin(["High", "Medium"]).astype(int)
+)
+
+by_race = (
+    filtered.groupby("race")
+            .apply(lambda g: pd.Series({
+                "n": len(g),
+                "fp_rate": (
+                    ((g["high_risk"] == 1) & (g["two_year_recid"] == 0)).sum()
+                    / (g["two_year_recid"] == 0).sum()
+                ),
+                "fn_rate": (
+                    ((g["high_risk"] == 0) & (g["two_year_recid"] == 1)).sum()
+                    / (g["two_year_recid"] == 1).sum()
+                ),
+            }))
+            .reset_index()
+)
+by_race.query("race in ['African-American', 'Caucasian']")
+# => African-American  fp_rate ~ 0.45, fn_rate ~ 0.28
+# => Caucasian         fp_rate ~ 0.23, fn_rate ~ 0.48
+```
+
+### Checking for divergence
+
+Your numbers will land close to the published rates but not identical. Possible sources of divergence, all worth documenting:
+
+- Pandas has changed `.apply` semantics between versions, which can alter group ordering and rounding.
+- The underlying CSV has been touched since 2016; you can pin to a specific commit hash if your analysis needs to be stable.
+- The "Medium or High" threshold is one of two reasonable ways to binarize `score_text`; the notebook uses this one, but the article's prose occasionally shifts definitions.
+- Rows with missing `two_year_recid` flags are handled inconsistently across replications in the literature.
+
+Write a brief methods note, in plain prose, documenting what you did: the commit hash you pinned to, the filter you applied, the binarization rule you chose, and the precise numbers you got. This note is not a formality. It is the artifact that lets a future reader distinguish a substantive disagreement with ProPublica's argument from a transcription error in your pipeline.
+
+::: {.callout-tip title="The Missing Manual"}
+When a newsroom publishes a methods notebook, the interesting methodological disputes are always in the details the article's prose does not cover. Read the notebook before you read the article, not after. You will see which filters were applied, which variables were dropped, and which binarization decisions the reporter made. These are the decisions the methodological rejoinders will land on. The practice of "right of reply" that journalists offer to the subjects of an investigation is not merely a courtesy; it is a verification mechanism. An institution given a chance to point out an error before publication often will, and the correction improves the final story. Academic researchers should steal this. Send your draft analysis to the institution whose system you are auditing, with a specific deadline and specific questions. Do it even when you are under no obligation to.
+:::
+
+## Flores, Bechtel, and Lowenkamp: the rejoinder
+
+Flores and colleagues [-@flores2016] published a direct response to ProPublica in *Federal Probation*, arguing that ProPublica's framing confused several distinct fairness criteria and that, on the criteria relevant to how risk assessments are actually used in court, COMPAS performed reasonably across racial groups. Their critique turned on the distinction between equal false-positive rates (ProPublica's focus) and equal positive predictive value (the vendor's focus). Subsequent literature, especially Chouldechova [-@chouldechova2018] and the broader fair-ML community, established that these criteria cannot simultaneously hold when base rates differ across groups. The impossibility result is not an escape hatch. It is a forcing function: choose which fairness criterion matters for the decision the tool informs, and own the choice.
+
+Read the rejoinder alongside your reproduction. Notice which of its criticisms your replication can speak to (the binarization choice, the filter selection) and which require different data than ProPublica released. Notice also that the rejoinder exists at all because the data was public. A privately held investigation of a proprietary tool with a gag order on the dataset would not have generated the follow-up literature that now occupies six hundred entries in the FAccT bibliography.
+
+::: {.callout-note title="In the Public Interest"}
+Chapter 6 (@sec-ch-06-openness) argued that openness is not the absence of friction but the presence of a legible publication. ProPublica's decision to publish the COMPAS dataset alongside the *Machine Bias* article is the move that made the dispute with Flores and colleagues possible. An enclosed analysis, with the data held internally and the findings communicated only through the article, would have foreclosed the rejoinder. The methodological disagreement would have remained a matter of he-said-she-said between a newsroom and a vendor, and the fair-ML literature that grew from the case would not have had an empirical object to work on. Openness here does not just serve ProPublica's credibility. It serves the capacity of the field to argue with ProPublica and improve on its work. Keegan [-@keegan2026] names this configuration as safe scrutiny reinforced by linkable provenance. Enclosure in the name of protecting a finding is a defensive posture that damages the finding's standing over time. Chapters 7 (@sec-ch-07-oversight) and 8 built on this: oversight requires an object to oversee, and the object has to survive long enough to be overseen.
+:::
+
+## What academic researchers can learn
+
+Two practices from the newsroom side will not fit on a single syllabus, but both belong in your working repertoire.
+
+The first is provenance as a default, not an exception. A reporter who cannot cite a claim cannot publish the claim. An academic researcher who cannot trace a number back through the cleaning pipeline to a source row is, in the newsroom's frame, not yet ready to publish either. The reproducibility frameworks you will meet in Chapter 11 (@sec-ch-11-accounting) encode this habit formally. The journalism version is older and more severe: you do not publish unless you can show your work, and "show your work" is not a virtue, it is the floor.
+
+The second is the right of reply, already named in the callout above. When you audit a public system, send a draft of your findings to the institution responsible for the system, with a specific deadline and specific questions, and document whatever response you receive. You will get three kinds of reply. A silence, which you note. A correction, which you incorporate. A substantive disagreement, which you either argue with in the text or adopt as a limitation. All three improve the final work. The institutional pressure against this practice, in academic settings, is that it can look like giving subjects a veto. It is not a veto. It is a verification step that produces a better paper and a defensible defense when the paper is challenged.
+
+## Looking ahead
+
+Chapter 10 (@sec-ch-10-law) takes up the legal infrastructure that journalism has been navigating for a century and a half and that data science, when it engages public systems, is now learning to navigate. FOIA and its state equivalents, open-meetings statutes, research exceptions to the Computer Fraud and Abuse Act, and the threat environment documented in *Sandvig v. Barr* all constrain what you can observe, publish, and discover. Journalism's tradition is older than academic algorithmic accountability and more politically mature, and the political maturity is inseparable from decades of litigation about what a reporter is allowed to do. Chapter 17 (@sec-ch-17-op-eds) picks up the translation question from the other side: how to turn a data investigation into a piece of public writing that a non-specialist reader can act on.
+
+## Exercises
+
+**Exercise 9.1 (Guided).** Clone `propublica/compas-analysis` from GitHub. Run the filter described above against `compas-scores-two-years.csv` and reproduce the false-positive and false-negative rates by race. Write a one-page methods note documenting the commit hash you pinned to, the filter you applied, the binarization rule you used, and the numbers you obtained. Save the note as `exercises/ch09_compas_methods.md`. Submit a link to your git commit.
+
+**Exercise 9.2 (Analytic).** Read Flores, Bechtel, and Lowenkamp [-@flores2016]. In 500 to 700 words, identify the three criticisms the rejoinder makes that your Exercise 9.1 replication can speak to, and the criticisms it makes that would require different data. Your reply does not need to take a side; it needs to distinguish what the released dataset can and cannot settle.
+
+**Exercise 9.3 (Comparative).** Find a data journalism investigation from a non-U.S. outlet published in the last three years. Candidates include Forbidden Stories, Lighthouse Reports, Der Spiegel's data desk, Suddeutsche Zeitung, CORRECTIV, or the ICIJ. In 400 to 600 words, analyze the piece's structure: what is the central claim, what data supports it, what was published alongside the story, which collaborators are credited, and what verification practices are visible in the methodology note (if any). Compare the published methods transparency to the ProPublica standard.
+
+**Exercise 9.4 (Research).** Locate a methods notebook from a recent investigation by The Markup, ProPublica, The Pudding, Reveal, or Bellingcat. Document the notebook in 300 words: which filters it applied, which decisions it records in comments, and one decision it makes without documenting. Submit the notebook URL and your documentation together. The point is to practice reading a notebook as a reviewer, not just as a user.
+
+**Exercise 9.5 (Open-ended, project-linked).** Identify a story from your own community, city, county, campus, or professional field, that would benefit from data journalism methods. In two to three paragraphs: name the story, name the data that would be required, identify the likely source (FOIA, scraping a public portal, a dataset already open), and name one person or institution who would be the subject of right-of-reply. Add the result to your `ch01_project_sketch.md` file. If the story overlaps with something you are already planning for a later chapter's exercise, say so.
+
+## Further Reading and Resources
+
+- Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner (2016), "Machine Bias," ProPublica: <https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing>. Read the article, then read the companion methodology at <https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm>.
+- ProPublica's `compas-analysis` repository: <https://github.com/propublica/compas-analysis>. The Jupyter notebook in the repository root is the canonical object for this chapter.
+- Anthony W. Flores, Kristin Bechtel, and Christopher T. Lowenkamp (2016), "False positives, false negatives, and false analyses: A rejoinder to 'Machine Bias,'" *Federal Probation*, 80(2): 38 to 46.
+- Nicholas Diakopoulos (2019), *Automating the News: How Algorithms Are Rewriting the Media*. Harvard University Press. The standing academic treatment of algorithmic accountability reporting.
+- The Markup's "Show Your Work" series: <https://themarkup.org/series/show-your-work>. Each investigation publishes its methodology as a standalone piece; read three of them back to back.
+- Investigative Reporters and Editors (IRE) and the National Institute for Computer-Assisted Reporting (NICAR): <https://www.ire.org>. The professional home of U.S. data journalism; the NICAR conference proceedings are an underappreciated methods literature.
+- International Consortium of Investigative Journalists (ICIJ): <https://www.icij.org>. The Panama, Paradise, and Pandora Papers investigations, with extensive documentation of the cross-border collaboration model.
+- Lighthouse Reports: <https://www.lighthousereports.com>. European consortium specializing in algorithmic-accountability investigations; the Rotterdam welfare-algorithm piece is a useful companion to Chapter 3.
+- Forbidden Stories: <https://forbiddenstories.org>. The consortium that continues the work of journalists who have been silenced.
+- *The Data Journalism Handbook 2*, edited by Jonathan Gray and Liliana Bounegru (2021), open-access at <https://datajournalism.com/read/handbook/two>. The field's living textbook, with chapters by practitioners on verification, scraping, collaboration, and ethics.
+- The Pudding: <https://pudding.cool>. For a lighter complement: visual essays whose source code ships with the story.

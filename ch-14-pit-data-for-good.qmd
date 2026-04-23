@@ -1,0 +1,183 @@
+---
+title: "Public Interest Technology and Data for Good"
+execute:
+  eval: false
+---
+
+# Public Interest Technology and Data for Good {#sec-ch-14-pit-data-for-good}
+
+Part IV begins with a problem of neighbors. Public interest data science, as this book develops it, has two immediate cousins whose self-presentation is strong enough that students often arrive assuming the three terms are synonyms. They are not. Public interest technology (PIT) and data-for-good each have their own institutional history, funders, canonical texts, and characteristic blind spots. You should know what those are, because the job listings you will apply for and the foundations that will eventually pay your rent draw their vocabulary from these fields. And because, as @aula2023 argue, the philanthropic political economy that sustains PIT and data-for-good is not the same political economy that sustains journalism, law, or the archival sciences you met in Part III. Its rhythms are different. Its pathologies are different.
+
+This chapter is sympathetic and skeptical in equal measure. PIT has built real things. GetCalFresh helped millions of Californians apply for food assistance through a form that did not hate them. Ushahidi mapped post-election violence in Kenya in 2008 and has since been deployed in dozens of countries during crises where official channels failed. The question this chapter asks is not whether these tools worked. It is whether they were built to last, who pays when the launch press cycle ends, and what labor is rendered invisible when a tool is described as "the platform." The concept that organizes the chapter is **sustainability**, understood not as a vague aspiration but as a specific configuration of code, people, money, and data that has to be maintained or it will rot. You will conduct a sustainability audit of two real projects, one from the US PIT world and one from the global South data-for-good world, and score them against a rubric. By the end you should be able to look at a project's launch announcement and tell, within a rough range of error, how likely it is to still be there in five years.
+
+## The PIT University Network and its framing text
+
+Public interest technology as an organized field is young. @mcguinness2021 trace its emergence to the Obama-era US Digital Service and the parallel founding of Code for America, arguing that the lesson of healthcare.gov's 2013 failure and its subsequent rescue was that government needed people who could write code, understand policy, and translate between the two. *Power to the Public* is the book that codified this framing. It is a confident book, written by practitioners, and it does real work: it names a kind of professional who does not fit the conventional civil-service or tech-industry career ladder, and it argues that such people should be trained, hired, and paid.
+
+The Public Interest Technology University Network, coordinated by New America, took up that argument and built around it. By 2024 the network included dozens of member universities, each committing to some combination of new courses, fellowship programs, and hiring pathways [@pitun]. The network's framing is career-oriented: its promotional material emphasizes the pipeline from student to fellowship to government-or-nonprofit job. That emphasis is one of the field's genuine strengths. A generation of students now has a defensible answer to the question "what do you do with a computer science degree if you do not want to work for a surveillance advertising company."
+
+What the PIT-UN framing tends to elide is what happens after the student becomes the fellow, the fellow becomes the hire, and the hire ships the thing. The career pipeline metaphor implies a forward-flowing river; actual projects are more like gardens. @karasti2018 call this maintenance work **infrastructuring** and argue that it is the least-narrated, least-funded phase of any sociotechnical system. It is the move Keegan [-@keegan2026] makes in framing the installed base as something maintained rather than built. You met the concept in @sec-ch-05-installed-base; you will meet it in @sec-ch-13-engineering under the heading of operations. Here it becomes a diagnostic lens for any PIT project.
+
+## The rhythm of foundation funding
+
+The pathology is structural. Most PIT and data-for-good projects are funded by philanthropic foundations on three-year grant cycles. The first year is design and pilot. The second year is refinement. The third year is "scaling." The theory implicit in that rhythm is that a pilot, if it works, will either attract a sustaining revenue stream (government contract, earned revenue, follow-on philanthropy) or be absorbed by an institution that already has one. This theory is sometimes correct. It is much more often wrong. @aula2023 describe the resulting dynamic as a churn in which foundations perpetually fund new pilots because the old pilots did not scale, with the result that a disproportionate share of field capacity is tied up in pilot projects that will be dead in five years. @chambers2025 sharpens this critique: the "data-for-good" imaginary treats data-intensive civic projects as discrete interventions that can be completed, rather than as ongoing commitments that require ongoing labor.
+
+You can see the pattern in the shape of project websites. A project in year one has blog posts every two weeks and a Medium series and a podcast. A project in year three has a landing page with three case studies dated from year two and a Slack invitation link that no longer works. A project in year five either has a funding home (a government line item, a membership model, fee-for-service revenue) or a GitHub repo whose last meaningful commit was the grant-close deliverable. The audit below is designed to surface which kind of project you are looking at before you commit time to building on top of it.
+
+## Two running examples: GetCalFresh and Ushahidi
+
+Consider two projects that have lasted a long time.
+
+**GetCalFresh** was launched by Code for America in 2014 to simplify the CalFresh (California's SNAP) application process [@codeforamerica_getcalfresh]. The original application was an 18-page PDF. The GetCalFresh version took most applicants under ten minutes, and millions of Californians used it over the next decade. It became the template for a broader argument: that benefits-access technology can measurably move the needle on enrollment, and that civic tech should focus on this kind of service delivery rather than flashier interventions. In 2023 the service transitioned from a Code-for-America-operated platform to one operated by the state of California. That transition is, in sustainability terms, the best possible outcome. A civic-tech pilot became a line item in a state agency's budget. The thing you should want for any project you build is that you eventually work yourself out of a job because the state has taken over the function.
+
+**Ushahidi** was launched in Nairobi in 2008 to crowdsource reports of post-election violence in Kenya, after major media outlets stopped publishing details [@ushahidi_about]. The platform was built, initially, over a weekend. It has since been deployed in over 150 countries, during earthquakes, refugee crises, elections, and epidemics. Ushahidi is an unusual case because it emerged from a global-South context and has remained headquartered there, funded through a mix of foundation grants, deployment fees, and in-kind partnerships. Its maintenance problem is also unusually visible: the codebase is open source, deployments are often led by local partners whose technical capacity varies, and the organization has been candid over the years about the difficulty of keeping a 2008-vintage platform current against 2024-era security and mobile-device realities.
+
+Pair these two. One US project that transitioned to a government funding home. One global-South project surviving 16 years on a hybrid funding model. Neither is a failure. Both illustrate that sustainability is possible, looks different in different institutional contexts, and is the exception rather than the rule.
+
+## A sustainability audit: querying GitHub
+
+The technical component of this chapter is a reproducible audit you can run on any project with a public code repository. The audit asks six questions:
+
+1. Where does the code live? Repo URL, license, last commit date, contributor count.
+2. Who maintains it? Named maintainers, their employer, and how they are funded.
+3. Who owns the data?
+4. What happens when the current grant ends?
+5. What labor is invisible in the product: translation, annotation, moderation, cleaning?
+6. How does the project score against a simple rubric?
+
+The first question is the one you can mostly answer with the GitHub REST API. The later ones require reading. The code below fetches repo metadata, the license, contributor count, open issues, and open pull requests, and returns a one-page DataFrame that you can render into a report.
+
+```python
+import os
+import requests
+import pandas as pd
+from datetime import datetime, timezone
+
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")  # strongly recommended
+HEADERS = {
+    "Accept": "application/vnd.github+json",
+    "User-Agent": "PublicInterestDataScience/0.1 (your-email@example.edu)",
+    "X-GitHub-Api-Version": "2022-11-28",
+}
+if GITHUB_TOKEN:
+    HEADERS["Authorization"] = f"Bearer {GITHUB_TOKEN}"
+
+
+def gh(path, params=None):
+    url = f"https://api.github.com{path}"
+    response = requests.get(url, headers=HEADERS, params=params, timeout=30)
+    response.raise_for_status()
+    return response
+
+
+def audit_repo(owner, repo):
+    base = f"/repos/{owner}/{repo}"
+    meta = gh(base).json()
+
+    # Contributors: paginate to count, not to list.
+    contributors = gh(f"{base}/contributors",
+                      params={"per_page": 100, "anon": "true"}).json()
+    contributor_count = len(contributors)
+
+    # Open issues and PRs. GitHub counts PRs as issues; split them.
+    issues = gh("/search/issues",
+                params={"q": f"repo:{owner}/{repo} is:open is:issue"}).json()
+    prs = gh("/search/issues",
+             params={"q": f"repo:{owner}/{repo} is:open is:pr"}).json()
+
+    # Last commit date on the default branch.
+    commits = gh(f"{base}/commits", params={"per_page": 1}).json()
+    last_commit = commits[0]["commit"]["committer"]["date"] if commits else None
+    if last_commit:
+        last_commit_dt = datetime.fromisoformat(last_commit.replace("Z", "+00:00"))
+        days_since = (datetime.now(timezone.utc) - last_commit_dt).days
+    else:
+        days_since = None
+
+    license_name = (meta.get("license") or {}).get("spdx_id") or "NONE"
+
+    row = {
+        "repo": f"{owner}/{repo}",
+        "stars": meta.get("stargazers_count"),
+        "forks": meta.get("forks_count"),
+        "license": license_name,
+        "last_commit": last_commit,
+        "days_since_last_commit": days_since,
+        "contributors": contributor_count,
+        "open_issues": issues.get("total_count"),
+        "open_prs": prs.get("total_count"),
+        "default_branch": meta.get("default_branch"),
+        "archived": meta.get("archived"),
+    }
+    return row
+
+
+projects = [
+    ("codeforamerica", "getcalfresh-site"),   # illustrative; confirm exact repo
+    ("ushahidi", "platform"),
+]
+
+audit = pd.DataFrame([audit_repo(o, r) for o, r in projects])
+print(audit.T)
+# => one column per project, rows: stars, forks, license, last_commit,
+#    days_since_last_commit, contributors, open_issues, open_prs, archived
+```
+
+Two observations. The `search/issues` endpoint is rate-limited more strictly than most others (30 requests per minute for authenticated users); for a classroom audit across five projects this is fine, for a broader study you will want to page through the issues endpoint directly. And `anon: "true"` on the contributors endpoint tells GitHub to include commits from email addresses that do not resolve to current GitHub accounts, which matters because in many PIT projects a meaningful share of historical contribution is from now-departed staff whose accounts have lapsed.
+
+::: {.callout-tip title="The Missing Manual"}
+Two traps. First, a healthy-looking GitHub repo with recent commits is not evidence of sustainability. It might be one person making cosmetic updates before a grant report. Always check the *breadth* of commits: run `git shortlog -sne --since="1 year ago"` against a local clone and count how many distinct humans made substantive changes. Fifty commits in the last year from one committer is a solo project that has not yet been told. Twelve commits from seven committers is, in this field, genuinely healthy. Second, the GitHub API rate-limits unauthenticated requests to 60 per hour. If you run the audit without `GITHUB_TOKEN` set, you will get throttled before the third project and the errors will not be obvious. Create a personal access token with `public_repo` scope, put it in an environment variable, and confirm your headroom with a quick call to `/rate_limit` before you start.
+:::
+
+## Interpreting the audit
+
+The numbers are a first cut. They do not tell you who pays the maintainers. For that you have to read the project's About page, their annual reports, and their IRS Form 990 if they are a US nonprofit. You might find that the repo with fifteen active contributors is supported by a $4M/year philanthropic grant whose cycle ends in eighteen months, while the repo with three contributors sits on a state agency's operations budget and will quietly keep running for a decade. The first looks healthier on GitHub. The second is more sustainable.
+
+A simple rubric, scored 0 to 3 on each dimension for a 0 to 15 total, does useful disciplinary work:
+
+- **Code health.** License present, recent commits, open issues being triaged, at least one release tag in the past year.
+- **Maintenance breadth.** More than one active human contributor; more than one employer represented among contributors.
+- **Labor visibility.** The project publicly names the people who do the unglamorous work: translators, annotators, moderators, support staff.
+- **Data ownership.** The project has a written data policy, a stated position on whose data it holds, and a plausible answer to "what happens to the data if the project shuts down."
+- **Funding model.** The project has a named current funder, a stated runway, and a plausible non-grant funding path (government contract, fee-for-service, membership, endowment).
+
+A score of 12 or higher suggests the project will probably still exist in five years. A score below 6 suggests you should not build a dependency on it. Scores in between are where most real projects live, and the rubric's value is less the number and more the specific gaps it surfaces.
+
+## Ghost work and the invisible labor
+
+No audit of a data-for-good project is complete without asking about labor the product does not advertise. @gray2019 introduced the term **ghost work** for the tasks humans perform to make "artificial intelligence" appear to work: content moderation, image labeling, spam filtering, transcript cleanup, edge-case triage. Ghost work is not an implementation detail. It is the labor that sustains the system. It is also, in the PIT and data-for-good worlds, disproportionately performed by people who are paid little, credited never, and employed through layers of subcontracting that make their labor legally separate from the mission-driven organization whose logo is on the product.
+
+Benefits-access projects depend on translation. Someone translated the GetCalFresh intake flow into Spanish, Mandarin, and Vietnamese. That someone's name is not on the About page. Crisis-mapping projects depend on verification: every Ushahidi deployment involves volunteers or paid staff who triage incoming SMS reports, assess plausibility, and decide what to publish. Those verifiers are the platform, in a way that is not true of the software. When @chambers2025 critiques the "data-for-good imaginary," part of the critique is that it treats the technology as the thing and the labor as a regrettable overhead. Your audit should flip that framing. When the rubric asks about "labor visibility," it is asking whether the people whose work keeps the system alive appear anywhere a reader can find them.
+
+::: {.callout-note title="In the Public Interest"}
+In @sec-ch-08-ownership you learned to distinguish data ownership as control from data ownership as stewardship. Stewardship is a verb. It implies ongoing labor. The sustainability audit here is one way of asking who is doing that labor for a project you did not build. When a project scores well on "data ownership" in the rubric, that does not mean someone *has* the data in a legal-custody sense. It means someone is paid to care for it: to migrate it across storage platforms, to answer deletion requests, to maintain access controls, to renew the domain. Openness without stewardship is neglect with extra steps. Oversight without stewardship is performance art. The single most useful question you can ask a PIT or data-for-good project is not "is your code open source?" It is "who pays the person who will answer the phone in 2029?"
+:::
+
+## Exercises
+
+**Exercise 14.1 (Guided).** Conduct a sustainability audit of one US PIT project. Recommended choices: GetCalFresh, Colorado's PEAK benefits portal, or the Benefits Data Trust enrollment tools. Apply the GitHub API audit code above if the project has a public repo; if not, note the absence and document what you can find from the project's website, annual report, and recent news coverage. Produce a filled-in rubric with a paragraph justifying each score. 500 words plus the audit table.
+
+**Exercise 14.2 (Guided).** Do the same for a non-US project. Recommended choices: Ushahidi, Data4Change, TransparenciaMX, or Code for Pakistan's Civic Innovation Lab. Use the same rubric, and explicitly note where the rubric fits poorly. Global-South projects often operate under funding, governance, or regulatory conditions the US-centric rubric does not capture. Say so rather than pretending the score is comparable.
+
+**Exercise 14.3 (Analytic).** Pick one project from the two exercises above and identify three forms of invisible labor it relies on. For each, name the task, describe who is likely to be doing it, estimate how many hours per year the task consumes across the organization, and propose one specific way the project could make that labor visible in its public materials (annual report, website, credits page). Use @gray2019 as a reference. 400 words.
+
+**Exercise 14.4 (Design).** Propose a sustainability intervention for one of the projects you audited. Your proposal must include: one named role (title and fraction of FTE), a dollar figure for twelve months of salary and benefits, a specific funding source that could support it, and a paragraph on what would have to be true for the funding to actually bite. If you cannot estimate the dollar figure within a factor of two, your proposal is not done. Use public salary data (Glassdoor, Form 990 Schedule J, PayScale) to anchor it. 500 words plus a one-page budget.
+
+**Exercise 14.5 (Open-ended).** Return to the final-project sketch you drafted in Exercise 1.5. What would you need to keep it alive for five years after you leave the class? Write a short sustainability plan addressing: who hosts it, who owns the domain, who has the credentials, who answers when something breaks, who pays for storage, who decides when to retire it. Be honest. "I will maintain it in my free time" is an answer, but it is a weak one, and you should say why it is weak. 400 to 600 words. You will revisit this plan in @sec-ch-22-archival-deposits when you make an archival deposit of the project.
+
+## Looking ahead
+
+Chapter 15 turns from PIT and data-for-good to **GovTech and civic tech**, a neighboring but distinct conversation about building technology inside and around government itself. Where PIT is an academic-philanthropic formation and data-for-good is a corporate-philanthropic one, GovTech is an industry and civic tech is a movement. The sustainability problems you diagnosed here recur there in different forms: procurement cycles replace grant cycles, contractor lock-in replaces foundation churn. But the underlying question, who pays the maintenance cost, is the same. @sec-ch-16-critical-data-studies-refusal will then ask whether the right response to a project you cannot sustain is sometimes to refuse to build it at all.
+
+## Further Reading and Resources
+
+- Tara Dawson McGuinness and Hana Schank (2021), *Power to the Public* [@mcguinness2021]. The framing text for the PIT field. Read it as a manifesto, not a diagnosis.
+- Mary L. Gray and Siddharth Suri (2019), *Ghost Work* [@gray2019]. The canonical account of the invisible labor behind AI systems. The argument generalizes beyond the Mechanical Turk cases they study.
+- Ville Aula and Tero Erkkilä (2023), "Digital governance and the philanthropic political economy of the data-for-good" [@aula2023]. The clearest academic statement of the critique this chapter draws on.
+- Public Interest Technology University Network: <https://www.newamerica.org/pit/university-network/>. The hub page for the US academic consortium, including member institutions, fellowship listings, and the field's self-description [@pitun].
+- Code for America: <https://codeforamerica.org/>. The longest-running US civic tech organization. Their annual report is worth reading for its candor about what worked and what did not.
+- Ushahidi: <https://www.ushahidi.com/> [@ushahidi_about]. The long-running global-South counter-example. Their GitHub organization at <https://github.com/ushahidi> is a good place to run the audit code in this chapter.
+- Carter Chambers (2025), "The trouble with the 'data-for-good' imaginary" [@chambers2025]. The sharpest recent critique of the data-for-good framing.
+- GitHub REST API documentation: <https://docs.github.com/en/rest> [@github_rest_api]. The reference for the audit code.
+- Helena Karasti and Jeanette Blomberg (2018), "Studying infrastructuring ethnographically" [@karasti2018]. The theoretical backbone for thinking about maintenance as a first-class concern.
+- Code for America's 2023 transition memo on GetCalFresh becoming a state-operated service is a useful case study in succession planning; search the organization's blog for "CalFresh transition."

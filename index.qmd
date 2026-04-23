@@ -1,0 +1,84 @@
+---
+title: "Preface"
+---
+
+# Preface {.unnumbered}
+
+This is a book about doing data science for ends the public can name, contest, and use.
+
+You already know, or will shortly, that most data science is not that. It produces things for an employer to ship, a platform to monetize, or a manager to track. When it produces things for the public, it tends to produce dashboards: objects that look like accountability without being accountable to anyone in particular. This book is written for the student who has noticed the gap between what data science can do and what it typically does, and who wants a way in that is neither naive about the tools nor resigned about the politics.
+
+## Who this book is for
+
+If you are a student taking a data-science course, a journalism or policy student learning computational methods, a working practitioner considering a move into civic or public-interest work, an instructor looking for a course companion, or a public-sector analyst being asked to do "data-driven" work with no time to read the entire literature, this book is for you. It assumes introductory Python, comfort with the command line, and a willingness to read ten pages about a court case before writing the function that acts on it. It does not assume a background in science and technology studies, law, or accounting. It will give you enough of each to keep going.
+
+You can read it straight through, pick chapters relevant to a specific project, or use it as a course text. Instructors using it as a course companion will find that the five parts map cleanly onto a sixteen-week semester with room for two review weeks and a final project.
+
+## What the book does
+
+The book works through a conceptual arc in five parts:
+
+1. **Pressures**. The structural forces that constrain public knowledge: **enclosure** (access withdrawn), **exemption** (accountability legally or practically avoided), **erosion** (infrastructure and memory decaying through neglect).
+2. **Values**. The countervailing commitments that hold an "installed base" of accountability together: **openness**, **oversight**, and **ownership**. Chapter 5 introduces the six elements of the installed base (linkability, interpretability, continuity, safe scrutiny, authority, and remedy), and the next three chapters build out each value in turn.
+3. **Lineages**. What data scientists can inherit from the professions that have worked out public-interest practice over decades: **journalism** (watchdog methods and provenance), **law** (records, discovery, legal infrastructure), **accounting** (independent audit, reproducibility, change history), **planning** (stakeholder process and geographic imagination), and **engineering** (safety, testing, incident review).
+4. **Adjacent Conversations**. Neighboring fields whose relationship to public interest data science is close and complicated: **public interest technology** and **data for good**, **GovTech** and **civic tech**, and **critical data studies, data justice, and refusal**.
+5. **Genres**. The forms through which data scientists can actually contribute to public conversations: **op-eds**, **reports**, **research proposals**, **testimony**, **public comments** on rulemakings, and **archival deposits**.
+
+Parts I through IV teach you to see. Part V teaches you to act.
+
+## How the book is built
+
+Every chapter interweaves conceptual narrative with runnable Python tutorials at roughly a 50/50 balance. You will read two or three pages of argument, then read and run two or three pages of code that makes the argument visible in a specific case, then return to the argument. This is deliberate. Concepts without technique produce earnest seminars. Technique without concepts produces dashboards that nobody trusts.
+
+Code blocks do not run at build time. They are illustrative: you are expected to type them, adapt them, and run them yourself. The book's repository contains test fixtures, sample data, and the occasional larger notebook that a chapter only excerpts. When a chapter uses a real API (Wikimedia pageviews, regulations.gov, the Internet Archive), the endpoints cited were live as of the book's most recent release; if you find one that has moved, open an issue.
+
+Every chapter has **at least one "Missing Manual" callout** flagging something that textbooks usually omit: a surprising library default, a real-world API friction, the politics of a "simple" choice. Every chapter has **at least one "In the Public Interest" callout** tying the technical material back to openness, oversight, or ownership. Every chapter ends with **4–5 graduated exercises**, from guided ("follow these steps") to open-ended ("design a pipeline that…"), and a curated list of further resources.
+
+Chapters in Part V have one additional rule: they must end with a real submittable artifact. Not a thought experiment. An actual draft op-ed, report section, proposal page, testimony statement, public comment on a live rulemaking, or archival deposit with a resolvable identifier. A student who finishes Part V has a portfolio.
+
+## Running examples
+
+To give the book coherence across 22 chapters, a small set of running examples is threaded throughout. When a chapter needs a case, it reaches for one of these before inventing a new one:
+
+- Boulder and Denver municipal records (meeting minutes, agendas, budgets, permits, 311 requests).
+- Federal environmental data (EPA, NOAA, USGS) as sources for at-risk datasets.
+- Census and FRED APIs for demographic and economic context.
+- Wikipedia and Internet Archive APIs for archival work and link-rot audits.
+- Hugging Face model cards and datasheets for audit and documentation exercises.
+- A small synthetic worker-log fixture that lets us teach audit methods without violating anyone's privacy.
+- Public FOIA and CORA request data as a class-wide shared resource.
+- regulations.gov for Chapter 21 and any chapter touching federal rulemaking.
+
+By the end of the book you will have built, in parts, a small public-interest data infrastructure of your own: a cleaned and documented civic dataset published with Datasette, a disaggregated audit report, a refusal specification, an op-ed draft, a report with reproducible figures, a research proposal, a piece of testimony, a public comment on a live rulemaking, and an archival deposit on the Internet Archive or Zenodo.
+
+## What the book does not do
+
+Honesty up front. This book is partial in several ways that matter.
+
+It is **US-centric**. Most of the legal and administrative infrastructure discussed is American: FOIA and CORA, the Administrative Procedure Act, NIST, NSF, NYC Local Law 144. Where European, Latin American, and Global South counterparts exist (the Dutch SyRI case, IndiaStack, Ushahidi, the CARE Principles, Te Mana Raraunga), the book names them and points you to further reading, but it does not pretend to do them justice in three pages.
+
+It is **comfortable with records and less comfortable with refusal**. The installed-base framework takes linkability, durable identifiers, and retention as load-bearing. Chapter 16 takes that comfort seriously as a limit, drawing on Zong and Matias, D'Ignazio and Klein, the CARE Principles, and Indigenous data sovereignty scholarship. Readers who want to start from refusal and arrive at records (rather than the other way around) should read Chapter 16 early and often.
+
+It is **thin on the labor inside data work**. Gray and Suri's *Ghost Work* is cited, and Chapter 14 tries to name invisible maintenance labor explicitly, but a book that seriously treated data-labor economics would look quite different. Consider this an invitation to the reader, or to the next edition.
+
+It is **thin on measurement theory**. You will not find a full psychometric critique of the audit metrics in Chapter 7, and you will not find a deep philosophy-of-science treatment of what it means for a model to "work." Those books exist and are cited.
+
+It **over-relies on the professional-lineage framing**. Treating journalism, law, accounting, planning, and engineering as lineages the field can inherit from is a useful move, but every profession has its own pathologies, and the book does not do equal-time analysis of all of them. Read the criticisms. They are in the further-reading lists.
+
+These limits are not bugs to be patched. They are framing choices that enable the book to cohere. Knowing where they bind is part of what you are learning.
+
+## How to contribute
+
+This book lives in a git repository. Fork it, improve it, and open a pull request. Before you do, read `claude.md`, which codifies the voice, structure, and citation conventions. Typo fixes and small corrections can come in as pull requests directly. Rewrites of sections, new examples, or proposed new chapters should start as an issue so we can talk about them first.
+
+Students whose contributions shape the book are named in the acknowledgments. Some of the best chapters in future editions will be written by readers who encountered the first edition and saw what was missing.
+
+## A note on the AI-assisted draft zero
+
+The first complete draft of this book was produced with substantial assistance from Claude, Anthropic's assistant, following a detailed editorial prompt written by the author. The prompt is preserved in the repository; the disclosure statement is in Appendix A. Every chapter has been reviewed and revised by the author. A book about public-interest data science should not hide how it was made, any more than a model card should hide its training data.
+
+## Acknowledgments
+
+The framework owes its shape to years of conversation with colleagues in the INFO department at CU Boulder, students in previous versions of INFO 46XX who asked the questions this book tries to answer, and the infrastructure studies and STS communities whose citations fill the bibliography. Specific individuals will be named once the revision cycle is complete. Any errors are the author's, and there will be errors. File an issue.
+
+Now to Chapter 1.

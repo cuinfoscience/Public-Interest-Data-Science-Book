@@ -1,0 +1,179 @@
+---
+title: "GovTech and Civic Tech"
+execute:
+  eval: false
+---
+
+# GovTech and Civic Tech {#sec-ch-15-govtech-civic-tech}
+
+On October 1, 2013, HealthCare.gov launched and immediately collapsed. The federal insurance marketplace had been built by a constellation of prime contractors through a procurement process whose incentives rewarded compliance with the Statement of Work rather than delivery of a working system. Six weeks of public humiliation, a rescue squad flown in from the private sector, and a Presidential apology later, two institutions were born: the United States Digital Service, housed in the Executive Office of the President, and 18F, housed in the General Services Administration. Their pitch was simple. Government cannot buy its way out of software problems if the people writing the contracts do not know what software is. Both offices were founded on the conviction that technical competence has to live inside the state, not at the end of a procurement chain.
+
+That conviction has had a rough decade. 18F shipped a catalog of reusable components, a hiring pipeline for civic-minded technologists, and a reputation for finishing what it started. It also spent its entire institutional life as a target. Inspector General reports questioned its cost-recovery model. Successive administrations slashed its budget, restored it, and slashed it again. By 2025 the office was operating under an anti-DEI executive order that made it hard to retain the staff it had spent a decade recruiting, and its institutional future was once again being debated on a rolling basis. The United States Digital Service, rebranded in 2025 by executive order and partially repurposed, was likewise caught in the cycle. The lesson these trajectories offer is not that internal capacity is a bad idea. It is that internal capacity has no natural constituency, whereas vendor capacity has a lobbying association. Chapter 7's argument about oversight, and Chapter 8's argument about ownership, both run through the question of where the technical knowledge sits. When it sits with a vendor, the vendor owns what the public can inspect.
+
+This chapter is the second in Part IV. It extends @sec-ch-14-pit-data-for-good by asking a sharper question. If public interest technology is the professional identity, what are the organizational forms through which it actually reaches the public? Two candidate answers dominate the field. **GovTech** refers to firms that sell software and services to the government. **Civic tech** refers to technologists, often volunteer or philanthropically funded, who build alongside or outside government. The two are sometimes described as complements. They have very different accountability levers. GovTech is accountable, in principle, through procurement law, contract terms, and the audit rights retained by the buyer. Civic tech is accountable, in principle, through the communities it serves and the funders it relies on. In practice, as @bharosa2022 argues in his research agenda on the rise of GovTech, neither accountability story holds up without intentional construction. Procurement is where governance happens or does not. And civic tech is sustained only as long as someone writes the check.
+
+## Five models on one map
+
+It helps to fix five reference points before going further.
+
+The **United States Digital Service** was founded in 2014, modeled on the UK's Government Digital Service, and designed to deploy small teams of technologists into agencies in crisis. It is internal capacity, funded through the executive branch, with limited authority to compel. The **18F** office, founded the same year inside the General Services Administration, was designed as a fee-for-service consultancy to other agencies. Both are US examples of what @brown2017 call the "Government as a Platform" (GaaP) ambition, where the state itself provides shared services that reduce duplication across agencies.
+
+The **UK Government Digital Service** (GDS), founded in 2011, is the elder sibling the US offices tried to copy. Its Service Manual and Service Standard became export goods, adopted in variant form by Canada, Australia, Singapore, and others. Estonia's **X-Road**, by contrast, is not primarily about service design. It is an interoperability layer. X-Road is a secure data exchange protocol that lets one Estonian agency query another's database without either agency building a custom integration, and it sits underneath e-residency, digital signatures, and most of what people mean when they praise "Estonian e-government." Governance in the Estonian model happens through the interoperability spec. If your system does not speak X-Road, it does not get to play.
+
+The fifth reference point is **IndiaStack**, the layered set of APIs built around the Aadhaar biometric identity system. IndiaStack is what a GaaP platform looks like at population scale, and it is what @taylor2021 calls the hard case. Presence-less, paperless, cashless service delivery is a real improvement when it works, and a serious violation when it does not. Biometric enrollment of over a billion people was not, in any meaningful sense, consented to, because the alternative to enrollment was exclusion from subsidized food rations, banking, and in some cases public-sector employment. @rao2019 tracks how Aadhaar's optionality eroded in practice even where it was legally preserved. The IndiaStack case does not discredit the GaaP ambition. It names the governance stakes of building at that scale without the installed base of @sec-ch-05-installed-base actually in place.
+
+These five cases do not share a politics. They share a structural question: where does technical capacity sit, and what does it have to answer to?
+
+## Procurement is where the governance is
+
+Most of a government's relationship with technology is mediated by contracts. A Request for Proposal (RFP) is not, at first glance, a governance document. It is a solicitation. Vendors read it and decide whether to bid. But the RFP is where the buyer declares, in binding language, what the system must do, what data it must produce, what interfaces it must expose, and what happens when the contract ends. If the RFP does not require the vendor to export data in an open format on termination, the vendor owns the database. If the RFP does not require logging, there will be no logs to audit. If the RFP does not reserve the buyer's right to publish, the public cannot see what it paid for.
+
+@brown2017 make this point at the level of platform theory: Government as a Platform succeeds or fails at the interface specifications, not at the marketing. The interface specifications live in the contract. You can read a thousand op-eds about digital government without encountering a single clause from an actual contract, which is why the op-eds tend to generalize in ways the contracts do not.
+
+Consider a running example. The State of Colorado, like most US states, maintains a procurement portal where active solicitations are posted. Boulder's municipal purchasing division does the same at the city level. A plausible RFP type for a public-interest audit is a benefits eligibility modernization, a permit portal, or a data warehouse consolidation. Pick one. For the rest of this chapter, assume you are looking at a Colorado RFP for a permit portal that would replace the existing paper-and-PDF process in a mid-sized county. The vendor will build a web application, a backend database, an API for third-party integrations, and a payment integration. The county will pay in milestone installments over three years and then enter a five-year operations-and-maintenance (O&M) period.
+
+Your first move, reading this RFP, is to map what artifacts the system would produce. A permit application is a record. A decision is a record. A payment is a record. A site inspection generates a record. An appeal generates a record. Every one of these is either stored in the vendor's database, forwarded to the county's records system, or both. The question the RFP has to answer, and often fails to answer, is which of these records the county owns, in what format they can be exported, and what happens to them when the contract terminates.
+
+::: {.callout-note title="In the Public Interest"}
+The contract is the governance. This claim is not rhetorical. If the RFP does not require the vendor to export data in a non-proprietary format at no additional cost, on demand, with documented schema, then the vendor owns the database in operational terms even if the county owns it in legal terms. You met this distinction in @sec-ch-08-ownership: legal title is not the same as practical control. Oversight, as @sec-ch-07-oversight developed it, requires the ability to see. A clause that requires nightly exports to an S3 bucket the county controls, in Parquet or CSV plus a JSON schema file, is worth more than fifty pages of strategic planning documents. The procurement clause is where linkability, interpretability, continuity, and safe scrutiny are either bought or given up. If you take one practice from this chapter, let it be this: when a colleague tells you a public system is "well governed," ask to see the contract.
+:::
+
+## Five clauses worth writing
+
+Here are five procurement clauses, expressed as YAML for readability, that any public-interest-oriented buyer should consider boilerplate. They are not legal drafting. They are the specification from which a legal drafter works.
+
+```yaml
+data_export:
+  trigger: [on_demand, quarterly, on_termination]
+  format: [csv, parquet]
+  schema: json_schema_v7
+  destination: buyer_controlled_storage
+  delivery_sla_hours: 72
+  cost: included_in_base_contract
+
+interoperability:
+  apis:
+    style: REST
+    auth: oauth2
+    spec: openapi_3_1
+    rate_limits_documented: true
+  identifiers:
+    persistent: true
+    resolvable_across_agencies: true
+    scheme: [ark, doi, uuid_v4]
+
+auditability:
+  immutable_log:
+    events: [read, write, delete, access_grant, access_revoke]
+    retention_years: 7
+    export_format: ndjson
+  third_party_inspection:
+    allowed: true
+    notice_days: 10
+    scope: [code, logs, schemas]
+
+source_code:
+  ownership: buyer
+  delivery: git_repository_with_full_history
+  license_on_termination: public_domain_or_cc0
+
+vendor_transition:
+  termination_assistance_months: 6
+  knowledge_transfer: documented_runbooks
+  successor_onboarding: required
+  data_migration_tested_quarterly: true
+```
+
+Read those back. Each clause is a specific technical commitment with a specific failure mode if you omit it. Omit `data_export` and the vendor can charge a five-figure extraction fee on termination. Omit `interoperability.identifiers.persistent` and two years later no one will be able to link a 2026 permit record to a 2028 inspection record because the IDs reset when the database was migrated. Omit `auditability.immutable_log` and you will not be able to tell, after the fact, whether a decision was overridden by a human or by a scheduled job. Omit `source_code.ownership` and you have a vendor lock-in problem that will outlast the people who wrote the contract. Omit `vendor_transition` and the moment you want to switch vendors you will discover that switching is impossible, which is how vendor lock-in becomes a permanent governance condition rather than a temporary inconvenience.
+
+::: {.callout-tip title="The Missing Manual"}
+Government APIs have documentation that describes what the endpoint returns. The documentation almost never describes what it does not return. The Census Bureau's American Community Survey API, for example, returns an array-of-arrays where the first row is the column headers. If you feed the raw response to `pd.DataFrame` the headers will land as a data row and your first real record will be read as column names. The fix is trivial once you know: `pd.DataFrame(data[1:], columns=data[0])`. The fix is a small tax. The tax you did not anticipate is that the list of variables an agency publishes in its metadata is not the list of variables it considers reliable, and the list of geographies the endpoint accepts is not the list of geographies for which estimates exist. Document these gaps for yourself. Then document them for the next person.
+:::
+
+## A small Census API exercise
+
+You can run an actual government API call in a few lines. The Census Bureau's ACS 5-year endpoint is documented at `census.gov/data/developers` and returns estimates for any level of geography down to block group. Use it to pull median household income for all Colorado counties for the most recent vintage.
+
+```python
+import requests
+import pandas as pd
+
+# ACS 5-year, 2022 vintage. Variable B19013_001E is median household income.
+url = "https://api.census.gov/data/2022/acs/acs5"
+params = {
+    "get": "NAME,B19013_001E,B19013_001M",
+    "for": "county:*",
+    "in": "state:08",  # Colorado FIPS
+}
+
+response = requests.get(url, params=params, timeout=30)
+response.raise_for_status()
+payload = response.json()
+
+# The Missing Manual move: first row is headers, the rest is data.
+df = pd.DataFrame(payload[1:], columns=payload[0])
+df = df.rename(columns={
+    "B19013_001E": "median_income",
+    "B19013_001M": "moe",
+})
+df["median_income"] = pd.to_numeric(df["median_income"], errors="coerce")
+df["moe"] = pd.to_numeric(df["moe"], errors="coerce")
+df = df.sort_values("median_income", ascending=False)
+print(df[["NAME", "median_income", "moe"]].head())
+# => Douglas County, Broomfield County, Elbert County at the top;
+#    margin of error column tells you how much to trust each point estimate.
+```
+
+Plotting is one `matplotlib` call away.
+
+```python
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(8, 10))
+top = df.head(20)
+ax.barh(top["NAME"], top["median_income"], xerr=top["moe"])
+ax.invert_yaxis()
+ax.set_xlabel("Median household income (USD)")
+ax.set_title("Colorado counties: ACS 5-year median income, 2022 vintage")
+fig.tight_layout()
+fig.savefig("ch15_acs_median_income.png", dpi=120)
+```
+
+Two things are worth noticing. First, the margin of error bars are not decorative. ACS is a sample survey; small counties have margins of error so wide that the point estimate is almost meaningless on its own. Any dashboard that publishes the point estimate without the MOE is misreading the data. Second, the API required no authentication for a small request like this one, but the production pattern is to register for an API key and pass it as `&key=...` so the Bureau can rate-limit you without guessing. The same pattern applies to the Federal Reserve's FRED API (`fred.stlouisfed.org/docs/api`), which requires a key, returns JSON with a clearer schema, and is the right endpoint if your question is about macroeconomic rather than demographic series.
+
+## Why the distinction between GovTech and civic tech matters
+
+A GovTech vendor answers to its client. The client is the government. If the government writes good contracts, GovTech becomes a reasonable way to deliver public services. If the government writes bad contracts, GovTech becomes a mechanism for extracting rents from public budgets while producing systems the public cannot inspect. The accountability lever is procurement, amplified by the audit and inspection rights written into the contract. @bharosa2022 raises the "Trojan horse" worry specifically: if a state's internal capacity has atrophied, it no longer has the expertise to write contracts that hold vendors accountable, and GovTech becomes structurally extractive even where individual vendors are well-intentioned.
+
+A civic tech project answers to its funders and, in principle, to the communities it serves. If the funder is a foundation, the accountability lever is the foundation's theory of change and renewal criteria. If the users are community members, the accountability lever is their continued use, which is easier to observe than to measure. @aragon2020 make the case, in *Human-Centered Data Science*, for building with communities rather than for them. That is a methodological commitment, but it does not solve the funding problem. As @sec-ch-14-pit-data-for-good developed, civic tech projects are structurally prone to die between grant cycles, and the distinction you are drawing now matters because the failure modes are different. A failed GovTech contract produces a locked-in system that no one can afford to replace. A failed civic tech project produces a dead GitHub repo and a handful of volunteers who do not get paid.
+
+Neither failure mode is inevitable. Both become more likely when the people commissioning the work do not know what they are looking at. Reading a procurement document with the clauses above in mind, or reading a civic tech project's governance page with @sec-ch-14-pit-data-for-good's sustainability rubric in mind, is part of the craft. The craft is not glamorous. @sec-ch-12-planning argued that planning's lineage contributes rigor about who bears costs and who bears benefits. GovTech and civic tech inherit that question. The contract, or the grant agreement, is where the answer gets written down.
+
+## Exercises
+
+**Exercise 15.1 (Guided).** Go to the Colorado state procurement portal or Boulder's municipal purchasing site and find an active or recently-closed RFP for a software system. Read the Statement of Work in full. Produce a one-page map of the artifacts the winning system would generate: records (what kinds, how many per year), documents (what formats), and processes (which ones would leave a trace in the system). For each artifact, write one sentence saying whether the RFP requires that artifact to be exportable by the buyer, and in what format.
+
+**Exercise 15.2 (Applied).** Take the RFP from Exercise 15.1. Draft three to five additional procurement clauses, in YAML or markdown, that would close the gaps you found. Each clause should name a specific data type, format, retention period, and access condition. Share your draft with a classmate and defend each clause against a skeptical vendor's likely objection.
+
+**Exercise 15.3 (Technical).** Pull a dataset from either the Census ACS API or the FRED API. Choose a question you actually want the answer to. Document the call, the response structure, and at least one gotcha you encountered that was not in the published documentation. Produce one chart. Write 200 words on what the chart shows and what it cannot show.
+
+**Exercise 15.4 (Comparative).** Write a 600-word comparison of two "government as a platform" initiatives drawn from this list: USDS, 18F, GDS UK, Estonia X-Road, IndiaStack. Your comparison should address funding model, accountability structure, and scope of authority. Cite at least one scholarly source per case, including @bharosa2022 or @brown2017. Close with a paragraph on what each case teaches about where internal state capacity should sit.
+
+**Exercise 15.5 (Open).** What data would you require a vendor to export before you would declare a public-sector contract complete? Write a one-page specification with a title, a scope section, five to ten required exports, a default format for each, and a definition of "complete" that a county attorney could attach to a contract. Treat this as a reusable template. You will use it again in @sec-ch-18-reports when you write the report section on public-sector procurement, and again in @sec-ch-21-public-comments if you ever comment on a federal IT rulemaking.
+
+## Looking ahead
+
+@sec-ch-16-critical-data-studies-refusal closes Part IV by turning the critical lens back on the book's own framing. If GovTech and civic tech are the organizational forms through which public interest technology reaches the public, critical data studies is the tradition that asks whether "reaching the public" is always the right ambition. Some of the traditions Chapter 16 takes up, including Indigenous data sovereignty, abolitionist critique, and feminist refusal, would read the procurement clauses in this chapter and ask a different question: what data should not be collected at all, and whose consent to the platform was never asked? The contract is where governance happens. It is also where extraction happens. The next chapter holds both truths at once.
+
+## Further Reading and Resources
+
+- United States Digital Service, <https://www.usds.gov/>. The founding US internal-capacity office, with a Digital Services Playbook worth reading even if you never intend to work there.
+- 18F, <https://18f.gsa.gov/>. The GSA-housed sibling, with open-source components and case studies that double as procurement worked examples.
+- Estonia's X-Road, <https://x-road.global/>. The canonical interoperability protocol; the technical documentation is unusually honest about tradeoffs.
+- Code for America, <https://codeforamerica.org/>. The US civic-tech anchor institution, with GetCalFresh and the Clear My Record initiative as case material.
+- GOV.UK Service Manual, <https://www.gov.uk/service-manual>. The UK's public playbook for designing government services; still the single best operational reference in the field.
+- US Census Bureau API User Guide, <https://www.census.gov/data/developers/guidance/api-user-guide.html>. The endpoint used in this chapter; read the "Known Issues" section before you write any code against it.
+- FRED API documentation, <https://fred.stlouisfed.org/docs/api/fred/>. The Federal Reserve Bank of St. Louis's macroeconomic series, with a cleaner schema than Census and a more opinionated rate limiter.
+- Nesta's GovTech landscape reports, <https://www.nesta.org.uk/>. UK-grounded but globally relevant mapping of the GovTech vendor ecosystem.
+- Linnet Taylor, "The price of certainty" [-@taylor2021]. The IndiaStack critique in its most citable form; read alongside any breathless GaaP advocacy.
+- Nitesh Bharosa, "The rise of GovTech: Trojan horse or blessing in disguise?" [-@bharosa2022]. A research agenda that names the hard questions explicitly and refuses to resolve them prematurely.

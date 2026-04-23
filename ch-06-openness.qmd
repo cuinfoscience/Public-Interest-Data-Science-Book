@@ -1,0 +1,251 @@
+---
+title: "Openness"
+execute:
+  eval: false
+---
+
+# Openness {#sec-ch-06-openness}
+
+Chapter 5 argued that the six elements of the installed base are the conditions under which "public interest" can be said to be served by a data system rather than invoked on its behalf. This chapter takes the first three of those elements (linkability, interpretability, and the openness-facing portion of continuity) and turns them into a practice. The practice has a name most readers will already have heard. It is called open data, and the name is doing too much rhetorical work.
+
+Open data as a programmatic idea is roughly twenty years old. It has produced real goods: the federal data.gov portal, municipal 311 feeds, FEC disbursement extracts, the census ACS API. It has also produced a great deal of what practitioners now call, with a mixture of resignation and contempt, the data dump. A data dump is a civic file dropped onto a portal with a permissive license, no documentation, inconsistent columns, encoding errors, and a filename like `final_final_v3.xlsx`. It is technically open. It satisfies the ordinance. For any public that does not already work inside the agency, it is functionally unusable.
+
+The distinction this chapter insists on is between **formal openness** and **durable legibility**. Formal openness is what a compliance officer can certify: the file exists at a URL, the license permits redistribution, the API returns a 200. Durable legibility is what a non-expert can actually do with the thing six months from now: load it, understand its columns, cite it, compare it to last year's version. Formal openness without legibility reproduces exemption under a different name. The agency has technically satisfied disclosure while ensuring that nobody outside can use the disclosure to act.
+
+## Posting is not publishing
+
+An analogy with scholarly publication is useful. A preprint PDF on a researcher's hard drive is not a publication. A PDF uploaded to a webserver with no metadata is not a publication either, though it meets some naive definition of "posted." A publication is the combination of a document, a record about the document (title, author, date, version, license), a citable handle (a DOI, an ISBN, a versioned URL), and a commitment from some institution that the handle will continue to resolve. Publication is a social act, not a file-system operation.
+
+The same distinction applies to data. `df.to_csv("out.csv")` is a file-system operation. It produces a file. It does not produce a publication. A published dataset requires, at minimum, provenance (where did this come from, what was done to it), documentation (what the columns are and what they mean), a license, a citation, and a hosting commitment (where it will live, and for how long). The FAIR principles (findable, accessible, interoperable, reusable) name four of these without quite naming the last. This chapter adds legibility-to-publics as the extension FAIR understates: a dataset that is machine-interoperable and human-inscrutable is FAIR and useless. Hutchinson and colleagues [-@hutchinson2021] make the adjacent argument for machine-learning datasets, borrowing from software engineering the habit of treating a dataset as an artifact with a lifecycle, not a file.
+
+Zuiderwijk and Janssen [-@zuiderwijk2014] reviewed national open-data policies and found the same pattern across countries: the policies are clearest on what agencies must post and weakest on what they must sustain. You can write an open-data ordinance in an afternoon. You cannot write, in any afternoon, the ongoing labor that keeps a civic dataset findable, legible, and citable three budget cycles from now. That labor is what Star and Ruhleder [-@star1994] named as the installed base, and what Karasti and Blomberg [-@karasti2018] insisted had to be studied as work rather than assumed as context. Openness, in this chapter's operational sense, is the configuration of artifacts and commitments that makes that labor repeatable by someone other than its originator.
+
+## Licensing as a governance choice
+
+One short detour before the tutorial. An open license is not a technical checkbox. It is a small act of governance. The license you attach to a civic dataset tells downstream users what they may do, what they must do in return, and what you expect when your dataset is recombined with others.
+
+Three license families come up repeatedly. **CC-BY 4.0** (Creative Commons Attribution) permits any reuse as long as attribution is given. It is appropriate for most municipal datasets where the agency wants credit trails but does not want to constrain reuse. **CC0** waives copyright entirely, placing the dataset as close to the public domain as a contract can reach. It is appropriate when the dataset is already the product of public work and should have no friction at all. **PDDL** (the Open Data Commons Public Domain Dedication and License) is CC0's database-specific cousin, designed for jurisdictions where databases have a separate copyright status from their contents. For U.S. civic data, CC-BY 4.0 or CC0 will cover almost every case.
+
+What to avoid: "non-commercial" restrictions (CC-BY-NC). Journalists and small newsrooms sell their work. A non-commercial clause tells the local paper it cannot use the dataset without a lawyer's letter. That is not openness. It is a defensive crouch dressed up in a compliance costume.
+
+## The running example: Boulder campaign finance
+
+The tutorial uses a campaign finance extract from a city open-data portal. Campaign finance is the most politically interesting of the common civic datasets because it sits at the intersection of accountability and messiness. The file tends to be a CSV with predictable problems: dates as strings, currency with dollar signs and commas, donor names inconsistently capitalized ("SMITH, JOHN" on one row, "John Smith" on the next, "j smith" on a third), employer and occupation fields sometimes blank and sometimes filled with "SELF" in several creative spellings, and an `amount` column that occasionally contains negative values for refunds without documenting that convention.
+
+You start from the raw file, `boulder_campaign_finance_raw.csv`, which the book provides in its data folder. In practice you would download the equivalent from the city's portal. The portal will offer a filename like `Campaign_Finance_Filings.csv` with no versioning and no changelog; that is the first problem you will document. Treat the raw file as immutable. Do not edit it in Excel. Excel will silently coerce columns and you will not find out until a reader writes to tell you the dates are off by a month.
+
+### Ingest and inspect
+
+```python
+import pandas as pd
+
+raw = pd.read_csv(
+    "data/boulder_campaign_finance_raw.csv",
+    dtype=str,            # read everything as string first
+    keep_default_na=False # do not turn empty strings into NaN yet
+)
+raw.shape
+# => (3421, 11)
+
+raw.columns.tolist()
+# => ['Filing Id', 'Contributor', 'Address', 'Employer',
+#     'Occupation', 'Amount', 'Date', 'Election',
+#     'Candidate', 'Committee', 'Filing Type']
+
+raw.head(3)
+```
+
+Reading everything as string on first pass is a habit worth keeping. Pandas's default type inference is confident and frequently wrong: it will read a zip code with a leading zero as an integer, or a dollar amount as a string if one row has a stray character. Taking inference off the table lets you see what is actually there.
+
+### Clean
+
+```python
+import re
+
+df = raw.copy()
+
+# Lowercase column names, snake_case
+df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
+
+# Dates: the portal gives mm/dd/yyyy; parse and keep ISO 8601
+df["date"] = pd.to_datetime(df["date"], format="%m/%d/%Y", errors="coerce")
+df["date"].isna().sum()
+# => 4   four rows had a blank or malformed date; keep them, flag them
+
+# Currency: strip $ and , then cast to float
+df["amount_raw"] = df["amount"]
+df["amount"] = (
+    df["amount"]
+    .str.replace(r"[\$,]", "", regex=True)
+    .replace("", pd.NA)
+    .astype("Float64")
+)
+
+# Donor names: title-case, collapse whitespace
+def normalize_name(name):
+    if not isinstance(name, str):
+        return pd.NA
+    name = re.sub(r"\s+", " ", name).strip()
+    # "SMITH, JOHN" -> "John Smith"
+    if "," in name:
+        last, first = [p.strip() for p in name.split(",", 1)]
+        return f"{first.title()} {last.title()}"
+    return name.title()
+
+df["contributor_clean"] = df["contributor"].apply(normalize_name)
+
+# Preserve the original; do not destroy evidence
+assert "contributor" in df.columns
+```
+
+Three habits are worth naming. First, every destructive transformation keeps the original column. `amount_raw` survives next to `amount`; `contributor` survives next to `contributor_clean`. If a reader disputes your normalization, they can recover what was in the source. Second, the date parse uses `errors="coerce"` rather than silently dropping failures. The four malformed dates stay visible in the frame so a datasheet can mention them. Third, the normalization is documented inline, because "we title-cased the donor names" is a choice future you will have forgotten in six weeks.
+
+### Normalize into an analysis-ready frame
+
+```python
+keep = [
+    "filing_id", "date", "contributor_clean", "contributor",
+    "address", "employer", "occupation",
+    "amount", "amount_raw",
+    "election", "candidate", "committee", "filing_type",
+]
+clean = df[keep].sort_values("date").reset_index(drop=True)
+clean.to_csv("data/boulder_campaign_finance_clean.csv", index=False)
+clean.to_parquet("data/boulder_campaign_finance_clean.parquet")
+```
+
+Two formats, intentionally. CSV is the compatibility format. Parquet preserves the types you just fought to recover, so whoever reads it six months from now does not repeat your work. Publish both.
+
+## Writing the README
+
+A dataset's README is the first thing a non-specialist will read and often the only thing. Write it as prose, not as bullet points of field names. At a minimum, it needs six sections:
+
+1. **What this is.** One paragraph, plain language, for a reader who has never heard of the dataset.
+2. **Provenance.** Where the raw data came from, with a URL and a retrieval date. What laws or ordinances require its publication.
+3. **What was done to it.** A short narrative of the cleaning steps, with a pointer to the script that produced the cleaned file.
+4. **Column documentation.** Every column, one line each, in file order. Units. Missing-value conventions.
+5. **License.** Named (e.g., CC-BY 4.0) with a link to the canonical text.
+6. **Canonical citation.** How the dataset should be cited. This is where a DOI goes once you have one; see @sec-ch-22-archival-deposits for the Zenodo workflow. Until then, a versioned URL and a date.
+
+A README that fits on a single page and covers those six sections outperforms, in practice, an 80-page PDF "data dictionary" that nobody reads.
+
+## The datasheet
+
+A README is for users. A **datasheet** is for auditors, downstream reusers, and future maintainers who need to know how the dataset came to exist and what it is and is not fit for. Gebru and colleagues [-@gebru2021] proposed the form, adapting it from hardware datasheets. @sec-ch-04-erosion explained why every dataset worth preserving needs one. This chapter is where you write one.
+
+A compact datasheet for the campaign finance file has seven sections:
+
+- **Motivation.** Why was this dataset created? Who funded it?
+- **Composition.** What do the rows represent? What are the columns? Are there sensitive fields (addresses, employer names) and what is their status?
+- **Collection process.** How was the data gathered? By whom? Under what legal authority?
+- **Preprocessing.** What cleaning, filtering, or normalization has been applied between the raw source and this release? (Point to the script.)
+- **Uses.** What has this dataset been used for? What uses are appropriate? What uses should be approached with caution?
+- **Distribution.** Under what license? At what URL? With what permanence commitment?
+- **Maintenance.** Who is responsible for updates? How should errors be reported?
+
+Two pages is plenty. The point is not comprehensiveness. The point is that a reader who will never meet you can, from the datasheet alone, decide whether to trust the file for their purpose.
+
+::: {.callout-note title="In the Public Interest"}
+Openness without interpretive legibility reproduces exemption under a different name. Chapter 5 names six installed-base elements; this chapter's work touches three. **Interpretability** is what the README and datasheet produce: the file's categories, units, and transformations become legible to a reader who did not build it. **Continuity** is what versioned, citable hosting produces: the dataset exists under a handle that will still resolve after the next vendor contract or administrative reorganization. **Linkability** is what the stable filing identifiers and ISO-8601 dates preserve: a row in this release can be joined to the same row in next year's release. A civic dataset that skips the README, the datasheet, the versioned citation, and the long-run hosting commitment has satisfied the ordinance and failed the public. That failure is precisely what the six elements were designed to name.
+:::
+
+## Publishing with Datasette
+
+Datasette is Simon Willison's open-source tool for publishing SQLite databases as browsable, queryable websites. It is the smallest plausible piece of infrastructure that turns a cleaned CSV into something a non-expert can explore. You point it at a SQLite file; it gives you a web UI with faceted search, a read-only SQL console, a JSON API, and a handful of export formats. For civic datasets in the single-gigabyte range, it is close to ideal.
+
+First, convert the cleaned file to SQLite and serve it locally.
+
+```bash
+pip install datasette sqlite-utils datasette-publish-fly
+
+# Build a SQLite database from the cleaned CSV
+sqlite-utils insert boulder.db contributions \
+  data/boulder_campaign_finance_clean.csv --csv --detect-types
+
+# Add metadata: title, license, source, column descriptions
+# (metadata.yml author writes this once; datasette reads it)
+datasette serve boulder.db \
+  --metadata metadata.yml \
+  --port 8001
+```
+
+Open `http://localhost:8001/` and click around. You should see the table, the column facets, and a search box. If you typed a column description into `metadata.yml`, it will show up as hover text on the column header. If you did not, you will see why you should: the UI will read "column `employer`, no description provided" and your reader will learn nothing.
+
+The `metadata.yml` is where your README's column documentation lives inside Datasette. A minimum version:
+
+```yaml
+title: "Boulder campaign finance filings"
+description_html: |
+  <p>Campaign finance disclosures for Boulder municipal elections.
+  See <a href="README.md">README.md</a> and
+  <a href="datasheet.md">datasheet.md</a> for provenance.</p>
+license: CC-BY 4.0
+license_url: https://creativecommons.org/licenses/by/4.0/
+source: Boulder Open Data Portal
+source_url: https://open-data.bouldercolorado.gov/
+databases:
+  boulder:
+    tables:
+      contributions:
+        description: "One row per reported contribution, post-cleaning."
+        columns:
+          filing_id: "Unique identifier assigned by the city filing system."
+          date: "ISO 8601 date of the contribution."
+          contributor_clean: "Donor name, normalized to Title Case."
+          amount: "Contribution amount in USD. Negative values are refunds."
+```
+
+### Deploying to free hosting
+
+Local Datasette is useful for development. For the class, you want a URL someone else can visit. `datasette publish` wraps a handful of cloud providers; the Fly.io path is the cheapest currently viable.
+
+```bash
+# One-time setup
+fly auth signup           # or: fly auth login
+# Datasette wraps Dockerfile creation and deploy
+datasette publish fly boulder.db \
+  --app boulder-campaign-finance \
+  --metadata metadata.yml \
+  --install datasette-vega \
+  --install datasette-cluster-map
+```
+
+The `--install` flags pull in two plugins worth knowing. `datasette-vega` gives quick in-browser charts. `datasette-cluster-map` geocodes rows that include latitude and longitude. Neither is essential; both turn a queryable table into something a city council staffer will actually browse.
+
+::: {.callout-tip title="The Missing Manual"}
+`df.to_csv("out.csv")` is not publication. Publication requires metadata, a citation, a license, and a place the file is committed to live. Until you have all four, you have a file. Two traps in the Datasette workflow are worth flagging before you hit them. First, `datasette publish fly` will cheerfully try to ship a SQLite file larger than the free tier's 512 MB container limit and silently fail with an error that reads, to the uninitiated, like a network problem. If your database is big, filter it down, move to a paid tier, or split it into a separate "archive" database you publish less often. Second, the free tier's machine sleeps after inactivity, so the first visitor each morning waits ten seconds for a cold start. None of this is in the quickstart. All of it will happen to you.
+:::
+
+### Registering a citation
+
+A live Datasette URL is a useful demo. It is not, by itself, a citation. URLs drift, organizations shut down, Fly.io apps get renamed. For a dataset you want to cite in a report or a peer-reviewed paper, you want a DOI, the citation infrastructure the research world has settled on. The forward reference is @sec-ch-22-archival-deposits, which walks through depositing on Zenodo and getting back a DOI you can include in the README's "canonical citation" section. The layered model is: Datasette is the interactive front door, a versioned Zenodo deposit is the permanent record, and the README ties them together with a clear "cite this" block. Compare with @sec-ch-08-ownership on access tiers when some of the underlying data cannot be fully open.
+
+Before you publish, one last sanity pass. @sec-ch-16-critical-data-studies-refusal makes the case for a category audit before release: read the columns again with the question "is there anyone whose interests are harmed by the way this is named, categorized, or made joinable?" Campaign finance is less fraught than, say, 311 calls or housing-code violations, but even it exposes addresses and employers. The public-interest practice is not to stop publishing. It is to publish with the audit documented.
+
+## Exercises
+
+**Exercise 6.1 (Guided).** Download the provided raw campaign finance CSV (or pull an equivalent file from your own city's open-data portal). Reproduce the ingest, clean, and normalize steps in this chapter. Commit the cleaning script and both output formats (CSV and Parquet). Write 150 words describing one decision you made during cleaning that a reasonable person could have made differently.
+
+**Exercise 6.2 (Guided).** Write a README and a datasheet for the dataset you produced in 6.1, using the section templates in this chapter. Target length: one page of README, two pages of datasheet. Save both as Markdown in `exercises/ch06_openness/`. Include a license choice (CC-BY 4.0 or CC0) and justify it in one sentence.
+
+**Exercise 6.3 (Technical).** Install Datasette locally. Build a SQLite database from your cleaned file. Write `metadata.yml` with title, license, source, and column descriptions. Run `datasette serve` and browse the result. Submit a screenshot of the column-description hover text working.
+
+**Exercise 6.4 (Deploys to the internet).** Deploy your Datasette instance to a free hosting tier (Fly.io with `datasette publish fly`, or an equivalent you document). Share the URL with the class. In 200 words, describe one thing you changed between the local and deployed versions, and one thing that broke at deploy time.
+
+**Exercise 6.5 (Diagnostic).** Find a published civic dataset in the wild: a municipal portal, data.gov, a state disclosure site. Diagnose how it fails at least one of Chapter 5's six installed-base elements. Write 400 words. Name the dataset, the agency, and the specific element; describe what a reader trying to use the data would encounter; and propose one concrete change that would close the gap. Good candidates tend to involve continuity (the dataset updates in place with no versioning) or interpretability (columns are documented by field code and nothing else).
+
+## Looking ahead
+
+This chapter built the openness side of the installed base. Chapter 7 takes up **oversight**: what happens when openness has done its job and somebody starts asking inconvenient questions of the data. Oversight depends on openness having been done well (you cannot oversee what you cannot read) but is not reducible to it. Safe scrutiny and authority are distinct problems with their own tools. Chapter 7 treats disaggregated audits, model cards, and the legal environment in which outside scrutiny is conducted. Bring the published Datasette with you. We will put it under an auditor's gaze.
+
+## Further Reading and Resources
+
+- Simon Willison's Datasette documentation: <https://docs.datasette.io/>. The canonical reference. Read "getting started" and "metadata" before the deploy section.
+- Datasette Cloud: <https://www.datasette.cloud/>. Willison's hosted option when you do not want to run Fly.io yourself.
+- Simon Willison's weblog: <https://simonwillison.net/>. Running commentary on Datasette, `sqlite-utils`, and the surrounding ecosystem.
+- The FAIR Guiding Principles: <https://www.go-fair.org/fair-principles/>. The four-letter scaffold this chapter extends.
+- Creative Commons license chooser: <https://creativecommons.org/choose/>. A three-question form that produces an appropriate license and boilerplate.
+- Open Knowledge Foundation, *The Open Data Handbook*: <https://opendatahandbook.org/>. The movement's original playbook; still the clearest short treatment of what "open" means.
+- Open Data Commons: <https://opendatacommons.org/>. PDDL and ODbL, for cases where Creative Commons does not quite fit.
+- Sunlight Foundation archives: <https://sunlightfoundation.com/>. Ongoing critique of data.gov's drift and the U.S. open-government movement.
+- Gebru et al. (2021), "Datasheets for datasets," *Communications of the ACM* 64(12): 86–92. The source for this chapter's datasheet template.
