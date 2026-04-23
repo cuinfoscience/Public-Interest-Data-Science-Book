@@ -1,0 +1,276 @@
+---
+title: "Ownership"
+execute:
+  eval: false
+---
+
+# Ownership {#sec-ch-08-ownership}
+
+A commercial data broker will tell you, if pressed, that it *owns* the nine-hundred-variable dossier it sells about you. Ownership here means a property claim: rights to exclude, alienate, and monetize, backed by contract law. The dossier was assembled, often without your knowledge, from loyalty programs, voter files, credit header data, and the exhaust of a hundred free apps. You do not own it. The broker does.
+
+This chapter argues that ownership in public-interest data science is a different word, and most of the trouble in the field comes from not noticing. The broker's claim is ownership-as-property. The claim a public-interest steward has to make is ownership-as-stewardship: a maintenance obligation that requires labor, authority, and continuity across political cycles. You do not own a public dataset the way a broker owns a dossier. You own it the way a municipal archivist owns the city's property records: accountable for its condition, usability, and survival, and unable to sell it off when the grant runs out.
+
+Chapter 5 named continuity and safe scrutiny among the six elements of the installed base. Chapter 6 built the publishing pipeline. Chapter 7 built the audit. This chapter closes Part II by asking who holds the pipeline and the audit when the original builder leaves, and what it takes to structure that holding so it does not collapse into abandonment or capture.
+
+## Two senses of the word
+
+**Ownership-as-property** treats data as an asset with a rights-holder who can license, sublicense, sell, or destroy it. The vocabulary is real estate and copyright: chain of title, residual rights, assignment. The commercial data broker sits here. So, uncomfortably, does a great deal of "open" infrastructure when examined closely. A university's IRB-governed research dataset may be open to collaborators, but the technology transfer office still treats it as an asset with a chain of title.
+
+**Ownership-as-stewardship** treats data as an ongoing obligation. The steward is responsible for maintenance, documentation, remediation, and succession. The vocabulary is closer to trusteeship: obligations of care, prudence, and loyalty that cannot be disposed of without arranging for someone else to take them up. A municipal records manager is a steward. So is the volunteer who keeps a Wikipedia article on a regional dialect accurate for a decade. Neither owns the data in the property sense. Both are responsible for it in a way the property owner is not.
+
+The distinction matters because most public-interest infrastructure is built on labor that presumes stewardship while operating inside institutions that default to property. Karasti and Blomberg [-@karasti2018] studied this in long-running scientific infrastructures: the system works until the person doing the work moves, retires, or quits, and then it stops working in ways that take years to become visible. Chapter 14 returns to this as ghost work (@sec-ch-14-pit-data-for-good); notice here that "open" infrastructure has a maintenance budget, usually paid in uncredited hours by people who cannot put the work on their performance review.
+
+Schwartz and Cook [-@schwartz2002] made the argument for archives two decades before data science rediscovered it. Archives are not neutral containers: what gets kept, who decides, and who is near the keeping apparatus are political choices all the way down. Stoler [-@stoler2002], studying colonial Dutch archives, took it further: the archive does not record power neutrally but is itself an instrument of power, and reading it requires reading the silences the archivist left behind. Translate to data infrastructure: there is no ownership-as-stewardship that is not also a politics of whose records survive, whose categories are used, and whose hands the maintenance falls to.
+
+## Data trusts, briefly
+
+One response to this mismatch is the **data trust**: a legal structure in which a trustee holds rights over a dataset on behalf of beneficiaries, with fiduciary duties enforceable in court. The Ada Lovelace Institute's review [@ada_data_trusts] found trusts are still more proposed than operational, but the proposal itself forces the questions: who the beneficiaries are, what the trustee may and may not do, what remedies are available if the trust is breached. Delacroix and Lawrence [-@delacroix2019] argue for bottom-up trusts in which users themselves constitute the beneficiary class.
+
+You will not stand up a data trust in the tutorial. You will stand up something more modest: tiered access with a documented threat model and decision rules. The trust idea is the horizon; tiered access is the minimum you can maintain before one exists.
+
+## Indigenous data sovereignty as a foundational challenge
+
+One caveat that will recur. "Stewardship with fiduciary duties to beneficiaries" presumes the beneficiaries can be identified, consented, and represented within the legal system governing the trustee. For many datasets that fails in ways the stewardship vocabulary is not equipped to solve. Te Mana Raraunga [@temanararaunga], the Maori Data Sovereignty Network, argues that Maori data is not a resource to be stewarded on Maori behalf by a non-Maori institution. It belongs to Maori, under Maori governance, as sovereignty rather than trust. The CARE Principles [@carroll2020] extend this to Indigenous data governance generally: collective benefit, authority to control, responsibility, and ethics are not add-ons to FAIR, they are a different frame.
+
+Chapter 16 (@sec-ch-16-critical-data-studies-refusal) takes this up in detail, including when the right answer is not tiered access but refusal. Notice here that the tools you are about to build are not universally applicable. They work when a public has delegated stewardship to an institution. They do not work when a people has not delegated anything, and the question of whether the institution ever had standing remains open.
+
+## The tutorial: tiering the Boulder campaign finance file
+
+Return to the campaign finance dataset from Chapter 6. You published a cleaned file with donor names, amounts, dates, and candidates. Imagine the portal also included two columns you suppressed: donor home address and donor occupation with employer. Those are part of the public filings record in most jurisdictions, which is to say they are legally public. Legal publicness and safe republishability are not the same thing. An address plus a name plus an employer is enough to enable harassment, doxxing, and targeted advertising well beyond what a 1974 disclosure law contemplated.
+
+You will build three access tiers over one SQLite database:
+
+- **Public tier.** Aggregates only: totals by candidate, zip code, filing period. No individual rows. Anyone with a browser.
+- **Researcher tier.** Individual rows with name, amount, date, candidate, occupation. No street address. Gated by a shared secret, logged at the query level. For credentialed journalists and academic researchers with a documented project.
+- **Restricted tier.** Full individual rows including address. Rare, case-by-case, granted by a named human, logged in a public register.
+
+### The schema and the views
+
+Start with a single SQLite file, loaded from the Chapter 6 clean output with two columns appended: `donor_address` (street, city, state, zip) and `donor_occupation_employer` (free-text from the filing).
+
+```python
+import sqlite3, pandas as pd
+
+df = pd.read_parquet("data/boulder_campaign_finance_extended.parquet")
+con = sqlite3.connect("campaign_finance.db")
+df.to_sql("filings_raw", con, if_exists="replace", index=False)
+```
+
+Now define the access tiers as SQL views. Views grant query access to a projection of the base table without granting access to the table itself.
+
+```sql
+-- Public tier: aggregates only.
+CREATE VIEW public_totals_by_candidate AS
+SELECT candidate,
+       COUNT(*)   AS n_contributions,
+       SUM(amount) AS total_amount,
+       MIN(date)   AS first_date,
+       MAX(date)   AS last_date
+FROM filings_raw
+GROUP BY candidate;
+
+CREATE VIEW public_totals_by_zip AS
+SELECT substr(donor_address, -5) AS zip,
+       COUNT(*)   AS n_contributions,
+       SUM(amount) AS total_amount
+FROM filings_raw
+GROUP BY zip
+HAVING n_contributions >= 5;  -- k-anonymity floor
+
+-- Researcher tier: individual rows, no address.
+CREATE VIEW researcher_filings AS
+SELECT filing_id,
+       contributor_clean,
+       amount,
+       date,
+       candidate,
+       committee,
+       donor_occupation_employer
+FROM filings_raw;
+
+-- Restricted tier: the full table, with a trigger logging access.
+-- (No view; access is to filings_raw itself, gated upstream.)
+```
+
+Three things to notice. The public view enforces a **k-anonymity floor** of five per zip, so a zip with a single donor is not re-identified by an aggregate. The researcher view strips the address but keeps occupation and employer, on the judgment that those are newsworthy in ways street addresses rarely are. The restricted tier has no view; it is the base table, controlled at the application layer because SQLite has no per-row permissions.
+
+### Credentials and environment variables
+
+Read the researcher-tier shared secret from an environment variable, not from code.
+
+```python
+import os
+RESEARCHER_TOKEN = os.environ.get("CAMPAIGN_FINANCE_RESEARCHER_TOKEN")
+if not RESEARCHER_TOKEN:
+    raise RuntimeError("Set CAMPAIGN_FINANCE_RESEARCHER_TOKEN in the deploy environment.")
+```
+
+A thin Flask wrapper in front of Datasette gives you a basic-auth layer for the researcher endpoint. What matters is the pattern.
+
+```python
+from flask import Flask, request, abort, jsonify
+import sqlite3, hmac, datetime, json
+
+app = Flask(__name__)
+DB, AUDIT_LOG = "campaign_finance.db", "access_audit.jsonl"
+
+def log_query(tier, user, query, ip):
+    entry = {"ts": datetime.datetime.utcnow().isoformat() + "Z",
+             "tier": tier, "user": user, "query": query, "ip": ip}
+    with open(AUDIT_LOG, "a") as f:
+        f.write(json.dumps(entry) + "\n")
+
+@app.route("/public/totals")
+def public_totals():
+    rows = sqlite3.connect(DB).execute(
+        "SELECT * FROM public_totals_by_candidate").fetchall()
+    log_query("public", "anonymous", "totals_by_candidate", request.remote_addr)
+    return jsonify(rows)
+
+@app.route("/researcher/query", methods=["POST"])
+def researcher_query():
+    token = request.headers.get("X-Research-Token")
+    if not token or not hmac.compare_digest(token, RESEARCHER_TOKEN):
+        abort(401)
+    user = request.headers.get("X-Research-User", "unknown")
+    q = request.json.get("query", "")
+    if not q.strip().lower().startswith("select"):
+        abort(400)
+    if "filings_raw" in q.lower():
+        abort(403)
+    rows = sqlite3.connect(DB).execute(q).fetchall()
+    log_query("researcher", user, q, request.remote_addr)
+    return jsonify(rows)
+```
+
+This is not a hardened production system. A determined attacker can evade the two string checks; a motivated researcher can reconstruct sensitive joins. The point is making the access tiers legible as code, with each tier's permissions visible in one file to a code reviewer.
+
+::: {.callout-tip title="The Missing Manual"}
+Environment-variable credentials are not security. They are a social contract with your deployment pipeline, and the pipeline leaks them in ways most tutorials never mention. A token printed to a container log because someone left `DEBUG=true` on in production is not a secret anymore. A token captured in a stack trace that a Sentry integration forwarded to a third-party error tracker is not a secret either. A token committed to git history in a `.env` file two refactors ago and never rotated is, for practical purposes, the plaintext it started as. Treat the deployment pipeline as part of the attack surface. Rotate tokens on a schedule, not only after incidents. Audit logging configuration for what it captures on exception. "The token is in an environment variable" buys you roughly as much safety as a locked car in a rough neighborhood.
+:::
+
+### Decision rules in YAML
+
+The code enforces the tiers. The decision rules say who belongs in which tier, and they are the part that will be contested. Keep them out of the code and in a versioned document.
+
+```yaml
+# access_policy.yaml
+version: 2026-04-15
+dataset: boulder_campaign_finance
+owner: Boulder Open Data Working Group
+
+tiers:
+  public:
+    audience: anyone
+    contents: aggregates, k >= 5
+    authentication: none
+    logging: request-level, 30 days
+  researcher:
+    audience:
+      - credentialed journalists with published affiliation
+      - academic researchers with IRB approval or equivalent
+      - civic-tech projects with a named public deliverable
+    contents: individual rows, no street address
+    authentication: shared token, user-identified
+    logging: per-query, 1 year, publicly aggregated monthly
+    review: quarterly, stewards plus one external reviewer
+  restricted:
+    audience: case-by-case, rare
+    contents: full rows including address
+    authentication: named human approval, logged in public register
+    review: per request, two stewards plus one community member
+
+revocation:
+  grounds: [misuse, undisclosed affiliation change, repeated scope violation]
+  process: notice, 14-day response, appeal to full steward group
+  public_notice: revocation counts published quarterly, reasons anonymized
+```
+
+The YAML does nothing by itself. It is a document you can point to when a request comes in or a classmate peer-reviews your design. Its value is forcing you to answer the questions before answering them feels like backtracking.
+
+### The threat model
+
+The last artifact is the threat model: a structured description of who might attack this system, what they would be after, and what the impact would be if they succeeded. Most "security" documentation in data science projects is either absent or performative. A workable threat model is a page.
+
+```markdown
+# Threat model: Boulder campaign finance, tiered access
+Version: 2026-04-15. Review cadence: every 6 months.
+
+## Assets
+- A1. Individual donor records (name, amount, date).
+- A2. Donor home addresses (within A1, higher sensitivity).
+- A3. Aggregate totals (published openly).
+- A4. Access logs (reveal who is researching whom).
+- A5. Researcher tokens (credential).
+
+## Actors and motivations
+- T1. A harasser targeting donors to a specific candidate. Seeks A2 via A1.
+- T2. A commercial data broker enriching a dossier. Seeks A1 at scale.
+- T3. A political opposition researcher building an intimidation list. Seeks A2, A4.
+- T4. A careless researcher exfiltrating A1 onto an unsecured laptop.
+- T5. A state actor subpoenaing A4 to identify who accessed whose records.
+
+## Attack paths
+- P1. Token leak via logs or git history (T2, T3).
+- P2. SQL that evades view restrictions to reach filings_raw (T1, T2).
+- P3. Joining public aggregates with external data to re-identify small-zip donors (T1).
+- P4. Social-engineering a steward into granting restricted access (T3).
+- P5. Compelled disclosure of A4 (T5); no technical mitigation, only retention policy.
+
+## Mitigations (current)
+- M1. Tokens in env vars, rotated every 90 days (P1, partial).
+- M2. Query whitelist and view restriction (P2, partial).
+- M3. k >= 5 floor on aggregates (P3).
+- M4. Two-person rule for restricted grants; public register (P4).
+- M5. Access logs retained 12 months, then rotated (P5).
+
+## Gaps
+- G1. No rate limiting on researcher endpoint.
+- G2. No differential privacy on small-zip aggregates.
+- G3. No legal review of what logs must be produced under CORA.
+```
+
+The threat model is boring to write and instantly valuable. It turns "we took security seriously" into a specific list of worries, mitigations, and open gaps.
+
+## Why "just use GitHub" is stewardship outsourcing
+
+There is a tempting shortcut. Rather than stand up your own tiered access, put aggregates in a public GitHub repo, individual rows in a private one, done. GitHub handles authentication. GitHub handles logging. GitHub is free.
+
+GitHub is also a platform owned by Microsoft, operated under Terms of Service it may unilaterally change, subject to U.S. export controls and sanctions, hosting content at its discretion. Over the past decade it has deplatformed projects for reasons ranging from copyright disputes to sanctions compliance, and has had outages long enough to take live public dashboards offline for a working day. None of this makes GitHub unusable. It does mean "just use GitHub" is not a stewardship decision. It is a stewardship *outsourcing* decision, with terms you did not negotiate.
+
+The same argument applies to Google Sheets, Airtable, Notion. Each is a reasonable tool inside a stewardship arrangement. None of them, alone, *is* the stewardship arrangement. The political economy question Part II keeps returning to: who maintains the infrastructure your project depends on, and what happens when they stop.
+
+::: {.callout-note title="In the Public Interest"}
+Ownership-as-stewardship turns the continuity element of the installed base (@sec-ch-05-installed-base) from a slogan into a job. A dataset that is not owned by anyone, in the stewardship sense, loses continuity within two organizational transitions: the original maintainer leaves, the replacement does not know the file exists, the permalink breaks. Safe scrutiny suffers the same fate: an access tier that is not actively maintained degrades into either a free-for-all (nobody rotates credentials) or a locked vault (nobody remembers who is authorized). Treat stewardship as a named position with a budget, not a gesture on a funder's report. If your project cannot name the steward, by role if not by person, it does not yet have one. Chapter 22 (@sec-ch-22-archival-deposits) picks this up as custodianship.
+:::
+
+## Exercises
+
+**Exercise 8.1 (Guided).** Extend the Chapter 6 Boulder campaign finance dataset with two new columns, `donor_address` and `donor_occupation_employer`, using the synthetic fields in `data/boulder_campaign_finance_extended.parquet`. Implement the three SQL views. Stand up the Flask wrapper locally, run one query against each tier, and capture the resulting audit log entries. Submit the SQL, the Flask app, and the first ten lines of your audit log.
+
+**Exercise 8.2 (Analytic).** Write the `threat_model.md` and `access_policy.yaml` for Exercise 8.1 as applied to your own context. Name three actors specific to your setting, three attack paths, and three mitigations. Identify at least two gaps you are not yet mitigating. Commit both files alongside the code.
+
+**Exercise 8.3 (Peer review).** Exchange your Exercise 8.2 artifacts with a classmate. Review their threat model and access policy against two questions: is there an attacker missing that you would add, and is there a decision rule in the YAML more ambiguous than it reads? Write a 300-word review identifying two concrete gaps. You will not be graded on whether the gaps were real; you will be graded on whether they were specific enough to act on.
+
+**Exercise 8.4 (Applied research).** Find a real-world data trust, data cooperative, or data commons operating (not merely proposed) in 2026. Candidates include UK Biobank, Salus Coop in Barcelona, SAGE Bionetworks' governance frameworks, or cases tracked by the Ada Lovelace Institute. Document its governance in 500 to 800 words: who the trustees are, who the beneficiaries are, what rights beneficiaries have, what happens if the trust is wound up, and where the money comes from. Cite the governance documents, not journalistic summaries.
+
+**Exercise 8.5 (Open-ended, project-linked).** Return to your Exercise 1.5 project sketch. For each infrastructure your project depends on (hosting, data source, library, registry, funder), name the steward in the ownership-as-stewardship sense. For two of those stewards, write one paragraph on what happens to your project if they stop maintaining their part tomorrow. If your answer is "I would be fine," revisit whether you correctly identified the dependency. Add the result to your sketch file.
+
+## Looking ahead
+
+Part II ends here. You have three values in hand: openness (Chapter 6) as the configuration that makes public data legible, oversight (Chapter 7) as the arrangement that makes system behavior visible to parties with authority to act, and ownership (this chapter) as the stewardship obligation that makes both survive political change. None is sufficient alone. Each, as Keegan [-@keegan2026] argues, is a working configuration of the installed base rather than a principle to be invoked on its own.
+
+Part III turns from values to lineages: the professional traditions that have done this work longer than data science has existed. Chapter 9 begins with journalism, because journalists have been wrestling with ownership-as-stewardship over source material, documents, and leaked data for more than a century, and they have working answers to questions the data science field is still formulating. The move from Part II to Part III is not theory to practice. It is a move across fields that have been practicing already, so you can import their methods without pretending you invented them.
+
+## Further Reading and Resources
+
+- Helena Karasti and Jeanette Blomberg (2018), "Studying infrastructuring ethnographically," *CSCW*, 27: 233 to 265. The reference this chapter leans on for what maintenance labor actually is.
+- Joan M. Schwartz and Terry Cook (2002), "Archives, records, and power," *Archival Science*, 2: 1 to 19. The foundational argument for archives as instruments of power.
+- Ann Laura Stoler (2002), *Along the Archival Grain*. A full-length study of reading archives as political objects; the methodology generalizes to civic datasets.
+- Ada Lovelace Institute, "Exploring legal mechanisms for data stewardship" (2021): <https://www.adalovelaceinstitute.org/report/legal-mechanisms-data-stewardship/>.
+- Te Mana Raraunga, "Principles of Maori data sovereignty" (2018): <https://www.temanararaunga.maori.nz/tutohinga>. The foundational statement of Indigenous data sovereignty in Aotearoa New Zealand.
+- Stephanie Russo Carroll et al. (2020), "The CARE Principles for Indigenous data governance," *Data Science Journal*, 19: 43. The complement and corrective to FAIR.
+- Sasha Costanza-Chock (2020), *Design Justice*. Stewardship as community-led rather than institutionally-delegated; read chapter 4 with this chapter in view.
+- Open Data Institute, "Data stewardship: What it is and why it matters": <https://theodi.org/insights/guides/data-stewardship/>.
+- Sylvie Delacroix and Neil D. Lawrence (2019), "Bottom-up data trusts," *International Data Privacy Law*, 9(4): 236 to 252.
+- OWASP, "Threat Modeling Cheat Sheet": <https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html>.
