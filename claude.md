@@ -6,13 +6,13 @@ This file is the contract future contributors and automated assistants sign when
 
 *Public Interest Data Science* is a 22-chapter Quarto textbook that teaches data science as a public-interest practice. It organizes its argument around five parts: **Pressures**, **Values**, **Lineages**, **Adjacent Conversations**, and **Genres**. It is the companion volume to the INFO 46XX course at the University of Colorado Boulder and builds on the framework laid out in Keegan (2026), "Public interest data infrastructuring."
 
-The book is opinionated. It takes a position on what "public interest" means (linkability, interpretability, continuity, safe scrutiny, authority, remedy — the installed base) and uses that position as a diagnostic throughout. Chapters do not reproduce the paper. They extend it, test it against particular cases, and, in Part V, translate it into practice.
+The book is opinionated. It takes a position on what "public interest" means (linkability, interpretability, continuity, safe scrutiny, authority, remedy: the installed base) and uses that position as a diagnostic throughout. Chapters do not reproduce the paper. They extend it, test it against particular cases, and, in Part V, translate it into practice.
 
 ## Voice
 
 **Second person, formal but approachable.** Address the reader as "you." Avoid "we" when giving instructions; "we" implies complicity in a decision the reader has not yet made. Use "we" sparingly, and only when genuinely inviting the reader into a shared act of interpretation.
 
-**No em-dashes as a stylistic tic.** This is the single most common pattern to watch for. Use commas, periods, colons, or parentheses instead. If you are reaching for `—` because the sentence is trying to do too much, rewrite the sentence. A book that lives on em-dashes reads like a draft.
+**No em-dashes as a stylistic tic.** This is the single most common pattern to watch for. Use commas, periods, colons, or parentheses instead. If you are reaching for the em-dash character (U+2014) because the sentence is trying to do too much, rewrite the sentence. A book that lives on em-dashes reads like a draft.
 
 **Dry humor, sparingly.** A wry observation once per chapter is fine; a joke every other paragraph is not. The subject matter is serious. The voice is not grim. There is room for amused frustration with bad library defaults and genteel contempt for audit-washing. There is no room for cute.
 
@@ -29,7 +29,7 @@ Each chapter is approximately 3,000 words (2,700–3,300 is the tolerance; Chapt
 5. **Callouts.** At least one "Missing Manual" (`::: {.callout-tip title="The Missing Manual"}`) and at least one "In the Public Interest" (`::: {.callout-note title="In the Public Interest"}`). See below.
 6. **4–5 graduated exercises.** From guided ("follow these steps") to open-ended ("design a pipeline that…"). At least one must be runnable on a student laptop against real public data.
 7. **A closing reflection** that points forward to the next chapter or part.
-8. **Further Reading and Resources** — a curated bulleted list of 5–10 external links.
+8. **Further Reading and Resources**, a curated bulleted list of 5–10 external links.
 
 The 50/50 theory-technique balance is not enforced by line count. It is enforced by feel: a reader should never be reading three straight pages of either code or prose without the other checking in.
 

@@ -65,8 +65,8 @@ citations-hover: true
 format:
   html:
     theme:
-      light: [cosmo, theme-light.scss]
-      dark: [cosmo, theme-dark.scss]
+      light: cosmo
+      dark: darkly
     toc: true
     toc-depth: 2
     number-sections: true

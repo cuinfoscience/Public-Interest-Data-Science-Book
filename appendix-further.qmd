@@ -6,14 +6,14 @@ This appendix collects external resources for readers who want to go further. Ea
 
 ## Cross-cutting tools
 
-- **Datasette** ([datasette.io](https://datasette.io)) — Simon Willison's toolkit for publishing SQLite databases as inspectable web applications. Used in Chapters 6, 10, 11, and 22.
-- **Quarto** ([quarto.org](https://quarto.org)) — The rendering framework this book is built with. Used implicitly throughout and explicitly in Chapter 18.
-- **The Wayback Machine** ([archive.org/web](https://web.archive.org)) — The Internet Archive's web capture service. Used in Chapters 4 and 22.
-- **regulations.gov** ([regulations.gov](https://regulations.gov)) — The federal rulemaking docket. Central to Chapter 21.
-- **DMPTool** ([dmptool.org](https://dmptool.org)) — Templates for data management plans. Central to Chapter 19.
-- **Zenodo** ([zenodo.org](https://zenodo.org)) — CERN's general-purpose research archive. Central to Chapter 22.
-- **fairlearn** ([fairlearn.org](https://fairlearn.org)) — Python toolkit for disaggregated performance evaluation. Central to Chapters 7 and 11.
-- **geopandas** ([geopandas.org](https://geopandas.org)) — Geographic data for pandas users. Central to Chapter 12.
+- **Datasette** ([datasette.io](https://datasette.io)). Simon Willison's toolkit for publishing SQLite databases as inspectable web applications. Used in Chapters 6, 10, 11, and 22.
+- **Quarto** ([quarto.org](https://quarto.org)). The rendering framework this book is built with. Used implicitly throughout and explicitly in Chapter 18.
+- **The Wayback Machine** ([archive.org/web](https://web.archive.org)). The Internet Archive's web capture service. Used in Chapters 4 and 22.
+- **regulations.gov** ([regulations.gov](https://regulations.gov)). The federal rulemaking docket. Central to Chapter 21.
+- **DMPTool** ([dmptool.org](https://dmptool.org)). Templates for data management plans. Central to Chapter 19.
+- **Zenodo** ([zenodo.org](https://zenodo.org)). CERN's general-purpose research archive. Central to Chapter 22.
+- **fairlearn** ([fairlearn.org](https://fairlearn.org)). Python toolkit for disaggregated performance evaluation. Central to Chapters 7 and 11.
+- **geopandas** ([geopandas.org](https://geopandas.org)). Geographic data for pandas users. Central to Chapter 12.
 
 ## Communities and networks
 
@@ -28,10 +28,10 @@ This appendix collects external resources for readers who want to go further. Ea
 
 ## Training venues
 
-- **IRE and NICAR** — Investigative Reporters and Editors / National Institute for Computer-Assisted Reporting
-- **ICPSR Summer Program** — social-science data training at the University of Michigan
-- **Data Science for Social Good** — summer fellowships hosted at various universities
-- **FAccT** and **CSCW** — academic venues where much of this book's source material lands
+- **IRE and NICAR**. Investigative Reporters and Editors / National Institute for Computer-Assisted Reporting.
+- **ICPSR Summer Program**. Social-science data training at the University of Michigan.
+- **Data Science for Social Good**. Summer fellowships hosted at various universities.
+- **FAccT** and **CSCW**. Academic venues where much of this book's source material lands.
 
 ## Critical readings you did not meet in this book
 

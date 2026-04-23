@@ -121,7 +121,7 @@ vendor's scoring logic under CORA.
 
 ## Three ways the scoring system diverges from its stated criteria
 
-{{< include figures.qmd >}}
+{{{< include figures.qmd >}}}
 
 ## Methods {#sec-methods}
 

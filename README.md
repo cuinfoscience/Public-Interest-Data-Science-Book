@@ -4,11 +4,11 @@ A Quarto textbook by Brian C. Keegan (University of Colorado Boulder, Department
 
 This book teaches data science for public-interest ends. It has five parts:
 
-1. **Pressures** — enclosure, exemption, and erosion as structural forces on public knowledge.
-2. **Values** — openness, oversight, and ownership as the installed base of accountability.
-3. **Lineages** — what data scientists can inherit from journalism, law, accounting, planning, and engineering.
-4. **Adjacent Conversations** — public interest technology, data for good, GovTech, civic tech, critical data studies, and refusal.
-5. **Genres** — how to actually do the work: op-eds, reports, research proposals, testimony, public comments, and archival deposits.
+1. **Pressures**. Enclosure, exemption, and erosion as structural forces on public knowledge.
+2. **Values**. Openness, oversight, and ownership as the installed base of accountability.
+3. **Lineages**. What data scientists can inherit from journalism, law, accounting, planning, and engineering.
+4. **Adjacent Conversations**. Public interest technology, data for good, GovTech, civic tech, critical data studies, and refusal.
+5. **Genres**. How to actually do the work: op-eds, reports, research proposals, testimony, public comments, and archival deposits.
 
 The book is drafted as the companion to INFO 46XX *Public Interest Data Science*, taught at CU Boulder. It builds on the framework laid out in Keegan (2026), "Public interest data infrastructuring."
 

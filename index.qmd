@@ -18,11 +18,11 @@ You can read it straight through, pick chapters relevant to a specific project, 
 
 The book works through a conceptual arc in five parts:
 
-1. **Pressures** — the structural forces that constrain public knowledge: **enclosure** (access withdrawn), **exemption** (accountability legally or practically avoided), **erosion** (infrastructure and memory decaying through neglect).
-2. **Values** — the countervailing commitments that hold an "installed base" of accountability together: **openness**, **oversight**, and **ownership**. Chapter 5 introduces the six elements of the installed base (linkability, interpretability, continuity, safe scrutiny, authority, and remedy), and the next three chapters build out each value in turn.
-3. **Lineages** — what data scientists can inherit from the professions that have worked out public-interest practice over decades: **journalism** (watchdog methods and provenance), **law** (records, discovery, legal infrastructure), **accounting** (independent audit, reproducibility, change history), **planning** (stakeholder process and geographic imagination), and **engineering** (safety, testing, incident review).
-4. **Adjacent Conversations** — neighboring fields whose relationship to public interest data science is close and complicated: **public interest technology** and **data for good**, **GovTech** and **civic tech**, and **critical data studies, data justice, and refusal**.
-5. **Genres** — the forms through which data scientists can actually contribute to public conversations: **op-eds**, **reports**, **research proposals**, **testimony**, **public comments** on rulemakings, and **archival deposits**.
+1. **Pressures**. The structural forces that constrain public knowledge: **enclosure** (access withdrawn), **exemption** (accountability legally or practically avoided), **erosion** (infrastructure and memory decaying through neglect).
+2. **Values**. The countervailing commitments that hold an "installed base" of accountability together: **openness**, **oversight**, and **ownership**. Chapter 5 introduces the six elements of the installed base (linkability, interpretability, continuity, safe scrutiny, authority, and remedy), and the next three chapters build out each value in turn.
+3. **Lineages**. What data scientists can inherit from the professions that have worked out public-interest practice over decades: **journalism** (watchdog methods and provenance), **law** (records, discovery, legal infrastructure), **accounting** (independent audit, reproducibility, change history), **planning** (stakeholder process and geographic imagination), and **engineering** (safety, testing, incident review).
+4. **Adjacent Conversations**. Neighboring fields whose relationship to public interest data science is close and complicated: **public interest technology** and **data for good**, **GovTech** and **civic tech**, and **critical data studies, data justice, and refusal**.
+5. **Genres**. The forms through which data scientists can actually contribute to public conversations: **op-eds**, **reports**, **research proposals**, **testimony**, **public comments** on rulemakings, and **archival deposits**.
 
 Parts I through IV teach you to see. Part V teaches you to act.
 
