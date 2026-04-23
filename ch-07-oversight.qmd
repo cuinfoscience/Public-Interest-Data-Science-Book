@@ -1,0 +1,220 @@
+---
+title: "Oversight"
+execute:
+  eval: false
+---
+
+# Oversight {#sec-ch-07-oversight}
+
+In 2018, Joy Buolamwini and Timnit Gebru published "Gender Shades," a disaggregated audit of three commercial gender-classification systems [@buolamwini2018]. The headline finding is familiar: the systems misclassified darker-skinned women at rates up to 34 percentage points higher than lighter-skinned men. The methodological finding is less famous and more important. Aggregate accuracy had hidden the disparity. Every vendor's marketing materials had reported a single accuracy number, and every single-number report was technically true and substantively misleading. The audit did not discover a new failure mode. It discovered a disclosure regime designed not to show it.
+
+That is what oversight is for. It is the work of making a system's behavior visible to parties other than its builders, in a form those parties can use. "Visible" is a demanding word. A datasheet on a vendor website is not visibility if nobody with authority to act on it ever reads it. A one-off academic audit is not visibility if the vendor is free to change the model the next day. Buolamwini and Gebru's paper mattered not only because of what it found, but because it was followed by sustained pressure, by IBM's and Microsoft's decisions to pause face-recognition contracts, by the organizing that Raji and colleagues [-@raji2020] later formalized into an end-to-end internal auditing framework, and by legislation that cited the work by name. An audit is a technique. Oversight is an arrangement.
+
+This chapter is about the difference. You will learn to produce a disaggregated audit using `fairlearn`, and you will learn what kinds of audit regimes hold up under political pressure versus collapse into what Goodman and Trehu [-@goodman2023] call *audit-washing*: the performance of accountability in place of its substance. The technical skill transfers. The political judgment about where the skill is worth deploying does not transfer automatically, and that is the harder half of the chapter.
+
+## Routine auditability versus episodic audits
+
+Two arrangements get called "audits" and they are not the same thing.
+
+**Routine auditability** is built into a system. Logs are kept in a form an outsider can parse. Model versions are signed and archived. Performance metrics are recomputed and published on a schedule. When a disaggregated regression is run, the inputs it needs already exist, and the person running it does not need anyone's permission. This is the regime that public accounting aspires to in principle and sometimes achieves in practice. Baker's [-@baker2005] history of "the public interest" in American accounting traces how this aspiration has been narrowed and co-opted over a century, and his warning is worth keeping in view: audit professions do not stay public-interested on their own.
+
+**Episodic audits** are one-off events. A regulator commissions a report. A researcher publishes a paper. A journalist files a records request and runs numbers. These can be powerful, but their power is bounded by the moment and by the willingness of the audited party to cooperate a second time. Gender Shades was episodic. The follow-up work that turned it into sustained pressure was closer to routine.
+
+Most of what the 2020s legislative wave has produced sits uncomfortably between the two. New York City's Local Law 144, which requires "bias audits" for automated employment decision tools, is the instructive case. The law took effect in 2023. It mandates annual disaggregated impact ratios for employers using covered tools. It does not specify what counts as an adequate auditor, how data must be collected, or what happens when the audit finds a problem. Goodman and Trehu [-@goodman2023] and a wave of empirical studies have documented the result: a compliance rate estimated at under 20 percent in the first year, audits of wildly varying rigor, and a cottage industry of vendors offering "LL144 bias audits" in formats that would not survive scrutiny by anyone outside the vendor ecosystem. The law created the appearance of routine auditability without the authority to enforce it. What you get is episodic audits pretending to be routine.
+
+The European Union's AI Act, which entered staged application in 2024 and 2025, is a more ambitious attempt. It requires conformity assessments for high-risk systems, post-market monitoring, and documentation that must survive into the market-surveillance phase. Whether it holds up is a question the rest of this decade will answer. Early signs, from the machinery directive and GDPR enforcement histories, are that conformity assessments without vigorous market-surveillance authority become paperwork factories. Openness without oversight (@sec-ch-06-openness) publishes information nobody acts on. Oversight without remedy (@sec-ch-05-installed-base) produces reports nobody can use.
+
+::: {.callout-note title="In the Public Interest"}
+Oversight, in the installed-base framework, depends on two elements that the audit itself cannot supply: **authority** and **remedy**. A perfect audit nobody acts on is theater. When you read an "audit report" for a public-sector system, your first two questions should not be about method. They should be: who has the authority to act on this finding, and what remedy is available to the people harmed by the behavior it documents? If the answers are "nobody" and "none," you are reading audit-washing. The technical work in this chapter is a precondition for oversight. It is not oversight.
+:::
+
+## A disaggregated audit in `fairlearn`
+
+The rest of the chapter works through a concrete audit. You will use **folktables**, which wraps the American Community Survey (ACS) into tasks with documented protected attributes, and **fairlearn**, which provides disaggregated metric computation. The task is income prediction: given a respondent's demographic and employment features, predict whether their annual income exceeds $50,000. A deliberately banal task. The point is to practice the audit on a problem where you already have intuitions about where disparities are likely to appear.
+
+Install the packages if you have not:
+
+```python
+# pip install folktables fairlearn scikit-learn pandas
+```
+
+Fetch a state-level slice and define the task:
+
+```python
+from folktables import ACSDataSource, ACSIncome
+import pandas as pd
+
+data_source = ACSDataSource(survey_year="2022", horizon="1-Year", survey="person")
+ca_data = data_source.get_data(states=["CO"], download=True)
+
+features, label, group = ACSIncome.df_to_pandas(ca_data)
+# features: demographic/employment columns
+# label:    Series of booleans, income > $50k
+# group:    Series with racial category codes (RAC1P in the ACS schema)
+
+print(features.shape, label.mean())
+# => (roughly 30000 rows, 10 columns), positive rate ~0.45
+```
+
+`folktables` returns the RAC1P race code as its default group. You will want a second protected attribute for cross-tabulation. Sex (SEX, 1 = male, 2 = female in ACS coding) is already in the feature matrix; extract it alongside.
+
+```python
+sex = features["SEX"].map({1: "male", 2: "female"})
+race_map = {
+    1: "White",
+    2: "Black",
+    3: "AIAN",
+    4: "Asian",
+    5: "NHPI",
+    6: "Other",
+    7: "Two or more",
+    8: "Hispanic (recoded)",
+    9: "Other (recoded)",
+}
+race = group.map(race_map).fillna("Unknown")
+```
+
+A few notes on what you just did. You flattened a complex racial classification into a small number of buckets for display. The ACS RAC1P variable itself already did a lot of flattening upstream. Hispanic origin in the ACS is coded separately from race (HISP), and whether you treat "Hispanic" as a race-level category depends on what you are trying to show. There is no technically correct answer, only an answer you can defend to a skeptical reader. Write down which one you made and why, in the audit output.
+
+Fit the simplest possible model and get predictions:
+
+```python
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
+
+X_train, X_test, y_train, y_test, race_train, race_test, sex_train, sex_test = (
+    train_test_split(
+        features, label, race, sex,
+        test_size=0.3, random_state=42, stratify=label
+    )
+)
+
+pipeline = Pipeline([
+    ("scaler", StandardScaler()),
+    ("lr", LogisticRegression(max_iter=1000)),
+])
+pipeline.fit(X_train, y_train)
+y_pred = pipeline.predict(X_test)
+```
+
+A logistic regression is not the state of the art. It is deliberately chosen. If your audit only works on the model you trained, it is not an audit. It is a commentary on your own pipeline. The audit should be method-agnostic.
+
+Now the disaggregated performance analysis:
+
+```python
+from fairlearn.metrics import (
+    MetricFrame,
+    selection_rate,
+    false_positive_rate,
+    false_negative_rate,
+    demographic_parity_difference,
+    equalized_odds_difference,
+)
+from sklearn.metrics import accuracy_score, precision_score, recall_score
+
+metrics = {
+    "accuracy": accuracy_score,
+    "precision": precision_score,
+    "recall": recall_score,
+    "selection_rate": selection_rate,
+    "fpr": false_positive_rate,
+    "fnr": false_negative_rate,
+    "count": lambda y_true, y_pred: len(y_true),
+}
+
+sensitive = pd.DataFrame({"race": race_test, "sex": sex_test})
+
+mf = MetricFrame(
+    metrics=metrics,
+    y_true=y_test,
+    y_pred=y_pred,
+    sensitive_features=sensitive,
+)
+
+print(mf.overall)
+# => accuracy, precision, recall, etc. over the full test set
+
+print(mf.by_group)
+# => the same metrics, broken out by (race, sex) cells
+```
+
+`MetricFrame.by_group` returns a `DataFrame` indexed by the cross-product of your sensitive features. This is the centerpiece of the audit. The `count` metric is not optional. It is the column that tells your reader how many people are actually in each cell, which is the number that tells them whether any of the other numbers mean anything.
+
+::: {.callout-tip title="The Missing Manual"}
+`fairlearn`'s defaults will not tell you which parity metric is politically defensible. That choice is yours, and you have to justify it. Demographic parity asks whether positive predictions are allocated at the same rate across groups. Equalized odds asks whether error rates are balanced across groups, conditional on the true label. These metrics can disagree. They often do. And they cannot both be satisfied in the presence of unequal base rates, which is a mathematical result, not a political one. Worse: most audit reports bury the per-subgroup sample size in a footnote, and the FPR you are reporting for the smallest cell is computed on thirty people. That number is noise. Report the count alongside every metric, refuse to compute metrics for cells below a documented threshold, and do not let the absence of a small-sample warning hide the fact that your audit has nothing to say about the group it looked hardest for.
+:::
+
+Compute the two standard parity summaries and compare:
+
+```python
+dpd = demographic_parity_difference(
+    y_true=y_test, y_pred=y_pred,
+    sensitive_features=sensitive,
+)
+eod = equalized_odds_difference(
+    y_true=y_test, y_pred=y_pred,
+    sensitive_features=sensitive,
+)
+
+print(f"Demographic parity difference: {dpd:.3f}")
+print(f"Equalized odds difference:     {eod:.3f}")
+```
+
+A non-trivial difference between these two numbers is informative, not a bug. It tells you that the fairness question your dataset is asking you to answer is not reducible to a single statistic.
+
+## Writing the audit for a non-technical reader
+
+The `by_group` table is raw material. The audit is what you write around it. A useful template has four sections.
+
+1. **What the model is, and what it is not.** A logistic regression trained on one year of ACS data for one state. A teaching artifact, not a procurement recommendation. The reader should not leave the first paragraph confused about what decisions, if any, the model is authorized to make.
+
+2. **Who is in the data.** The per-subgroup counts, with the smallest cells called out in prose. "Our test set includes 412 Black men and 34 American Indian and Alaska Native women. The latter is below our reporting threshold of 100, so we do not report per-cell metrics for that group, but we note its absence." Audits that silently drop small cells pretend to a completeness they do not have.
+
+3. **What the metrics show.** The disaggregated table, with a plain-language reading. Demographic parity difference is 0.21; equalized odds difference is 0.11. In the voice of the audit: *the model predicts high income for men at a rate 21 percentage points higher than for women, and this gap is not fully explained by differences in true-label rates. Error rates also vary across racial groups, with the false positive rate roughly twice as high for X as for Y.*
+
+4. **What assumptions the audit rests on.** The racial categories were flattened. Hispanic origin was coded as a race for display. The underlying ACS data are self-reported and subject to nonresponse. The model was evaluated on a 30 percent holdout from a single year. Any of these choices could be defended differently and would produce a different audit. Name them.
+
+Section 4 is where most real audits fail. An audit that does not document its assumptions is not reproducible by a second reader, which is the minimum condition for routine auditability. If the next auditor cannot replicate your disaggregation and get the same table, the audit is not an instrument of oversight. It is a press release.
+
+## What survives political change
+
+You can run the code above on any public model and produce a disaggregated audit. What you cannot do, alone, is make it matter.
+
+Three things distinguish audit regimes that survive political change from those that collapse into audit-washing. The first is **authority**: a named institution, with a budget and a mandate, that can demand the audit and act on it. Gender Shades moved IBM and Microsoft because it was one input into a field of advocacy organizations (the Algorithmic Justice League chief among them), investigative journalists, and eventually regulators. Raji and colleagues' [-@raji2020] internal auditing framework presumed an organization that wanted to know. The AI Act presumes a market-surveillance authority willing to use its enforcement powers. When no such authority exists, the audit is an artifact looking for a reader.
+
+The second is **remedy**. If the audit finds a problem and there is nothing the people harmed can do about it, the audit is diagnostic without being therapeutic. This is the core defect of LL144 as implemented: the law requires disclosure of disparate impact but provides no individual right of action for a candidate screened out by a tool with an adverse impact ratio of 0.6. Remedy can be restorative (reinstating a denied benefit), structural (decommissioning a tool), or financial (damages). Routine auditability without a remedy pathway produces an archive of grievances, not a correction mechanism.
+
+The third is **scope protection**. Audit regimes erode when their scope narrows without anyone defending the frame. The narrowing happens through definitional work: tightening what counts as an "automated employment decision tool," exempting "advisory" systems that are decisive in practice, carving out "pilot programs" that run for a decade. Chapter 3 treated this as the logic of exemption (@sec-ch-03-exemption). An audit regime whose scope is a negotiated floor rather than an expanding ceiling will be negotiated downward by the entities it is supposed to constrain.
+
+Keegan's [-@keegan2026] framework names authority and remedy as two of the six elements of the installed base. Oversight, in this sense, is not an additional value. It is the working configuration in which those elements meet. A technically excellent `MetricFrame` output and no authority to act produces a finding that goes into a drawer. A regulator with authority and no technical capacity produces enforcement actions built on misread metrics. The point of learning `fairlearn` well is not that the library does oversight. It is that the library does the part of oversight the auditor cannot delegate upward, so that what the auditor produces can be a reliable input to the arrangement the rest of the installed base has to sustain.
+
+## Exercises
+
+**Exercise 7.1 (Guided, reproduction).** Reproduce the disaggregated audit from Buolamwini and Gebru [-@buolamwini2018] on a smaller scale. Using the Fitzpatrick Skin Type dataset (or a publicly documented substitute), compute accuracy disaggregated by the intersection of skin type and sex for any open-source gender-classification model you can run on a laptop. You do not need to reproduce the magnitude of their findings. You need to reproduce the shape of the analysis: the aggregate-versus-disaggregated contrast, the intersectional cell, and the inclusion of per-cell sample sizes. Submit your notebook and a one-paragraph comparison of your result to the paper's.
+
+**Exercise 7.2 (Applied).** Run the `folktables` audit above on a different state, or on a task other than income (employment, public-coverage receipt, and travel time are all in the package). Produce a `MetricFrame` with at least two sensitive features. Write a 500-word audit report in the four-section structure above. Document at least three assumptions in the assumptions section, and name at least one subgroup your data cannot support conclusions about.
+
+**Exercise 7.3 (Analytic).** Using the model from Exercise 7.2, compute both `demographic_parity_difference` and `equalized_odds_difference`. Write 300 words comparing the two numbers. Which one is larger? Which failure mode does each describe in plain language? If you had to pick one as the headline number for your audit report, which would you pick, and what are you choosing not to emphasize by that choice? There is no right answer; there are defensible answers.
+
+**Exercise 7.4 (Critical reading).** Find one NYC Local Law 144 bias audit report from the public record. Employer listings and linked audit reports are available through the `on.nyc.gov/ll144` hub and a growing archival collection at the Center on Race, Inequality, and the Law. Read the audit end to end. Write a 500-word critique using the four-section template. Where does the audit succeed? Where does it hide its sample sizes, define impact ratios in non-standard ways, or omit an assumptions section? Does the audit name a remedy pathway? Would a non-technical reader come away knowing what, if anything, they could do about an adverse finding?
+
+**Exercise 7.5 (Open-ended).** Take the audit you wrote in Exercise 7.2 and answer this question in 400 to 600 words: what would change about the audit, its structure, its disclosures, its refusal to answer some questions, if it had enforcement authority attached? Pick a specific authority: the EEOC, a state attorney general's office, the EU AI Act market-surveillance authority, or a named procurement officer at a city government. Write as if your audit could trigger their intervention. What thresholds would you set? What would you decline to say without a formal proceeding? What part of the current audit would you have to strengthen to survive a challenge?
+
+## Looking ahead
+
+Oversight without ownership is oversight without a subject. You can audit a model all day, but if it is unclear who owns the system, who owns the training data, and who has standing to demand changes, the audit cannot close a loop. Chapter 8 (@sec-ch-08-ownership) takes up ownership as the third value in the installed-base trio, and asks what it takes to make ownership claims legible and enforceable in data infrastructures built largely out of other people's work. Chapter 11 (@sec-ch-11-accounting) returns to the accounting lineage this chapter invoked in passing; the professional history there is a cautionary tale about what happens to oversight regimes when their professional base loses the argument about what "public interest" means. Chapter 16 (@sec-ch-16-critical-data-studies-refusal) will ask whether some audits should not be performed at all, a question the technical toolkit here cannot answer on its own.
+
+## Further Reading and Resources
+
+- Joy Buolamwini and Timnit Gebru (2018), "Gender shades: Intersectional accuracy disparities in commercial gender classification," *Proceedings of FAccT 2018*. The foundational disaggregated audit. Read it alongside the follow-up in Raji et al. (2020).
+- Inioluwa Deborah Raji et al. (2020), "Closing the AI accountability gap: Defining an end-to-end framework for internal algorithmic auditing," *Proceedings of FAccT 2020*. The paper that turns an audit technique into an organizational framework.
+- `fairlearn` user guide: <https://fairlearn.org/main/user_guide/>. Pay particular attention to the section on interpreting `MetricFrame`, and to the documentation on disagreement between parity metrics.
+- `folktables` repository and paper (Ding et al., NeurIPS 2021): <https://github.com/socialfoundations/folktables>. The package used in this chapter, with documentation on the tradeoffs involved in treating ACS tables as fairness benchmarks.
+- NYC Department of Consumer and Worker Protection, Local Law 144 rules and guidance: <https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page>. Read the final rule, not just the FAQ.
+- Bryce Goodman and Julia Trehu, "AI audit washing and accountability" (2023). The term "audit-washing" in its useful form.
+- EU AI Act consolidated text (Regulation 2024/1689): <https://eur-lex.europa.eu/eli/reg/2024/1689/oj>. Skim Articles 43, 72, and 77 for the conformity-assessment and post-market-monitoring scaffolding.
+- Algorithmic Justice League: <https://www.ajl.org/>. The organizing vehicle that turned the Gender Shades paper into a campaign.
+- Upturn's "Help Wanted" report and subsequent work on hiring tools: <https://www.upturn.org/work/>. A model of audit-adjacent advocacy that takes remedy seriously.
+- C. Richard Baker (2005), "What is the meaning of `the public interest'? Examining the ideology of the American public accounting profession," *Accounting, Auditing & Accountability Journal*. The history lesson. Read it before you assume professional norms will hold the line.
