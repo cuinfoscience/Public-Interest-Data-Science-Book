@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
+
+<title>4&nbsp; Erosion: What Can Be Remembered? – Public Interest Data Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch-05-installed-base.html" rel="next">
+<link href="./ch-03-exemption.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3960f907883494f1151aa7142734774f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d783d5094f66403aace2499abad0c8ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3960f907883494f1151aa7142734774f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch-01-introduction.html">Pressures</a></li><li class="breadcrumb-item"><a href="./ch-04-erosion.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Erosion: What Can Be Remembered?</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Public Interest Data Science</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Public-Interest-Data-Science.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Public-Interest-Data-Science.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Pressures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-02-enclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Enclosure: Who Can Observe?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-03-exemption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-04-erosion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Erosion: What Can Be Remembered?</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Values</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-05-installed-base.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Installed Base</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-06-openness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Openness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-07-oversight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Oversight</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-08-ownership.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ownership</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lineages</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-09-journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-10-law.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Law</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-11-accounting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-12-planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-13-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Engineering</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Adjacent Conversations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-14-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-15-govtech-civic-tech.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-16-critical-data-studies-refusal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Genres</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-17-op-eds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Op-Eds</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-18-reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-19-research-proposals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Research Proposals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-20-testimony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Testimony</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-21-public-comments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Public Comments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-22-archival-deposits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Archival Deposits</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#the-mundane-politics-of-retention" id="toc-the-mundane-politics-of-retention" class="nav-link active" data-scroll-target="#the-mundane-politics-of-retention"><span class="header-section-number">4.1</span> The mundane politics of retention</a></li>
+  <li><a href="#a-link-rot-audit-you-can-run-this-afternoon" id="toc-a-link-rot-audit-you-can-run-this-afternoon" class="nav-link" data-scroll-target="#a-link-rot-audit-you-can-run-this-afternoon"><span class="header-section-number">4.2</span> A link-rot audit you can run this afternoon</a></li>
+  <li><a href="#recovering-the-rot-with-the-wayback-machine" id="toc-recovering-the-rot-with-the-wayback-machine" class="nav-link" data-scroll-target="#recovering-the-rot-with-the-wayback-machine"><span class="header-section-number">4.3</span> Recovering the rot with the Wayback Machine</a></li>
+  <li><a href="#datasheets-as-a-retention-practice" id="toc-datasheets-as-a-retention-practice" class="nav-link" data-scroll-target="#datasheets-as-a-retention-practice"><span class="header-section-number">4.4</span> Datasheets as a retention practice</a></li>
+  <li><a href="#why-just-put-it-on-github-is-not-a-preservation-strategy" id="toc-why-just-put-it-on-github-is-not-a-preservation-strategy" class="nav-link" data-scroll-target="#why-just-put-it-on-github-is-not-a-preservation-strategy"><span class="header-section-number">4.5</span> Why “just put it on GitHub” is not a preservation strategy</a></li>
+  <li><a href="#closing-the-triptych" id="toc-closing-the-triptych" class="nav-link" data-scroll-target="#closing-the-triptych"><span class="header-section-number">4.6</span> Closing the triptych</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">4.7</span> Exercises</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">4.8</span> Looking ahead</a></li>
+  <li><a href="#further-reading-and-resources" id="toc-further-reading-and-resources" class="nav-link" data-scroll-target="#further-reading-and-resources"><span class="header-section-number">4.9</span> Further Reading and Resources</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-04-erosion.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch-01-introduction.html">Pressures</a></li><li class="breadcrumb-item"><a href="./ch-04-erosion.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Erosion: What Can Be Remembered?</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-ch-04-erosion" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Erosion: What Can Be Remembered?</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>A public record that cannot be found is not a public record. A footnote whose URL returns a 404 is a claim without a witness. A training corpus that has been quietly withdrawn is a model whose inputs the public can no longer inspect. This chapter is about the third pressure in Part I, the one that works by subtraction. <a href="ch-02-enclosure.html" class="quarto-xref"><span>Chapter 2</span></a> asked <em>who can observe?</em> <a href="ch-03-exemption.html" class="quarto-xref"><span>Chapter 3</span></a> asked <em>who must answer?</em> This chapter asks <em>what can be remembered?</em> and describes the slow, less visible process by which the evidence needed for any answer simply dissolves.</p>
+<p>Erosion is rarely dramatic. An agency reorganizes a website during a transition and the old paths return 404s. A journal publisher migrates and the DOIs still resolve but the supplementary materials do not. A civic-tech nonprofit runs out of funding and its dashboard goes dark. A machine-learning dataset that trained a generation of models is withdrawn after researchers document abusive content inside it, and the weights of every model trained on it remain in circulation. Any one event looks like an operational hiccup. Taken together, they are the texture of a public record thinning as fast as anyone can thicken it.</p>
+<p>Plantin, Lagoze, Edwards, and Sandvig <span class="citation" data-cites="plantin2016">(<a href="#ref-plantin2016" role="doc-biblioref">2016</a>)</span> argue that the platforms the public has learned to depend on operate on a different clock than public infrastructures do. A municipal water system is designed to last decades and is maintained by a workforce whose job is to keep it running. A cloud storage service or a dataset release is designed to last a product cycle and is maintained by whoever still has a quarterly incentive to care. Karasti and Blomberg <span class="citation" data-cites="karasti2018">(<a href="#ref-karasti2018" role="doc-biblioref">2018</a>)</span> call this the mismatch between <strong>project time</strong> and <strong>infrastructure time</strong>: projects end; infrastructures are supposed not to. When the public record lives inside projects, it ends with them.</p>
+<section id="the-mundane-politics-of-retention" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="the-mundane-politics-of-retention"><span class="header-section-number">4.1</span> The mundane politics of retention</h2>
+<p>There is a temptation to tell erosion stories as conspiracies. Sometimes they are. Much more often they are what happens when nobody’s job description includes long-term stewardship. A sysadmin retires. A contract lapses. A platform closes its API and thirty years of researcher-accumulated corpora become unciteable overnight. Gaffney and Matias <span class="citation" data-cites="gaffney2018">(<a href="#ref-gaffney2018" role="doc-biblioref">2018</a>)</span> documented this for a single, widely-used Reddit corpus, showing that silent data loss had produced an entire body of published work built on samples missing, in predictable ways, parts of the thing they claimed to describe. The missingness was not announced. It was visible only when someone looked.</p>
+<p>Acker and Kreisberg <span class="citation" data-cites="acker2019">(<a href="#ref-acker2019" role="doc-biblioref">2019</a>)</span> describe this as the problem of archiving in an API-driven world. Classical archival theory assumes a record exists somewhere, that custody can be established, and that preservation is a matter of migration. The contemporary record does not sit still long enough to be taken into custody. Denton, Hanna, and colleagues <span class="citation" data-cites="denton2021">(<a href="#ref-denton2021" role="doc-biblioref">2021</a>)</span> trace the same problem for machine-learning datasets: ImageNet, the canonical benchmark for a decade of computer-vision research, was assembled from a pipeline of choices (scraping Flickr, filtering through WordNet, paying crowdworkers to label) that is undocumented in any single place. When a dataset is questioned, the record of how it was made has often evaporated faster than the dataset itself.</p>
+<p>The model-era instances are bigger and not meaningfully different in kind. LAION-5B, the image-text dataset used to train Stable Diffusion and many of its descendants, was taken offline in late 2023 after researchers at Stanford’s Internet Observatory documented verified child sexual abuse material inside it <span class="citation" data-cites="thiel2023">(<a href="#ref-thiel2023" role="doc-biblioref">Thiel 2023</a>)</span>. The withdrawal was the right call. It was also, for research purposes, a form of erosion: every paper that trained on LAION-5B now cites a dataset the reader cannot audit. Common Crawl, which underlies much of the open web’s representation in large language model training, retains its crawls but its long-term archival status is a question nobody has answered on the record.</p>
+<p>Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> names <strong>continuity</strong> as one of the six elements of the installed base. The point is not that every artifact should live forever. The point is that when the public loses the ability to return to a source, the ability to audit what was built on that source goes with it. Erosion is not a failure of tools. It is a failure of incentives.</p>
+</section>
+<section id="a-link-rot-audit-you-can-run-this-afternoon" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="a-link-rot-audit-you-can-run-this-afternoon"><span class="header-section-number">4.2</span> A link-rot audit you can run this afternoon</h2>
+<p>You need to see this happen in a corpus you can touch. The corpus to start with is the one you are reading: this book’s own bibliography plus the “Further Reading” URLs at the end of each chapter. If you do not have that list handy, the EPA’s climate-change press-release archive and NOAA’s hurricane-research page are excellent substitutes, because both agencies have been reorganized enough times since 2016 that you will find real rot within minutes.</p>
+<p>Walk a list of URLs, classify each response, record the result in a DataFrame. A 404 is obvious rot. A 301 redirect to a generic landing page is a worse and more common failure: the link resolves, returns a 200, and gives you nothing.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> urlparse</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>HEADERS <span class="op">=</span> {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"User-Agent"</span>: <span class="st">"PublicInterestDataScience/0.1 (your-email@example.edu)"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Accept"</span>: <span class="st">"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> classify_url(url, timeout<span class="op">=</span><span class="dv">15</span>):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Fetch a URL and classify the response.</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns a dict with url, status_code, final_url, category, notes.</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">    Categories: ok, redirect_same_host, redirect_offsite,</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">                client_error, server_error, timeout, dns_fail, other.</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        r <span class="op">=</span> requests.get(url, headers<span class="op">=</span>HEADERS, timeout<span class="op">=</span>timeout,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                         allow_redirects<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> requests.exceptions.Timeout:</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> {<span class="st">"url"</span>: url, <span class="st">"status_code"</span>: <span class="va">None</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                <span class="st">"final_url"</span>: <span class="va">None</span>, <span class="st">"category"</span>: <span class="st">"timeout"</span>, <span class="st">"notes"</span>: <span class="st">""</span>}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> requests.exceptions.<span class="pp">ConnectionError</span> <span class="im">as</span> e:</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> {<span class="st">"url"</span>: url, <span class="st">"status_code"</span>: <span class="va">None</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>                <span class="st">"final_url"</span>: <span class="va">None</span>, <span class="st">"category"</span>: <span class="st">"dns_fail"</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>                <span class="st">"notes"</span>: <span class="bu">str</span>(e)[:<span class="dv">120</span>]}</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    start_host <span class="op">=</span> urlparse(url).netloc</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    end_host <span class="op">=</span> urlparse(r.url).netloc</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> r.status_code <span class="op">==</span> <span class="dv">200</span> <span class="kw">and</span> r.url <span class="op">==</span> url:</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"ok"</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> r.status_code <span class="op">==</span> <span class="dv">200</span> <span class="kw">and</span> start_host <span class="op">==</span> end_host:</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"redirect_same_host"</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> r.status_code <span class="op">==</span> <span class="dv">200</span>:</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"redirect_offsite"</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="dv">400</span> <span class="op">&lt;=</span> r.status_code <span class="op">&lt;</span> <span class="dv">500</span>:</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"client_error"</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="dv">500</span> <span class="op">&lt;=</span> r.status_code <span class="op">&lt;</span> <span class="dv">600</span>:</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"server_error"</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"other"</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"url"</span>: url, <span class="st">"status_code"</span>: r.status_code,</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>            <span class="st">"final_url"</span>: r.url, <span class="st">"category"</span>: cat,</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>            <span class="st">"notes"</span>: <span class="ss">f"bytes=</span><span class="sc">{</span><span class="bu">len</span>(r.content)<span class="sc">}</span><span class="ss">"</span>}</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> audit(urls):</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    rows <span class="op">=</span> [classify_url(u) <span class="cf">for</span> u <span class="kw">in</span> urls]</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame(rows)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Point this at a real list of URLs and you will get something like the distribution below. The shape is representative, not exact; rerun it and the numbers will drift.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>urls <span class="op">=</span> [</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://www.epa.gov/climate-change"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://www.noaa.gov/climate"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://wikimedia.org/api/rest_v1/"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ... twenty more from your syllabus or bibliography</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> audit(urls)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>report.groupby(<span class="st">"category"</span>).size()</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; ok                     11</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#    redirect_same_host      4</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#    redirect_offsite        3</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#    client_error            2</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#    server_error            0</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#    timeout                 1</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#    dns_fail                0</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">#    other                   0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>redirect_offsite</code> row is the one to look at first. A federal agency URL that now redirects to a generic “archive” subdomain, or to a White House press page on a different topic, is a link that technically resolves but practically does not. Whenever you cite a government source in a paper, a report, or a public comment, assume the URL will be reorganized at the next administration transition. Plan for it.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The Missing Manual
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Status codes lie. A page that returns HTTP 200 may still be useless: a content management system that issues a “soft 404,” a WAF page saying “request blocked,” a single-page application that loads a JavaScript shell and fetches its real content from an API you are not calling. You can partly guard against this by checking response size and content against a known baseline, but there is no substitute for opening a sample of the “ok” rows in a browser. The Wayback Machine has the same problem from the other direction: its Availability API will cheerfully return a capture that was itself a 404 page archived at the moment of rot. If the service your audit uses does not let you inspect the content of a “successful” response, your audit is not done. Always verify a subset by eye.</p>
+</div>
+</div>
+</section>
+<section id="recovering-the-rot-with-the-wayback-machine" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="recovering-the-rot-with-the-wayback-machine"><span class="header-section-number">4.3</span> Recovering the rot with the Wayback Machine</h2>
+<p>The Internet Archive’s Wayback Machine is the closest thing the public has to a backup of the open web. It is not complete. It is not permanent (the Archive itself is a nonprofit dependent on donations, lawsuits, and the continued forbearance of its adversaries). It is the best you have. The Availability API is a single, small endpoint that takes a URL and an optional timestamp and returns the closest capture.</p>
+<pre><code>GET http://archive.org/wayback/available?url=&lt;url&gt;&amp;timestamp=&lt;YYYYMMDD&gt;</code></pre>
+<p>The response shape is compact:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://www.epa.gov/climate-change"</span><span class="fu">,</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"archived_snapshots"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"closest"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"status"</span><span class="fu">:</span> <span class="st">"200"</span><span class="fu">,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"available"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"http://web.archive.org/web/20161119000000/https://www.epa.gov/climate-change"</span><span class="fu">,</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"timestamp"</span><span class="fu">:</span> <span class="st">"20161119000000"</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If there is no capture, <code>archived_snapshots</code> is an empty object. A recovery helper:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_capture(url, timestamp<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    api <span class="op">=</span> <span class="st">"http://archive.org/wayback/available"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    params <span class="op">=</span> {<span class="st">"url"</span>: url}</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> timestamp:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        params[<span class="st">"timestamp"</span>] <span class="op">=</span> timestamp</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> requests.get(api, params<span class="op">=</span>params, headers<span class="op">=</span>HEADERS, timeout<span class="op">=</span><span class="dv">30</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    r.raise_for_status()</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> r.json()</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    snap <span class="op">=</span> data.get(<span class="st">"archived_snapshots"</span>, {}).get(<span class="st">"closest"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> snap <span class="kw">or</span> <span class="kw">not</span> snap.get(<span class="st">"available"</span>):</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"wayback_url"</span>: snap[<span class="st">"url"</span>],</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">"captured_at"</span>: snap[<span class="st">"timestamp"</span>],</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>            <span class="st">"status"</span>: snap.get(<span class="st">"status"</span>)}</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> recover_rotten(report):</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Augment a link-rot report with Wayback captures for broken rows."""</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    broken <span class="op">=</span> report[report[<span class="st">"category"</span>].isin(</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        [<span class="st">"client_error"</span>, <span class="st">"server_error"</span>, <span class="st">"timeout"</span>, <span class="st">"dns_fail"</span>,</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>         <span class="st">"redirect_offsite"</span>])]</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    recoveries <span class="op">=</span> []</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> url <span class="kw">in</span> broken[<span class="st">"url"</span>]:</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>        cap <span class="op">=</span> find_capture(url)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>        recoveries.append({<span class="st">"url"</span>: url, <span class="op">**</span>(cap <span class="kw">or</span> {})})</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame(recoveries)</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>recovered <span class="op">=</span> recover_rotten(report)</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; columns: url, wayback_url, captured_at, status</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Two details bear emphasis. First, a Wayback URL is citable: if the original source is gone, cite the Wayback capture with its timestamp. Second, the Archive allows you to <em>request</em> a capture through a separate endpoint (<code>https://web.archive.org/save/&lt;url&gt;</code>), which you should treat as a standard move whenever you cite a page you expect to change. Saving a copy at the moment of citation shifts you from hoping the URL will still work to knowing a snapshot exists.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>In the Public Interest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When you archive a source at the moment of citation, you are exercising a form of ownership the law does not require of you. The page is not yours. You did not write it. You do not host it. What you hold is a responsibility for the evidence your argument rests on. <a href="ch-08-ownership.html" class="quarto-xref"><span>Chapter 8</span></a> will develop this claim: in a public-interest practice, <strong>ownership</strong> is stewardship over time, not private control. The link you save today is a small instance of that stewardship. <a href="ch-22-archival-deposits.html" class="quarto-xref"><span>Chapter 22</span></a> teaches the full form, where you deposit datasets and documentation with resolvable identifiers (Zenodo DOIs, Internet Archive items) that outlive any one organization. Between the two is the working habit this chapter asks of you: treat every URL you cite as perishable, and treat capture-at-citation as the default, not the exception.</p>
+</div>
+</div>
+</section>
+<section id="datasheets-as-a-retention-practice" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="datasheets-as-a-retention-practice"><span class="header-section-number">4.4</span> Datasheets as a retention practice</h2>
+<p>A link-rot audit tells you what is missing from the outside. A <strong>datasheet</strong> tells the next reader what the thing you produced actually was, so that when pieces of it erode, there is a record of what to look for. Gebru and colleagues <span class="citation" data-cites="gebru2021">(<a href="#ref-gebru2021" role="doc-biblioref">2021</a>)</span> proposed datasheets for datasets as a deliberate import from electronics engineering: every component ships with a spec sheet documenting what it is, how it was made, what it is for, and what it is not. Machine-learning datasets routinely ship with nothing, and the absence produces exactly the retroactive reconstructions Denton and colleagues <span class="citation" data-cites="denton2021">(<a href="#ref-denton2021" role="doc-biblioref">2021</a>)</span> had to do for ImageNet.</p>
+<p>A datasheet is not a README. It is a structured document with seven sections, and the discipline of filling each one out is what makes it useful:</p>
+<ol type="1">
+<li><strong>Motivation.</strong> Who made this, for what purpose, funded by whom? What gap did it fill?</li>
+<li><strong>Composition.</strong> What does an instance look like? How many are there? Are there labels, and how were they produced? Are there known subgroup imbalances?</li>
+<li><strong>Collection process.</strong> Where did the data come from? When? Through what mechanism? Were the subjects informed? Was consent obtained? What ethical review, if any?</li>
+<li><strong>Preprocessing, cleaning, labeling.</strong> What transformations were applied between raw and released? Is the raw version available? What filtering removed what?</li>
+<li><strong>Uses.</strong> What has this been used for? What should it not be used for? Are there tasks for which it is actively unsuitable?</li>
+<li><strong>Distribution.</strong> How is it distributed? Under what license? With what restrictions? Through what channel, and what is the expected lifetime of that channel?</li>
+<li><strong>Maintenance.</strong> Who maintains it? How will errata be communicated? Is there a versioning scheme? When is the next review?</li>
+</ol>
+<p>The maintenance section will almost always be blank on the first pass, which is the point: if you cannot name the maintainer or the review cadence, you are publishing a dataset with no plan for its erosion. That is worth knowing before you publish.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>DATASHEET_TEMPLATE <span class="op">=</span> {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"motivation"</span>: {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"purpose"</span>: <span class="st">""</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"creators"</span>: <span class="st">""</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"funding"</span>: <span class="st">""</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"gap_addressed"</span>: <span class="st">""</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"composition"</span>: {</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"instance_type"</span>: <span class="st">""</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"n_instances"</span>: <span class="va">None</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"labels"</span>: <span class="st">""</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"subgroup_imbalances"</span>: <span class="st">""</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"sensitive_attributes"</span>: <span class="st">""</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"collection_process"</span>: {</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"source"</span>: <span class="st">""</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"period"</span>: <span class="st">""</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"mechanism"</span>: <span class="st">""</span>,</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"consent"</span>: <span class="st">""</span>,</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ethical_review"</span>: <span class="st">""</span>,</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"preprocessing"</span>: {</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"transformations"</span>: <span class="st">""</span>,</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"raw_available"</span>: <span class="va">False</span>,</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"filtering"</span>: <span class="st">""</span>,</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"uses"</span>: {</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"prior_uses"</span>: <span class="st">""</span>,</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"inappropriate_uses"</span>: <span class="st">""</span>,</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">"distribution"</span>: {</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">"license"</span>: <span class="st">""</span>,</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">"channel"</span>: <span class="st">""</span>,</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">"restrictions"</span>: <span class="st">""</span>,</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>        <span class="st">"expected_lifetime"</span>: <span class="st">""</span>,</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">"maintenance"</span>: {</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>        <span class="st">"maintainer"</span>: <span class="st">""</span>,</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>        <span class="st">"errata_channel"</span>: <span class="st">""</span>,</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>        <span class="st">"versioning"</span>: <span class="st">""</span>,</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>        <span class="st">"next_review"</span>: <span class="st">""</span>,</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Fill this in once, by hand, for a dataset you have actually used. The first datasheet will take several hours and will be worse than you expected. By the third, you will notice yourself asking questions at dataset-selection time that you did not ask before, which is the actual point of the practice.</p>
+</section>
+<section id="why-just-put-it-on-github-is-not-a-preservation-strategy" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="why-just-put-it-on-github-is-not-a-preservation-strategy"><span class="header-section-number">4.5</span> Why “just put it on GitHub” is not a preservation strategy</h2>
+<p>Students and, increasingly, agencies treat GitHub as a preservation layer. It is not one. GitHub is a hosting service owned by Microsoft, with no long-term commitment to any particular repository and a history of taking down content for reasons ranging from DMCA claims to policy disputes. Repositories can be made private, renamed, force-pushed over, or deleted by their owner. The commit hash is stable; the URL that resolves it is not. Software Heritage mirrors much of public GitHub, which is good, but public awareness of Software Heritage is limited.</p>
+<p>The same logic applies to Google Drive links in syllabi, Dropbox links in footnotes, and Notion pages in institutional documentation. Each is a commercial service on a project-time clock. For anything you need to cite, publish through a channel designed for infrastructure time: a Zenodo deposit with a DOI, an Internet Archive item, an institutional repository your university has committed to maintaining. <a href="ch-22-archival-deposits.html" class="quarto-xref"><span>Chapter 22</span></a> walks through the mechanics.</p>
+</section>
+<section id="closing-the-triptych" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="closing-the-triptych"><span class="header-section-number">4.6</span> Closing the triptych</h2>
+<p>Chapter 2 asked who can observe; Chapter 3 asked who must answer; this chapter asks what can be remembered. Together they are Part I’s working diagnosis. Access has narrowed, accountability is exempt, and the record that would let us reason about either is eroding faster than the institutions charged with preserving it can match.</p>
+<p>Part II turns to the values that make a response coherent. <a href="ch-05-installed-base.html" class="quarto-xref"><span>Chapter 5</span></a> names the installed base explicitly, the six-element framework Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> proposes and that this book has been gesturing at since <a href="ch-01-introduction.html" class="quarto-xref"><span>Chapter 1</span></a>. The link-rot audits and datasheets this chapter asks you to write are the first practical instances of what the next part will call <strong>continuity</strong>.</p>
+</section>
+<section id="exercises" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="exercises"><span class="header-section-number">4.7</span> Exercises</h2>
+<p><strong>Exercise 4.1 (Guided).</strong> Pick a document with at least twenty external URLs: a syllabus, a paper’s reference list, a policy brief, a government report. Run the link-rot audit from this chapter over its URLs and save the DataFrame as <code>exercises/ch04_audit.csv</code>. In 200 words, describe the distribution of outcomes and name the single most consequential broken link.</p>
+<p><strong>Exercise 4.2 (Guided).</strong> For three of the broken or offsite-redirecting URLs from Exercise 4.1, use the Availability API to locate captures. Record the original URL, the Wayback URL, the timestamp, and a one-sentence note on whether the capture actually contains what the original cited. Submit as <code>exercises/ch04_recoveries.md</code>. Where no capture exists, use the <code>web.archive.org/save/</code> endpoint to request one of the current state for future reference.</p>
+<p><strong>Exercise 4.3 (Analytic).</strong> Using the Gebru and colleagues template, write a full datasheet for a dataset you have used. Fill every section. Where you do not know the answer, say so explicitly rather than leaving the field blank. Save as <code>exercises/ch04_datasheet_&lt;dataset&gt;.md</code>. Minimum 1,500 words; the maintenance section must name a human or an institution.</p>
+<p><strong>Exercise 4.4 (Comparative).</strong> Pick a government webpage whose content you care about (EPA climate-change, a CDC surveillance page, a BLS methodology page). Use the Wayback Machine to locate its earliest capture and its most recent capture before an administration transition (January 2017 or January 2021 are useful inflection points). Compare the two and, in 500 words, describe what changed: content, framing, linked resources. Do not editorialize; describe. Save as <code>exercises/ch04_agency_comparison.md</code>.</p>
+<p><strong>Exercise 4.5 (Open-ended).</strong> Identify one dataset, corpus, or data portal that you believe will not survive the next decade in publicly accessible form. Write a 600-to-800-word memo naming the resource, the mechanisms you expect to erode it, and a single concrete intervention a student or small nonprofit could take now. The intervention must be something doable in a semester. Save as <code>exercises/ch04_endangered.md</code>. You will revisit it in <a href="ch-22-archival-deposits.html" class="quarto-xref"><span>Chapter 22</span></a>.</p>
+</section>
+<section id="looking-ahead" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">4.8</span> Looking ahead</h2>
+<p>Part I has now laid out its three pressures. Part II begins with Chapter 5, <strong>The Installed Base</strong>, which names the six-element framework that the rest of the book uses as a working definition of public interest. The link-rot function, the Wayback recovery helper, and the datasheet template you built in this chapter are the first instances of a pattern Chapter 5 will generalize: public-interest data science is less a set of analyses than a set of maintenance practices, carried out in public, by people who are willing to do them when nobody’s quarterly review depends on it.</p>
+</section>
+<section id="further-reading-and-resources" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="further-reading-and-resources"><span class="header-section-number">4.9</span> Further Reading and Resources</h2>
+<ul>
+<li>Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford (2021), “Datasheets for datasets,” <em>Communications of the ACM</em> 64(12): 86–92. The canonical template. Read it before you write your first datasheet; refer back to it every time you write the next.</li>
+<li>Emily Denton, Alex Hanna, Razvan Amironesei, Andrew Smart, and Hilary Nicole (2021), “On the genealogy of machine learning datasets: A critical history of ImageNet,” <em>Big Data &amp; Society</em> 8(2). Essential counterweight to treating datasheets as a solved problem.</li>
+<li>Jean-Christophe Plantin, Carl Lagoze, Paul N. Edwards, and Christian Sandvig (2016), “Infrastructure studies meet platform studies in the age of Google and Facebook,” <em>New Media &amp; Society</em> 20(1): 293–310. The paper that names the mismatch between platform time and infrastructure time most clearly.</li>
+<li>Helena Karasti and Jeanette Blomberg (2018), “Studying infrastructuring ethnographically,” <em>Computer Supported Cooperative Work</em> 27: 233–265. The source for project time versus infrastructure time as analytical categories.</li>
+<li>The Internet Archive Wayback Machine Availability API documentation: <a href="https://archive.org/help/wayback_api.php" class="uri">https://archive.org/help/wayback_api.php</a>. Short, readable, and the endpoint your audits will lean on.</li>
+<li>David S. H. Rosenthal, <em>LOCKSS: Lots of Copies Keep Stuff Safe</em>: <a href="https://www.lockss.org/" class="uri">https://www.lockss.org/</a>. The library-community preservation infrastructure that most of the web could learn from.</li>
+<li>Software Heritage: <a href="https://www.softwareheritage.org/" class="uri">https://www.softwareheritage.org/</a>. The mirror-of-record for public code repositories, including substantial GitHub coverage. Useful when you need to cite a commit whose origin repository has disappeared.</li>
+<li>David S. H. Rosenthal’s blog at <a href="https://blog.dshr.org/" class="uri">https://blog.dshr.org/</a>. Two decades of patient, unglamorous writing on the economics and mechanics of digital preservation. Start with any post whose title mentions “bit rot.”</li>
+<li>Environmental Data and Governance Initiative (EDGI), <em>Website Monitoring Reports</em>: <a href="https://envirodatagov.org/website-monitoring/" class="uri">https://envirodatagov.org/website-monitoring/</a>. The civil-society project that tracked federal environmental website changes across the 2017 and 2021 administration transitions. An existence proof that the audit practice in this chapter scales.</li>
+<li>Stanford Internet Observatory (2023), “Identifying and eliminating CSAM in generative ML training data and models”: <a href="https://purl.stanford.edu/kh752sm9123" class="uri">https://purl.stanford.edu/kh752sm9123</a>. The technical report that led to the withdrawal of LAION-5B and a case study in what dataset deprecation actually involves.</li>
+</ul>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-acker2019" class="csl-entry" role="listitem">
+Acker, Amelia, and Adam Kreisberg. 2019. <span>“Social Media Data Archives in an <span>API</span>-Driven World.”</span> <em>Archival Science</em>.
+</div>
+<div id="ref-denton2021" class="csl-entry" role="listitem">
+Denton, Emily, Alex Hanna, Razvan Amironesei, Andrew Smart, and Hilary Nicole. 2021. <span>“On the Genealogy of Machine Learning Datasets: A Critical History of <span>ImageNet</span>.”</span> <em>Big Data <span>&amp;</span> Society</em> 8 (2).
+</div>
+<div id="ref-gaffney2018" class="csl-entry" role="listitem">
+Gaffney, Devin, and J. Nathan Matias. 2018. <span>“Caveat Emptor, Computational Social Science: Large-Scale Missing Data in a Widely-Published <span>Reddit</span> Corpus.”</span> <em>PLoS ONE</em> 13 (7): e0200162.
+</div>
+<div id="ref-gebru2021" class="csl-entry" role="listitem">
+Gebru, Timnit, Jamie Morgenstern, Briana Vecchione, et al. 2021. <span>“Datasheets for Datasets.”</span> <em>Communications of the ACM</em> 64 (12): 86–92.
+</div>
+<div id="ref-karasti2018" class="csl-entry" role="listitem">
+Karasti, Helena, and Jeanette Blomberg. 2018. <span>“Studying Infrastructuring Ethnographically.”</span> <em>Computer Supported Cooperative Work</em> 27: 233–65.
+</div>
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Under Review</em>.
+</div>
+<div id="ref-plantin2016" class="csl-entry" role="listitem">
+Plantin, Jean-Christophe, Carl Lagoze, Paul N. Edwards, and Christian Sandvig. 2016. <span>“Infrastructure Studies Meet Platform Studies in the Age of <span>Google</span> and <span>Facebook</span>.”</span> <em>New Media <span>&amp;</span> Society</em> 20 (1): 293–310.
+</div>
+<div id="ref-thiel2023" class="csl-entry" role="listitem">
+Thiel, David. 2023. <em>Identifying and Eliminating <span>CSAM</span> in Generative <span>ML</span> Training Data and Models</em>. Stanford Internet Observatory. <a href="https://purl.stanford.edu/kh752sm9123">https://purl.stanford.edu/kh752sm9123</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch-03-exemption.html" class="pagination-link" aria-label="Exemption: Who Must Answer?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch-05-installed-base.html" class="pagination-link" aria-label="The Installed Base">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Installed Base</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Erosion: What Can Be Remembered? {#sec-ch-04-erosion}</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>A public record that cannot be found is not a public record. A footnote whose URL returns a 404 is a claim without a witness. A training corpus that has been quietly withdrawn is a model whose inputs the public can no longer inspect. This chapter is about the third pressure in Part I, the one that works by subtraction. @sec-ch-02-enclosure asked *who can observe?* @sec-ch-03-exemption asked *who must answer?* This chapter asks *what can be remembered?* and describes the slow, less visible process by which the evidence needed for any answer simply dissolves.</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>Erosion is rarely dramatic. An agency reorganizes a website during a transition and the old paths return 404s. A journal publisher migrates and the DOIs still resolve but the supplementary materials do not. A civic-tech nonprofit runs out of funding and its dashboard goes dark. A machine-learning dataset that trained a generation of models is withdrawn after researchers document abusive content inside it, and the weights of every model trained on it remain in circulation. Any one event looks like an operational hiccup. Taken together, they are the texture of a public record thinning as fast as anyone can thicken it.</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>Plantin, Lagoze, Edwards, and Sandvig <span class="co">[</span><span class="ot">-@plantin2016</span><span class="co">]</span> argue that the platforms the public has learned to depend on operate on a different clock than public infrastructures do. A municipal water system is designed to last decades and is maintained by a workforce whose job is to keep it running. A cloud storage service or a dataset release is designed to last a product cycle and is maintained by whoever still has a quarterly incentive to care. Karasti and Blomberg <span class="co">[</span><span class="ot">-@karasti2018</span><span class="co">]</span> call this the mismatch between **project time** and **infrastructure time**: projects end; infrastructures are supposed not to. When the public record lives inside projects, it ends with them.</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## The mundane politics of retention</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>There is a temptation to tell erosion stories as conspiracies. Sometimes they are. Much more often they are what happens when nobody's job description includes long-term stewardship. A sysadmin retires. A contract lapses. A platform closes its API and thirty years of researcher-accumulated corpora become unciteable overnight. Gaffney and Matias <span class="co">[</span><span class="ot">-@gaffney2018</span><span class="co">]</span> documented this for a single, widely-used Reddit corpus, showing that silent data loss had produced an entire body of published work built on samples missing, in predictable ways, parts of the thing they claimed to describe. The missingness was not announced. It was visible only when someone looked.</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>Acker and Kreisberg <span class="co">[</span><span class="ot">-@acker2019</span><span class="co">]</span> describe this as the problem of archiving in an API-driven world. Classical archival theory assumes a record exists somewhere, that custody can be established, and that preservation is a matter of migration. The contemporary record does not sit still long enough to be taken into custody. Denton, Hanna, and colleagues <span class="co">[</span><span class="ot">-@denton2021</span><span class="co">]</span> trace the same problem for machine-learning datasets: ImageNet, the canonical benchmark for a decade of computer-vision research, was assembled from a pipeline of choices (scraping Flickr, filtering through WordNet, paying crowdworkers to label) that is undocumented in any single place. When a dataset is questioned, the record of how it was made has often evaporated faster than the dataset itself.</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>The model-era instances are bigger and not meaningfully different in kind. LAION-5B, the image-text dataset used to train Stable Diffusion and many of its descendants, was taken offline in late 2023 after researchers at Stanford's Internet Observatory documented verified child sexual abuse material inside it <span class="co">[</span><span class="ot">@thiel2023</span><span class="co">]</span>. The withdrawal was the right call. It was also, for research purposes, a form of erosion: every paper that trained on LAION-5B now cites a dataset the reader cannot audit. Common Crawl, which underlies much of the open web's representation in large language model training, retains its crawls but its long-term archival status is a question nobody has answered on the record.</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> names **continuity** as one of the six elements of the installed base. The point is not that every artifact should live forever. The point is that when the public loses the ability to return to a source, the ability to audit what was built on that source goes with it. Erosion is not a failure of tools. It is a failure of incentives.</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## A link-rot audit you can run this afternoon</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>You need to see this happen in a corpus you can touch. The corpus to start with is the one you are reading: this book's own bibliography plus the "Further Reading" URLs at the end of each chapter. If you do not have that list handy, the EPA's climate-change press-release archive and NOAA's hurricane-research page are excellent substitutes, because both agencies have been reorganized enough times since 2016 that you will find real rot within minutes.</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>Walk a list of URLs, classify each response, record the result in a DataFrame. A 404 is obvious rot. A 301 redirect to a generic landing page is a worse and more common failure: the link resolves, returns a 200, and gives you nothing.</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> urlparse</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>HEADERS <span class="op">=</span> {</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">"User-Agent"</span>: <span class="st">"PublicInterestDataScience/0.1 (your-email@example.edu)"</span>,</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Accept"</span>: <span class="st">"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"</span>,</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> classify_url(url, timeout<span class="op">=</span><span class="dv">15</span>):</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Fetch a URL and classify the response.</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns a dict with url, status_code, final_url, category, notes.</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="co">    Categories: ok, redirect_same_host, redirect_offsite,</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="co">                client_error, server_error, timeout, dns_fail, other.</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>        r <span class="op">=</span> requests.get(url, headers<span class="op">=</span>HEADERS, timeout<span class="op">=</span>timeout,</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>                         allow_redirects<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> requests.exceptions.Timeout:</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> {<span class="st">"url"</span>: url, <span class="st">"status_code"</span>: <span class="va">None</span>,</span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>                <span class="st">"final_url"</span>: <span class="va">None</span>, <span class="st">"category"</span>: <span class="st">"timeout"</span>, <span class="st">"notes"</span>: <span class="st">""</span>}</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> requests.exceptions.<span class="pp">ConnectionError</span> <span class="im">as</span> e:</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> {<span class="st">"url"</span>: url, <span class="st">"status_code"</span>: <span class="va">None</span>,</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>                <span class="st">"final_url"</span>: <span class="va">None</span>, <span class="st">"category"</span>: <span class="st">"dns_fail"</span>,</span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>                <span class="st">"notes"</span>: <span class="bu">str</span>(e)[:<span class="dv">120</span>]}</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>    start_host <span class="op">=</span> urlparse(url).netloc</span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>    end_host <span class="op">=</span> urlparse(r.url).netloc</span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> r.status_code <span class="op">==</span> <span class="dv">200</span> <span class="kw">and</span> r.url <span class="op">==</span> url:</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"ok"</span></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> r.status_code <span class="op">==</span> <span class="dv">200</span> <span class="kw">and</span> start_host <span class="op">==</span> end_host:</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"redirect_same_host"</span></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> r.status_code <span class="op">==</span> <span class="dv">200</span>:</span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"redirect_offsite"</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="dv">400</span> <span class="op">&lt;=</span> r.status_code <span class="op">&lt;</span> <span class="dv">500</span>:</span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"client_error"</span></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="dv">500</span> <span class="op">&lt;=</span> r.status_code <span class="op">&lt;</span> <span class="dv">600</span>:</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"server_error"</span></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"other"</span></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"url"</span>: url, <span class="st">"status_code"</span>: r.status_code,</span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>            <span class="st">"final_url"</span>: r.url, <span class="st">"category"</span>: cat,</span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>            <span class="st">"notes"</span>: <span class="ss">f"bytes=</span><span class="sc">{</span><span class="bu">len</span>(r.content)<span class="sc">}</span><span class="ss">"</span>}</span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> audit(urls):</span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>    rows <span class="op">=</span> [classify_url(u) <span class="cf">for</span> u <span class="kw">in</span> urls]</span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame(rows)</span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df</span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>Point this at a real list of URLs and you will get something like the distribution below. The shape is representative, not exact; rerun it and the numbers will drift.</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>urls <span class="op">=</span> [</span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://www.epa.gov/climate-change"</span>,</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://www.noaa.gov/climate"</span>,</span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing"</span>,</span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://wikimedia.org/api/rest_v1/"</span>,</span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ... twenty more from your syllabus or bibliography</span></span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> audit(urls)</span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>report.groupby(<span class="st">"category"</span>).size()</span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; ok                     11</span></span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a><span class="co">#    redirect_same_host      4</span></span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a><span class="co">#    redirect_offsite        3</span></span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a><span class="co">#    client_error            2</span></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a><span class="co">#    server_error            0</span></span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a><span class="co">#    timeout                 1</span></span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a><span class="co">#    dns_fail                0</span></span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a><span class="co">#    other                   0</span></span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a>The <span class="in">`redirect_offsite`</span> row is the one to look at first. A federal agency URL that now redirects to a generic "archive" subdomain, or to a White House press page on a different topic, is a link that technically resolves but practically does not. Whenever you cite a government source in a paper, a report, or a public comment, assume the URL will be reorganized at the next administration transition. Plan for it.</span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="The Missing Manual"}</span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a>Status codes lie. A page that returns HTTP 200 may still be useless: a content management system that issues a "soft 404," a WAF page saying "request blocked," a single-page application that loads a JavaScript shell and fetches its real content from an API you are not calling. You can partly guard against this by checking response size and content against a known baseline, but there is no substitute for opening a sample of the "ok" rows in a browser. The Wayback Machine has the same problem from the other direction: its Availability API will cheerfully return a capture that was itself a 404 page archived at the moment of rot. If the service your audit uses does not let you inspect the content of a "successful" response, your audit is not done. Always verify a subset by eye.</span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a><span class="fu">## Recovering the rot with the Wayback Machine</span></span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>The Internet Archive's Wayback Machine is the closest thing the public has to a backup of the open web. It is not complete. It is not permanent (the Archive itself is a nonprofit dependent on donations, lawsuits, and the continued forbearance of its adversaries). It is the best you have. The Availability API is a single, small endpoint that takes a URL and an optional timestamp and returns the closest capture.</span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a><span class="in">GET http://archive.org/wayback/available?url=&lt;url&gt;&amp;timestamp=&lt;YYYYMMDD&gt;</span></span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a>The response shape is compact:</span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a><span class="in">```json</span></span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a>  <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://www.epa.gov/climate-change"</span><span class="op">,</span></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>  <span class="st">"archived_snapshots"</span><span class="op">:</span> {</span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a>    <span class="st">"closest"</span><span class="op">:</span> {</span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a>      <span class="st">"status"</span><span class="op">:</span> <span class="st">"200"</span><span class="op">,</span></span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>      <span class="st">"available"</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>      <span class="st">"url"</span><span class="op">:</span> <span class="st">"http://web.archive.org/web/20161119000000/https://www.epa.gov/climate-change"</span><span class="op">,</span></span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>      <span class="st">"timestamp"</span><span class="op">:</span> <span class="st">"20161119000000"</span></span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>If there is no capture, <span class="in">`archived_snapshots`</span> is an empty object. A recovery helper:</span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_capture(url, timestamp<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a>    api <span class="op">=</span> <span class="st">"http://archive.org/wayback/available"</span></span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>    params <span class="op">=</span> {<span class="st">"url"</span>: url}</span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> timestamp:</span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>        params[<span class="st">"timestamp"</span>] <span class="op">=</span> timestamp</span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> requests.get(api, params<span class="op">=</span>params, headers<span class="op">=</span>HEADERS, timeout<span class="op">=</span><span class="dv">30</span>)</span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a>    r.raise_for_status()</span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> r.json()</span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a>    snap <span class="op">=</span> data.get(<span class="st">"archived_snapshots"</span>, {}).get(<span class="st">"closest"</span>)</span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> snap <span class="kw">or</span> <span class="kw">not</span> snap.get(<span class="st">"available"</span>):</span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"wayback_url"</span>: snap[<span class="st">"url"</span>],</span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a>            <span class="st">"captured_at"</span>: snap[<span class="st">"timestamp"</span>],</span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>            <span class="st">"status"</span>: snap.get(<span class="st">"status"</span>)}</span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> recover_rotten(report):</span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Augment a link-rot report with Wayback captures for broken rows."""</span></span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>    broken <span class="op">=</span> report[report[<span class="st">"category"</span>].isin(</span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>        [<span class="st">"client_error"</span>, <span class="st">"server_error"</span>, <span class="st">"timeout"</span>, <span class="st">"dns_fail"</span>,</span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>         <span class="st">"redirect_offsite"</span>])]</span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>    recoveries <span class="op">=</span> []</span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> url <span class="kw">in</span> broken[<span class="st">"url"</span>]:</span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a>        cap <span class="op">=</span> find_capture(url)</span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a>        recoveries.append({<span class="st">"url"</span>: url, <span class="op">**</span>(cap <span class="kw">or</span> {})})</span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame(recoveries)</span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>recovered <span class="op">=</span> recover_rotten(report)</span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; columns: url, wayback_url, captured_at, status</span></span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a>Two details bear emphasis. First, a Wayback URL is citable: if the original source is gone, cite the Wayback capture with its timestamp. Second, the Archive allows you to *request* a capture through a separate endpoint (<span class="in">`https://web.archive.org/save/&lt;url&gt;`</span>), which you should treat as a standard move whenever you cite a page you expect to change. Saving a copy at the moment of citation shifts you from hoping the URL will still work to knowing a snapshot exists.</span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="In the Public Interest"}</span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a>When you archive a source at the moment of citation, you are exercising a form of ownership the law does not require of you. The page is not yours. You did not write it. You do not host it. What you hold is a responsibility for the evidence your argument rests on. @sec-ch-08-ownership will develop this claim: in a public-interest practice, **ownership** is stewardship over time, not private control. The link you save today is a small instance of that stewardship. @sec-ch-22-archival-deposits teaches the full form, where you deposit datasets and documentation with resolvable identifiers (Zenodo DOIs, Internet Archive items) that outlive any one organization. Between the two is the working habit this chapter asks of you: treat every URL you cite as perishable, and treat capture-at-citation as the default, not the exception.</span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a><span class="fu">## Datasheets as a retention practice</span></span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>A link-rot audit tells you what is missing from the outside. A **datasheet** tells the next reader what the thing you produced actually was, so that when pieces of it erode, there is a record of what to look for. Gebru and colleagues <span class="co">[</span><span class="ot">-@gebru2021</span><span class="co">]</span> proposed datasheets for datasets as a deliberate import from electronics engineering: every component ships with a spec sheet documenting what it is, how it was made, what it is for, and what it is not. Machine-learning datasets routinely ship with nothing, and the absence produces exactly the retroactive reconstructions Denton and colleagues <span class="co">[</span><span class="ot">-@denton2021</span><span class="co">]</span> had to do for ImageNet.</span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>A datasheet is not a README. It is a structured document with seven sections, and the discipline of filling each one out is what makes it useful:</span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Motivation.** Who made this, for what purpose, funded by whom? What gap did it fill?</span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Composition.** What does an instance look like? How many are there? Are there labels, and how were they produced? Are there known subgroup imbalances?</span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Collection process.** Where did the data come from? When? Through what mechanism? Were the subjects informed? Was consent obtained? What ethical review, if any?</span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Preprocessing, cleaning, labeling.** What transformations were applied between raw and released? Is the raw version available? What filtering removed what?</span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Uses.** What has this been used for? What should it not be used for? Are there tasks for which it is actively unsuitable?</span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Distribution.** How is it distributed? Under what license? With what restrictions? Through what channel, and what is the expected lifetime of that channel?</span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>**Maintenance.** Who maintains it? How will errata be communicated? Is there a versioning scheme? When is the next review?</span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a>The maintenance section will almost always be blank on the first pass, which is the point: if you cannot name the maintainer or the review cadence, you are publishing a dataset with no plan for its erosion. That is worth knowing before you publish.</span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>DATASHEET_TEMPLATE <span class="op">=</span> {</span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a>    <span class="st">"motivation"</span>: {</span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>        <span class="st">"purpose"</span>: <span class="st">""</span>,</span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a>        <span class="st">"creators"</span>: <span class="st">""</span>,</span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a>        <span class="st">"funding"</span>: <span class="st">""</span>,</span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a>        <span class="st">"gap_addressed"</span>: <span class="st">""</span>,</span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a>    <span class="st">"composition"</span>: {</span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a>        <span class="st">"instance_type"</span>: <span class="st">""</span>,</span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a>        <span class="st">"n_instances"</span>: <span class="va">None</span>,</span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a>        <span class="st">"labels"</span>: <span class="st">""</span>,</span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a>        <span class="st">"subgroup_imbalances"</span>: <span class="st">""</span>,</span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a>        <span class="st">"sensitive_attributes"</span>: <span class="st">""</span>,</span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a>    <span class="st">"collection_process"</span>: {</span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>        <span class="st">"source"</span>: <span class="st">""</span>,</span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a>        <span class="st">"period"</span>: <span class="st">""</span>,</span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a>        <span class="st">"mechanism"</span>: <span class="st">""</span>,</span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a>        <span class="st">"consent"</span>: <span class="st">""</span>,</span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ethical_review"</span>: <span class="st">""</span>,</span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a>    <span class="st">"preprocessing"</span>: {</span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a>        <span class="st">"transformations"</span>: <span class="st">""</span>,</span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a>        <span class="st">"raw_available"</span>: <span class="va">False</span>,</span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a>        <span class="st">"filtering"</span>: <span class="st">""</span>,</span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a>    <span class="st">"uses"</span>: {</span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a>        <span class="st">"prior_uses"</span>: <span class="st">""</span>,</span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a>        <span class="st">"inappropriate_uses"</span>: <span class="st">""</span>,</span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a>    <span class="st">"distribution"</span>: {</span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a>        <span class="st">"license"</span>: <span class="st">""</span>,</span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a>        <span class="st">"channel"</span>: <span class="st">""</span>,</span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a>        <span class="st">"restrictions"</span>: <span class="st">""</span>,</span>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a>        <span class="st">"expected_lifetime"</span>: <span class="st">""</span>,</span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a>    <span class="st">"maintenance"</span>: {</span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a>        <span class="st">"maintainer"</span>: <span class="st">""</span>,</span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a>        <span class="st">"errata_channel"</span>: <span class="st">""</span>,</span>
+<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a>        <span class="st">"versioning"</span>: <span class="st">""</span>,</span>
+<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a>        <span class="st">"next_review"</span>: <span class="st">""</span>,</span>
+<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a>Fill this in once, by hand, for a dataset you have actually used. The first datasheet will take several hours and will be worse than you expected. By the third, you will notice yourself asking questions at dataset-selection time that you did not ask before, which is the actual point of the practice.</span>
+<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why "just put it on GitHub" is not a preservation strategy</span></span>
+<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a>Students and, increasingly, agencies treat GitHub as a preservation layer. It is not one. GitHub is a hosting service owned by Microsoft, with no long-term commitment to any particular repository and a history of taking down content for reasons ranging from DMCA claims to policy disputes. Repositories can be made private, renamed, force-pushed over, or deleted by their owner. The commit hash is stable; the URL that resolves it is not. Software Heritage mirrors much of public GitHub, which is good, but public awareness of Software Heritage is limited.</span>
+<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a>The same logic applies to Google Drive links in syllabi, Dropbox links in footnotes, and Notion pages in institutional documentation. Each is a commercial service on a project-time clock. For anything you need to cite, publish through a channel designed for infrastructure time: a Zenodo deposit with a DOI, an Internet Archive item, an institutional repository your university has committed to maintaining. @sec-ch-22-archival-deposits walks through the mechanics.</span>
+<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a><span class="fu">## Closing the triptych</span></span>
+<span id="cb7-248"><a href="#cb7-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a>Chapter 2 asked who can observe; Chapter 3 asked who must answer; this chapter asks what can be remembered. Together they are Part I's working diagnosis. Access has narrowed, accountability is exempt, and the record that would let us reason about either is eroding faster than the institutions charged with preserving it can match.</span>
+<span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a>Part II turns to the values that make a response coherent. @sec-ch-05-installed-base names the installed base explicitly, the six-element framework Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> proposes and that this book has been gesturing at since @sec-ch-01-introduction. The link-rot audits and datasheets this chapter asks you to write are the first practical instances of what the next part will call **continuity**.</span>
+<span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
+<span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a>**Exercise 4.1 (Guided).** Pick a document with at least twenty external URLs: a syllabus, a paper's reference list, a policy brief, a government report. Run the link-rot audit from this chapter over its URLs and save the DataFrame as <span class="in">`exercises/ch04_audit.csv`</span>. In 200 words, describe the distribution of outcomes and name the single most consequential broken link.</span>
+<span id="cb7-256"><a href="#cb7-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a>**Exercise 4.2 (Guided).** For three of the broken or offsite-redirecting URLs from Exercise 4.1, use the Availability API to locate captures. Record the original URL, the Wayback URL, the timestamp, and a one-sentence note on whether the capture actually contains what the original cited. Submit as <span class="in">`exercises/ch04_recoveries.md`</span>. Where no capture exists, use the <span class="in">`web.archive.org/save/`</span> endpoint to request one of the current state for future reference.</span>
+<span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a>**Exercise 4.3 (Analytic).** Using the Gebru and colleagues template, write a full datasheet for a dataset you have used. Fill every section. Where you do not know the answer, say so explicitly rather than leaving the field blank. Save as <span class="in">`exercises/ch04_datasheet_&lt;dataset&gt;.md`</span>. Minimum 1,500 words; the maintenance section must name a human or an institution.</span>
+<span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a>**Exercise 4.4 (Comparative).** Pick a government webpage whose content you care about (EPA climate-change, a CDC surveillance page, a BLS methodology page). Use the Wayback Machine to locate its earliest capture and its most recent capture before an administration transition (January 2017 or January 2021 are useful inflection points). Compare the two and, in 500 words, describe what changed: content, framing, linked resources. Do not editorialize; describe. Save as <span class="in">`exercises/ch04_agency_comparison.md`</span>.</span>
+<span id="cb7-262"><a href="#cb7-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a>**Exercise 4.5 (Open-ended).** Identify one dataset, corpus, or data portal that you believe will not survive the next decade in publicly accessible form. Write a 600-to-800-word memo naming the resource, the mechanisms you expect to erode it, and a single concrete intervention a student or small nonprofit could take now. The intervention must be something doable in a semester. Save as <span class="in">`exercises/ch04_endangered.md`</span>. You will revisit it in @sec-ch-22-archival-deposits.</span>
+<span id="cb7-264"><a href="#cb7-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking ahead</span></span>
+<span id="cb7-266"><a href="#cb7-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-267"><a href="#cb7-267" aria-hidden="true" tabindex="-1"></a>Part I has now laid out its three pressures. Part II begins with Chapter 5, **The Installed Base**, which names the six-element framework that the rest of the book uses as a working definition of public interest. The link-rot function, the Wayback recovery helper, and the datasheet template you built in this chapter are the first instances of a pattern Chapter 5 will generalize: public-interest data science is less a set of analyses than a set of maintenance practices, carried out in public, by people who are willing to do them when nobody's quarterly review depends on it.</span>
+<span id="cb7-268"><a href="#cb7-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading and Resources</span></span>
+<span id="cb7-270"><a href="#cb7-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-271"><a href="#cb7-271" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford (2021), "Datasheets for datasets," *Communications of the ACM* 64(12): 86–92. The canonical template. Read it before you write your first datasheet; refer back to it every time you write the next.</span>
+<span id="cb7-272"><a href="#cb7-272" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Emily Denton, Alex Hanna, Razvan Amironesei, Andrew Smart, and Hilary Nicole (2021), "On the genealogy of machine learning datasets: A critical history of ImageNet," *Big Data &amp; Society* 8(2). Essential counterweight to treating datasheets as a solved problem.</span>
+<span id="cb7-273"><a href="#cb7-273" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Jean-Christophe Plantin, Carl Lagoze, Paul N. Edwards, and Christian Sandvig (2016), "Infrastructure studies meet platform studies in the age of Google and Facebook," *New Media &amp; Society* 20(1): 293–310. The paper that names the mismatch between platform time and infrastructure time most clearly.</span>
+<span id="cb7-274"><a href="#cb7-274" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Helena Karasti and Jeanette Blomberg (2018), "Studying infrastructuring ethnographically," *Computer Supported Cooperative Work* 27: 233–265. The source for project time versus infrastructure time as analytical categories.</span>
+<span id="cb7-275"><a href="#cb7-275" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The Internet Archive Wayback Machine Availability API documentation: <span class="ot">&lt;https://archive.org/help/wayback_api.php&gt;</span>. Short, readable, and the endpoint your audits will lean on.</span>
+<span id="cb7-276"><a href="#cb7-276" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>David S. H. Rosenthal, *LOCKSS: Lots of Copies Keep Stuff Safe*: <span class="ot">&lt;https://www.lockss.org/&gt;</span>. The library-community preservation infrastructure that most of the web could learn from.</span>
+<span id="cb7-277"><a href="#cb7-277" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Software Heritage: <span class="ot">&lt;https://www.softwareheritage.org/&gt;</span>. The mirror-of-record for public code repositories, including substantial GitHub coverage. Useful when you need to cite a commit whose origin repository has disappeared.</span>
+<span id="cb7-278"><a href="#cb7-278" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>David S. H. Rosenthal's blog at <span class="ot">&lt;https://blog.dshr.org/&gt;</span>. Two decades of patient, unglamorous writing on the economics and mechanics of digital preservation. Start with any post whose title mentions "bit rot."</span>
+<span id="cb7-279"><a href="#cb7-279" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Environmental Data and Governance Initiative (EDGI), *Website Monitoring Reports*: <span class="ot">&lt;https://envirodatagov.org/website-monitoring/&gt;</span>. The civil-society project that tracked federal environmental website changes across the 2017 and 2021 administration transitions. An existence proof that the audit practice in this chapter scales.</span>
+<span id="cb7-280"><a href="#cb7-280" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Stanford Internet Observatory (2023), "Identifying and eliminating CSAM in generative ML training data and models": <span class="ot">&lt;https://purl.stanford.edu/kh752sm9123&gt;</span>. The technical report that led to the withdrawal of LAION-5B and a case study in what dataset deprecation actually involves.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-04-erosion.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
