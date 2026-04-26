@@ -263,13 +263,13 @@ Part III turns from values to lineages: the professional traditions that have do
 
 ## Further Reading and Resources
 
-- Helena Karasti and Jeanette Blomberg (2018), "Studying infrastructuring ethnographically," *CSCW*, 27: 233 to 265. The reference this chapter leans on for what maintenance labor actually is.
-- Joan M. Schwartz and Terry Cook (2002), "Archives, records, and power," *Archival Science*, 2: 1 to 19. The foundational argument for archives as instruments of power.
-- Ann Laura Stoler (2002), *Along the Archival Grain*. A full-length study of reading archives as political objects; the methodology generalizes to civic datasets.
+- Helena Karasti and Jeanette Blomberg (2018), "[Studying infrastructuring ethnographically](https://doi.org/10.1007/s10606-017-9296-7)," *CSCW*, 27: 233 to 265. The reference this chapter leans on for what maintenance labor actually is.
+- Joan M. Schwartz and Terry Cook (2002), "[Archives, records, and power](https://doi.org/10.1007/BF02435628)," *Archival Science*, 2: 1 to 19. The foundational argument for archives as instruments of power.
+- Ann Laura Stoler (2009), *[Along the Archival Grain](https://press.princeton.edu/books/paperback/9780691146362/along-the-archival-grain)*. A full-length study of reading archives as political objects; the methodology generalizes to civic datasets.
 - Ada Lovelace Institute, "Exploring legal mechanisms for data stewardship" (2021): <https://www.adalovelaceinstitute.org/report/legal-mechanisms-data-stewardship/>.
 - Te Mana Raraunga, "Principles of Maori data sovereignty" (2018): <https://www.temanararaunga.maori.nz/tutohinga>. The foundational statement of Indigenous data sovereignty in Aotearoa New Zealand.
-- Stephanie Russo Carroll et al. (2020), "The CARE Principles for Indigenous data governance," *Data Science Journal*, 19: 43. The complement and corrective to FAIR.
-- Sasha Costanza-Chock (2020), *Design Justice*. Stewardship as community-led rather than institutionally-delegated; read chapter 4 with this chapter in view.
+- Stephanie Russo Carroll et al. (2020), "[The CARE Principles for Indigenous data governance](https://doi.org/10.5334/dsj-2020-043)," *Data Science Journal*, 19: 43. The complement and corrective to FAIR.
+- Sasha Costanza-Chock (2020), *[Design Justice](https://design-justice.pubpub.org/)*. Stewardship as community-led rather than institutionally-delegated; read chapter 4 with this chapter in view.
 - Open Data Institute, "Data stewardship: What it is and why it matters": <https://theodi.org/insights/guides/data-stewardship/>.
-- Sylvie Delacroix and Neil D. Lawrence (2019), "Bottom-up data trusts," *International Data Privacy Law*, 9(4): 236 to 252.
+- Sylvie Delacroix and Neil D. Lawrence (2019), "[Bottom-up data trusts](https://doi.org/10.1093/idpl/ipz014)," *International Data Privacy Law*, 9(4): 236 to 252.
 - OWASP, "Threat Modeling Cheat Sheet": <https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html>.

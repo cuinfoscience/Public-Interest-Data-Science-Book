@@ -247,12 +247,12 @@ Part II continues in Chapter 6 with **openness**, the first of the three values.
 
 ## Further Reading and Resources
 
-- Brian C. Keegan (2026), "Public interest data infrastructuring," *Information, Communication & Society*. The paper that names the six-element framework. The rest of Part II leans on it constantly.
-- Susan Leigh Star and Karen Ruhleder (1994), "Steps toward an ecology of infrastructure," *CSCW 1994*, 253–264. The original "installed base" argument.
-- Helena Karasti and Jeanette Blomberg (2018), "Studying infrastructuring ethnographically," *CSCW* 27: 233–265. The clearest articulation of infrastructuring as alignment work.
-- Margunn Aanestad, Miria Grisot, Ole Hanseth, and Polyxeni Vassilakopoulou (2017), "Information infrastructures and the challenge of the installed base." The healthcare-systems reading that makes clear why ignoring the installed base is not a niche failure.
-- Geoffrey C. Bowker and Susan Leigh Star (2000), *Sorting Things Out*. Indispensable for the interpretability element.
-- Ben Hutchinson and colleagues (2021), "Towards accountability for machine learning datasets," *FAccT 2021*. A complementary framework for ML dataset governance.
+- Brian C. Keegan (2026), "Public interest data infrastructuring," Under Review. The paper that names the six-element framework. The rest of Part II leans on it constantly.
+- Susan Leigh Star and Karen Ruhleder (1994), "[Steps toward an ecology of infrastructure](https://doi.org/10.1145/192844.193021)," *CSCW 1994*, 253–264. The original "installed base" argument.
+- Helena Karasti and Jeanette Blomberg (2018), "[Studying infrastructuring ethnographically](https://doi.org/10.1007/s10606-017-9296-7)," *CSCW* 27: 233–265. The clearest articulation of infrastructuring as alignment work.
+- Margunn Aanestad, Miria Grisot, Ole Hanseth, and Polyxeni Vassilakopoulou (2017), "[Information infrastructures and the challenge of the installed base](https://doi.org/10.1007/978-3-319-51020-0_3)." The healthcare-systems reading that makes clear why ignoring the installed base is not a niche failure.
+- Geoffrey C. Bowker and Susan Leigh Star (2000), *[Sorting Things Out](https://mitpress.mit.edu/9780262522953/sorting-things-out/)*. Indispensable for the interpretability element.
+- Ben Hutchinson and colleagues (2021), "[Towards accountability for machine learning datasets](https://doi.org/10.1145/3442188.3445918)," *FAccT 2021*. A complementary framework for ML dataset governance.
 - The DataCite schema documentation: <https://schema.datacite.org>. A production-grade persistent-identifier standard backed by an institutional community.
 - UK Government Digital Service, "Service Manual," <https://www.gov.uk/service-manual>. An institution treating the installed base as a design problem.
 - The 18F "Before You Ship" checklist, <https://before-you-ship.18f.gov/>. A reference for what a minimal production installed base looks like.

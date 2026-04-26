@@ -244,7 +244,7 @@ Chapter 11 (@sec-ch-11-accounting) turns to accounting and auditing. Auditors, l
 - Text of the Freedom of Information Act, 5 U.S.C. § 552: <https://www.law.cornell.edu/uscode/text/5/552> [@foia_552]. Reading the nine exemptions in order is thirty minutes well spent.
 - Colorado Open Records Act, C.R.S. § 24-72-201 et seq.: <https://leg.colorado.gov/colorado-revised-statutes> [@cora_statute].
 - Sunshine Week: <https://sunshineweek.org/>. The annual March observance that catalyzes most of the open-records coverage worth reading [@sunshineweek].
-- Albiston and Nielsen [@albiston2017] on the two-tier structure of U.S. public interest law.
+- Albiston and Nielsen [@albiston2017] on the [two-tier structure of U.S. public interest law](https://doi.org/10.1111/lsi.12250).
 - Samantha Warren, "Where public records meet the public interest: A reporter's field guide" [@warren2025].
 
 ## Exercises

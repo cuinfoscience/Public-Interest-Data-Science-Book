@@ -164,8 +164,8 @@ Chapter 10 (@sec-ch-10-law) takes up the legal infrastructure that journalism ha
 
 - Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner (2016), "Machine Bias," ProPublica: <https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing>. Read the article, then read the companion methodology at <https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm>.
 - ProPublica's `compas-analysis` repository: <https://github.com/propublica/compas-analysis>. The Jupyter notebook in the repository root is the canonical object for this chapter.
-- Anthony W. Flores, Kristin Bechtel, and Christopher T. Lowenkamp (2016), "False positives, false negatives, and false analyses: A rejoinder to 'Machine Bias,'" *Federal Probation*, 80(2): 38 to 46.
-- Nicholas Diakopoulos (2019), *Automating the News: How Algorithms Are Rewriting the Media*. Harvard University Press. The standing academic treatment of algorithmic accountability reporting.
+- Anthony W. Flores, Kristin Bechtel, and Christopher T. Lowenkamp (2016), "[False positives, false negatives, and false analyses: A rejoinder to 'Machine Bias,'](https://www.uscourts.gov/sites/default/files/80_2_6_0.pdf)" *Federal Probation*, 80(2): 38 to 46.
+- Nicholas Diakopoulos (2019), *[Automating the News: How Algorithms Are Rewriting the Media](https://www.hup.harvard.edu/books/9780674976986)*. Harvard University Press. The standing academic treatment of algorithmic accountability reporting.
 - The Markup's "Show Your Work" series: <https://themarkup.org/series/show-your-work>. Each investigation publishes its methodology as a standalone piece; read three of them back to back.
 - Investigative Reporters and Editors (IRE) and the National Institute for Computer-Assisted Reporting (NICAR): <https://www.ire.org>. The professional home of U.S. data journalism; the NICAR conference proceedings are an underappreciated methods literature.
 - International Consortium of Investigative Journalists (ICIJ): <https://www.icij.org>. The Panama, Paradise, and Pandora Papers investigations, with extensive documentation of the cross-border collaboration model.

@@ -204,7 +204,7 @@ Chapter 19 (@sec-ch-19-research-proposals) takes the genre into the academic and
 - Paradigm Initiative, *Londa* report on digital rights in Africa [@paradigm_londa], <https://paradigmhq.org/londa>. Distributed-authorship model with country-level reporting; the opposite of the single-institute think-tank report.
 - Quarto project and book documentation, <https://quarto.org/docs/projects/quarto-projects.html> and <https://quarto.org/docs/books/>. The authoritative reference for multi-format rendering; the book you are reading is built with it.
 - Pandoc's Word output documentation, <https://pandoc.org/MANUAL.html#option--reference-doc>. The two-page guide that fixes ninety percent of `.docx` formatting surprises, especially how to use a reference document for headings and styles.
-- Tara Dawson McGuinness and Hana Schank, *Power to the Public* [@mcguinness2021], for the political economy of public-interest technology reports and the foundations that fund them.
+- Tara Dawson McGuinness and Hana Schank, *[Power to the Public](https://press.princeton.edu/books/hardcover/9780691207759/power-to-the-public)* [@mcguinness2021], for the political economy of public-interest technology reports and the foundations that fund them.
 - *The Data Journalism Handbook 2* [@gray2021handbook], particularly the chapters on report-length investigative projects; the conventions travel.
-- Timnit Gebru and colleagues, "Datasheets for datasets" [@gebru2021]. The provenance-note template you should adapt for every dataset your report relies on.
+- Timnit Gebru and colleagues, "[Datasheets for datasets](https://doi.org/10.1145/3458723)" [@gebru2021]. The provenance-note template you should adapt for every dataset your report relies on.
 - Keegan (2026) [@keegan2026], on the six elements of the installed base and why reports are the genre in which they most often travel.

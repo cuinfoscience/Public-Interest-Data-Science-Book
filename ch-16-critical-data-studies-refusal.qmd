@@ -203,13 +203,13 @@ Part V begins in Chapter 17 (@sec-ch-17-op-eds) with the op-ed, the first of six
 
 ## Further Reading and Resources
 
-- Bowker and Star (2000), *Sorting Things Out: Classification and Its Consequences*. MIT Press. Start here.
+- Bowker and Star (2000), *[Sorting Things Out: Classification and Its Consequences](https://mitpress.mit.edu/9780262522953/sorting-things-out/)*. MIT Press. Start here.
 - D'Ignazio and Klein (2020), *Data Feminism*. MIT Press. Open-access at <https://data-feminism.mitpress.mit.edu/>. Seven principles and the case studies that make them mean something.
 - The CARE Principles for Indigenous Data Governance: <https://www.gida-global.org/care>. Short, specific, a direct complement to FAIR.
 - Te Mana Raraunga, "Principles of Māori Data Sovereignty": <https://www.temanararaunga.maori.nz/tutohinga>.
 - Stop LAPD Spying Coalition, "The Algorithmic Ecology" (2020): <https://stoplapdspying.org/the-algorithmic-ecology-an-abolitionist-tool-for-organizing-against-algorithms/>. A short essay and a diagram that will change how you read algorithmic systems.
-- Audra Simpson (2014), *Mohawk Interruptus*. Duke University Press. The book that made refusal a theoretical term in contemporary Indigenous studies.
-- Simone Browne (2015), *Dark Matters: On the Surveillance of Blackness*. Duke University Press. The prehistory of the surveillance systems this chapter's audit targets.
-- Safiya Umoja Noble (2018), *Algorithms of Oppression*. NYU Press. A canonical treatment of search as a site of racial formation.
+- Audra Simpson (2014), *[Mohawk Interruptus](https://www.dukeupress.edu/mohawk-interruptus)*. Duke University Press. The book that made refusal a theoretical term in contemporary Indigenous studies.
+- Simone Browne (2015), *[Dark Matters: On the Surveillance of Blackness](https://www.dukeupress.edu/dark-matters)*. Duke University Press. The prehistory of the surveillance systems this chapter's audit targets.
+- Safiya Umoja Noble (2018), *[Algorithms of Oppression](https://nyupress.org/9781479837243/algorithms-of-oppression/)*. NYU Press. A canonical treatment of search as a site of racial formation.
 - US Indigenous Data Sovereignty Network: <https://usindigenousdata.org/>.
 - HUD HMIS Data Standards manual: <https://www.hudexchange.info/resource/3824/hmis-data-dictionary/>. Read the introduction and the Race field documentation before Exercise 16.1.

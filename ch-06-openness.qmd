@@ -246,4 +246,4 @@ This chapter built the openness side of the installed base. Chapter 7 takes up *
 - Open Knowledge Foundation, *The Open Data Handbook*: <https://opendatahandbook.org/>. The movement's original playbook; still the clearest short treatment of what "open" means.
 - Open Data Commons: <https://opendatacommons.org/>. PDDL and ODbL, for cases where Creative Commons does not quite fit.
 - Sunlight Foundation archives: <https://sunlightfoundation.com/>. Ongoing critique of data.gov's drift and the U.S. open-government movement.
-- Gebru et al. (2021), "Datasheets for datasets," *Communications of the ACM* 64(12): 86–92. The source for this chapter's datasheet template.
+- Gebru et al. (2021), "[Datasheets for datasets](https://doi.org/10.1145/3458723)," *Communications of the ACM* 64(12): 86–92. The source for this chapter's datasheet template.
