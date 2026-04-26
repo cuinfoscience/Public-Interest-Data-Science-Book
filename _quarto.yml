@@ -19,7 +19,6 @@ book:
   sharing: [twitter, linkedin]
   search: true
   page-navigation: true
-  downloads: [pdf, epub]
   chapters:
     - index.qmd
     - part: "Pressures"
@@ -79,16 +78,6 @@ format:
     fig-responsive: true
     callout-appearance: default
     highlight-style: github
-  pdf:
-    documentclass: scrbook
-    papersize: letter
-    toc-depth: 2
-    number-sections: true
-    colorlinks: true
-    keep-tex: false
-  epub:
-    toc: true
-    number-sections: false
 
 execute:
   eval: false
