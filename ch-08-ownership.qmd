@@ -5,7 +5,7 @@ execute:
 
 # Ownership {#sec-ch-08-ownership}
 
-A commercial data broker will tell you, if pressed, that it *owns* the nine-hundred-variable dossier it sells about you. Ownership here means a property claim: rights to exclude, alienate, and monetize, backed by contract law. The dossier was assembled, often without your knowledge, from loyalty programs, voter files, credit header data, and the exhaust of a hundred free apps. You do not own it. The broker does.
+You will extend the dataset you cleaned in @sec-ch-06-openness with a tiered-access scheme, and the threat model you write here is referenced again in @sec-ch-22-archival-deposits when the deposit's preservation plan needs to declare access conditions. A commercial data broker will tell you, if pressed, that it *owns* the nine-hundred-variable dossier it sells about you. Ownership here means a property claim: rights to exclude, alienate, and monetize, backed by contract law. The dossier was assembled, often without your knowledge, from loyalty programs, voter files, credit header data, and the exhaust of a hundred free apps. You do not own it. The broker does.
 
 This chapter argues that ownership in public-interest data science is a different word, and most of the trouble in the field comes from not noticing. The broker's claim is ownership-as-property. The claim a public-interest steward has to make is ownership-as-stewardship: a maintenance obligation that requires labor, authority, and continuity across political cycles. You do not own a public dataset the way a broker owns a dossier. You own it the way a municipal archivist owns the city's property records: accountable for its condition, usability, and survival, and unable to sell it off when the grant runs out.
 
