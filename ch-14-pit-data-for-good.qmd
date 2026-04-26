@@ -1,5 +1,4 @@
 ---
-title: "Public Interest Technology and Data for Good"
 execute:
   eval: false
 ---

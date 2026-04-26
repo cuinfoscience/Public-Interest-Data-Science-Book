@@ -1,12 +1,11 @@
 ---
-title: "Engineering"
 execute:
   eval: false
 ---
 
 # Engineering {#sec-ch-13-engineering}
 
-Most bridges do not fall down. This is unremarkable until you notice how many there are, how heavy the trucks on them are, and how few civil engineers are on site at any given bridge on any given day. The low background rate of collapse is a professional accomplishment. It rests on standards, inspection schedules, conservative design margins, licensure, and the slow accumulation of what Henry Petroski [-@petroski1992] calls the knowledge of failure. Engineering became a profession in the nineteenth century partly by agreeing to pay close attention to its own disasters. The Tay Bridge. The Tacoma Narrows. The DC-10 cargo door. The hospitality of an engineer's bookshelf to a failure taxonomy is one of the most important cultural facts about the field.
+The pipeline you wrapped around the @sec-ch-07-oversight audit in @sec-ch-11-accounting is the thing under test in this chapter. Most of the tests you write will fail at first; that is the point. Most bridges do not fall down. This is unremarkable until you notice how many there are, how heavy the trucks on them are, and how few civil engineers are on site at any given bridge on any given day. The low background rate of collapse is a professional accomplishment. It rests on standards, inspection schedules, conservative design margins, licensure, and the slow accumulation of what Henry Petroski [-@petroski1992] calls the knowledge of failure. Engineering became a profession in the nineteenth century partly by agreeing to pay close attention to its own disasters. The Tay Bridge. The Tacoma Narrows. The DC-10 cargo door. The hospitality of an engineer's bookshelf to a failure taxonomy is one of the most important cultural facts about the field.
 
 Data science does not yet have that bookshelf. It has conference papers on bias, a growing body of audit work (@sec-ch-07-oversight), and a scattered practice of post-incident reviews at the sites that run production systems at scale. What it lacks is a professional identity organized around the question "what failed, why, and what will we change so it does not fail again." This chapter, the last in Part III, proposes that engineering is the discipline most worth borrowing from on that question. From engineering, you take tests, incident reviews, and the cultural insistence that reliability is earned and paid for, not assumed.
 

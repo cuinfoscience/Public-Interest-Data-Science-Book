@@ -1,5 +1,4 @@
 ---
-title: "Reports"
 execute:
   eval: false
 ---
@@ -86,7 +85,6 @@ project:
   type: default
   output-dir: _output
 
-title: "Scoring disparities in Boulder County's homelessness response system"
 author:
   - name: "Your Name"
     affiliation: "INFO 46XX, University of Colorado Boulder"

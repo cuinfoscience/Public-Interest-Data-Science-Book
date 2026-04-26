@@ -1,12 +1,11 @@
 ---
-title: "Openness"
 execute:
   eval: false
 ---
 
 # Openness {#sec-ch-06-openness}
 
-Chapter 5 argued that the six elements of the installed base are the conditions under which "public interest" can be said to be served by a data system rather than invoked on its behalf. This chapter takes the first three of those elements (linkability, interpretability, and the openness-facing portion of continuity) and turns them into a practice. The practice has a name most readers will already have heard. It is called open data, and the name is doing too much rhetorical work.
+The cleaned civic dataset you build in this chapter returns in @sec-ch-08-ownership when you extend it with a tiered-access scheme, and again in @sec-ch-22-archival-deposits when you deposit it with a resolvable identifier. Chapter 5 argued that the six elements of the installed base are the conditions under which "public interest" can be said to be served by a data system rather than invoked on its behalf. This chapter takes the first three of those elements (linkability, interpretability, and the openness-facing portion of continuity) and turns them into a practice. The practice has a name most readers will already have heard. It is called open data, and the name is doing too much rhetorical work.
 
 Open data as a programmatic idea is roughly twenty years old. It has produced real goods: the federal data.gov portal, municipal 311 feeds, FEC disbursement extracts, the census ACS API. It has also produced a great deal of what practitioners now call, with a mixture of resignation and contempt, the data dump. A data dump is a civic file dropped onto a portal with a permissive license, no documentation, inconsistent columns, encoding errors, and a filename like `final_final_v3.xlsx`. It is technically open. It satisfies the ordinance. For any public that does not already work inside the agency, it is functionally unusable.
 
@@ -174,7 +173,6 @@ Open `http://localhost:8001/` and click around. You should see the table, the co
 The `metadata.yml` is where your README's column documentation lives inside Datasette. A minimum version:
 
 ```yaml
-title: "Boulder campaign finance filings"
 description_html: |
   <p>Campaign finance disclosures for Boulder municipal elections.
   See <a href="README.md">README.md</a> and

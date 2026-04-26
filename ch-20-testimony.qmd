@@ -1,5 +1,4 @@
 ---
-title: "Testimony"
 execute:
   eval: false
 ---
@@ -155,12 +154,12 @@ Chapter 21 takes up public comments on federal rulemakings: a related genre with
 ## Further Reading and Resources
 
 - Frances Haugen, testimony before the US Senate Committee on Commerce, Science, and Transportation, Subcommittee on Consumer Protection, Product Safety, and Data Security, October 5, 2021. The canonical example for this chapter [@haugen2021]. Watch the full hearing if you can; the Q&A is as instructive as the prepared statement.
-- Joy Buolamwini, testimony before the US House Committee on Oversight and Reform on facial recognition technology, May 2019. Paired with the *Gender Shades* research [@buolamwini2018], it is a model of how an audit becomes a hearing statement. TODO: verify canonical transcript URL.
-- Inioluwa Deborah Raji, various congressional and state-legislative appearances on AI auditing and accountability, 2020 onward. TODO: confirm specific hearing transcripts; her FAccT work [@raji2020] is the technical backbone.
-- Safiya Umoja Noble, Senate Judiciary Committee comments on algorithmic amplification and platform accountability. TODO: verify specific hearing and date; her book [@noble2018] is the long form.
+- Joy Buolamwini, testimony before the US House Committee on Oversight and Reform on facial recognition technology, May 2019. Paired with the *Gender Shades* research [@buolamwini2018], it is a model of how an audit becomes a hearing statement. Search the Congress.gov hearings archive (linked below) for the canonical transcript.
+- Inioluwa Deborah Raji, various congressional and state-legislative appearances on AI auditing and accountability, 2020 onward. Her FAccT work [@raji2020] is the technical backbone; specific hearing transcripts can be located through Congress.gov and state-legislative archives.
+- Safiya Umoja Noble, Senate Judiciary Committee comments on algorithmic amplification and platform accountability. Her book [@noble2018] is the long-form companion.
 - Congress.gov hearings archive: <https://www.congress.gov/committees>. Browse recent Commerce, Judiciary, and Energy and Commerce hearings for current AI and data-broker testimony.
 - Senate.gov testimony archive: <https://www.senate.gov/committees/hearings_meetings.htm>. Committee-by-committee listings of upcoming and archived hearings.
 - UN Office of the High Commissioner for Human Rights, submissions to Special Rapporteurs: <https://www.ohchr.org/en/special-procedures-human-rights-council>. A different form of testimony, written and international, with its own conventions.
-- Common Cause, "How to testify at a hearing": <https://www.commoncause.org/>. A plain-English guide for first-time witnesses. TODO: pin to current URL.
+- Common Cause, civic-engagement and witness-preparation resources at <https://www.commoncause.org/>. Browse the "Take Action" and "Research & Resources" sections for plain-English guides aimed at first-time witnesses.
 - Public Citizen's advocacy resources: <https://www.citizen.org/>. Includes sample testimony and witness-preparation materials.
 - Keegan (2026), *Public interest data infrastructuring* [@keegan2026], on why voice-in-the-record is part of the installed base rather than a rhetorical flourish.

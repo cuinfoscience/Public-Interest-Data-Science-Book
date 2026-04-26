@@ -1,5 +1,4 @@
 ---
-title: "Journalism"
 execute:
   eval: false
 ---

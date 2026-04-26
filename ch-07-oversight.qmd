@@ -1,12 +1,11 @@
 ---
-title: "Oversight"
 execute:
   eval: false
 ---
 
 # Oversight {#sec-ch-07-oversight}
 
-In 2018, Joy Buolamwini and Timnit Gebru published "Gender Shades," a disaggregated audit of three commercial gender-classification systems [@buolamwini2018]. The headline finding is familiar: the systems misclassified darker-skinned women at rates up to 34 percentage points higher than lighter-skinned men. The methodological finding is less famous and more important. Aggregate accuracy had hidden the disparity. Every vendor's marketing materials had reported a single accuracy number, and every single-number report was technically true and substantively misleading. The audit did not discover a new failure mode. It discovered a disclosure regime designed not to show it.
+The disaggregated audit you build in this chapter is wrapped into a reproducible pipeline in @sec-ch-11-accounting and tested with `pytest` in @sec-ch-13-engineering, so the audit you write once does not have to be rewritten by hand the next time someone asks. In 2018, Joy Buolamwini and Timnit Gebru published "Gender Shades," a disaggregated audit of three commercial gender-classification systems [@buolamwini2018]. The headline finding is familiar: the systems misclassified darker-skinned women at rates up to 34 percentage points higher than lighter-skinned men. The methodological finding is less famous and more important. Aggregate accuracy had hidden the disparity. Every vendor's marketing materials had reported a single accuracy number, and every single-number report was technically true and substantively misleading. The audit did not discover a new failure mode. It discovered a disclosure regime designed not to show it.
 
 That is what oversight is for. It is the work of making a system's behavior visible to parties other than its builders, in a form those parties can use. "Visible" is a demanding word. A datasheet on a vendor website is not visibility if nobody with authority to act on it ever reads it. A one-off academic audit is not visibility if the vendor is free to change the model the next day. Buolamwini and Gebru's paper mattered not only because of what it found, but because it was followed by sustained pressure, by IBM's and Microsoft's decisions to pause face-recognition contracts, by the organizing that Raji and colleagues [-@raji2020] later formalized into an end-to-end internal auditing framework, and by legislation that cited the work by name. An audit is a technique. Oversight is an arrangement.
 

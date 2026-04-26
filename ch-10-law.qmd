@@ -1,5 +1,4 @@
 ---
-title: "Law"
 execute:
   eval: false
 ---

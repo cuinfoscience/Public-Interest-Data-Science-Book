@@ -1,5 +1,4 @@
 ---
-title: "Enclosure: Who Can Observe?"
 execute:
   eval: false
 ---

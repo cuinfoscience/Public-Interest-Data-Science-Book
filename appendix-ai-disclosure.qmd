@@ -12,7 +12,7 @@ This disclosure exists because a book about public interest data science should 
 
 The bibliography's selection reflects the author's reading, not the assistant's. The running examples (Boulder and Denver municipal records, a synthetic worker-log fixture, a class-wide FOIA tracker, the regulations.gov walkthrough) are authorial choices grounded in the companion course. The "Missing Manual" and "In the Public Interest" callout convention is the author's. The Part V genre structure, and particularly its commitment to producing submittable artifacts, is the author's pedagogical argument.
 
-The assistant was asked not to invent citations. Where a suggested reference could not be verified, the bibliography contains a `TODO:` flag rather than a fabricated entry. Readers who find a citation that cannot be located should open an issue.
+The assistant was asked not to invent citations. Where a suggested reference could not be verified, the bibliography flags the entry for follow-up rather than recording a fabricated one. Readers who find a citation that cannot be located should open an issue.
 
 ## How to verify
 
