@@ -148,7 +148,7 @@ requests.put(f"{ZENODO}/deposit/depositions/{dep['id']}",
 r = requests.post(
     f"{ZENODO}/deposit/depositions/{dep['id']}/actions/publish",
     params=PARAMS)
-print(r.json()["doi"])  # => 10.5281/zenodo.XXXXXXX
+print(r.json()["doi"])  # the API returns your record's DOI here, e.g. 10.5281/zenodo.7654321
 ```
 
 The `related_identifiers` field is where federation becomes legible. You are telling Zenodo that its record is identical to the Internet Archive item and derived from the EPA source. A future user landing on any of the three can follow the chain to the others. Before going live, test against `sandbox.zenodo.org`: the API is identical, the DOIs are not real, the mistakes are free.
@@ -179,7 +179,7 @@ The five Part V artifacts cluster around the deposit. The op-ed argues the datas
 
 ## Verifying and citing
 
-A deposit that cannot be cited is a backup. A deposit that can be cited is a contribution. After publication, resolve the DOI and confirm it lands. Paste the Internet Archive URL into a fresh logged-out session and confirm you can download the files. Compute their SHA-256 and compare to what you deposited. Then write the citation in the form your future readers will paste:
+A deposit that cannot be cited is a backup. A deposit that can be cited is a contribution. After publication, resolve the DOI and confirm it lands. Paste the Internet Archive URL into a fresh logged-out session and confirm you can download the files. Compute their SHA-256 and compare to what you deposited. Then write the citation, substituting your minted DOI for the `XXXXXXX` placeholder, in the form your future readers will paste:
 
 > Your Name (2026). *EPA Toxics Release Inventory, 2022 Basic Data File (mirror)* [Dataset]. Zenodo. `https://doi.org/10.5281/zenodo.XXXXXXX`. Also at Internet Archive: `https://archive.org/details/epa-tri-2022-basic-mirror`.
 
