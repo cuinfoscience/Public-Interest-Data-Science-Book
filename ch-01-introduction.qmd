@@ -1,5 +1,4 @@
 ---
-title: "Introduction to Public Interest Data Science"
 execute:
   eval: false
 ---

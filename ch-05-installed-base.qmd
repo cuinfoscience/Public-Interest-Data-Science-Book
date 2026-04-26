@@ -1,5 +1,4 @@
 ---
-title: "The Installed Base"
 execute:
   eval: false
 ---

@@ -1,5 +1,4 @@
 ---
-title: "Planning"
 execute:
   eval: false
 ---

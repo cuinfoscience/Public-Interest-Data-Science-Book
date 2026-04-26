@@ -1,5 +1,4 @@
 ---
-title: "Openness"
 execute:
   eval: false
 ---
@@ -174,7 +173,6 @@ Open `http://localhost:8001/` and click around. You should see the table, the co
 The `metadata.yml` is where your README's column documentation lives inside Datasette. A minimum version:
 
 ```yaml
-title: "Boulder campaign finance filings"
 description_html: |
   <p>Campaign finance disclosures for Boulder municipal elections.
   See <a href="README.md">README.md</a> and

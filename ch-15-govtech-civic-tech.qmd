@@ -1,5 +1,4 @@
 ---
-title: "GovTech and Civic Tech"
 execute:
   eval: false
 ---
