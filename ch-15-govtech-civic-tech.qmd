@@ -174,5 +174,5 @@ Neither failure mode is inevitable. Both become more likely when the people comm
 - US Census Bureau API User Guide, <https://www.census.gov/data/developers/guidance/api-user-guide.html>. The endpoint used in this chapter; read the "Known Issues" section before you write any code against it.
 - FRED API documentation, <https://fred.stlouisfed.org/docs/api/fred/>. The Federal Reserve Bank of St. Louis's macroeconomic series, with a cleaner schema than Census and a more opinionated rate limiter.
 - Nesta's GovTech landscape reports, <https://www.nesta.org.uk/>. UK-grounded but globally relevant mapping of the GovTech vendor ecosystem.
-- Linnet Taylor, "The price of certainty" [-@taylor2021]. The IndiaStack critique in its most citable form; read alongside any breathless GaaP advocacy.
-- Nitesh Bharosa, "The rise of GovTech: Trojan horse or blessing in disguise?" [-@bharosa2022]. A research agenda that names the hard questions explicitly and refuses to resolve them prematurely.
+- Linnet Taylor, "[The price of certainty](https://doi.org/10.1177/2053951720942539)" [-@taylor2021]. The IndiaStack critique in its most citable form; read alongside any breathless GaaP advocacy.
+- Nitesh Bharosa, "[The rise of GovTech: Trojan horse or blessing in disguise?](https://doi.org/10.1016/j.giq.2022.101692)" [-@bharosa2022]. A research agenda that names the hard questions explicitly and refuses to resolve them prematurely.

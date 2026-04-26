@@ -260,9 +260,9 @@ Part IV, Adjacent Conversations, turns from lineages you inherit to fields you s
 
 ## Further Reading and Resources
 
-- Henry Petroski (1992), *To Engineer Is Human: The Role of Failure in Successful Design*. The accessible entry point to engineering's culture of learning from disaster. The Tacoma Narrows chapter pairs well with this one.
-- Diane Vaughan (1996), *The Challenger Launch Decision*. The canonical sociology-of-technology study of a high-consequence failure. Worth it for the "normalization of deviance" framing alone.
-- Charles Perrow (1984), *Normal Accidents: Living with High-Risk Technologies*. The counterweight to high-reliability optimism. Read alongside Weick and Sutcliffe.
+- Henry Petroski (1992), *[To Engineer Is Human: The Role of Failure in Successful Design](https://archive.org/details/toengineerishuma0000petr)*. The accessible entry point to engineering's culture of learning from disaster. The Tacoma Narrows chapter pairs well with this one.
+- Diane Vaughan (1996), *[The Challenger Launch Decision](https://press.uchicago.edu/ucp/books/book/chicago/C/bo22781921.html)*. The canonical sociology-of-technology study of a high-consequence failure. Worth it for the "normalization of deviance" framing alone.
+- Charles Perrow (1984), *[Normal Accidents: Living with High-Risk Technologies](https://press.princeton.edu/books/paperback/9780691004129/normal-accidents)*. The counterweight to high-reliability optimism. Read alongside Weick and Sutcliffe.
 - Betsy Beyer et al., eds., *Site Reliability Engineering: How Google Runs Production Systems* (2016), free at <https://sre.google/books/>. The chapters on post-mortem culture and error budgets are directly relevant.
 - *Increment* magazine's "On-Call" and "Post-mortem" issues, at <https://increment.com/>. Short practitioner essays on running and reviewing systems at scale.
 - NTSB accident investigation reports, at <https://www.ntsb.gov/investigations/>. The gold standard for the post-incident review as a public document. Pick any completed report and read it end to end.

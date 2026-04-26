@@ -170,13 +170,13 @@ Chapter 15 turns from PIT and data-for-good to **GovTech and civic tech**, a nei
 
 ## Further Reading and Resources
 
-- Tara Dawson McGuinness and Hana Schank (2021), *Power to the Public* [@mcguinness2021]. The framing text for the PIT field. Read it as a manifesto, not a diagnosis.
-- Mary L. Gray and Siddharth Suri (2019), *Ghost Work* [@gray2019]. The canonical account of the invisible labor behind AI systems. The argument generalizes beyond the Mechanical Turk cases they study.
+- Tara Dawson McGuinness and Hana Schank (2021), *[Power to the Public](https://press.princeton.edu/books/hardcover/9780691207759/power-to-the-public)* [@mcguinness2021]. The framing text for the PIT field. Read it as a manifesto, not a diagnosis.
+- Mary L. Gray and Siddharth Suri (2019), *[Ghost Work](https://www.hmhbooks.com/shop/books/ghost-work/9781328566249)* [@gray2019]. The canonical account of the invisible labor behind AI systems. The argument generalizes beyond the Mechanical Turk cases they study.
 - Ville Aula and Tero Erkkilä (2023), "Digital governance and the philanthropic political economy of the data-for-good" [@aula2023]. The clearest academic statement of the critique this chapter draws on.
 - Public Interest Technology University Network: <https://www.newamerica.org/pit/university-network/>. The hub page for the US academic consortium, including member institutions, fellowship listings, and the field's self-description [@pitun].
 - Code for America: <https://codeforamerica.org/>. The longest-running US civic tech organization. Their annual report is worth reading for its candor about what worked and what did not.
 - Ushahidi: <https://www.ushahidi.com/> [@ushahidi_about]. The long-running global-South counter-example. Their GitHub organization at <https://github.com/ushahidi> is a good place to run the audit code in this chapter.
 - Carter Chambers (2025), "The trouble with the 'data-for-good' imaginary" [@chambers2025]. The sharpest recent critique of the data-for-good framing.
 - GitHub REST API documentation: <https://docs.github.com/en/rest> [@github_rest_api]. The reference for the audit code.
-- Helena Karasti and Jeanette Blomberg (2018), "Studying infrastructuring ethnographically" [@karasti2018]. The theoretical backbone for thinking about maintenance as a first-class concern.
+- Helena Karasti and Jeanette Blomberg (2018), "[Studying infrastructuring ethnographically](https://doi.org/10.1007/s10606-017-9296-7)" [@karasti2018]. The theoretical backbone for thinking about maintenance as a first-class concern.
 - Code for America's 2023 transition memo on GetCalFresh becoming a state-operated service is a useful case study in succession planning; search the organization's blog for "CalFresh transition."

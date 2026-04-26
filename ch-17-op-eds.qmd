@@ -129,7 +129,7 @@ The op-ed reaches audiences the report never will. The report, for a different a
 - *The Conversation US*, pitch guidelines: <https://theconversation.com/us/pitches>. The most accessible outlet in the United States for academic data scientists. Pieces are published under Creative Commons and routinely picked up by regional papers.
 - Emily M. Bender, representative guest essay on large language models: [@bender2023]. A model of how to write a data-science op-ed for a general audience without flattening the technical argument.
 - Inioluwa Deborah Raji, "How our data encodes systematic racism," *MIT Technology Review*, December 2020: [@raji2022]. A model of a data-scientist op-ed that leads with a case and a number, not a methodology.
-- Meredith Broussard, guest essay on algorithmic bias: [@broussard2023]. See also her book [@broussard2018] for the longer argument.
+- Meredith Broussard, guest essay on algorithmic bias: [@broussard2023]. See also her book *[Artificial Unintelligence](https://mitpress.mit.edu/9780262537018/)* [@broussard2018] for the longer argument.
 - *The Associated Press Stylebook* [@apstylebook]. The house style used by most U.S. newsrooms. Read the entries on numbers, dates, and attribution before your first pitch.
 - Poynter, op-ed how-to resources: [@poynter_oped]. Craft-level advice from the journalism industry's in-house trainer.
 - Kathleen Kingsbury, "Why we're retiring the term op-ed," *The New York Times*, April 2021: [@kingsbury2021]. Context on the genre's current self-understanding at the paper that invented it.

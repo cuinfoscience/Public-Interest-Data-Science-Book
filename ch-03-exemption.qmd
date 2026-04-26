@@ -170,8 +170,8 @@ Enclosure takes data out of reach. Exemption keeps the people and institutions t
 
 ## Further Reading and Resources
 
-- Frank Pasquale (2016), *The Black Box Society*. Harvard University Press. The foundational treatment of scored decision-making and the legal architecture of its opacity.
-- Virginia Eubanks (2018), *Automating Inequality*. St. Martin's Press. Chapter 4 treats AFST in ethnographic depth. Read with and against the research team's published responses.
+- Frank Pasquale (2016), *[The Black Box Society](https://www.hup.harvard.edu/books/9780674970847)*. Harvard University Press. The foundational treatment of scored decision-making and the legal architecture of its opacity.
+- Virginia Eubanks (2018), *[Automating Inequality](https://us.macmillan.com/books/9781250215789/automatinginequality)*. St. Martin's Press. Chapter 4 treats AFST in ethnographic depth. Read with and against the research team's published responses.
 - Amnesty International (2021), *Xenophobic Machines*, <https://www.amnesty.org/en/documents/eur35/4686/2021/en/>. The canonical documentation of the *toeslagenaffaire*.
 - District Court of The Hague (2020), SyRI judgment, ECLI:NL:RBDHA:2020:1878. Read with an English translation alongside the Dutch original.
 - Lighthouse Reports / WIRED (2023), "Inside the Suspicion Machine," <https://www.lighthousereports.com/investigation/inside-the-suspicion-machine/>. Reverse-engineered feature importance for Rotterdam's welfare-fraud scoring.

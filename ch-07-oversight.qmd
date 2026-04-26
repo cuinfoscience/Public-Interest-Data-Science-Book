@@ -207,13 +207,13 @@ Oversight without ownership is oversight without a subject. You can audit a mode
 
 ## Further Reading and Resources
 
-- Joy Buolamwini and Timnit Gebru (2018), "Gender shades: Intersectional accuracy disparities in commercial gender classification," *Proceedings of FAccT 2018*. The foundational disaggregated audit. Read it alongside the follow-up in Raji et al. (2020).
-- Inioluwa Deborah Raji et al. (2020), "Closing the AI accountability gap: Defining an end-to-end framework for internal algorithmic auditing," *Proceedings of FAccT 2020*. The paper that turns an audit technique into an organizational framework.
+- Joy Buolamwini and Timnit Gebru (2018), "[Gender shades: Intersectional accuracy disparities in commercial gender classification](https://proceedings.mlr.press/v81/buolamwini18a.html)," *Proceedings of FAccT 2018*. The foundational disaggregated audit. Read it alongside the follow-up in Raji et al. (2020).
+- Inioluwa Deborah Raji et al. (2020), "[Closing the AI accountability gap: Defining an end-to-end framework for internal algorithmic auditing](https://doi.org/10.1145/3351095.3372873)," *Proceedings of FAccT 2020*. The paper that turns an audit technique into an organizational framework.
 - `fairlearn` user guide: <https://fairlearn.org/main/user_guide/>. Pay particular attention to the section on interpreting `MetricFrame`, and to the documentation on disagreement between parity metrics.
 - `folktables` repository and paper (Ding et al., NeurIPS 2021): <https://github.com/socialfoundations/folktables>. The package used in this chapter, with documentation on the tradeoffs involved in treating ACS tables as fairness benchmarks.
 - NYC Department of Consumer and Worker Protection, Local Law 144 rules and guidance: <https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page>. Read the final rule, not just the FAQ.
-- Bryce Goodman and Julia Trehu, "AI audit washing and accountability" (2023). The term "audit-washing" in its useful form.
+- Bryce Goodman and Julia Trehu, "[AI audit washing and accountability](https://doi.org/10.2139/ssrn.4227350)" (2023). The term "audit-washing" in its useful form.
 - EU AI Act consolidated text (Regulation 2024/1689): <https://eur-lex.europa.eu/eli/reg/2024/1689/oj>. Skim Articles 43, 72, and 77 for the conformity-assessment and post-market-monitoring scaffolding.
 - Algorithmic Justice League: <https://www.ajl.org/>. The organizing vehicle that turned the Gender Shades paper into a campaign.
 - Upturn's "Help Wanted" report and subsequent work on hiring tools: <https://www.upturn.org/work/>. A model of audit-adjacent advocacy that takes remedy seriously.
-- C. Richard Baker (2005), "What is the meaning of `the public interest'? Examining the ideology of the American public accounting profession," *Accounting, Auditing & Accountability Journal*. The history lesson. Read it before you assume professional norms will hold the line.
+- C. Richard Baker (2005), "[What is the meaning of `the public interest'? Examining the ideology of the American public accounting profession](https://doi.org/10.1108/09513570510620510)," *Accounting, Auditing & Accountability Journal*. The history lesson. Read it before you assume professional norms will hold the line.

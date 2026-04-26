@@ -205,10 +205,10 @@ Enclosure is the first of three pressures this part diagnoses. Chapter 3 takes u
 
 ## Further Reading and Resources
 
-- Axel Bruns (2019), "After the 'APIcalypse': Social media platforms and their fight against critical scholarly research," *Information, Communication & Society* 22(11). The article that gave the post-2018 shift its name.
+- Axel Bruns (2019), "[After the 'APIcalypse': Social media platforms and their fight against critical scholarly research](https://doi.org/10.1080/1369118X.2019.1637447)," *Information, Communication & Society* 22(11). The article that gave the post-2018 shift its name.
 - James Boyle (2008), *The Public Domain: Enclosing the Commons of the Mind*. Duke University Press. Open-access at <https://www.thepublicdomain.org/>. The enclosure analogy in its fullest form.
 - Robots Exclusion Protocol, RFC 9309 (2022): <https://www.rfc-editor.org/rfc/rfc9309.html>. A short, readable standardization most scrapers violate out of ignorance.
-- Jonathan Zong and J. Nathan Matias (2024), "Data refusal from below." The complement to this chapter: when enclosure is not the problem, refusal might be.
+- Jonathan Zong and J. Nathan Matias (2024), "[Data refusal from below](https://doi.org/10.1145/3630107)." The complement to this chapter: when enclosure is not the problem, refusal might be.
 - Reddit's API pricing announcement (June 2023) and the original Pushshift shutdown notice, both reachable from <https://www.reddit.com/r/modnews/> archives. Primary documents for Exercise 2.4.
 - The Internet Archive's Wayback Machine, <https://web.archive.org/>. When a platform retires a dataset, often the only remaining record of what was public. You will use it constantly.
 - Electronic Frontier Foundation, "Coders' Rights Project," <https://www.eff.org/issues/coders>. Plain-language summaries of the CFAA, DMCA, and related statutes.

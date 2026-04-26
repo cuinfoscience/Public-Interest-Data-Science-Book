@@ -201,12 +201,12 @@ Planning gave you the habit of asking who was in the room and whose knowledge of
 
 ## Further Reading and Resources
 
-- Paul Davidoff (1965), "Advocacy and Pluralism in Planning," *Journal of the American Institute of Planners* 31(4): 331–338. The founding essay for advocacy planning. Short, sharp, and still the clearest statement of the position.
-- Sherry R. Arnstein (1969), "A Ladder of Citizen Participation," *Journal of the American Institute of Planners* 35(4): 216–224. The eight-rung ladder you will use to diagnose participation processes for the rest of your career.
-- Virginia Eubanks (2018), *Automating Inequality*. The chapter on the Allegheny Family Screening Tool is directly relevant to Exercise 12.4; the Indiana eligibility and Los Angeles homelessness chapters both work as alternative readings.
+- Paul Davidoff (1965), "[Advocacy and Pluralism in Planning](https://doi.org/10.1080/01944366508978187)," *Journal of the American Institute of Planners* 31(4): 331–338. The founding essay for advocacy planning. Short, sharp, and still the clearest statement of the position.
+- Sherry R. Arnstein (1969), "[A Ladder of Citizen Participation](https://doi.org/10.1080/01944366908977225)," *Journal of the American Institute of Planners* 35(4): 216–224. The eight-rung ladder you will use to diagnose participation processes for the rest of your career.
+- Virginia Eubanks (2018), *[Automating Inequality](https://us.macmillan.com/books/9781250215789/automatinginequality)*. The chapter on the Allegheny Family Screening Tool is directly relevant to Exercise 12.4; the Indiana eligibility and Los Angeles homelessness chapters both work as alternative readings.
 - The GeoPandas user guide: <https://geopandas.org/en/stable/docs.html>. The CRS handling section is worth reading end-to-end before you plot anything serious.
 - QGIS: <https://qgis.org/>. The free and open-source desktop GIS. When `geopandas` is not enough, or when you need to hand a reproducible map project to a non-Python collaborator, QGIS is the default.
 - U.S. Census TIGER/Line shapefiles: <https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html>. Most administrative boundaries you will plot in the United States come from here.
 - The Central 70 project record of decision and supporting environmental review documents, published by CDOT and FHWA. A substantial real-world planning archive, worth reading as an example of what a regulated public process produces and what it does not.
 - The City of Boulder's Alpine-Balsam area plan: <https://bouldercolorado.gov/projects/alpine-balsam>. A smaller-scale planning process with extensive documentation of its public engagement phases. Useful as a second case for students who find the Central 70 material heavy.
-- Marcus B. Lane (2005), "Public Participation in Planning: An Intellectual History," *Australian Geographer* 36(3): 283–299. The longer historical arc from which Arnstein and Davidoff are two nodes.
+- Marcus B. Lane (2005), "[Public Participation in Planning: An Intellectual History](https://doi.org/10.1080/00049180500325694)," *Australian Geographer* 36(3): 283–299. The longer historical arc from which Arnstein and Davidoff are two nodes.

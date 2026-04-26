@@ -197,11 +197,11 @@ Chapter 2 begins Part I's diagnosis of the pressures on public knowledge. It tak
 
 ## Further Reading and Resources
 
-- Brian C. Keegan (2026), "Public interest data infrastructuring," *Information, Communication & Society*. The paper this book extends. Start here.
-- Virginia Eubanks (2018), *Automating Inequality*. The canonical contemporary text on how data-driven systems reshape welfare, policing, and child services, and why "the public interest" requires attention to whose lives those systems touch.
-- Tara Dawson McGuinness and Hana Schank (2021), *Power to the Public*. The book-length articulation of public interest technology, useful as a framing text and as a target for critique (Chapter 14 will take up both).
-- Mike Ananny and Kate Crawford (2018), "Seeing without knowing: Limitations of the transparency ideal and its application to algorithmic accountability," *New Media & Society*, 20(3): 973–989. A useful counterweight to the assumption that transparency is self-executing.
+- Brian C. Keegan (2026), "Public interest data infrastructuring," Under Review. The paper this book extends. Start here.
+- Virginia Eubanks (2018), *[Automating Inequality](https://us.macmillan.com/books/9781250215789/automatinginequality)*. The canonical contemporary text on how data-driven systems reshape welfare, policing, and child services, and why "the public interest" requires attention to whose lives those systems touch.
+- Tara Dawson McGuinness and Hana Schank (2021), *[Power to the Public](https://press.princeton.edu/books/hardcover/9780691207759/power-to-the-public)*. The book-length articulation of public interest technology, useful as a framing text and as a target for critique (Chapter 14 will take up both).
+- Mike Ananny and Kate Crawford (2018), "[Seeing without knowing: Limitations of the transparency ideal and its application to algorithmic accountability](https://doi.org/10.1177/1461444816676645)," *New Media & Society*, 20(3): 973–989. A useful counterweight to the assumption that transparency is self-executing.
 - Wikimedia Foundation's Pageviews API documentation: <https://wikimedia.org/api/rest_v1/>. The endpoint you used in this chapter, plus siblings you will find handy later.
 - *The Data Journalism Handbook 2*, ed. Jonathan Gray and Liliana Bounegru (2021), open-access at <https://datajournalism.com/read/handbook/two>. A reader's companion to many of the methods this book will extend.
-- Hugh Gusterson (2017), "From Brexit to Trump: Anthropology and the rise of nationalist populism," *American Ethnologist* 44(2): 209–214. For readers who want a frame for why "the public" has fragmented.
+- Hugh Gusterson (2017), "[From Brexit to Trump: Anthropology and the rise of nationalist populism](https://doi.org/10.1111/amet.12469)," *American Ethnologist* 44(2): 209–214. For readers who want a frame for why "the public" has fragmented.
 - The course syllabus and pull-request template for INFO 46XX, in this book's repository. Your first assignment is to open one.
