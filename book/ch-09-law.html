@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
+
+<title>9&nbsp; Law – Public Interest Data Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch-10-oversight.html" rel="next">
+<link href="./ch-08-exemption.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-9a023c9ade86a60361e96e3e3f11bc54.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-684e263fd5eaab04d06708158183ff95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-063d023c011e3855d99747d2bbbf274a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-3-law-county.html">Law: The County</a></li><li class="breadcrumb-item"><a href="./ch-09-law.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Law</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Public Interest Data Science</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-1-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-02-installed-base.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Installed Base</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-03-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-2-journalism-city.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Journalism: The City</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-04-enclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Enclosure: Who Can Observe?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-05-journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-06-openness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Openness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-07-op-eds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Op-Eds</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-3-law-county.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Law: The County</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-08-exemption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-09-law.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Law</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-10-oversight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Oversight</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-11-testimony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Testimony</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-4-assurance-state.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assurance: The State</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-12-accounting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-13-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Engineering</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-14-govtech-civic-tech.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-15-reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-5-planning-nation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Planning: The Nation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-16-erosion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Erosion: What Can Be Remembered?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-17-planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-18-ownership.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Ownership</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-19-critical-data-studies-refusal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-20-public-comments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Public Comments</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-6-beyond-portfolio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Beyond the Portfolio</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-21-research-proposals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Research Proposals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-22-archival-deposits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Archival Deposits</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-23-limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">The Limits of the Framework</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#public-interest-lawyering-as-a-profession" id="toc-public-interest-lawyering-as-a-profession" class="nav-link active" data-scroll-target="#public-interest-lawyering-as-a-profession"><span class="header-section-number">9.1</span> Public interest lawyering as a profession</a></li>
+  <li><a href="#foia-cora-and-the-statutory-geometry" id="toc-foia-cora-and-the-statutory-geometry" class="nav-link" data-scroll-target="#foia-cora-and-the-statutory-geometry"><span class="header-section-number">9.2</span> FOIA, CORA, and the statutory geometry</a></li>
+  <li><a href="#the-cfaa-and-the-chilling-effect" id="toc-the-cfaa-and-the-chilling-effect" class="nav-link" data-scroll-target="#the-cfaa-and-the-chilling-effect"><span class="header-section-number">9.3</span> The CFAA and the chilling effect</a></li>
+  <li><a href="#syri-discovery-and-weaponization" id="toc-syri-discovery-and-weaponization" class="nav-link" data-scroll-target="#syri-discovery-and-weaponization"><span class="header-section-number">9.4</span> SyRI, discovery, and weaponization</a></li>
+  <li><a href="#amicus-briefs-and-muckrock" id="toc-amicus-briefs-and-muckrock" class="nav-link" data-scroll-target="#amicus-briefs-and-muckrock"><span class="header-section-number">9.5</span> Amicus briefs and MuckRock</a></li>
+  <li><a href="#tutorial-part-1-a-cora-tracker-in-sqlite" id="toc-tutorial-part-1-a-cora-tracker-in-sqlite" class="nav-link" data-scroll-target="#tutorial-part-1-a-cora-tracker-in-sqlite"><span class="header-section-number">9.6</span> Tutorial, part 1: a CORA tracker in SQLite</a></li>
+  <li><a href="#drafting-the-letter" id="toc-drafting-the-letter" class="nav-link" data-scroll-target="#drafting-the-letter"><span class="header-section-number">9.7</span> Drafting the letter</a></li>
+  <li><a href="#tutorial-part-2-from-a-county-pdf-to-a-table" id="toc-tutorial-part-2-from-a-county-pdf-to-a-table" class="nav-link" data-scroll-target="#tutorial-part-2-from-a-county-pdf-to-a-table"><span class="header-section-number">9.8</span> Tutorial, part 2: from a county PDF to a table</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">9.9</span> Exercises</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">9.10</span> Looking ahead</a></li>
+  <li><a href="#further-reading-and-resources" id="toc-further-reading-and-resources" class="nav-link" data-scroll-target="#further-reading-and-resources"><span class="header-section-number">9.11</span> Further Reading and Resources</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-09-law.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-3-law-county.html">Law: The County</a></li><li class="breadcrumb-item"><a href="./ch-09-law.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Law</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-ch-09-law" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Law</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The evidence ledger you built in <a href="ch-08-exemption.html" class="quarto-xref"><span>Chapter 8</span></a> ends in a list of things a county has not told you. A ledger cannot make anyone answer. A statute can. With a public-records law behind you, you write a different kind of letter: one that cites a section of code, starts a statutory clock, and preserves the right to go to court. The letter is still a request. What makes it work is the legal infrastructure behind it.</p>
+<p>This chapter treats law as a lineage, not because data scientists should become lawyers, but because few professions have thought harder about pursuing the public interest under adversarial conditions. Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> describes public interest law as the lineage that “translates values into enforceable procedures”: rights to access, duties to disclose, standards of review, and remedies. You will read two law and society scholars on what public interest lawyering is, learn the statutory geometry of FOIA and the Colorado Open Records Act (CORA), and sit with the fact that the same infrastructure that enables accountability work can be turned against the people it is supposed to serve.</p>
+<p>The running example is the class’s coordinated set of CORA requests to <strong>Boulder County</strong>, filed during the Week 4 lab. The class files six to eight requests rather than one per student, so that no county office is swamped, and each student analyzes one. You will leave with a SQLite tracker, a request letter, and a notebook that turns a county PDF into a table you can check.</p>
+<section id="public-interest-lawyering-as-a-profession" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="public-interest-lawyering-as-a-profession"><span class="header-section-number">9.1</span> Public interest lawyering as a profession</h2>
+<p>Albiston and Nielsen <span class="citation" data-cites="albiston2017">(<a href="#ref-albiston2017" role="doc-biblioref">2017</a>)</span> studied the U.S. public interest law field through surveys spanning three decades. Public interest lawyering is not a specialty like tax or real estate. It is a <em>stance</em> toward practice: representing interests the market will not pay to represent, often for clients whose stake in an outcome is structural rather than individual. <em>Cause lawyering</em>, the term Sarat and Scheingold <span class="citation" data-cites="sarat1998cause">(<a href="#ref-sarat1998cause" role="doc-biblioref">1998</a>)</span> put at the center of the field’s self-understanding, treats a case as an instrument for changing a rule rather than a dispute between two parties.</p>
+<p>Albiston and Nielsen’s empirical argument is that the field has settled into a two-tier structure. A small number of well-funded organizations (the ACLU, the NAACP Legal Defense Fund, the Electronic Frontier Foundation) work at the level of appellate strategy and legislative advocacy. A much larger tier of legal aid societies and clinics absorbs front-line demand in family court, eviction proceedings, and benefits appeals. The first tier has strategic leverage. The second has caseload and direct contact with the people served.</p>
+<p>The analogy for data science is not strained. A few civil-society organizations work at the policy tier; a much larger set of journalists, organizers, and county staff does the front-line work of unpicking a broken benefits portal. County records are second-tier work, and this chapter’s tools aim there.</p>
+</section>
+<section id="foia-cora-and-the-statutory-geometry" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="foia-cora-and-the-statutory-geometry"><span class="header-section-number">9.2</span> FOIA, CORA, and the statutory geometry</h2>
+<p>The federal Freedom of Information Act, enacted in 1966 and amended several times since, establishes a presumption that records of federal executive agencies are public unless they fall within nine enumerated exemptions <span class="citation" data-cites="foia_552">(<a href="#ref-foia_552" role="doc-biblioref">US Congress 1966</a>)</span>. <a href="ch-08-exemption.html" class="quarto-xref"><span>Chapter 8</span></a> introduced the exemption list as a topology of what government may decline to answer. FOIA does not reach counties. For that you need state law.</p>
+<p>Every state has a parallel statute. Colorado’s is CORA, C.R.S. § 24-72-201 et seq. <span class="citation" data-cites="cora_statute">(<a href="#ref-cora_statute" role="doc-biblioref">Colorado General Assembly 1968</a>)</span>. Its geometry differs from FOIA’s in ways that matter for a county request:</p>
+<ul>
+<li><strong>The clock is short.</strong> A custodian must make records available within three working days, extendable by up to seven more working days if the custodian gives written notice of extenuating circumstances <span class="citation" data-cites="cfoic">(<a href="#ref-cfoic" role="doc-biblioref">Colorado Freedom of Information Coalition 2024</a>)</span>.</li>
+<li><strong>Fees are capped but real.</strong> CORA allows a capped hourly research-and-retrieval fee, with the first hour free, plus copying costs. Fee waivers are discretionary, not a right. <!-- TODO: verify the current hourly cap and Boulder County's posted fee policy before the term; do not quote a dollar figure in class materials until checked. --></li>
+<li><strong>There is no administrative appeal.</strong> If a request is denied, the path runs through written notice of intent to sue and then district court, with attorney fees available to a prevailing requester <span class="citation" data-cites="cfoic">(<a href="#ref-cfoic" role="doc-biblioref">Colorado Freedom of Information Coalition 2024</a>)</span>. <a href="ch-10-oversight.html" class="quarto-xref"><span>Chapter 10</span></a> builds that pathway into a ledger.</li>
+<li><strong>Criminal justice records follow a separate law.</strong> The Colorado Criminal Justice Records Act (CCJRA) lets a custodian withhold records if disclosure would be “contrary to the public interest,” a balancing test the custodian applies and must articulate. Boulder County routes requests for Sheriff’s Office records through a separate records page rather than its general CORA portal.</li>
+</ul>
+<p>That last point shapes how you write. A request asking for “all emails from the Sheriff mentioning license plate readers” invites the custodian to classify everything as criminal justice records and apply the CCJRA balancing test. The same request phrased as “administrative records concerning the procurement and contracting of automated license plate reader technology, including contracts, invoices, and vendor correspondence” names administrative categories and makes that classification harder to justify. This is the specificity a reporter brings to a sourcing interview, translated into statutory language.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Missing Manual
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Most records-request advice assumes your request succeeds the first time. It does not. A well-managed request produces a negotiation: the first response will be partial, redacted, mis-scoped, delayed with an extension notice, or held behind a fee estimate. Warren and colleagues <span class="citation" data-cites="warrenRequestAtlasSupportingSlow2025">(<a href="#ref-warrenRequestAtlasSupportingSlow2025" role="doc-biblioref">2025</a>)</span> designed their request tool around exactly this slow, iterative process. Design your tracker the same way: log follow-ups, extension notices, and the grounds given for each redaction. Redactions are metadata: the pattern of what an office blacks out tells you its legal theory before it states one. If three of four releases redact the same paragraph under the same exemption, you have a de facto policy you can write about, cite in testimony, or hand to a lawyer.</p>
+</div>
+</div>
+</section>
+<section id="the-cfaa-and-the-chilling-effect" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="the-cfaa-and-the-chilling-effect"><span class="header-section-number">9.3</span> The CFAA and the chilling effect</h2>
+<p>Legal infrastructure is not only a resource for accountability work. It also limits what that work may try. The Computer Fraud and Abuse Act (CFAA), enacted in 1986, criminalizes “unauthorized access” to a “protected computer.” For most of its life the statute was read broadly enough that violating a website’s terms of service (creating test accounts to audit a housing platform, for example) exposed a researcher to federal liability. Researchers reasonably declined to do the research.</p>
+<p><em>Sandvig v. Barr</em>, brought by the ACLU on behalf of Christian Sandvig and co-plaintiffs <span class="citation" data-cites="aclu2019">(<a href="#ref-aclu2019" role="doc-biblioref">American Civil Liberties Union 2019</a>)</span>, challenged that reading. The plaintiffs wanted to audit online employment and housing platforms for race and gender discrimination using paired accounts that technically violated the platforms’ terms. They sought a declaration that the CFAA did not criminalize their research. In March 2020, the U.S. District Court for the District of Columbia ruled for them on statutory grounds, holding that violating terms of service does not by itself make access unauthorized. The Supreme Court’s 2021 decision in <em>Van Buren v. United States</em> narrowed the statute further in a separate case.</p>
+<p>The chilling effect <em>Sandvig</em> addressed is an infrastructure problem. A statute that criminalizes a research method does not need to prosecute anyone. Ambient uncertainty is enough to make review boards decline and graduate students pick another dissertation. <em>Sandvig</em> is the counter-example: an audit population that exists because a civil-society organization absorbed the legal cost of clarifying the rule. Note the two levels: federal courts set which research methods are safe, and a county custodian decides which records you get.</p>
+</section>
+<section id="syri-discovery-and-weaponization" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="syri-discovery-and-weaponization"><span class="header-section-number">9.4</span> SyRI, discovery, and weaponization</h2>
+<p><a href="ch-08-exemption.html" class="quarto-xref"><span>Chapter 8</span></a> introduced SyRI as a case of the state as adversary. Return to it here as a <em>litigation strategy</em>. The coalition (NJCM with welfare-rights organizations and individual plaintiffs) built its suit around Article 8 of the European Convention on Human Rights, and in February 2020 the District Court of The Hague held the SyRI legislation incompatible with it <span class="citation" data-cites="syri2020">(<a href="#ref-syri2020" role="doc-biblioref">District Court of The Hague 2020</a>)</span>. In Albiston and Nielsen’s vocabulary, this was cause lawyering at its most strategic. The ruling did not end algorithmic welfare surveillance in the Netherlands. It set a precedent the next system had to work around, which is what a win looks like here.</p>
+<p>Legal discovery is a linkability mechanism that accountability writing often misses. A civil suit compels internal records no request would dislodge and puts witnesses under oath, but discovery material usually sits under a protective order: usable in the case, not releasable without the court’s permission. <a href="ch-19-critical-data-studies-refusal.html" class="quarto-xref"><span>Chapter 19</span></a> will argue that the instinct to withhold is sometimes right. In discovery, the instinct is not optional.</p>
+<p>Public-records laws are neutral on their face. In practice they can be turned against the people they were meant to protect. Requests and subpoenas can pull booking and residency information about immigrants, and meeting records that list commenters by name can expose the residents who showed up to object. This is not an argument against open records. It is an argument for treating records work the way <a href="ch-18-ownership.html" class="quarto-xref"><span>Chapter 18</span></a> will treat stewardship: the infrastructure that enables one use enables every use the statute does not exclude.</p>
+</section>
+<section id="amicus-briefs-and-muckrock" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="amicus-briefs-and-muckrock"><span class="header-section-number">9.5</span> Amicus briefs and MuckRock</h2>
+<p>Data scientists can contribute to legal work without becoming lawyers. The amicus curiae (“friend of the court”) brief, in which computer scientists or statisticians explain to a court what an algorithm or a disparity measure does, is a recognized genre, and <a href="ch-11-testimony.html" class="quarto-xref"><span>Chapter 11</span></a> takes up its close cousin. MuckRock, the nonprofit records-request platform, is the closest thing the U.S. has to shared request infrastructure, and its archive of prior releases is worth searching before you file <span class="citation" data-cites="muckrock">(<a href="#ref-muckrock" role="doc-biblioref">MuckRock Foundation 2024</a>)</span>. Its public-by-default posture has costs, though, and a classroom needs a tracker even for requests it is not ready to expose. A SQLite database is the right scale.</p>
+</section>
+<section id="tutorial-part-1-a-cora-tracker-in-sqlite" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="tutorial-part-1-a-cora-tracker-in-sqlite"><span class="header-section-number">9.6</span> Tutorial, part 1: a CORA tracker in SQLite</h2>
+<p>The schema has four tables. A request can have several responses (partial releases, supplemental productions); a response can include several documents; follow-ups are requester actions (clarifications, fee questions, notices) that shape the record without producing documents.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>DB_PATH <span class="op">=</span> Path(<span class="st">"cora_tracker.sqlite"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>SCHEMA <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE TABLE IF NOT EXISTS requests (</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">    id INTEGER PRIMARY KEY,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="st">    agency TEXT NOT NULL,            -- e.g. 'Boulder County'</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="st">    office TEXT NOT NULL,            -- the office that holds the records</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="st">    date_submitted TEXT NOT NULL,</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="st">    description TEXT NOT NULL,</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="st">    regime TEXT NOT NULL CHECK (regime IN ('CORA','CCJRA','FOIA','other')),</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="st">    status TEXT NOT NULL</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="st">        CHECK (status IN ('open','extended','partial','closed','denied'))</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="st">);</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE TABLE IF NOT EXISTS responses (</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="st">    id INTEGER PRIMARY KEY,</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="st">    request_id INTEGER NOT NULL REFERENCES requests(id),</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="st">    date_received TEXT NOT NULL,</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="st">    grounds_cited TEXT,              -- verbatim, as the custodian wrote it</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="st">    fee_estimate REAL,</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="st">    documents_count INTEGER</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="st">);</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE TABLE IF NOT EXISTS followups (</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="st">    id INTEGER PRIMARY KEY,</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="st">    request_id INTEGER NOT NULL REFERENCES requests(id),</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="st">    date TEXT NOT NULL,</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="st">    type TEXT NOT NULL CHECK (type IN</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="st">        ('clarification','fee_question','reminder','notice_of_intent','withdrawal')),</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="st">    content TEXT</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="st">);</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE TABLE IF NOT EXISTS documents (</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="st">    id INTEGER PRIMARY KEY,</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="st">    response_id INTEGER NOT NULL REFERENCES responses(id),</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="st">    filename TEXT NOT NULL,</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="st">    sha256 TEXT NOT NULL</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="st">);</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> sqlite3.<span class="ex">connect</span>(DB_PATH) <span class="im">as</span> conn:</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    conn.executescript(SCHEMA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The statutory clock is the column a requester most often forgets to compute. Working days skip weekends and the holidays the county observes, so let <code>pandas</code> count them.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cora_clock(date_submitted, holidays<span class="op">=</span>()):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Due dates for a CORA request: 3 working days, or 10 if extended."""</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    day <span class="op">=</span> pd.offsets.CustomBusinessDay(holidays<span class="op">=</span><span class="bu">list</span>(holidays))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    start <span class="op">=</span> pd.Timestamp(date_submitted)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"due"</span>: (start <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> day).date().isoformat(),</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">"extended_due"</span>: (start <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> day).date().isoformat()}</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cora_clock(<span class="st">"2027-01-28"</span>))   <span class="co"># the Week 4 lab, a Thursday</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; {'due': '2027-02-02', 'extended_due': '2027-02-11'}</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cora_clock(<span class="st">"2027-02-10"</span>, holidays<span class="op">=</span>[<span class="st">"2027-02-15"</span>]))</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; {'due': '2027-02-16', 'extended_due': '2027-02-25'}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pass the county’s actual holiday calendar, not the federal one you assume it follows. The clock is not self-enforcing: a query that flags requests past <code>extended_due</code> and drafts a reminder is the most effective code in records work.</p>
+</section>
+<section id="drafting-the-letter" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="drafting-the-letter"><span class="header-section-number">9.7</span> Drafting the letter</h2>
+<p>A CORA letter is four short paragraphs. The tone is formal, specificity is load-bearing, and statutory citations do real work. Here is a template retargeted to a county office; bracketed text is yours to fill.</p>
+<blockquote class="blockquote">
+<p>Dear Records Custodian,</p>
+<p>Pursuant to the Colorado Open Records Act, C.R.S. § 24-72-201 et seq., I request the following public records maintained by [Boulder County office]:</p>
+<ol type="1">
+<li><p>All contracts, amendments, statements of work, and data-sharing agreements between the County and any vendor of [technology or service], executed between January 1, 2023 and the date of this request;</p></li>
+<li><p>Policies, procedures, and training materials governing the County’s use of [technology or service] during that period;</p></li>
+<li><p>Any evaluations, audits, or validation reports concerning [technology or service] delivered to or prepared by the County during that period.</p></li>
+</ol>
+<p>I ask that you waive or reduce any fees because I am a student researcher and will publish my analysis for the public; if estimated fees exceed [amount you choose], please contact me before proceeding. If any portion is withheld, please provide a written statement of the grounds, citing the specific legal authority, and release all reasonably segregable non-exempt portions. Electronic copies are preferred.</p>
+</blockquote>
+<p>Four things do work. The citation shows you know the law. The enumerated categories ask for <em>records</em>, not answers, specific enough that the request cannot be dismissed as overbroad. The fee paragraph asks for a discretionary waiver honestly and sets a ceiling so a large estimate pauses the request instead of ending it. The last sentence asks for the written basis of any denial and the release of separable material. Submit through the channel the county designates; Boulder County uses an online Open Records Center linked from its CORA page.</p>
+</section>
+<section id="tutorial-part-2-from-a-county-pdf-to-a-table" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="tutorial-part-2-from-a-county-pdf-to-a-table"><span class="header-section-number">9.8</span> Tutorial, part 2: from a county PDF to a table</h2>
+<p>Released records arrive as PDFs. Some are born digital, exported from a word processor or a finance system, and carry a text layer. Others are scans of paper and need optical character recognition (OCR). Try the text layer first. If your class’s request has not come back yet, you will practice on the fallback corpus: Boulder County’s own public records, such as Board of County Commissioners agendas, minutes, and packets, and budget documents.</p>
+<p>The example uses Resolution 2025-058, in which the Board adopted the county’s 2026 budget by summarizing expenditures and revenues for each fund <span class="citation" data-cites="bouldercounty_res2025058">(<a href="#ref-bouldercounty_res2025058" role="doc-biblioref">Board of County Commissioners of Boulder County 2025</a>)</span>. It is four pages, born digital, and typical of what county records look like.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pdfplumber   <span class="co"># pip install pdfplumber</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>PDF <span class="op">=</span> <span class="st">"resolution-2025-058.pdf"</span>   <span class="co"># downloaded from bouldercounty.gov</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>ROW <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r"^(?P&lt;label&gt;.+?)\s+\$(?P&lt;amount&gt;[\d,]+)$"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>rows, section <span class="op">=</span> [], <span class="va">None</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pdfplumber.<span class="bu">open</span>(PDF) <span class="im">as</span> pdf:</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> page_no, page <span class="kw">in</span> <span class="bu">enumerate</span>(pdf.pages, start<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> line <span class="kw">in</span> (page.extract_text() <span class="kw">or</span> <span class="st">""</span>).splitlines():</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>            line <span class="op">=</span> line.strip()</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> re.match(<span class="vs">r"^Section \d+$"</span>, line):</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                section <span class="op">=</span> line</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> (m <span class="op">:=</span> ROW.match(line)) <span class="kw">and</span> section:</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>                rows.append({<span class="st">"section"</span>: section,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"label"</span>: m[<span class="st">"label"</span>].strip(),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"amount"</span>: <span class="bu">int</span>(m[<span class="st">"amount"</span>].replace(<span class="st">","</span>, <span class="st">""</span>)),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"page"</span>: page_no})</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>budget <span class="op">=</span> pd.DataFrame(rows)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(budget.shape)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (55, 4)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Do not trust those fifty-five rows yet. County budget tables print their own totals, and recomputing them is the cheapest validation in records work.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> check_totals(df):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> []</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> sec, g <span class="kw">in</span> df.groupby(<span class="st">"section"</span>):</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        is_total <span class="op">=</span> g[<span class="st">"label"</span>].<span class="bu">str</span>.startswith(<span class="st">"Total"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        out.append({<span class="st">"section"</span>: sec,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"rows"</span>: <span class="bu">int</span>((<span class="op">~</span>is_total).<span class="bu">sum</span>()),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"sum_of_rows"</span>: <span class="bu">int</span>(g.loc[<span class="op">~</span>is_total, <span class="st">"amount"</span>].<span class="bu">sum</span>()),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"printed_total"</span>: <span class="bu">int</span>(g.loc[is_total, <span class="st">"amount"</span>].<span class="bu">sum</span>())})</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> pd.DataFrame(out)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    out[<span class="st">"matches"</span>] <span class="op">=</span> out[<span class="st">"sum_of_rows"</span>] <span class="op">==</span> out[<span class="st">"printed_total"</span>]</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> out</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(check_totals(budget).to_string(index<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;   section  rows  sum_of_rows  printed_total  matches</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Section 1    23    745186611      745186611     True</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Section 2    23    745186611      745186611     True</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Section 5     6      4181549        4181549     True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The totals match: twenty-three funds summing to $745,186,611 in estimated expenditures. Now compare the fund names across the expenditure and revenue sections of the same document.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> budget.query(<span class="st">"section == 'Section 1' and not label.str.startswith('Total')"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> budget.query(<span class="st">"section == 'Section 2' and not label.str.startswith('Total')"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>(<span class="bu">set</span>(s1.label) <span class="op">^</span> <span class="bu">set</span>(s2.label)))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; ['Health &amp; Human Services', 'Health and Human Services',</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;  'Qualified Energy Conservation Bond', 'Qualified Energy Conservation Bonds']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The same two funds are spelled differently on different pages of one resolution. That is a <strong>linkability</strong> failure in miniature, and a join on fund name would silently drop them. For scanned releases, swap the text layer for OCR (<code>pdftoppm</code> to render pages, <code>tesseract</code> to read them), record a SHA-256 hash of every file you receive in the <code>documents</code> table, and expect to validate even more carefully.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In the Public Interest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="ch-02-installed-base.html" class="quarto-xref"><span>Chapter 2</span></a> named <strong>remedy</strong> as the installed base’s final element, and <a href="ch-10-oversight.html" class="quarto-xref"><span>Chapter 10</span></a> will build on it: evidence matters only if it can trigger action. A records response that sits as an unreadable scan on a laptop is not <strong>oversight</strong>. It is raw material for oversight. The tracker, letter, and extraction notebook are the minimum scaffolding that turns that material into something a reporter can publish, an advocate can cite at a county hearing, or an attorney can attach to a complaint <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">Keegan 2026</a>)</span>. They advance oversight only when they close the loop to remedy. They advance <strong>openness</strong> in a weaker sense even when they do not: a well-tracked request produces a public record of what the county said, and when.</p>
+</div>
+</div>
+</section>
+<section id="exercises" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="exercises"><span class="header-section-number">9.9</span> Exercises</h2>
+<p><strong>Exercise 9.1 (Piece 2 component, guided).</strong> Take the request your class filed with Boulder County during the Week 4 lab. Insert it into the tracker with its office, regime, and submission date, compute its clock with <code>cora_clock</code>, write a query that drafts a reminder for any request past <code>extended_due</code>, and record every response or extension notice verbatim in <code>grounds_cited</code>. Add your final request letter as <code>piece2/request_letter.md</code>. If you are drafting a new request, adapt the template above to your office and topic and have your instructor review it before submission.</p>
+<p><strong>Exercise 9.2 (Piece 2 component, runnable).</strong> Download Resolution 2025-058 from Boulder County’s budget page and reproduce the extraction and total check above. Then point the same notebook at one Board of County Commissioners packet from the county’s meeting portal (<a href="https://pub-bouldercounty.escribemeetings.com/" class="uri">https://pub-bouldercounty.escribemeetings.com/</a>) or at your own released records. Report which tables extracted cleanly, which failed the total check, and why. Save as <code>piece2/extraction.ipynb</code>. This is the extraction notebook for Piece 2.</p>
+<p><strong>Exercise 9.3 (Reading).</strong> Read the <em>Sandvig v. Barr</em> complaint and the March 2020 opinion. In 400 words, summarize the plaintiffs’ theory, the government’s response, and the narrow statutory ground on which the court ruled. Name one argument the court did not reach.</p>
+<p><strong>Exercise 9.4 (Open-ended).</strong> Identify a public-interest question about Boulder County that you could answer with records but not from public datasets alone. In two pages, name the records, the office, the exemption fights you expect, and what you would do with the records. Save as <code>exercises/ch09_records_plan.md</code>. Strong plans become next year’s coordinated requests.</p>
+</section>
+<section id="looking-ahead" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">9.10</span> Looking ahead</h2>
+<p>Records work is slow. The timeline from a first letter to a usable table is measured in weeks at best, and a court fight can stretch it by a year. Reporters and lawyers budget for this. Data scientists trained on the responsiveness of an API often do not, which is why the class filed its requests in Week 4. What comes back will rarely be everything you asked for. The next chapter, <a href="ch-10-oversight.html" class="quarto-xref"><span>Chapter 10</span></a>, takes what was withheld as evidence in its own right: you will build a ledger of the exemptions the county cited and the remedy pathways each one leaves open.</p>
+</section>
+<section id="further-reading-and-resources" class="level2" data-number="9.11">
+<h2 data-number="9.11" class="anchored" data-anchor-id="further-reading-and-resources"><span class="header-section-number">9.11</span> Further Reading and Resources</h2>
+<ul>
+<li>Colorado Freedom of Information Coalition, open government guide: <a href="https://coloradofoic.org/open-government-guide/" class="uri">https://coloradofoic.org/open-government-guide/</a>. The clearest practitioner guide to CORA, including deadlines, fees, and the court remedy <span class="citation" data-cites="cfoic">(<a href="#ref-cfoic" role="doc-biblioref">Colorado Freedom of Information Coalition 2024</a>)</span>.</li>
+<li>Boulder County, Colorado Open Records Act page: <a href="https://bouldercounty.gov/records/colorado-open-records-act/" class="uri">https://bouldercounty.gov/records/colorado-open-records-act/</a>. Links to the county’s Open Records Center and its records policy.</li>
+<li>MuckRock: <a href="https://www.muckrock.com/" class="uri">https://www.muckrock.com/</a>. Search prior releases before you file <span class="citation" data-cites="muckrock">(<a href="#ref-muckrock" role="doc-biblioref">MuckRock Foundation 2024</a>)</span>.</li>
+<li>Freedom of Information Act, 5 U.S.C. § 552: <a href="https://www.law.cornell.edu/uscode/text/5/552" class="uri">https://www.law.cornell.edu/uscode/text/5/552</a> <span class="citation" data-cites="foia_552">(<a href="#ref-foia_552" role="doc-biblioref">US Congress 1966</a>)</span>. Reading the nine exemptions in order is thirty minutes well spent.</li>
+<li><em>Sandvig v. Barr</em> filings at the ACLU: <a href="https://www.aclu.org/cases/sandvig-v-barr-challenge-cfaa-prohibition-uncovering-racial-discrimination-online" class="uri">https://www.aclu.org/cases/sandvig-v-barr-challenge-cfaa-prohibition-uncovering-racial-discrimination-online</a> <span class="citation" data-cites="aclu2019">(<a href="#ref-aclu2019" role="doc-biblioref">American Civil Liberties Union 2019</a>)</span>.</li>
+<li>Electronic Frontier Foundation on the CFAA: <a href="https://www.eff.org/issues/cfaa" class="uri">https://www.eff.org/issues/cfaa</a> <span class="citation" data-cites="eff_cfaa">(<a href="#ref-eff_cfaa" role="doc-biblioref">Electronic Frontier Foundation 2024</a>)</span>.</li>
+<li>Warren, Pickoff-White, Parameswaran, and Salehi (2025), “RequestAtlas: Supporting the slow and iterative process of requesting public records,” <em>Proceedings of the ACM on Human-Computer Interaction</em> <span class="citation" data-cites="warrenRequestAtlasSupportingSlow2025">(<a href="#ref-warrenRequestAtlasSupportingSlow2025" role="doc-biblioref">Warren et al. 2025</a>)</span>.</li>
+<li>Albiston and Nielsen (2017) on the <a href="https://doi.org/10.1111/lsi.12250">two-tier structure of U.S. public interest law</a> <span class="citation" data-cites="albiston2017">(<a href="#ref-albiston2017" role="doc-biblioref">Albiston and Nielsen 2017</a>)</span>.</li>
+</ul>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-albiston2017" class="csl-entry" role="listitem">
+Albiston, Catherine R., and Laura Beth Nielsen. 2017. <span>“Public Interest Law Organizations and the Two-Tier System of Access to Justice in the <span>United States</span>.”</span> <em>Law <span>&amp;</span> Social Inquiry</em> 42 (4): 990–1023. <a href="https://doi.org/10.1111/lsi.12250">https://doi.org/10.1111/lsi.12250</a>.
+</div>
+<div id="ref-aclu2019" class="csl-entry" role="listitem">
+American Civil Liberties Union. 2019. <span>“<span class="nocase">Sandvig v. Barr</span>: Researchers’ Right to Investigate Algorithmic Discrimination.”</span> ACLU. <a href="https://www.aclu.org/cases/sandvig-v-barr-challenge-cfaa-prohibition-uncovering-racial-discrimination-online">https://www.aclu.org/cases/sandvig-v-barr-challenge-cfaa-prohibition-uncovering-racial-discrimination-online</a>.
+</div>
+<div id="ref-bouldercounty_res2025058" class="csl-entry" role="listitem">
+Board of County Commissioners of Boulder County. 2025. <span>“Resolution 2025-058: A Resolution Summarizing Expenditures and Revenues for Each Fund Adopting a Budget for the County of Boulder, Colorado, for the Calendar Year Beginning the First Day of January 2026.”</span> Boulder County, Colorado. <a href="https://assets.bouldercounty.gov/wp-content/uploads/2026/01/resolution-2025-058-summarizing-expenditures-and-revenues-for-each-fund.pdf">https://assets.bouldercounty.gov/wp-content/uploads/2026/01/resolution-2025-058-summarizing-expenditures-and-revenues-for-each-fund.pdf</a>.
+</div>
+<div id="ref-cfoic" class="csl-entry" role="listitem">
+Colorado Freedom of Information Coalition. 2024. <span>“<span>CORA</span> Resources and Sample-Letter Library.”</span> Colorado Freedom of Information Coalition. <a href="https://coloradofoic.org/">https://coloradofoic.org/</a>.
+</div>
+<div id="ref-cora_statute" class="csl-entry" role="listitem">
+Colorado General Assembly. 1968. <span>“Colorado Open Records Act, c.r.s. <span>§</span> 24-72-201 Et Seq.”</span> Colorado Revised Statutes. <a href="https://leg.colorado.gov/colorado-revised-statutes">https://leg.colorado.gov/colorado-revised-statutes</a>.
+</div>
+<div id="ref-syri2020" class="csl-entry" role="listitem">
+District Court of The Hague. 2020. <span>“<span class="nocase">NJCM et al. v. The State of the Netherlands</span> (SyRI Judgment), ECLI:NL:RBDHA:2020:1878.”</span> Rechtspraak.nl. <a href="https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2020:1878">https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2020:1878</a>.
+</div>
+<div id="ref-eff_cfaa" class="csl-entry" role="listitem">
+Electronic Frontier Foundation. 2024. <span>“Computer Fraud and Abuse Act Reform.”</span> Electronic Frontier Foundation. <a href="https://www.eff.org/issues/cfaa">https://www.eff.org/issues/cfaa</a>.
+</div>
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Under Review</em>.
+</div>
+<div id="ref-muckrock" class="csl-entry" role="listitem">
+MuckRock Foundation. 2024. <span>“<span>MuckRock</span>: Public Records Requests, Tracked and Published.”</span> MuckRock Foundation. <a href="https://www.muckrock.com/">https://www.muckrock.com/</a>.
+</div>
+<div id="ref-sarat1998cause" class="csl-entry" role="listitem">
+Sarat, Austin, and Stuart A. Scheingold, eds. 1998. <em>Cause Lawyering: Political Commitments and Professional Responsibilities</em>. New York: Oxford University Press.
+</div>
+<div id="ref-foia_552" class="csl-entry" role="listitem">
+US Congress. 1966. <span>“Freedom of Information Act, 5 u.s.c. <span>§</span> 552.”</span> United States Code. <a href="https://www.law.cornell.edu/uscode/text/5/552">https://www.law.cornell.edu/uscode/text/5/552</a>.
+</div>
+<div id="ref-warrenRequestAtlasSupportingSlow2025" class="csl-entry" role="listitem">
+Warren, Rachel B., Lisa Pickoff-White, Aditya G. Parameswaran, and Niloufar Salehi. 2025. <span>“<span>RequestAtlas</span>: <span>Supporting</span> the <span>Slow</span> and <span>Iterative Process</span> of <span>Requesting Public Records</span>.”</span> <em>Proc. ACM Hum.-Comput. Interact.</em> 9 (2): CSCW158:1–35.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch-08-exemption.html" class="pagination-link" aria-label="Exemption: Who Must Answer?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch-10-oversight.html" class="pagination-link" aria-label="Oversight">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Oversight</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Law {#sec-ch-09-law}</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>The evidence ledger you built in @sec-ch-08-exemption ends in a list of things a county has not told you. A ledger cannot make anyone answer. A statute can. With a public-records law behind you, you write a different kind of letter: one that cites a section of code, starts a statutory clock, and preserves the right to go to court. The letter is still a request. What makes it work is the legal infrastructure behind it.</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>This chapter treats law as a lineage, not because data scientists should become lawyers, but because few professions have thought harder about pursuing the public interest under adversarial conditions. Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> describes public interest law as the lineage that "translates values into enforceable procedures": rights to access, duties to disclose, standards of review, and remedies. You will read two law and society scholars on what public interest lawyering is, learn the statutory geometry of FOIA and the Colorado Open Records Act (CORA), and sit with the fact that the same infrastructure that enables accountability work can be turned against the people it is supposed to serve.</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>The running example is the class's coordinated set of CORA requests to **Boulder County**, filed during the Week 4 lab. The class files six to eight requests rather than one per student, so that no county office is swamped, and each student analyzes one. You will leave with a SQLite tracker, a request letter, and a notebook that turns a county PDF into a table you can check.</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Public interest lawyering as a profession</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>Albiston and Nielsen <span class="co">[</span><span class="ot">-@albiston2017</span><span class="co">]</span> studied the U.S. public interest law field through surveys spanning three decades. Public interest lawyering is not a specialty like tax or real estate. It is a *stance* toward practice: representing interests the market will not pay to represent, often for clients whose stake in an outcome is structural rather than individual. *Cause lawyering*, the term Sarat and Scheingold <span class="co">[</span><span class="ot">-@sarat1998cause</span><span class="co">]</span> put at the center of the field's self-understanding, treats a case as an instrument for changing a rule rather than a dispute between two parties.</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>Albiston and Nielsen's empirical argument is that the field has settled into a two-tier structure. A small number of well-funded organizations (the ACLU, the NAACP Legal Defense Fund, the Electronic Frontier Foundation) work at the level of appellate strategy and legislative advocacy. A much larger tier of legal aid societies and clinics absorbs front-line demand in family court, eviction proceedings, and benefits appeals. The first tier has strategic leverage. The second has caseload and direct contact with the people served.</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>The analogy for data science is not strained. A few civil-society organizations work at the policy tier; a much larger set of journalists, organizers, and county staff does the front-line work of unpicking a broken benefits portal. County records are second-tier work, and this chapter's tools aim there.</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## FOIA, CORA, and the statutory geometry</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>The federal Freedom of Information Act, enacted in 1966 and amended several times since, establishes a presumption that records of federal executive agencies are public unless they fall within nine enumerated exemptions <span class="co">[</span><span class="ot">@foia_552</span><span class="co">]</span>. @sec-ch-08-exemption introduced the exemption list as a topology of what government may decline to answer. FOIA does not reach counties. For that you need state law.</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>Every state has a parallel statute. Colorado's is CORA, C.R.S. § 24-72-201 et seq. <span class="co">[</span><span class="ot">@cora_statute</span><span class="co">]</span>. Its geometry differs from FOIA's in ways that matter for a county request:</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**The clock is short.** A custodian must make records available within three working days, extendable by up to seven more working days if the custodian gives written notice of extenuating circumstances <span class="co">[</span><span class="ot">@cfoic</span><span class="co">]</span>.</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Fees are capped but real.** CORA allows a capped hourly research-and-retrieval fee, with the first hour free, plus copying costs. Fee waivers are discretionary, not a right. <span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: verify the current hourly cap and Boulder County's posted fee policy before the term; do not quote a dollar figure in class materials until checked. --&gt;</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**There is no administrative appeal.** If a request is denied, the path runs through written notice of intent to sue and then district court, with attorney fees available to a prevailing requester <span class="co">[</span><span class="ot">@cfoic</span><span class="co">]</span>. @sec-ch-10-oversight builds that pathway into a ledger.</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Criminal justice records follow a separate law.** The Colorado Criminal Justice Records Act (CCJRA) lets a custodian withhold records if disclosure would be "contrary to the public interest," a balancing test the custodian applies and must articulate. Boulder County routes requests for Sheriff's Office records through a separate records page rather than its general CORA portal.</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>That last point shapes how you write. A request asking for "all emails from the Sheriff mentioning license plate readers" invites the custodian to classify everything as criminal justice records and apply the CCJRA balancing test. The same request phrased as "administrative records concerning the procurement and contracting of automated license plate reader technology, including contracts, invoices, and vendor correspondence" names administrative categories and makes that classification harder to justify. This is the specificity a reporter brings to a sourcing interview, translated into statutory language.</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="The Missing Manual"}</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>Most records-request advice assumes your request succeeds the first time. It does not. A well-managed request produces a negotiation: the first response will be partial, redacted, mis-scoped, delayed with an extension notice, or held behind a fee estimate. Warren and colleagues <span class="co">[</span><span class="ot">-@warrenRequestAtlasSupportingSlow2025</span><span class="co">]</span> designed their request tool around exactly this slow, iterative process. Design your tracker the same way: log follow-ups, extension notices, and the grounds given for each redaction. Redactions are metadata: the pattern of what an office blacks out tells you its legal theory before it states one. If three of four releases redact the same paragraph under the same exemption, you have a de facto policy you can write about, cite in testimony, or hand to a lawyer.</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## The CFAA and the chilling effect</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>Legal infrastructure is not only a resource for accountability work. It also limits what that work may try. The Computer Fraud and Abuse Act (CFAA), enacted in 1986, criminalizes "unauthorized access" to a "protected computer." For most of its life the statute was read broadly enough that violating a website's terms of service (creating test accounts to audit a housing platform, for example) exposed a researcher to federal liability. Researchers reasonably declined to do the research.</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>*Sandvig v. Barr*, brought by the ACLU on behalf of Christian Sandvig and co-plaintiffs [@aclu2019], challenged that reading. The plaintiffs wanted to audit online employment and housing platforms for race and gender discrimination using paired accounts that technically violated the platforms' terms. They sought a declaration that the CFAA did not criminalize their research. In March 2020, the U.S. District Court for the District of Columbia ruled for them on statutory grounds, holding that violating terms of service does not by itself make access unauthorized. The Supreme Court's 2021 decision in *Van Buren v. United States* narrowed the statute further in a separate case.</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>The chilling effect *Sandvig* addressed is an infrastructure problem. A statute that criminalizes a research method does not need to prosecute anyone. Ambient uncertainty is enough to make review boards decline and graduate students pick another dissertation. *Sandvig* is the counter-example: an audit population that exists because a civil-society organization absorbed the legal cost of clarifying the rule. Note the two levels: federal courts set which research methods are safe, and a county custodian decides which records you get.</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## SyRI, discovery, and weaponization</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>@sec-ch-08-exemption introduced SyRI as a case of the state as adversary. Return to it here as a *litigation strategy*. The coalition (NJCM with welfare-rights organizations and individual plaintiffs) built its suit around Article 8 of the European Convention on Human Rights, and in February 2020 the District Court of The Hague held the SyRI legislation incompatible with it <span class="co">[</span><span class="ot">@syri2020</span><span class="co">]</span>. In Albiston and Nielsen's vocabulary, this was cause lawyering at its most strategic. The ruling did not end algorithmic welfare surveillance in the Netherlands. It set a precedent the next system had to work around, which is what a win looks like here.</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>Legal discovery is a linkability mechanism that accountability writing often misses. A civil suit compels internal records no request would dislodge and puts witnesses under oath, but discovery material usually sits under a protective order: usable in the case, not releasable without the court's permission. @sec-ch-19-critical-data-studies-refusal will argue that the instinct to withhold is sometimes right. In discovery, the instinct is not optional.</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>Public-records laws are neutral on their face. In practice they can be turned against the people they were meant to protect. Requests and subpoenas can pull booking and residency information about immigrants, and meeting records that list commenters by name can expose the residents who showed up to object. This is not an argument against open records. It is an argument for treating records work the way @sec-ch-18-ownership will treat stewardship: the infrastructure that enables one use enables every use the statute does not exclude.</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## Amicus briefs and MuckRock</span></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>Data scientists can contribute to legal work without becoming lawyers. The amicus curiae ("friend of the court") brief, in which computer scientists or statisticians explain to a court what an algorithm or a disparity measure does, is a recognized genre, and @sec-ch-11-testimony takes up its close cousin. MuckRock, the nonprofit records-request platform, is the closest thing the U.S. has to shared request infrastructure, and its archive of prior releases is worth searching before you file <span class="co">[</span><span class="ot">@muckrock</span><span class="co">]</span>. Its public-by-default posture has costs, though, and a classroom needs a tracker even for requests it is not ready to expose. A SQLite database is the right scale.</span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tutorial, part 1: a CORA tracker in SQLite</span></span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>The schema has four tables. A request can have several responses (partial releases, supplemental productions); a response can include several documents; follow-ups are requester actions (clarifications, fee questions, notices) that shape the record without producing documents.</span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>DB_PATH <span class="op">=</span> Path(<span class="st">"cora_tracker.sqlite"</span>)</span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>SCHEMA <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE TABLE IF NOT EXISTS requests (</span></span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a><span class="st">    id INTEGER PRIMARY KEY,</span></span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a><span class="st">    agency TEXT NOT NULL,            -- e.g. 'Boulder County'</span></span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a><span class="st">    office TEXT NOT NULL,            -- the office that holds the records</span></span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a><span class="st">    date_submitted TEXT NOT NULL,</span></span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="st">    description TEXT NOT NULL,</span></span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a><span class="st">    regime TEXT NOT NULL CHECK (regime IN ('CORA','CCJRA','FOIA','other')),</span></span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a><span class="st">    status TEXT NOT NULL</span></span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a><span class="st">        CHECK (status IN ('open','extended','partial','closed','denied'))</span></span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a><span class="st">);</span></span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE TABLE IF NOT EXISTS responses (</span></span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="st">    id INTEGER PRIMARY KEY,</span></span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a><span class="st">    request_id INTEGER NOT NULL REFERENCES requests(id),</span></span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a><span class="st">    date_received TEXT NOT NULL,</span></span>
+<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a><span class="st">    grounds_cited TEXT,              -- verbatim, as the custodian wrote it</span></span>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a><span class="st">    fee_estimate REAL,</span></span>
+<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a><span class="st">    documents_count INTEGER</span></span>
+<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a><span class="st">);</span></span>
+<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE TABLE IF NOT EXISTS followups (</span></span>
+<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a><span class="st">    id INTEGER PRIMARY KEY,</span></span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a><span class="st">    request_id INTEGER NOT NULL REFERENCES requests(id),</span></span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a><span class="st">    date TEXT NOT NULL,</span></span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a><span class="st">    type TEXT NOT NULL CHECK (type IN</span></span>
+<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a><span class="st">        ('clarification','fee_question','reminder','notice_of_intent','withdrawal')),</span></span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a><span class="st">    content TEXT</span></span>
+<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a><span class="st">);</span></span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE TABLE IF NOT EXISTS documents (</span></span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a><span class="st">    id INTEGER PRIMARY KEY,</span></span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a><span class="st">    response_id INTEGER NOT NULL REFERENCES responses(id),</span></span>
+<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a><span class="st">    filename TEXT NOT NULL,</span></span>
+<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a><span class="st">    sha256 TEXT NOT NULL</span></span>
+<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a><span class="st">);</span></span>
+<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> sqlite3.<span class="ex">connect</span>(DB_PATH) <span class="im">as</span> conn:</span>
+<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a>    conn.executescript(SCHEMA)</span>
+<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a>The statutory clock is the column a requester most often forgets to compute. Working days skip weekends and the holidays the county observes, so let <span class="in">`pandas`</span> count them.</span>
+<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cora_clock(date_submitted, holidays<span class="op">=</span>()):</span>
+<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Due dates for a CORA request: 3 working days, or 10 if extended."""</span></span>
+<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a>    day <span class="op">=</span> pd.offsets.CustomBusinessDay(holidays<span class="op">=</span><span class="bu">list</span>(holidays))</span>
+<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a>    start <span class="op">=</span> pd.Timestamp(date_submitted)</span>
+<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"due"</span>: (start <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> day).date().isoformat(),</span>
+<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a>            <span class="st">"extended_due"</span>: (start <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> day).date().isoformat()}</span>
+<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cora_clock(<span class="st">"2027-01-28"</span>))   <span class="co"># the Week 4 lab, a Thursday</span></span>
+<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; {'due': '2027-02-02', 'extended_due': '2027-02-11'}</span></span>
+<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cora_clock(<span class="st">"2027-02-10"</span>, holidays<span class="op">=</span>[<span class="st">"2027-02-15"</span>]))</span>
+<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; {'due': '2027-02-16', 'extended_due': '2027-02-25'}</span></span>
+<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a>Pass the county's actual holiday calendar, not the federal one you assume it follows. The clock is not self-enforcing: a query that flags requests past <span class="in">`extended_due`</span> and drafts a reminder is the most effective code in records work.</span>
+<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a><span class="fu">## Drafting the letter</span></span>
+<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a>A CORA letter is four short paragraphs. The tone is formal, specificity is load-bearing, and statutory citations do real work. Here is a template retargeted to a county office; bracketed text is yours to fill.</span>
+<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Dear Records Custodian,</span></span>
+<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Pursuant to the Colorado Open Records Act, C.R.S. § 24-72-201 et seq., I request the following public records maintained by </span><span class="co">[</span><span class="ot">Boulder County office</span><span class="co">]</span><span class="at">:</span></span>
+<span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; (1) All contracts, amendments, statements of work, and data-sharing agreements between the County and any vendor of </span><span class="co">[</span><span class="ot">technology or service</span><span class="co">]</span><span class="at">, executed between January 1, 2023 and the date of this request;</span></span>
+<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; (2) Policies, procedures, and training materials governing the County's use of </span><span class="co">[</span><span class="ot">technology or service</span><span class="co">]</span><span class="at"> during that period;</span></span>
+<span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; (3) Any evaluations, audits, or validation reports concerning </span><span class="co">[</span><span class="ot">technology or service</span><span class="co">]</span><span class="at"> delivered to or prepared by the County during that period.</span></span>
+<span id="cb6-140"><a href="#cb6-140" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb6-141"><a href="#cb6-141" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; I ask that you waive or reduce any fees because I am a student researcher and will publish my analysis for the public; if estimated fees exceed </span><span class="co">[</span><span class="ot">amount you choose</span><span class="co">]</span><span class="at">, please contact me before proceeding. If any portion is withheld, please provide a written statement of the grounds, citing the specific legal authority, and release all reasonably segregable non-exempt portions. Electronic copies are preferred.</span></span>
+<span id="cb6-142"><a href="#cb6-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-143"><a href="#cb6-143" aria-hidden="true" tabindex="-1"></a>Four things do work. The citation shows you know the law. The enumerated categories ask for *records*, not answers, specific enough that the request cannot be dismissed as overbroad. The fee paragraph asks for a discretionary waiver honestly and sets a ceiling so a large estimate pauses the request instead of ending it. The last sentence asks for the written basis of any denial and the release of separable material. Submit through the channel the county designates; Boulder County uses an online Open Records Center linked from its CORA page.</span>
+<span id="cb6-144"><a href="#cb6-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-145"><a href="#cb6-145" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tutorial, part 2: from a county PDF to a table</span></span>
+<span id="cb6-146"><a href="#cb6-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-147"><a href="#cb6-147" aria-hidden="true" tabindex="-1"></a>Released records arrive as PDFs. Some are born digital, exported from a word processor or a finance system, and carry a text layer. Others are scans of paper and need optical character recognition (OCR). Try the text layer first. If your class's request has not come back yet, you will practice on the fallback corpus: Boulder County's own public records, such as Board of County Commissioners agendas, minutes, and packets, and budget documents.</span>
+<span id="cb6-148"><a href="#cb6-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-149"><a href="#cb6-149" aria-hidden="true" tabindex="-1"></a>The example uses Resolution 2025-058, in which the Board adopted the county's 2026 budget by summarizing expenditures and revenues for each fund <span class="co">[</span><span class="ot">@bouldercounty_res2025058</span><span class="co">]</span>. It is four pages, born digital, and typical of what county records look like.</span>
+<span id="cb6-150"><a href="#cb6-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-151"><a href="#cb6-151" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb6-152"><a href="#cb6-152" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb6-153"><a href="#cb6-153" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pdfplumber   <span class="co"># pip install pdfplumber</span></span>
+<span id="cb6-154"><a href="#cb6-154" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-155"><a href="#cb6-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-156"><a href="#cb6-156" aria-hidden="true" tabindex="-1"></a>PDF <span class="op">=</span> <span class="st">"resolution-2025-058.pdf"</span>   <span class="co"># downloaded from bouldercounty.gov</span></span>
+<span id="cb6-157"><a href="#cb6-157" aria-hidden="true" tabindex="-1"></a>ROW <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r"^(?P&lt;label&gt;.+?)\s+\$(?P&lt;amount&gt;[\d,]+)$"</span>)</span>
+<span id="cb6-158"><a href="#cb6-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-159"><a href="#cb6-159" aria-hidden="true" tabindex="-1"></a>rows, section <span class="op">=</span> [], <span class="va">None</span></span>
+<span id="cb6-160"><a href="#cb6-160" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pdfplumber.<span class="bu">open</span>(PDF) <span class="im">as</span> pdf:</span>
+<span id="cb6-161"><a href="#cb6-161" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> page_no, page <span class="kw">in</span> <span class="bu">enumerate</span>(pdf.pages, start<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb6-162"><a href="#cb6-162" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> line <span class="kw">in</span> (page.extract_text() <span class="kw">or</span> <span class="st">""</span>).splitlines():</span>
+<span id="cb6-163"><a href="#cb6-163" aria-hidden="true" tabindex="-1"></a>            line <span class="op">=</span> line.strip()</span>
+<span id="cb6-164"><a href="#cb6-164" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> re.match(<span class="vs">r"^Section \d+$"</span>, line):</span>
+<span id="cb6-165"><a href="#cb6-165" aria-hidden="true" tabindex="-1"></a>                section <span class="op">=</span> line</span>
+<span id="cb6-166"><a href="#cb6-166" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> (m <span class="op">:=</span> ROW.match(line)) <span class="kw">and</span> section:</span>
+<span id="cb6-167"><a href="#cb6-167" aria-hidden="true" tabindex="-1"></a>                rows.append({<span class="st">"section"</span>: section,</span>
+<span id="cb6-168"><a href="#cb6-168" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"label"</span>: m[<span class="st">"label"</span>].strip(),</span>
+<span id="cb6-169"><a href="#cb6-169" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"amount"</span>: <span class="bu">int</span>(m[<span class="st">"amount"</span>].replace(<span class="st">","</span>, <span class="st">""</span>)),</span>
+<span id="cb6-170"><a href="#cb6-170" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"page"</span>: page_no})</span>
+<span id="cb6-171"><a href="#cb6-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-172"><a href="#cb6-172" aria-hidden="true" tabindex="-1"></a>budget <span class="op">=</span> pd.DataFrame(rows)</span>
+<span id="cb6-173"><a href="#cb6-173" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(budget.shape)</span>
+<span id="cb6-174"><a href="#cb6-174" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (55, 4)</span></span>
+<span id="cb6-175"><a href="#cb6-175" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-176"><a href="#cb6-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-177"><a href="#cb6-177" aria-hidden="true" tabindex="-1"></a>Do not trust those fifty-five rows yet. County budget tables print their own totals, and recomputing them is the cheapest validation in records work.</span>
+<span id="cb6-178"><a href="#cb6-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-179"><a href="#cb6-179" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb6-180"><a href="#cb6-180" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> check_totals(df):</span>
+<span id="cb6-181"><a href="#cb6-181" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> []</span>
+<span id="cb6-182"><a href="#cb6-182" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> sec, g <span class="kw">in</span> df.groupby(<span class="st">"section"</span>):</span>
+<span id="cb6-183"><a href="#cb6-183" aria-hidden="true" tabindex="-1"></a>        is_total <span class="op">=</span> g[<span class="st">"label"</span>].<span class="bu">str</span>.startswith(<span class="st">"Total"</span>)</span>
+<span id="cb6-184"><a href="#cb6-184" aria-hidden="true" tabindex="-1"></a>        out.append({<span class="st">"section"</span>: sec,</span>
+<span id="cb6-185"><a href="#cb6-185" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"rows"</span>: <span class="bu">int</span>((<span class="op">~</span>is_total).<span class="bu">sum</span>()),</span>
+<span id="cb6-186"><a href="#cb6-186" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"sum_of_rows"</span>: <span class="bu">int</span>(g.loc[<span class="op">~</span>is_total, <span class="st">"amount"</span>].<span class="bu">sum</span>()),</span>
+<span id="cb6-187"><a href="#cb6-187" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"printed_total"</span>: <span class="bu">int</span>(g.loc[is_total, <span class="st">"amount"</span>].<span class="bu">sum</span>())})</span>
+<span id="cb6-188"><a href="#cb6-188" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> pd.DataFrame(out)</span>
+<span id="cb6-189"><a href="#cb6-189" aria-hidden="true" tabindex="-1"></a>    out[<span class="st">"matches"</span>] <span class="op">=</span> out[<span class="st">"sum_of_rows"</span>] <span class="op">==</span> out[<span class="st">"printed_total"</span>]</span>
+<span id="cb6-190"><a href="#cb6-190" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> out</span>
+<span id="cb6-191"><a href="#cb6-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-192"><a href="#cb6-192" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(check_totals(budget).to_string(index<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb6-193"><a href="#cb6-193" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;   section  rows  sum_of_rows  printed_total  matches</span></span>
+<span id="cb6-194"><a href="#cb6-194" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Section 1    23    745186611      745186611     True</span></span>
+<span id="cb6-195"><a href="#cb6-195" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Section 2    23    745186611      745186611     True</span></span>
+<span id="cb6-196"><a href="#cb6-196" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Section 5     6      4181549        4181549     True</span></span>
+<span id="cb6-197"><a href="#cb6-197" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-198"><a href="#cb6-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-199"><a href="#cb6-199" aria-hidden="true" tabindex="-1"></a>The totals match: twenty-three funds summing to $745,186,611 in estimated expenditures. Now compare the fund names across the expenditure and revenue sections of the same document.</span>
+<span id="cb6-200"><a href="#cb6-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-201"><a href="#cb6-201" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb6-202"><a href="#cb6-202" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> budget.query(<span class="st">"section == 'Section 1' and not label.str.startswith('Total')"</span>)</span>
+<span id="cb6-203"><a href="#cb6-203" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> budget.query(<span class="st">"section == 'Section 2' and not label.str.startswith('Total')"</span>)</span>
+<span id="cb6-204"><a href="#cb6-204" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>(<span class="bu">set</span>(s1.label) <span class="op">^</span> <span class="bu">set</span>(s2.label)))</span>
+<span id="cb6-205"><a href="#cb6-205" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; ['Health &amp; Human Services', 'Health and Human Services',</span></span>
+<span id="cb6-206"><a href="#cb6-206" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;  'Qualified Energy Conservation Bond', 'Qualified Energy Conservation Bonds']</span></span>
+<span id="cb6-207"><a href="#cb6-207" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-208"><a href="#cb6-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-209"><a href="#cb6-209" aria-hidden="true" tabindex="-1"></a>The same two funds are spelled differently on different pages of one resolution. That is a **linkability** failure in miniature, and a join on fund name would silently drop them. For scanned releases, swap the text layer for OCR (<span class="in">`pdftoppm`</span> to render pages, <span class="in">`tesseract`</span> to read them), record a SHA-256 hash of every file you receive in the <span class="in">`documents`</span> table, and expect to validate even more carefully.</span>
+<span id="cb6-210"><a href="#cb6-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-211"><a href="#cb6-211" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="In the Public Interest"}</span>
+<span id="cb6-212"><a href="#cb6-212" aria-hidden="true" tabindex="-1"></a>@sec-ch-02-installed-base named **remedy** as the installed base's final element, and @sec-ch-10-oversight will build on it: evidence matters only if it can trigger action. A records response that sits as an unreadable scan on a laptop is not **oversight**. It is raw material for oversight. The tracker, letter, and extraction notebook are the minimum scaffolding that turns that material into something a reporter can publish, an advocate can cite at a county hearing, or an attorney can attach to a complaint [@keegan2026]. They advance oversight only when they close the loop to remedy. They advance **openness** in a weaker sense even when they do not: a well-tracked request produces a public record of what the county said, and when.</span>
+<span id="cb6-213"><a href="#cb6-213" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-214"><a href="#cb6-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-215"><a href="#cb6-215" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
+<span id="cb6-216"><a href="#cb6-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-217"><a href="#cb6-217" aria-hidden="true" tabindex="-1"></a>**Exercise 9.1 (Piece 2 component, guided).** Take the request your class filed with Boulder County during the Week 4 lab. Insert it into the tracker with its office, regime, and submission date, compute its clock with <span class="in">`cora_clock`</span>, write a query that drafts a reminder for any request past <span class="in">`extended_due`</span>, and record every response or extension notice verbatim in <span class="in">`grounds_cited`</span>. Add your final request letter as <span class="in">`piece2/request_letter.md`</span>. If you are drafting a new request, adapt the template above to your office and topic and have your instructor review it before submission.</span>
+<span id="cb6-218"><a href="#cb6-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-219"><a href="#cb6-219" aria-hidden="true" tabindex="-1"></a>**Exercise 9.2 (Piece 2 component, runnable).** Download Resolution 2025-058 from Boulder County's budget page and reproduce the extraction and total check above. Then point the same notebook at one Board of County Commissioners packet from the county's meeting portal (<span class="ot">&lt;https://pub-bouldercounty.escribemeetings.com/&gt;</span>) or at your own released records. Report which tables extracted cleanly, which failed the total check, and why. Save as <span class="in">`piece2/extraction.ipynb`</span>. This is the extraction notebook for Piece 2.</span>
+<span id="cb6-220"><a href="#cb6-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-221"><a href="#cb6-221" aria-hidden="true" tabindex="-1"></a>**Exercise 9.3 (Reading).** Read the *Sandvig v. Barr* complaint and the March 2020 opinion. In 400 words, summarize the plaintiffs' theory, the government's response, and the narrow statutory ground on which the court ruled. Name one argument the court did not reach.</span>
+<span id="cb6-222"><a href="#cb6-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-223"><a href="#cb6-223" aria-hidden="true" tabindex="-1"></a>**Exercise 9.4 (Open-ended).** Identify a public-interest question about Boulder County that you could answer with records but not from public datasets alone. In two pages, name the records, the office, the exemption fights you expect, and what you would do with the records. Save as <span class="in">`exercises/ch09_records_plan.md`</span>. Strong plans become next year's coordinated requests.</span>
+<span id="cb6-224"><a href="#cb6-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-225"><a href="#cb6-225" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking ahead</span></span>
+<span id="cb6-226"><a href="#cb6-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-227"><a href="#cb6-227" aria-hidden="true" tabindex="-1"></a>Records work is slow. The timeline from a first letter to a usable table is measured in weeks at best, and a court fight can stretch it by a year. Reporters and lawyers budget for this. Data scientists trained on the responsiveness of an API often do not, which is why the class filed its requests in Week 4. What comes back will rarely be everything you asked for. The next chapter, @sec-ch-10-oversight, takes what was withheld as evidence in its own right: you will build a ledger of the exemptions the county cited and the remedy pathways each one leaves open.</span>
+<span id="cb6-228"><a href="#cb6-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-229"><a href="#cb6-229" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading and Resources</span></span>
+<span id="cb6-230"><a href="#cb6-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-231"><a href="#cb6-231" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Colorado Freedom of Information Coalition, open government guide: <span class="ot">&lt;https://coloradofoic.org/open-government-guide/&gt;</span>. The clearest practitioner guide to CORA, including deadlines, fees, and the court remedy <span class="co">[</span><span class="ot">@cfoic</span><span class="co">]</span>.</span>
+<span id="cb6-232"><a href="#cb6-232" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Boulder County, Colorado Open Records Act page: <span class="ot">&lt;https://bouldercounty.gov/records/colorado-open-records-act/&gt;</span>. Links to the county's Open Records Center and its records policy.</span>
+<span id="cb6-233"><a href="#cb6-233" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>MuckRock: <span class="ot">&lt;https://www.muckrock.com/&gt;</span>. Search prior releases before you file <span class="co">[</span><span class="ot">@muckrock</span><span class="co">]</span>.</span>
+<span id="cb6-234"><a href="#cb6-234" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Freedom of Information Act, 5 U.S.C. § 552: <span class="ot">&lt;https://www.law.cornell.edu/uscode/text/5/552&gt;</span> <span class="co">[</span><span class="ot">@foia_552</span><span class="co">]</span>. Reading the nine exemptions in order is thirty minutes well spent.</span>
+<span id="cb6-235"><a href="#cb6-235" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Sandvig v. Barr* filings at the ACLU: <span class="ot">&lt;https://www.aclu.org/cases/sandvig-v-barr-challenge-cfaa-prohibition-uncovering-racial-discrimination-online&gt;</span> <span class="co">[</span><span class="ot">@aclu2019</span><span class="co">]</span>.</span>
+<span id="cb6-236"><a href="#cb6-236" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Electronic Frontier Foundation on the CFAA: <span class="ot">&lt;https://www.eff.org/issues/cfaa&gt;</span> <span class="co">[</span><span class="ot">@eff_cfaa</span><span class="co">]</span>.</span>
+<span id="cb6-237"><a href="#cb6-237" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Warren, Pickoff-White, Parameswaran, and Salehi (2025), "RequestAtlas: Supporting the slow and iterative process of requesting public records," *Proceedings of the ACM on Human-Computer Interaction* <span class="co">[</span><span class="ot">@warrenRequestAtlasSupportingSlow2025</span><span class="co">]</span>.</span>
+<span id="cb6-238"><a href="#cb6-238" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Albiston and Nielsen (2017) on the <span class="co">[</span><span class="ot">two-tier structure of U.S. public interest law</span><span class="co">](https://doi.org/10.1111/lsi.12250)</span> <span class="co">[</span><span class="ot">@albiston2017</span><span class="co">]</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-09-law.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

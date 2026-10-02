@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
+
+<title>2&nbsp; The Installed Base – Public Interest Data Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch-03-pit-data-for-good.html" rel="next">
+<link href="./ch-01-introduction.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-9a023c9ade86a60361e96e3e3f11bc54.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-684e263fd5eaab04d06708158183ff95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-063d023c011e3855d99747d2bbbf274a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-1-foundations.html">Foundations</a></li><li class="breadcrumb-item"><a href="./ch-02-installed-base.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Installed Base</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Public Interest Data Science</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-1-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-02-installed-base.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Installed Base</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-03-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-2-journalism-city.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Journalism: The City</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-04-enclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Enclosure: Who Can Observe?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-05-journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-06-openness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Openness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-07-op-eds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Op-Eds</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-3-law-county.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Law: The County</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-08-exemption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-09-law.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Law</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-10-oversight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Oversight</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-11-testimony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Testimony</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-4-assurance-state.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assurance: The State</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-12-accounting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-13-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Engineering</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-14-govtech-civic-tech.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-15-reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-5-planning-nation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Planning: The Nation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-16-erosion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Erosion: What Can Be Remembered?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-17-planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-18-ownership.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Ownership</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-19-critical-data-studies-refusal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-20-public-comments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Public Comments</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-6-beyond-portfolio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Beyond the Portfolio</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-21-research-proposals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Research Proposals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-22-archival-deposits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Archival Deposits</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-23-limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">The Limits of the Framework</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#three-pressures" id="toc-three-pressures" class="nav-link active" data-scroll-target="#three-pressures"><span class="header-section-number">2.1</span> Three pressures</a></li>
+  <li><a href="#three-values" id="toc-three-values" class="nav-link" data-scroll-target="#three-values"><span class="header-section-number">2.2</span> Three values</a></li>
+  <li><a href="#the-installed-base-and-its-six-elements" id="toc-the-installed-base-and-its-six-elements" class="nav-link" data-scroll-target="#the-installed-base-and-its-six-elements"><span class="header-section-number">2.3</span> The installed base and its six elements</a></li>
+  <li><a href="#five-lineages" id="toc-five-lineages" class="nav-link" data-scroll-target="#five-lineages"><span class="header-section-number">2.4</span> Five lineages</a></li>
+  <li><a href="#why-the-book-climbs-the-ladder" id="toc-why-the-book-climbs-the-ladder" class="nav-link" data-scroll-target="#why-the-book-climbs-the-ladder"><span class="header-section-number">2.5</span> Why the book climbs the ladder</a></li>
+  <li><a href="#diagnosing-a-missing-element" id="toc-diagnosing-a-missing-element" class="nav-link" data-scroll-target="#diagnosing-a-missing-element"><span class="header-section-number">2.6</span> Diagnosing a missing element</a></li>
+  <li><a href="#a-minimum-viable-installed-base" id="toc-a-minimum-viable-installed-base" class="nav-link" data-scroll-target="#a-minimum-viable-installed-base"><span class="header-section-number">2.7</span> A minimum viable installed base</a></li>
+  <li><a href="#what-this-demonstrates" id="toc-what-this-demonstrates" class="nav-link" data-scroll-target="#what-this-demonstrates"><span class="header-section-number">2.8</span> What this demonstrates</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">2.9</span> Exercises</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">2.10</span> Looking ahead</a></li>
+  <li><a href="#further-reading-and-resources" id="toc-further-reading-and-resources" class="nav-link" data-scroll-target="#further-reading-and-resources"><span class="header-section-number">2.11</span> Further Reading and Resources</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-02-installed-base.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-1-foundations.html">Foundations</a></li><li class="breadcrumb-item"><a href="./ch-02-installed-base.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Installed Base</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-ch-02-installed-base" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Installed Base</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="ch-01-introduction.html" class="quarto-xref"><span>Chapter 1</span></a> argued that “the public interest” is contested and promised a working definition instead of a tidy one. This chapter delivers it, all at once. It gives you the six ideas the rest of the book develops one module at a time: three <strong>pressures</strong> that narrow public knowledge, three <strong>values</strong> that push back, the <strong>installed base</strong> where those values become durable, and five professional <strong>lineages</strong> that have built such bases before. It then explains why the book climbs from the city to the nation, and ends by building a small installed base in code. Treat it as a map you will keep unfolding. Each idea gets its own chapter later.</p>
+<section id="three-pressures" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="three-pressures"><span class="header-section-number">2.1</span> Three pressures</h2>
+<p>Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> names three mutually reinforcing forces. Each answers a question.</p>
+<p><strong>Enclosure asks who can observe.</strong> It is the privatization or withdrawal of data that once held public or research value. Facebook restricted its APIs after Cambridge Analytica; Twitter revoked research access after its 2022 acquisition; Reddit ended Pushshift’s access and priced its API beyond most researchers. Freelon <span class="citation" data-cites="Freelon_ComputationalResearchPostAPI_2018">(<a href="#ref-Freelon_ComputationalResearchPostAPI_2018" role="doc-biblioref">2018</a>)</span> calls the result a “post-API age,” in which access can be revoked at any time, for any reason, without recourse. Governments enclose too, when they retire datasets on policing, health, or the environment. You meet enclosure at the city level in <a href="ch-04-enclosure.html" class="quarto-xref"><span>Chapter 4</span></a>.</p>
+<p><strong>Exemption asks who must answer.</strong> It is the capacity of powerful firms and agencies to operate beyond meaningful scrutiny. Keegan distinguishes <em>legal</em> exemption (formal carve-outs, thin duties, jurisdictional gaps) from <em>practical</em> exemption (trade secrecy, restrictive terms of service, technical controls that make scrutiny infeasible). The result is a structural mismatch: the systems with the greatest public consequences face the weakest oversight <span class="citation" data-cites="pasquale2016">(<a href="#ref-pasquale2016" role="doc-biblioref">Pasquale 2016</a>)</span>. You meet exemption at the county level in <a href="ch-08-exemption.html" class="quarto-xref"><span>Chapter 8</span></a>, and again at the state level, disguised as audit-washing, in <a href="ch-12-accounting.html" class="quarto-xref"><span>Chapter 12</span></a>.</p>
+<p><strong>Erosion asks what can be remembered.</strong> It is the decay of the institutions and infrastructures that make long-term observation possible: portals that vanish, contracts that lapse, corpora with silent holes <span class="citation" data-cites="gaffney2018 plantin2016">(<a href="#ref-gaffney2018" role="doc-biblioref">Gaffney and Matias 2018</a>; <a href="#ref-plantin2016" role="doc-biblioref">Plantin et al. 2016</a>)</span>. Erosion is rarely dramatic, which is what makes it effective. You meet it at the federal level in <a href="ch-16-erosion.html" class="quarto-xref"><span>Chapter 16</span></a>.</p>
+</section>
+<section id="three-values" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="three-values"><span class="header-section-number">2.2</span> Three values</h2>
+<p>Each pressure has a counter-value.</p>
+<p><strong>Openness counters enclosure.</strong> It is the <em>durable legibility</em> of evidentiary traces: not only access to files, but provenance, documentation, and reproducible workflows that let more than experts evaluate how data were made. <a href="ch-06-openness.html" class="quarto-xref"><span>Chapter 6</span></a> develops it on city records.</p>
+<p><strong>Oversight counters exemption.</strong> It is <em>routinized, testable scrutiny</em>: audits, documentation standards, impact assessments, and institutions with authority to act on what they find. <a href="ch-10-oversight.html" class="quarto-xref"><span>Chapter 10</span></a> treats oversight as remedy; Part IV treats it as independent verification.</p>
+<p><strong>Ownership counters erosion.</strong> It does not mean private property. It means collective, accountable governance over the preservation, access, and use of public-relevant data, with stewardship obligations that outlast any one grant or administration. <a href="ch-18-ownership.html" class="quarto-xref"><span>Chapter 18</span></a> develops it, including the sovereignty claims that complicate it.</p>
+<p>Values stated in a mission statement are cheap. They become durable only when they are built into something. That something is the installed base.</p>
+</section>
+<section id="the-installed-base-and-its-six-elements" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="the-installed-base-and-its-six-elements"><span class="header-section-number">2.3</span> The installed base and its six elements</h2>
+<p>Star and Ruhleder <span class="citation" data-cites="star1994">(<a href="#ref-star1994" role="doc-biblioref">1994</a>)</span> used “installed base” to describe how new infrastructure never lands on a blank site. It inherits prior wiring, formats, routines, and labor, the way a neighborhood inherits its streets. Karasti and Blomberg <span class="citation" data-cites="karasti2018">(<a href="#ref-karasti2018" role="doc-biblioref">2018</a>)</span> call the ongoing work of keeping infrastructure aligned with what the installed base will tolerate <em>infrastructuring</em>, and Aanestad and colleagues <span class="citation" data-cites="aanestad2017">(<a href="#ref-aanestad2017" role="doc-biblioref">2017</a>)</span> show national health-IT programs failing, repeatedly, by ignoring it. Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> extends the idea: for public interest work, the installed base is the socio-technical settlement that makes accountability possible. It has six elements.</p>
+<p><strong>Linkability.</strong> Records carry stable identifiers that let them be referenced and joined across time and systems. Linkability is also jurisdictional: someone must have the <em>duty</em> to assign references and carry them through reorganizations.</p>
+<p><strong>Interpretability.</strong> Categories, units, and transformations are documented well enough for a qualified outsider, including an affected party, to reason about them. Classification is never neutral <span class="citation" data-cites="bowker2000">(<a href="#ref-bowker2000" role="doc-biblioref">Bowker and Star 2000</a>)</span>; interpretability lets you see the classification and argue with it.</p>
+<p><strong>Continuity.</strong> Evidence persists across political cycles, vendor changes, and budget gaps. It is a resourcing commitment more than a technical feature: retention schedules, mirrors, migration plans, and paid maintainers.</p>
+<p><strong>Safe scrutiny.</strong> Researchers, journalists, auditors, and communities can examine the system without being sued, arrested, or retaliated against. Tiered access belongs here: governed visibility that protects people without becoming an excuse for exemption.</p>
+<p><strong>Authority.</strong> A named office has the responsibility and power to act on what scrutiny reveals. An audit that lands on no one’s desk is a training exercise.</p>
+<p><strong>Remedy.</strong> The people affected have accessible, protected, consequential paths to contest decisions and correct the record. Remedy often has no software layer at all; it lives in appeals, ombuds offices, and organizing.</p>
+<p>The order matters: you cannot offer remedy over records nobody can link. The elements also map onto the values. Openness operationalizes linkability, interpretability, and much of continuity. Oversight operationalizes safe scrutiny and authority. Ownership operationalizes remedy and the stewardship that keeps continuity from collapsing into somebody’s weekend hobby.</p>
+</section>
+<section id="five-lineages" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="five-lineages"><span class="header-section-number">2.4</span> Five lineages</h2>
+<p>Data science did not invent the problem of making expertise answer to the public. Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> identifies five professions that built public interest traditions, each by infrastructuring: turning a value into records, routines, and institutions.</p>
+<p><strong>Journalism</strong> maintains the evidentiary surface of public life through archives, verification, provenance, and publication (<a href="ch-05-journalism.html" class="quarto-xref"><span>Chapter 5</span></a>). <strong>Law</strong> translates values into enforceable procedures: rights to access, duties to disclose, standards of review, and remedies (<a href="ch-09-law.html" class="quarto-xref"><span>Chapter 9</span></a>). <strong>Accounting</strong> built a public interest mandate around independence and verification after audits failed the public <span class="citation" data-cites="baker2005">(<a href="#ref-baker2005" role="doc-biblioref">Baker 2005</a>)</span> (<a href="ch-12-accounting.html" class="quarto-xref"><span>Chapter 12</span></a>). <strong>Engineering</strong> made safety, testing, and incident learning into codes <span class="citation" data-cites="petroski1992">(<a href="#ref-petroski1992" role="doc-biblioref">Petroski 1992</a>)</span> (<a href="ch-13-engineering.html" class="quarto-xref"><span>Chapter 13</span></a>). The book teaches accounting and engineering together as <em>assurance</em>. <strong>Planning</strong> learned, through advocacy planning <span class="citation" data-cites="davidoff1965">(<a href="#ref-davidoff1965" role="doc-biblioref">Davidoff 1965</a>)</span> and the backlash against figures like Moses, that technical choices allocate burdens across space and time, and that affected people belong in the room (<a href="ch-17-planning.html" class="quarto-xref"><span>Chapter 17</span></a>).</p>
+<p>Every lineage also has an exclusionary past. Borrowing a method means borrowing its blind spots, and each module asks you to name them.</p>
+</section>
+<section id="why-the-book-climbs-the-ladder" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="why-the-book-climbs-the-ladder"><span class="header-section-number">2.5</span> Why the book climbs the ladder</h2>
+<p>The four modules move from the city to the county, the state, and the federal government. The ladder is a teaching device, and it rests on the <strong>authority</strong> element: evidence only matters if it reaches a body that can act on it. Each lineage has a natural home on the ladder.</p>
+<p>The <strong>city</strong> is where records are most abundant and most scattered: council packets posted as scanned PDFs, permit logs, campaign finance filings <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">Keegan 2026</a>)</span>. Local news has been hollowed out, so the watchdog role is open, and an op-ed in a local outlet can be read by every council member. Journalism fits.</p>
+<p>The <strong>county</strong>, in many US states, runs human services, child welfare, elections, and property records. Open-records statutes such as the Colorado Open Records Act give you an enforceable right to ask <span class="citation" data-cites="cora_statute">(<a href="#ref-cora_statute" role="doc-biblioref">Colorado General Assembly 1968</a>)</span>, and county commissioners hold public hearings where you can testify. Law fits.</p>
+<p>The <strong>state</strong> licenses professions, regulates employers and insurers, buys automated decision systems, and has written much of the AI legislation in the United States, including Colorado’s AI Act, SB 24-205 <span class="citation" data-cites="colorado_sb24205">(<a href="#ref-colorado_sb24205" role="doc-biblioref">Colorado General Assembly 2024</a>)</span>. <!-- TODO: re-check the Colorado AI Act's effective date and amendments before publication. --> Legislative committees commission and read reports. Assurance fits.</p>
+<p>The <strong>federal</strong> government holds the long-horizon datasets (the statistical system and the scientific agencies and laboratories, several of them in Boulder) and runs notice-and-comment rulemaking, a formal channel any member of the public can use <span class="citation" data-cites="apa_553">(<a href="#ref-apa_553" role="doc-biblioref">US Congress 1946</a>)</span>. Erosion is most consequential there, and planning’s long time horizon fits.</p>
+<p>The ladder also moves outward from where you live. You start where you can attend the meeting and build skills before the decision-makers get distant. Real problems cross levels, which is why the final project offers “a second level of government” as one way to deepen a piece. And the ladder is a US federal structure; each module’s non-US counter-case shows how differently other countries stack their authority.</p>
+</section>
+<section id="diagnosing-a-missing-element" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="diagnosing-a-missing-element"><span class="header-section-number">2.6</span> Diagnosing a missing element</h2>
+<p>The framework earns its keep diagnostically. Take the Allegheny Family Screening Tool, which <a href="ch-08-exemption.html" class="quarto-xref"><span>Chapter 8</span></a> and <a href="ch-10-oversight.html" class="quarto-xref"><span>Chapter 10</span></a> treat in detail. Linkability is good: each hotline call is joined to administrative records. Interpretability is partial: features are documented, weights are harder to reason about <span class="citation" data-cites="vaithianathan2019">(<a href="#ref-vaithianathan2019" role="doc-biblioref">Vaithianathan et al. 2019</a>)</span>. Continuity is maintained by named teams. The tail is weak. Safe scrutiny depends on the county’s willingness to cooperate with outside researchers. Authority sits with call screeners who can override the score but feel pressure not to. Remedy for a family flagged and investigated is almost nonexistent; you cannot unring a caseworker visit. The framework does not tell you what to do. It tells you where to look, so that an intervention lands somewhere that will hold it.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In the Public Interest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The installed base is where openness, oversight, and ownership stop being rhetorical. A city portal that earns a five-star “open data” rating can still fail <strong>openness</strong> in the sense this book uses, if its URLs break at every vendor rebid and nobody preserves the raw extracts, because continuity is part of legibility. <strong>Oversight</strong> fails when findings have no authority to land on, however good the audit. <strong>Ownership</strong> fails when the steward is a volunteer with no successor. When you see the three values named abstractly elsewhere, translate back to the six elements. That translation is the discipline this chapter teaches, and every portfolio piece’s installed-base note asks you to perform it.</p>
+</div>
+</div>
+</section>
+<section id="a-minimum-viable-installed-base" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="a-minimum-viable-installed-base"><span class="header-section-number">2.7</span> A minimum viable installed base</h2>
+<p>Enough vocabulary. You cannot talk seriously about the six elements without building a version of them at least once. The dataset is a procurement log for a fictional small city: 500 contract awards with two deliberate failures. Some rows are missing identifiers, and some amounts went through an undocumented currency conversion. Generate it yourself so the tutorial runs anywhere:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">4871</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">500</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"record_id"</span>: [<span class="ss">f"SC-</span><span class="sc">{</span>i<span class="sc">:05d}</span><span class="ss">"</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n)],</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"vendor"</span>: rng.choice([<span class="st">"Acme Paving"</span>, <span class="st">"Front Range IT"</span>, <span class="st">"Rhein GmbH"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Liffey Consulting"</span>, <span class="st">"Flatirons Print"</span>], n),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"amount"</span>: rng.lognormal(<span class="dv">10</span>, <span class="dv">1</span>, n).<span class="bu">round</span>(<span class="dv">2</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"award_date"</span>: pd.date_range(<span class="st">"2021-01-01"</span>, periods<span class="op">=</span>n, freq<span class="op">=</span><span class="st">"3D"</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"award_type"</span>: rng.choice([<span class="st">"bid"</span>, <span class="st">"sole_source"</span>, <span class="st">"emergency"</span>], n),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"contact_email"</span>: [<span class="ss">f"vendor</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">@example.com"</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n)],</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"contract_reference"</span>: [<span class="ss">f"C-</span><span class="sc">{</span><span class="dv">2021</span> <span class="op">+</span> i <span class="op">//</span> <span class="dv">125</span><span class="sc">}</span><span class="ss">-</span><span class="sc">{</span>i<span class="sc">:04d}</span><span class="ss">"</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n)],</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>df.loc[rng.choice(n, <span class="dv">28</span>, replace<span class="op">=</span><span class="va">False</span>), <span class="st">"record_id"</span>] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"record_id"</span>].isna().<span class="bu">sum</span>()</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; 28</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="linkability-persistent-identifiers" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="linkability-persistent-identifiers"><span class="header-section-number">2.7.1</span> Linkability: persistent identifiers</h3>
+<p>Two reasonable ways to fill the 28 gaps: a random UUID, or a hash of the record’s own content. A UUID is opaque and survives corrections; a content hash detects silent changes but shifts the moment anyone fixes a typo. For civic records, where correction is expected, use both. The UUID is the canonical identifier; the content hash is a side channel you can log over time as a change history.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hashlib</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> uuid</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> content_hash(row):</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    payload <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>row[<span class="st">'vendor'</span>]<span class="sc">}</span><span class="ss">|</span><span class="sc">{</span>row[<span class="st">'amount'</span>]<span class="sc">}</span><span class="ss">|</span><span class="sc">{</span>row[<span class="st">'award_date'</span>]<span class="sc">}</span><span class="ss">|</span><span class="sc">{</span>row[<span class="st">'award_type'</span>]<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> hashlib.sha256(payload.encode(<span class="st">"utf-8"</span>)).hexdigest()[:<span class="dv">16</span>]</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>missing <span class="op">=</span> df[<span class="st">"record_id"</span>].isna()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>df.loc[missing, <span class="st">"record_id"</span>] <span class="op">=</span> [<span class="bu">str</span>(uuid.uuid4()) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(missing.<span class="bu">sum</span>())]</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"content_hash"</span>] <span class="op">=</span> df.<span class="bu">apply</span>(content_hash, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"record_id"</span>].is_unique</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Missing Manual
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>UUIDs are the easy part. Every language ships a generator. The hard part is durable reference, and durable reference is social work. Somebody has to maintain the resolver (the service that turns an identifier into a record), hold the naming authority (who may mint identifiers), and make the migration commitment (when systems change, identifiers move with them). DOIs work because Crossref and DataCite exist as institutions, not because the string <code>10.1234/...</code> is clever. Your procurement log’s identifiers will work if, and only if, some office commits to carrying them across the next three vendor contracts. If nobody has signed up, you have a UUID, not an identifier.</p>
+</div>
+</div>
+</section>
+<section id="interpretability-a-provenance-document" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="interpretability-a-provenance-document"><span class="header-section-number">2.7.2</span> Interpretability: a provenance document</h3>
+<p>In the real version of this log, the rows from Rhein GmbH and Liffey Consulting arrived in euros and were converted to dollars by someone who never wrote it down. An auditor who assumes the source was always in dollars will misreport. The fix is not code. It is a provenance document committed next to the data, readable by people and machines.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data/provenance.yaml</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dataset</span><span class="kw">:</span><span class="at"> smallcity_procurement</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">"2.0"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">upstream_source</span><span class="kw">:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Small City Department of Finance, ERP export</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">accessed</span><span class="kw">:</span><span class="at"> 2026-03-12</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">transformations</span><span class="kw">:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">step</span><span class="kw">:</span><span class="at"> 01_extract</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> CSV export from the accounts-payable module.</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">step</span><span class="kw">:</span><span class="at"> 02_currency_normalize</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">    description</span><span class="kw">: </span><span class="ch">&gt;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>      Rows for vendors in DE and IE carried EUR amounts. Converted to USD</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>      using the ECB monthly reference rate for the award_date month.</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">rate_source</span><span class="kw">:</span><span class="at"> https://www.ecb.europa.eu/stats/policy_and_exchange_rates/</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">step</span><span class="kw">:</span><span class="at"> 03_identifier_assignment</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> UUID minted for 28 rows with missing record_id; content_hash added.</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">known_issues</span><span class="kw">:</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Monthly average rates; daily rates not preserved.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="continuity-a-retention-policy" class="level3" data-number="2.7.3">
+<h3 data-number="2.7.3" class="anchored" data-anchor-id="continuity-a-retention-policy"><span class="header-section-number">2.7.3</span> Continuity: a retention policy</h3>
+<p>Continuity without a retention policy is an act of faith. Write it down in a form that survives its author leaving the job.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data/retention.yaml</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">schedule</span><span class="kw">:</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">raw_extracts</span><span class="kw">:</span><span class="at">      </span><span class="kw">{</span><span class="fu">retain_for</span><span class="kw">:</span><span class="at"> 10_years</span><span class="kw">,</span><span class="at">   </span><span class="fu">storage</span><span class="kw">:</span><span class="at"> city_records_archive</span><span class="kw">}</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">published_versions</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">retain_for</span><span class="kw">:</span><span class="at"> indefinite</span><span class="kw">,</span><span class="at"> </span><span class="fu">storage</span><span class="kw">:</span><span class="at"> zenodo_plus_ia_mirror</span><span class="kw">}</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">derivation_scripts</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">retain_for</span><span class="kw">:</span><span class="at"> indefinite</span><span class="kw">,</span><span class="at"> </span><span class="fu">storage</span><span class="kw">:</span><span class="at"> city_git</span><span class="kw">}</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">access_logs</span><span class="kw">:</span><span class="at">       </span><span class="kw">{</span><span class="fu">retain_for</span><span class="kw">:</span><span class="at"> 2_years</span><span class="kw">,</span><span class="at">    </span><span class="fu">purpose</span><span class="kw">:</span><span class="at"> audit_restricted_queries</span><span class="kw">}</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">responsible_office</span><span class="kw">:</span><span class="at"> Department of Finance, Data Stewardship Lead</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">review_cadence</span><span class="kw">:</span><span class="at"> annual</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="safe-scrutiny-and-authority-tiered-access" class="level3" data-number="2.7.4">
+<h3 data-number="2.7.4" class="anchored" data-anchor-id="safe-scrutiny-and-authority-tiered-access"><span class="header-section-number">2.7.4</span> Safe scrutiny and authority: tiered access</h3>
+<p>Vendor names and contract totals are public records almost everywhere. Contact details for sole proprietors often should not be. SQLite views express the tiers: the table holds the full record and each view is a lens on it.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">"smallcity_procurement.db"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df.to_sql(<span class="st">"procurement"</span>, con, if_exists<span class="op">=</span><span class="st">"replace"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>con.executescript(<span class="st">"""</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="st">DROP VIEW IF EXISTS v_public;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="st">DROP VIEW IF EXISTS v_authenticated;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE VIEW v_public AS</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT record_id, vendor, amount, award_date, award_type FROM procurement;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE VIEW v_authenticated AS</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT record_id, vendor, amount, award_date, award_type,</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="st">         contact_email, contract_reference FROM procurement;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>con.execute(<span class="st">"SELECT COUNT(*) FROM v_public"</span>).fetchone()</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (500,)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In production you would enforce tiers with row-level security or an API gateway. Here the view definitions make the commitments legible: anyone reading the schema can see what each tier may see, which is how safe scrutiny avoids collapsing into “publish everything” or “publish nothing.”</p>
+</section>
+<section id="remedy-an-escalation-log" class="level3" data-number="2.7.5">
+<h3 data-number="2.7.5" class="anchored" data-anchor-id="remedy-an-escalation-log"><span class="header-section-number">2.7.5</span> Remedy: an escalation log</h3>
+<p>Access without escalation is a suggestion box nobody empties. The last file says who is notified when something happens, and how fast they must respond. Keep it boring.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data/escalation.yaml</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">routes</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">trigger</span><span class="kw">:</span><span class="at"> correction request received</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">notify</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">records_officer</span><span class="kw">,</span><span class="at"> affected_department</span><span class="kw">]</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">sla</span><span class="kw">:</span><span class="at"> 10_business_days</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">remedy</span><span class="kw">:</span><span class="at"> issue corrected row, log in change_history</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">trigger</span><span class="kw">:</span><span class="at"> removal request (privacy or safety)</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">notify</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">city_attorney</span><span class="kw">,</span><span class="at"> records_officer</span><span class="kw">]</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">sla</span><span class="kw">:</span><span class="at"> 5_business_days</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">remedy</span><span class="kw">:</span><span class="at"> redaction, tombstone record retained</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">trigger</span><span class="kw">:</span><span class="at"> restricted view accessed</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">notify</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">records_officer</span><span class="kw">,</span><span class="at"> audit_log</span><span class="kw">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="what-this-demonstrates" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="what-this-demonstrates"><span class="header-section-number">2.8</span> What this demonstrates</h2>
+<p>In about a hundred lines you built a minimum viable installed base: identifiers for linkability, a provenance file for interpretability, a retention policy for continuity, tiered views for safe scrutiny, and an escalation log naming the offices that hold authority and owe remedy. It is not a dashboard, a model, or an “AI governance” framework. It is the plumbing under all of them, and Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> calls attending to it the infrastructuring move: treating what looks like a platform problem as an installed-base problem. Every portfolio piece in this book ends with an installed-base note that asks which of these files your work produced and which are still missing.</p>
+</section>
+<section id="exercises" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.9</span> Exercises</h2>
+<p><strong>Exercise 2.1 (Guided).</strong> Run the tutorial end to end and save the result as <code>exercises/ch02_procurement_v2.csv</code>. In 150 words, explain why the tutorial makes the UUID, not the content hash, the canonical <code>record_id</code>, and describe one situation where you would choose the opposite.</p>
+<p><strong>Exercise 2.2 (Guided).</strong> Extend <code>provenance.yaml</code> with one transformation step of your own (vendor-name normalization, deduplication) and add a <code>contact</code> field naming a responsible office. Then write <code>retention.yaml</code> for a city or organization you know, citing one real records-retention schedule (your city’s, your state archives’, or a federal agency’s) to justify at least one retention period.</p>
+<p><strong>Exercise 2.3 (Applied).</strong> Using the database from the tutorial, write three queries: total by vendor, lookup by <code>contract_reference</code>, and a full row export. For each, say which tier can run it and why. Save as <code>exercises/ch02_access.md</code>.</p>
+<p><strong>Exercise 2.4 (Diagnostic, real public data).</strong> Pick one dataset from a real open data portal: the City of Boulder’s, Denver’s, or the State of Colorado’s at <code>data.colorado.gov</code>. The Colorado portal runs on Socrata, which exposes dataset metadata at <code>/api/views/&lt;dataset-id&gt;.json</code>; city portals built on other platforms have their own metadata pages. Fetch the metadata with <code>requests</code> and record the license, the last-updated timestamp, the publishing department, and how many columns have descriptions. Then score the dataset on all six installed-base elements (0 to 2 each), with one sentence of evidence per score. Which element would you fix first, and which office has the authority to fix it? 500 words plus your script.</p>
+<p><strong>Exercise 2.5 (Open).</strong> Design an escalation pathway and a threat model for a small civic dataset of your choosing (school board minutes, a housing-permit feed, a campus crime log). Name at least three triggers, the offices notified, and a service-level agreement for each, plus three adversaries (not all malicious; an underfunded vendor counts) and one failure mode for each. 800 to 1,200 words. You will return to this pattern when you build a remedy ledger in <a href="ch-10-oversight.html" class="quarto-xref"><span>Chapter 10</span></a>.</p>
+</section>
+<section id="looking-ahead" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">2.10</span> Looking ahead</h2>
+<p><a href="ch-03-pit-data-for-good.html" class="quarto-xref"><span>Chapter 3</span></a> turns from the framework to the neighbors: public interest technology, data for good, digital government, civic tech, critical data studies, and data justice. Each claims part of this territory. The chapter asks what each one builds, what it leaves unbuilt, and how a project you admire might score on the six elements five years after launch.</p>
+</section>
+<section id="further-reading-and-resources" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="further-reading-and-resources"><span class="header-section-number">2.11</span> Further Reading and Resources</h2>
+<ul>
+<li>Brian C. Keegan (2026), “Public interest data infrastructuring,” under review <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">Keegan 2026</a>)</span>. Read the introduction through the section titled “Public interest data infrastructuring” for this chapter.</li>
+<li>Susan Leigh Star and Karen Ruhleder (1994), “<a href="https://doi.org/10.1145/192844.193021">Steps toward an ecology of infrastructure</a>,” <em>CSCW 1994</em>, 253–264 <span class="citation" data-cites="star1994">(<a href="#ref-star1994" role="doc-biblioref">Star and Ruhleder 1994</a>)</span>. The original “installed base” argument.</li>
+<li>Helena Karasti and Jeanette Blomberg (2018), “<a href="https://doi.org/10.1007/s10606-017-9296-7">Studying infrastructuring ethnographically</a>,” <em>Computer Supported Cooperative Work</em> 27: 233–265 <span class="citation" data-cites="karasti2018">(<a href="#ref-karasti2018" role="doc-biblioref">Karasti and Blomberg 2018</a>)</span>. Infrastructuring as alignment work.</li>
+<li>Jean-Christophe Plantin, Carl Lagoze, Paul N. Edwards, and Christian Sandvig, “<a href="https://doi.org/10.1177/1461444816661553">Infrastructure studies meet platform studies in the age of Google and Facebook</a>,” <em>New Media &amp; Society</em> <span class="citation" data-cites="plantin2016">(<a href="#ref-plantin2016" role="doc-biblioref">Plantin et al. 2016</a>)</span>. The course’s supplementary reading for week 2.</li>
+<li>Deen Freelon (2018), “Computational research in the post-API age,” <em>Political Communication</em> 35(4): 665–668 <span class="citation" data-cites="Freelon_ComputationalResearchPostAPI_2018">(<a href="#ref-Freelon_ComputationalResearchPostAPI_2018" role="doc-biblioref">Freelon 2018</a>)</span>. Two pages that name the condition of enclosure.</li>
+<li>Geoffrey C. Bowker and Susan Leigh Star (2000), <em><a href="https://mitpress.mit.edu/9780262522953/sorting-things-out/">Sorting Things Out</a></em> <span class="citation" data-cites="bowker2000">(<a href="#ref-bowker2000" role="doc-biblioref">Bowker and Star 2000</a>)</span>. Indispensable for interpretability.</li>
+<li>Margunn Aanestad and colleagues (2017), “<a href="https://doi.org/10.1007/978-3-319-51020-0_3">Information infrastructures and the challenge of the installed base</a>” <span class="citation" data-cites="aanestad2017">(<a href="#ref-aanestad2017" role="doc-biblioref">Aanestad et al. 2017</a>)</span>. Why ignoring the installed base is not a niche failure.</li>
+<li>The DataCite metadata schema: <a href="https://schema.datacite.org" class="uri">https://schema.datacite.org</a>. A production-grade persistent-identifier standard backed by an institutional community.</li>
+<li>Socrata Open Data API documentation: <a href="https://dev.socrata.com/" class="uri">https://dev.socrata.com/</a>. The API behind many US city and state open data portals, including the one in Exercise 2.4.</li>
+</ul>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-aanestad2017" class="csl-entry" role="listitem">
+Aanestad, Margunn, Miria Grisot, Ole Hanseth, and Polyxeni Vassilakopoulou. 2017. <span>“Information Infrastructures and the Challenge of the Installed Base.”</span> <em>Information Infrastructures Within European Health Care</em>. <a href="https://doi.org/10.1007/978-3-319-51020-0_3">https://doi.org/10.1007/978-3-319-51020-0_3</a>.
+</div>
+<div id="ref-baker2005" class="csl-entry" role="listitem">
+Baker, C. Richard. 2005. <span>“What Is the Meaning of <span><span>‘the Public Interest’</span>?</span> Examining the Ideology of the <span>American</span> Public Accounting Profession.”</span> <em>Accounting, Auditing <span>&amp;</span> Accountability Journal</em> 18 (5): 690–703. <a href="https://doi.org/10.1108/09513570510620510">https://doi.org/10.1108/09513570510620510</a>.
+</div>
+<div id="ref-bowker2000" class="csl-entry" role="listitem">
+Bowker, Geoffrey C., and Susan Leigh Star. 2000. <em>Sorting Things Out: Classification and Its Consequences</em>. Cambridge, MA: MIT Press. <a href="https://mitpress.mit.edu/9780262522953/sorting-things-out/">https://mitpress.mit.edu/9780262522953/sorting-things-out/</a>.
+</div>
+<div id="ref-cora_statute" class="csl-entry" role="listitem">
+Colorado General Assembly. 1968. <span>“Colorado Open Records Act, c.r.s. <span>§</span> 24-72-201 Et Seq.”</span> Colorado Revised Statutes. <a href="https://leg.colorado.gov/colorado-revised-statutes">https://leg.colorado.gov/colorado-revised-statutes</a>.
+</div>
+<div id="ref-colorado_sb24205" class="csl-entry" role="listitem">
+———. 2024. <span>“<span>SB</span> 24-205: Consumer Protections for Artificial Intelligence.”</span> Colorado General Assembly. <a href="https://leg.colorado.gov/bills/sb24-205">https://leg.colorado.gov/bills/sb24-205</a>.
+</div>
+<div id="ref-davidoff1965" class="csl-entry" role="listitem">
+Davidoff, Paul. 1965. <span>“Advocacy and Pluralism in Planning.”</span> <em>Journal of the American Institute of Planners</em> 31 (4): 331–38. <a href="https://doi.org/10.1080/01944366508978187">https://doi.org/10.1080/01944366508978187</a>.
+</div>
+<div id="ref-Freelon_ComputationalResearchPostAPI_2018" class="csl-entry" role="listitem">
+Freelon, Deen. 2018. <span>“Computational <span>Research</span> in the <span>Post</span>-<span>API Age</span>.”</span> <em>Political Communication</em> 35 (4): 665–68.
+</div>
+<div id="ref-gaffney2018" class="csl-entry" role="listitem">
+Gaffney, Devin, and J. Nathan Matias. 2018. <span>“Caveat Emptor, Computational Social Science: Large-Scale Missing Data in a Widely-Published <span>Reddit</span> Corpus.”</span> <em>PLoS ONE</em> 13 (7): e0200162.
+</div>
+<div id="ref-karasti2018" class="csl-entry" role="listitem">
+Karasti, Helena, and Jeanette Blomberg. 2018. <span>“Studying Infrastructuring Ethnographically.”</span> <em>Computer Supported Cooperative Work</em> 27: 233–65. <a href="https://doi.org/10.1007/s10606-017-9296-7">https://doi.org/10.1007/s10606-017-9296-7</a>.
+</div>
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Under Review</em>.
+</div>
+<div id="ref-pasquale2016" class="csl-entry" role="listitem">
+Pasquale, Frank. 2016. <em>The Black Box Society: The Secret Algorithms That Control Money and Information</em>. Cambridge, MA: Harvard University Press. <a href="https://www.hup.harvard.edu/books/9780674970847">https://www.hup.harvard.edu/books/9780674970847</a>.
+</div>
+<div id="ref-petroski1992" class="csl-entry" role="listitem">
+Petroski, Henry. 1992. <em>To Engineer Is Human: The Role of Failure in Successful Design</em>. New York: Vintage Books. <a href="https://archive.org/details/toengineerishuma0000petr">https://archive.org/details/toengineerishuma0000petr</a>.
+</div>
+<div id="ref-plantin2016" class="csl-entry" role="listitem">
+Plantin, Jean-Christophe, Carl Lagoze, Paul N. Edwards, and Christian Sandvig. 2016. <span>“Infrastructure Studies Meet Platform Studies in the Age of <span>Google</span> and <span>Facebook</span>.”</span> <em>New Media <span>&amp;</span> Society</em> 20 (1): 293–310. <a href="https://doi.org/10.1177/1461444816661553">https://doi.org/10.1177/1461444816661553</a>.
+</div>
+<div id="ref-star1994" class="csl-entry" role="listitem">
+Star, Susan Leigh, and Karen Ruhleder. 1994. <span>“Steps Toward an Ecology of Infrastructure: Complex Problems in Design and Access for Large-Scale Collaborative Systems.”</span> In <em>Proceedings of the 1994 ACM Conference on Computer-Supported Cooperative Work</em>, 253–64. <a href="https://doi.org/10.1145/192844.193021">https://doi.org/10.1145/192844.193021</a>.
+</div>
+<div id="ref-apa_553" class="csl-entry" role="listitem">
+US Congress. 1946. <span>“Administrative Procedure Act, 5 u.s.c. <span>§</span> 553.”</span> United States Code. <a href="https://www.law.cornell.edu/uscode/text/5/553">https://www.law.cornell.edu/uscode/text/5/553</a>.
+</div>
+<div id="ref-vaithianathan2019" class="csl-entry" role="listitem">
+Vaithianathan, Rhema, Emily Putnam-Hornstein, Nan Jiang, Parma Nand, and Tim Maloney. 2019. <span>“Developing Predictive Models to Support Child Maltreatment Hotline Screening Decisions: <span>Allegheny County</span> Methodology and Implementation.”</span> Centre for Social Data Analytics, Auckland University of Technology.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch-01-introduction.html" class="pagination-link" aria-label="Introduction to Public Interest Data Science">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch-03-pit-data-for-good.html" class="pagination-link" aria-label="Public Interest Technology and Data for Good">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># The Installed Base {#sec-ch-02-installed-base}</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>@sec-ch-01-introduction argued that "the public interest" is contested and promised a working definition instead of a tidy one. This chapter delivers it, all at once. It gives you the six ideas the rest of the book develops one module at a time: three **pressures** that narrow public knowledge, three **values** that push back, the **installed base** where those values become durable, and five professional **lineages** that have built such bases before. It then explains why the book climbs from the city to the nation, and ends by building a small installed base in code. Treat it as a map you will keep unfolding. Each idea gets its own chapter later.</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Three pressures</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> names three mutually reinforcing forces. Each answers a question.</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>**Enclosure asks who can observe.** It is the privatization or withdrawal of data that once held public or research value. Facebook restricted its APIs after Cambridge Analytica; Twitter revoked research access after its 2022 acquisition; Reddit ended Pushshift's access and priced its API beyond most researchers. Freelon <span class="co">[</span><span class="ot">-@Freelon_ComputationalResearchPostAPI_2018</span><span class="co">]</span> calls the result a "post-API age," in which access can be revoked at any time, for any reason, without recourse. Governments enclose too, when they retire datasets on policing, health, or the environment. You meet enclosure at the city level in @sec-ch-04-enclosure.</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>**Exemption asks who must answer.** It is the capacity of powerful firms and agencies to operate beyond meaningful scrutiny. Keegan distinguishes *legal* exemption (formal carve-outs, thin duties, jurisdictional gaps) from *practical* exemption (trade secrecy, restrictive terms of service, technical controls that make scrutiny infeasible). The result is a structural mismatch: the systems with the greatest public consequences face the weakest oversight <span class="co">[</span><span class="ot">@pasquale2016</span><span class="co">]</span>. You meet exemption at the county level in @sec-ch-08-exemption, and again at the state level, disguised as audit-washing, in @sec-ch-12-accounting.</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>**Erosion asks what can be remembered.** It is the decay of the institutions and infrastructures that make long-term observation possible: portals that vanish, contracts that lapse, corpora with silent holes <span class="co">[</span><span class="ot">@gaffney2018; @plantin2016</span><span class="co">]</span>. Erosion is rarely dramatic, which is what makes it effective. You meet it at the federal level in @sec-ch-16-erosion.</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Three values</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>Each pressure has a counter-value.</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>**Openness counters enclosure.** It is the *durable legibility* of evidentiary traces: not only access to files, but provenance, documentation, and reproducible workflows that let more than experts evaluate how data were made. @sec-ch-06-openness develops it on city records.</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>**Oversight counters exemption.** It is *routinized, testable scrutiny*: audits, documentation standards, impact assessments, and institutions with authority to act on what they find. @sec-ch-10-oversight treats oversight as remedy; Part IV treats it as independent verification.</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>**Ownership counters erosion.** It does not mean private property. It means collective, accountable governance over the preservation, access, and use of public-relevant data, with stewardship obligations that outlast any one grant or administration. @sec-ch-18-ownership develops it, including the sovereignty claims that complicate it.</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>Values stated in a mission statement are cheap. They become durable only when they are built into something. That something is the installed base.</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## The installed base and its six elements</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>Star and Ruhleder <span class="co">[</span><span class="ot">-@star1994</span><span class="co">]</span> used "installed base" to describe how new infrastructure never lands on a blank site. It inherits prior wiring, formats, routines, and labor, the way a neighborhood inherits its streets. Karasti and Blomberg <span class="co">[</span><span class="ot">-@karasti2018</span><span class="co">]</span> call the ongoing work of keeping infrastructure aligned with what the installed base will tolerate *infrastructuring*, and Aanestad and colleagues <span class="co">[</span><span class="ot">-@aanestad2017</span><span class="co">]</span> show national health-IT programs failing, repeatedly, by ignoring it. Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> extends the idea: for public interest work, the installed base is the socio-technical settlement that makes accountability possible. It has six elements.</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>**Linkability.** Records carry stable identifiers that let them be referenced and joined across time and systems. Linkability is also jurisdictional: someone must have the *duty* to assign references and carry them through reorganizations.</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>**Interpretability.** Categories, units, and transformations are documented well enough for a qualified outsider, including an affected party, to reason about them. Classification is never neutral <span class="co">[</span><span class="ot">@bowker2000</span><span class="co">]</span>; interpretability lets you see the classification and argue with it.</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>**Continuity.** Evidence persists across political cycles, vendor changes, and budget gaps. It is a resourcing commitment more than a technical feature: retention schedules, mirrors, migration plans, and paid maintainers.</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>**Safe scrutiny.** Researchers, journalists, auditors, and communities can examine the system without being sued, arrested, or retaliated against. Tiered access belongs here: governed visibility that protects people without becoming an excuse for exemption.</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>**Authority.** A named office has the responsibility and power to act on what scrutiny reveals. An audit that lands on no one's desk is a training exercise.</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>**Remedy.** The people affected have accessible, protected, consequential paths to contest decisions and correct the record. Remedy often has no software layer at all; it lives in appeals, ombuds offices, and organizing.</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>The order matters: you cannot offer remedy over records nobody can link. The elements also map onto the values. Openness operationalizes linkability, interpretability, and much of continuity. Oversight operationalizes safe scrutiny and authority. Ownership operationalizes remedy and the stewardship that keeps continuity from collapsing into somebody's weekend hobby.</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Five lineages</span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>Data science did not invent the problem of making expertise answer to the public. Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> identifies five professions that built public interest traditions, each by infrastructuring: turning a value into records, routines, and institutions.</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>**Journalism** maintains the evidentiary surface of public life through archives, verification, provenance, and publication (@sec-ch-05-journalism). **Law** translates values into enforceable procedures: rights to access, duties to disclose, standards of review, and remedies (@sec-ch-09-law). **Accounting** built a public interest mandate around independence and verification after audits failed the public [@baker2005] (@sec-ch-12-accounting). **Engineering** made safety, testing, and incident learning into codes [@petroski1992] (@sec-ch-13-engineering). The book teaches accounting and engineering together as *assurance*. **Planning** learned, through advocacy planning <span class="co">[</span><span class="ot">@davidoff1965</span><span class="co">]</span> and the backlash against figures like Moses, that technical choices allocate burdens across space and time, and that affected people belong in the room (@sec-ch-17-planning).</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>Every lineage also has an exclusionary past. Borrowing a method means borrowing its blind spots, and each module asks you to name them.</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why the book climbs the ladder</span></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>The four modules move from the city to the county, the state, and the federal government. The ladder is a teaching device, and it rests on the **authority** element: evidence only matters if it reaches a body that can act on it. Each lineage has a natural home on the ladder.</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>The **city** is where records are most abundant and most scattered: council packets posted as scanned PDFs, permit logs, campaign finance filings <span class="co">[</span><span class="ot">@keegan2026</span><span class="co">]</span>. Local news has been hollowed out, so the watchdog role is open, and an op-ed in a local outlet can be read by every council member. Journalism fits.</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>The **county**, in many US states, runs human services, child welfare, elections, and property records. Open-records statutes such as the Colorado Open Records Act give you an enforceable right to ask <span class="co">[</span><span class="ot">@cora_statute</span><span class="co">]</span>, and county commissioners hold public hearings where you can testify. Law fits.</span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>The **state** licenses professions, regulates employers and insurers, buys automated decision systems, and has written much of the AI legislation in the United States, including Colorado's AI Act, SB 24-205 <span class="co">[</span><span class="ot">@colorado_sb24205</span><span class="co">]</span>. <span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: re-check the Colorado AI Act's effective date and amendments before publication. --&gt;</span> Legislative committees commission and read reports. Assurance fits.</span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>The **federal** government holds the long-horizon datasets (the statistical system and the scientific agencies and laboratories, several of them in Boulder) and runs notice-and-comment rulemaking, a formal channel any member of the public can use <span class="co">[</span><span class="ot">@apa_553</span><span class="co">]</span>. Erosion is most consequential there, and planning's long time horizon fits.</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>The ladder also moves outward from where you live. You start where you can attend the meeting and build skills before the decision-makers get distant. Real problems cross levels, which is why the final project offers "a second level of government" as one way to deepen a piece. And the ladder is a US federal structure; each module's non-US counter-case shows how differently other countries stack their authority.</span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a><span class="fu">## Diagnosing a missing element</span></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>The framework earns its keep diagnostically. Take the Allegheny Family Screening Tool, which @sec-ch-08-exemption and @sec-ch-10-oversight treat in detail. Linkability is good: each hotline call is joined to administrative records. Interpretability is partial: features are documented, weights are harder to reason about <span class="co">[</span><span class="ot">@vaithianathan2019</span><span class="co">]</span>. Continuity is maintained by named teams. The tail is weak. Safe scrutiny depends on the county's willingness to cooperate with outside researchers. Authority sits with call screeners who can override the score but feel pressure not to. Remedy for a family flagged and investigated is almost nonexistent; you cannot unring a caseworker visit. The framework does not tell you what to do. It tells you where to look, so that an intervention lands somewhere that will hold it.</span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="In the Public Interest"}</span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>The installed base is where openness, oversight, and ownership stop being rhetorical. A city portal that earns a five-star "open data" rating can still fail **openness** in the sense this book uses, if its URLs break at every vendor rebid and nobody preserves the raw extracts, because continuity is part of legibility. **Oversight** fails when findings have no authority to land on, however good the audit. **Ownership** fails when the steward is a volunteer with no successor. When you see the three values named abstractly elsewhere, translate back to the six elements. That translation is the discipline this chapter teaches, and every portfolio piece's installed-base note asks you to perform it.</span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="fu">## A minimum viable installed base</span></span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>Enough vocabulary. You cannot talk seriously about the six elements without building a version of them at least once. The dataset is a procurement log for a fictional small city: 500 contract awards with two deliberate failures. Some rows are missing identifiers, and some amounts went through an undocumented currency conversion. Generate it yourself so the tutorial runs anywhere:</span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">4871</span>)</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">500</span></span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>    <span class="st">"record_id"</span>: [<span class="ss">f"SC-</span><span class="sc">{</span>i<span class="sc">:05d}</span><span class="ss">"</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n)],</span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>    <span class="st">"vendor"</span>: rng.choice([<span class="st">"Acme Paving"</span>, <span class="st">"Front Range IT"</span>, <span class="st">"Rhein GmbH"</span>,</span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Liffey Consulting"</span>, <span class="st">"Flatirons Print"</span>], n),</span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>    <span class="st">"amount"</span>: rng.lognormal(<span class="dv">10</span>, <span class="dv">1</span>, n).<span class="bu">round</span>(<span class="dv">2</span>),</span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>    <span class="st">"award_date"</span>: pd.date_range(<span class="st">"2021-01-01"</span>, periods<span class="op">=</span>n, freq<span class="op">=</span><span class="st">"3D"</span>),</span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>    <span class="st">"award_type"</span>: rng.choice([<span class="st">"bid"</span>, <span class="st">"sole_source"</span>, <span class="st">"emergency"</span>], n),</span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a>    <span class="st">"contact_email"</span>: [<span class="ss">f"vendor</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">@example.com"</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n)],</span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>    <span class="st">"contract_reference"</span>: [<span class="ss">f"C-</span><span class="sc">{</span><span class="dv">2021</span> <span class="op">+</span> i <span class="op">//</span> <span class="dv">125</span><span class="sc">}</span><span class="ss">-</span><span class="sc">{</span>i<span class="sc">:04d}</span><span class="ss">"</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n)],</span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>df.loc[rng.choice(n, <span class="dv">28</span>, replace<span class="op">=</span><span class="va">False</span>), <span class="st">"record_id"</span>] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"record_id"</span>].isna().<span class="bu">sum</span>()</span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; 28</span></span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a><span class="fu">### Linkability: persistent identifiers</span></span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a>Two reasonable ways to fill the 28 gaps: a random UUID, or a hash of the record's own content. A UUID is opaque and survives corrections; a content hash detects silent changes but shifts the moment anyone fixes a typo. For civic records, where correction is expected, use both. The UUID is the canonical identifier; the content hash is a side channel you can log over time as a change history.</span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hashlib</span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> uuid</span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> content_hash(row):</span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>    payload <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>row[<span class="st">'vendor'</span>]<span class="sc">}</span><span class="ss">|</span><span class="sc">{</span>row[<span class="st">'amount'</span>]<span class="sc">}</span><span class="ss">|</span><span class="sc">{</span>row[<span class="st">'award_date'</span>]<span class="sc">}</span><span class="ss">|</span><span class="sc">{</span>row[<span class="st">'award_type'</span>]<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> hashlib.sha256(payload.encode(<span class="st">"utf-8"</span>)).hexdigest()[:<span class="dv">16</span>]</span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>missing <span class="op">=</span> df[<span class="st">"record_id"</span>].isna()</span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>df.loc[missing, <span class="st">"record_id"</span>] <span class="op">=</span> [<span class="bu">str</span>(uuid.uuid4()) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(missing.<span class="bu">sum</span>())]</span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"content_hash"</span>] <span class="op">=</span> df.<span class="bu">apply</span>(content_hash, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"record_id"</span>].is_unique</span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; True</span></span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="The Missing Manual"}</span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a>UUIDs are the easy part. Every language ships a generator. The hard part is durable reference, and durable reference is social work. Somebody has to maintain the resolver (the service that turns an identifier into a record), hold the naming authority (who may mint identifiers), and make the migration commitment (when systems change, identifiers move with them). DOIs work because Crossref and DataCite exist as institutions, not because the string <span class="in">`10.1234/...`</span> is clever. Your procurement log's identifiers will work if, and only if, some office commits to carrying them across the next three vendor contracts. If nobody has signed up, you have a UUID, not an identifier.</span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a><span class="fu">### Interpretability: a provenance document</span></span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>In the real version of this log, the rows from Rhein GmbH and Liffey Consulting arrived in euros and were converted to dollars by someone who never wrote it down. An auditor who assumes the source was always in dollars will misreport. The fix is not code. It is a provenance document committed next to the data, readable by people and machines.</span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="co"># data/provenance.yaml</span></span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a><span class="fu">dataset</span><span class="kw">:</span><span class="at"> smallcity_procurement</span></span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">"2.0"</span></span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a><span class="fu">upstream_source</span><span class="kw">:</span></span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Small City Department of Finance, ERP export</span></span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">accessed</span><span class="kw">:</span><span class="at"> 2026-03-12</span></span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a><span class="fu">transformations</span><span class="kw">:</span></span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">step</span><span class="kw">:</span><span class="at"> 01_extract</span></span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> CSV export from the accounts-payable module.</span></span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">step</span><span class="kw">:</span><span class="at"> 02_currency_normalize</span></span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a><span class="fu">    description</span><span class="kw">: </span><span class="ch">&gt;</span></span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>      Rows for vendors in DE and IE carried EUR amounts. Converted to USD</span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>      using the ECB monthly reference rate for the award_date month.</span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">rate_source</span><span class="kw">:</span><span class="at"> https://www.ecb.europa.eu/stats/policy_and_exchange_rates/</span></span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">step</span><span class="kw">:</span><span class="at"> 03_identifier_assignment</span></span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> UUID minted for 28 rows with missing record_id; content_hash added.</span></span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a><span class="fu">known_issues</span><span class="kw">:</span></span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span>Monthly<span class="at"> </span>average<span class="at"> </span>rates;<span class="at"> </span>daily<span class="at"> </span>rates<span class="at"> </span>not<span class="at"> </span>preserved.</span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a><span class="fu">### Continuity: a retention policy</span></span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a>Continuity without a retention policy is an act of faith. Write it down in a form that survives its author leaving the job.</span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a><span class="co"># data/retention.yaml</span></span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a><span class="fu">schedule</span><span class="kw">:</span></span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">raw_extracts</span><span class="kw">:</span><span class="at">      </span><span class="kw">{</span><span class="fu">retain_for</span><span class="kw">:</span><span class="at"> 10_years</span><span class="kw">,</span><span class="at">   </span><span class="fu">storage</span><span class="kw">:</span><span class="at"> city_records_archive</span><span class="kw">}</span></span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">published_versions</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">retain_for</span><span class="kw">:</span><span class="at"> indefinite</span><span class="kw">,</span><span class="at"> </span><span class="fu">storage</span><span class="kw">:</span><span class="at"> zenodo_plus_ia_mirror</span><span class="kw">}</span></span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">derivation_scripts</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">retain_for</span><span class="kw">:</span><span class="at"> indefinite</span><span class="kw">,</span><span class="at"> </span><span class="fu">storage</span><span class="kw">:</span><span class="at"> city_git</span><span class="kw">}</span></span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">access_logs</span><span class="kw">:</span><span class="at">       </span><span class="kw">{</span><span class="fu">retain_for</span><span class="kw">:</span><span class="at"> 2_years</span><span class="kw">,</span><span class="at">    </span><span class="fu">purpose</span><span class="kw">:</span><span class="at"> audit_restricted_queries</span><span class="kw">}</span></span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a><span class="fu">responsible_office</span><span class="kw">:</span><span class="at"> Department of Finance, Data Stewardship Lead</span></span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a><span class="fu">review_cadence</span><span class="kw">:</span><span class="at"> annual</span></span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a><span class="fu">### Safe scrutiny and authority: tiered access</span></span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a>Vendor names and contract totals are public records almost everywhere. Contact details for sole proprietors often should not be. SQLite views express the tiers: the table holds the full record and each view is a lens on it.</span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">"smallcity_procurement.db"</span>)</span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>df.to_sql(<span class="st">"procurement"</span>, con, if_exists<span class="op">=</span><span class="st">"replace"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a>con.executescript(<span class="st">"""</span></span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a><span class="st">DROP VIEW IF EXISTS v_public;</span></span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a><span class="st">DROP VIEW IF EXISTS v_authenticated;</span></span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE VIEW v_public AS</span></span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT record_id, vendor, amount, award_date, award_type FROM procurement;</span></span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE VIEW v_authenticated AS</span></span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT record_id, vendor, amount, award_date, award_type,</span></span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a><span class="st">         contact_email, contract_reference FROM procurement;</span></span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a>con.execute(<span class="st">"SELECT COUNT(*) FROM v_public"</span>).fetchone()</span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (500,)</span></span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a>In production you would enforce tiers with row-level security or an API gateway. Here the view definitions make the commitments legible: anyone reading the schema can see what each tier may see, which is how safe scrutiny avoids collapsing into "publish everything" or "publish nothing."</span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a><span class="fu">### Remedy: an escalation log</span></span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>Access without escalation is a suggestion box nobody empties. The last file says who is notified when something happens, and how fast they must respond. Keep it boring.</span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a><span class="co"># data/escalation.yaml</span></span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a><span class="fu">routes</span><span class="kw">:</span></span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">trigger</span><span class="kw">:</span><span class="at"> correction request received</span></span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">notify</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">records_officer</span><span class="kw">,</span><span class="at"> affected_department</span><span class="kw">]</span></span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">sla</span><span class="kw">:</span><span class="at"> 10_business_days</span></span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">remedy</span><span class="kw">:</span><span class="at"> issue corrected row, log in change_history</span></span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">trigger</span><span class="kw">:</span><span class="at"> removal request (privacy or safety)</span></span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">notify</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">city_attorney</span><span class="kw">,</span><span class="at"> records_officer</span><span class="kw">]</span></span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">sla</span><span class="kw">:</span><span class="at"> 5_business_days</span></span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">remedy</span><span class="kw">:</span><span class="at"> redaction, tombstone record retained</span></span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">trigger</span><span class="kw">:</span><span class="at"> restricted view accessed</span></span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">notify</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">records_officer</span><span class="kw">,</span><span class="at"> audit_log</span><span class="kw">]</span></span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a><span class="fu">## What this demonstrates</span></span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a>In about a hundred lines you built a minimum viable installed base: identifiers for linkability, a provenance file for interpretability, a retention policy for continuity, tiered views for safe scrutiny, and an escalation log naming the offices that hold authority and owe remedy. It is not a dashboard, a model, or an "AI governance" framework. It is the plumbing under all of them, and Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> calls attending to it the infrastructuring move: treating what looks like a platform problem as an installed-base problem. Every portfolio piece in this book ends with an installed-base note that asks which of these files your work produced and which are still missing.</span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a>**Exercise 2.1 (Guided).** Run the tutorial end to end and save the result as <span class="in">`exercises/ch02_procurement_v2.csv`</span>. In 150 words, explain why the tutorial makes the UUID, not the content hash, the canonical <span class="in">`record_id`</span>, and describe one situation where you would choose the opposite.</span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a>**Exercise 2.2 (Guided).** Extend <span class="in">`provenance.yaml`</span> with one transformation step of your own (vendor-name normalization, deduplication) and add a <span class="in">`contact`</span> field naming a responsible office. Then write <span class="in">`retention.yaml`</span> for a city or organization you know, citing one real records-retention schedule (your city's, your state archives', or a federal agency's) to justify at least one retention period.</span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a>**Exercise 2.3 (Applied).** Using the database from the tutorial, write three queries: total by vendor, lookup by <span class="in">`contract_reference`</span>, and a full row export. For each, say which tier can run it and why. Save as <span class="in">`exercises/ch02_access.md`</span>.</span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a>**Exercise 2.4 (Diagnostic, real public data).** Pick one dataset from a real open data portal: the City of Boulder's, Denver's, or the State of Colorado's at <span class="in">`data.colorado.gov`</span>. The Colorado portal runs on Socrata, which exposes dataset metadata at <span class="in">`/api/views/&lt;dataset-id&gt;.json`</span>; city portals built on other platforms have their own metadata pages. Fetch the metadata with <span class="in">`requests`</span> and record the license, the last-updated timestamp, the publishing department, and how many columns have descriptions. Then score the dataset on all six installed-base elements (0 to 2 each), with one sentence of evidence per score. Which element would you fix first, and which office has the authority to fix it? 500 words plus your script.</span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a>**Exercise 2.5 (Open).** Design an escalation pathway and a threat model for a small civic dataset of your choosing (school board minutes, a housing-permit feed, a campus crime log). Name at least three triggers, the offices notified, and a service-level agreement for each, plus three adversaries (not all malicious; an underfunded vendor counts) and one failure mode for each. 800 to 1,200 words. You will return to this pattern when you build a remedy ledger in @sec-ch-10-oversight.</span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking ahead</span></span>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a>@sec-ch-03-pit-data-for-good turns from the framework to the neighbors: public interest technology, data for good, digital government, civic tech, critical data studies, and data justice. Each claims part of this territory. The chapter asks what each one builds, what it leaves unbuilt, and how a project you admire might score on the six elements five years after launch.</span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading and Resources</span></span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Brian C. Keegan (2026), "Public interest data infrastructuring," under review <span class="co">[</span><span class="ot">@keegan2026</span><span class="co">]</span>. Read the introduction through the section titled "Public interest data infrastructuring" for this chapter.</span>
+<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Susan Leigh Star and Karen Ruhleder (1994), "<span class="co">[</span><span class="ot">Steps toward an ecology of infrastructure</span><span class="co">](https://doi.org/10.1145/192844.193021)</span>," *CSCW 1994*, 253–264 <span class="co">[</span><span class="ot">@star1994</span><span class="co">]</span>. The original "installed base" argument.</span>
+<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Helena Karasti and Jeanette Blomberg (2018), "<span class="co">[</span><span class="ot">Studying infrastructuring ethnographically</span><span class="co">](https://doi.org/10.1007/s10606-017-9296-7)</span>," *Computer Supported Cooperative Work* 27: 233–265 <span class="co">[</span><span class="ot">@karasti2018</span><span class="co">]</span>. Infrastructuring as alignment work.</span>
+<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Jean-Christophe Plantin, Carl Lagoze, Paul N. Edwards, and Christian Sandvig, "<span class="co">[</span><span class="ot">Infrastructure studies meet platform studies in the age of Google and Facebook</span><span class="co">](https://doi.org/10.1177/1461444816661553)</span>," *New Media &amp; Society* <span class="co">[</span><span class="ot">@plantin2016</span><span class="co">]</span>. The course's supplementary reading for week 2.</span>
+<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Deen Freelon (2018), "Computational research in the post-API age," *Political Communication* 35(4): 665–668 <span class="co">[</span><span class="ot">@Freelon_ComputationalResearchPostAPI_2018</span><span class="co">]</span>. Two pages that name the condition of enclosure.</span>
+<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Geoffrey C. Bowker and Susan Leigh Star (2000), *[Sorting Things Out](https://mitpress.mit.edu/9780262522953/sorting-things-out/)* <span class="co">[</span><span class="ot">@bowker2000</span><span class="co">]</span>. Indispensable for interpretability.</span>
+<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Margunn Aanestad and colleagues (2017), "<span class="co">[</span><span class="ot">Information infrastructures and the challenge of the installed base</span><span class="co">](https://doi.org/10.1007/978-3-319-51020-0_3)</span>" <span class="co">[</span><span class="ot">@aanestad2017</span><span class="co">]</span>. Why ignoring the installed base is not a niche failure.</span>
+<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The DataCite metadata schema: <span class="ot">&lt;https://schema.datacite.org&gt;</span>. A production-grade persistent-identifier standard backed by an institutional community.</span>
+<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Socrata Open Data API documentation: <span class="ot">&lt;https://dev.socrata.com/&gt;</span>. The API behind many US city and state open data portals, including the one in Exercise 2.4.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-02-installed-base.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
