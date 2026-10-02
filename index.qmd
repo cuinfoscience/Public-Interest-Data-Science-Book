@@ -8,22 +8,21 @@ You already know, or will shortly, that most data science is not that. It produc
 
 If you are a student taking a data-science course, a journalism or policy student learning computational methods, a working practitioner considering a move into civic or public-interest work, an instructor looking for a course companion, or a public-sector analyst being asked to do "data-driven" work with no time to read the entire literature, this book is for you. It assumes introductory Python, comfort with the command line, and a willingness to read ten pages about a court case before writing the function that acts on it. It does not assume a background in science and technology studies, law, or accounting. It will give you enough of each to keep going.
 
-You can read it straight through, pick chapters relevant to a specific project, or use it as a course text. It is the companion to INFO 4871/5871 *Public Interest Data Science* at the University of Colorado Boulder, and its parts follow that course's modules: a two-week opening, four three-week modules that each end in a portfolio piece, and a closing week before the final project.
+You can read it straight through, pick chapters relevant to a specific project, or use it as a course text. The chapters are written to be read out of order. The companion course, INFO 4871/5871 *Public Interest Data Science* at the University of Colorado Boulder, assigns them that way: each of its modules pairs one lineage with one pressure, one value, and one genre drawn from different parts of the book.
 
 ## What the book does
 
 The book rests on a framework from Keegan [-@keegan2026]. Three structural **pressures** narrow the public's capacity to observe and govern data-intensive systems: **enclosure** (who can observe?), **exemption** (who must answer?), and **erosion** (what can be remembered?). Three **values** push back: **openness**, **oversight**, and **ownership**. Values last only when they are built into an **installed base** with six elements: linkability, interpretability, continuity, safe scrutiny, authority, and remedy.
 
-The book teaches that framework through the professions that have already solved versions of the problem, and it climbs the ladder of government as it goes. It has six parts:
+The book has five parts:
 
-1. **Foundations** (@sec-ch-01-introduction to @sec-ch-11-pit-data-for-good). The contested idea of "the public interest," the framework and its installed base, and the neighboring fields (public interest technology, data for good, civic tech) that clarify what this work is and is not.
-2. **Journalism: The City** (@sec-ch-03-enclosure-openness to @sec-ch-14-op-eds). Enclosure meets the watchdog tradition. You reproduce a published investigation, collect city data responsibly, publish it openly, and write an **op-ed** for a local outlet.
-3. **Law: The County** (@sec-ch-04-exemption-oversight to @sec-ch-17-testimony). Exemption meets public interest law. You work with records Boulder County has already released under the Colorado Open Records Act, turn them into data, build a ledger of exemptions and remedies, and write **testimony** for a county hearing.
-4. **Assurance: The State** (@sec-ch-08-accounting to @sec-ch-15-reports). Audit-washing meets accounting and engineering. You run a disaggregated audit, test it like safety-critical code, examine procurement as governance, and write a **report** for a state body.
-5. **Planning: The Nation** (@sec-ch-05-erosion-ownership to @sec-ch-18-public-comments). Erosion meets advocacy planning, stewardship, sovereignty, and refusal. You audit the decay of a federal dataset, design a stewardship plan or a refusal specification, and write a **public comment** on a federal rulemaking.
-6. **Beyond the Portfolio** (@sec-ch-16-research-proposals to @sec-ch-20-limits). Research proposals, archival deposits with DOIs, and the limits of the framework itself.
+1. **Pressures and Values** (@sec-ch-01-introduction to @sec-ch-05-erosion-ownership). The contested idea of "the public interest"; the installed base and its intellectual predecessors; and three paired chapters, each setting a pressure against the value that answers it.
+2. **Lineages** (@sec-ch-06-journalism to @sec-ch-10-engineering). What data scientists can inherit from **journalism**, **law**, **accounting**, **planning**, and **engineering**, and where each inheritance fails.
+3. **Adjacent Conversations** (@sec-ch-11-pit-data-for-good to @sec-ch-13-critical-data-studies-refusal). Public interest technology, data for good, GovTech, civic tech, critical data studies, data justice, and refusal.
+4. **Genres** (@sec-ch-14-op-eds to @sec-ch-19-archival-deposits). The forms through which data scientists contribute to public conversations: **op-eds**, **reports**, **research proposals**, **testimony**, **public comments**, and **archival deposits**.
+5. **Closing** (@sec-ch-20-limits). The limits of the framework itself.
 
-Each module part follows the same order: a pressure, a lineage, a value, and a genre. Each uses a national anchor case, a non-US counter-case, and a local case at its level of government. Each ends with a portfolio piece.
+Lineages and genres each have a natural level of government, and the worked examples follow it: journalism and op-eds at the **city**; planning and public comments at the **county**; law and testimony at the **state**; accounting, engineering, and reports at the **nation**.
 
 ## How the book is built
 
@@ -33,23 +32,23 @@ Code blocks do not run at build time. They are illustrative: you are expected to
 
 Every chapter has **at least one "Missing Manual" callout** flagging something that textbooks usually omit: a surprising library default, a real-world API friction, the politics of a "simple" choice. Every chapter has **at least one "In the Public Interest" callout** tying the technical material back to openness, oversight, or ownership. Every chapter ends with **4–5 graduated exercises**, from guided ("follow these steps") to open-ended ("design a pipeline that…"), and a curated list of further resources.
 
-The genre chapter that closes each module part has one additional rule: it must end with a real, submittable portfolio piece. Not a thought experiment. A technical artifact someone else can run, a public text (an op-ed, a testimony statement, a report section, or a public comment on a live rulemaking) addressed to a named audience, and a short note on what installed base the work built. A reader who finishes the four module parts has a portfolio of four pieces at four levels of government. Part VI shows how to take one of them further and archive it with a DOI.
+Chapters in Part IV have one additional rule: they must end with a real submittable artifact. Not a thought experiment. An actual op-ed, report section, proposal page, testimony statement, public comment on a live matter, or archival deposit with a DOI, each paired with a technical artifact someone else can run. A reader who finishes Part IV has a portfolio.
 
 ## Running examples
 
-To give the book coherence across 23 chapters, a small set of running examples is threaded throughout, arranged by the level of government each part works at. When a chapter needs a case, it reaches for one of these before inventing a new one:
+To give the book coherence across 20 chapters, a small set of running examples is threaded throughout, arranged by level of government. When a chapter needs a case, it reaches for one of these before inventing a new one:
 
 - **City:** City of Boulder and City and County of Denver records (campaign finance, meeting minutes, agendas, budgets, permits, 311 requests).
-- **County:** Boulder County records already released under the Colorado Open Records Act (from the Public Records Archive of its Open Records Center), and the county's public meeting packets.
-- **State:** Colorado data from the American Community Survey (via `folktables`) and the Colorado AI Act as a state accountability regime.
-- **Federal:** federal environmental and scientific data (EPA, NOAA, USGS, Census) as at-risk datasets, and regulations.gov for federal rulemaking.
+- **County:** Boulder County as planner and record keeper: land use matters, planning documents, and records already released under the Colorado Open Records Act (from the Public Records Archive of its Open Records Center).
+- **State:** Colorado law as rule maker: the Colorado Open Records Act, the Colorado AI Act, and the General Assembly.
+- **Nation:** national data from the American Community Survey (via `folktables`), federal automated decision systems, federal environmental and scientific data (EPA, NOAA, USGS, Census) as at-risk datasets, and regulations.gov for federal rulemaking.
 - Census and FRED APIs for demographic and economic context.
 - Wikipedia and Internet Archive APIs for archival work and link-rot audits.
 - Hugging Face model cards and datasheets for audit and documentation exercises.
 - A small synthetic worker-log fixture that lets us teach audit methods without violating anyone's privacy.
 - Public FOIA and CORA request data as a class-wide shared resource.
 
-By the end of the book you will have built, in parts, a small public-interest data infrastructure of your own: a reproduced investigation and a documented city dataset with an op-ed; county records turned into data with a ledger of exemptions and remedies, and testimony; a tested, disaggregated audit with a report for a state body; a federal dataset's erosion audit, a stewardship plan or refusal specification, and a public comment on a live rulemaking; and, finally, one of those pieces deepened, recast, and deposited on Zenodo with a DOI.
+By the end of the book you will have built, in parts, a small public-interest data infrastructure of your own: a reproduced investigation and a documented city dataset; an erosion audit and a stewardship plan or refusal specification; a ledger of exemptions and remedies; a tested, disaggregated audit; and the public texts that carry them (an op-ed, a public comment, testimony, and a report), with a deposit on Zenodo that mints a DOI.
 
 ## What the book does not do
 
@@ -57,11 +56,11 @@ Honesty up front. This book is partial in several ways that matter.
 
 It is **US-centric**. Most of the legal and administrative infrastructure discussed is American: FOIA and CORA, the Administrative Procedure Act, NIST, NSF, NYC Local Law 144. Where European, Latin American, and Global South counterparts exist (the Dutch SyRI case, IndiaStack, Ushahidi, the CARE Principles, Te Mana Raraunga), the book names them and points you to further reading, but it does not pretend to do them justice in three pages.
 
-It is **comfortable with records and less comfortable with refusal**. The installed-base framework takes linkability, durable identifiers, and retention as load-bearing. Chapter 19 takes that comfort seriously as a limit, drawing on Zong and Matias, D'Ignazio and Klein, the CARE Principles, and Indigenous data sovereignty scholarship. Readers who want to start from refusal and arrive at records (rather than the other way around) should read Chapter 19 early and often.
+It is **comfortable with records and less comfortable with refusal**. The installed-base framework takes linkability, durable identifiers, and retention as load-bearing. Chapter 13 takes that comfort seriously as a limit, drawing on Zong and Matias, D'Ignazio and Klein, the CARE Principles, and Indigenous data sovereignty scholarship. Readers who want to start from refusal and arrive at records (rather than the other way around) should read Chapter 13 early and often.
 
-It is **thin on the labor inside data work**. Gray and Suri's *Ghost Work* is cited, and Chapter 3 tries to name invisible maintenance labor explicitly, but a book that seriously treated data-labor economics would look quite different. Consider this an invitation to the reader, or to the next edition.
+It is **thin on the labor inside data work**. Gray and Suri's *Ghost Work* is cited, and Chapter 11 tries to name invisible maintenance labor explicitly, but a book that seriously treated data-labor economics would look quite different. Consider this an invitation to the reader, or to the next edition.
 
-It is **thin on measurement theory**. You will not find a full psychometric critique of the audit metrics in Chapter 12, and you will not find a deep philosophy-of-science treatment of what it means for a model to "work." Those books exist and are cited.
+It is **thin on measurement theory**. You will not find a full psychometric critique of the audit metrics in Chapter 8, and you will not find a deep philosophy-of-science treatment of what it means for a model to "work." Those books exist and are cited.
 
 It **over-relies on the professional-lineage framing**. Treating journalism, law, accounting, planning, and engineering as lineages the field can inherit from is a useful move, but every profession has its own pathologies, and the book does not do equal-time analysis of all of them. Read the criticisms. They are in the further-reading lists.
 
@@ -75,7 +74,7 @@ Students in the companion course make one chapter-scale contribution each term: 
 
 ## A note on the AI-assisted drafts
 
-The first complete draft of this book was produced with substantial assistance from Claude, Anthropic's assistant, following a detailed editorial prompt written by the author. The 2027 restructure into module parts, including the new chapter on the limits of the framework, was also drafted with Claude's assistance from the author's course design and is under author review. The disclosure statement is in Appendix A. A book about public-interest data science should not hide how it was made, any more than a model card should hide its training data.
+The first complete draft of this book was produced with substantial assistance from Claude, Anthropic's assistant, following a detailed editorial prompt written by the author. The 2027 revisions, including the paired pressure-and-value chapters and the new chapter on the limits of the framework, were also drafted with Claude's assistance from the author's course design and is under author review. The disclosure statement is in Appendix A. A book about public-interest data science should not hide how it was made, any more than a model card should hide its training data.
 
 ## Acknowledgments
 
