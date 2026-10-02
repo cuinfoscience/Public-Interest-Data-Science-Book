@@ -5,276 +5,214 @@ execute:
 
 # Erosion: What Can Be Remembered? {#sec-ch-16-erosion}
 
-A public record that cannot be found is not a public record. A footnote whose URL returns a 404 is a claim without a witness. A training corpus that has been quietly withdrawn is a model whose inputs the public can no longer inspect. This chapter is about the third pressure in Part I, the one that works by subtraction. @sec-ch-04-enclosure asked *who can observe?* @sec-ch-08-exemption asked *who must answer?* This chapter asks *what can be remembered?* and describes the slow, less visible process by which the evidence needed for any answer simply dissolves.
+A public record that cannot be found is not a public record. A footnote whose URL returns a 404 is a claim without a witness. A federal time series that stops updating is a question nobody will be able to answer in ten years. This chapter is about the third pressure, the one that works by subtraction. @sec-ch-04-enclosure asked *who can observe?* @sec-ch-08-exemption asked *who must answer?* This chapter asks *what can be remembered?* It opens the last module of the book and the last rung of its ladder: the federal government.
 
-Erosion is rarely dramatic. An agency reorganizes a website during a transition and the old paths return 404s. A journal publisher migrates and the DOIs still resolve but the supplementary materials do not. A civic-tech nonprofit runs out of funding and its dashboard goes dark. A machine-learning dataset that trained a generation of models is withdrawn after researchers document abusive content inside it, and the weights of every model trained on it remain in circulation. Any one event looks like an operational hiccup. Taken together, they are the texture of a public record thinning as fast as anyone can thicken it.
+You arrive here with installed-base pieces built at three levels. In Part II you documented the provenance of a city dataset. In Part III you built an exemptions and remedy ledger from county records. In Part IV you ran an audit with a manifest and tests for a state body. Every one of those pieces quietly assumed that its sources would stay put. The federal government is where that assumption is tested hardest. It is the largest producer of public data in the United States, the source that city, county, and state analyses lean on for denominators (the Census), baselines (NOAA climate normals), and exposure estimates (EPA monitoring), and it is the level most exposed to wholesale change at each presidential transition.
 
-Plantin, Lagoze, Edwards, and Sandvig [-@plantin2016] argue that the platforms the public has learned to depend on operate on a different clock than public infrastructures do. A municipal water system is designed to last decades and is maintained by a workforce whose job is to keep it running. A cloud storage service or a dataset release is designed to last a product cycle and is maintained by whoever still has a quarterly incentive to care. Karasti and Blomberg [-@karasti2018] call this the mismatch between **project time** and **infrastructure time**: projects end; infrastructures are supposed not to. When the public record lives inside projects, it ends with them.
+Erosion is rarely dramatic. An agency reorganizes a website and the old paths return 404s. A program loses its appropriation and its dashboard goes dark. A data product is "retired" in a one-paragraph notice. Any one event looks like an operational hiccup. Taken together, they are the texture of a public record thinning faster than anyone can thicken it. Plantin, Lagoze, Edwards, and Sandvig [-@plantin2016] argue that platforms and public infrastructures run on different clocks, and Karasti and Blomberg [-@karasti2018] name the mismatch: **project time** versus **infrastructure time**. Projects end; infrastructures are supposed not to. When the public record lives inside projects, it ends with them.
+
+## Case: federal memory under transition
+
+The anchor case for this module is the volunteer response to federal data removals. After the November 2016 election, a group of academics and nonprofit staff formed the Environmental Data and Governance Initiative [EDGI, @edgi] to monitor changes to federal environmental websites, and librarians and scientists organized "data rescue" events under the DataRefuge banner, starting at the University of Pennsylvania, to copy federal climate and environmental datasets before they could disappear. EDGI's website-monitoring reports went on to document the removal and rewording of climate-change content across agencies, and the same monitoring infrastructure was ready again for the transitions of 2021 and 2025.
+
+The 2025 transition produced a sharper version of the same pattern. Health agencies took down web pages and datasets in early February in response to executive orders, and a federal court later ordered many of them restored. EPA's EJScreen environmental-justice mapping tool went offline, and a coalition of nonprofits and university groups republished a copy. Harvard Law School's Library Innovation Lab mirrored the data.gov catalog. NOAA announced that it would stop updating its Billion-Dollar Weather and Climate Disasters database. <!-- TODO: verify before the term: DataRefuge origin at Penn (Program in the Environmental Humanities, early 2017) and add a bib entry; dates and details of the Feb 2025 HHS/CDC removals and the court order (Doctors for America v. OPM); EJScreen takedown date and the Public Environmental Data Partners mirror; Harvard LIL data.gov archive; NOAA NCEI billion-dollar database retirement (announced May 2025). Add bib entries if cited. -->
+
+Two lessons come out of this record. First, volunteer preservation works, partially. Copies made in time survive. Second, a copy is not the same thing as a record. A mirror can preserve the last release of a dataset; it cannot produce the next one. When a series stops being *collected*, the Wayback Machine holds a tombstone, not a continuation. And a mirror run by volunteers has no statutory authority to say that its copy is the authoritative one, which matters the moment someone challenges it in a rulemaking or a courtroom.
+
+Keegan [-@keegan2026] frames this as Case 3, "sustaining archives in the Anthropocene." Climate disruption stresses the systems that produce durable public memory (statistical agencies, monitoring networks, scientific repositories) through both physical shocks and governance volatility [@mazurczyk2018; @tansey2015]. Climate politics makes memory adversarial: a decision to stop collecting or stop publishing can quietly remove the evidence needed to validate a model or assign responsibility for harm. Environmental injustice often becomes legible only decades later, and if the observational record has rotted, future publics will have little basis for claims to repair [@ghaddar2016; @robinsonsweet2018]. Keegan's proposed response is a *federated continuity backbone*: libraries, repositories, agencies, community archives, and watchdog partners holding redundant copies under explicit, auditable commitments, so that no single point of failure becomes a single point of erasure.
+
+## Boulder as the local face of federal memory
+
+You do not have to go to Washington to see federal memory being made. Boulder hosts NOAA's David Skaggs Research Center, NIST's Boulder laboratories, and the National Center for Atmospheric Research (NCAR), which UCAR operates with National Science Foundation funding. The National Snow and Ice Data Center sits on the CU Boulder campus. NOAA's Global Monitoring Laboratory, headquartered in Boulder, runs the Mauna Loa Observatory, where a carbon dioxide record that began in 1958 has been kept running for nearly seventy years. That record is the textbook case of infrastructure time: its value comes almost entirely from the fact that nobody let it lapse.
+
+These institutions are also where federal erosion becomes local. Budget proposals, reorganizations, and product retirements announced in Washington land as layoffs, closed offices, and discontinued data products a few miles from your classroom. <!-- TODO: verify and, if accurate, cite the December 2025 announcement that NSF would restructure or break up NCAR, and any NSIDC product reductions after NOAA funding changes in 2025. --> When you choose a federal dataset for Piece 4, a Boulder-produced dataset is a strong choice: you can find its stewards, read their own documentation, and sometimes talk to them.
 
 ## The mundane politics of retention
 
-There is a temptation to tell erosion stories as conspiracies. Sometimes they are. Much more often they are what happens when nobody's job description includes long-term stewardship. A sysadmin retires. A contract lapses. A platform closes its API and thirty years of researcher-accumulated corpora become unciteable overnight. Gaffney and Matias [-@gaffney2018] documented this for a single, widely-used Reddit corpus, showing that silent data loss had produced an entire body of published work built on samples missing, in predictable ways, parts of the thing they claimed to describe. The missingness was not announced. It was visible only when someone looked.
+It is tempting to tell erosion stories as conspiracies. Sometimes they are. Much more often they are what happens when nobody's job description includes long-term stewardship. You met one version in @sec-ch-04-enclosure: when Reddit closed its API, years of researcher-assembled corpora became unciteable. Gaffney and Matias [-@gaffney2018] had already shown that a widely used Reddit corpus was silently missing data in patterned ways, so that a body of published work rested on samples nobody had checked. The missingness was not announced. It was visible only when someone looked.
 
-Acker and Kreisberg [-@acker2019] describe this as the problem of archiving in an API-driven world. Classical archival theory assumes a record exists somewhere, that custody can be established, and that preservation is a matter of migration. The contemporary record does not sit still long enough to be taken into custody. Denton, Hanna, and colleagues [-@denton2021] trace the same problem for machine-learning datasets: ImageNet, the canonical benchmark for a decade of computer-vision research, was assembled from a pipeline of choices (scraping Flickr, filtering through WordNet, paying crowdworkers to label) that is undocumented in any single place. When a dataset is questioned, the record of how it was made has often evaporated faster than the dataset itself.
+Acker and Kreisberg [-@acker2019] describe the archival version of the problem: classical archival theory assumes a record sits still long enough to be taken into custody, and the contemporary record does not. Denton and colleagues [-@denton2021] show the same pattern for machine-learning datasets: when ImageNet was questioned, the record of how it was made had evaporated faster than the dataset. Withdrawals can be the right call and still erode the record. LAION-5B was taken offline in late 2023 after researchers documented child sexual abuse material inside it [@thiel2023], and every paper that trained on it now cites a dataset the reader cannot audit.
 
-The model-era instances are bigger and not meaningfully different in kind. LAION-5B, the image-text dataset used to train Stable Diffusion and many of its descendants, was taken offline in late 2023 after researchers at Stanford's Internet Observatory documented verified child sexual abuse material inside it [@thiel2023]. The withdrawal was the right call. It was also, for research purposes, a form of erosion: every paper that trained on LAION-5B now cites a dataset the reader cannot audit. Common Crawl, which underlies much of the open web's representation in large language model training, retains its crawls but its long-term archival status is a question nobody has answered on the record.
+Keegan [-@keegan2026] names **continuity** as one of the six elements of the installed base (@sec-ch-02-installed-base). The point is not that every artifact should live forever. The point is that when the public loses the ability to return to a source, it loses the ability to audit what was built on it. Erosion is not a failure of tools. It is a failure of incentives and mandates.
 
-Keegan [-@keegan2026] names **continuity** as one of the six elements of the installed base. The point is not that every artifact should live forever. The point is that when the public loses the ability to return to a source, the ability to audit what was built on that source goes with it. Erosion is not a failure of tools. It is a failure of incentives.
+## Tutorial: an erosion audit of a federal dataset
 
-## A link-rot audit you can run this afternoon
+This tutorial is the technical half of Piece 4. You will pull catalog records for federal datasets, test every resource link, recover what you can from the Wayback Machine, and write a datasheet for a dataset you did not make.
 
-You need to see this happen in a corpus you can touch. The corpus to start with is the one you are reading: this book's own bibliography plus the "Further Reading" URLs at the end of each chapter. If you do not have that list handy, the EPA's climate-change press-release archive and NOAA's hurricane-research page are excellent substitutes, because both agencies have been reorganized enough times since 2016 that you will find real rot within minutes.
+### Step 1: pull catalog records from data.gov
 
-Walk a list of URLs, classify each response, record the result in a DataFrame. A 404 is obvious rot. A 301 redirect to a generic landing page is a worse and more common failure: the link resolves, returns a 200, and gives you nothing.
+Data.gov runs on CKAN, an open-source catalog whose API needs no key. Each catalog record ("package") lists one or more resources, each with a URL that points back to the agency's own server. That indirection is the point: the catalog record often outlives the file it points to.
 
 ```python
 import pandas as pd
 import requests
 from urllib.parse import urlparse
 
-HEADERS = {
-    "User-Agent": "PublicInterestDataScience/0.1 (your-email@example.edu)",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-}
+HEADERS = {"User-Agent": "PublicInterestDataScience/0.1 (your-email@example.edu)"}
+CKAN = "https://catalog.data.gov/api/3/action"
 
+def federal_records(query, org=None, rows=25):
+    """Return one row per resource for data.gov packages matching a query."""
+    params = {"q": query, "rows": rows}
+    if org:  # slug from the catalog URL, e.g. catalog.data.gov/organization/<slug>
+        params["fq"] = f"organization:{org}"
+    r = requests.get(f"{CKAN}/package_search", params=params,
+                     headers=HEADERS, timeout=30)
+    r.raise_for_status()
+    rows_out = []
+    for pkg in r.json()["result"]["results"]:
+        for res in pkg.get("resources", []):
+            rows_out.append({
+                "package": pkg["name"],
+                "agency": (pkg.get("organization") or {}).get("title"),
+                "metadata_modified": pkg.get("metadata_modified"),
+                "url": res.get("url"),
+            })
+    return pd.DataFrame(rows_out)
+
+records = federal_records("air quality monitoring", org="epa-gov")
+records.shape
+# => (n_resources, 4); the count changes from week to week
+```
+
+<!-- TODO: verify the data.gov organization slugs (epa-gov, noaa-gov, census-gov) before the term. -->
+
+### Step 2: classify every link
+
+A 404 is obvious rot. A redirect to a generic landing page is worse and more common: the link resolves, returns a 200, and gives you nothing.
+
+```python
 def classify_url(url, timeout=15):
-    """Fetch a URL and classify the response.
-
-    Returns a dict with url, status_code, final_url, category, notes.
-    Categories: ok, redirect_same_host, redirect_offsite,
-                client_error, server_error, timeout, dns_fail, other.
-    """
     try:
         r = requests.get(url, headers=HEADERS, timeout=timeout,
-                         allow_redirects=True)
+                         allow_redirects=True, stream=True)
     except requests.exceptions.Timeout:
-        return {"url": url, "status_code": None,
-                "final_url": None, "category": "timeout", "notes": ""}
-    except requests.exceptions.ConnectionError as e:
-        return {"url": url, "status_code": None,
-                "final_url": None, "category": "dns_fail",
-                "notes": str(e)[:120]}
-
-    start_host = urlparse(url).netloc
-    end_host = urlparse(r.url).netloc
+        return {"url": url, "status": None, "final_url": None, "category": "timeout"}
+    except requests.exceptions.ConnectionError:
+        return {"url": url, "status": None, "final_url": None, "category": "dns_fail"}
+    same_host = urlparse(url).netloc == urlparse(r.url).netloc
     if r.status_code == 200 and r.url == url:
         cat = "ok"
-    elif r.status_code == 200 and start_host == end_host:
-        cat = "redirect_same_host"
     elif r.status_code == 200:
-        cat = "redirect_offsite"
+        cat = "redirect_same_host" if same_host else "redirect_offsite"
     elif 400 <= r.status_code < 500:
         cat = "client_error"
-    elif 500 <= r.status_code < 600:
+    elif r.status_code >= 500:
         cat = "server_error"
     else:
         cat = "other"
+    r.close()  # stream=True: do not download multi-gigabyte files
+    return {"url": url, "status": r.status_code, "final_url": r.url, "category": cat}
 
-    return {"url": url, "status_code": r.status_code,
-            "final_url": r.url, "category": cat,
-            "notes": f"bytes={len(r.content)}"}
-
-
-def audit(urls):
-    rows = [classify_url(u) for u in urls]
-    df = pd.DataFrame(rows)
-    return df
-```
-
-Point this at a real list of URLs and you will get something like the distribution below. The shape is representative, not exact; rerun it and the numbers will drift.
-
-```python
-urls = [
-    "https://www.epa.gov/climate-change",
-    "https://www.noaa.gov/climate",
-    "https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing",
-    "https://wikimedia.org/api/rest_v1/",
-    # ... twenty more from your syllabus or bibliography
-]
-
-report = audit(urls)
+urls = records["url"].dropna().unique()[:50]
+report = pd.DataFrame([classify_url(u) for u in urls])
 report.groupby("category").size()
-# => ok                     11
-#    redirect_same_host      4
-#    redirect_offsite        3
-#    client_error            2
-#    server_error            0
-#    timeout                 1
-#    dns_fail                0
-#    other                   0
+# => ok                    31
+#    redirect_same_host     8
+#    redirect_offsite       3
+#    client_error           6
+#    timeout                2
+# (illustrative; your distribution will differ)
 ```
 
-The `redirect_offsite` row is the one to look at first. A federal agency URL that now redirects to a generic "archive" subdomain, or to a White House press page on a different topic, is a link that technically resolves but practically does not. Whenever you cite a government source in a paper, a report, or a public comment, assume the URL will be reorganized at the next administration transition. Plan for it.
+Look at `redirect_offsite` first. A federal URL that now redirects to a different agency, or to a page on a different topic, technically resolves and practically does not.
 
 ::: {.callout-tip title="The Missing Manual"}
-Status codes lie. A page that returns HTTP 200 may still be useless: a content management system that issues a "soft 404," a WAF page saying "request blocked," a single-page application that loads a JavaScript shell and fetches its real content from an API you are not calling. You can partly guard against this by checking response size and content against a known baseline, but there is no substitute for opening a sample of the "ok" rows in a browser. The Wayback Machine has the same problem from the other direction: its Availability API will cheerfully return a capture that was itself a 404 page archived at the moment of rot. If the service your audit uses does not let you inspect the content of a "successful" response, your audit is not done. Always verify a subset by eye.
+Status codes lie, and federal sites lie in specific ways. A content management system may serve a "soft 404" with HTTP 200. A firewall may answer your script with a block page that your browser never sees. A retired dataset's landing page may return 200 with a one-line notice that the product is "no longer supported." Data.gov adds its own trap: catalog records are harvested from agencies, so a record can persist for months after the file it describes is gone, and its `metadata_modified` date reflects the last harvest, not the last time anyone checked the data. Finally, the Wayback Machine archives HTML landing pages far more reliably than large data files. The most common recovery result is a beautifully preserved landing page whose download link points to nothing. Open a sample of every category in a browser before you report a number.
 :::
 
-## Recovering the rot with the Wayback Machine
+### Step 3: recover and date the rot
 
-The Internet Archive's Wayback Machine is the closest thing the public has to a backup of the open web. It is not complete. It is not permanent (the Archive itself is a nonprofit dependent on donations, lawsuits, and the continued forbearance of its adversaries). It is the best you have. The Availability API is a single, small endpoint that takes a URL and an optional timestamp and returns the closest capture.
-
-```
-GET http://archive.org/wayback/available?url=<url>&timestamp=<YYYYMMDD>
-```
-
-The response shape is compact:
-
-```json
-{
-  "url": "https://www.epa.gov/climate-change",
-  "archived_snapshots": {
-    "closest": {
-      "status": "200",
-      "available": true,
-      "url": "http://web.archive.org/web/20161119000000/https://www.epa.gov/climate-change",
-      "timestamp": "20161119000000"
-    }
-  }
-}
-```
-
-If there is no capture, `archived_snapshots` is an empty object. A recovery helper:
+The Wayback Machine's Availability API returns the closest capture to a timestamp. Its CDX API returns the full capture history, which lets you date when a page changed.
 
 ```python
 def find_capture(url, timestamp=None):
-    api = "http://archive.org/wayback/available"
     params = {"url": url}
     if timestamp:
-        params["timestamp"] = timestamp
-    r = requests.get(api, params=params, headers=HEADERS, timeout=30)
-    r.raise_for_status()
-    data = r.json()
-    snap = data.get("archived_snapshots", {}).get("closest")
+        params["timestamp"] = timestamp  # YYYYMMDD
+    r = requests.get("https://archive.org/wayback/available",
+                     params=params, headers=HEADERS, timeout=30)
+    snap = r.json().get("archived_snapshots", {}).get("closest")
     if not snap or not snap.get("available"):
-        return None
-    return {"wayback_url": snap["url"],
-            "captured_at": snap["timestamp"],
-            "status": snap.get("status")}
+        return {"url": url, "wayback_url": None, "captured_at": None}
+    return {"url": url, "wayback_url": snap["url"], "captured_at": snap["timestamp"]}
 
+def capture_history(url):
+    """One row per capture whose content differs from the previous capture."""
+    params = {"url": url, "output": "json",
+              "fl": "timestamp,statuscode,digest", "collapse": "digest"}
+    r = requests.get("https://web.archive.org/cdx/search/cdx",
+                     params=params, headers=HEADERS, timeout=60)
+    rows = r.json() if r.text.strip() else []
+    if len(rows) < 2:
+        return pd.DataFrame(columns=["timestamp", "statuscode", "digest"])
+    return pd.DataFrame(rows[1:], columns=rows[0])
 
-def recover_rotten(report):
-    """Augment a link-rot report with Wayback captures for broken rows."""
-    broken = report[report["category"].isin(
-        ["client_error", "server_error", "timeout", "dns_fail",
-         "redirect_offsite"])]
-    recoveries = []
-    for url in broken["url"]:
-        cap = find_capture(url)
-        recoveries.append({"url": url, **(cap or {})})
-    return pd.DataFrame(recoveries)
-
-recovered = recover_rotten(report)
-# => columns: url, wayback_url, captured_at, status
+broken = report[report["category"].isin(
+    ["client_error", "server_error", "timeout", "dns_fail", "redirect_offsite"])]
+recovered = pd.DataFrame([find_capture(u) for u in broken["url"]])
+history = capture_history(broken["url"].iloc[0])
+history["statuscode"].value_counts()
+# => 200    14
+#    404     3
+#    301     1
 ```
 
-Two details bear emphasis. First, a Wayback URL is citable: if the original source is gone, cite the Wayback capture with its timestamp. Second, the Archive allows you to *request* a capture through a separate endpoint (`https://web.archive.org/save/<url>`), which you should treat as a standard move whenever you cite a page you expect to change. Saving a copy at the moment of citation shifts you from hoping the URL will still work to knowing a snapshot exists.
+The last `200` before the first `404` brackets the date of loss. That bracket is evidence: you can set it beside a Federal Register notice, a budget document, or an agency announcement. If the original is gone, cite the Wayback capture with its timestamp. If the page still exists, request a capture through `https://web.archive.org/save/<url>` so the next auditor has a baseline.
 
 ::: {.callout-note title="In the Public Interest"}
-When you archive a source at the moment of citation, you are exercising a form of ownership the law does not require of you. The page is not yours. You did not write it. You do not host it. What you hold is a responsibility for the evidence your argument rests on. @sec-ch-18-ownership will develop this claim: in a public-interest practice, **ownership** is stewardship over time, not private control. The link you save today is a small instance of that stewardship. @sec-ch-22-archival-deposits teaches the full form, where you deposit datasets and documentation with resolvable identifiers (Zenodo DOIs, Internet Archive items) that outlive any one organization. Between the two is the working habit this chapter asks of you: treat every URL you cite as perishable, and treat capture-at-citation as the default, not the exception.
+When you archive a source at the moment of citation, you exercise a kind of **ownership** the law does not require of you. The page is not yours. What you hold is responsibility for the evidence your argument rests on. Keegan [-@keegan2026] defines ownership as collective, accountable governance over the preservation, access, and use of public data, not private control, and @sec-ch-18-ownership develops that claim. Here is the specific complication federal erosion adds: a volunteer mirror advances *continuity* but not *authority*. The copy survives, but nobody is obliged to accept it as the record. An erosion audit that records checksums, capture timestamps, and the chain of custody from agency server to mirror is how a public-interest copy earns enough authority to be cited in a comment, a report, or a brief.
 :::
 
-## Datasheets as a retention practice
+### Step 4: a datasheet for a dataset you did not make
 
-A link-rot audit tells you what is missing from the outside. A **datasheet** tells the next reader what the thing you produced actually was, so that when pieces of it erode, there is a record of what to look for. Gebru and colleagues [-@gebru2021] proposed datasheets for datasets as a deliberate import from electronics engineering: every component ships with a spec sheet documenting what it is, how it was made, what it is for, and what it is not. Machine-learning datasets routinely ship with nothing, and the absence produces exactly the retroactive reconstructions Denton and colleagues [-@denton2021] had to do for ImageNet.
-
-A datasheet is not a README. It is a structured document with seven sections, and the discipline of filling each one out is what makes it useful:
-
-1. **Motivation.** Who made this, for what purpose, funded by whom? What gap did it fill?
-2. **Composition.** What does an instance look like? How many are there? Are there labels, and how were they produced? Are there known subgroup imbalances?
-3. **Collection process.** Where did the data come from? When? Through what mechanism? Were the subjects informed? Was consent obtained? What ethical review, if any?
-4. **Preprocessing, cleaning, labeling.** What transformations were applied between raw and released? Is the raw version available? What filtering removed what?
-5. **Uses.** What has this been used for? What should it not be used for? Are there tasks for which it is actively unsuitable?
-6. **Distribution.** How is it distributed? Under what license? With what restrictions? Through what channel, and what is the expected lifetime of that channel?
-7. **Maintenance.** Who maintains it? How will errata be communicated? Is there a versioning scheme? When is the next review?
-
-The maintenance section will almost always be blank on the first pass, which is the point: if you cannot name the maintainer or the review cadence, you are publishing a dataset with no plan for its erosion. That is worth knowing before you publish.
+In @sec-ch-06-openness you wrote a datasheet [@gebru2021] for a file you built. Writing one for a federal dataset is harder and more revealing, because you must reconstruct answers from documentation you did not write. Use the same seven sections, and extend the maintenance section with fields that matter for erosion:
 
 ```python
-DATASHEET_TEMPLATE = {
-    "motivation": {
-        "purpose": "",
-        "creators": "",
-        "funding": "",
-        "gap_addressed": "",
-    },
-    "composition": {
-        "instance_type": "",
-        "n_instances": None,
-        "labels": "",
-        "subgroup_imbalances": "",
-        "sensitive_attributes": "",
-    },
-    "collection_process": {
-        "source": "",
-        "period": "",
-        "mechanism": "",
-        "consent": "",
-        "ethical_review": "",
-    },
-    "preprocessing": {
-        "transformations": "",
-        "raw_available": False,
-        "filtering": "",
-    },
-    "uses": {
-        "prior_uses": "",
-        "inappropriate_uses": "",
-    },
-    "distribution": {
-        "license": "",
-        "channel": "",
-        "restrictions": "",
-        "expected_lifetime": "",
-    },
-    "maintenance": {
-        "maintainer": "",
-        "errata_channel": "",
-        "versioning": "",
-        "next_review": "",
-    },
+MAINTENANCE_EXTENSION = {
+    "mandate": "",            # statute or regulation requiring collection, or "discretionary"
+    "steward_of_record": "",  # office and program, not just the agency
+    "collection_status": "",  # active, paused, discontinued (with notice date)
+    "access_status": "",      # from your Step 2 audit
+    "known_mirrors": [],      # who else holds a copy, since when, with what checksum
+    "last_verified_capture": "",  # Wayback timestamp you checked by eye
+    "discontinuation_notice": "", # URL or Federal Register citation, if any
 }
 ```
 
-Fill this in once, by hand, for a dataset you have actually used. The first datasheet will take several hours and will be worse than you expected. By the third, you will notice yourself asking questions at dataset-selection time that you did not ask before, which is the actual point of the practice.
+The `mandate` field does more work than it looks. A dataset that a statute requires erodes differently from one an agency maintains by choice. EPA's Toxics Release Inventory [@epa_tri] exists because the Emergency Planning and Community Right-to-Know Act of 1986 requires facilities to report releases; the decennial census exists because the Constitution requires it. A screening tool or dashboard built on agency initiative can be retired by the agency that built it. When the mandate field reads "discretionary," your stewardship plan in @sec-ch-18-ownership has to supply the continuity the law does not.
 
-## Why "just put it on GitHub" is not a preservation strategy
+## What the audit can and cannot show
 
-Students and, increasingly, agencies treat GitHub as a preservation layer. It is not one. GitHub is a hosting service owned by Microsoft, with no long-term commitment to any particular repository and a history of taking down content for reasons ranging from DMCA claims to policy disputes. Repositories can be made private, renamed, force-pushed over, or deleted by their owner. The commit hash is stable; the URL that resolves it is not. Software Heritage mirrors much of public GitHub, which is good, but public awareness of Software Heritage is limited.
+The audit measures erosion of *access*: links that no longer resolve, files that no longer download. It cannot, on its own, measure erosion of *collection*: a series that still has a working landing page but stopped adding observations. For that you need a different check, a comparison of the most recent observation date against the expected update cadence. A monthly series whose last observation is eight months old has eroded even though every link returns 200.
 
-The same logic applies to Google Drive links in syllabi, Dropbox links in footnotes, and Notion pages in institutional documentation. Each is a commercial service on a project-time clock. For anything you need to cite, publish through a channel designed for infrastructure time: a Zenodo deposit with a DOI, an Internet Archive item, an institutional repository your university has committed to maintaining. @sec-ch-22-archival-deposits walks through the mechanics.
-
-## Closing the triptych
-
-Chapter 4 asked who can observe; Chapter 8 asked who must answer; this chapter asks what can be remembered. Together they are Part I's working diagnosis. Access has narrowed, accountability is exempt, and the record that would let us reason about either is eroding faster than the institutions charged with preserving it can match.
-
-Part II turns to the values that make a response coherent. @sec-ch-02-installed-base names the installed base explicitly, the six-element framework Keegan [-@keegan2026] proposes and that this book has been gesturing at since @sec-ch-01-introduction. The link-rot audits and datasheets this chapter asks you to write are the first practical instances of what the next part will call **continuity**.
+The audit also cannot tell you who decided. A link went dead; someone chose to reorganize, retire, or defund. Naming that someone, and the process by which they decided, is the work of the next chapter. Planning is the lineage that asks who was in the room when a decision about shared infrastructure was made, and who was not.
 
 ## Exercises
 
-**Exercise 4.1 (Guided).** Pick a document with at least twenty external URLs: a syllabus, a paper's reference list, a policy brief, a government report. Run the link-rot audit from this chapter over its URLs and save the DataFrame as `exercises/ch04_audit.csv`. In 200 words, describe the distribution of outcomes and name the single most consequential broken link.
+**Exercise 16.1 (Guided).** Choose one federal agency (EPA, NOAA, or the Census Bureau) and a topic query. Use `federal_records()` to pull catalog records, then run the link-rot audit over at least 30 resource URLs. Save the result as `exercises/ch16_audit.csv`. In 200 words, describe the distribution of outcomes and name the most consequential broken link.
 
-**Exercise 4.2 (Guided).** For three of the broken or offsite-redirecting URLs from Exercise 4.1, use the Availability API to locate captures. Record the original URL, the Wayback URL, the timestamp, and a one-sentence note on whether the capture actually contains what the original cited. Submit as `exercises/ch04_recoveries.md`. Where no capture exists, use the `web.archive.org/save/` endpoint to request one of the current state for future reference.
+**Exercise 16.2 (Guided).** For five broken or offsite-redirecting URLs from 16.1, find the closest Wayback capture and pull the capture history. For each, record the original URL, the capture URL, the timestamp, the bracket within which the resource was lost, and whether the capture contains the data or only a landing page. Request a fresh capture of one page that still works. Save as `exercises/ch16_recoveries.md`.
 
-**Exercise 4.3 (Analytic).** Using the Gebru and colleagues template, write a full datasheet for a dataset you have used. Fill every section. Where you do not know the answer, say so explicitly rather than leaving the field blank. Save as `exercises/ch04_datasheet_<dataset>.md`. Minimum 1,500 words; the maintenance section must name a human or an institution.
+**Exercise 16.3 (Analytic; Piece 4 component).** Pick one federal dataset from 16.1, ideally one produced in Boulder by NOAA, NIST, NCAR, or NSIDC. Write a full datasheet with the seven sections from @sec-ch-06-openness plus the maintenance extension above. Where you cannot find an answer, say so and say where you looked. Together with 16.1 and 16.2, this datasheet is the erosion-audit half of Piece 4's technical artifact. Save as `exercises/ch16_datasheet_<dataset>.md`.
 
-**Exercise 4.4 (Comparative).** Pick a government webpage whose content you care about (EPA climate-change, a CDC surveillance page, a BLS methodology page). Use the Wayback Machine to locate its earliest capture and its most recent capture before an administration transition (January 2017 or January 2021 are useful inflection points). Compare the two and, in 500 words, describe what changed: content, framing, linked resources. Do not editorialize; describe. Save as `exercises/ch04_agency_comparison.md`.
+**Exercise 16.4 (Comparative).** Pick a federal page you care about (an EPA program page, a CDC surveillance page, a NOAA climate page). Use the Wayback Machine to compare its last capture before an administration transition (January 2017, 2021, or 2025) with its first capture six months later. In 500 words, describe what changed in content, framing, and linked resources. Describe; do not editorialize. Save as `exercises/ch16_transition.md`.
 
-**Exercise 4.5 (Open-ended).** Identify one dataset, corpus, or data portal that you believe will not survive the next decade in publicly accessible form. Write a 600-to-800-word memo naming the resource, the mechanisms you expect to erode it, and a single concrete intervention a student or small nonprofit could take now. The intervention must be something doable in a semester. Save as `exercises/ch04_endangered.md`. You will revisit it in @sec-ch-22-archival-deposits.
+**Exercise 16.5 (Open-ended).** Identify one federal dataset that you believe will not survive the next decade in publicly accessible form. In 600 to 800 words, name the resource, the mechanisms you expect to erode it (access, collection, or both), and one intervention a student or small nonprofit could carry out in a semester. You will turn this memo into a stewardship plan or a refusal specification in @sec-ch-18-ownership and @sec-ch-19-critical-data-studies-refusal, and revisit it in @sec-ch-22-archival-deposits. Save as `exercises/ch16_endangered.md`.
 
 ## Looking ahead
 
-Part I has now laid out its three pressures. Part II begins with Chapter 2, **The Installed Base**, which names the six-element framework that the rest of the book uses as a working definition of public interest. The link-rot function, the Wayback recovery helper, and the datasheet template you built in this chapter are the first instances of a pattern Chapter 2 will generalize: public-interest data science is less a set of analyses than a set of maintenance practices, carried out in public, by people who are willing to do them when nobody's quarterly review depends on it.
+You now have an audit that says what has been lost and roughly when. @sec-ch-17-planning turns to the profession that has spent a century learning to ask who decides what gets built, what gets maintained, and whose knowledge of the terrain counts. Planning will hand you the stakeholder map and the habit of asking who was missing from the room, and it will connect the federal environmental review process to the public comment you will write in @sec-ch-20-public-comments.
 
 ## Further Reading and Resources
 
-- Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford (2021), "[Datasheets for datasets](https://doi.org/10.1145/3458723)," *Communications of the ACM* 64(12): 86–92. The canonical template. Read it before you write your first datasheet; refer back to it every time you write the next.
-- Emily Denton, Alex Hanna, Razvan Amironesei, Andrew Smart, and Hilary Nicole (2021), "[On the genealogy of machine learning datasets: A critical history of ImageNet](https://doi.org/10.1177/20539517211035955)," *Big Data & Society* 8(2). Essential counterweight to treating datasheets as a solved problem.
-- Jean-Christophe Plantin, Carl Lagoze, Paul N. Edwards, and Christian Sandvig (2016), "[Infrastructure studies meet platform studies in the age of Google and Facebook](https://doi.org/10.1177/1461444816661553)," *New Media & Society* 20(1): 293–310. The paper that names the mismatch between platform time and infrastructure time most clearly.
-- Helena Karasti and Jeanette Blomberg (2018), "[Studying infrastructuring ethnographically](https://doi.org/10.1007/s10606-017-9296-7)," *Computer Supported Cooperative Work* 27: 233–265. The source for project time versus infrastructure time as analytical categories.
-- The Internet Archive Wayback Machine Availability API documentation: <https://archive.org/help/wayback_api.php>. Short, readable, and the endpoint your audits will lean on.
-- David S. H. Rosenthal, *LOCKSS: Lots of Copies Keep Stuff Safe*: <https://www.lockss.org/>. The library-community preservation infrastructure that most of the web could learn from.
-- Software Heritage: <https://www.softwareheritage.org/>. The mirror-of-record for public code repositories, including substantial GitHub coverage. Useful when you need to cite a commit whose origin repository has disappeared.
-- David S. H. Rosenthal's blog at <https://blog.dshr.org/>. Two decades of patient, unglamorous writing on the economics and mechanics of digital preservation. Start with any post whose title mentions "bit rot."
-- Environmental Data and Governance Initiative (EDGI), *Website Monitoring Reports*: <https://envirodatagov.org/website-monitoring/>. The civil-society project that tracked federal environmental website changes across the 2017 and 2021 administration transitions. An existence proof that the audit practice in this chapter scales.
-- Stanford Internet Observatory (2023), "Identifying and eliminating CSAM in generative ML training data and models": <https://purl.stanford.edu/kh752sm9123>. The technical report that led to the withdrawal of LAION-5B and a case study in what dataset deprecation actually involves.
+- Jean-Christophe Plantin, Carl Lagoze, Paul N. Edwards, and Christian Sandvig (2016), "[Infrastructure studies meet platform studies in the age of Google and Facebook](https://doi.org/10.1177/1461444816661553)," *New Media & Society* 20(1): 293–310. The clearest statement of the mismatch between platform time and infrastructure time.
+- Helena Karasti and Jeanette Blomberg (2018), "[Studying infrastructuring ethnographically](https://doi.org/10.1007/s10606-017-9296-7)," *Computer Supported Cooperative Work* 27: 233–265. The source for project time versus infrastructure time.
+- Devin Gaffney and J. Nathan Matias (2018), "[Caveat emptor, computational social science](https://doi.org/10.1371/journal.pone.0200162)," *PLOS ONE* 13(7): e0200162. How silent data loss propagates into a literature.
+- Environmental Data and Governance Initiative, *Website Monitoring*: <https://envirodatagov.org/website-monitoring/>. The civil-society project that has tracked federal environmental website changes across three transitions.
+- End of Term Web Archive: <https://eotarchive.org/>. A partnership of libraries and the Internet Archive that crawls federal websites at each presidential transition. <!-- TODO: verify URL and current partner list. -->
+- CKAN API documentation: <https://docs.ckan.org/en/latest/api/>. The catalog software behind data.gov; `package_search` and `package_show` are the two calls you need.
+- Internet Archive, Wayback Machine APIs: <https://archive.org/help/wayback_api.php>. The Availability API and a pointer to the CDX server.
+- Tara Mazurczyk, Nathan Piekielek, Eira Tansey, and Benjamin Goldman (2018), "American archives and climate change: Risks and adaptation," *Climate Risk Management* 20: 111–125 [@mazurczyk2018]. What climate risk means for the physical places where records live.
+- Stanford Internet Observatory (2023), "Identifying and eliminating CSAM in generative ML training data and models": <https://purl.stanford.edu/kh752sm9123>. A case study in what dataset withdrawal involves.
+- Software Heritage: <https://www.softwareheritage.org/>. The archive of record for public source code, useful when the repository behind a federal tool disappears.
