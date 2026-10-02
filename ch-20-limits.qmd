@@ -102,7 +102,7 @@ Machine Bias (COMPAS),II,US,county,exemption,oversight,records,clean
 Pegasus Project,II,Global,nation,exemption,oversight,records,clean
 Colorado Open Records Act,II,US,state,exemption,oversight,records,clean
 Sandvig v. Barr (CFAA),II,US,nation,exemption,oversight,records,clean
-Colorado AI Act (SB 24-205),II,US,state,exemption,oversight,records,clean
+Colorado AI Act (SB 24-205; SB 26-189),II,US,state,exemption,oversight,records,clean
 NYC Local Law 144,II,US,city,exemption,oversight,records,clean
 Gender Shades,II,US,non_state,exemption,oversight,records,clean
 National folktables audit,II,US,nation,exemption,oversight,records,clean

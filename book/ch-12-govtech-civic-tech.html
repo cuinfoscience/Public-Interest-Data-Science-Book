@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
+
+<title>12&nbsp; GovTech and Civic Tech – Public Interest Data Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch-13-critical-data-studies-refusal.html" rel="next">
+<link href="./ch-11-pit-data-for-good.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-9a023c9ade86a60361e96e3e3f11bc54.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-684e263fd5eaab04d06708158183ff95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-063d023c011e3855d99747d2bbbf274a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-3-adjacent-conversations.html">Adjacent Conversations</a></li><li class="breadcrumb-item"><a href="./ch-12-govtech-civic-tech.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Public Interest Data Science</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-1-pressures-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pressures and Values</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-02-installed-base.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Installed Base</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-03-enclosure-openness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure and Openness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-04-exemption-oversight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exemption and Oversight</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-05-erosion-ownership.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Erosion and Ownership</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-2-lineages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lineages</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-06-journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-07-law.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Law</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-08-accounting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-09-planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-10-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Engineering</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-3-adjacent-conversations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Adjacent Conversations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-11-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-12-govtech-civic-tech.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-13-critical-data-studies-refusal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-4-genres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Genres</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-14-op-eds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Op-Eds</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-15-reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-16-research-proposals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Research Proposals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-17-testimony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testimony</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-18-public-comments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Public Comments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-19-archival-deposits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Archival Deposits</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-5-closing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Closing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-20-limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">The Limits of the Framework</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#five-models-on-one-map" id="toc-five-models-on-one-map" class="nav-link active" data-scroll-target="#five-models-on-one-map"><span class="header-section-number">12.1</span> Five models on one map</a></li>
+  <li><a href="#procurement-is-where-the-governance-is" id="toc-procurement-is-where-the-governance-is" class="nav-link" data-scroll-target="#procurement-is-where-the-governance-is"><span class="header-section-number">12.2</span> Procurement is where the governance is</a></li>
+  <li><a href="#six-clauses-worth-writing" id="toc-six-clauses-worth-writing" class="nav-link" data-scroll-target="#six-clauses-worth-writing"><span class="header-section-number">12.3</span> Six clauses worth writing</a></li>
+  <li><a href="#tutorial-what-the-federal-inventory-says-about-contracts" id="toc-tutorial-what-the-federal-inventory-says-about-contracts" class="nav-link" data-scroll-target="#tutorial-what-the-federal-inventory-says-about-contracts"><span class="header-section-number">12.4</span> Tutorial: what the federal inventory says about contracts</a></li>
+  <li><a href="#why-the-govtech-and-civic-tech-distinction-matters" id="toc-why-the-govtech-and-civic-tech-distinction-matters" class="nav-link" data-scroll-target="#why-the-govtech-and-civic-tech-distinction-matters"><span class="header-section-number">12.5</span> Why the GovTech and civic tech distinction matters</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">12.6</span> Exercises</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">12.7</span> Looking ahead</a></li>
+  <li><a href="#further-reading-and-resources" id="toc-further-reading-and-resources" class="nav-link" data-scroll-target="#further-reading-and-resources"><span class="header-section-number">12.8</span> Further Reading and Resources</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-12-govtech-civic-tech.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-3-adjacent-conversations.html">Adjacent Conversations</a></li><li class="breadcrumb-item"><a href="./ch-12-govtech-civic-tech.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-ch-12-govtech-civic-tech" class="quarto-section-identifier"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>On October 1, 2013, HealthCare.gov launched and immediately collapsed. The federal insurance marketplace had been built by a constellation of contractors through a procurement process whose incentives rewarded compliance with the Statement of Work rather than delivery of a working system. After weeks of humiliation, a rescue squad, and a Presidential apology, two institutions were born: the United States Digital Service, in the Executive Office of the President, and 18F, in the General Services Administration. Their pitch was simple: government cannot buy its way out of software problems if the people writing the contracts do not know what software is.</p>
+<p>That conviction has had a rough decade. 18F shipped reusable components and a reputation for finishing what it started while spending its whole institutional life as a budget target. In 2025 the General Services Administration shut it down, and the United States Digital Service was renamed by executive order and repurposed. The lesson is not that internal capacity is a bad idea. It is that internal capacity has no natural constituency, whereas vendor capacity has a trade association.</p>
+<p>This chapter carries the question of <strong>assurance</strong> from the analyst’s laptop to the <strong>nation</strong> as a buyer. In <a href="ch-08-accounting.html" class="quarto-xref"><span>Chapter 8</span></a> and <a href="ch-10-engineering.html" class="quarto-xref"><span>Chapter 10</span></a>, assurance was something you did: a manifest, thresholds, tests, a review. In the federal government, assurance is mostly <em>bought</em>, and the contract is where it is specified or surrendered. <a href="ch-11-pit-data-for-good.html" class="quarto-xref"><span>Chapter 11</span></a> mapped six adjacent conversations; this chapter takes up two of them. <strong>GovTech</strong>, firms that sell software and services to government, answers in principle through procurement law, contract terms, and audit rights retained by the buyer. <strong>Civic tech</strong> answers in principle to the communities it serves and the funders it relies on. Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> places GovTech “closest to infrastructuring because it operates where procurement, standards, and administrative records are made,” and names the central question: does modernization build public auditability, or deepen “vendor-mediated exemption”? Exemption, and the audit-washing that disguises it, is developed in <a href="ch-04-exemption-oversight.html" class="quarto-xref"><span>Chapter 4</span></a>.</p>
+<section id="five-models-on-one-map" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="five-models-on-one-map"><span class="header-section-number">12.1</span> Five models on one map</h2>
+<p>Fix five reference points before going further.</p>
+<p>The <strong>United States Digital Service</strong> (2014) deployed small teams of technologists into agencies in crisis: internal capacity, funded through the executive branch, with limited authority to compel. <strong>18F</strong> (2014) was a fee-for-service consultancy to other agencies. Both are US instances of what <span class="citation" data-cites="brown2017">Brown et al. (<a href="#ref-brown2017" role="doc-biblioref">2017</a>)</span> call “Government as a Platform” (GaaP), in which the state provides shared services that reduce duplication.</p>
+<p>The <strong>UK Government Digital Service</strong> (2011) is the elder sibling the US offices copied; its Service Manual became an export good. Estonia’s <strong>X-Road</strong> is an interoperability layer that lets one agency query another’s records without a custom integration, so governance happens through the specification: if your system does not speak X-Road, it does not get to play.</p>
+<p>The fifth reference point is <strong>IndiaStack</strong>, the layered APIs built around the Aadhaar biometric identity system. It is GaaP at population scale, and the hard case. Enrollment of over a billion people was not meaningfully consented to, because the alternative was exclusion from subsidized rations, banking, and services; <span class="citation" data-cites="rao2019">Rao and Nair (<a href="#ref-rao2019" role="doc-biblioref">2019</a>)</span> tracks how Aadhaar’s legal optionality eroded in practice. The case names the stakes of building at that scale without the installed base of <a href="ch-02-installed-base.html" class="quarto-xref"><span>Chapter 2</span></a> in place.</p>
+<p>These five share a structural question, not a politics: where does technical capacity sit, and what does it answer to? For a US federal agency after 2025, the usual answer is “with a vendor, under a contract,” which makes the contract the place to look.</p>
+</section>
+<section id="procurement-is-where-the-governance-is" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="procurement-is-where-the-governance-is"><span class="header-section-number">12.2</span> Procurement is where the governance is</h2>
+<p>A Request for Proposal (RFP) does not look like a governance document. But it is where the buyer declares, in binding language, what the system must do, what records it must produce, what interfaces it must expose, and what happens when the contract ends. If the RFP does not require export in an open format on termination, the vendor owns the database in practice. If it does not require logging, there will be no logs to audit. If it does not reserve the right to publish, the public cannot see what it paid for. Silve <span class="citation" data-cites="silvePoliticalEconomyGovTech2023">(<a href="#ref-silvePoliticalEconomyGovTech2023" role="doc-biblioref">2023</a>)</span> and <span class="citation" data-cites="bharosa2022">Bharosa (<a href="#ref-bharosa2022" role="doc-biblioref">2022</a>)</span> both describe the political economy that follows: limited competition, lock-in, and a state that gradually loses the expertise needed to write the next contract.</p>
+<p>Federal buying runs on the Federal Acquisition Regulation. Solicitations are posted on SAM.gov, and awards are reported to USAspending.gov, each contract keyed by a Procurement Instrument Identifier (PIID). For AI, the Office of Management and Budget adds a layer. Memorandum M-25-22, issued April 3, 2025, rescinded and replaced the previous administration’s AI acquisition memo (M-24-18) and tells agencies to favor proposals that reduce vendor lock-in through “knowledge transfer, clear data and model portability practices, clear licensing terms, and pricing transparency” <span class="citation" data-cites="omb_m2522">(<a href="#ref-omb_m2522" role="doc-biblioref">Office of Management and Budget 2025c</a>)</span>. It directs contract terms that permanently prohibit vendors from using non-public agency data to further train commercial AI without the agency’s consent, that let the agency monitor performance and risk on a regular cadence, and that oblige compliance with the minimum risk-management practices its companion memo, M-25-21, sets for “high-impact” AI: pre-deployment testing, impact assessments, human oversight, and remedies for affected people <span class="citation" data-cites="omb_m2521">(<a href="#ref-omb_m2521" role="doc-biblioref">Office of Management and Budget 2025b</a>)</span>. The acquisition requirements apply to contracts awarded on solicitations issued 180 days or more after the memo, which is to say from late September 2025.</p>
+<p>Imagine a hypothetical RFP from a federal benefits agency for a system that scores claims and routes some for manual review: a scoring model, a case-management interface, and an API, with a five-year operations-and-maintenance period. Map what it would produce. A claim is a record. A score is a record. A routing decision, a caseworker override, an appeal, and a model update are records. Each is stored in the vendor’s database, forwarded to an agency system, or both. The question the RFP has to answer, and often does not, is which records the agency owns, in what format they can be exported, and whether anyone outside the vendor can rerun the scoring and disaggregate it. M-25-22 gestures at portability. It does not say “decision log,” “protected attribute,” or “test suite.”</p>
+<p>Canada offers the procurement-side counter-case at the same level of government. The Treasury Board’s Directive on Automated Decision-Making requires federal institutions to complete an Algorithmic Impact Assessment (AIA) before putting an automated decision system into production <span class="citation" data-cites="canada_dadm">(<a href="#ref-canada_dadm" role="doc-biblioref">Treasury Board of Canada Secretariat 2019</a>)</span>. The AIA is a published questionnaire that assigns an impact level from I to IV, and the Directive’s requirements (peer review, notice, human involvement, explanation) scale with that level. Completed assessments are published on Canada’s open government portal. The design moves part of the audit to before purchase and makes the score public. Its limits are equally instructive: the questionnaire is self-completed by the deploying institution. <!-- TODO: verify the Directive's current scope, the publication requirement for completed AIAs, and the date of its most recent amendment. --></p>
+<p>Set the regimes side by side and the variable that matters is timing. New York City’s Local Law 144 (<a href="ch-08-accounting.html" class="quarto-xref"><span>Chapter 8</span></a>) audits a hiring tool after an employer has bought it, by an auditor the employer hires. Colorado’s 2024 AI Act asked deployers to assess systems they already use <span class="citation" data-cites="colorado_sb24205">(<a href="#ref-colorado_sb24205" role="doc-biblioref">Colorado General Assembly 2024</a>)</span>, but its 2026 replacement, SB 26-189, drops those impact assessments in favor of disclosure duties before they ever took effect (<a href="ch-07-law.html" class="quarto-xref"><span>Chapter 7</span></a>) <span class="citation" data-cites="colorado_sb26189">(<a href="#ref-colorado_sb26189" role="doc-biblioref">Colorado General Assembly 2026</a>)</span>. M-25-21 asks federal agencies to assess high-impact uses before deployment, and Canada’s AIA asks the same while publishing the result. The clause below goes one step earlier and asks the vendor to deliver the means of assessment before the first payment. The later assurance arrives, the more it depends on the cooperation of the party being assured. A buyer that wants independent verification has to purchase it when it has the most leverage: before the contract is signed.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In the Public Interest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The contract is the governance. If a solicitation does not require the vendor to export decision records and model outputs in a non-proprietary format, at no added cost, with a documented schema, then the vendor owns the evidence an auditor would need even if the agency owns it in law. <strong>Oversight</strong>, as <a href="ch-04-exemption-oversight.html" class="quarto-xref"><span>Chapter 4</span></a> develops it, requires the ability to see, and the specific claim of this chapter is that a federal agency’s capacity for independent verification is set at procurement time: an assurance clause that obliges the vendor to deliver what the audit of <a href="ch-08-accounting.html" class="quarto-xref"><span>Chapter 8</span></a> needs (decision logs, protected attributes or a lawful proxy, model versions, and a test suite that runs in CI) is worth more than fifty pages of strategy. Without it, any later audit, including one by an inspector general or the Government Accountability Office, is an attestation the vendor writes about itself. That is exemption through audit-washing, installed one contract at a time.</p>
+</div>
+</div>
+</section>
+<section id="six-clauses-worth-writing" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="six-clauses-worth-writing"><span class="header-section-number">12.3</span> Six clauses worth writing</h2>
+<p>Here are six procurement clauses, expressed as YAML. They are not legal drafting; they are the specification from which contracting officers and attorneys work.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data_export</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">trigger</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">on_demand</span><span class="kw">,</span><span class="at"> quarterly</span><span class="kw">,</span><span class="at"> on_termination</span><span class="kw">]</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">format</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">csv</span><span class="kw">,</span><span class="at"> parquet</span><span class="kw">]</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">schema</span><span class="kw">:</span><span class="at"> json_schema</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">destination</span><span class="kw">:</span><span class="at"> buyer_controlled_storage</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">cost</span><span class="kw">:</span><span class="at"> included_in_base_contract</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">interoperability</span><span class="kw">:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">api</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">style</span><span class="kw">:</span><span class="at"> REST</span><span class="kw">,</span><span class="at"> </span><span class="fu">spec</span><span class="kw">:</span><span class="at"> openapi_3_1</span><span class="kw">,</span><span class="at"> </span><span class="fu">rate_limits_documented</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">identifiers</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">persistent</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">,</span><span class="at"> </span><span class="fu">resolvable_across_agencies</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">}</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">auditability</span><span class="kw">:</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">immutable_log</span><span class="kw">:</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">events</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">score</span><span class="kw">,</span><span class="at"> route</span><span class="kw">,</span><span class="at"> override</span><span class="kw">,</span><span class="at"> appeal</span><span class="kw">,</span><span class="at"> model_update</span><span class="kw">,</span><span class="at"> access_grant</span><span class="kw">]</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">retention_years</span><span class="kw">:</span><span class="at"> </span><span class="dv">7</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">export_format</span><span class="kw">:</span><span class="at"> ndjson</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">third_party_inspection</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">allowed</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">,</span><span class="at"> </span><span class="fu">notice_days</span><span class="kw">:</span><span class="at"> </span><span class="dv">10</span><span class="kw">,</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="at">                           </span><span class="fu">scope</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">code</span><span class="kw">,</span><span class="at"> logs</span><span class="kw">,</span><span class="at"> schemas</span><span class="kw">,</span><span class="at"> models</span><span class="kw">]}</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">algorithmic_assurance</span><span class="kw">:</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">disaggregated_audit</span><span class="kw">:</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cadence</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">pre_deployment</span><span class="kw">,</span><span class="at"> quarterly</span><span class="kw">,</span><span class="at"> on_model_update</span><span class="kw">]</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">artifacts</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">manifest</span><span class="kw">,</span><span class="at"> thresholds</span><span class="kw">,</span><span class="at"> changelog</span><span class="kw">,</span><span class="at"> test_suite_in_ci</span><span class="kw">]</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runnable_by</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">buyer</span><span class="kw">,</span><span class="at"> independent_auditor</span><span class="kw">]</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">thresholds_authority</span><span class="kw">:</span><span class="at"> buyer</span><span class="co">        # the vendor may not move them</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">incident_notice_days</span><span class="kw">:</span><span class="at"> </span><span class="dv">15</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">public_summary</span><span class="kw">:</span><span class="at"> required</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">source_code</span><span class="kw">:</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ownership</span><span class="kw">:</span><span class="at"> buyer</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">delivery</span><span class="kw">:</span><span class="at"> git_repository_with_full_history</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">vendor_transition</span><span class="kw">:</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">termination_assistance_months</span><span class="kw">:</span><span class="at"> </span><span class="dv">6</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">knowledge_transfer</span><span class="kw">:</span><span class="at"> documented_runbooks</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">data_migration_tested</span><span class="kw">:</span><span class="at"> annually</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Each clause names a failure mode. Omit <code>data_export</code> and the vendor can charge an extraction fee on termination. Omit persistent identifiers and no one can link a score to its appeal after IDs reset in a migration. Omit <code>immutable_log</code> and you cannot tell whether a caseworker or a scheduled job overrode a decision. Omit <code>vendor_transition</code> and lock-in becomes a permanent governance condition. M-25-22’s portability and knowledge-transfer language covers parts of <code>data_export</code>, <code>source_code</code>, and <code>vendor_transition</code>. The clause it lacks, <code>algorithmic_assurance</code>, is this book’s addition. It translates the manifest, thresholds, changelog, and CI suite from <a href="ch-08-accounting.html" class="quarto-xref"><span>Chapter 8</span></a> and <a href="ch-10-engineering.html" class="quarto-xref"><span>Chapter 10</span></a> into deliverables, and it gives the buyer, not the vendor, authority over thresholds, which closes the drift path that normalization of deviance opens. The incident-notice period is illustrative; counsel would set a real one.</p>
+</section>
+<section id="tutorial-what-the-federal-inventory-says-about-contracts" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="tutorial-what-the-federal-inventory-says-about-contracts"><span class="header-section-number">12.4</span> Tutorial: what the federal inventory says about contracts</h2>
+<p>You can test the claim that assurance is bought, or not, against the government’s own disclosure. Federal agencies other than the Department of Defense and the Intelligence Community must inventory their AI use cases at least annually and post a public version <span class="citation" data-cites="omb_m2521">(<a href="#ref-omb_m2521" role="doc-biblioref">Office of Management and Budget 2025b</a>)</span>. OMB consolidated the 2024 inventories in a public repository: 41 agency submissions, 2,133 use cases, and 351 that agencies classified as rights-impacting, safety-impacting, or both <span class="citation" data-cites="omb_ai_inventory2024">(<a href="#ref-omb_ai_inventory2024" role="doc-biblioref">Office of Management and Budget 2025a</a>)</span>. Two of its questions are procurement questions: whether the system was developed under contract or in-house, and whether the agency has access to the source code.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>URL <span class="op">=</span> (<span class="st">"https://raw.githubusercontent.com/ombegov/2024-Federal-AI-Use-Case-Inventory/"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>       <span class="st">"main/data/2024_consolidated_ai_inventory_raw_v2.csv"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>inv <span class="op">=</span> pd.read_csv(URL, encoding<span class="op">=</span><span class="st">"cp1252"</span>, low_memory<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>inv.columns <span class="op">=</span> inv.columns.<span class="bu">str</span>.strip()</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> col(prefix):</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Find a column by the start of its (very long) question text."""</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">next</span>(c <span class="cf">for</span> c <span class="kw">in</span> inv.columns <span class="cf">if</span> c.startswith(prefix))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"agency"</span>: inv[<span class="st">"Agency Abbreviation"</span>],</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"impact"</span>: inv[col(<span class="st">"Is the AI use case rights-impacting"</span>)],</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"built_by"</span>: inv[col(<span class="st">"Was the AI system involved"</span>)],</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"code_access"</span>: inv[col(<span class="st">"Does the agency have access to the code"</span>)],</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> norm_impact(v):</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> <span class="bu">str</span>(v).strip().lower()</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> v <span class="kw">in</span> (<span class="st">"both"</span>, <span class="st">"rights-impacting"</span>, <span class="st">"safety-impacting"</span>):</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"rights_or_safety"</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"neither"</span> <span class="cf">if</span> v <span class="op">==</span> <span class="st">"neither"</span> <span class="cf">else</span> <span class="st">"unclear"</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> norm_built(v):</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> <span class="bu">str</span>(v).strip().lower()</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"both"</span> <span class="kw">in</span> v <span class="kw">or</span> <span class="st">"combination"</span> <span class="kw">in</span> v:</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"both"</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"contract"</span> <span class="kw">in</span> v <span class="kw">and</span> <span class="st">"no contract"</span> <span class="kw">not</span> <span class="kw">in</span> v:</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"contract"</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"in-house"</span> <span class="kw">in</span> v <span class="kw">or</span> <span class="st">"no contract"</span> <span class="kw">in</span> v:</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"in_house"</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"unreported"</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> norm_access(v):</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> <span class="bu">str</span>(v).strip().lower()</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"yes"</span> <span class="cf">if</span> v.startswith(<span class="st">"yes"</span>) <span class="cf">else</span> <span class="st">"no"</span> <span class="cf">if</span> v.startswith(<span class="st">"no"</span>) <span class="cf">else</span> <span class="st">"unreported"</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"impact"</span>] <span class="op">=</span> df[<span class="st">"impact"</span>].<span class="bu">map</span>(norm_impact)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"built_by"</span>] <span class="op">=</span> df[<span class="st">"built_by"</span>].<span class="bu">map</span>(norm_built)</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"code_access"</span>] <span class="op">=</span> df[<span class="st">"code_access"</span>].<span class="bu">map</span>(norm_access)</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">"impact"</span>].value_counts())</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; impact</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="co">#    neither             1722</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co">#    rights_or_safety     351</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="co">#    unclear               60</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>high <span class="op">=</span> df[df[<span class="st">"impact"</span>] <span class="op">==</span> <span class="st">"rights_or_safety"</span>]</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.crosstab(high[<span class="st">"built_by"</span>], high[<span class="st">"code_access"</span>], margins<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; code_access   no  unreported  yes  All</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="co">#    built_by</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="co">#    both           4           5   14   23</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="co">#    contract      87           9   20  116</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="co">#    in_house       3           0   25   28</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="co">#    unreported    11         170    3  184</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="co">#    All          105         184   62  351</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Missing Manual
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The consolidated inventory is assembled from forty-one agencies’ spreadsheets, and it shows. The file is not UTF-8: read it as <code>cp1252</code> or <code>pandas</code> will fail on the curly apostrophes in the column names, some of which also end in a stray space. The impact column mixes “Rights-Impacting” with a trailing newline, “Safety-impacting” and “Safety-Impacting” as separate values, and about twenty answers that are sentences rather than categories. The build question has at least eight distinct answers, including “Developed with both contracting and in-house resources” and “Developed with a combination of in-house and contract/external resources,” which mean the same thing, and nearly half the rows leave it blank. Code access is answered “Yes,” “YES,” and “Yes” followed by a dash and a qualifier. The data dictionary describes the questions, not the answers agencies gave. Normalize explicitly, keep an <code>unreported</code> category instead of dropping blanks, and print <code>value_counts(dropna=False)</code> on every raw column before you trust a crosstab. The categories also change: M-25-21 replaced 2024’s “rights-impacting” and “safety-impacting” with a single “high-impact” test, so the 2025 inventory will not line up with this one. <!-- TODO: check whether the consolidated 2025 inventory has been published, where, and with what columns. --></p>
+</div>
+</div>
+<p>Read the table as a procurement finding. Of 116 rights- or safety-impacting use cases that agencies said were built with contractors alone, the agency reported no access to the source code for 87. Of 28 built in-house, it reported no access for 3. Another 184 high-impact use cases left the build question blank, including all 124 of the Department of Justice’s. Self-report has limits, and source code is not the same as logs or outputs. But the pattern is the one the six clauses predict: when a system is bought, the evidence an auditor would start from usually stays with the seller. The <code>PIID</code> column lets you go one step further and look up the contract itself on USAspending.gov, which is where Exercise 12.1 begins.</p>
+<p>The inventory is itself an installed-base element, a recurring record of what agencies run. It exists because an executive order and a statute required it, and its columns change when the memo behind them does: continuity on a short lease, the problem <a href="ch-05-erosion-ownership.html" class="quarto-xref"><span>Chapter 5</span></a> calls erosion.</p>
+</section>
+<section id="why-the-govtech-and-civic-tech-distinction-matters" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="why-the-govtech-and-civic-tech-distinction-matters"><span class="header-section-number">12.5</span> Why the GovTech and civic tech distinction matters</h2>
+<p>A GovTech vendor answers to its client. Good contracts let GovTech deliver public services well; bad ones let it extract rents while producing systems the public cannot inspect. <span class="citation" data-cites="bharosa2022">Bharosa (<a href="#ref-bharosa2022" role="doc-biblioref">2022</a>)</span> raises the “Trojan horse” worry: a government whose internal capacity has atrophied can no longer write contracts that hold vendors accountable, so GovTech turns extractive even where individual vendors mean well. Taylor <span class="citation" data-cites="taylor2021public">(<a href="#ref-taylor2021public" role="doc-biblioref">2021</a>)</span> sharpens the point: firms that perform public functions acquire public power without the legitimacy constraints that bind public actors, and contracts are one of the few places those constraints can be reattached.</p>
+<p>A civic tech project answers to its funders and, in principle, to its users. <span class="citation" data-cites="aragon2020">Aragon et al. (<a href="#ref-aragon2020" role="doc-biblioref">2020</a>)</span> argue for building with communities rather than for them, a methodological commitment that does not solve the funding problem <a href="ch-11-pit-data-for-good.html" class="quarto-xref"><span>Chapter 11</span></a> diagnosed. A failed GovTech contract leaves a locked-in system no one can afford to replace; a failed civic tech project leaves a dead repository and unpaid volunteers. Civic tech’s assurance contribution is often outside the contract: the worker observatories of <a href="ch-10-engineering.html" class="quarto-xref"><span>Chapter 10</span></a>, or a volunteer group that reruns an agency’s published numbers. Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> asks of both forms the same question: “what remains after the pilot: who maintains the data, what standards persist, and what oversight pathways are institutionalized.” For a federal agency, the answer is written in the contract or the grant agreement, or it is not written anywhere.</p>
+</section>
+<section id="exercises" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">12.6</span> Exercises</h2>
+<p><strong>Exercise 12.1 (Guided, real public data).</strong> From the tutorial’s <code>high</code> table, choose one use case built under contract and listed with a PIID. Look up the contract on USAspending.gov and, if you can find it, the original solicitation on SAM.gov. Map the records the system would generate and, for each, whether the documents you found require it to be exportable by the agency, and in what format. Where you cannot find a document, say where you looked.</p>
+<p><strong>Exercise 12.2 (Applied).</strong> Using the contract from 12.1, draft the clauses that would close its gaps, including an <code>algorithmic_assurance</code> clause. Each clause should name a record type, format, retention period, and access condition. Then write the objection a skeptical vendor would raise to each clause and your reply.</p>
+<p><strong>Exercise 12.3 (Technical, laptop, real public data).</strong> A national audit needs a national denominator. Use the Census Bureau’s ACS 5-year API <span class="citation" data-cites="census_api">(<a href="#ref-census_api" role="doc-biblioref">U.S. Census Bureau 2024</a>)</span> to pull median household income and its margin of error (<code>B19013_001E</code>, <code>B19013_001M</code>) for every county in the United States (<code>for=county:*</code> with no <code>in=</code> filter), then compute each county’s margin of error as a share of its estimate. Three cautions: the first row of the response is the header (<code>pd.DataFrame(payload[1:], columns=payload[0])</code>); suppressed estimates arrive as large negative sentinels that <code>to_numeric</code> accepts as real; and when this chapter was revised, keyless requests were redirected to a “missing key” page, so pass a free key as <code>key=</code>. Report how many counties have a margin above 20 percent of the estimate, nationally and for one state you choose (Colorado’s 64 counties work well), and write 200 words on which places a national audit can and cannot speak to.</p>
+<p><strong>Exercise 12.4 (Comparative).</strong> In 600 words, compare Canada’s Algorithmic Impact Assessment, the impact-assessment practices M-25-21 requires for high-impact federal AI, the deployer duties in Colorado’s SB 26-189, and the EU AI Act’s conformity assessment. Address who completes the assessment, when, what is published, and who can challenge it. Cite each primary text and at least one scholarly source, such as <span class="citation" data-cites="bharosa2022">Bharosa (<a href="#ref-bharosa2022" role="doc-biblioref">2022</a>)</span>, and flag any provision whose current status you could not confirm.</p>
+<p><strong>Exercise 12.5 (Open-ended).</strong> Write a one-page procurement recommendation addressed to a named federal body that buys or oversees automated decision systems: an agency’s Chief AI Officer, its inspector general, the Government Accountability Office, or a congressional committee. State which audit artifacts a vendor must deliver, who sets thresholds, and how incidents are reported, and ground at least one claim in the inventory. <a href="ch-15-reports.html" class="quarto-xref"><span>Chapter 15</span></a> shows how to turn a recommendation like this into a report section for that body.</p>
+</section>
+<section id="looking-ahead" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">12.7</span> Looking ahead</h2>
+<p>You now have a map of where a national government buys or gives up assurance, and evidence from its own inventory about how often it gives it up. The delivery traditions of this chapter and <a href="ch-11-pit-data-for-good.html" class="quarto-xref"><span>Chapter 11</span></a> share an assumption: that the system should be built. <a href="ch-13-critical-data-studies-refusal.html" class="quarto-xref"><span>Chapter 13</span></a> questions that assumption, with a federally governed dataset whose records protect some people and endanger others. When you are ready to put a procurement argument in front of someone who can act on it, <a href="ch-15-reports.html" class="quarto-xref"><span>Chapter 15</span></a> is the genre.</p>
+</section>
+<section id="further-reading-and-resources" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="further-reading-and-resources"><span class="header-section-number">12.8</span> Further Reading and Resources</h2>
+<ul>
+<li>Nitesh Bharosa (2022), “<a href="https://doi.org/10.1016/j.giq.2022.101692">The rise of GovTech: Trojan horse or blessing in disguise?</a>,” <em>Government Information Quarterly</em>. A research agenda that names the hard questions.</li>
+<li>Arthur Silve (2023), “The political economy of GovTech,” <em>IMF Notes</em>. Lock-in from a public-finance angle.</li>
+<li>Office of Management and Budget, M-25-22, “Driving Efficient Acquisition of Artificial Intelligence in Government” (2025): <a href="https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-22-Driving-Efficient-Acquisition-of-Artificial-Intelligence-in-Government.pdf" class="uri">https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-22-Driving-Efficient-Acquisition-of-Artificial-Intelligence-in-Government.pdf</a> <span class="citation" data-cites="omb_m2522">(<a href="#ref-omb_m2522" role="doc-biblioref">Office of Management and Budget 2025c</a>)</span>. Read the lock-in and closeout sections.</li>
+<li>2024 Federal Agency AI Use Case Inventory: <a href="https://github.com/ombegov/2024-Federal-AI-Use-Case-Inventory" class="uri">https://github.com/ombegov/2024-Federal-AI-Use-Case-Inventory</a> <span class="citation" data-cites="omb_ai_inventory2024">(<a href="#ref-omb_ai_inventory2024" role="doc-biblioref">Office of Management and Budget 2025a</a>)</span>. The tutorial’s data, with a data dictionary.</li>
+<li>Treasury Board of Canada Secretariat, Directive on Automated Decision-Making: <a href="https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592" class="uri">https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592</a>. Read the impact-level appendix.</li>
+<li>Government of Canada, Algorithmic Impact Assessment tool: <a href="https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html" class="uri">https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html</a>. Try it on a system from the inventory. <!-- TODO: confirm URL is current. --></li>
+<li>USAspending.gov: <a href="https://www.usaspending.gov/" class="uri">https://www.usaspending.gov/</a>. Federal awards by PIID.</li>
+<li>Linnet Taylor (2021), “<a href="https://doi.org/10.1007/s13347-020-00441-4">Public actors without public values</a>,” <em>Philosophy &amp; Technology</em> <span class="citation" data-cites="taylor2021public">(<a href="#ref-taylor2021public" role="doc-biblioref">Taylor 2021</a>)</span>. Why technology firms performing public functions need public-law constraints. <!-- TODO: verify DOI. --></li>
+</ul>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-aragon2020" class="csl-entry" role="listitem">
+Aragon, Cecilia, Shion Guha, Marina Kogan, Michael Muller, and Gina Neff. 2020. <span>“Human-Centered Data Science: An Introduction.”</span> <em>MIT Press</em>.
+</div>
+<div id="ref-bharosa2022" class="csl-entry" role="listitem">
+Bharosa, Nitesh. 2022. <span>“The Rise of <span>GovTech</span>: Trojan Horse or Blessing in Disguise? A Research Agenda.”</span> <em>Government Information Quarterly</em> 39 (3): 101692. <a href="https://doi.org/10.1016/j.giq.2022.101692">https://doi.org/10.1016/j.giq.2022.101692</a>.
+</div>
+<div id="ref-brown2017" class="csl-entry" role="listitem">
+Brown, Alan, Jerry Fishenden, Mark Thompson, and Will Venters. 2017. <span>“Appraising the Impact and Role of Platform Models and <span class="nocase">Government as a Platform (GaaP)</span> in <span>UK</span> Government Public Service Reform: Towards a <span>Platform Assessment Framework (PAF)</span>.”</span> <em>Government Information Quarterly</em> 34 (2): 167–82.
+</div>
+<div id="ref-colorado_sb24205" class="csl-entry" role="listitem">
+Colorado General Assembly. 2024. <span>“<span>SB</span> 24-205: Consumer Protections for Artificial Intelligence.”</span> Colorado General Assembly. <a href="https://leg.colorado.gov/bills/sb24-205">https://leg.colorado.gov/bills/sb24-205</a>.
+</div>
+<div id="ref-colorado_sb26189" class="csl-entry" role="listitem">
+———. 2026. <span>“<span>SB</span> 26-189: Automated Decision-Making Technology.”</span> Colorado General Assembly. <a href="https://leg.colorado.gov/bills/sb26-189">https://leg.colorado.gov/bills/sb26-189</a>.
+</div>
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Under Review</em>.
+</div>
+<div id="ref-omb_ai_inventory2024" class="csl-entry" role="listitem">
+Office of Management and Budget. 2025a. <span>“2024 Federal Agency <span>AI</span> Use Case Inventory.”</span> GitHub repository. <a href="https://github.com/ombegov/2024-Federal-AI-Use-Case-Inventory">https://github.com/ombegov/2024-Federal-AI-Use-Case-Inventory</a>.
+</div>
+<div id="ref-omb_m2521" class="csl-entry" role="listitem">
+———. 2025b. <span>“Accelerating Federal Use of <span>AI</span> Through Innovation, Governance, and Public Trust (<span>M-25-21</span>).”</span> Executive Office of the President. <a href="https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf">https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf</a>.
+</div>
+<div id="ref-omb_m2522" class="csl-entry" role="listitem">
+———. 2025c. <span>“Driving Efficient Acquisition of Artificial Intelligence in Government (<span>M-25-22</span>).”</span> Executive Office of the President. <a href="https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-22-Driving-Efficient-Acquisition-of-Artificial-Intelligence-in-Government.pdf">https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-22-Driving-Efficient-Acquisition-of-Artificial-Intelligence-in-Government.pdf</a>.
+</div>
+<div id="ref-rao2019" class="csl-entry" role="listitem">
+Rao, Ursula, and Vijayanka Nair. 2019. <span>“<span>Aadhaar</span>: Governing with Biometrics.”</span> <em>South Asia: Journal of South Asian Studies</em> 42 (3): 469–81.
+</div>
+<div id="ref-silvePoliticalEconomyGovTech2023" class="csl-entry" role="listitem">
+Silve, Arthur. 2023. <span>“The <span>Political Economy</span> of <span>GovTech</span>.”</span> <em>IMF Notes</em> 2023 (003): 1.
+</div>
+<div id="ref-taylor2021public" class="csl-entry" role="listitem">
+Taylor, Linnet. 2021. <span>“Public Actors Without Public Values: Legitimacy, Domination and the Regulation of the Technology Sector.”</span> <em>Philosophy &amp; Technology</em> 34: 897–922. <a href="https://doi.org/10.1007/s13347-020-00441-4">https://doi.org/10.1007/s13347-020-00441-4</a>.
+</div>
+<div id="ref-canada_dadm" class="csl-entry" role="listitem">
+Treasury Board of Canada Secretariat. 2019. <span>“Directive on Automated Decision-Making.”</span> Government of Canada. <a href="https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592">https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592</a>.
+</div>
+<div id="ref-census_api" class="csl-entry" role="listitem">
+U.S. Census Bureau. 2024. <span>“Census Data <span>API</span> User Guide.”</span> U.S. Census Bureau. <a href="https://www.census.gov/data/developers/guidance/api-user-guide.html">https://www.census.gov/data/developers/guidance/api-user-guide.html</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch-11-pit-data-for-good.html" class="pagination-link" aria-label="Public Interest Technology and Data for Good">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch-13-critical-data-studies-refusal.html" class="pagination-link" aria-label="Critical Data Studies, Data Justice, and Refusal">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># GovTech and Civic Tech {#sec-ch-12-govtech-civic-tech}</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>On October 1, 2013, HealthCare.gov launched and immediately collapsed. The federal insurance marketplace had been built by a constellation of contractors through a procurement process whose incentives rewarded compliance with the Statement of Work rather than delivery of a working system. After weeks of humiliation, a rescue squad, and a Presidential apology, two institutions were born: the United States Digital Service, in the Executive Office of the President, and 18F, in the General Services Administration. Their pitch was simple: government cannot buy its way out of software problems if the people writing the contracts do not know what software is.</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>That conviction has had a rough decade. 18F shipped reusable components and a reputation for finishing what it started while spending its whole institutional life as a budget target. In 2025 the General Services Administration shut it down, and the United States Digital Service was renamed by executive order and repurposed. The lesson is not that internal capacity is a bad idea. It is that internal capacity has no natural constituency, whereas vendor capacity has a trade association.</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>This chapter carries the question of **assurance** from the analyst's laptop to the **nation** as a buyer. In @sec-ch-08-accounting and @sec-ch-10-engineering, assurance was something you did: a manifest, thresholds, tests, a review. In the federal government, assurance is mostly *bought*, and the contract is where it is specified or surrendered. @sec-ch-11-pit-data-for-good mapped six adjacent conversations; this chapter takes up two of them. **GovTech**, firms that sell software and services to government, answers in principle through procurement law, contract terms, and audit rights retained by the buyer. **Civic tech** answers in principle to the communities it serves and the funders it relies on. Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> places GovTech "closest to infrastructuring because it operates where procurement, standards, and administrative records are made," and names the central question: does modernization build public auditability, or deepen "vendor-mediated exemption"? Exemption, and the audit-washing that disguises it, is developed in @sec-ch-04-exemption-oversight.</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Five models on one map</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>Fix five reference points before going further.</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>The **United States Digital Service** (2014) deployed small teams of technologists into agencies in crisis: internal capacity, funded through the executive branch, with limited authority to compel. **18F** (2014) was a fee-for-service consultancy to other agencies. Both are US instances of what @brown2017 call "Government as a Platform" (GaaP), in which the state provides shared services that reduce duplication.</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>The **UK Government Digital Service** (2011) is the elder sibling the US offices copied; its Service Manual became an export good. Estonia's **X-Road** is an interoperability layer that lets one agency query another's records without a custom integration, so governance happens through the specification: if your system does not speak X-Road, it does not get to play.</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>The fifth reference point is **IndiaStack**, the layered APIs built around the Aadhaar biometric identity system. It is GaaP at population scale, and the hard case. Enrollment of over a billion people was not meaningfully consented to, because the alternative was exclusion from subsidized rations, banking, and services; @rao2019 tracks how Aadhaar's legal optionality eroded in practice. The case names the stakes of building at that scale without the installed base of @sec-ch-02-installed-base in place.</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>These five share a structural question, not a politics: where does technical capacity sit, and what does it answer to? For a US federal agency after 2025, the usual answer is "with a vendor, under a contract," which makes the contract the place to look.</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Procurement is where the governance is</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>A Request for Proposal (RFP) does not look like a governance document. But it is where the buyer declares, in binding language, what the system must do, what records it must produce, what interfaces it must expose, and what happens when the contract ends. If the RFP does not require export in an open format on termination, the vendor owns the database in practice. If it does not require logging, there will be no logs to audit. If it does not reserve the right to publish, the public cannot see what it paid for. Silve <span class="co">[</span><span class="ot">-@silvePoliticalEconomyGovTech2023</span><span class="co">]</span> and @bharosa2022 both describe the political economy that follows: limited competition, lock-in, and a state that gradually loses the expertise needed to write the next contract.</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>Federal buying runs on the Federal Acquisition Regulation. Solicitations are posted on SAM.gov, and awards are reported to USAspending.gov, each contract keyed by a Procurement Instrument Identifier (PIID). For AI, the Office of Management and Budget adds a layer. Memorandum M-25-22, issued April 3, 2025, rescinded and replaced the previous administration's AI acquisition memo (M-24-18) and tells agencies to favor proposals that reduce vendor lock-in through "knowledge transfer, clear data and model portability practices, clear licensing terms, and pricing transparency" <span class="co">[</span><span class="ot">@omb_m2522</span><span class="co">]</span>. It directs contract terms that permanently prohibit vendors from using non-public agency data to further train commercial AI without the agency's consent, that let the agency monitor performance and risk on a regular cadence, and that oblige compliance with the minimum risk-management practices its companion memo, M-25-21, sets for "high-impact" AI: pre-deployment testing, impact assessments, human oversight, and remedies for affected people <span class="co">[</span><span class="ot">@omb_m2521</span><span class="co">]</span>. The acquisition requirements apply to contracts awarded on solicitations issued 180 days or more after the memo, which is to say from late September 2025.</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>Imagine a hypothetical RFP from a federal benefits agency for a system that scores claims and routes some for manual review: a scoring model, a case-management interface, and an API, with a five-year operations-and-maintenance period. Map what it would produce. A claim is a record. A score is a record. A routing decision, a caseworker override, an appeal, and a model update are records. Each is stored in the vendor's database, forwarded to an agency system, or both. The question the RFP has to answer, and often does not, is which records the agency owns, in what format they can be exported, and whether anyone outside the vendor can rerun the scoring and disaggregate it. M-25-22 gestures at portability. It does not say "decision log," "protected attribute," or "test suite."</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>Canada offers the procurement-side counter-case at the same level of government. The Treasury Board's Directive on Automated Decision-Making requires federal institutions to complete an Algorithmic Impact Assessment (AIA) before putting an automated decision system into production <span class="co">[</span><span class="ot">@canada_dadm</span><span class="co">]</span>. The AIA is a published questionnaire that assigns an impact level from I to IV, and the Directive's requirements (peer review, notice, human involvement, explanation) scale with that level. Completed assessments are published on Canada's open government portal. The design moves part of the audit to before purchase and makes the score public. Its limits are equally instructive: the questionnaire is self-completed by the deploying institution. <span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: verify the Directive's current scope, the publication requirement for completed AIAs, and the date of its most recent amendment. --&gt;</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>Set the regimes side by side and the variable that matters is timing. New York City's Local Law 144 (@sec-ch-08-accounting) audits a hiring tool after an employer has bought it, by an auditor the employer hires. Colorado's 2024 AI Act asked deployers to assess systems they already use <span class="co">[</span><span class="ot">@colorado_sb24205</span><span class="co">]</span>, but its 2026 replacement, SB 26-189, drops those impact assessments in favor of disclosure duties before they ever took effect (@sec-ch-07-law) <span class="co">[</span><span class="ot">@colorado_sb26189</span><span class="co">]</span>. M-25-21 asks federal agencies to assess high-impact uses before deployment, and Canada's AIA asks the same while publishing the result. The clause below goes one step earlier and asks the vendor to deliver the means of assessment before the first payment. The later assurance arrives, the more it depends on the cooperation of the party being assured. A buyer that wants independent verification has to purchase it when it has the most leverage: before the contract is signed.</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="In the Public Interest"}</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>The contract is the governance. If a solicitation does not require the vendor to export decision records and model outputs in a non-proprietary format, at no added cost, with a documented schema, then the vendor owns the evidence an auditor would need even if the agency owns it in law. **Oversight**, as @sec-ch-04-exemption-oversight develops it, requires the ability to see, and the specific claim of this chapter is that a federal agency's capacity for independent verification is set at procurement time: an assurance clause that obliges the vendor to deliver what the audit of @sec-ch-08-accounting needs (decision logs, protected attributes or a lawful proxy, model versions, and a test suite that runs in CI) is worth more than fifty pages of strategy. Without it, any later audit, including one by an inspector general or the Government Accountability Office, is an attestation the vendor writes about itself. That is exemption through audit-washing, installed one contract at a time.</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Six clauses worth writing</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>Here are six procurement clauses, expressed as YAML. They are not legal drafting; they are the specification from which contracting officers and attorneys work.</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="fu">data_export</span><span class="kw">:</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">trigger</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">on_demand</span><span class="kw">,</span><span class="at"> quarterly</span><span class="kw">,</span><span class="at"> on_termination</span><span class="kw">]</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">format</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">csv</span><span class="kw">,</span><span class="at"> parquet</span><span class="kw">]</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">schema</span><span class="kw">:</span><span class="at"> json_schema</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">destination</span><span class="kw">:</span><span class="at"> buyer_controlled_storage</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">cost</span><span class="kw">:</span><span class="at"> included_in_base_contract</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="fu">interoperability</span><span class="kw">:</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">api</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">style</span><span class="kw">:</span><span class="at"> REST</span><span class="kw">,</span><span class="at"> </span><span class="fu">spec</span><span class="kw">:</span><span class="at"> openapi_3_1</span><span class="kw">,</span><span class="at"> </span><span class="fu">rate_limits_documented</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">}</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">identifiers</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">persistent</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">,</span><span class="at"> </span><span class="fu">resolvable_across_agencies</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">}</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="fu">auditability</span><span class="kw">:</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">immutable_log</span><span class="kw">:</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">events</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">score</span><span class="kw">,</span><span class="at"> route</span><span class="kw">,</span><span class="at"> override</span><span class="kw">,</span><span class="at"> appeal</span><span class="kw">,</span><span class="at"> model_update</span><span class="kw">,</span><span class="at"> access_grant</span><span class="kw">]</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">retention_years</span><span class="kw">:</span><span class="at"> </span><span class="dv">7</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">export_format</span><span class="kw">:</span><span class="at"> ndjson</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">third_party_inspection</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">allowed</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="kw">,</span><span class="at"> </span><span class="fu">notice_days</span><span class="kw">:</span><span class="at"> </span><span class="dv">10</span><span class="kw">,</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="at">                           </span><span class="fu">scope</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">code</span><span class="kw">,</span><span class="at"> logs</span><span class="kw">,</span><span class="at"> schemas</span><span class="kw">,</span><span class="at"> models</span><span class="kw">]}</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a><span class="fu">algorithmic_assurance</span><span class="kw">:</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">disaggregated_audit</span><span class="kw">:</span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cadence</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">pre_deployment</span><span class="kw">,</span><span class="at"> quarterly</span><span class="kw">,</span><span class="at"> on_model_update</span><span class="kw">]</span></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">artifacts</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">manifest</span><span class="kw">,</span><span class="at"> thresholds</span><span class="kw">,</span><span class="at"> changelog</span><span class="kw">,</span><span class="at"> test_suite_in_ci</span><span class="kw">]</span></span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runnable_by</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">buyer</span><span class="kw">,</span><span class="at"> independent_auditor</span><span class="kw">]</span></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">thresholds_authority</span><span class="kw">:</span><span class="at"> buyer</span><span class="co">        # the vendor may not move them</span></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">incident_notice_days</span><span class="kw">:</span><span class="at"> </span><span class="dv">15</span></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">public_summary</span><span class="kw">:</span><span class="at"> required</span></span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a><span class="fu">source_code</span><span class="kw">:</span></span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ownership</span><span class="kw">:</span><span class="at"> buyer</span></span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">delivery</span><span class="kw">:</span><span class="at"> git_repository_with_full_history</span></span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a><span class="fu">vendor_transition</span><span class="kw">:</span></span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">termination_assistance_months</span><span class="kw">:</span><span class="at"> </span><span class="dv">6</span></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">knowledge_transfer</span><span class="kw">:</span><span class="at"> documented_runbooks</span></span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">data_migration_tested</span><span class="kw">:</span><span class="at"> annually</span></span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>Each clause names a failure mode. Omit <span class="in">`data_export`</span> and the vendor can charge an extraction fee on termination. Omit persistent identifiers and no one can link a score to its appeal after IDs reset in a migration. Omit <span class="in">`immutable_log`</span> and you cannot tell whether a caseworker or a scheduled job overrode a decision. Omit <span class="in">`vendor_transition`</span> and lock-in becomes a permanent governance condition. M-25-22's portability and knowledge-transfer language covers parts of <span class="in">`data_export`</span>, <span class="in">`source_code`</span>, and <span class="in">`vendor_transition`</span>. The clause it lacks, <span class="in">`algorithmic_assurance`</span>, is this book's addition. It translates the manifest, thresholds, changelog, and CI suite from @sec-ch-08-accounting and @sec-ch-10-engineering into deliverables, and it gives the buyer, not the vendor, authority over thresholds, which closes the drift path that normalization of deviance opens. The incident-notice period is illustrative; counsel would set a real one.</span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tutorial: what the federal inventory says about contracts</span></span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>You can test the claim that assurance is bought, or not, against the government's own disclosure. Federal agencies other than the Department of Defense and the Intelligence Community must inventory their AI use cases at least annually and post a public version <span class="co">[</span><span class="ot">@omb_m2521</span><span class="co">]</span>. OMB consolidated the 2024 inventories in a public repository: 41 agency submissions, 2,133 use cases, and 351 that agencies classified as rights-impacting, safety-impacting, or both <span class="co">[</span><span class="ot">@omb_ai_inventory2024</span><span class="co">]</span>. Two of its questions are procurement questions: whether the system was developed under contract or in-house, and whether the agency has access to the source code.</span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>URL <span class="op">=</span> (<span class="st">"https://raw.githubusercontent.com/ombegov/2024-Federal-AI-Use-Case-Inventory/"</span></span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>       <span class="st">"main/data/2024_consolidated_ai_inventory_raw_v2.csv"</span>)</span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>inv <span class="op">=</span> pd.read_csv(URL, encoding<span class="op">=</span><span class="st">"cp1252"</span>, low_memory<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>inv.columns <span class="op">=</span> inv.columns.<span class="bu">str</span>.strip()</span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> col(prefix):</span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Find a column by the start of its (very long) question text."""</span></span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">next</span>(c <span class="cf">for</span> c <span class="kw">in</span> inv.columns <span class="cf">if</span> c.startswith(prefix))</span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>    <span class="st">"agency"</span>: inv[<span class="st">"Agency Abbreviation"</span>],</span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>    <span class="st">"impact"</span>: inv[col(<span class="st">"Is the AI use case rights-impacting"</span>)],</span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>    <span class="st">"built_by"</span>: inv[col(<span class="st">"Was the AI system involved"</span>)],</span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a>    <span class="st">"code_access"</span>: inv[col(<span class="st">"Does the agency have access to the code"</span>)],</span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> norm_impact(v):</span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> <span class="bu">str</span>(v).strip().lower()</span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> v <span class="kw">in</span> (<span class="st">"both"</span>, <span class="st">"rights-impacting"</span>, <span class="st">"safety-impacting"</span>):</span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"rights_or_safety"</span></span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"neither"</span> <span class="cf">if</span> v <span class="op">==</span> <span class="st">"neither"</span> <span class="cf">else</span> <span class="st">"unclear"</span></span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> norm_built(v):</span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> <span class="bu">str</span>(v).strip().lower()</span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"both"</span> <span class="kw">in</span> v <span class="kw">or</span> <span class="st">"combination"</span> <span class="kw">in</span> v:</span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"both"</span></span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"contract"</span> <span class="kw">in</span> v <span class="kw">and</span> <span class="st">"no contract"</span> <span class="kw">not</span> <span class="kw">in</span> v:</span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"contract"</span></span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"in-house"</span> <span class="kw">in</span> v <span class="kw">or</span> <span class="st">"no contract"</span> <span class="kw">in</span> v:</span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"in_house"</span></span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"unreported"</span></span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> norm_access(v):</span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> <span class="bu">str</span>(v).strip().lower()</span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"yes"</span> <span class="cf">if</span> v.startswith(<span class="st">"yes"</span>) <span class="cf">else</span> <span class="st">"no"</span> <span class="cf">if</span> v.startswith(<span class="st">"no"</span>) <span class="cf">else</span> <span class="st">"unreported"</span></span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"impact"</span>] <span class="op">=</span> df[<span class="st">"impact"</span>].<span class="bu">map</span>(norm_impact)</span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"built_by"</span>] <span class="op">=</span> df[<span class="st">"built_by"</span>].<span class="bu">map</span>(norm_built)</span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"code_access"</span>] <span class="op">=</span> df[<span class="st">"code_access"</span>].<span class="bu">map</span>(norm_access)</span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">"impact"</span>].value_counts())</span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; impact</span></span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a><span class="co">#    neither             1722</span></span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a><span class="co">#    rights_or_safety     351</span></span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a><span class="co">#    unclear               60</span></span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a>high <span class="op">=</span> df[df[<span class="st">"impact"</span>] <span class="op">==</span> <span class="st">"rights_or_safety"</span>]</span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.crosstab(high[<span class="st">"built_by"</span>], high[<span class="st">"code_access"</span>], margins<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; code_access   no  unreported  yes  All</span></span>
+<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a><span class="co">#    built_by</span></span>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a><span class="co">#    both           4           5   14   23</span></span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a><span class="co">#    contract      87           9   20  116</span></span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a><span class="co">#    in_house       3           0   25   28</span></span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a><span class="co">#    unreported    11         170    3  184</span></span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a><span class="co">#    All          105         184   62  351</span></span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="The Missing Manual"}</span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a>The consolidated inventory is assembled from forty-one agencies' spreadsheets, and it shows. The file is not UTF-8: read it as <span class="in">`cp1252`</span> or <span class="in">`pandas`</span> will fail on the curly apostrophes in the column names, some of which also end in a stray space. The impact column mixes "Rights-Impacting" with a trailing newline, "Safety-impacting" and "Safety-Impacting" as separate values, and about twenty answers that are sentences rather than categories. The build question has at least eight distinct answers, including "Developed with both contracting and in-house resources" and "Developed with a combination of in-house and contract/external resources," which mean the same thing, and nearly half the rows leave it blank. Code access is answered "Yes," "YES," and "Yes" followed by a dash and a qualifier. The data dictionary describes the questions, not the answers agencies gave. Normalize explicitly, keep an <span class="in">`unreported`</span> category instead of dropping blanks, and print <span class="in">`value_counts(dropna=False)`</span> on every raw column before you trust a crosstab. The categories also change: M-25-21 replaced 2024's "rights-impacting" and "safety-impacting" with a single "high-impact" test, so the 2025 inventory will not line up with this one. <span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: check whether the consolidated 2025 inventory has been published, where, and with what columns. --&gt;</span></span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a>Read the table as a procurement finding. Of 116 rights- or safety-impacting use cases that agencies said were built with contractors alone, the agency reported no access to the source code for 87. Of 28 built in-house, it reported no access for 3. Another 184 high-impact use cases left the build question blank, including all 124 of the Department of Justice's. Self-report has limits, and source code is not the same as logs or outputs. But the pattern is the one the six clauses predict: when a system is bought, the evidence an auditor would start from usually stays with the seller. The <span class="in">`PIID`</span> column lets you go one step further and look up the contract itself on USAspending.gov, which is where Exercise 12.1 begins.</span>
+<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a>The inventory is itself an installed-base element, a recurring record of what agencies run. It exists because an executive order and a statute required it, and its columns change when the memo behind them does: continuity on a short lease, the problem @sec-ch-05-erosion-ownership calls erosion.</span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why the GovTech and civic tech distinction matters</span></span>
+<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a>A GovTech vendor answers to its client. Good contracts let GovTech deliver public services well; bad ones let it extract rents while producing systems the public cannot inspect. @bharosa2022 raises the "Trojan horse" worry: a government whose internal capacity has atrophied can no longer write contracts that hold vendors accountable, so GovTech turns extractive even where individual vendors mean well. Taylor <span class="co">[</span><span class="ot">-@taylor2021public</span><span class="co">]</span> sharpens the point: firms that perform public functions acquire public power without the legitimacy constraints that bind public actors, and contracts are one of the few places those constraints can be reattached.</span>
+<span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a>A civic tech project answers to its funders and, in principle, to its users. @aragon2020 argue for building with communities rather than for them, a methodological commitment that does not solve the funding problem @sec-ch-11-pit-data-for-good diagnosed. A failed GovTech contract leaves a locked-in system no one can afford to replace; a failed civic tech project leaves a dead repository and unpaid volunteers. Civic tech's assurance contribution is often outside the contract: the worker observatories of @sec-ch-10-engineering, or a volunteer group that reruns an agency's published numbers. Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> asks of both forms the same question: "what remains after the pilot: who maintains the data, what standards persist, and what oversight pathways are institutionalized." For a federal agency, the answer is written in the contract or the grant agreement, or it is not written anywhere.</span>
+<span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
+<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a>**Exercise 12.1 (Guided, real public data).** From the tutorial's <span class="in">`high`</span> table, choose one use case built under contract and listed with a PIID. Look up the contract on USAspending.gov and, if you can find it, the original solicitation on SAM.gov. Map the records the system would generate and, for each, whether the documents you found require it to be exportable by the agency, and in what format. Where you cannot find a document, say where you looked.</span>
+<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a>**Exercise 12.2 (Applied).** Using the contract from 12.1, draft the clauses that would close its gaps, including an <span class="in">`algorithmic_assurance`</span> clause. Each clause should name a record type, format, retention period, and access condition. Then write the objection a skeptical vendor would raise to each clause and your reply.</span>
+<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a>**Exercise 12.3 (Technical, laptop, real public data).** A national audit needs a national denominator. Use the Census Bureau's ACS 5-year API <span class="co">[</span><span class="ot">@census_api</span><span class="co">]</span> to pull median household income and its margin of error (<span class="in">`B19013_001E`</span>, <span class="in">`B19013_001M`</span>) for every county in the United States (<span class="in">`for=county:*`</span> with no <span class="in">`in=`</span> filter), then compute each county's margin of error as a share of its estimate. Three cautions: the first row of the response is the header (<span class="in">`pd.DataFrame(payload[1:], columns=payload[0])`</span>); suppressed estimates arrive as large negative sentinels that <span class="in">`to_numeric`</span> accepts as real; and when this chapter was revised, keyless requests were redirected to a "missing key" page, so pass a free key as <span class="in">`key=`</span>. Report how many counties have a margin above 20 percent of the estimate, nationally and for one state you choose (Colorado's 64 counties work well), and write 200 words on which places a national audit can and cannot speak to.</span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a>**Exercise 12.4 (Comparative).** In 600 words, compare Canada's Algorithmic Impact Assessment, the impact-assessment practices M-25-21 requires for high-impact federal AI, the deployer duties in Colorado's SB 26-189, and the EU AI Act's conformity assessment. Address who completes the assessment, when, what is published, and who can challenge it. Cite each primary text and at least one scholarly source, such as @bharosa2022, and flag any provision whose current status you could not confirm.</span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a>**Exercise 12.5 (Open-ended).** Write a one-page procurement recommendation addressed to a named federal body that buys or oversees automated decision systems: an agency's Chief AI Officer, its inspector general, the Government Accountability Office, or a congressional committee. State which audit artifacts a vendor must deliver, who sets thresholds, and how incidents are reported, and ground at least one claim in the inventory. @sec-ch-15-reports shows how to turn a recommendation like this into a report section for that body.</span>
+<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking ahead</span></span>
+<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a>You now have a map of where a national government buys or gives up assurance, and evidence from its own inventory about how often it gives it up. The delivery traditions of this chapter and @sec-ch-11-pit-data-for-good share an assumption: that the system should be built. @sec-ch-13-critical-data-studies-refusal questions that assumption, with a federally governed dataset whose records protect some people and endanger others. When you are ready to put a procurement argument in front of someone who can act on it, @sec-ch-15-reports is the genre.</span>
+<span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading and Resources</span></span>
+<span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Nitesh Bharosa (2022), "<span class="co">[</span><span class="ot">The rise of GovTech: Trojan horse or blessing in disguise?</span><span class="co">](https://doi.org/10.1016/j.giq.2022.101692)</span>," *Government Information Quarterly*. A research agenda that names the hard questions.</span>
+<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Arthur Silve (2023), "The political economy of GovTech," *IMF Notes*. Lock-in from a public-finance angle.</span>
+<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Office of Management and Budget, M-25-22, "Driving Efficient Acquisition of Artificial Intelligence in Government" (2025): <span class="ot">&lt;https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-22-Driving-Efficient-Acquisition-of-Artificial-Intelligence-in-Government.pdf&gt;</span> <span class="co">[</span><span class="ot">@omb_m2522</span><span class="co">]</span>. Read the lock-in and closeout sections.</span>
+<span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>2024 Federal Agency AI Use Case Inventory: <span class="ot">&lt;https://github.com/ombegov/2024-Federal-AI-Use-Case-Inventory&gt;</span> <span class="co">[</span><span class="ot">@omb_ai_inventory2024</span><span class="co">]</span>. The tutorial's data, with a data dictionary.</span>
+<span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Treasury Board of Canada Secretariat, Directive on Automated Decision-Making: <span class="ot">&lt;https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592&gt;</span>. Read the impact-level appendix.</span>
+<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Government of Canada, Algorithmic Impact Assessment tool: <span class="ot">&lt;https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html&gt;</span>. Try it on a system from the inventory. <span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: confirm URL is current. --&gt;</span></span>
+<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>USAspending.gov: <span class="ot">&lt;https://www.usaspending.gov/&gt;</span>. Federal awards by PIID.</span>
+<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Linnet Taylor (2021), "<span class="co">[</span><span class="ot">Public actors without public values</span><span class="co">](https://doi.org/10.1007/s13347-020-00441-4)</span>," *Philosophy &amp; Technology* <span class="co">[</span><span class="ot">@taylor2021public</span><span class="co">]</span>. Why technology firms performing public functions need public-law constraints. <span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: verify DOI. --&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-12-govtech-civic-tech.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
