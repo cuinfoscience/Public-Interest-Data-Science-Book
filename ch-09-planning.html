@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
+
+<title>9&nbsp; Planning – Public Interest Data Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch-10-engineering.html" rel="next">
+<link href="./ch-08-accounting.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-5a1953863e1f72ef3b996ef827f01ca7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-64093fbce31f7d982dd5978587aea001.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-9f9c5abca8a84316e379a71bf0dea7ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-64093fbce31f7d982dd5978587aea001.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-2-lineages.html">Lineages</a></li><li class="breadcrumb-item"><a href="./ch-09-planning.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Planning</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Public Interest Data Science</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-1-pressures-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pressures and Values</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-02-installed-base.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Installed Base</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-03-enclosure-openness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure and Openness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-04-exemption-oversight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exemption and Oversight</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-05-erosion-ownership.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Erosion and Ownership</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-2-lineages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lineages</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-06-journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-07-law.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Law</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-08-accounting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-09-planning.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-10-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Engineering</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-3-adjacent-conversations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Adjacent Conversations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-11-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-12-govtech-civic-tech.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-13-critical-data-studies-refusal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-4-genres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Genres</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-14-op-eds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Op-Eds</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-15-reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-16-research-proposals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Research Proposals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-17-testimony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testimony</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-18-public-comments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Public Comments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-19-archival-deposits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Archival Deposits</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-5-closing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Closing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-20-limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">The Limits of the Framework</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#a-profession-that-learned-from-its-mistakes" id="toc-a-profession-that-learned-from-its-mistakes" class="nav-link active" data-scroll-target="#a-profession-that-learned-from-its-mistakes"><span class="header-section-number">9.1</span> A profession that learned from its mistakes</a></li>
+  <li><a href="#boulder-county-as-planner" id="toc-boulder-county-as-planner" class="nav-link" data-scroll-target="#boulder-county-as-planner"><span class="header-section-number">9.2</span> Boulder County as planner</a></li>
+  <li><a href="#the-allegheny-family-screening-tool-through-a-planners-eyes" id="toc-the-allegheny-family-screening-tool-through-a-planners-eyes" class="nav-link" data-scroll-target="#the-allegheny-family-screening-tool-through-a-planners-eyes"><span class="header-section-number">9.3</span> The Allegheny Family Screening Tool, through a planner’s eyes</a></li>
+  <li><a href="#the-anchor-case-central-70" id="toc-the-anchor-case-central-70" class="nav-link" data-scroll-target="#the-anchor-case-central-70"><span class="header-section-number">9.4</span> The anchor case: Central 70</a></li>
+  <li><a href="#stakeholders-as-a-structured-document" id="toc-stakeholders-as-a-structured-document" class="nav-link" data-scroll-target="#stakeholders-as-a-structured-document"><span class="header-section-number">9.5</span> Stakeholders as a structured document</a></li>
+  <li><a href="#who-was-missing-from-the-room" id="toc-who-was-missing-from-the-room" class="nav-link" data-scroll-target="#who-was-missing-from-the-room"><span class="header-section-number">9.6</span> Who was missing from the room</a></li>
+  <li><a href="#the-geographic-imagination" id="toc-the-geographic-imagination" class="nav-link" data-scroll-target="#the-geographic-imagination"><span class="header-section-number">9.7</span> The geographic imagination</a></li>
+  <li><a href="#community-informed-categorization" id="toc-community-informed-categorization" class="nav-link" data-scroll-target="#community-informed-categorization"><span class="header-section-number">9.8</span> Community-informed categorization</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">9.9</span> Exercises</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">9.10</span> Looking ahead</a></li>
+  <li><a href="#further-reading-and-resources" id="toc-further-reading-and-resources" class="nav-link" data-scroll-target="#further-reading-and-resources"><span class="header-section-number">9.11</span> Further Reading and Resources</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-09-planning.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-2-lineages.html">Lineages</a></li><li class="breadcrumb-item"><a href="./ch-09-planning.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Planning</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-ch-09-planning" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Planning</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Every data project is a planning document in disguise. It proposes that some slice of the world is worth measuring, some category system worth applying, some decision worth making differently once the analysis is done. Every decision to <em>stop</em> measuring is a planning document too, usually one nobody was invited to read. Planning has spent the last century learning the consequences of both kinds of proposal. Data scientists have not. This chapter borrows from the planners.</p>
+<p>The other lineages in this part supply verification (journalism, <a href="ch-06-journalism.html" class="quarto-xref"><span>Chapter 6</span></a>), record access and remedy (law, <a href="ch-07-law.html" class="quarto-xref"><span>Chapter 7</span></a>), and independent checking and incident review (accounting and engineering, <a href="ch-08-accounting.html" class="quarto-xref"><span>Chapter 8</span></a> and <a href="ch-10-engineering.html" class="quarto-xref"><span>Chapter 10</span></a>). Planning asks different questions: who decided, who was affected, who was in the room, who was not, and whose knowledge of the terrain counts as evidence. Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> puts it in infrastructural terms: planning foregrounds how infrastructures allocate benefits and burdens across space and time, and it supplies the participatory repertoires for negotiating who owns, maintains, and can contest durable systems. That makes planning the lineage of <strong>ownership</strong>, the value <a href="ch-05-erosion-ownership.html" class="quarto-xref"><span>Chapter 5</span></a> develops.</p>
+<p>Planning’s natural level in this book is the <strong>county</strong>. In Colorado, counties plan under state statute, and in unincorporated areas the county is the land-use authority: it writes the comprehensive plan, administers the land use code, and hears the applications that turn a parcel into a subdivision or a gravel pit. Your running example is Boulder County. Your anchor case is a decision made elsewhere, on a federal spine, through a consolidated city and county: the reconstruction of Interstate 70 through north Denver.</p>
+<section id="a-profession-that-learned-from-its-mistakes" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="a-profession-that-learned-from-its-mistakes"><span class="header-section-number">9.1</span> A profession that learned from its mistakes</h2>
+<p>Modern planning is the result of a public fight it mostly lost and then, slowly, learned from. Robert Moses, as <a href="ch-01-introduction.html" class="quarto-xref"><span>Chapter 1</span></a> notes, ran New York’s public works for four decades on a specific theory: the public interest could be computed by a qualified expert, expressed as a highway alignment, and imposed on neighborhoods whose residents could not contest it. Jane Jacobs <span class="citation" data-cites="jacobs1961">(<a href="#ref-jacobs1961" role="doc-biblioref">1961</a>)</span> took the other side, insisting that people who lived on a block knew things no master plan could capture.</p>
+<p>Paul Davidoff’s “Advocacy and Pluralism in Planning” <span class="citation" data-cites="davidoff1965">(<a href="#ref-davidoff1965" role="doc-biblioref">1965</a>)</span> codified the lesson <em>for</em> planning rather than merely against it. There is no single neutral public interest a competent planner discovers through analysis. There are many publics with conflicting interests, and the planner’s job is to make those conflicts legible rather than paper over them with a unitary plan. The profession should supply advocate planners to underserved communities the way the legal profession supplies public defenders.</p>
+<p>Advocacy planning did not become the default, but it changed what the default had to argue against. Sherry Arnstein’s “ladder of citizen participation” <span class="citation" data-cites="arnstein1969">(<a href="#ref-arnstein1969" role="doc-biblioref">1969</a>)</span> gave planners a vocabulary for distinguishing real participation from its counterfeits, from manipulation and therapy at the bottom, through information, consultation, and placation, to partnership, delegated power, and citizen control at the top. Marcus Lane’s intellectual history <span class="citation" data-cites="lane2005">(<a href="#ref-lane2005" role="doc-biblioref">2005</a>)</span> traces how participation became a procedural requirement in most Western planning regimes, even when its substance was thin.</p>
+<p>You inherit this tradition whenever you work with geographic data. The choropleth expresses a theory about which boundaries matter; the demographic overlay, a theory about which categories count; the stakeholder list, a theory about whose voice will be sought. Planning’s contribution is to name these theories as theories and insist they be defended.</p>
+</section>
+<section id="boulder-county-as-planner" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="boulder-county-as-planner"><span class="header-section-number">9.2</span> Boulder County as planner</h2>
+<p>Colorado law makes it “the duty of a county planning commission to make and adopt a master plan” for unincorporated territory, subject to the county commissioners’ approval, after hearings at which it “shall accept and consider oral and written public comments” (C.R.S. § 30-28-106) <span class="citation" data-cites="colorado_county_planning">(<a href="#ref-colorado_county_planning" role="doc-biblioref">Colorado General Assembly 2024</a>)</span>. In Boulder County that document is the Boulder County Comprehensive Plan (BCCP), built on three commitments: channel growth to municipalities, protect agricultural land, and put environmental resources first in land-use decisions <span class="citation" data-cites="bouldercounty_bccp">(<a href="#ref-bouldercounty_bccp" role="doc-biblioref">Boulder County, n.d.</a>)</span>. The county’s nine-member appointed <strong>Planning Commission</strong> adopts and amends it. A typical amendment runs as a numbered docket: in December 2022, docket BCCP-22-0002 restored a housing-counseling policy to the plan’s Housing Element after a public hearing, and the Commission’s resolution adopted it under C.R.S. § 30-28-108 and certified it to the Board under § 30-28-109 <span class="citation" data-cites="bouldercounty_pc2022_01">(<a href="#ref-bouldercounty_pc2022_01" role="doc-biblioref">Boulder County Planning Commission 2022</a>)</span>.</p>
+<p>Day to day, the Community Planning &amp; Permitting department turns the plan and the Land Use Code into decisions on applications. Each is a docket with a number (<code>LU-23-0017</code>), a staff recommendation, and, for the larger ones, hearings before the Planning Commission and the Board. Around the City of Boulder, a second plan sits on top: the Boulder Valley Comprehensive Plan, adopted jointly by the city council, the city’s planning board, the county commissioners, and the county’s Planning Commission. Its 2026 major update, docket BVCP-25-0001, shows how many rooms a single decision has. The four bodies held a work session on April 13, 2026 at which “public testimony will not be taken,” a joint public hearing on June 11, and a Board of County Commissioners hearing on June 25 that accepted no further testimony <span class="citation" data-cites="bouldercounty_bvcp2026">(<a href="#ref-bouldercounty_bvcp2026" role="doc-biblioref">Boulder County 2026a</a>)</span>. <!-- TODO: verify the final adoption date and vote of BVCP-25-0001 before citing an outcome. --></p>
+<p>Which room the public may speak in is itself a planning decision. In spring 2026 county staff limited public comment at two advisory boards, the Parks and Open Space Advisory Committee and the Historic Preservation Advisory Board, to items on the agenda, “bringing it in line with the other boards and commissions,” as a county spokesperson put it <span class="citation" data-cites="stephenson2026">(<a href="#ref-stephenson2026" role="doc-biblioref">Stephenson 2026</a>)</span>. On Arnstein’s ladder, the rule sets which rung residents may reach, and staff set the agenda.</p>
+</section>
+<section id="the-allegheny-family-screening-tool-through-a-planners-eyes" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="the-allegheny-family-screening-tool-through-a-planners-eyes"><span class="header-section-number">9.3</span> The Allegheny Family Screening Tool, through a planner’s eyes</h2>
+<p><a href="ch-04-exemption-oversight.html" class="quarto-xref"><span>Chapter 4</span></a> takes up the Allegheny Family Screening Tool as a case of <em>exemption</em>: a county risk-scoring system for child-welfare referrals that could not easily be audited from outside. Read the same county case through a planning lens and a different failure surfaces. The tool was designed by social scientists, procured by a county, and deployed on families who were not in the room; neither were the caseworkers whose judgment it was meant to augment. A planner recognizes the lower rungs of Arnstein’s ladder: information transmitted, consultation held, the decision made by the same people who would have made it without consultation. A participation process that does not feed back into who holds <strong>authority</strong> to change the decision, and that produces no path to <strong>remedy</strong> (<a href="ch-02-installed-base.html" class="quarto-xref"><span>Chapter 2</span></a>) when it goes wrong, is participation in name only.</p>
+</section>
+<section id="the-anchor-case-central-70" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="the-anchor-case-central-70"><span class="header-section-number">9.4</span> The anchor case: Central 70</h2>
+<p>Central 70 is the reconstruction and widening of Interstate 70 through the Elyria-Swansea and Globeville neighborhoods of Denver, a consolidated city and county. The Colorado Department of Transportation and the Federal Highway Administration published a final environmental impact statement and a record of decision in 2017 <span class="citation" data-cites="cdot_i70">(<a href="#ref-cdot_i70" role="doc-biblioref">Colorado Department of Transportation 2017</a>)</span>. The project lowered the highway below grade, capped a section with a park, and widened the roadway. It also displaced residents, prompted litigation over its environmental review, and intensified concerns about diesel exposure in neighborhoods already cut in half by the 1960s viaduct. <!-- TODO: add a verified news or court source for the displacement, litigation, and air-quality claims; the existing swansea2019 entry has an unverified attribution and is not cited here. --></p>
+<p>Federal money made Central 70 a “major federal action” under the National Environmental Policy Act (NEPA), which required the environmental impact statement, published drafts, comment periods, and written responses to comments. That process is eroding. In 2025 the Council on Environmental Quality withdrew its government-wide NEPA regulations, and the Supreme Court’s decision in <em>Seven County Infrastructure Coalition v. Eagle County</em>, which began with a Colorado county’s challenge to a Utah rail line, told courts to defer to agencies on how far an environmental review must reach. <!-- TODO: verify CEQ interim final rule removing NEPA regulations (2025) and Seven County Infrastructure Coalition v. Eagle County, 605 U.S. ___ (2025); add bib entries if cited. --> The record that let Elyria-Swansea residents contest Central 70 is a record future residents may not get. A Boulder County docket of your choice works for every technique below.</p>
+</section>
+<section id="stakeholders-as-a-structured-document" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="stakeholders-as-a-structured-document"><span class="header-section-number">9.5</span> Stakeholders as a structured document</h2>
+<p>A stakeholder map lists the parties to a decision and records what each wants, can do, and can see. It reflects the mapper’s theory of whose interests count; writing the theory down makes it contestable. A version-controlled YAML document beats a slide: it reads like prose, diffs in git, and loads into Python.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stakeholders_i70.yaml</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">decision</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Central 70 reconstruction and widening</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">lead_agencies</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">Colorado Department of Transportation</span><span class="kw">,</span><span class="at"> Federal Highway Administration</span><span class="kw">]</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">record_of_decision</span><span class="kw">:</span><span class="at"> </span><span class="dv">2017</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">federal_hook</span><span class="kw">:</span><span class="at"> NEPA environmental impact statement</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">geography</span><span class="kw">:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">primary_neighborhoods</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">Elyria-Swansea</span><span class="kw">,</span><span class="at"> Globeville</span><span class="kw">]</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">county</span><span class="kw">:</span><span class="at"> City and County of Denver</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">state</span><span class="kw">:</span><span class="at"> CO</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">stakeholders</span><span class="kw">:</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> cdot</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Colorado Department of Transportation</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">role</span><span class="kw">:</span><span class="at"> lead_agency</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">interests</span><span class="kw">:</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> completing federally funded reconstruction on schedule</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> maintaining I-70 freight and commuter capacity</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">power</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">formal</span><span class="kw">:</span><span class="at"> high</span><span class="kw">,</span><span class="at"> </span><span class="fu">informal</span><span class="kw">:</span><span class="at"> high</span><span class="kw">}</span><span class="co">   # owns the right of way</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">access</span><span class="kw">:</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">in_the_room</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">documents_produced</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">DEIS</span><span class="kw">,</span><span class="at"> FEIS</span><span class="kw">,</span><span class="at"> ROD</span><span class="kw">,</span><span class="at"> mitigation plan</span><span class="kw">]</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> elyria_swansea_residents</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Elyria-Swansea residents</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">role</span><span class="kw">:</span><span class="at"> affected_community</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">interests</span><span class="kw">:</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> reducing diesel particulate exposure</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> avoiding displacement</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> retaining neighborhood connectivity</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">power</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">formal</span><span class="kw">:</span><span class="at"> low</span><span class="kw">,</span><span class="at"> </span><span class="fu">informal</span><span class="kw">:</span><span class="at"> medium</span><span class="kw">}</span><span class="co">  # organized through associations</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">access</span><span class="kw">:</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">in_the_room</span><span class="kw">:</span><span class="at"> partially</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">documents_produced</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">public comments</span><span class="kw">,</span><span class="at"> litigation filings</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A complete map would list twenty to thirty entries, from FHWA and EPA to neighborhood associations, public health researchers, and contractors. Notice what the schema forces. You cannot fill in <code>power.formal</code> without deciding what “formal” means here, or <code>in_the_room</code> without deciding what “the room” is. For Central 70 there were at least five rooms: NEPA scoping meetings, technical advisory committees, city council chambers, federal court, and the offices where alignment decisions were actually made. For a Boulder County docket, list the staff review, the referral agencies, the Planning Commission hearing, and the Board’s hearing, and note which of them take testimony.</p>
+</section>
+<section id="who-was-missing-from-the-room" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="who-was-missing-from-the-room"><span class="header-section-number">9.6</span> Who was missing from the room</h2>
+<p>Once the map exists, write a companion document listing whose perspectives are absent or under-represented, and why. For Central 70, a partial list includes renters whose landlords were compensated but who received nothing; undocumented residents who stayed away from public meetings for reasons unrelated to interest; children whose cumulative diesel exposure was the health outcome at stake but who had no standing in NEPA; and descendants of households displaced by the original viaduct.</p>
+<p>A “who was missing” analysis is a design input, not a ritual apology: name whose perspective is missing, then design the analysis to compensate, with data the formal process did not surface or findings published in formats a missing stakeholder could answer. The same method applies to a dataset. When a series is retired, as in the erosion audit of <a href="ch-05-erosion-ownership.html" class="quarto-xref"><span>Chapter 5</span></a>, ask which of its producers, funders, users, and described populations were in the room. Usually the answer is the program office and the budget office.</p>
+</section>
+<section id="the-geographic-imagination" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="the-geographic-imagination"><span class="header-section-number">9.7</span> The geographic imagination</h2>
+<p>Planning’s other contribution is the habit of putting decisions on a map. A map is an argument about what counts as “the area,” and every map excludes something its maker thought irrelevant. <code>geopandas</code> extends <code>pandas</code> with a <code>geometry</code> column, with <code>shapely</code>, <code>pyogrio</code>, and <code>pyproj</code> underneath. You will spend more time with <code>pyproj</code> than you expect.</p>
+<p>Boulder County publishes its land-use applications as a polygon layer, one shape per parcel per docket, queryable through the county’s ArcGIS REST service <span class="citation" data-cites="bouldercounty_landuse_layer">(<a href="#ref-bouldercounty_landuse_layer" role="doc-biblioref">Boulder County 2026b</a>)</span>. Pull the larger discretionary applications filed since 2020, and Census county subdivisions from TIGER/Line <span class="citation" data-cites="census_tiger">(<a href="#ref-census_tiger" role="doc-biblioref">U.S. Census Bureau 2024</a>)</span> to place them:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Colorado county subdivisions, TIGER/Line 2023; Boulder County is FIPS 013</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>cousub <span class="op">=</span> gpd.read_file(<span class="st">"tl_2023_08_cousub.zip"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>boulder <span class="op">=</span> cousub[cousub[<span class="st">"COUNTYFP"</span>] <span class="op">==</span> <span class="st">"013"</span>]</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; 5 rows; CRS is EPSG:4269 (NAD83)</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>LAYER <span class="op">=</span> (<span class="st">"https://maps.bouldercounty.org/arcgis/rest/services/"</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>         <span class="st">"PLANNING/OP_Accela_Poly/MapServer/0/query"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>params <span class="op">=</span> {</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"where"</span>: <span class="st">"DocketType IN ('Special Use Review', "</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>             <span class="st">"'Limited Impact Special Use Review', 'Rezoning') "</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>             <span class="st">"AND ApplicationDate &gt;= DATE '2020-01-01'"</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"outFields"</span>: <span class="st">"CAPID,DocketType,ApplicationDate,ApplicationStatus"</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"outSR"</span>: <span class="st">"4326"</span>, <span class="st">"f"</span>: <span class="st">"geojson"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> requests.get(LAYER, params<span class="op">=</span>params, timeout<span class="op">=</span><span class="dv">60</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>r.raise_for_status()</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>dockets <span class="op">=</span> gpd.read_file(r.text)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>dockets[<span class="st">"ApplicationDate"</span>] <span class="op">=</span> pd.to_datetime(dockets[<span class="st">"ApplicationDate"</span>], unit<span class="op">=</span><span class="st">"ms"</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dockets.shape, dockets[<span class="st">"CAPID"</span>].nunique())</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (273, 5) 207   (as of October 2026)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Two layers, two coordinate reference systems (CRS). They will plot together without an exception, because <code>matplotlib</code> does not know what a CRS is. Project everything to a common CRS before you join or measure:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>crs <span class="op">=</span> <span class="st">"EPSG:26913"</span>            <span class="co"># UTM zone 13N: metres, correct for the Front Range</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>boulder, dockets <span class="op">=</span> boulder.to_crs(crs), dockets.to_crs(crs)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>per_docket <span class="op">=</span> dockets.dissolve(by<span class="op">=</span><span class="st">"CAPID"</span>, aggfunc<span class="op">=</span><span class="st">"first"</span>).reset_index()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>points <span class="op">=</span> per_docket.set_geometry(per_docket.representative_point())</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>joined <span class="op">=</span> gpd.sjoin(points, boulder[[<span class="st">"NAME"</span>, <span class="st">"geometry"</span>]], predicate<span class="op">=</span><span class="st">"within"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(joined.groupby(<span class="st">"NAME"</span>).size().sort_values(ascending<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Bald Mountain           61</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Boulder                 50</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Longmont                49</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Upper St. Vrain         37</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Lafayette-Louisville    10</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> boulder.plot(color<span class="op">=</span><span class="st">"whitesmoke"</span>, edgecolor<span class="op">=</span><span class="st">"gray"</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">7</span>))</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>points.plot(ax<span class="op">=</span>ax, column<span class="op">=</span><span class="st">"DocketType"</span>, legend<span class="op">=</span><span class="va">True</span>, markersize<span class="op">=</span><span class="dv">6</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>ax.set_axis_off()</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Boulder County special use and rezoning dockets, 2020-2026</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>             <span class="st">"County land-use layer; TIGER/Line 2023 county subdivisions"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The mountain subdivisions carry more discretionary dockets than the plains. That is a descriptive statement about where the county’s planning decisions happen, not a causal claim, and it says nothing yet about who lives there. Adding an ACS 5-year block-group table for Boulder County (Exercise 9.3) puts people on the map; the map’s job is to make the spatial question visible, not to close it.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The Missing Manual
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When <code>geopandas</code> breaks, the traceback can come from any of several libraries you did not import, and the most common failure, a CRS mismatch, produces no traceback at all. Always call <code>.to_crs()</code> before you join, buffer, measure, or plot. Three surprises are specific to county planning data. First, one docket can span several parcels, so the layer has 273 shapes for 207 dockets; count <code>CAPID</code>, not rows, or <code>dissolve</code> first. Second, ArcGIS REST returns dates as milliseconds since 1970, which is why the code converts them. Third, check the newest date before you treat a layer as current. In October 2026 the most recent application in this layer was dated May 4, 2026, although records were still being edited. A quiet layer may mean a quiet docket, a migration to a new permitting system, or a stalled sync; only the county can say which. <!-- TODO: ask Community Planning & Permitting whether the OP_Accela_Poly layer is still the current source for new applications. --> The layer also carries owner names. Do not request fields you do not need.</p>
+</div>
+</div>
+</section>
+<section id="community-informed-categorization" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="community-informed-categorization"><span class="header-section-number">9.8</span> Community-informed categorization</h2>
+<p>The demographic columns you add to the map are themselves planning artifacts. “Percent below poverty line” is a federal category with a specific history. “Two or more races” did not exist as a Census response option before 2000. Bowker and Star <span class="citation" data-cites="bowker2000">(<a href="#ref-bowker2000" role="doc-biblioref">2000</a>)</span>, whose work returns in <a href="ch-13-critical-data-studies-refusal.html" class="quarto-xref"><span>Chapter 13</span></a>, show that category systems that once fit the world come to shape what the world is allowed to look like. Planning categories do too: “Limited Impact Special Use Review” decides how much public process an application gets.</p>
+<p>Community-informed categorization treats category choice as participatory. If the community you are mapping has its own neighborhood or mountain-town boundaries that do not match Census geography, include both, labeled. If a dimension residents care about (length of residence, wildfire rebuild status, primary language at home) is not in the standard tables, say so in the caption rather than pretending it does not exist. Treating the power to categorize as something held in trust, rather than exercised unilaterally, is the bridge from planning to ownership.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>In the Public Interest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> defines <strong>ownership</strong> as collective, accountable governance over how public-relevant data is preserved, accessed, and used, and <a href="ch-05-erosion-ownership.html" class="quarto-xref"><span>Chapter 5</span></a> builds it out. Planning is where that value gets procedural teeth. The specific claim: a community that cannot contest the map on which its land use was planned, or find the docket that changed it, has no ownership of its own record in any meaningful sense, whatever the license says. A county that publishes its dockets as a queryable layer, with numbers that link to staff reports and resolutions, has built part of that installed base; a county that limits where residents may speak has narrowed it. Audit-washing (<a href="ch-08-accounting.html" class="quarto-xref"><span>Chapter 8</span></a>) has a planning cousin, participation-washing: the map is drawn, the meeting is held, comments are noted, and the decision proceeds as if none of it occurred. Ask whether any document you produce could change the decision, or whether it was always going to be filed.</p>
+</div>
+</div>
+</section>
+<section id="exercises" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="exercises"><span class="header-section-number">9.9</span> Exercises</h2>
+<p><strong>Exercise 9.1 (Guided).</strong> Build a stakeholder map in YAML for a Boulder County decision (a docket from the land-use layer, a BCCP amendment, or the BVCP update) or for Central 70. Include at least ten entries and list every room in which the decision was discussed, noting which took testimony. Commit it as <code>exercises/ch09_stakeholders_&lt;slug&gt;.yaml</code> with a two-paragraph <code>README.md</code> stating the decision, the records you used, and what you could not find.</p>
+<p><strong>Exercise 9.2 (Analytic).</strong> Write a 400-word “who was missing from the room” analysis of the decision in Exercise 9.1. Name at least four groups and, for each, the document or outreach method that would have surfaced them. If you instead studied a dataset’s retirement in <a href="ch-05-erosion-ownership.html" class="quarto-xref"><span>Chapter 5</span></a>, apply the same method to it, with roles for producer, funder, mandate, downstream user, described population, and mirror.</p>
+<p><strong>Exercise 9.3 (Technical, laptop, real public data).</strong> Reproduce the docket map above. Then add a third layer: an ACS 5-year block-group variable for Boulder County, joined to TIGER/Line block-group geometry. Project to a common CRS, document the choice in the caption, and write two sentences on what the overlay shows and what it cannot.</p>
+<p><strong>Exercise 9.4 (Reflective).</strong> Reread Eubanks’s <span class="citation" data-cites="eubanks2018">(<a href="#ref-eubanks2018" role="doc-biblioref">2018</a>)</span> Allegheny chapter, which <a href="ch-04-exemption-oversight.html" class="quarto-xref"><span>Chapter 4</span></a> discusses, or read her Indiana eligibility chapter. Apply her framework to your Exercise 9.1 case. Where does the decision’s theory of the problem locate the cause of harm? Where would Eubanks locate it? What would change in your stakeholder map if you adopted her framing? 500 words.</p>
+<p><strong>Exercise 9.5 (Open-ended; submittable artifact).</strong> Design a participatory process that could have produced a materially different outcome for your Exercise 9.1 decision. Name the rung of Arnstein’s ladder it would occupy, who would hold what authority, and the minimum infrastructure (time, money, translation, childcare, data access, legal support) it would require. Then answer the harder question: what would have had to be true about the county, the applicant, or the political moment for it to happen? 750 words. The analysis is the evidence base for a public comment to the Planning Commission or Board (<a href="ch-18-public-comments.html" class="quarto-xref"><span>Chapter 18</span></a>).</p>
+</section>
+<section id="looking-ahead" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">9.10</span> Looking ahead</h2>
+<p>Planning gave you the habit of asking who was in the room and whose knowledge of the terrain counts. <a href="ch-05-erosion-ownership.html" class="quarto-xref"><span>Chapter 5</span></a> turns that habit into an obligation to steward the record, and <a href="ch-18-public-comments.html" class="quarto-xref"><span>Chapter 18</span></a> turns it into a genre addressed to a county board. The next lineage, engineering (<a href="ch-10-engineering.html" class="quarto-xref"><span>Chapter 10</span></a>), returns to the national audit and asks a narrower question with the same spirit: when something fails, who keeps the record of how?</p>
+</section>
+<section id="further-reading-and-resources" class="level2" data-number="9.11">
+<h2 data-number="9.11" class="anchored" data-anchor-id="further-reading-and-resources"><span class="header-section-number">9.11</span> Further Reading and Resources</h2>
+<ul>
+<li>Paul Davidoff (1965), “<a href="https://doi.org/10.1080/01944366508978187">Advocacy and Pluralism in Planning</a>,” <em>Journal of the American Institute of Planners</em> 31(4): 331–338. The founding essay for advocacy planning.</li>
+<li>Sherry R. Arnstein (1969), “<a href="https://doi.org/10.1080/01944366908977225">A Ladder of Citizen Participation</a>,” <em>Journal of the American Institute of Planners</em> 35(4): 216–224. The eight-rung ladder you will use to diagnose participation for the rest of your career.</li>
+<li>Marcus B. Lane (2005), “<a href="https://doi.org/10.1080/00049180500325694">Public Participation in Planning: An Intellectual History</a>,” <em>Australian Geographer</em> 36(3): 283–299. The longer arc in which Arnstein and Davidoff are two nodes.</li>
+<li>Boulder County Comprehensive Plan: <a href="https://bouldercounty.gov/property-and-land/land-use/planning/boulder-county-comprehensive-plan/" class="uri">https://bouldercounty.gov/property-and-land/land-use/planning/boulder-county-comprehensive-plan/</a>. The plan, its elements, and its maps.</li>
+<li>Boulder County Planning Commission: <a href="https://bouldercounty.gov/government/boards-and-commissions/planning-commission/" class="uri">https://bouldercounty.gov/government/boards-and-commissions/planning-commission/</a>. Agendas, hearing guidelines, and membership.</li>
+<li>Boulder County Open Data: <a href="https://opendata-bouldercounty.hub.arcgis.com/" class="uri">https://opendata-bouldercounty.hub.arcgis.com/</a>. The comprehensive plan and zoning layers, among many others.</li>
+<li>Central 70 environmental review documents, published by CDOT and FHWA: <a href="https://www.codot.gov/projects/archives/i70east" class="uri">https://www.codot.gov/projects/archives/i70east</a>. A large federal planning archive, worth reading for what a regulated process produces and what it does not.</li>
+<li>Virginia Eubanks (2018), <em><a href="https://us.macmillan.com/books/9781250215789/automatinginequality">Automating Inequality</a></em>. The Allegheny, Indiana, and Los Angeles chapters all work for Exercise 9.4.</li>
+<li>The GeoPandas user guide: <a href="https://geopandas.org/en/stable/docs.html" class="uri">https://geopandas.org/en/stable/docs.html</a>. Read the CRS section end to end before you plot anything serious.</li>
+</ul>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-arnstein1969" class="csl-entry" role="listitem">
+Arnstein, Sherry R. 1969. <span>“A Ladder of Citizen Participation.”</span> <em>Journal of the American Institute of Planners</em> 35 (4): 216–24. <a href="https://doi.org/10.1080/01944366908977225">https://doi.org/10.1080/01944366908977225</a>.
+</div>
+<div id="ref-bouldercounty_bvcp2026" class="csl-entry" role="listitem">
+Boulder County. 2026a. <em><span>BOCC</span> Public Hearing: Docket <span>BVCP-25-0001</span>: Boulder Valley Comprehensive Plan Major Update</em>. Boulder County events calendar. <a href="https://bouldercounty.gov/event/bocc-public-hearing-docket-bvcp-25-0001-boulder-valley-comprehensive-plan-major-update-20260625/">https://bouldercounty.gov/event/bocc-public-hearing-docket-bvcp-25-0001-boulder-valley-comprehensive-plan-major-update-20260625/</a>.
+</div>
+<div id="ref-bouldercounty_landuse_layer" class="csl-entry" role="listitem">
+Boulder County. 2026b. <em><span>OP_Accela_Poly</span>: Land Use and Permit Applications (ArcGIS <span>REST</span> Map Service Layer)</em>. Boulder County GIS. <a href="https://maps.bouldercounty.org/arcgis/rest/services/PLANNING/OP_Accela_Poly/MapServer/0">https://maps.bouldercounty.org/arcgis/rest/services/PLANNING/OP_Accela_Poly/MapServer/0</a>.
+</div>
+<div id="ref-bouldercounty_bccp" class="csl-entry" role="listitem">
+Boulder County. n.d. <em>Boulder County Comprehensive Plan</em>. Boulder County Community Planning &amp; Permitting. <a href="https://bouldercounty.gov/property-and-land/land-use/planning/boulder-county-comprehensive-plan/">https://bouldercounty.gov/property-and-land/land-use/planning/boulder-county-comprehensive-plan/</a>.
+</div>
+<div id="ref-bouldercounty_pc2022_01" class="csl-entry" role="listitem">
+Boulder County Planning Commission. 2022. <em>Planning Commission Resolution <span>PC-2022-01</span>: A Resolution Approving Boulder County Planning Commission Docket <span>BCCP-22-0002</span>, Amendment to the Boulder County Comprehensive Plan Housing Element</em>. Boulder County, Colorado. <a href="https://assets.bouldercounty.gov/wp-content/uploads/2022/12/resolution-pc-2022-01.pdf">https://assets.bouldercounty.gov/wp-content/uploads/2022/12/resolution-pc-2022-01.pdf</a>.
+</div>
+<div id="ref-bowker2000" class="csl-entry" role="listitem">
+Bowker, Geoffrey C., and Susan Leigh Star. 2000. <em>Sorting Things Out: Classification and Its Consequences</em>. MIT Press. <a href="https://mitpress.mit.edu/9780262522953/sorting-things-out/">https://mitpress.mit.edu/9780262522953/sorting-things-out/</a>.
+</div>
+<div id="ref-cdot_i70" class="csl-entry" role="listitem">
+Colorado Department of Transportation. 2017. <em>Central 70 Project: Final Environmental Impact Statement and Record of Decision</em>. Colorado Department of Transportation and Federal Highway Administration. <a href="https://www.codot.gov/projects/archives/i70east">https://www.codot.gov/projects/archives/i70east</a>.
+</div>
+<div id="ref-colorado_county_planning" class="csl-entry" role="listitem">
+Colorado General Assembly. 2024. <em>County Planning and Building Codes, <span>C.R.S.</span> §§30-28-101 Et Seq.</em> Colorado Revised Statutes 2024, Title 30. <a href="https://content.leg.colorado.gov/sites/default/files/images/olls/crs2024-title-30.pdf">https://content.leg.colorado.gov/sites/default/files/images/olls/crs2024-title-30.pdf</a>.
+</div>
+<div id="ref-davidoff1965" class="csl-entry" role="listitem">
+Davidoff, Paul. 1965. <span>“Advocacy and Pluralism in Planning.”</span> <em>Journal of the American Institute of Planners</em> 31 (4): 331–38. <a href="https://doi.org/10.1080/01944366508978187">https://doi.org/10.1080/01944366508978187</a>.
+</div>
+<div id="ref-eubanks2018" class="csl-entry" role="listitem">
+Eubanks, Virginia. 2018. <em>Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor</em>. St. Martin’s Press. <a href="https://us.macmillan.com/books/9781250215789/automatinginequality">https://us.macmillan.com/books/9781250215789/automatinginequality</a>.
+</div>
+<div id="ref-jacobs1961" class="csl-entry" role="listitem">
+Jacobs, Jane. 1961. <em>The Death and Life of Great <span>American</span> Cities</em>. Random House.
+</div>
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Under Review</em>.
+</div>
+<div id="ref-lane2005" class="csl-entry" role="listitem">
+Lane, Marcus B. 2005. <span>“Public Participation in Planning: An Intellectual History.”</span> <em>Australian Geographer</em> 36 (3): 283–99. <a href="https://doi.org/10.1080/00049180500325694">https://doi.org/10.1080/00049180500325694</a>.
+</div>
+<div id="ref-stephenson2026" class="csl-entry" role="listitem">
+Stephenson, Brooke. 2026. <em>Boulder County Limits Public Comment at Key Advisory Boards, Narrowing Input to Agenda Items</em>. Boulder Reporting Lab. <a href="https://boulderreportinglab.org/2026/05/05/boulder-county-limits-public-comment-at-key-advisory-boards-narrowing-input-to-agenda-items/">https://boulderreportinglab.org/2026/05/05/boulder-county-limits-public-comment-at-key-advisory-boards-narrowing-input-to-agenda-items/</a>.
+</div>
+<div id="ref-census_tiger" class="csl-entry" role="listitem">
+U.S. Census Bureau. 2024. <em><span>TIGER/Line</span> Shapefiles</em>. U.S. Census Bureau. <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html">https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch-08-accounting.html" class="pagination-link" aria-label="Accounting and Auditing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch-10-engineering.html" class="pagination-link" aria-label="Engineering">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Engineering</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Planning {#sec-ch-09-planning}</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>Every data project is a planning document in disguise. It proposes that some slice of the world is worth measuring, some category system worth applying, some decision worth making differently once the analysis is done. Every decision to *stop* measuring is a planning document too, usually one nobody was invited to read. Planning has spent the last century learning the consequences of both kinds of proposal. Data scientists have not. This chapter borrows from the planners.</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>The other lineages in this part supply verification (journalism, @sec-ch-06-journalism), record access and remedy (law, @sec-ch-07-law), and independent checking and incident review (accounting and engineering, @sec-ch-08-accounting and @sec-ch-10-engineering). Planning asks different questions: who decided, who was affected, who was in the room, who was not, and whose knowledge of the terrain counts as evidence. Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> puts it in infrastructural terms: planning foregrounds how infrastructures allocate benefits and burdens across space and time, and it supplies the participatory repertoires for negotiating who owns, maintains, and can contest durable systems. That makes planning the lineage of **ownership**, the value @sec-ch-05-erosion-ownership develops.</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>Planning's natural level in this book is the **county**. In Colorado, counties plan under state statute, and in unincorporated areas the county is the land-use authority: it writes the comprehensive plan, administers the land use code, and hears the applications that turn a parcel into a subdivision or a gravel pit. Your running example is Boulder County. Your anchor case is a decision made elsewhere, on a federal spine, through a consolidated city and county: the reconstruction of Interstate 70 through north Denver.</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## A profession that learned from its mistakes</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>Modern planning is the result of a public fight it mostly lost and then, slowly, learned from. Robert Moses, as @sec-ch-01-introduction notes, ran New York's public works for four decades on a specific theory: the public interest could be computed by a qualified expert, expressed as a highway alignment, and imposed on neighborhoods whose residents could not contest it. Jane Jacobs <span class="co">[</span><span class="ot">-@jacobs1961</span><span class="co">]</span> took the other side, insisting that people who lived on a block knew things no master plan could capture.</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>Paul Davidoff's "Advocacy and Pluralism in Planning" <span class="co">[</span><span class="ot">-@davidoff1965</span><span class="co">]</span> codified the lesson *for* planning rather than merely against it. There is no single neutral public interest a competent planner discovers through analysis. There are many publics with conflicting interests, and the planner's job is to make those conflicts legible rather than paper over them with a unitary plan. The profession should supply advocate planners to underserved communities the way the legal profession supplies public defenders.</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>Advocacy planning did not become the default, but it changed what the default had to argue against. Sherry Arnstein's "ladder of citizen participation" <span class="co">[</span><span class="ot">-@arnstein1969</span><span class="co">]</span> gave planners a vocabulary for distinguishing real participation from its counterfeits, from manipulation and therapy at the bottom, through information, consultation, and placation, to partnership, delegated power, and citizen control at the top. Marcus Lane's intellectual history <span class="co">[</span><span class="ot">-@lane2005</span><span class="co">]</span> traces how participation became a procedural requirement in most Western planning regimes, even when its substance was thin.</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>You inherit this tradition whenever you work with geographic data. The choropleth expresses a theory about which boundaries matter; the demographic overlay, a theory about which categories count; the stakeholder list, a theory about whose voice will be sought. Planning's contribution is to name these theories as theories and insist they be defended.</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Boulder County as planner</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>Colorado law makes it "the duty of a county planning commission to make and adopt a master plan" for unincorporated territory, subject to the county commissioners' approval, after hearings at which it "shall accept and consider oral and written public comments" (C.R.S. § 30-28-106) <span class="co">[</span><span class="ot">@colorado_county_planning</span><span class="co">]</span>. In Boulder County that document is the Boulder County Comprehensive Plan (BCCP), built on three commitments: channel growth to municipalities, protect agricultural land, and put environmental resources first in land-use decisions <span class="co">[</span><span class="ot">@bouldercounty_bccp</span><span class="co">]</span>. The county's nine-member appointed **Planning Commission** adopts and amends it. A typical amendment runs as a numbered docket: in December 2022, docket BCCP-22-0002 restored a housing-counseling policy to the plan's Housing Element after a public hearing, and the Commission's resolution adopted it under C.R.S. § 30-28-108 and certified it to the Board under § 30-28-109 <span class="co">[</span><span class="ot">@bouldercounty_pc2022_01</span><span class="co">]</span>.</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>Day to day, the Community Planning &amp; Permitting department turns the plan and the Land Use Code into decisions on applications. Each is a docket with a number (<span class="in">`LU-23-0017`</span>), a staff recommendation, and, for the larger ones, hearings before the Planning Commission and the Board. Around the City of Boulder, a second plan sits on top: the Boulder Valley Comprehensive Plan, adopted jointly by the city council, the city's planning board, the county commissioners, and the county's Planning Commission. Its 2026 major update, docket BVCP-25-0001, shows how many rooms a single decision has. The four bodies held a work session on April 13, 2026 at which "public testimony will not be taken," a joint public hearing on June 11, and a Board of County Commissioners hearing on June 25 that accepted no further testimony <span class="co">[</span><span class="ot">@bouldercounty_bvcp2026</span><span class="co">]</span>. <span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: verify the final adoption date and vote of BVCP-25-0001 before citing an outcome. --&gt;</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>Which room the public may speak in is itself a planning decision. In spring 2026 county staff limited public comment at two advisory boards, the Parks and Open Space Advisory Committee and the Historic Preservation Advisory Board, to items on the agenda, "bringing it in line with the other boards and commissions," as a county spokesperson put it <span class="co">[</span><span class="ot">@stephenson2026</span><span class="co">]</span>. On Arnstein's ladder, the rule sets which rung residents may reach, and staff set the agenda.</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Allegheny Family Screening Tool, through a planner's eyes</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>@sec-ch-04-exemption-oversight takes up the Allegheny Family Screening Tool as a case of *exemption*: a county risk-scoring system for child-welfare referrals that could not easily be audited from outside. Read the same county case through a planning lens and a different failure surfaces. The tool was designed by social scientists, procured by a county, and deployed on families who were not in the room; neither were the caseworkers whose judgment it was meant to augment. A planner recognizes the lower rungs of Arnstein's ladder: information transmitted, consultation held, the decision made by the same people who would have made it without consultation. A participation process that does not feed back into who holds **authority** to change the decision, and that produces no path to **remedy** (@sec-ch-02-installed-base) when it goes wrong, is participation in name only.</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## The anchor case: Central 70</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>Central 70 is the reconstruction and widening of Interstate 70 through the Elyria-Swansea and Globeville neighborhoods of Denver, a consolidated city and county. The Colorado Department of Transportation and the Federal Highway Administration published a final environmental impact statement and a record of decision in 2017 <span class="co">[</span><span class="ot">@cdot_i70</span><span class="co">]</span>. The project lowered the highway below grade, capped a section with a park, and widened the roadway. It also displaced residents, prompted litigation over its environmental review, and intensified concerns about diesel exposure in neighborhoods already cut in half by the 1960s viaduct. <span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: add a verified news or court source for the displacement, litigation, and air-quality claims; the existing swansea2019 entry has an unverified attribution and is not cited here. --&gt;</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>Federal money made Central 70 a "major federal action" under the National Environmental Policy Act (NEPA), which required the environmental impact statement, published drafts, comment periods, and written responses to comments. That process is eroding. In 2025 the Council on Environmental Quality withdrew its government-wide NEPA regulations, and the Supreme Court's decision in *Seven County Infrastructure Coalition v. Eagle County*, which began with a Colorado county's challenge to a Utah rail line, told courts to defer to agencies on how far an environmental review must reach. <span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: verify CEQ interim final rule removing NEPA regulations (2025) and Seven County Infrastructure Coalition v. Eagle County, 605 U.S. ___ (2025); add bib entries if cited. --&gt;</span> The record that let Elyria-Swansea residents contest Central 70 is a record future residents may not get. A Boulder County docket of your choice works for every technique below.</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Stakeholders as a structured document</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>A stakeholder map lists the parties to a decision and records what each wants, can do, and can see. It reflects the mapper's theory of whose interests count; writing the theory down makes it contestable. A version-controlled YAML document beats a slide: it reads like prose, diffs in git, and loads into Python.</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="co"># stakeholders_i70.yaml</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="fu">decision</span><span class="kw">:</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Central 70 reconstruction and widening</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">lead_agencies</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">Colorado Department of Transportation</span><span class="kw">,</span><span class="at"> Federal Highway Administration</span><span class="kw">]</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">record_of_decision</span><span class="kw">:</span><span class="at"> </span><span class="dv">2017</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">federal_hook</span><span class="kw">:</span><span class="at"> NEPA environmental impact statement</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">geography</span><span class="kw">:</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">primary_neighborhoods</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">Elyria-Swansea</span><span class="kw">,</span><span class="at"> Globeville</span><span class="kw">]</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">county</span><span class="kw">:</span><span class="at"> City and County of Denver</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">state</span><span class="kw">:</span><span class="at"> CO</span></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="fu">stakeholders</span><span class="kw">:</span></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> cdot</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Colorado Department of Transportation</span></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">role</span><span class="kw">:</span><span class="at"> lead_agency</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">interests</span><span class="kw">:</span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span>completing<span class="at"> </span>federally<span class="at"> </span>funded<span class="at"> </span>reconstruction<span class="at"> </span>on<span class="at"> </span>schedule</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span>maintaining<span class="at"> </span>I-70<span class="at"> </span>freight<span class="at"> </span>and<span class="at"> </span>commuter<span class="at"> </span>capacity</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">power</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">formal</span><span class="kw">:</span><span class="at"> high</span><span class="kw">,</span><span class="at"> </span><span class="fu">informal</span><span class="kw">:</span><span class="at"> high</span><span class="kw">}</span><span class="co">   # owns the right of way</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">access</span><span class="kw">:</span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">in_the_room</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">documents_produced</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">DEIS</span><span class="kw">,</span><span class="at"> FEIS</span><span class="kw">,</span><span class="at"> ROD</span><span class="kw">,</span><span class="at"> mitigation plan</span><span class="kw">]</span></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> elyria_swansea_residents</span></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Elyria-Swansea residents</span></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">role</span><span class="kw">:</span><span class="at"> affected_community</span></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">interests</span><span class="kw">:</span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span>reducing<span class="at"> </span>diesel<span class="at"> </span>particulate<span class="at"> </span>exposure</span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span>avoiding<span class="at"> </span>displacement</span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span>retaining<span class="at"> </span>neighborhood<span class="at"> </span>connectivity</span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">power</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">formal</span><span class="kw">:</span><span class="at"> low</span><span class="kw">,</span><span class="at"> </span><span class="fu">informal</span><span class="kw">:</span><span class="at"> medium</span><span class="kw">}</span><span class="co">  # organized through associations</span></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">access</span><span class="kw">:</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">in_the_room</span><span class="kw">:</span><span class="at"> partially</span></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">documents_produced</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">public comments</span><span class="kw">,</span><span class="at"> litigation filings</span><span class="kw">]</span></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>A complete map would list twenty to thirty entries, from FHWA and EPA to neighborhood associations, public health researchers, and contractors. Notice what the schema forces. You cannot fill in <span class="in">`power.formal`</span> without deciding what "formal" means here, or <span class="in">`in_the_room`</span> without deciding what "the room" is. For Central 70 there were at least five rooms: NEPA scoping meetings, technical advisory committees, city council chambers, federal court, and the offices where alignment decisions were actually made. For a Boulder County docket, list the staff review, the referral agencies, the Planning Commission hearing, and the Board's hearing, and note which of them take testimony.</span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## Who was missing from the room</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>Once the map exists, write a companion document listing whose perspectives are absent or under-represented, and why. For Central 70, a partial list includes renters whose landlords were compensated but who received nothing; undocumented residents who stayed away from public meetings for reasons unrelated to interest; children whose cumulative diesel exposure was the health outcome at stake but who had no standing in NEPA; and descendants of households displaced by the original viaduct.</span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>A "who was missing" analysis is a design input, not a ritual apology: name whose perspective is missing, then design the analysis to compensate, with data the formal process did not surface or findings published in formats a missing stakeholder could answer. The same method applies to a dataset. When a series is retired, as in the erosion audit of @sec-ch-05-erosion-ownership, ask which of its producers, funders, users, and described populations were in the room. Usually the answer is the program office and the budget office.</span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="fu">## The geographic imagination</span></span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>Planning's other contribution is the habit of putting decisions on a map. A map is an argument about what counts as "the area," and every map excludes something its maker thought irrelevant. <span class="in">`geopandas`</span> extends <span class="in">`pandas`</span> with a <span class="in">`geometry`</span> column, with <span class="in">`shapely`</span>, <span class="in">`pyogrio`</span>, and <span class="in">`pyproj`</span> underneath. You will spend more time with <span class="in">`pyproj`</span> than you expect.</span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>Boulder County publishes its land-use applications as a polygon layer, one shape per parcel per docket, queryable through the county's ArcGIS REST service <span class="co">[</span><span class="ot">@bouldercounty_landuse_layer</span><span class="co">]</span>. Pull the larger discretionary applications filed since 2020, and Census county subdivisions from TIGER/Line <span class="co">[</span><span class="ot">@census_tiger</span><span class="co">]</span> to place them:</span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a><span class="co"># Colorado county subdivisions, TIGER/Line 2023; Boulder County is FIPS 013</span></span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>cousub <span class="op">=</span> gpd.read_file(<span class="st">"tl_2023_08_cousub.zip"</span>)</span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>boulder <span class="op">=</span> cousub[cousub[<span class="st">"COUNTYFP"</span>] <span class="op">==</span> <span class="st">"013"</span>]</span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; 5 rows; CRS is EPSG:4269 (NAD83)</span></span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>LAYER <span class="op">=</span> (<span class="st">"https://maps.bouldercounty.org/arcgis/rest/services/"</span></span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>         <span class="st">"PLANNING/OP_Accela_Poly/MapServer/0/query"</span>)</span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>params <span class="op">=</span> {</span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>    <span class="st">"where"</span>: <span class="st">"DocketType IN ('Special Use Review', "</span></span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a>             <span class="st">"'Limited Impact Special Use Review', 'Rezoning') "</span></span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a>             <span class="st">"AND ApplicationDate &gt;= DATE '2020-01-01'"</span>,</span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a>    <span class="st">"outFields"</span>: <span class="st">"CAPID,DocketType,ApplicationDate,ApplicationStatus"</span>,</span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>    <span class="st">"outSR"</span>: <span class="st">"4326"</span>, <span class="st">"f"</span>: <span class="st">"geojson"</span>,</span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> requests.get(LAYER, params<span class="op">=</span>params, timeout<span class="op">=</span><span class="dv">60</span>)</span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>r.raise_for_status()</span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>dockets <span class="op">=</span> gpd.read_file(r.text)</span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>dockets[<span class="st">"ApplicationDate"</span>] <span class="op">=</span> pd.to_datetime(dockets[<span class="st">"ApplicationDate"</span>], unit<span class="op">=</span><span class="st">"ms"</span>)</span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dockets.shape, dockets[<span class="st">"CAPID"</span>].nunique())</span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (273, 5) 207   (as of October 2026)</span></span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>Two layers, two coordinate reference systems (CRS). They will plot together without an exception, because <span class="in">`matplotlib`</span> does not know what a CRS is. Project everything to a common CRS before you join or measure:</span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a>crs <span class="op">=</span> <span class="st">"EPSG:26913"</span>            <span class="co"># UTM zone 13N: metres, correct for the Front Range</span></span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>boulder, dockets <span class="op">=</span> boulder.to_crs(crs), dockets.to_crs(crs)</span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a>per_docket <span class="op">=</span> dockets.dissolve(by<span class="op">=</span><span class="st">"CAPID"</span>, aggfunc<span class="op">=</span><span class="st">"first"</span>).reset_index()</span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a>points <span class="op">=</span> per_docket.set_geometry(per_docket.representative_point())</span>
+<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a>joined <span class="op">=</span> gpd.sjoin(points, boulder[[<span class="st">"NAME"</span>, <span class="st">"geometry"</span>]], predicate<span class="op">=</span><span class="st">"within"</span>)</span>
+<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(joined.groupby(<span class="st">"NAME"</span>).size().sort_values(ascending<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Bald Mountain           61</span></span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Boulder                 50</span></span>
+<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Longmont                49</span></span>
+<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Upper St. Vrain         37</span></span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Lafayette-Louisville    10</span></span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> boulder.plot(color<span class="op">=</span><span class="st">"whitesmoke"</span>, edgecolor<span class="op">=</span><span class="st">"gray"</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">7</span>))</span>
+<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a>points.plot(ax<span class="op">=</span>ax, column<span class="op">=</span><span class="st">"DocketType"</span>, legend<span class="op">=</span><span class="va">True</span>, markersize<span class="op">=</span><span class="dv">6</span>)</span>
+<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a>ax.set_axis_off()</span>
+<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Boulder County special use and rezoning dockets, 2020-2026</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>             <span class="st">"County land-use layer; TIGER/Line 2023 county subdivisions"</span>)</span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a>The mountain subdivisions carry more discretionary dockets than the plains. That is a descriptive statement about where the county's planning decisions happen, not a causal claim, and it says nothing yet about who lives there. Adding an ACS 5-year block-group table for Boulder County (Exercise 9.3) puts people on the map; the map's job is to make the spatial question visible, not to close it.</span>
+<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="The Missing Manual"}</span>
+<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a>When <span class="in">`geopandas`</span> breaks, the traceback can come from any of several libraries you did not import, and the most common failure, a CRS mismatch, produces no traceback at all. Always call <span class="in">`.to_crs()`</span> before you join, buffer, measure, or plot. Three surprises are specific to county planning data. First, one docket can span several parcels, so the layer has 273 shapes for 207 dockets; count <span class="in">`CAPID`</span>, not rows, or <span class="in">`dissolve`</span> first. Second, ArcGIS REST returns dates as milliseconds since 1970, which is why the code converts them. Third, check the newest date before you treat a layer as current. In October 2026 the most recent application in this layer was dated May 4, 2026, although records were still being edited. A quiet layer may mean a quiet docket, a migration to a new permitting system, or a stalled sync; only the county can say which. <span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: ask Community Planning &amp; Permitting whether the OP_Accela_Poly layer is still the current source for new applications. --&gt;</span> The layer also carries owner names. Do not request fields you do not need.</span>
+<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a><span class="fu">## Community-informed categorization</span></span>
+<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a>The demographic columns you add to the map are themselves planning artifacts. "Percent below poverty line" is a federal category with a specific history. "Two or more races" did not exist as a Census response option before 2000. Bowker and Star <span class="co">[</span><span class="ot">-@bowker2000</span><span class="co">]</span>, whose work returns in @sec-ch-13-critical-data-studies-refusal, show that category systems that once fit the world come to shape what the world is allowed to look like. Planning categories do too: "Limited Impact Special Use Review" decides how much public process an application gets.</span>
+<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a>Community-informed categorization treats category choice as participatory. If the community you are mapping has its own neighborhood or mountain-town boundaries that do not match Census geography, include both, labeled. If a dimension residents care about (length of residence, wildfire rebuild status, primary language at home) is not in the standard tables, say so in the caption rather than pretending it does not exist. Treating the power to categorize as something held in trust, rather than exercised unilaterally, is the bridge from planning to ownership.</span>
+<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="In the Public Interest"}</span>
+<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a>Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> defines **ownership** as collective, accountable governance over how public-relevant data is preserved, accessed, and used, and @sec-ch-05-erosion-ownership builds it out. Planning is where that value gets procedural teeth. The specific claim: a community that cannot contest the map on which its land use was planned, or find the docket that changed it, has no ownership of its own record in any meaningful sense, whatever the license says. A county that publishes its dockets as a queryable layer, with numbers that link to staff reports and resolutions, has built part of that installed base; a county that limits where residents may speak has narrowed it. Audit-washing (@sec-ch-08-accounting) has a planning cousin, participation-washing: the map is drawn, the meeting is held, comments are noted, and the decision proceeds as if none of it occurred. Ask whether any document you produce could change the decision, or whether it was always going to be filed.</span>
+<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
+<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a>**Exercise 9.1 (Guided).** Build a stakeholder map in YAML for a Boulder County decision (a docket from the land-use layer, a BCCP amendment, or the BVCP update) or for Central 70. Include at least ten entries and list every room in which the decision was discussed, noting which took testimony. Commit it as <span class="in">`exercises/ch09_stakeholders_&lt;slug&gt;.yaml`</span> with a two-paragraph <span class="in">`README.md`</span> stating the decision, the records you used, and what you could not find.</span>
+<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a>**Exercise 9.2 (Analytic).** Write a 400-word "who was missing from the room" analysis of the decision in Exercise 9.1. Name at least four groups and, for each, the document or outreach method that would have surfaced them. If you instead studied a dataset's retirement in @sec-ch-05-erosion-ownership, apply the same method to it, with roles for producer, funder, mandate, downstream user, described population, and mirror.</span>
+<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a>**Exercise 9.3 (Technical, laptop, real public data).** Reproduce the docket map above. Then add a third layer: an ACS 5-year block-group variable for Boulder County, joined to TIGER/Line block-group geometry. Project to a common CRS, document the choice in the caption, and write two sentences on what the overlay shows and what it cannot.</span>
+<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a>**Exercise 9.4 (Reflective).** Reread Eubanks's <span class="co">[</span><span class="ot">-@eubanks2018</span><span class="co">]</span> Allegheny chapter, which @sec-ch-04-exemption-oversight discusses, or read her Indiana eligibility chapter. Apply her framework to your Exercise 9.1 case. Where does the decision's theory of the problem locate the cause of harm? Where would Eubanks locate it? What would change in your stakeholder map if you adopted her framing? 500 words.</span>
+<span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a>**Exercise 9.5 (Open-ended; submittable artifact).** Design a participatory process that could have produced a materially different outcome for your Exercise 9.1 decision. Name the rung of Arnstein's ladder it would occupy, who would hold what authority, and the minimum infrastructure (time, money, translation, childcare, data access, legal support) it would require. Then answer the harder question: what would have had to be true about the county, the applicant, or the political moment for it to happen? 750 words. The analysis is the evidence base for a public comment to the Planning Commission or Board (@sec-ch-18-public-comments).</span>
+<span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking ahead</span></span>
+<span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-177"><a href="#cb4-177" aria-hidden="true" tabindex="-1"></a>Planning gave you the habit of asking who was in the room and whose knowledge of the terrain counts. @sec-ch-05-erosion-ownership turns that habit into an obligation to steward the record, and @sec-ch-18-public-comments turns it into a genre addressed to a county board. The next lineage, engineering (@sec-ch-10-engineering), returns to the national audit and asks a narrower question with the same spirit: when something fails, who keeps the record of how?</span>
+<span id="cb4-178"><a href="#cb4-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-179"><a href="#cb4-179" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading and Resources</span></span>
+<span id="cb4-180"><a href="#cb4-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-181"><a href="#cb4-181" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Paul Davidoff (1965), "<span class="co">[</span><span class="ot">Advocacy and Pluralism in Planning</span><span class="co">](https://doi.org/10.1080/01944366508978187)</span>," *Journal of the American Institute of Planners* 31(4): 331–338. The founding essay for advocacy planning.</span>
+<span id="cb4-182"><a href="#cb4-182" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sherry R. Arnstein (1969), "<span class="co">[</span><span class="ot">A Ladder of Citizen Participation</span><span class="co">](https://doi.org/10.1080/01944366908977225)</span>," *Journal of the American Institute of Planners* 35(4): 216–224. The eight-rung ladder you will use to diagnose participation for the rest of your career.</span>
+<span id="cb4-183"><a href="#cb4-183" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Marcus B. Lane (2005), "<span class="co">[</span><span class="ot">Public Participation in Planning: An Intellectual History</span><span class="co">](https://doi.org/10.1080/00049180500325694)</span>," *Australian Geographer* 36(3): 283–299. The longer arc in which Arnstein and Davidoff are two nodes.</span>
+<span id="cb4-184"><a href="#cb4-184" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Boulder County Comprehensive Plan: <span class="ot">&lt;https://bouldercounty.gov/property-and-land/land-use/planning/boulder-county-comprehensive-plan/&gt;</span>. The plan, its elements, and its maps.</span>
+<span id="cb4-185"><a href="#cb4-185" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Boulder County Planning Commission: <span class="ot">&lt;https://bouldercounty.gov/government/boards-and-commissions/planning-commission/&gt;</span>. Agendas, hearing guidelines, and membership.</span>
+<span id="cb4-186"><a href="#cb4-186" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Boulder County Open Data: <span class="ot">&lt;https://opendata-bouldercounty.hub.arcgis.com/&gt;</span>. The comprehensive plan and zoning layers, among many others.</span>
+<span id="cb4-187"><a href="#cb4-187" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Central 70 environmental review documents, published by CDOT and FHWA: <span class="ot">&lt;https://www.codot.gov/projects/archives/i70east&gt;</span>. A large federal planning archive, worth reading for what a regulated process produces and what it does not.</span>
+<span id="cb4-188"><a href="#cb4-188" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Virginia Eubanks (2018), *[Automating Inequality](https://us.macmillan.com/books/9781250215789/automatinginequality)*. The Allegheny, Indiana, and Los Angeles chapters all work for Exercise 9.4.</span>
+<span id="cb4-189"><a href="#cb4-189" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The GeoPandas user guide: <span class="ot">&lt;https://geopandas.org/en/stable/docs.html&gt;</span>. Read the CRS section end to end before you plot anything serious.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-09-planning.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
