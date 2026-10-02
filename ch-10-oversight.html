@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
+
+<title>10&nbsp; Oversight – Public Interest Data Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch-11-testimony.html" rel="next">
+<link href="./ch-09-law.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-5a1953863e1f72ef3b996ef827f01ca7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-64093fbce31f7d982dd5978587aea001.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-9f9c5abca8a84316e379a71bf0dea7ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-64093fbce31f7d982dd5978587aea001.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-3-law-county.html">Law: The County</a></li><li class="breadcrumb-item"><a href="./ch-10-oversight.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Oversight</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Public Interest Data Science</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-1-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-02-installed-base.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Installed Base</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-03-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-2-journalism-city.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Journalism: The City</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-04-enclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Enclosure: Who Can Observe?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-05-journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-06-openness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Openness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-07-op-eds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Op-Eds</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-3-law-county.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Law: The County</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-08-exemption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-09-law.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Law</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-10-oversight.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Oversight</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-11-testimony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Testimony</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-4-assurance-state.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assurance: The State</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-12-accounting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-13-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Engineering</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-14-govtech-civic-tech.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-15-reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-5-planning-nation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Planning: The Nation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-16-erosion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Erosion: What Can Be Remembered?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-17-planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-18-ownership.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Ownership</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-19-critical-data-studies-refusal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-20-public-comments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Public Comments</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-6-beyond-portfolio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Beyond the Portfolio</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-21-research-proposals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Research Proposals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-22-archival-deposits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Archival Deposits</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-23-limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">The Limits of the Framework</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#routine-auditability-versus-episodic-audits" id="toc-routine-auditability-versus-episodic-audits" class="nav-link active" data-scroll-target="#routine-auditability-versus-episodic-audits"><span class="header-section-number">10.1</span> Routine auditability versus episodic audits</a></li>
+  <li><a href="#remedy-as-civic-procedure" id="toc-remedy-as-civic-procedure" class="nav-link" data-scroll-target="#remedy-as-civic-procedure"><span class="header-section-number">10.2</span> Remedy as civic procedure</a></li>
+  <li><a href="#tutorial-an-exemptions-and-remedy-ledger" id="toc-tutorial-an-exemptions-and-remedy-ledger" class="nav-link" data-scroll-target="#tutorial-an-exemptions-and-remedy-ledger"><span class="header-section-number">10.3</span> Tutorial: an exemptions and remedy ledger</a></li>
+  <li><a href="#reading-the-ledger" id="toc-reading-the-ledger" class="nav-link" data-scroll-target="#reading-the-ledger"><span class="header-section-number">10.4</span> Reading the ledger</a></li>
+  <li><a href="#when-the-state-is-the-adversary" id="toc-when-the-state-is-the-adversary" class="nav-link" data-scroll-target="#when-the-state-is-the-adversary"><span class="header-section-number">10.5</span> When the state is the adversary</a></li>
+  <li><a href="#what-survives-political-change" id="toc-what-survives-political-change" class="nav-link" data-scroll-target="#what-survives-political-change"><span class="header-section-number">10.6</span> What survives political change</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">10.7</span> Exercises</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">10.8</span> Looking ahead</a></li>
+  <li><a href="#further-reading-and-resources" id="toc-further-reading-and-resources" class="nav-link" data-scroll-target="#further-reading-and-resources"><span class="header-section-number">10.9</span> Further Reading and Resources</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-10-oversight.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-3-law-county.html">Law: The County</a></li><li class="breadcrumb-item"><a href="./ch-10-oversight.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Oversight</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-ch-10-oversight" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Oversight</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In 2018, Joy Buolamwini and Timnit Gebru published “Gender Shades,” a disaggregated audit of three commercial gender-classification systems <span class="citation" data-cites="buolamwini2018">(<a href="#ref-buolamwini2018" role="doc-biblioref">Buolamwini and Gebru 2018</a>)</span>. The systems misclassified darker-skinned women far more often than lighter-skinned men, and every vendor’s single aggregate accuracy number had hidden the gap. The paper mattered not only because of what it found but because of what followed: sustained pressure from advocates, company decisions to pause face-recognition sales, the end-to-end auditing framework that Raji and colleagues <span class="citation" data-cites="raji2020">(<a href="#ref-raji2020" role="doc-biblioref">2020</a>)</span> later formalized, and legislation that cited the work by name. An audit is a technique. Oversight is an arrangement. You will learn the technique of the disaggregated audit in <a href="ch-12-accounting.html" class="quarto-xref"><span>Chapter 12</span></a>, where the assurance lineage teaches it at the level of the state. This chapter is about the arrangement, and in particular about its last and most neglected link: <strong>remedy</strong>.</p>
+<p>Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> puts the point bluntly: “Evidence matters only if it can trigger remedy.” Oversight, in the installed-base framework, is the working configuration in which records, authority, and remedy meet. Remove authority and you have findings nobody can act on. Remove remedy and you have an authority that can document harm but cannot repair it. The failure mode this chapter makes visible is the remedy that exists on paper and nowhere else: an appeal right nobody knows about, a complaint channel that routes to an empty inbox, a court pathway whose cost exceeds the value of the record.</p>
+<p>Data about exactly this failure is already public. Boulder County’s Public Records Archive posts Colorado Open Records Act requests that others filed and the county answered (<a href="ch-09-law.html" class="quarto-xref"><span>Chapter 9</span></a>): some in full, some partially, some late, some not at all. Each response is a small act of oversight or of exemption, and each carries a legal basis and a set of escalation options. In this chapter you turn the released requests you chose into an <strong>exemptions and remedy ledger</strong>: which exemptions were cited, how often, by which office, what pathway each left open, and, where the record shows it, what happened next.</p>
+<section id="routine-auditability-versus-episodic-audits" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="routine-auditability-versus-episodic-audits"><span class="header-section-number">10.1</span> Routine auditability versus episodic audits</h2>
+<p>Two arrangements get called “audits,” and they are not the same thing.</p>
+<p><strong>Routine auditability</strong> is built into a system. Logs are kept in a form an outsider can parse. Versions are archived. Metrics are recomputed and published on a schedule. When someone wants to check, the inputs already exist and nobody’s permission is needed. Public accounting aspires to this in principle, and Baker’s <span class="citation" data-cites="baker2005">(<a href="#ref-baker2005" role="doc-biblioref">2005</a>)</span> history of “the public interest” in American accounting is a warning that audit professions do not stay public-interested on their own.</p>
+<p><strong>Episodic audits</strong> are one-off events. A regulator commissions a report, a researcher publishes a paper, a reporter files a records request and runs the numbers. These can be powerful, but their power is bounded by the moment and by the audited party’s willingness to cooperate twice. Gender Shades was episodic. The follow-up that turned it into sustained pressure was closer to routine.</p>
+<p>Much of the 2020s legislative wave sits uneasily between the two. New York City’s Local Law 144, which took effect in 2023, requires “bias audits” of automated employment decision tools and publication of impact ratios. It does not say what counts as an adequate auditor, how data must be collected, or what happens when an audit finds a problem, and an early empirical study found that few covered employers posted audits at all.<!-- TODO: cite the FAccT 2024 'Null Compliance' study of LL144 (Wright et al.) after verifying the entry; add to bib-additions/part-3.bib. --> The law created the appearance of routine auditability without authority to enforce it. Episodic audits pretending to be routine is what Goodman and Trehu <span class="citation" data-cites="goodman2023">(<a href="#ref-goodman2023" role="doc-biblioref">2023</a>)</span> call <em>audit-washing</em>. Records requests have the same structure. A single request is episodic. A class that codes the county’s released requests every term, logs every response in the same schema, and publishes the pattern is building something closer to routine auditability of a county’s records practice.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>In the Public Interest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Oversight</strong> depends on two elements that no audit or records request can supply by itself: <strong>authority</strong> and <strong>remedy</strong>. When you read an audit report or a records denial from a county, your first two questions should not be about method. They should be: who has authority to act on this, and what remedy is available to the people affected? If the answers are “nobody” and “none,” you are reading audit-washing or its records equivalent. The specific claim of this chapter is that a remedy ledger advances oversight by converting each withheld record into a named pathway with a clock, so that a county’s exemptions become a pattern an authority can be asked to act on rather than a series of private disappointments.</p>
+</div>
+</div>
+</section>
+<section id="remedy-as-civic-procedure" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="remedy-as-civic-procedure"><span class="header-section-number">10.2</span> Remedy as civic procedure</h2>
+<p>Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> calls the relevant element <em>remedy justice</em> and treats escalation pathways (complaint channels, audit triggers, appeals, reporting cadences, enforcement hooks) as “usable civic procedure.” A pathway counts only if it is <strong>accessible</strong> in language, time, and cost; <strong>protective</strong> against retaliation; and <strong>consequential</strong>, with clear timelines and someone with authority to decide. A pathway that fails any of the three is decorative.</p>
+<p>Apply that test to CORA. Colorado’s remedy ladder for a records denial is short and steep <span class="citation" data-cites="cfoic">(<a href="#ref-cfoic" role="doc-biblioref">Colorado Freedom of Information Coalition 2024</a>)</span>:</p>
+<ol type="1">
+<li><strong>Ask.</strong> Request a written statement of the grounds for denial, citing the legal authority. For criminal justice records, ask the custodian to articulate the CCJRA public-interest balancing.</li>
+<li><strong>Negotiate.</strong> Narrow the request, clarify it, or ask for an itemized fee estimate.</li>
+<li><strong>Give notice.</strong> Before going to court, send the custodian written notice of intent to file, generally at least fourteen days ahead.</li>
+<li><strong>Go to court.</strong> Apply to the district court, which must hold a hearing promptly. A requester who prevails is generally entitled to court costs and reasonable attorney fees.</li>
+</ol>
+<p>There is no administrative appeal in between. That makes the ladder <em>consequential</em> (a court can order disclosure and fees) but not very <em>accessible</em>: the step after “negotiate” is litigation. In practice, most requesters stop at step two. Alongside the legal ladder runs a political one: the county’s own guidance invites requesters to call the County Attorney’s Office for help with the process, the Board of County Commissioners takes public comment, and a pattern of withholding is a story a local newsroom can tell. <a href="ch-11-testimony.html" class="quarto-xref"><span>Chapter 11</span></a> is about using the second ladder.</p>
+</section>
+<section id="tutorial-an-exemptions-and-remedy-ledger" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="tutorial-an-exemptions-and-remedy-ledger"><span class="header-section-number">10.3</span> Tutorial: an exemptions and remedy ledger</h2>
+<p>The tutorial uses a small fixture so that you can run it before you have coded your archived requests. <strong>The fixture is invented for teaching.</strong> Its offices are labeled A, B, and C, and its rows do not describe any real Boulder County request, office, or response. Once your tracker from <a href="ch-09-law.html" class="quarto-xref"><span>Chapter 9</span></a> holds the released requests you chose, you replace the fixture with it and rerun everything.</p>
+<p>Each row is one <em>citation</em>: a request can cite several grounds, and a request with no withholding still gets a row.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ILLUSTRATIVE FIXTURE: invented for teaching. These rows do not describe</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># any real Boulder County request, office, or response.</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">"request_id"</span>, <span class="st">"office"</span>, <span class="st">"regime"</span>, <span class="st">"submitted"</span>, <span class="st">"responded"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"outcome"</span>, <span class="st">"cited_as"</span>]</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>citations <span class="op">=</span> pd.DataFrame([</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1</span>, <span class="st">"Office A"</span>, <span class="st">"CORA"</span>,  <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-02"</span>, <span class="st">"full"</span>,     <span class="va">None</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">2</span>, <span class="st">"Office A"</span>, <span class="st">"CORA"</span>,  <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-11"</span>, <span class="st">"partial"</span>,  <span class="st">"Trade secret / confidential commercial info"</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">2</span>, <span class="st">"Office A"</span>, <span class="st">"CORA"</span>,  <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-11"</span>, <span class="st">"partial"</span>,  <span class="st">"personnel file"</span>),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">3</span>, <span class="st">"Office B"</span>, <span class="st">"CORA"</span>,  <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-11"</span>, <span class="st">"partial"</span>,  <span class="st">"trade secrets"</span>),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">4</span>, <span class="st">"Office B"</span>, <span class="st">"CORA"</span>,  <span class="st">"2027-01-28"</span>, <span class="va">None</span>,         <span class="st">"none"</span>,     <span class="va">None</span>),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">5</span>, <span class="st">"Office C"</span>, <span class="st">"CCJRA"</span>, <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-09"</span>, <span class="st">"denied"</span>,   <span class="st">"CCJRA - contrary to public interest"</span>),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">6</span>, <span class="st">"Office C"</span>, <span class="st">"CCJRA"</span>, <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-09"</span>, <span class="st">"partial"</span>,  <span class="st">"Contrary to the public interest (CCJRA)"</span>),</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">6</span>, <span class="st">"Office C"</span>, <span class="st">"CCJRA"</span>, <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-09"</span>, <span class="st">"partial"</span>,  <span class="st">"ongoing investigation"</span>),</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">7</span>, <span class="st">"Office A"</span>, <span class="st">"CORA"</span>,  <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-04"</span>, <span class="st">"fee_hold"</span>, <span class="va">None</span>),</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">8</span>, <span class="st">"Office B"</span>, <span class="st">"CORA"</span>,  <span class="st">"2027-01-29"</span>, <span class="st">"2027-02-03"</span>, <span class="st">"partial"</span>,  <span class="st">"attorney-client privileged"</span>),</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>], columns<span class="op">=</span>cols)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(citations.shape)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (10, 7)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Custodians do not write exemptions in a controlled vocabulary. “Trade secret / confidential commercial info” and “trade secrets” are the same ground in different words. Normalize them into categories, but keep the original text beside the category, because the custodian’s wording is the record and your category is an interpretation.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>CATEGORY <span class="op">=</span> {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"trade secret"</span>: <span class="st">"trade_secret"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"personnel"</span>: <span class="st">"personnel"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"public interest"</span>: <span class="st">"ccjra_balancing"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"investigation"</span>: <span class="st">"investigation"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"attorney-client"</span>: <span class="st">"privilege"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> categorize(text):</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> text.lower()</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    hits <span class="op">=</span> [cat <span class="cf">for</span> key, cat <span class="kw">in</span> CATEGORY.items() <span class="cf">if</span> key <span class="kw">in</span> t]</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> hits[<span class="dv">0</span>] <span class="cf">if</span> hits <span class="cf">else</span> <span class="st">"UNMAPPED"</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>citations[<span class="st">"category"</span>] <span class="op">=</span> citations[<span class="st">"cited_as"</span>].<span class="bu">map</span>(categorize, na_action<span class="op">=</span><span class="st">"ignore"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> (citations.dropna(subset<span class="op">=</span>[<span class="st">"category"</span>])</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>          .groupby(<span class="st">"category"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>          .agg(times_cited<span class="op">=</span>(<span class="st">"request_id"</span>, <span class="st">"size"</span>),</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>               requests<span class="op">=</span>(<span class="st">"request_id"</span>, <span class="st">"nunique"</span>),</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>               offices<span class="op">=</span>(<span class="st">"office"</span>, <span class="st">"nunique"</span>))</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>          .sort_values(<span class="st">"times_cited"</span>, ascending<span class="op">=</span><span class="va">False</span>, kind<span class="op">=</span><span class="st">"stable"</span>))</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(counts)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;                  times_cited  requests  offices</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; category</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; ccjra_balancing            2         2        1</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; trade_secret               2         2        2</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; investigation              1         1        1</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; personnel                  1         1        1</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; privilege                  1         1        1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>"UNMAPPED"</code> fallback is deliberate. A new phrasing you did not anticipate should show up loudly in the counts, not vanish into a category it does not belong to.</p>
+<p>Next, collapse to one row per request and compute how many working days each took, measured against CORA’s ten-working-day outer limit from <a href="ch-09-law.html" class="quarto-xref"><span>Chapter 9</span></a>. An unanswered request is measured up to an “as of” date.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>AS_OF <span class="op">=</span> pd.Timestamp(<span class="st">"2027-02-16"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>req <span class="op">=</span> (citations.groupby(<span class="st">"request_id"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       .agg(office<span class="op">=</span>(<span class="st">"office"</span>, <span class="st">"first"</span>), regime<span class="op">=</span>(<span class="st">"regime"</span>, <span class="st">"first"</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            submitted<span class="op">=</span>(<span class="st">"submitted"</span>, <span class="st">"first"</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>            responded<span class="op">=</span>(<span class="st">"responded"</span>, <span class="st">"first"</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>            outcome<span class="op">=</span>(<span class="st">"outcome"</span>, <span class="st">"first"</span>),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>            exemptions<span class="op">=</span>(<span class="st">"category"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">lambda</span> s: <span class="st">", "</span>.join(<span class="bu">sorted</span>(s.dropna().unique()))))</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>       .reset_index())</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> pd.to_datetime(req[<span class="st">"submitted"</span>]).values.astype(<span class="st">"datetime64[D]"</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> (pd.to_datetime(req[<span class="st">"responded"</span>]).fillna(AS_OF)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>       .values.astype(<span class="st">"datetime64[D]"</span>))</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>req[<span class="st">"workdays"</span>] <span class="op">=</span> np.busday_count(start, end)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>req[<span class="st">"past_clock"</span>] <span class="op">=</span> req[<span class="st">"workdays"</span>] <span class="op">&gt;</span> <span class="dv">10</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(req[[<span class="st">"request_id"</span>, <span class="st">"office"</span>, <span class="st">"outcome"</span>, <span class="st">"exemptions"</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>           <span class="st">"workdays"</span>, <span class="st">"past_clock"</span>]].to_string(index<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;  request_id   office  outcome                     exemptions  workdays  past_clock</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           1 Office A     full                                        3       False</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           2 Office A  partial        personnel, trade_secret        10       False</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           3 Office B  partial                   trade_secret        10       False</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           4 Office B     none                                       13        True</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           5 Office C   denied                ccjra_balancing         8       False</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           6 Office C  partial ccjra_balancing, investigation         8       False</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           7 Office A fee_hold                                        5       False</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           8 Office B  partial                      privilege         3       False</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Finally, attach a pathway to every outcome and store the three tables in SQLite, where they can be joined with the request tracker you built in <a href="ch-09-law.html" class="quarto-xref"><span>Chapter 9</span></a>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>PATHWAYS <span class="op">=</span> pd.DataFrame([</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"full"</span>,     <span class="st">"none needed"</span>,                                   <span class="st">"record and archive"</span>),</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"partial"</span>,  <span class="st">"written grounds; narrow; 14-day notice; court"</span>, <span class="st">"ask for written grounds"</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"denied"</span>,   <span class="st">"written grounds; 14-day notice; court"</span>,         <span class="st">"ask for written grounds"</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"none"</span>,     <span class="st">"reminder; 14-day notice; court"</span>,                <span class="st">"send reminder citing clock"</span>),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"fee_hold"</span>, <span class="st">"itemized estimate; narrow; ask for waiver"</span>,     <span class="st">"ask for itemized estimate"</span>),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>], columns<span class="op">=</span>[<span class="st">"outcome"</span>, <span class="st">"pathway"</span>, <span class="st">"next_step"</span>])</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> sqlite3.<span class="ex">connect</span>(<span class="st">"remedy_ledger.sqlite"</span>) <span class="im">as</span> conn:</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    citations.to_sql(<span class="st">"citations"</span>, conn, if_exists<span class="op">=</span><span class="st">"replace"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    req.to_sql(<span class="st">"requests"</span>, conn, if_exists<span class="op">=</span><span class="st">"replace"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    PATHWAYS.to_sql(<span class="st">"pathways"</span>, conn, if_exists<span class="op">=</span><span class="st">"replace"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    ledger <span class="op">=</span> pd.read_sql(<span class="st">"""</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="st">        SELECT r.request_id, r.office, r.outcome, r.past_clock, p.next_step</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="st">        FROM requests r JOIN pathways p USING (outcome)</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="st">        WHERE r.outcome != 'full'</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="st">        ORDER BY r.past_clock DESC, r.request_id</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="st">    """</span>, conn)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ledger.to_string(index<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;  request_id   office  outcome  past_clock                  next_step</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           4 Office B     none           1 send reminder citing clock</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           2 Office A  partial           0    ask for written grounds</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           3 Office B  partial           0    ask for written grounds</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           5 Office C   denied           0    ask for written grounds</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           6 Office C  partial           0    ask for written grounds</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           7 Office A fee_hold           0  ask for itemized estimate</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The last table is the ledger’s working face: every request that did not come back whole, sorted so that the one past its statutory clock sits on top, with the next step named. Add an <code>outcome_of_escalation</code> column wherever the archive or other public records show a requester taking a step, and the ledger becomes a record of what the remedy ladder actually delivered.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The Missing Manual
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Three choices in this tutorial look technical and are not. First, <em>what you count</em>: counting citations rather than requests makes an office that cites four grounds in one letter look four times as secretive as an office that denies outright on one. Report both, as <code>times_cited</code> and <code>requests</code> do. Second, <em>which clock</em>: the fixture applies CORA’s working-day clock to every row, including the CCJRA rows. Whether the same deadlines govern criminal justice records is a question to check against the statute, not to settle by default.<!-- TODO: verify CCJRA response-time requirements and how Boulder County applies them. --> Third, <em>what “past the clock” means</em>: <code>np.busday_count</code> skips weekends but not county holidays unless you pass them in. A ledger that accuses an office of lateness on the strength of a forgotten holiday has handed the office its rebuttal.</p>
+</div>
+</div>
+</section>
+<section id="reading-the-ledger" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="reading-the-ledger"><span class="header-section-number">10.4</span> Reading the ledger</h2>
+<p>Even a fixture this small supports a few honest sentences. Trade-secret claims appeared at two of three offices, which suggests a contracting pattern rather than one office’s habit. The criminal-justice office leaned on the CCJRA balancing test, which means the remedy question there is whether the custodian articulated the balance, not whether an exemption exists. One request went unanswered past the outer limit, which is the single clearest fact in the table and the one a commissioner could act on fastest. And one request was held behind a fee estimate, which is not an exemption at all but functions like one if the requester cannot pay.</p>
+<p>Notice what the ledger cannot say. It cannot tell you whether a withholding was lawful; only a court can. It cannot tell you whether eight requests represent the county’s practice; they do not. What it can do is make a pattern <em>followable</em>, in Keegan’s <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> word, so that the next requester, reporter, or commissioner starts from your record instead of from nothing.</p>
+</section>
+<section id="when-the-state-is-the-adversary" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="when-the-state-is-the-adversary"><span class="header-section-number">10.5</span> When the state is the adversary</h2>
+<p>Remedy looks different when the party you seek remedy from also controls the records. In SyRI, the Dutch coalition did not ask the ministry to fix its model. It went to court, and the remedy was structural: the system was stopped <span class="citation" data-cites="syri2020">(<a href="#ref-syri2020" role="doc-biblioref">District Court of The Hague 2020</a>)</span>. In the <em>toeslagenaffaire</em>, remedy arrived only after journalists and a parliamentary inquiry reconstructed what the tax authority would not explain, and it took the political form of a cabinet resignation and the slow, contested financial form of compensation <span class="citation" data-cites="amnesty2021">(<a href="#ref-amnesty2021" role="doc-biblioref">Amnesty International 2021</a>)</span>. Remedy can be restorative (reinstating a benefit), structural (decommissioning a tool), or financial (damages and fees), and each needs a different authority.</p>
+<p>Allegheny County illustrates a different arrangement. The county has revised AFST over time and published evaluations and ethical reviews alongside it, which is closer to routine auditability than most counties attempt. But the pathways that matter most to a screened-in family run through the child-welfare process itself, and the most consequential external review, the federal civil-rights scrutiny reported in 2023, produced no public record <span class="citation" data-cites="ho2023">(<a href="#ref-ho2023" role="doc-biblioref">Ho and Burke 2023</a>)</span>. Disclosure by the county is not the same as remedy for the family.</p>
+</section>
+<section id="what-survives-political-change" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="what-survives-political-change"><span class="header-section-number">10.6</span> What survives political change</h2>
+<p>Three things distinguish oversight regimes that survive political change from those that collapse into theater. The first is <strong>authority</strong>: a named institution with a budget and a mandate that can demand evidence and act on it. For a county, that might be the Board of County Commissioners, a county auditor, the district attorney, or a state court. When no such authority is willing, a ledger is an artifact looking for a reader.</p>
+<p>The second is <strong>remedy</strong> that reaches the affected. Local Law 144’s core defect is that it requires disclosure of disparate impact but gives no right of action to a candidate screened out by a tool with a poor impact ratio <span class="citation" data-cites="goodman2023">(<a href="#ref-goodman2023" role="doc-biblioref">Goodman and Trehu 2023</a>)</span>. CORA’s strength is the reverse: a requester who wins in court can recover attorney fees. Its weakness is that nothing sits between a custodian’s denial and a lawsuit.</p>
+<p>The third is <strong>scope protection</strong>. Regimes erode when their scope narrows and nobody defends the frame: “advisory” systems that are decisive in practice, “pilot programs” that run for a decade, records reclassified from administrative to criminal justice. <a href="ch-08-exemption.html" class="quarto-xref"><span>Chapter 8</span></a> treated this as the logic of exemption. A regime whose scope is a negotiated floor will be negotiated downward by the entities it constrains. A ledger maintained across terms is one of the few instruments that can show the floor moving.</p>
+</section>
+<section id="exercises" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="exercises"><span class="header-section-number">10.7</span> Exercises</h2>
+<p><strong>Exercise 10.1 (Guided).</strong> Run the fixture tutorial end to end. Then add two rows of your own invention (still labeled as fixture), one of which uses a phrasing that falls through to <code>"UNMAPPED"</code>. Fix the <code>CATEGORY</code> map, rerun, and write two sentences on why the fallback exists.</p>
+<p><strong>Exercise 10.2 (Piece 2 component).</strong> Replace the fixture with the released requests you chose from Boulder County’s Public Records Archive, and their comparison requests, from the tracker in <a href="ch-09-law.html" class="quarto-xref"><span>Chapter 9</span></a>. Record every ground exactly as the custodian wrote it, normalize it, compute clocks using the county’s holiday calendar, and attach the next step a requester could take. If a request came back in full or not at all, the ledger still has rows: a full release and a silence are both outcomes. Save as <code>piece2/remedy_ledger.sqlite</code> with a short <code>piece2/remedy_ledger.md</code> that states, in five sentences, the pattern and its limits. This is the exemptions and remedy ledger for Piece 2.</p>
+<p><strong>Exercise 10.3 (Runnable, real public data).</strong> Your Piece 2 ledger centers on one office. Sample at least ten released requests to <em>other</em> offices from the same Public Records Archive, code each one’s outcome and any grounds cited with the same schema, and run the counts. Compare the pattern with your Piece 2 ledger. What does the published archive leave out by design?</p>
+<p><strong>Exercise 10.4 (Analytic).</strong> Pick one rung of Colorado’s remedy ladder and evaluate it against Keegan’s three tests: accessible, protective, consequential. Use the Colorado Freedom of Information Coalition guide and at least one other source. In 500 words, name the rung’s strongest and weakest dimension and one change, by statute or by county policy, that would strengthen the weakest.</p>
+<p><strong>Exercise 10.5 (Open-ended).</strong> Design an escalation pathway that Boulder County could adopt without new state law: for example, a published log of CORA denials with grounds, a response-time report to the Board, or an ombuds contact for records disputes. In 600 words, specify who maintains it, who can trigger it, what happens when it is triggered, and how you would know in two years whether it worked. This is a candidate ask for your testimony.</p>
+</section>
+<section id="looking-ahead" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">10.8</span> Looking ahead</h2>
+<p>A remedy ledger is evidence. It becomes pressure only when someone with authority hears it. The next chapter, <a href="ch-11-testimony.html" class="quarto-xref"><span>Chapter 11</span></a>, closes Module 2 with the genre built for that moment: testimony before a Boulder County Board of County Commissioners hearing, delivered in a few minutes and preserved in a written statement for the record. After that, Part IV climbs to the state and to the assurance lineage, where <a href="ch-12-accounting.html" class="quarto-xref"><span>Chapter 12</span></a> teaches the disaggregated audit that this chapter set aside.</p>
+</section>
+<section id="further-reading-and-resources" class="level2" data-number="10.9">
+<h2 data-number="10.9" class="anchored" data-anchor-id="further-reading-and-resources"><span class="header-section-number">10.9</span> Further Reading and Resources</h2>
+<ul>
+<li>Keegan (2026), “Public interest data infrastructuring,” especially “Authority, trust, and contestable oversight” and “Remedy justice” <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">Keegan 2026</a>)</span>.</li>
+<li>Colorado Freedom of Information Coalition, open government guide: <a href="https://coloradofoic.org/open-government-guide/" class="uri">https://coloradofoic.org/open-government-guide/</a>. Deadlines, fees, and the court remedy under CORA and the CCJRA <span class="citation" data-cites="cfoic">(<a href="#ref-cfoic" role="doc-biblioref">Colorado Freedom of Information Coalition 2024</a>)</span>.</li>
+<li>Boulder County, Colorado Open Records Act page: <a href="https://bouldercounty.gov/records/colorado-open-records-act/" class="uri">https://bouldercounty.gov/records/colorado-open-records-act/</a>. Links to the Open Records Center and its archive of prior releases.</li>
+<li>Laura Beth Nielsen and Catherine Albiston (2006), “The organization of public interest practice” <span class="citation" data-cites="nielsen2006">(<a href="#ref-nielsen2006" role="doc-biblioref">Nielsen and Albiston 2006</a>)</span>. How the institutions that pursue remedy are funded and staffed.</li>
+<li>District Court of The Hague (2020), SyRI judgment, ECLI:NL:RBDHA:2020:1878, <a href="https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2020:1878" class="uri">https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2020:1878</a> <span class="citation" data-cites="syri2020">(<a href="#ref-syri2020" role="doc-biblioref">District Court of The Hague 2020</a>)</span>.</li>
+<li>Amnesty International (2021), <em>Xenophobic Machines</em>, <a href="https://www.amnesty.org/en/documents/eur35/4686/2021/en/" class="uri">https://www.amnesty.org/en/documents/eur35/4686/2021/en/</a> <span class="citation" data-cites="amnesty2021">(<a href="#ref-amnesty2021" role="doc-biblioref">Amnesty International 2021</a>)</span>.</li>
+<li>Inioluwa Deborah Raji et al.&nbsp;(2020), “<a href="https://doi.org/10.1145/3351095.3372873">Closing the AI accountability gap</a>,” <em>Proceedings of FAT* 2020</em> <span class="citation" data-cites="raji2020">(<a href="#ref-raji2020" role="doc-biblioref">Raji et al. 2020</a>)</span>.</li>
+<li>Bryce Goodman and Julia Trehu, “<a href="https://doi.org/10.2139/ssrn.4227350">AI audit washing and accountability</a>” (2023) <span class="citation" data-cites="goodman2023">(<a href="#ref-goodman2023" role="doc-biblioref">Goodman and Trehu 2023</a>)</span>.</li>
+<li>NYC Department of Consumer and Worker Protection, Local Law 144 guidance: <a href="https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page" class="uri">https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page</a>.</li>
+<li>C. Richard Baker (2005), “<a href="https://doi.org/10.1108/09513570510620510">What is the meaning of ‘the public interest’?</a>,” <em>Accounting, Auditing &amp; Accountability Journal</em> <span class="citation" data-cites="baker2005">(<a href="#ref-baker2005" role="doc-biblioref">Baker 2005</a>)</span>.</li>
+</ul>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-amnesty2021" class="csl-entry" role="listitem">
+Amnesty International. 2021. <em>Xenophobic Machines: Discrimination Through Unregulated Use of Algorithms in the <span>Dutch</span> Childcare Benefits Scandal</em>. Amnesty International. <a href="https://www.amnesty.org/en/documents/eur35/4686/2021/en/">https://www.amnesty.org/en/documents/eur35/4686/2021/en/</a>.
+</div>
+<div id="ref-baker2005" class="csl-entry" role="listitem">
+Baker, C. Richard. 2005. <span>“What Is the Meaning of <span><span>‘the Public Interest’</span>?</span> Examining the Ideology of the <span>American</span> Public Accounting Profession.”</span> <em>Accounting, Auditing <span>&amp;</span> Accountability Journal</em> 18 (5): 690–703. <a href="https://doi.org/10.1108/09513570510620510">https://doi.org/10.1108/09513570510620510</a>.
+</div>
+<div id="ref-buolamwini2018" class="csl-entry" role="listitem">
+Buolamwini, Joy, and Timnit Gebru. 2018. <span>“Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification.”</span> <em>Proceedings of the 1st Conference on Fairness, Accountability, and Transparency</em>, 77–91. <a href="https://proceedings.mlr.press/v81/buolamwini18a.html">https://proceedings.mlr.press/v81/buolamwini18a.html</a>.
+</div>
+<div id="ref-cfoic" class="csl-entry" role="listitem">
+Colorado Freedom of Information Coalition. 2024. <em><span>CORA</span> Resources and Sample-Letter Library</em>. Colorado Freedom of Information Coalition. <a href="https://coloradofoic.org/">https://coloradofoic.org/</a>.
+</div>
+<div id="ref-syri2020" class="csl-entry" role="listitem">
+District Court of The Hague. 2020. <em><span class="nocase">NJCM et al. v. The State of the Netherlands</span> (SyRI Judgment), ECLI:NL:RBDHA:2020:1878</em>. Rechtspraak.nl. <a href="https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2020:1878">https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2020:1878</a>.
+</div>
+<div id="ref-goodman2023" class="csl-entry" role="listitem">
+Goodman, Bryce, and Julia Trehu. 2023. <span>“<span>AI</span> Audit Washing and Accountability.”</span> <em>SSRN</em>, ahead of print. <a href="https://doi.org/10.2139/ssrn.4227350">https://doi.org/10.2139/ssrn.4227350</a>.
+</div>
+<div id="ref-ho2023" class="csl-entry" role="listitem">
+Ho, Sally, and Garance Burke. 2023. <em>Child Welfare Algorithm Faces <span>Justice Department</span> Scrutiny</em>. Associated Press, republished by WESA. <a href="https://www.wesa.fm/politics-government/2023-01-31/child-welfare-algorithm-used-by-allegheny-county-dhs-faces-justice-department-scrutiny">https://www.wesa.fm/politics-government/2023-01-31/child-welfare-algorithm-used-by-allegheny-county-dhs-faces-justice-department-scrutiny</a>.
+</div>
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Under Review</em>.
+</div>
+<div id="ref-nielsen2006" class="csl-entry" role="listitem">
+Nielsen, Laura Beth, and Catherine R. Albiston. 2006. <em>The Organization of Public Interest Practice, 1975–2004</em>. University of Chicago Law School.
+</div>
+<div id="ref-raji2020" class="csl-entry" role="listitem">
+Raji, Inioluwa Deborah, Andrew Smart, Rebecca N. White, et al. 2020. <span>“Closing the <span>AI</span> Accountability Gap: Defining an End-to-End Framework for Internal Algorithmic Auditing.”</span> <em>Proceedings of FAccT 2020</em>, 33–44. <a href="https://doi.org/10.1145/3351095.3372873">https://doi.org/10.1145/3351095.3372873</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch-09-law.html" class="pagination-link" aria-label="Law">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Law</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch-11-testimony.html" class="pagination-link" aria-label="Testimony">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Testimony</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Oversight {#sec-ch-10-oversight}</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>In 2018, Joy Buolamwini and Timnit Gebru published "Gender Shades," a disaggregated audit of three commercial gender-classification systems <span class="co">[</span><span class="ot">@buolamwini2018</span><span class="co">]</span>. The systems misclassified darker-skinned women far more often than lighter-skinned men, and every vendor's single aggregate accuracy number had hidden the gap. The paper mattered not only because of what it found but because of what followed: sustained pressure from advocates, company decisions to pause face-recognition sales, the end-to-end auditing framework that Raji and colleagues <span class="co">[</span><span class="ot">-@raji2020</span><span class="co">]</span> later formalized, and legislation that cited the work by name. An audit is a technique. Oversight is an arrangement. You will learn the technique of the disaggregated audit in @sec-ch-12-accounting, where the assurance lineage teaches it at the level of the state. This chapter is about the arrangement, and in particular about its last and most neglected link: **remedy**.</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> puts the point bluntly: "Evidence matters only if it can trigger remedy." Oversight, in the installed-base framework, is the working configuration in which records, authority, and remedy meet. Remove authority and you have findings nobody can act on. Remove remedy and you have an authority that can document harm but cannot repair it. The failure mode this chapter makes visible is the remedy that exists on paper and nowhere else: an appeal right nobody knows about, a complaint channel that routes to an empty inbox, a court pathway whose cost exceeds the value of the record.</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>Data about exactly this failure is already public. Boulder County's Public Records Archive posts Colorado Open Records Act requests that others filed and the county answered (@sec-ch-09-law): some in full, some partially, some late, some not at all. Each response is a small act of oversight or of exemption, and each carries a legal basis and a set of escalation options. In this chapter you turn the released requests you chose into an **exemptions and remedy ledger**: which exemptions were cited, how often, by which office, what pathway each left open, and, where the record shows it, what happened next.</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Routine auditability versus episodic audits</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>Two arrangements get called "audits," and they are not the same thing.</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>**Routine auditability** is built into a system. Logs are kept in a form an outsider can parse. Versions are archived. Metrics are recomputed and published on a schedule. When someone wants to check, the inputs already exist and nobody's permission is needed. Public accounting aspires to this in principle, and Baker's <span class="co">[</span><span class="ot">-@baker2005</span><span class="co">]</span> history of "the public interest" in American accounting is a warning that audit professions do not stay public-interested on their own.</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>**Episodic audits** are one-off events. A regulator commissions a report, a researcher publishes a paper, a reporter files a records request and runs the numbers. These can be powerful, but their power is bounded by the moment and by the audited party's willingness to cooperate twice. Gender Shades was episodic. The follow-up that turned it into sustained pressure was closer to routine.</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>Much of the 2020s legislative wave sits uneasily between the two. New York City's Local Law 144, which took effect in 2023, requires "bias audits" of automated employment decision tools and publication of impact ratios. It does not say what counts as an adequate auditor, how data must be collected, or what happens when an audit finds a problem, and an early empirical study found that few covered employers posted audits at all.<span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: cite the FAccT 2024 'Null Compliance' study of LL144 (Wright et al.) after verifying the entry; add to bib-additions/part-3.bib. --&gt;</span> The law created the appearance of routine auditability without authority to enforce it. Episodic audits pretending to be routine is what Goodman and Trehu <span class="co">[</span><span class="ot">-@goodman2023</span><span class="co">]</span> call *audit-washing*. Records requests have the same structure. A single request is episodic. A class that codes the county's released requests every term, logs every response in the same schema, and publishes the pattern is building something closer to routine auditability of a county's records practice.</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="In the Public Interest"}</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>**Oversight** depends on two elements that no audit or records request can supply by itself: **authority** and **remedy**. When you read an audit report or a records denial from a county, your first two questions should not be about method. They should be: who has authority to act on this, and what remedy is available to the people affected? If the answers are "nobody" and "none," you are reading audit-washing or its records equivalent. The specific claim of this chapter is that a remedy ledger advances oversight by converting each withheld record into a named pathway with a clock, so that a county's exemptions become a pattern an authority can be asked to act on rather than a series of private disappointments.</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Remedy as civic procedure</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> calls the relevant element *remedy justice* and treats escalation pathways (complaint channels, audit triggers, appeals, reporting cadences, enforcement hooks) as "usable civic procedure." A pathway counts only if it is **accessible** in language, time, and cost; **protective** against retaliation; and **consequential**, with clear timelines and someone with authority to decide. A pathway that fails any of the three is decorative.</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>Apply that test to CORA. Colorado's remedy ladder for a records denial is short and steep <span class="co">[</span><span class="ot">@cfoic</span><span class="co">]</span>:</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Ask.** Request a written statement of the grounds for denial, citing the legal authority. For criminal justice records, ask the custodian to articulate the CCJRA public-interest balancing.</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Negotiate.** Narrow the request, clarify it, or ask for an itemized fee estimate.</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Give notice.** Before going to court, send the custodian written notice of intent to file, generally at least fourteen days ahead.</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Go to court.** Apply to the district court, which must hold a hearing promptly. A requester who prevails is generally entitled to court costs and reasonable attorney fees.</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>There is no administrative appeal in between. That makes the ladder *consequential* (a court can order disclosure and fees) but not very *accessible*: the step after "negotiate" is litigation. In practice, most requesters stop at step two. Alongside the legal ladder runs a political one: the county's own guidance invites requesters to call the County Attorney's Office for help with the process, the Board of County Commissioners takes public comment, and a pattern of withholding is a story a local newsroom can tell. @sec-ch-11-testimony is about using the second ladder.</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tutorial: an exemptions and remedy ledger</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>The tutorial uses a small fixture so that you can run it before you have coded your archived requests. **The fixture is invented for teaching.** Its offices are labeled A, B, and C, and its rows do not describe any real Boulder County request, office, or response. Once your tracker from @sec-ch-09-law holds the released requests you chose, you replace the fixture with it and rerun everything.</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>Each row is one *citation*: a request can cite several grounds, and a request with no withholding still gets a row.</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="co"># ILLUSTRATIVE FIXTURE: invented for teaching. These rows do not describe</span></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="co"># any real Boulder County request, office, or response.</span></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">"request_id"</span>, <span class="st">"office"</span>, <span class="st">"regime"</span>, <span class="st">"submitted"</span>, <span class="st">"responded"</span>,</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>        <span class="st">"outcome"</span>, <span class="st">"cited_as"</span>]</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>citations <span class="op">=</span> pd.DataFrame([</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1</span>, <span class="st">"Office A"</span>, <span class="st">"CORA"</span>,  <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-02"</span>, <span class="st">"full"</span>,     <span class="va">None</span>),</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">2</span>, <span class="st">"Office A"</span>, <span class="st">"CORA"</span>,  <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-11"</span>, <span class="st">"partial"</span>,  <span class="st">"Trade secret / confidential commercial info"</span>),</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">2</span>, <span class="st">"Office A"</span>, <span class="st">"CORA"</span>,  <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-11"</span>, <span class="st">"partial"</span>,  <span class="st">"personnel file"</span>),</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">3</span>, <span class="st">"Office B"</span>, <span class="st">"CORA"</span>,  <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-11"</span>, <span class="st">"partial"</span>,  <span class="st">"trade secrets"</span>),</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">4</span>, <span class="st">"Office B"</span>, <span class="st">"CORA"</span>,  <span class="st">"2027-01-28"</span>, <span class="va">None</span>,         <span class="st">"none"</span>,     <span class="va">None</span>),</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">5</span>, <span class="st">"Office C"</span>, <span class="st">"CCJRA"</span>, <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-09"</span>, <span class="st">"denied"</span>,   <span class="st">"CCJRA - contrary to public interest"</span>),</span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">6</span>, <span class="st">"Office C"</span>, <span class="st">"CCJRA"</span>, <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-09"</span>, <span class="st">"partial"</span>,  <span class="st">"Contrary to the public interest (CCJRA)"</span>),</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">6</span>, <span class="st">"Office C"</span>, <span class="st">"CCJRA"</span>, <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-09"</span>, <span class="st">"partial"</span>,  <span class="st">"ongoing investigation"</span>),</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">7</span>, <span class="st">"Office A"</span>, <span class="st">"CORA"</span>,  <span class="st">"2027-01-28"</span>, <span class="st">"2027-02-04"</span>, <span class="st">"fee_hold"</span>, <span class="va">None</span>),</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">8</span>, <span class="st">"Office B"</span>, <span class="st">"CORA"</span>,  <span class="st">"2027-01-29"</span>, <span class="st">"2027-02-03"</span>, <span class="st">"partial"</span>,  <span class="st">"attorney-client privileged"</span>),</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>], columns<span class="op">=</span>cols)</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(citations.shape)</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (10, 7)</span></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>Custodians do not write exemptions in a controlled vocabulary. "Trade secret / confidential commercial info" and "trade secrets" are the same ground in different words. Normalize them into categories, but keep the original text beside the category, because the custodian's wording is the record and your category is an interpretation.</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>CATEGORY <span class="op">=</span> {</span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>    <span class="st">"trade secret"</span>: <span class="st">"trade_secret"</span>,</span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>    <span class="st">"personnel"</span>: <span class="st">"personnel"</span>,</span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>    <span class="st">"public interest"</span>: <span class="st">"ccjra_balancing"</span>,</span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>    <span class="st">"investigation"</span>: <span class="st">"investigation"</span>,</span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>    <span class="st">"attorney-client"</span>: <span class="st">"privilege"</span>,</span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> categorize(text):</span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> text.lower()</span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>    hits <span class="op">=</span> [cat <span class="cf">for</span> key, cat <span class="kw">in</span> CATEGORY.items() <span class="cf">if</span> key <span class="kw">in</span> t]</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> hits[<span class="dv">0</span>] <span class="cf">if</span> hits <span class="cf">else</span> <span class="st">"UNMAPPED"</span></span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>citations[<span class="st">"category"</span>] <span class="op">=</span> citations[<span class="st">"cited_as"</span>].<span class="bu">map</span>(categorize, na_action<span class="op">=</span><span class="st">"ignore"</span>)</span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> (citations.dropna(subset<span class="op">=</span>[<span class="st">"category"</span>])</span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>          .groupby(<span class="st">"category"</span>)</span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>          .agg(times_cited<span class="op">=</span>(<span class="st">"request_id"</span>, <span class="st">"size"</span>),</span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>               requests<span class="op">=</span>(<span class="st">"request_id"</span>, <span class="st">"nunique"</span>),</span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>               offices<span class="op">=</span>(<span class="st">"office"</span>, <span class="st">"nunique"</span>))</span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>          .sort_values(<span class="st">"times_cited"</span>, ascending<span class="op">=</span><span class="va">False</span>, kind<span class="op">=</span><span class="st">"stable"</span>))</span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(counts)</span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;                  times_cited  requests  offices</span></span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; category</span></span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; ccjra_balancing            2         2        1</span></span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; trade_secret               2         2        2</span></span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; investigation              1         1        1</span></span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; personnel                  1         1        1</span></span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; privilege                  1         1        1</span></span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a>The <span class="in">`"UNMAPPED"`</span> fallback is deliberate. A new phrasing you did not anticipate should show up loudly in the counts, not vanish into a category it does not belong to.</span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a>Next, collapse to one row per request and compute how many working days each took, measured against CORA's ten-working-day outer limit from @sec-ch-09-law. An unanswered request is measured up to an "as of" date.</span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>AS_OF <span class="op">=</span> pd.Timestamp(<span class="st">"2027-02-16"</span>)</span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a>req <span class="op">=</span> (citations.groupby(<span class="st">"request_id"</span>)</span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>       .agg(office<span class="op">=</span>(<span class="st">"office"</span>, <span class="st">"first"</span>), regime<span class="op">=</span>(<span class="st">"regime"</span>, <span class="st">"first"</span>),</span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a>            submitted<span class="op">=</span>(<span class="st">"submitted"</span>, <span class="st">"first"</span>),</span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>            responded<span class="op">=</span>(<span class="st">"responded"</span>, <span class="st">"first"</span>),</span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>            outcome<span class="op">=</span>(<span class="st">"outcome"</span>, <span class="st">"first"</span>),</span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>            exemptions<span class="op">=</span>(<span class="st">"category"</span>,</span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">lambda</span> s: <span class="st">", "</span>.join(<span class="bu">sorted</span>(s.dropna().unique()))))</span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a>       .reset_index())</span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> pd.to_datetime(req[<span class="st">"submitted"</span>]).values.astype(<span class="st">"datetime64[D]"</span>)</span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> (pd.to_datetime(req[<span class="st">"responded"</span>]).fillna(AS_OF)</span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a>       .values.astype(<span class="st">"datetime64[D]"</span>))</span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>req[<span class="st">"workdays"</span>] <span class="op">=</span> np.busday_count(start, end)</span>
+<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a>req[<span class="st">"past_clock"</span>] <span class="op">=</span> req[<span class="st">"workdays"</span>] <span class="op">&gt;</span> <span class="dv">10</span></span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(req[[<span class="st">"request_id"</span>, <span class="st">"office"</span>, <span class="st">"outcome"</span>, <span class="st">"exemptions"</span>,</span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a>           <span class="st">"workdays"</span>, <span class="st">"past_clock"</span>]].to_string(index<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;  request_id   office  outcome                     exemptions  workdays  past_clock</span></span>
+<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           1 Office A     full                                        3       False</span></span>
+<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           2 Office A  partial        personnel, trade_secret        10       False</span></span>
+<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           3 Office B  partial                   trade_secret        10       False</span></span>
+<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           4 Office B     none                                       13        True</span></span>
+<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           5 Office C   denied                ccjra_balancing         8       False</span></span>
+<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           6 Office C  partial ccjra_balancing, investigation         8       False</span></span>
+<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           7 Office A fee_hold                                        5       False</span></span>
+<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           8 Office B  partial                      privilege         3       False</span></span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a>Finally, attach a pathway to every outcome and store the three tables in SQLite, where they can be joined with the request tracker you built in @sec-ch-09-law.</span>
+<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a>PATHWAYS <span class="op">=</span> pd.DataFrame([</span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"full"</span>,     <span class="st">"none needed"</span>,                                   <span class="st">"record and archive"</span>),</span>
+<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"partial"</span>,  <span class="st">"written grounds; narrow; 14-day notice; court"</span>, <span class="st">"ask for written grounds"</span>),</span>
+<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"denied"</span>,   <span class="st">"written grounds; 14-day notice; court"</span>,         <span class="st">"ask for written grounds"</span>),</span>
+<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"none"</span>,     <span class="st">"reminder; 14-day notice; court"</span>,                <span class="st">"send reminder citing clock"</span>),</span>
+<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"fee_hold"</span>, <span class="st">"itemized estimate; narrow; ask for waiver"</span>,     <span class="st">"ask for itemized estimate"</span>),</span>
+<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a>], columns<span class="op">=</span>[<span class="st">"outcome"</span>, <span class="st">"pathway"</span>, <span class="st">"next_step"</span>])</span>
+<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> sqlite3.<span class="ex">connect</span>(<span class="st">"remedy_ledger.sqlite"</span>) <span class="im">as</span> conn:</span>
+<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a>    citations.to_sql(<span class="st">"citations"</span>, conn, if_exists<span class="op">=</span><span class="st">"replace"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a>    req.to_sql(<span class="st">"requests"</span>, conn, if_exists<span class="op">=</span><span class="st">"replace"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a>    PATHWAYS.to_sql(<span class="st">"pathways"</span>, conn, if_exists<span class="op">=</span><span class="st">"replace"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a>    ledger <span class="op">=</span> pd.read_sql(<span class="st">"""</span></span>
+<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a><span class="st">        SELECT r.request_id, r.office, r.outcome, r.past_clock, p.next_step</span></span>
+<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a><span class="st">        FROM requests r JOIN pathways p USING (outcome)</span></span>
+<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a><span class="st">        WHERE r.outcome != 'full'</span></span>
+<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a><span class="st">        ORDER BY r.past_clock DESC, r.request_id</span></span>
+<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a><span class="st">    """</span>, conn)</span>
+<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ledger.to_string(index<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;  request_id   office  outcome  past_clock                  next_step</span></span>
+<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           4 Office B     none           1 send reminder citing clock</span></span>
+<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           2 Office A  partial           0    ask for written grounds</span></span>
+<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           3 Office B  partial           0    ask for written grounds</span></span>
+<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           5 Office C   denied           0    ask for written grounds</span></span>
+<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           6 Office C  partial           0    ask for written grounds</span></span>
+<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;           7 Office A fee_hold           0  ask for itemized estimate</span></span>
+<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a>The last table is the ledger's working face: every request that did not come back whole, sorted so that the one past its statutory clock sits on top, with the next step named. Add an <span class="in">`outcome_of_escalation`</span> column wherever the archive or other public records show a requester taking a step, and the ledger becomes a record of what the remedy ladder actually delivered.</span>
+<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="The Missing Manual"}</span>
+<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a>Three choices in this tutorial look technical and are not. First, *what you count*: counting citations rather than requests makes an office that cites four grounds in one letter look four times as secretive as an office that denies outright on one. Report both, as `times_cited` and `requests` do. Second, *which clock*: the fixture applies CORA's working-day clock to every row, including the CCJRA rows. Whether the same deadlines govern criminal justice records is a question to check against the statute, not to settle by default.&lt;!-- TODO: verify CCJRA response-time requirements and how Boulder County applies them. --&gt; Third, *what "past the clock" means*: <span class="in">`np.busday_count`</span> skips weekends but not county holidays unless you pass them in. A ledger that accuses an office of lateness on the strength of a forgotten holiday has handed the office its rebuttal.</span>
+<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-175"><a href="#cb5-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-176"><a href="#cb5-176" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reading the ledger</span></span>
+<span id="cb5-177"><a href="#cb5-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-178"><a href="#cb5-178" aria-hidden="true" tabindex="-1"></a>Even a fixture this small supports a few honest sentences. Trade-secret claims appeared at two of three offices, which suggests a contracting pattern rather than one office's habit. The criminal-justice office leaned on the CCJRA balancing test, which means the remedy question there is whether the custodian articulated the balance, not whether an exemption exists. One request went unanswered past the outer limit, which is the single clearest fact in the table and the one a commissioner could act on fastest. And one request was held behind a fee estimate, which is not an exemption at all but functions like one if the requester cannot pay.</span>
+<span id="cb5-179"><a href="#cb5-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-180"><a href="#cb5-180" aria-hidden="true" tabindex="-1"></a>Notice what the ledger cannot say. It cannot tell you whether a withholding was lawful; only a court can. It cannot tell you whether eight requests represent the county's practice; they do not. What it can do is make a pattern *followable*, in Keegan's <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> word, so that the next requester, reporter, or commissioner starts from your record instead of from nothing.</span>
+<span id="cb5-181"><a href="#cb5-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-182"><a href="#cb5-182" aria-hidden="true" tabindex="-1"></a><span class="fu">## When the state is the adversary</span></span>
+<span id="cb5-183"><a href="#cb5-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-184"><a href="#cb5-184" aria-hidden="true" tabindex="-1"></a>Remedy looks different when the party you seek remedy from also controls the records. In SyRI, the Dutch coalition did not ask the ministry to fix its model. It went to court, and the remedy was structural: the system was stopped <span class="co">[</span><span class="ot">@syri2020</span><span class="co">]</span>. In the *toeslagenaffaire*, remedy arrived only after journalists and a parliamentary inquiry reconstructed what the tax authority would not explain, and it took the political form of a cabinet resignation and the slow, contested financial form of compensation <span class="co">[</span><span class="ot">@amnesty2021</span><span class="co">]</span>. Remedy can be restorative (reinstating a benefit), structural (decommissioning a tool), or financial (damages and fees), and each needs a different authority.</span>
+<span id="cb5-185"><a href="#cb5-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-186"><a href="#cb5-186" aria-hidden="true" tabindex="-1"></a>Allegheny County illustrates a different arrangement. The county has revised AFST over time and published evaluations and ethical reviews alongside it, which is closer to routine auditability than most counties attempt. But the pathways that matter most to a screened-in family run through the child-welfare process itself, and the most consequential external review, the federal civil-rights scrutiny reported in 2023, produced no public record <span class="co">[</span><span class="ot">@ho2023</span><span class="co">]</span>. Disclosure by the county is not the same as remedy for the family.</span>
+<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a><span class="fu">## What survives political change</span></span>
+<span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a>Three things distinguish oversight regimes that survive political change from those that collapse into theater. The first is **authority**: a named institution with a budget and a mandate that can demand evidence and act on it. For a county, that might be the Board of County Commissioners, a county auditor, the district attorney, or a state court. When no such authority is willing, a ledger is an artifact looking for a reader.</span>
+<span id="cb5-191"><a href="#cb5-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-192"><a href="#cb5-192" aria-hidden="true" tabindex="-1"></a>The second is **remedy** that reaches the affected. Local Law 144's core defect is that it requires disclosure of disparate impact but gives no right of action to a candidate screened out by a tool with a poor impact ratio <span class="co">[</span><span class="ot">@goodman2023</span><span class="co">]</span>. CORA's strength is the reverse: a requester who wins in court can recover attorney fees. Its weakness is that nothing sits between a custodian's denial and a lawsuit.</span>
+<span id="cb5-193"><a href="#cb5-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-194"><a href="#cb5-194" aria-hidden="true" tabindex="-1"></a>The third is **scope protection**. Regimes erode when their scope narrows and nobody defends the frame: "advisory" systems that are decisive in practice, "pilot programs" that run for a decade, records reclassified from administrative to criminal justice. @sec-ch-08-exemption treated this as the logic of exemption. A regime whose scope is a negotiated floor will be negotiated downward by the entities it constrains. A ledger maintained across terms is one of the few instruments that can show the floor moving.</span>
+<span id="cb5-195"><a href="#cb5-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
+<span id="cb5-197"><a href="#cb5-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-198"><a href="#cb5-198" aria-hidden="true" tabindex="-1"></a>**Exercise 10.1 (Guided).** Run the fixture tutorial end to end. Then add two rows of your own invention (still labeled as fixture), one of which uses a phrasing that falls through to <span class="in">`"UNMAPPED"`</span>. Fix the <span class="in">`CATEGORY`</span> map, rerun, and write two sentences on why the fallback exists.</span>
+<span id="cb5-199"><a href="#cb5-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a>**Exercise 10.2 (Piece 2 component).** Replace the fixture with the released requests you chose from Boulder County's Public Records Archive, and their comparison requests, from the tracker in @sec-ch-09-law. Record every ground exactly as the custodian wrote it, normalize it, compute clocks using the county's holiday calendar, and attach the next step a requester could take. If a request came back in full or not at all, the ledger still has rows: a full release and a silence are both outcomes. Save as <span class="in">`piece2/remedy_ledger.sqlite`</span> with a short <span class="in">`piece2/remedy_ledger.md`</span> that states, in five sentences, the pattern and its limits. This is the exemptions and remedy ledger for Piece 2.</span>
+<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a>**Exercise 10.3 (Runnable, real public data).** Your Piece 2 ledger centers on one office. Sample at least ten released requests to *other* offices from the same Public Records Archive, code each one's outcome and any grounds cited with the same schema, and run the counts. Compare the pattern with your Piece 2 ledger. What does the published archive leave out by design?</span>
+<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a>**Exercise 10.4 (Analytic).** Pick one rung of Colorado's remedy ladder and evaluate it against Keegan's three tests: accessible, protective, consequential. Use the Colorado Freedom of Information Coalition guide and at least one other source. In 500 words, name the rung's strongest and weakest dimension and one change, by statute or by county policy, that would strengthen the weakest.</span>
+<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-206"><a href="#cb5-206" aria-hidden="true" tabindex="-1"></a>**Exercise 10.5 (Open-ended).** Design an escalation pathway that Boulder County could adopt without new state law: for example, a published log of CORA denials with grounds, a response-time report to the Board, or an ombuds contact for records disputes. In 600 words, specify who maintains it, who can trigger it, what happens when it is triggered, and how you would know in two years whether it worked. This is a candidate ask for your testimony.</span>
+<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-208"><a href="#cb5-208" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking ahead</span></span>
+<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a>A remedy ledger is evidence. It becomes pressure only when someone with authority hears it. The next chapter, @sec-ch-11-testimony, closes Module 2 with the genre built for that moment: testimony before a Boulder County Board of County Commissioners hearing, delivered in a few minutes and preserved in a written statement for the record. After that, Part IV climbs to the state and to the assurance lineage, where @sec-ch-12-accounting teaches the disaggregated audit that this chapter set aside.</span>
+<span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading and Resources</span></span>
+<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-214"><a href="#cb5-214" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Keegan (2026), "Public interest data infrastructuring," especially "Authority, trust, and contestable oversight" and "Remedy justice" <span class="co">[</span><span class="ot">@keegan2026</span><span class="co">]</span>.</span>
+<span id="cb5-215"><a href="#cb5-215" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Colorado Freedom of Information Coalition, open government guide: <span class="ot">&lt;https://coloradofoic.org/open-government-guide/&gt;</span>. Deadlines, fees, and the court remedy under CORA and the CCJRA <span class="co">[</span><span class="ot">@cfoic</span><span class="co">]</span>.</span>
+<span id="cb5-216"><a href="#cb5-216" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Boulder County, Colorado Open Records Act page: <span class="ot">&lt;https://bouldercounty.gov/records/colorado-open-records-act/&gt;</span>. Links to the Open Records Center and its archive of prior releases.</span>
+<span id="cb5-217"><a href="#cb5-217" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Laura Beth Nielsen and Catherine Albiston (2006), "The organization of public interest practice" <span class="co">[</span><span class="ot">@nielsen2006</span><span class="co">]</span>. How the institutions that pursue remedy are funded and staffed.</span>
+<span id="cb5-218"><a href="#cb5-218" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>District Court of The Hague (2020), SyRI judgment, ECLI<span class="sc">:NL:</span>RBDHA<span class="sc">:2020:</span>1878, <span class="ot">&lt;https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2020:1878&gt;</span> <span class="co">[</span><span class="ot">@syri2020</span><span class="co">]</span>.</span>
+<span id="cb5-219"><a href="#cb5-219" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Amnesty International (2021), *Xenophobic Machines*, <span class="ot">&lt;https://www.amnesty.org/en/documents/eur35/4686/2021/en/&gt;</span> <span class="co">[</span><span class="ot">@amnesty2021</span><span class="co">]</span>.</span>
+<span id="cb5-220"><a href="#cb5-220" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Inioluwa Deborah Raji et al. (2020), "<span class="co">[</span><span class="ot">Closing the AI accountability gap</span><span class="co">](https://doi.org/10.1145/3351095.3372873)</span>," *Proceedings of FAT\* 2020* <span class="co">[</span><span class="ot">@raji2020</span><span class="co">]</span>.</span>
+<span id="cb5-221"><a href="#cb5-221" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Bryce Goodman and Julia Trehu, "<span class="co">[</span><span class="ot">AI audit washing and accountability</span><span class="co">](https://doi.org/10.2139/ssrn.4227350)</span>" (2023) <span class="co">[</span><span class="ot">@goodman2023</span><span class="co">]</span>.</span>
+<span id="cb5-222"><a href="#cb5-222" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>NYC Department of Consumer and Worker Protection, Local Law 144 guidance: <span class="ot">&lt;https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page&gt;</span>.</span>
+<span id="cb5-223"><a href="#cb5-223" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>C. Richard Baker (2005), "<span class="co">[</span><span class="ot">What is the meaning of 'the public interest'?</span><span class="co">](https://doi.org/10.1108/09513570510620510)</span>," *Accounting, Auditing &amp; Accountability Journal* <span class="co">[</span><span class="ot">@baker2005</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-10-oversight.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

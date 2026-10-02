@@ -8,7 +8,7 @@
 
 <meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
 
-<title>Appendix A — Appendix A: AI Assistance Disclosure – Public Interest Data Science</title>
+<title>Beyond the Portfolio – Public Interest Data Science</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -62,7 +62,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -72,8 +91,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./appendix-further.html" rel="next">
-<link href="./ch-23-limits.html" rel="prev">
+<link href="./ch-21-research-proposals.html" rel="next">
+<link href="./ch-20-public-comments.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -290,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-6-beyond-portfolio.html">Beyond the Portfolio</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -519,7 +538,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./part-6-beyond-portfolio.html" class="sidebar-item-text sidebar-link">
+            <a href="./part-6-beyond-portfolio.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Beyond the Portfolio</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -557,7 +576,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link active">
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
   </div>
 </li>
@@ -579,21 +598,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#what-was-ai-assisted" id="toc-what-was-ai-assisted" class="nav-link active" data-scroll-target="#what-was-ai-assisted"><span class="header-section-number">A.1</span> What was AI-assisted</a></li>
-  <li><a href="#what-was-not-ai-assisted" id="toc-what-was-not-ai-assisted" class="nav-link" data-scroll-target="#what-was-not-ai-assisted"><span class="header-section-number">A.2</span> What was not AI-assisted</a></li>
-  <li><a href="#how-to-verify" id="toc-how-to-verify" class="nav-link" data-scroll-target="#how-to-verify"><span class="header-section-number">A.3</span> How to verify</a></li>
-  <li><a href="#why-disclose" id="toc-why-disclose" class="nav-link" data-scroll-target="#why-disclose"><span class="header-section-number">A.4</span> Why disclose</a></li>
-  <li><a href="#versioning" id="toc-versioning" class="nav-link" data-scroll-target="#versioning"><span class="header-section-number">A.5</span> Versioning</a></li>
+  <li><a href="#course-weeks" id="toc-course-weeks" class="nav-link active" data-scroll-target="#course-weeks">Course weeks</a></li>
+  <li><a href="#the-final-project" id="toc-the-final-project" class="nav-link" data-scroll-target="#the-final-project">The final project</a></li>
+  <li><a href="#why-this-part-ends-the-book" id="toc-why-this-part-ends-the-book" class="nav-link" data-scroll-target="#why-this-part-ends-the-book">Why this part ends the book</a></li>
+  <li><a href="#roadmap" id="toc-roadmap" class="nav-link" data-scroll-target="#roadmap">Roadmap</a></li>
   </ul>
-<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/appendix-ai-disclosure.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/part-6-beyond-portfolio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Appendix A — Appendix A: AI Assistance Disclosure</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Beyond the Portfolio</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -610,36 +628,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="what-was-ai-assisted" class="level2" data-number="A.1">
-<h2 data-number="A.1" class="anchored" data-anchor-id="what-was-ai-assisted"><span class="header-section-number">A.1</span> What was AI-assisted</h2>
-<p>Draft zero of this book was produced with substantial assistance from Claude, an assistant made by Anthropic. The assistant generated first-pass prose for the original twenty-two chapters and the index, following a detailed editorial prompt written by the author. The author then reviewed, revised, and (in many places) rewrote the output. The book’s framework, chapter scope, running examples, and exercise design originate with the author. The prose does not.</p>
-<p>The 2027 restructure was also AI-assisted. Working from the author’s course design for INFO 4871/5871 (Spring 2027) and the author’s article on public interest data infrastructuring, Claude reordered the chapters into module parts, wrote the part pages, revised chapter framing, cross-references, cases, and exercises to fit the new structure, moved tutorials between chapters, and drafted the new chapter on the limits of the framework. That revision is under author review. Commits from the restructure are marked in the repository history, and new bibliography entries from it are flagged for verification.</p>
-<p>This disclosure exists because a book about public interest data science should not hide how it was made. The same principle that asks a model card to document training data asks an author to document drafting practice.</p>
+<p>The four modules are finished. You have climbed the ladder from the city to the county to the state to the federal government, and at each rung you produced one portfolio piece: an op-ed, a testimony statement, a report section, and a public comment, each paired with a technical artifact and an installed-base note. This last part is not a fifth module. It has no lineage, no level of government, and no new pressure. It asks two things instead: what would one of those pieces look like if you took it further, and where does the framework that produced all four stop working?</p>
+<section id="course-weeks" class="level2">
+<h2 class="anchored" data-anchor-id="course-weeks">Course weeks</h2>
+<p>Part VI covers <strong>Week 16</strong> and the <strong>finals period</strong>. Tuesday of Week 16 pairs the limits of the framework with a hands-on workshop: depositing to Zenodo (practicing first in the Zenodo sandbox) and minting a DOI. Thursday is the book showcase and final studio, where each student presents the chapter-scale pull request they contributed to this book: what they changed, why, and what the book still gets wrong. The final project is due at the end of the finals period.</p>
 </section>
-<section id="what-was-not-ai-assisted" class="level2" data-number="A.2">
-<h2 data-number="A.2" class="anchored" data-anchor-id="what-was-not-ai-assisted"><span class="header-section-number">A.2</span> What was not AI-assisted</h2>
-<p>The bibliography’s selection reflects the author’s reading, not the assistant’s. The running examples (Boulder and Denver municipal records, a synthetic worker-log fixture, a class-wide FOIA tracker, the regulations.gov walkthrough) are authorial choices grounded in the companion course. The “Missing Manual” and “In the Public Interest” callout convention is the author’s. The genre structure, and particularly its commitment to producing submittable artifacts, is the author’s pedagogical argument.</p>
-<p>The assistant was asked not to invent citations. Where a suggested reference could not be verified, the bibliography flags the entry for follow-up rather than recording a fabricated one. Readers who find a citation that cannot be located should open an issue.</p>
+<section id="the-final-project" class="level2">
+<h2 class="anchored" data-anchor-id="the-final-project">The final project</h2>
+<p>Choose <strong>one</strong> of your four portfolio pieces and take it further in four steps.</p>
+<ol type="1">
+<li><strong>Deepen it.</strong> Add new data, carry the analysis to a second level of government, compare it with the module’s non-US counter-case, or close the gaps you admitted in your installed-base note. A deeper piece is one whose evidence would survive a hostile reader at the body you addressed.</li>
+<li><strong>Recast it in a new genre.</strong> Rewrite the piece in a genre other than the one its module used: the state audit as a city op-ed, the county records as a state report, the federal comment as testimony. Changing genre changes the audience, the length, the ask, and what counts as evidence, so recasting is a test of whether you understood the first genre. Graduate students may instead use the <strong>research-proposal</strong> genre (<a href="ch-21-research-proposals.html" class="quarto-xref"><span>21&nbsp; Research Proposals</span></a>) and propose the larger study the piece points toward.</li>
+<li><strong>Archive it.</strong> Deposit the final technical artifact and both texts on Zenodo, or another repository that mints a <strong>DOI</strong> (<a href="ch-22-archival-deposits.html" class="quarto-xref"><span>22&nbsp; Archival Deposits</span></a>). A DOI is required. An Internet Archive item identifier does not meet the requirement, though an Internet Archive copy is a welcome mirror, and a link to a repository you maintain is not an archive.</li>
+<li><strong>Reflect on it.</strong> Write a 500-word critical-reflection memo: whose interests the work serves and whom it might harm; which affected communities were not consulted; where the framework fails for this case; and what you would do with more time (<a href="ch-23-limits.html" class="quarto-xref"><span>23&nbsp; The Limits of the Framework</span></a>). The memo goes inside the deposit, so the account of the work’s limits travels with the work.</li>
+</ol>
+<p><strong>Optional: file a new CORA request.</strong> If you deepen Piece 2, or another piece with a county or state angle, you may file a Colorado Open Records Act request for new records, with the instructor’s approval. Colorado agencies typically have three working days to respond, extendable by up to seven more, so file early enough for the records to arrive before the deadline (<a href="ch-09-law.html" class="quarto-xref"><span>9&nbsp; Law</span></a>).</p>
+<p>A submission without the reflection memo or the DOI deposit is incomplete.</p>
+<p>Graduate students in INFO 5871 have written a methods memo for every piece: at least five scholarly sources and one methodological choice defended against them. That memo is the seed of a proposal’s “gap” and “approach” sections, which is why the proposal genre is open to graduate students here and why <a href="ch-21-research-proposals.html" class="quarto-xref"><span>21&nbsp; Research Proposals</span></a> belongs in this part.</p>
 </section>
-<section id="how-to-verify" class="level2" data-number="A.3">
-<h2 data-number="A.3" class="anchored" data-anchor-id="how-to-verify"><span class="header-section-number">A.3</span> How to verify</h2>
+<section id="why-this-part-ends-the-book" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-part-ends-the-book">Why this part ends the book</h2>
+<p>Each module asked you to borrow a profession’s methods and a genre’s conventions and to aim them at a body that could act. That is the framework at work: pressures met by values, made durable by an installed base, carried by a lineage, delivered in a genre. Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> anticipates five critiques of that framework and answers each by asking for more infrastructure. This part asks you to take the critiques further than the framework’s own answers do. The book’s introduction admits it is US-centric, more comfortable with records than with refusal, and thin on labor and measurement. Part VI asks you to check whether those admissions are true of the cases the book actually uses, and whether they are true of your own work.</p>
+</section>
+<section id="roadmap" class="level2">
+<h2 class="anchored" data-anchor-id="roadmap">Roadmap</h2>
 <ul>
-<li>The prompt used to generate draft zero is preserved in the repository’s issue history under the label <code>prompt-archive</code>.</li>
-<li>Each chapter’s first commit is the AI-generated draft. Later commits include human revisions and the AI-assisted 2027 restructure; commit messages say which. Use <code>git log --follow ch-NN-slug.qmd</code> to inspect a chapter’s editorial history.</li>
-<li>Chapter-by-chapter revision notes are maintained in <code>claude.md</code> and in pull-request discussions.</li>
+<li><strong><a href="ch-21-research-proposals.html" class="quarto-xref"><span>21&nbsp; Research Proposals</span></a>, Research Proposals.</strong> The proposal as a genre for graduate final projects and as the scholarly backbone of the graduate methods memo: specific aims, budgets and justifications, data management plans, a simulated IRB protocol, and a literature matrix that keeps a methods memo honest.</li>
+<li><strong><a href="ch-22-archival-deposits.html" class="quarto-xref"><span>22&nbsp; Archival Deposits</span></a>, Archival Deposits.</strong> The required last step of the final project. Preservation formats, minting a DOI through the Zenodo REST API, preservation plans, and federated deposit with the <code>internetarchive</code> client as an optional mirror, practiced on the EPA Toxics Release Inventory and then applied to your own work.</li>
+<li><strong><a href="ch-23-limits.html" class="quarto-xref"><span>23&nbsp; The Limits of the Framework</span></a>, The Limits of the Framework.</strong> The framework turned on itself: the five anticipated critiques, seven limits they leave open, and a reflexive audit that codes the book’s own cases by region, level of government, pressure, value, and remedy. It ends with the critical-reflection memo that completes your final project, and with the close of the book.</li>
 </ul>
-</section>
-<section id="why-disclose" class="level2" data-number="A.4">
-<h2 data-number="A.4" class="anchored" data-anchor-id="why-disclose"><span class="header-section-number">A.4</span> Why disclose</h2>
-<p>Because readers deserve to know. Because other authors deciding whether to use similar tools need honest reports of what worked and what did not. Because a book that argues for documentation of automated systems must document its own use of one. And because the professional lineages this book draws on (journalism, law, accounting, planning, engineering) all insist on provenance: whose work, whose hand, whose judgment.</p>
-</section>
-<section id="versioning" class="level2" data-number="A.5">
-<h2 data-number="A.5" class="anchored" data-anchor-id="versioning"><span class="header-section-number">A.5</span> Versioning</h2>
-<p>This disclosure was last updated on the date of the most recent commit to this file. See <code>git log appendix-ai-disclosure.qmd</code> for the authoritative version history.</p>
 
 
 <!-- -->
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Under Review</em>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1109,51 +1135,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ch-23-limits.html" class="pagination-link" aria-label="The Limits of the Framework">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">The Limits of the Framework</span></span>
+      <a href="./ch-20-public-comments.html" class="pagination-link" aria-label="Public Comments">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Public Comments</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./appendix-further.html" class="pagination-link" aria-label="Appendix B: Further Resources">
-        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ch-21-research-proposals.html" class="pagination-link" aria-label="Research Proposals">
+        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Research Proposals</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Appendix A: AI Assistance Disclosure"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Beyond the Portfolio</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>The four modules are finished. You have climbed the ladder from the city to the county to the state to the federal government, and at each rung you produced one portfolio piece: an op-ed, a testimony statement, a report section, and a public comment, each paired with a technical artifact and an installed-base note. This last part is not a fifth module. It has no lineage, no level of government, and no new pressure. It asks two things instead: what would one of those pieces look like if you took it further, and where does the framework that produced all four stop working?</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## What was AI-assisted</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Course weeks</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Draft zero of this book was produced with substantial assistance from Claude, an assistant made by Anthropic. The assistant generated first-pass prose for the original twenty-two chapters and the index, following a detailed editorial prompt written by the author. The author then reviewed, revised, and (in many places) rewrote the output. The book's framework, chapter scope, running examples, and exercise design originate with the author. The prose does not.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Part VI covers **Week 16** and the **finals period**. Tuesday of Week 16 pairs the limits of the framework with a hands-on workshop: depositing to Zenodo (practicing first in the Zenodo sandbox) and minting a DOI. Thursday is the book showcase and final studio, where each student presents the chapter-scale pull request they contributed to this book: what they changed, why, and what the book still gets wrong. The final project is due at the end of the finals period.</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>The 2027 restructure was also AI-assisted. Working from the author's course design for INFO 4871/5871 (Spring 2027) and the author's article on public interest data infrastructuring, Claude reordered the chapters into module parts, wrote the part pages, revised chapter framing, cross-references, cases, and exercises to fit the new structure, moved tutorials between chapters, and drafted the new chapter on the limits of the framework. That revision is under author review. Commits from the restructure are marked in the repository history, and new bibliography entries from it are flagged for verification.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## The final project</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>This disclosure exists because a book about public interest data science should not hide how it was made. The same principle that asks a model card to document training data asks an author to document drafting practice.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Choose **one** of your four portfolio pieces and take it further in four steps.</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## What was not AI-assisted</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>The bibliography's selection reflects the author's reading, not the assistant's. The running examples (Boulder and Denver municipal records, a synthetic worker-log fixture, a class-wide FOIA tracker, the regulations.gov walkthrough) are authorial choices grounded in the companion course. The "Missing Manual" and "In the Public Interest" callout convention is the author's. The genre structure, and particularly its commitment to producing submittable artifacts, is the author's pedagogical argument.</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>The assistant was asked not to invent citations. Where a suggested reference could not be verified, the bibliography flags the entry for follow-up rather than recording a fabricated one. Readers who find a citation that cannot be located should open an issue.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to verify</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The prompt used to generate draft zero is preserved in the repository's issue history under the label <span class="in">`prompt-archive`</span>.</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Each chapter's first commit is the AI-generated draft. Later commits include human revisions and the AI-assisted 2027 restructure; commit messages say which. Use <span class="in">`git log --follow ch-NN-slug.qmd`</span> to inspect a chapter's editorial history.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Chapter-by-chapter revision notes are maintained in <span class="in">`claude.md`</span> and in pull-request discussions.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why disclose</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Because readers deserve to know. Because other authors deciding whether to use similar tools need honest reports of what worked and what did not. Because a book that argues for documentation of automated systems must document its own use of one. And because the professional lineages this book draws on (journalism, law, accounting, planning, engineering) all insist on provenance: whose work, whose hand, whose judgment.</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Versioning</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>This disclosure was last updated on the date of the most recent commit to this file. See <span class="in">`git log appendix-ai-disclosure.qmd`</span> for the authoritative version history.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Deepen it.** Add new data, carry the analysis to a second level of government, compare it with the module's non-US counter-case, or close the gaps you admitted in your installed-base note. A deeper piece is one whose evidence would survive a hostile reader at the body you addressed.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Recast it in a new genre.** Rewrite the piece in a genre other than the one its module used: the state audit as a city op-ed, the county records as a state report, the federal comment as testimony. Changing genre changes the audience, the length, the ask, and what counts as evidence, so recasting is a test of whether you understood the first genre. Graduate students may instead use the **research-proposal** genre (@sec-ch-21-research-proposals) and propose the larger study the piece points toward.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Archive it.** Deposit the final technical artifact and both texts on Zenodo, or another repository that mints a **DOI** (@sec-ch-22-archival-deposits). A DOI is required. An Internet Archive item identifier does not meet the requirement, though an Internet Archive copy is a welcome mirror, and a link to a repository you maintain is not an archive.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Reflect on it.** Write a 500-word critical-reflection memo: whose interests the work serves and whom it might harm; which affected communities were not consulted; where the framework fails for this case; and what you would do with more time (@sec-ch-23-limits). The memo goes inside the deposit, so the account of the work's limits travels with the work.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>**Optional: file a new CORA request.** If you deepen Piece 2, or another piece with a county or state angle, you may file a Colorado Open Records Act request for new records, with the instructor's approval. Colorado agencies typically have three working days to respond, extendable by up to seven more, so file early enough for the records to arrive before the deadline (@sec-ch-09-law).</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>A submission without the reflection memo or the DOI deposit is incomplete.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Graduate students in INFO 5871 have written a methods memo for every piece: at least five scholarly sources and one methodological choice defended against them. That memo is the seed of a proposal's "gap" and "approach" sections, which is why the proposal genre is open to graduate students here and why @sec-ch-21-research-proposals belongs in this part.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why this part ends the book</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Each module asked you to borrow a profession's methods and a genre's conventions and to aim them at a body that could act. That is the framework at work: pressures met by values, made durable by an installed base, carried by a lineage, delivered in a genre. Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> anticipates five critiques of that framework and answers each by asking for more infrastructure. This part asks you to take the critiques further than the framework's own answers do. The book's introduction admits it is US-centric, more comfortable with records than with refusal, and thin on labor and measurement. Part VI asks you to check whether those admissions are true of the cases the book actually uses, and whether they are true of your own work.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Roadmap</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**@sec-ch-21-research-proposals, Research Proposals.** The proposal as a genre for graduate final projects and as the scholarly backbone of the graduate methods memo: specific aims, budgets and justifications, data management plans, a simulated IRB protocol, and a literature matrix that keeps a methods memo honest.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**@sec-ch-22-archival-deposits, Archival Deposits.** The required last step of the final project. Preservation formats, minting a DOI through the Zenodo REST API, preservation plans, and federated deposit with the <span class="in">`internetarchive`</span> client as an optional mirror, practiced on the EPA Toxics Release Inventory and then applied to your own work.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**@sec-ch-23-limits, The Limits of the Framework.** The framework turned on itself: the five anticipated critiques, seven limits they leave open, and a reflexive audit that codes the book's own cases by region, level of government, pressure, value, and remedy. It ends with the critical-reflection memo that completes your final project, and with the close of the book.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/appendix-ai-disclosure.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/part-6-beyond-portfolio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

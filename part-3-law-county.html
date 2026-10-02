@@ -8,7 +8,7 @@
 
 <meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
 
-<title>Appendix A — Appendix A: AI Assistance Disclosure – Public Interest Data Science</title>
+<title>Law: The County – Public Interest Data Science</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -62,7 +62,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -72,8 +91,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./appendix-further.html" rel="next">
-<link href="./ch-23-limits.html" rel="prev">
+<link href="./ch-08-exemption.html" rel="next">
+<link href="./ch-07-op-eds.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -290,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-3-law-county.html">Law: The County</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -408,7 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./part-3-law-county.html" class="sidebar-item-text sidebar-link">
+            <a href="./part-3-law-county.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Law: The County</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -557,7 +576,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link active">
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
   </div>
 </li>
@@ -579,21 +598,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#what-was-ai-assisted" id="toc-what-was-ai-assisted" class="nav-link active" data-scroll-target="#what-was-ai-assisted"><span class="header-section-number">A.1</span> What was AI-assisted</a></li>
-  <li><a href="#what-was-not-ai-assisted" id="toc-what-was-not-ai-assisted" class="nav-link" data-scroll-target="#what-was-not-ai-assisted"><span class="header-section-number">A.2</span> What was not AI-assisted</a></li>
-  <li><a href="#how-to-verify" id="toc-how-to-verify" class="nav-link" data-scroll-target="#how-to-verify"><span class="header-section-number">A.3</span> How to verify</a></li>
-  <li><a href="#why-disclose" id="toc-why-disclose" class="nav-link" data-scroll-target="#why-disclose"><span class="header-section-number">A.4</span> Why disclose</a></li>
-  <li><a href="#versioning" id="toc-versioning" class="nav-link" data-scroll-target="#versioning"><span class="header-section-number">A.5</span> Versioning</a></li>
+  <li><a href="#pressure-and-value" id="toc-pressure-and-value" class="nav-link active" data-scroll-target="#pressure-and-value">Pressure and value</a></li>
+  <li><a href="#lineage-and-genre" id="toc-lineage-and-genre" class="nav-link" data-scroll-target="#lineage-and-genre">Lineage and genre</a></li>
+  <li><a href="#cases" id="toc-cases" class="nav-link" data-scroll-target="#cases">Cases</a></li>
+  <li><a href="#portfolio-piece" id="toc-portfolio-piece" class="nav-link" data-scroll-target="#portfolio-piece">Portfolio piece</a></li>
+  <li><a href="#weeks" id="toc-weeks" class="nav-link" data-scroll-target="#weeks">Weeks</a></li>
+  <li><a href="#roadmap" id="toc-roadmap" class="nav-link" data-scroll-target="#roadmap">Roadmap</a></li>
   </ul>
-<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/appendix-ai-disclosure.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/part-3-law-county.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Appendix A — Appendix A: AI Assistance Disclosure</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Law: The County</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -610,36 +630,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="what-was-ai-assisted" class="level2" data-number="A.1">
-<h2 data-number="A.1" class="anchored" data-anchor-id="what-was-ai-assisted"><span class="header-section-number">A.1</span> What was AI-assisted</h2>
-<p>Draft zero of this book was produced with substantial assistance from Claude, an assistant made by Anthropic. The assistant generated first-pass prose for the original twenty-two chapters and the index, following a detailed editorial prompt written by the author. The author then reviewed, revised, and (in many places) rewrote the output. The book’s framework, chapter scope, running examples, and exercise design originate with the author. The prose does not.</p>
-<p>The 2027 restructure was also AI-assisted. Working from the author’s course design for INFO 4871/5871 (Spring 2027) and the author’s article on public interest data infrastructuring, Claude reordered the chapters into module parts, wrote the part pages, revised chapter framing, cross-references, cases, and exercises to fit the new structure, moved tutorials between chapters, and drafted the new chapter on the limits of the framework. That revision is under author review. Commits from the restructure are marked in the repository history, and new bibliography entries from it are flagged for verification.</p>
-<p>This disclosure exists because a book about public interest data science should not hide how it was made. The same principle that asks a model card to document training data asks an author to document drafting practice.</p>
+<p>Part III is the course’s second module. It covers course weeks 6 through 8 and climbs one rung up the ladder of government, from the city of Part II to the <strong>county</strong>. Counties are easy to overlook and hard to avoid. They run jails and sheriff’s offices, assess property, administer elections, keep land records, and in Colorado, which is one of a handful of states where child welfare is state-supervised but county-administered, they deliver many of the human services that touch residents at their most vulnerable. Boulder County’s 2026 budget resolution spreads $745,186,611 across twenty-three funds <span class="citation" data-cites="bouldercounty_res2025058">(<a href="#ref-bouldercounty_res2025058" role="doc-biblioref">Board of County Commissioners of Boulder County 2025</a>)</span>, yet counties draw far less press attention than city councils or legislatures.</p>
+<section id="pressure-and-value" class="level2">
+<h2 class="anchored" data-anchor-id="pressure-and-value">Pressure and value</h2>
+<p>The pressure in this module is <strong>exemption</strong>: the absence, weakness, or non-enforcement of duties that would require an institution to disclose, explain, and repair what its systems do <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">Keegan 2026</a>)</span>. Exemption takes legal forms (trade-secret claims, statutory carve-outs, computer-crime law) and practical ones (fragmented records, slow responses, fees, and scans no one can search). The value that answers it is <strong>oversight</strong>, understood in this module as <em>rights, duties, and remedy</em>: a right to ask, a duty to answer, and a pathway that leads somewhere when the answer is no.</p>
 </section>
-<section id="what-was-not-ai-assisted" class="level2" data-number="A.2">
-<h2 data-number="A.2" class="anchored" data-anchor-id="what-was-not-ai-assisted"><span class="header-section-number">A.2</span> What was not AI-assisted</h2>
-<p>The bibliography’s selection reflects the author’s reading, not the assistant’s. The running examples (Boulder and Denver municipal records, a synthetic worker-log fixture, a class-wide FOIA tracker, the regulations.gov walkthrough) are authorial choices grounded in the companion course. The “Missing Manual” and “In the Public Interest” callout convention is the author’s. The genre structure, and particularly its commitment to producing submittable artifacts, is the author’s pedagogical argument.</p>
-<p>The assistant was asked not to invent citations. Where a suggested reference could not be verified, the bibliography flags the entry for follow-up rather than recording a fabricated one. Readers who find a citation that cannot be located should open an issue.</p>
+<section id="lineage-and-genre" class="level2">
+<h2 class="anchored" data-anchor-id="lineage-and-genre">Lineage and genre</h2>
+<p>The lineage is <strong>law</strong>, and in particular public interest lawyering: the tradition of cause lawyering, legal aid, and strategic litigation that turned formal rights into institutions people could actually use. Law lends this module statutes that start clocks, written grounds for denial, and courts that can order disclosure. The genre is <strong>testimony</strong>, the form in which evidence reaches a governing body in public and enters its record.</p>
 </section>
-<section id="how-to-verify" class="level2" data-number="A.3">
-<h2 data-number="A.3" class="anchored" data-anchor-id="how-to-verify"><span class="header-section-number">A.3</span> How to verify</h2>
+<section id="cases" class="level2">
+<h2 class="anchored" data-anchor-id="cases">Cases</h2>
 <ul>
-<li>The prompt used to generate draft zero is preserved in the repository’s issue history under the label <code>prompt-archive</code>.</li>
-<li>Each chapter’s first commit is the AI-generated draft. Later commits include human revisions and the AI-assisted 2027 restructure; commit messages say which. Use <code>git log --follow ch-NN-slug.qmd</code> to inspect a chapter’s editorial history.</li>
-<li>Chapter-by-chapter revision notes are maintained in <code>claude.md</code> and in pull-request discussions.</li>
+<li><strong>National anchors.</strong> <em>Sandvig v. Barr</em> and the Computer Fraud and Abuse Act, a federal case that narrowed the legal risk of independently auditing online platforms <span class="citation" data-cites="aclu2019">(<a href="#ref-aclu2019" role="doc-biblioref">American Civil Liberties Union 2019</a>)</span>; and the Allegheny Family Screening Tool, a risk-scoring system used by a Pennsylvania county’s child-welfare hotline since 2016, and a model for tools in other counties, including one in Colorado <span class="citation" data-cites="ho2023">(<a href="#ref-ho2023" role="doc-biblioref">Ho and Burke 2023</a>)</span>.</li>
+<li><strong>Non-US counter-case.</strong> <em>NJCM v. the Netherlands</em>, in which a Dutch court held in 2020 that the legislation behind the SyRI welfare-fraud system violated Article 8 of the European Convention on Human Rights <span class="citation" data-cites="syri2020">(<a href="#ref-syri2020" role="doc-biblioref">District Court of The Hague 2020</a>)</span>.</li>
+<li><strong>Local case.</strong> Records that <strong>Boulder County</strong> has already released under the Colorado Open Records Act (CORA), as posted in the <strong>Public Records Archive</strong> of the county’s Open Records Center (<a href="https://bouldercountyco.govqa.us/WEBAPP/_rs/supporthome.aspx" class="uri">https://bouldercountyco.govqa.us/WEBAPP/_rs/supporthome.aspx</a>). You do not file new requests in this module. Each student chooses one or more requests that someone else already filed and the county already answered, and works with the released records. The archive’s request and response metadata (the office, the dates requested and closed, the outcome, redactions, exemptions cited, and fees) is data in its own right, so a request answered late, partly, or not at all is evidence too. The county’s other public records (Board of County Commissioners agendas, minutes, and packets, and budget documents) can supplement the archive. Filing a new CORA request is an optional final-project activity, with the instructor’s approval. This is the county end of Keegan’s <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> Case 1, “Mining municipal archives”: records formally public but practically opaque.</li>
 </ul>
 </section>
-<section id="why-disclose" class="level2" data-number="A.4">
-<h2 data-number="A.4" class="anchored" data-anchor-id="why-disclose"><span class="header-section-number">A.4</span> Why disclose</h2>
-<p>Because readers deserve to know. Because other authors deciding whether to use similar tools need honest reports of what worked and what did not. Because a book that argues for documentation of automated systems must document its own use of one. And because the professional lineages this book draws on (journalism, law, accounting, planning, engineering) all insist on provenance: whose work, whose hand, whose judgment.</p>
+<section id="portfolio-piece" class="level2">
+<h2 class="anchored" data-anchor-id="portfolio-piece">Portfolio piece</h2>
+<p>Module 2 ends in <strong>Piece 2: Law / County / Testimony</strong>, due Friday, February 26, 2027. You submit:</p>
+<ol type="1">
+<li>a <strong>technical artifact</strong>: tracker entries for the released request(s) you chose from Boulder County’s Public Records Archive; an extraction notebook that turns the released records into a table; and an exemptions and remedy ledger;</li>
+<li>a <strong>public text</strong>: written testimony (about 1,000 words) and a timed oral statement (recorded, 3–5 minutes) for a Boulder County Board of County Commissioners hearing;</li>
+<li>an <strong>installed-base note</strong> of about 300 words on the pressure you met, the elements you built and those still missing, with provenance, license, and an AI-use disclosure; and</li>
+<li>for INFO 5871 students, a <strong>graduate methods memo</strong> of 750–1,000 words.</li>
+</ol>
 </section>
-<section id="versioning" class="level2" data-number="A.5">
-<h2 data-number="A.5" class="anchored" data-anchor-id="versioning"><span class="header-section-number">A.5</span> Versioning</h2>
-<p>This disclosure was last updated on the date of the most recent commit to this file. See <code>git log appendix-ai-disclosure.qmd</code> for the authoritative version history.</p>
+<section id="weeks" class="level2">
+<h2 class="anchored" data-anchor-id="weeks">Weeks</h2>
+<ul>
+<li><strong>Week 6.</strong> Exemption and the law lineage. Lab: the records tracker and the evidence ledger.</li>
+<li><strong>Week 7.</strong> Oversight as remedy. Lab: from released PDFs to a table, and the exemptions and remedy ledger.</li>
+<li><strong>Week 8.</strong> Testimony, and the studio for Piece 2. The Thursday of Week 8 is the Midsemester Reading Day, so use it to finish the piece.</li>
+</ul>
+</section>
+<section id="roadmap" class="level2">
+<h2 class="anchored" data-anchor-id="roadmap">Roadmap</h2>
+<p><a href="ch-08-exemption.html" class="quarto-xref"><span>8&nbsp; Exemption: Who Must Answer?</span></a> names the pressure: an evidence ledger for the Allegheny Family Screening Tool, read against SyRI, that turns gaps into candidate records requests.</p>
+<p><a href="ch-09-law.html" class="quarto-xref"><span>9&nbsp; Law</span></a> introduces the lineage: public interest lawyering, FOIA and CORA, the CFAA and <em>Sandvig</em>, a CORA tracker in SQLite populated from the county’s Public Records Archive, how to draft (and critically read) a request letter, and an extraction notebook that turns a county budget resolution into a checked table.</p>
+<p><a href="ch-10-oversight.html" class="quarto-xref"><span>10&nbsp; Oversight</span></a> develops the value: routine auditability versus episodic audits, escalation pathways tested for accessibility and consequence, and an exemptions and remedy ledger built from released requests in the county’s Public Records Archive.</p>
+<p><a href="ch-11-testimony.html" class="quarto-xref"><span>11&nbsp; Testimony</span></a> closes with the genre: a timed oral statement and a written statement for a Board of County Commissioners hearing, and Piece 2.</p>
 
 
 <!-- -->
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-aclu2019" class="csl-entry" role="listitem">
+American Civil Liberties Union. 2019. <em><span class="nocase">Sandvig v. Barr</span>: Researchers’ Right to Investigate Algorithmic Discrimination</em>. ACLU. <a href="https://www.aclu.org/cases/sandvig-v-barr-challenge-cfaa-prohibition-uncovering-racial-discrimination-online">https://www.aclu.org/cases/sandvig-v-barr-challenge-cfaa-prohibition-uncovering-racial-discrimination-online</a>.
+</div>
+<div id="ref-bouldercounty_res2025058" class="csl-entry" role="listitem">
+Board of County Commissioners of Boulder County. 2025. <em>Resolution 2025-058: A Resolution Summarizing Expenditures and Revenues for Each Fund Adopting a Budget for the County of Boulder, Colorado, for the Calendar Year Beginning the First Day of January 2026</em>. Boulder County, Colorado. <a href="https://assets.bouldercounty.gov/wp-content/uploads/2026/01/resolution-2025-058-summarizing-expenditures-and-revenues-for-each-fund.pdf">https://assets.bouldercounty.gov/wp-content/uploads/2026/01/resolution-2025-058-summarizing-expenditures-and-revenues-for-each-fund.pdf</a>.
+</div>
+<div id="ref-syri2020" class="csl-entry" role="listitem">
+District Court of The Hague. 2020. <em><span class="nocase">NJCM et al. v. The State of the Netherlands</span> (SyRI Judgment), ECLI:NL:RBDHA:2020:1878</em>. Rechtspraak.nl. <a href="https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2020:1878">https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2020:1878</a>.
+</div>
+<div id="ref-ho2023" class="csl-entry" role="listitem">
+Ho, Sally, and Garance Burke. 2023. <em>Child Welfare Algorithm Faces <span>Justice Department</span> Scrutiny</em>. Associated Press, republished by WESA. <a href="https://www.wesa.fm/politics-government/2023-01-31/child-welfare-algorithm-used-by-allegheny-county-dhs-faces-justice-department-scrutiny">https://www.wesa.fm/politics-government/2023-01-31/child-welfare-algorithm-used-by-allegheny-county-dhs-faces-justice-department-scrutiny</a>.
+</div>
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Under Review</em>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1109,51 +1161,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ch-23-limits.html" class="pagination-link" aria-label="The Limits of the Framework">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">The Limits of the Framework</span></span>
+      <a href="./ch-07-op-eds.html" class="pagination-link" aria-label="Op-Eds">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Op-Eds</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./appendix-further.html" class="pagination-link" aria-label="Appendix B: Further Resources">
-        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ch-08-exemption.html" class="pagination-link" aria-label="Exemption: Who Must Answer?">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Appendix A: AI Assistance Disclosure"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Law: The County</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Part III is the course's second module. It covers course weeks 6 through 8 and climbs one rung up the ladder of government, from the city of Part II to the **county**. Counties are easy to overlook and hard to avoid. They run jails and sheriff's offices, assess property, administer elections, keep land records, and in Colorado, which is one of a handful of states where child welfare is state-supervised but county-administered, they deliver many of the human services that touch residents at their most vulnerable. Boulder County's 2026 budget resolution spreads $745,186,611 across twenty-three funds <span class="co">[</span><span class="ot">@bouldercounty_res2025058</span><span class="co">]</span>, yet counties draw far less press attention than city councils or legislatures.</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## What was AI-assisted</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Pressure and value</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Draft zero of this book was produced with substantial assistance from Claude, an assistant made by Anthropic. The assistant generated first-pass prose for the original twenty-two chapters and the index, following a detailed editorial prompt written by the author. The author then reviewed, revised, and (in many places) rewrote the output. The book's framework, chapter scope, running examples, and exercise design originate with the author. The prose does not.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>The pressure in this module is **exemption**: the absence, weakness, or non-enforcement of duties that would require an institution to disclose, explain, and repair what its systems do [@keegan2026]. Exemption takes legal forms (trade-secret claims, statutory carve-outs, computer-crime law) and practical ones (fragmented records, slow responses, fees, and scans no one can search). The value that answers it is **oversight**, understood in this module as *rights, duties, and remedy*: a right to ask, a duty to answer, and a pathway that leads somewhere when the answer is no.</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>The 2027 restructure was also AI-assisted. Working from the author's course design for INFO 4871/5871 (Spring 2027) and the author's article on public interest data infrastructuring, Claude reordered the chapters into module parts, wrote the part pages, revised chapter framing, cross-references, cases, and exercises to fit the new structure, moved tutorials between chapters, and drafted the new chapter on the limits of the framework. That revision is under author review. Commits from the restructure are marked in the repository history, and new bibliography entries from it are flagged for verification.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lineage and genre</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>This disclosure exists because a book about public interest data science should not hide how it was made. The same principle that asks a model card to document training data asks an author to document drafting practice.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>The lineage is **law**, and in particular public interest lawyering: the tradition of cause lawyering, legal aid, and strategic litigation that turned formal rights into institutions people could actually use. Law lends this module statutes that start clocks, written grounds for denial, and courts that can order disclosure. The genre is **testimony**, the form in which evidence reaches a governing body in public and enters its record.</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## What was not AI-assisted</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cases</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>The bibliography's selection reflects the author's reading, not the assistant's. The running examples (Boulder and Denver municipal records, a synthetic worker-log fixture, a class-wide FOIA tracker, the regulations.gov walkthrough) are authorial choices grounded in the companion course. The "Missing Manual" and "In the Public Interest" callout convention is the author's. The genre structure, and particularly its commitment to producing submittable artifacts, is the author's pedagogical argument.</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>The assistant was asked not to invent citations. Where a suggested reference could not be verified, the bibliography flags the entry for follow-up rather than recording a fabricated one. Readers who find a citation that cannot be located should open an issue.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**National anchors.** *Sandvig v. Barr* and the Computer Fraud and Abuse Act, a federal case that narrowed the legal risk of independently auditing online platforms <span class="co">[</span><span class="ot">@aclu2019</span><span class="co">]</span>; and the Allegheny Family Screening Tool, a risk-scoring system used by a Pennsylvania county's child-welfare hotline since 2016, and a model for tools in other counties, including one in Colorado <span class="co">[</span><span class="ot">@ho2023</span><span class="co">]</span>.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Non-US counter-case.** *NJCM v. the Netherlands*, in which a Dutch court held in 2020 that the legislation behind the SyRI welfare-fraud system violated Article 8 of the European Convention on Human Rights <span class="co">[</span><span class="ot">@syri2020</span><span class="co">]</span>.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Local case.** Records that **Boulder County** has already released under the Colorado Open Records Act (CORA), as posted in the **Public Records Archive** of the county's Open Records Center (<span class="ot">&lt;https://bouldercountyco.govqa.us/WEBAPP/_rs/supporthome.aspx&gt;</span>). You do not file new requests in this module. Each student chooses one or more requests that someone else already filed and the county already answered, and works with the released records. The archive's request and response metadata (the office, the dates requested and closed, the outcome, redactions, exemptions cited, and fees) is data in its own right, so a request answered late, partly, or not at all is evidence too. The county's other public records (Board of County Commissioners agendas, minutes, and packets, and budget documents) can supplement the archive. Filing a new CORA request is an optional final-project activity, with the instructor's approval. This is the county end of Keegan's <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> Case 1, "Mining municipal archives": records formally public but practically opaque.</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to verify</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Portfolio piece</span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The prompt used to generate draft zero is preserved in the repository's issue history under the label <span class="in">`prompt-archive`</span>.</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Each chapter's first commit is the AI-generated draft. Later commits include human revisions and the AI-assisted 2027 restructure; commit messages say which. Use <span class="in">`git log --follow ch-NN-slug.qmd`</span> to inspect a chapter's editorial history.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Chapter-by-chapter revision notes are maintained in <span class="in">`claude.md`</span> and in pull-request discussions.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why disclose</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Because readers deserve to know. Because other authors deciding whether to use similar tools need honest reports of what worked and what did not. Because a book that argues for documentation of automated systems must document its own use of one. And because the professional lineages this book draws on (journalism, law, accounting, planning, engineering) all insist on provenance: whose work, whose hand, whose judgment.</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Versioning</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>This disclosure was last updated on the date of the most recent commit to this file. See <span class="in">`git log appendix-ai-disclosure.qmd`</span> for the authoritative version history.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Module 2 ends in **Piece 2: Law / County / Testimony**, due Friday, February 26, 2027. You submit:</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>a **technical artifact**: tracker entries for the released request(s) you chose from Boulder County's Public Records Archive; an extraction notebook that turns the released records into a table; and an exemptions and remedy ledger;</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>a **public text**: written testimony (about 1,000 words) and a timed oral statement (recorded, 3–5 minutes) for a Boulder County Board of County Commissioners hearing;</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>an **installed-base note** of about 300 words on the pressure you met, the elements you built and those still missing, with provenance, license, and an AI-use disclosure; and</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>for INFO 5871 students, a **graduate methods memo** of 750–1,000 words.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Weeks</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Week 6.** Exemption and the law lineage. Lab: the records tracker and the evidence ledger.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Week 7.** Oversight as remedy. Lab: from released PDFs to a table, and the exemptions and remedy ledger.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Week 8.** Testimony, and the studio for Piece 2. The Thursday of Week 8 is the Midsemester Reading Day, so use it to finish the piece.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Roadmap</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>@sec-ch-08-exemption names the pressure: an evidence ledger for the Allegheny Family Screening Tool, read against SyRI, that turns gaps into candidate records requests.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>@sec-ch-09-law introduces the lineage: public interest lawyering, FOIA and CORA, the CFAA and *Sandvig*, a CORA tracker in SQLite populated from the county's Public Records Archive, how to draft (and critically read) a request letter, and an extraction notebook that turns a county budget resolution into a checked table.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>@sec-ch-10-oversight develops the value: routine auditability versus episodic audits, escalation pathways tested for accessibility and consequence, and an exemptions and remedy ledger built from released requests in the county's Public Records Archive.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>@sec-ch-11-testimony closes with the genre: a timed oral statement and a written statement for a Board of County Commissioners hearing, and Piece 2.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/appendix-ai-disclosure.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/part-3-law-county.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
