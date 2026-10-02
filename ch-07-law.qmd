@@ -3,9 +3,9 @@ execute:
   eval: false
 ---
 
-# Law {#sec-ch-09-law}
+# Law {#sec-ch-07-law}
 
-The evidence ledger you built in @sec-ch-08-exemption ends in a list of things a county has not told you. A ledger cannot make anyone answer. A statute can. With a public-records law behind you, you write a different kind of letter: one that cites a section of code, starts a statutory clock, and preserves the right to go to court. The letter is still a request. What makes it work is the legal infrastructure behind it.
+The evidence ledger you built in @sec-ch-04-exemption-oversight ends in a list of things a county has not told you. A ledger cannot make anyone answer. A statute can. With a public-records law behind you, you write a different kind of letter: one that cites a section of code, starts a statutory clock, and preserves the right to go to court. The letter is still a request. What makes it work is the legal infrastructure behind it.
 
 This chapter treats law as a lineage, not because data scientists should become lawyers, but because few professions have thought harder about pursuing the public interest under adversarial conditions. Keegan [-@keegan2026] describes public interest law as the lineage that "translates values into enforceable procedures": rights to access, duties to disclose, standards of review, and remedies. You will read two law and society scholars on what public interest lawyering is, learn the statutory geometry of FOIA and the Colorado Open Records Act (CORA), and sit with the fact that the same infrastructure that enables accountability work can be turned against the people it is supposed to serve.
 
@@ -21,13 +21,13 @@ In data science, a few civil-society organizations work at the policy tier; a mu
 
 ## FOIA, CORA, and the statutory geometry
 
-The federal Freedom of Information Act, enacted in 1966 and amended several times since, establishes a presumption that records of federal executive agencies are public unless they fall within nine enumerated exemptions [@foia_552]. @sec-ch-08-exemption introduced the exemption list as a topology of what government may decline to answer. FOIA does not reach counties. For that you need state law.
+The federal Freedom of Information Act, enacted in 1966 and amended several times since, establishes a presumption that records of federal executive agencies are public unless they fall within nine enumerated exemptions [@foia_552]. @sec-ch-04-exemption-oversight introduced the exemption list as a topology of what government may decline to answer. FOIA does not reach counties. For that you need state law.
 
 Every state has a parallel statute. Colorado's is CORA, C.R.S. § 24-72-201 et seq. [@cora_statute]. Its geometry differs from FOIA's in ways that matter for a county request:
 
 - **The clock is short.** A custodian must make records available within three working days, extendable by up to seven more working days if the custodian gives written notice of extenuating circumstances [@cfoic].
 - **Fees are capped but real.** CORA allows a capped hourly research-and-retrieval fee, with the first hour free, plus copying costs. Fee waivers are discretionary, not a right. <!-- TODO: verify the current hourly cap and Boulder County's posted fee policy before the term; do not quote a dollar figure in class materials until checked. -->
-- **There is no administrative appeal.** If a request is denied, the path runs through written notice of intent to sue and then district court, with attorney fees available to a prevailing requester [@cfoic]. @sec-ch-10-oversight builds that pathway into a ledger.
+- **There is no administrative appeal.** If a request is denied, the path runs through written notice of intent to sue and then district court, with attorney fees available to a prevailing requester [@cfoic]. @sec-ch-04-exemption-oversight builds that pathway into a ledger.
 - **Criminal justice records follow a separate law.** The Colorado Criminal Justice Records Act (CCJRA) lets a custodian withhold records if disclosure would be "contrary to the public interest," a balancing test the custodian applies and must articulate. Boulder County routes requests for Sheriff's Office records through a separate records page rather than its general CORA portal.
 
 That last point shapes how you write. A request asking for "all emails from the Sheriff mentioning license plate readers" invites the custodian to classify everything as criminal justice records and apply the CCJRA balancing test. The same request phrased as "administrative records concerning the procurement and contracting of automated license plate reader technology, including contracts, invoices, and vendor correspondence" names administrative categories and makes that classification harder to justify.
@@ -46,15 +46,15 @@ The chilling effect *Sandvig* addressed is an infrastructure problem. A statute 
 
 ## SyRI, discovery, and weaponization
 
-@sec-ch-08-exemption introduced SyRI as a case of the state as adversary. Return to it here as a *litigation strategy*. The coalition (NJCM with welfare-rights organizations and individual plaintiffs) built its suit around Article 8 of the European Convention on Human Rights, and in February 2020 the District Court of The Hague held the SyRI legislation incompatible with it [@syri2020]. In Albiston and Nielsen's vocabulary, this was cause lawyering at its most strategic. The ruling did not end algorithmic welfare surveillance in the Netherlands. It set a precedent the next system had to work around, which is what a win looks like here.
+@sec-ch-04-exemption-oversight introduced SyRI as a case of the state as adversary. Return to it here as a *litigation strategy*. The coalition (NJCM with welfare-rights organizations and individual plaintiffs) built its suit around Article 8 of the European Convention on Human Rights, and in February 2020 the District Court of The Hague held the SyRI legislation incompatible with it [@syri2020]. In Albiston and Nielsen's vocabulary, this was cause lawyering at its most strategic. The ruling did not end algorithmic welfare surveillance in the Netherlands. It set a precedent the next system had to work around, which is what a win looks like here.
 
-Legal discovery is a linkability mechanism that accountability writing often misses. A civil suit compels internal records no request would dislodge and puts witnesses under oath, but discovery material usually sits under a protective order: usable in the case, not releasable without the court's permission. @sec-ch-19-critical-data-studies-refusal will argue that the instinct to withhold is sometimes right. In discovery, the instinct is not optional.
+Legal discovery is a linkability mechanism that accountability writing often misses. A civil suit compels internal records no request would dislodge and puts witnesses under oath, but discovery material usually sits under a protective order: usable in the case, not releasable without the court's permission. @sec-ch-13-critical-data-studies-refusal will argue that the instinct to withhold is sometimes right. In discovery, the instinct is not optional.
 
-Public-records laws are neutral on their face. In practice they can be turned against the people they were meant to protect. Requests and subpoenas can pull booking and residency information about immigrants, and meeting records that list commenters by name can expose the residents who showed up to object. This is not an argument against open records. It is an argument for treating records work the way @sec-ch-18-ownership will treat stewardship: the infrastructure that enables one use enables every use the statute does not exclude.
+Public-records laws are neutral on their face. In practice they can be turned against the people they were meant to protect. Requests and subpoenas can pull booking and residency information about immigrants, and meeting records that list commenters by name can expose the residents who showed up to object. This is not an argument against open records. It is an argument for treating records work the way @sec-ch-05-erosion-ownership will treat stewardship: the infrastructure that enables one use enables every use the statute does not exclude.
 
 ## Amicus briefs and MuckRock
 
-Data scientists can contribute to legal work without becoming lawyers. The amicus curiae ("friend of the court") brief, in which computer scientists or statisticians explain to a court what an algorithm or a disparity measure does, is a recognized genre, and @sec-ch-11-testimony takes up its close cousin. MuckRock, the nonprofit records-request platform, is the closest thing the U.S. has to shared request infrastructure, and its archive of prior releases is worth searching before you file [@muckrock]. Boulder County's Public Records Archive is a county-run cousin. To study either as data, you need a tracker, and SQLite is the right scale.
+Data scientists can contribute to legal work without becoming lawyers. The amicus curiae ("friend of the court") brief, in which computer scientists or statisticians explain to a court what an algorithm or a disparity measure does, is a recognized genre, and @sec-ch-17-testimony takes up its close cousin. MuckRock, the nonprofit records-request platform, is the closest thing the U.S. has to shared request infrastructure, and its archive of prior releases is worth searching before you file [@muckrock]. Boulder County's Public Records Archive is a county-run cousin. To study either as data, you need a tracker, and SQLite is the right scale.
 
 ## Tutorial, part 1: a CORA tracker in SQLite
 
@@ -210,7 +210,7 @@ print(sorted(set(s1.label) ^ set(s2.label)))
 The same two funds are spelled differently on different pages of one resolution. That is a **linkability** failure in miniature, and a join on fund name would silently drop them. For scanned releases, swap the text layer for OCR (`pdftoppm` to render pages, `tesseract` to read them), record a SHA-256 hash of every file you receive in the `documents` table, and expect to validate even more carefully.
 
 ::: {.callout-note title="In the Public Interest"}
-@sec-ch-02-installed-base named **remedy** as the installed base's final element, and @sec-ch-10-oversight will build on it: evidence matters only if it can trigger action. A records response that sits as an unreadable scan on a laptop is not **oversight**. It is raw material for oversight. The tracker, letter, and extraction notebook are the minimum scaffolding that turns that material into something a reporter can publish, an advocate can cite at a county hearing, or an attorney can attach to a complaint [@keegan2026]. They advance oversight only when they close the loop to remedy. They advance **openness** in a weaker sense even when they do not: a well-tracked request produces a public record of what the county said, and when.
+@sec-ch-02-installed-base named **remedy** as the installed base's final element, and @sec-ch-04-exemption-oversight will build on it: evidence matters only if it can trigger action. A records response that sits as an unreadable scan on a laptop is not **oversight**. It is raw material for oversight. The tracker, letter, and extraction notebook are the minimum scaffolding that turns that material into something a reporter can publish, an advocate can cite at a county hearing, or an attorney can attach to a complaint [@keegan2026]. They advance oversight only when they close the loop to remedy. They advance **openness** in a weaker sense even when they do not: a well-tracked request produces a public record of what the county said, and when.
 :::
 
 ## Exercises
@@ -225,7 +225,7 @@ The same two funds are spelled differently on different pages of one resolution.
 
 ## Looking ahead
 
-Records work is slow. The timeline from a first letter to a usable table is measured in weeks at best, and a court fight can stretch it by a year. Reporters and lawyers budget for this. Data scientists trained on the responsiveness of an API often do not, which is why this module works from requests the county has already answered. What comes back is rarely everything a requester asked for. The next chapter, @sec-ch-10-oversight, takes what was withheld as evidence in its own right: you will build a ledger of the exemptions the county cited and the remedy pathways each one leaves open.
+Records work is slow. The timeline from a first letter to a usable table is measured in weeks at best, and a court fight can stretch it by a year. Reporters and lawyers budget for this. Data scientists trained on the responsiveness of an API often do not, which is why this module works from requests the county has already answered. What comes back is rarely everything a requester asked for. The next chapter, @sec-ch-04-exemption-oversight, takes what was withheld as evidence in its own right: you will build a ledger of the exemptions the county cited and the remedy pathways each one leaves open.
 
 ## Further Reading and Resources
 

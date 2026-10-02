@@ -3,7 +3,7 @@ execute:
   eval: false
 ---
 
-# The Limits of the Framework {#sec-ch-23-limits}
+# The Limits of the Framework {#sec-ch-20-limits}
 
 For twenty-two chapters this book has used one framework as a diagnostic. Three pressures (enclosure, exemption, erosion) narrow what the public can observe. Three values (openness, oversight, ownership) push back. An installed base of identifiers, records, access tiers, retention rules, and escalation pathways makes those values last. You have applied that diagnostic to a city council's records, a county's records requests, a state's AI law, and a federal docket. In Week 16 the course does the thing every good audit eventually does: it points the instrument at itself.
 
@@ -15,7 +15,7 @@ The question for this chapter is therefore empirical as well as conceptual: *whe
 
 Keegan [-@keegan2026] names five objections and answers each with installed-base requirements.
 
-The **realist** says the open-data era is over. The framework accepts the description and rejects the fatalism: if voluntary access is gone, openness becomes a retention and reference problem (redundant repositories, persistent identifiers, statutory access rights). @sec-ch-22-archival-deposits is the realist's answer in miniature.
+The **realist** says the open-data era is over. The framework accepts the description and rejects the fatalism: if voluntary access is gone, openness becomes a retention and reference problem (redundant repositories, persistent identifiers, statutory access rights). @sec-ch-19-archival-deposits is the realist's answer in miniature.
 
 The **critical** objection asks how this differs from data for good, civic tech, and responsible AI. The answer is a testable design stance: a project that cannot specify identifiers, provenance, retention, access tiers, and escalation pathways is probably another pilot that will not survive enclosure and erosion.
 
@@ -37,7 +37,7 @@ The book's legal machinery is American: FOIA, CORA, the Administrative Procedure
 
 ### Records over refusal
 
-The installed base takes linkability, durable identifiers, and retention as load-bearing. @sec-ch-19-critical-data-studies-refusal takes refusal seriously, drawing on @zong2024, @dignazio2020, @garcia2022, @carroll2020, and Te Mana Raraunga [@temanararaunga]. But the framework's own discussion section concedes the problem: identifiers "can intensify surveillance and cross-system targeting," and retention "can preserve harmful traces indefinitely" [@keegan2026]. Its proposed fix is "minimum viable safeguards" (access tiers, minimization, accountable intermediaries). That is still a records-first answer. Starting from refusal and arriving at records is a different book.
+The installed base takes linkability, durable identifiers, and retention as load-bearing. @sec-ch-13-critical-data-studies-refusal takes refusal seriously, drawing on @zong2024, @dignazio2020, @garcia2022, @carroll2020, and Te Mana Raraunga [@temanararaunga]. But the framework's own discussion section concedes the problem: identifiers "can intensify surveillance and cross-system targeting," and retention "can preserve harmful traces indefinitely" [@keegan2026]. Its proposed fix is "minimum viable safeguards" (access tiers, minimization, accountable intermediaries). That is still a records-first answer. Starting from refusal and arriving at records is a different book.
 
 ### The labor inside data work
 
@@ -49,7 +49,7 @@ The framework's escalation pathways run through public institutions: courts, ins
 
 ### The measurement problem
 
-The installed base makes records durable. It says little about whether the records measure what they claim. A disaggregated audit in @sec-ch-12-accounting reports error rates by group, but the groups are census categories, the outcome is a proxy, and the threshold is a policy choice. @selbst2019fairness call this the family of "abstraction traps"; @bowker2000 showed decades ago that classification systems encode the politics of whoever built them. Provenance records *how* a number was made. It does not tell you whether the number should exist.
+The installed base makes records durable. It says little about whether the records measure what they claim. A disaggregated audit in @sec-ch-08-accounting reports error rates by group, but the groups are census categories, the outcome is a proxy, and the threshold is a policy choice. @selbst2019fairness call this the family of "abstraction traps"; @bowker2000 showed decades ago that classification systems encode the politics of whoever built them. Provenance records *how* a number was made. It does not tell you whether the number should exist.
 
 ### Lineages as inheritance
 
@@ -57,11 +57,11 @@ Each lineage solved a version of the accountability problem, and each carries pa
 
 ### A ladder that presumes the building
 
-The course climbs from city to federal, matching evidence and genre to the body that can act. The ladder presumes that each rung holds a functioning institution: a council that holds hearings, a county that answers records requests, an agency that reads comments. When the federal agency is the one deleting the datasets, the public comment in @sec-ch-20-public-comments is addressed to the eroder. When a tribal nation, an employer, a platform, or the European Union is the body that matters, the ladder has no rung for it at all. The ladder is a teaching device built for dense, mostly functioning institutions. It travels badly to places, and moments, where those are absent.
+The course climbs from city to federal, matching evidence and genre to the body that can act. The ladder presumes that each rung holds a functioning institution: a council that holds hearings, a county that answers records requests, an agency that reads comments. When the federal agency is the one deleting the datasets, the public comment in @sec-ch-18-public-comments is addressed to the eroder. When a tribal nation, an employer, a platform, or the European Union is the body that matters, the ladder has no rung for it at all. The ladder is a teaching device built for dense, mostly functioning institutions. It travels badly to places, and moments, where those are absent.
 
 ## From suspicion to a count
 
-You could argue about these limits indefinitely. A better move borrows from @sec-ch-12-accounting: stop asserting and start sampling. If the book is US-centric, the cases it uses should be disproportionately American. If it prefers records to refusal, the remedies it reaches for should be disproportionately "more records." If the ladder presumes functioning institutions, a large share of cases should fall off the ladder entirely.
+You could argue about these limits indefinitely. A better move borrows from @sec-ch-08-accounting: stop asserting and start sampling. If the book is US-centric, the cases it uses should be disproportionately American. If it prefers records to refusal, the remedies it reaches for should be disproportionately "more records." If the ladder presumes functioning institutions, a large share of cases should fall off the ladder entirely.
 
 These are claims about a corpus, and the book is a corpus. The technical problem is the one every content analysis faces: turning cases into rows, where every column is a judgment. The tutorial makes those judgments explicit, so you can disagree with them in code rather than in vibes.
 
@@ -220,7 +220,7 @@ Read the tables as you would any audit: evidence with a known sampling frame and
 None of this refutes the framework. It locates it. @neffCritiqueContributePracticeBased2017 argue that critical data studies and data science improve each other only when critique is practiced *inside* the work. A framework that ships with its own audit, and invites you to recode it, is doing that.
 
 ::: {.callout-note title="In the Public Interest"}
-This chapter is about **ownership** of the framework itself. Someone owns the framework's definitions: what counts as a "record," which pressures have names, which levels of government appear on the ladder. In this book, that someone is mostly one US author drawing on US professions. Ownership in the sense of @sec-ch-18-ownership means stewardship with duties to beneficiaries, and the beneficiaries of a framework are the communities it is applied to. The specific claim: the reflexive audit is a stewardship tool only if its code book is open to revision by the people being coded. A case table that Te Mana Raraunga or Worker Info Exchange could not edit is a records-first instrument describing refusal from the outside. Opening the code book (literally, as a pull request to this book) is how the framework's ownership becomes shared rather than declared.
+This chapter is about **ownership** of the framework itself. Someone owns the framework's definitions: what counts as a "record," which pressures have names, which levels of government appear on the ladder. In this book, that someone is mostly one US author drawing on US professions. Ownership in the sense of @sec-ch-05-erosion-ownership means stewardship with duties to beneficiaries, and the beneficiaries of a framework are the communities it is applied to. The specific claim: the reflexive audit is a stewardship tool only if its code book is open to revision by the people being coded. A case table that Te Mana Raraunga or Worker Info Exchange could not edit is a records-first instrument describing refusal from the outside. Opening the code book (literally, as a pull request to this book) is how the framework's ownership becomes shared rather than declared.
 :::
 
 ## Exercises
@@ -233,7 +233,7 @@ This chapter is about **ownership** of the framework itself. Someone owns the fr
 
 **Exercise 23.4 (Open-ended).** Pick one of the seven limits and draft a one-page proposal for the chapter-scale revision the book would need to address it: the new section's argument, one non-US or refusal-first anchor case, a tutorial sketch, and three sources. If you have not yet opened your required book-contribution pull request, this can be it.
 
-**Exercise 23.5 (Final project: critical-reflection memo).** Write the 500-word critical-reflection memo that completes your final project. Answer four questions about the piece you deepened, recast, and deposited (@sec-ch-22-archival-deposits). First, whose interests does the work serve, and whose might it harm? Name groups, not abstractions. Second, which affected communities were not consulted, and why not? "Time" is an answer only if you say what consultation would have required. Third, where does the framework fail for this case? Code your own piece with the tutorial's code book; if any column was `forced`, say why. Fourth, what would you do with more time, and what would you decide *not* to do? Include the memo in your deposit so the reflection travels with the artifact. A submission without it is incomplete.
+**Exercise 23.5 (Final project: critical-reflection memo).** Write the 500-word critical-reflection memo that completes your final project. Answer four questions about the piece you deepened, recast, and deposited (@sec-ch-19-archival-deposits). First, whose interests does the work serve, and whose might it harm? Name groups, not abstractions. Second, which affected communities were not consulted, and why not? "Time" is an answer only if you say what consultation would have required. Third, where does the framework fail for this case? Code your own piece with the tutorial's code book; if any column was `forced`, say why. Fourth, what would you do with more time, and what would you decide *not* to do? Include the memo in your deposit so the reflection travels with the artifact. A submission without it is incomplete.
 
 ## Closing the book
 

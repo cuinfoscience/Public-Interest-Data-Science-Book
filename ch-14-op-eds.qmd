@@ -3,15 +3,15 @@ execute:
   eval: false
 ---
 
-# Op-Eds {#sec-ch-07-op-eds}
+# Op-Eds {#sec-ch-14-op-eds}
 
-Each module in this book ends with a genre: the form a professional lineage uses to carry its findings to the public that can act on them. Journalism's form, for a data scientist who is not a staff reporter, is the op-ed. You arrive at this chapter with the makings of one. @sec-ch-04-enclosure gave you a responsible way to collect city data and a provenance log. @sec-ch-05-journalism had you reproduce a published finding and compare your numbers to the reporter's. @sec-ch-06-openness turned your city data into a publication someone else can check. What none of that has produced yet is a reader.
+Each module in this book ends with a genre: the form a professional lineage uses to carry its findings to the public that can act on them. Journalism's form, for a data scientist who is not a staff reporter, is the op-ed. You arrive at this chapter with the makings of one. @sec-ch-03-enclosure-openness gave you a responsible way to collect city data and a provenance log. @sec-ch-06-journalism had you reproduce a published finding and compare your numbers to the reporter's. @sec-ch-03-enclosure-openness turned your city data into a publication someone else can check. What none of that has produced yet is a reader.
 
-This chapter is about getting one. It treats the op-ed as a genre with a history, an economy, and an anatomy; walks through a worked example built on the Boulder election contributions data from @sec-ch-06-openness; and ends with the module's portfolio piece. The audience is a city: residents, council members, the clerk's office, and the reporters who cover them. The other modules will ask for other genres and other cases, starting fresh at the county level in Part III. This one starts with the shortest form and the widest audience.
+This chapter is about getting one. It treats the op-ed as a genre with a history, an economy, and an anatomy; walks through a worked example built on the Boulder election contributions data from @sec-ch-03-enclosure-openness; and ends with the module's portfolio piece. The audience is a city: residents, council members, the clerk's office, and the reporters who cover them. The other modules will ask for other genres and other cases, starting fresh at the county level in Part III. This one starts with the shortest form and the widest audience.
 
 ## Why the op-ed matters, and why it does not
 
-The op-ed is the 750-word argument you write for a stranger. It is not a report (@sec-ch-15-reports), which assumes a policy audience willing to read forty pages. It is not testimony (@sec-ch-11-testimony), which assumes a hearing and a microphone. It is persuasion, addressed to a general reader who has about four minutes and two competing browser tabs, written in the voice of a person who thinks something should happen. Most of what you built in this module (the scraper, the reproduction, the cleaned dataset) is illegible to that reader. The op-ed is what makes it legible.
+The op-ed is the 750-word argument you write for a stranger. It is not a report (@sec-ch-15-reports), which assumes a policy audience willing to read forty pages. It is not testimony (@sec-ch-17-testimony), which assumes a hearing and a microphone. It is persuasion, addressed to a general reader who has about four minutes and two competing browser tabs, written in the voice of a person who thinks something should happen. Most of what you built in this module (the scraper, the reproduction, the cleaned dataset) is illegible to that reader. The op-ed is what makes it legible.
 
 It is also the genre public-interest data scientists most often skip. The paper goes to the committee. The dashboard goes to the client. Neither reaches the council member whose vote is next Tuesday or the reporter who might pick up the thread if they knew it existed. An op-ed in a local outlet will be read by more members of the affected public than any peer-reviewed article you write this year. That is an uncomfortable fact, and one the profession has mostly refused to sit with.
 
@@ -63,7 +63,7 @@ Op-ed editors want a pitch and a draft that is one click from publishable. A Goo
 
 ## A worked example: Boulder's contributions data as an op-ed
 
-Start from the cleaned contributions data you published in @sec-ch-06-openness. The first-pass question a city reader might care about is simple: what share of contributions to council candidates came from donors whose mailing address is outside Boulder?
+Start from the cleaned contributions data you published in @sec-ch-03-enclosure-openness. The first-pass question a city reader might care about is simple: what share of contributions to council candidates came from donors whose mailing address is outside Boulder?
 
 ```python
 import pandas as pd
@@ -91,7 +91,7 @@ by_cycle.round(3)
 
 That is a modest trend, and an honest op-ed says so. Roughly one contribution in eight came from outside a Boulder mailing address in 2013; by 2017 it was more than one in five. The caveats are real: a mailing city is not city limits, "Boulder County" counts as outside, and the dollar share moved less than the count share. Those caveats belong in your methods note and, compressed to a clause, in the op-ed.
 
-Then notice the more striking finding, the one @sec-ch-06-openness put in your datasheet: the city's open data stops with filings from January 2018. You cannot extend the chart to the elections that followed from this source. Before that becomes an argument, it has to survive right of reply (@sec-ch-05-journalism). Check the City Clerk's website for where later filings live and in what format, and email the clerk's office with a specific question and a deadline. If later filings are published elsewhere as open data, your op-ed is about the trend, and the open data finding shrinks to a sentence. If they exist only as individual filings or in a system with no bulk export, the op-ed is about openness itself.
+Then notice the more striking finding, the one @sec-ch-03-enclosure-openness put in your datasheet: the city's open data stops with filings from January 2018. You cannot extend the chart to the elections that followed from this source. Before that becomes an argument, it has to survive right of reply (@sec-ch-06-journalism). Check the City Clerk's website for where later filings live and in what format, and email the clerk's office with a specific question and a deadline. If later filings are published elsewhere as open data, your op-ed is about the trend, and the open data finding shrinks to a sentence. If they exist only as individual filings or in a system with no bulk export, the op-ed is about openness itself.
 
 Suppose your check confirms the second case. The hook is the next council election. The nut graf: Boulder voters cannot see whether the trend in out-of-town giving has continued, because the city's own open data stops in 2018, and the council should fix that before the next filing deadline. The argument is two paragraphs on what the 2011–2017 data shows and one on what it cannot show. The evidence is one chart. The call: direct the clerk to publish all filings since 2018 in the same open layer, with the committee numbers that make filings linkable and a note when the series is updated.
 
@@ -117,7 +117,7 @@ fig.savefig("ch07_outside_share.png", dpi=160, bbox_inches="tight")
 Three things about that chart are deliberate. The title is a complete sentence, because a newsroom reader looks at the title first and the axes second. The color codes the argument, because a newsroom reader will not parse a legend. The sample sizes sit on the bars, because a reader who does not see them will assume the difference is noise. And the chart's own title carries the openness finding, so the image argues even if it is shared without the text.
 
 ::: {.callout-note title="In the Public Interest"}
-An op-ed is **openness** as argument rather than openness as data release. @sec-ch-06-openness taught you to publish a dataset with documentation and a durable identifier; that is necessary and insufficient, because a dataset nobody reads is openness in form without openness in effect. The worked example makes a specific claim: the most consequential thing a city-level data op-ed can do is sometimes to argue for the openness of the data itself, because a public that cannot see the last four elections cannot judge the next one. An op-ed in a local outlet the week before a council discussion does more for that public than the same finding in a report the council staff skims in a briefing. The difference between a data release that changes a decision and one that does not is often a 750-word argument somebody pitched to an editor who picked up the phone.
+An op-ed is **openness** as argument rather than openness as data release. @sec-ch-03-enclosure-openness taught you to publish a dataset with documentation and a durable identifier; that is necessary and insufficient, because a dataset nobody reads is openness in form without openness in effect. The worked example makes a specific claim: the most consequential thing a city-level data op-ed can do is sometimes to argue for the openness of the data itself, because a public that cannot see the last four elections cannot judge the next one. An op-ed in a local outlet the week before a council discussion does more for that public than the same finding in a report the council staff skims in a briefing. The difference between a data release that changes a decision and one that does not is often a 750-word argument somebody pitched to an editor who picked up the phone.
 :::
 
 ## Exercises
@@ -141,7 +141,7 @@ If the moment for your piece arrives during the term, send the pitch.
 
 ## Looking ahead
 
-The op-ed is the shortest genre in this book and the one with the widest audience. Part III moves up the ladder from the city to the county, with a new lineage, a new pressure, and a new case. @sec-ch-08-exemption asks who must answer for a system once you can see it, and the module ends in @sec-ch-11-testimony, a genre whose audience is not a stranger with four minutes but a board of commissioners with the power to act. The pitch mindset carries forward: know your reader, make every element earn its place, and end with an ask someone can say yes to.
+The op-ed is the shortest genre in this book and the one with the widest audience. Part III moves up the ladder from the city to the county, with a new lineage, a new pressure, and a new case. @sec-ch-04-exemption-oversight asks who must answer for a system once you can see it, and the module ends in @sec-ch-17-testimony, a genre whose audience is not a stranger with four minutes but a board of commissioners with the power to act. The pitch mindset carries forward: know your reader, make every element earn its place, and end with an ask someone can say yes to.
 
 ## Further Reading and Resources
 

@@ -3,11 +3,11 @@ execute:
   eval: false
 ---
 
-# Critical Data Studies, Data Justice, and Refusal {#sec-ch-19-critical-data-studies-refusal}
+# Critical Data Studies, Data Justice, and Refusal {#sec-ch-13-critical-data-studies-refusal}
 
 By now you have built installed-base pieces in three modules and begun a fourth. You documented the provenance of a city dataset, built an exemptions and remedy ledger from county records, ran a tested audit for a state body, and, in this module, audited the erosion of a federal dataset and drafted a plan to steward it. Each piece added one or more of the six elements: records that link, categories that can be interpreted, evidence that persists, scrutiny that is safe, authorities who can act, and people who can seek remedy [@keegan2026]. This chapter turns the framework on itself. For some of the people the installed base is supposed to serve, any one of those six can also be the mechanism by which harm arrives. A record that links is a record that surveils. A category that can be interpreted is one that was once imposed. Evidence that persists can be subpoenaed a decade later by an agency that did not exist when the data was collected. Scrutiny can be predatory. Authority can be carceral. Remedy can be a pretext for more collection.
 
-Critical data studies holds these possibilities in view. Data justice asks who decides, under what conditions, on whose terms. Refusal is what you do when the answer is that the data should not exist in the form proposed. This chapter asks you to do two things with the same federally governed dataset: audit its classification schema, and write a refusal specification for it. The pair is the point. Neither alone does the work. For Piece 4, the refusal specification is the alternative to the stewardship plan from @sec-ch-18-ownership: some federal datasets deserve a mirror, and some deserve a narrower existence.
+Critical data studies holds these possibilities in view. Data justice asks who decides, under what conditions, on whose terms. Refusal is what you do when the answer is that the data should not exist in the form proposed. This chapter asks you to do two things with the same federally governed dataset: audit its classification schema, and write a refusal specification for it. The pair is the point. Neither alone does the work. For Piece 4, the refusal specification is the alternative to the stewardship plan from @sec-ch-05-erosion-ownership: some federal datasets deserve a mirror, and some deserve a narrower existence.
 
 Keegan [-@keegan2026] positions these fields carefully. Critical data studies supplies indispensable diagnostic language for how power shapes classification and surveillance, but it is organized more around critique than around specifying institutions that can be sustained. Data justice specifies what infrastructuring must be *for*: redistribution, representation, and the capacity to refuse. The installed base is only as just as the commitments it is built to carry.
 
@@ -27,9 +27,9 @@ When you call `value_counts()` on a column labeled `race` or `veteran_status` an
 
 ## Data justice and the question of for whom
 
-@taylor2017 puts a different question on the table. The fairness audit you ran in @sec-ch-12-accounting asked whether a model treats groups equivalently. Data justice asks something prior: what counts as justice here, for whom, through what mechanisms? A system can satisfy demographic parity and still be unjust, because the deeper question is whether it should exist, whether the people subject to it had any say, and whether they recognize the categories used to sort them. @dignazio2020, *Data Feminism*, extends this into seven principles, of which "examine power" and "elevate emotion and embodiment" are the most likely to make an engineering audience uncomfortable, and therefore the most likely to be doing real work.
+@taylor2017 puts a different question on the table. The fairness audit you ran in @sec-ch-08-accounting asked whether a model treats groups equivalently. Data justice asks something prior: what counts as justice here, for whom, through what mechanisms? A system can satisfy demographic parity and still be unjust, because the deeper question is whether it should exist, whether the people subject to it had any say, and whether they recognize the categories used to sort them. @dignazio2020, *Data Feminism*, extends this into seven principles, of which "examine power" and "elevate emotion and embodiment" are the most likely to make an engineering audience uncomfortable, and therefore the most likely to be doing real work.
 
-You met openness in @sec-ch-06-openness and ownership in @sec-ch-18-ownership. Data justice says neither is sufficient. Openness can make a community's vulnerability indexable by anyone with a laptop. Ownership can be a contract that extracts data under conditions nobody could negotiate. Both are incomplete without the prior question of for whom.
+You met openness in @sec-ch-03-enclosure-openness and ownership in @sec-ch-05-erosion-ownership. Data justice says neither is sufficient. Openness can make a community's vulnerability indexable by anyone with a laptop. Ownership can be a contract that extracts data under conditions nobody could negotiate. Both are incomplete without the prior question of for whom.
 
 ## Refusal as design
 
@@ -150,7 +150,7 @@ decision_process:
 ---
 ```
 
-The structure is load-bearing. Each section answers one question: what you would not collect, what you would collect differently, what you would collect only under community control, and who changes the specification, by what process, with what appeal. A refusal specification without the decision process is a wish list, not a governance document. Note too what the specification can and cannot reach: the would-not-collect list must respect what federal funding requires, and where it cannot, the honest move is to name the federal requirement as the thing to change. That is where a public comment, in @sec-ch-20-public-comments, picks up.
+The structure is load-bearing. Each section answers one question: what you would not collect, what you would collect differently, what you would collect only under community control, and who changes the specification, by what process, with what appeal. A refusal specification without the decision process is a wish list, not a governance document. Note too what the specification can and cannot reach: the would-not-collect list must respect what federal funding requires, and where it cannot, the honest move is to name the federal requirement as the thing to change. That is where a public comment, in @sec-ch-18-public-comments, picks up.
 
 ## Refusal in the wild: the Algorithmic Ecology
 
@@ -159,7 +159,7 @@ The Stop LAPD Spying Coalition, with the Free Radicals collective, published "Th
 That is refusal as generative, in the sense @zong2024 intend. The coalition did not settle for a seat at the table. It specified the conditions under which the table should not exist in its current form and built the political capacity to enforce the specification. Your specification is modest by comparison. The move is the same.
 
 ::: {.callout-note title="In the Public Interest"}
-@sec-ch-06-openness argued that openness is interpretive legibility. @sec-ch-18-ownership argued that ownership is collective, accountable governance over preservation and use. This chapter shows where they collide. A federal dataset can be maximally open and perfectly preserved and still violate CARE, because the community it describes never had authority over whether it should exist. The specific claim: **ownership** that can be asserted only by entities the installed base already recognizes (an agency, a university, a volunteer mirror) is not ownership by the people described. A refusal specification rebuilds ownership on the prior question of authority, and it is the one Piece 4 artifact that can argue for less data rather than more.
+@sec-ch-03-enclosure-openness argued that openness is interpretive legibility. @sec-ch-05-erosion-ownership argued that ownership is collective, accountable governance over preservation and use. This chapter shows where they collide. A federal dataset can be maximally open and perfectly preserved and still violate CARE, because the community it describes never had authority over whether it should exist. The specific claim: **ownership** that can be asserted only by entities the installed base already recognizes (an agency, a university, a volunteer mirror) is not ownership by the people described. A refusal specification rebuilds ownership on the prior question of authority, and it is the one Piece 4 artifact that can argue for less data rather than more.
 :::
 
 ## Exercises
@@ -176,7 +176,7 @@ That is refusal as generative, in the sense @zong2024 intend. The coalition did 
 
 ## Looking ahead
 
-The audit and the refusal specification are internal artifacts, the kind of document a team uses to set its own terms. @sec-ch-20-public-comments turns them outward. A public comment on a federal rulemaking is where an argument for stewardship, or for refusal, enters the administrative record that an agency is legally obliged to consider. It is the module's genre and the last portfolio piece.
+The audit and the refusal specification are internal artifacts, the kind of document a team uses to set its own terms. @sec-ch-18-public-comments turns them outward. A public comment on a federal rulemaking is where an argument for stewardship, or for refusal, enters the administrative record that an agency is legally obliged to consider. It is the module's genre and the last portfolio piece.
 
 ## Further Reading and Resources
 

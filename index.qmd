@@ -16,12 +16,12 @@ The book rests on a framework from Keegan [-@keegan2026]. Three structural **pre
 
 The book teaches that framework through the professions that have already solved versions of the problem, and it climbs the ladder of government as it goes. It has six parts:
 
-1. **Foundations** (@sec-ch-01-introduction to @sec-ch-03-pit-data-for-good). The contested idea of "the public interest," the framework and its installed base, and the neighboring fields (public interest technology, data for good, civic tech) that clarify what this work is and is not.
-2. **Journalism: The City** (@sec-ch-04-enclosure to @sec-ch-07-op-eds). Enclosure meets the watchdog tradition. You reproduce a published investigation, collect city data responsibly, publish it openly, and write an **op-ed** for a local outlet.
-3. **Law: The County** (@sec-ch-08-exemption to @sec-ch-11-testimony). Exemption meets public interest law. You work with records Boulder County has already released under the Colorado Open Records Act, turn them into data, build a ledger of exemptions and remedies, and write **testimony** for a county hearing.
-4. **Assurance: The State** (@sec-ch-12-accounting to @sec-ch-15-reports). Audit-washing meets accounting and engineering. You run a disaggregated audit, test it like safety-critical code, examine procurement as governance, and write a **report** for a state body.
-5. **Planning: The Nation** (@sec-ch-16-erosion to @sec-ch-20-public-comments). Erosion meets advocacy planning, stewardship, sovereignty, and refusal. You audit the decay of a federal dataset, design a stewardship plan or a refusal specification, and write a **public comment** on a federal rulemaking.
-6. **Beyond the Portfolio** (@sec-ch-21-research-proposals to @sec-ch-23-limits). Research proposals, archival deposits with DOIs, and the limits of the framework itself.
+1. **Foundations** (@sec-ch-01-introduction to @sec-ch-11-pit-data-for-good). The contested idea of "the public interest," the framework and its installed base, and the neighboring fields (public interest technology, data for good, civic tech) that clarify what this work is and is not.
+2. **Journalism: The City** (@sec-ch-03-enclosure-openness to @sec-ch-14-op-eds). Enclosure meets the watchdog tradition. You reproduce a published investigation, collect city data responsibly, publish it openly, and write an **op-ed** for a local outlet.
+3. **Law: The County** (@sec-ch-04-exemption-oversight to @sec-ch-17-testimony). Exemption meets public interest law. You work with records Boulder County has already released under the Colorado Open Records Act, turn them into data, build a ledger of exemptions and remedies, and write **testimony** for a county hearing.
+4. **Assurance: The State** (@sec-ch-08-accounting to @sec-ch-15-reports). Audit-washing meets accounting and engineering. You run a disaggregated audit, test it like safety-critical code, examine procurement as governance, and write a **report** for a state body.
+5. **Planning: The Nation** (@sec-ch-05-erosion-ownership to @sec-ch-18-public-comments). Erosion meets advocacy planning, stewardship, sovereignty, and refusal. You audit the decay of a federal dataset, design a stewardship plan or a refusal specification, and write a **public comment** on a federal rulemaking.
+6. **Beyond the Portfolio** (@sec-ch-16-research-proposals to @sec-ch-20-limits). Research proposals, archival deposits with DOIs, and the limits of the framework itself.
 
 Each module part follows the same order: a pressure, a lineage, a value, and a genre. Each uses a national anchor case, a non-US counter-case, and a local case at its level of government. Each ends with a portfolio piece.
 
@@ -65,7 +65,7 @@ It is **thin on measurement theory**. You will not find a full psychometric crit
 
 It **over-relies on the professional-lineage framing**. Treating journalism, law, accounting, planning, and engineering as lineages the field can inherit from is a useful move, but every profession has its own pathologies, and the book does not do equal-time analysis of all of them. Read the criticisms. They are in the further-reading lists.
 
-These limits are not bugs to be patched. They are framing choices that enable the book to cohere. Knowing where they bind is part of what you are learning, and @sec-ch-23-limits turns the framework on itself to find out.
+These limits are not bugs to be patched. They are framing choices that enable the book to cohere. Knowing where they bind is part of what you are learning, and @sec-ch-20-limits turns the framework on itself to find out.
 
 ## How to contribute
 

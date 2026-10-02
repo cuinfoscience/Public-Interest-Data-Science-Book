@@ -3,9 +3,9 @@ execute:
   eval: false
 ---
 
-# Research Proposals {#sec-ch-21-research-proposals}
+# Research Proposals {#sec-ch-16-research-proposals}
 
-The op-ed in @sec-ch-07-op-eds argued for a thing that already exists; the report in @sec-ch-15-reports documented a thing that had already happened. The research proposal is stranger than either. It argues, in the present tense, for the significance of work that does not yet exist, using evidence you cannot yet produce, on behalf of findings you cannot yet guarantee, to readers who will decide whether the work should exist at all. You are asking a funder to believe in a future that is currently a document.
+The op-ed in @sec-ch-14-op-eds argued for a thing that already exists; the report in @sec-ch-15-reports documented a thing that had already happened. The research proposal is stranger than either. It argues, in the present tense, for the significance of work that does not yet exist, using evidence you cannot yet produce, on behalf of findings you cannot yet guarantee, to readers who will decide whether the work should exist at all. You are asking a funder to believe in a future that is currently a document.
 
 In this book the proposal does two jobs. First, it is a fifth genre for the final project. Graduate students may take one of their four portfolio pieces (the city op-ed, the county testimony, the state report, or the federal public comment), deepen it, and recast it as a proposal for the larger study the piece points toward. Second, it is the scholarly backbone of the graduate methods memo that accompanies each portfolio piece. The memo's two required moves, situating the piece in at least five scholarly sources and defending one methodological choice against that literature, are the "gap" and "approach" moves of a proposal in miniature. Undergraduates can read the chapter as a preview of how research gets paid for.
 
@@ -94,7 +94,7 @@ A serviceable DMP covers six sections.
 
 **Sharing.** What you will make public, and where. A de-identified derived dataset on Zenodo [@zenodo_api] with a CC-BY license and a DOI; a code repository on GitHub linked from the dataset record; a datasheet following Gebru and colleagues [@gebru2021]. If something will not be shared, say why.
 
-**Preservation.** Where the shared outputs live after you stop paying attention. Zenodo and the Internet Archive provide preservation commitments, but the deposit every final project requires must carry a DOI, such as the one Zenodo mints (@sec-ch-22-archival-deposits). A GitHub repo you maintain is not a preservation plan.
+**Preservation.** Where the shared outputs live after you stop paying attention. Zenodo and the Internet Archive provide preservation commitments, but the deposit every final project requires must carry a DOI, such as the one Zenodo mints (@sec-ch-19-archival-deposits). A GitHub repo you maintain is not a preservation plan.
 
 The DMP is where you operationalize the installed base for your own project: linkability in formats and standards, interpretability in the datasheet, continuity in preservation, safe scrutiny in sharing.
 
@@ -150,10 +150,10 @@ The check that matters is the last one. A matrix in which every source "supports
 
 NSF requires a broader-impacts section; most private foundations require something analogous. First-time authors treat these as boilerplate, and reviewers read past it.
 
-The strong version asks who will be better off if the project succeeds, in a way that would not have happened otherwise. It names community partners, open datasets, reproducible code, training opportunities for students who would not otherwise have had them, and downstream uses the research makes possible. It ties to the ownership question from @sec-ch-18-ownership: whose problem is this, and who gets to act on the answer? And it anticipates the sustainability question from @sec-ch-03-pit-data-for-good: when the grant money is gone, does the infrastructure continue, or evaporate with your last invoice?
+The strong version asks who will be better off if the project succeeds, in a way that would not have happened otherwise. It names community partners, open datasets, reproducible code, training opportunities for students who would not otherwise have had them, and downstream uses the research makes possible. It ties to the ownership question from @sec-ch-05-erosion-ownership: whose problem is this, and who gets to act on the answer? And it anticipates the sustainability question from @sec-ch-11-pit-data-for-good: when the grant money is gone, does the infrastructure continue, or evaporate with your last invoice?
 
 ::: {.callout-note title="In the Public Interest"}
-The broader-impacts section is where "public interest" becomes concrete and accountable. Tie it explicitly to **ownership** as you built it in @sec-ch-18-ownership: the community whose data you are using is a partner with a stake in the outcomes, not a population to be studied. And tie it to sustainability as you interrogated it in @sec-ch-03-pit-data-for-good: a funded pilot that dies when the grant ends has not advanced the installed base; it has spent the trust of staff and community members who will be asked to engage the next pilot with less of it. A section that names the partners, the deliverables they will own at the end, and the maintenance plan that survives the grant is one a reviewer will remember. A section that promises mentorship and open access without naming who, by whom, or where reads as filler.
+The broader-impacts section is where "public interest" becomes concrete and accountable. Tie it explicitly to **ownership** as you built it in @sec-ch-05-erosion-ownership: the community whose data you are using is a partner with a stake in the outcomes, not a population to be studied. And tie it to sustainability as you interrogated it in @sec-ch-11-pit-data-for-good: a funded pilot that dies when the grant ends has not advanced the installed base; it has spent the trust of staff and community members who will be asked to engage the next pilot with less of it. A section that names the partners, the deliverables they will own at the end, and the maintenance plan that survives the grant is one a reviewer will remember. A section that promises mentorship and open access without naming who, by whom, or where reads as filler.
 :::
 
 ## Exercises
@@ -164,13 +164,13 @@ The broader-impacts section is where "public interest" becomes concrete and acco
 
 **Exercise 21.3 (Specific-aims page).** If you are using the proposal genre for the final project, draft a one-page specific-aims document for a one-year, $50,000 study that grows out of the portfolio piece you are deepening. Target a plausible funder at the right scale: the Gates Family Foundation, the Boettcher Foundation, or a university seed-grant program. Read three of their recent awards first. Use the four-move structure and name the government body from your piece in the impact paragraph. Rewrite five times. Save the fifth draft as `proposal/specific_aims.md`.
 
-**Exercise 21.4 (Budget and DMP).** Produce a budget (adapt the pandas example or write `proposal/budget.csv`) with personnel, direct costs, and indirects at the funder's actual cap, and a one-page narrative justification. Then draft a two-page DMP with the DMPTool template [@dmptool], covering all six sections, naming the datasheet standard [@gebru2021], and naming as the preservation host the Zenodo record and DOI you will create in @sec-ch-22-archival-deposits. Save as `proposal/budget_justification.md` and `proposal/dmp.md`.
+**Exercise 21.4 (Budget and DMP).** Produce a budget (adapt the pandas example or write `proposal/budget.csv`) with personnel, direct costs, and indirects at the funder's actual cap, and a one-page narrative justification. Then draft a two-page DMP with the DMPTool template [@dmptool], covering all six sections, naming the datasheet standard [@gebru2021], and naming as the preservation host the Zenodo record and DOI you will create in @sec-ch-19-archival-deposits. Save as `proposal/budget_justification.md` and `proposal/dmp.md`.
 
 **Exercise 21.5 (Simulated IRB protocol and assembly).** Draft a simulated IRB protocol covering consent, risk, data handling, benefits, and conflicts of interest, grounded in the Belmont Report [@belmont1978] and the revised Common Rule [@common_rule]. If the project is probably exempt, say so and explain why. Save as `proposal/irb_protocol.md`. Then assemble the specific-aims page, budget, DMP, and protocol as your recast final-project text, ready to deposit alongside the deepened technical artifact.
 
 ## Closing
 
-A proposal is a promise about future work, and a promise is only as good as the record it leaves. The next chapter turns your final project, proposal or otherwise, into that record: a deposit with a DOI (@sec-ch-22-archival-deposits). The chapter after that asks what the whole framework, including the proposal genre's habit of translating every problem into fundable aims, cannot see (@sec-ch-23-limits).
+A proposal is a promise about future work, and a promise is only as good as the record it leaves. The next chapter turns your final project, proposal or otherwise, into that record: a deposit with a DOI (@sec-ch-19-archival-deposits). The chapter after that asks what the whole framework, including the proposal genre's habit of translating every problem into fundable aims, cannot see (@sec-ch-20-limits).
 
 ## Further Reading and Resources
 

@@ -5,9 +5,9 @@ execute:
 
 # Reports {#sec-ch-15-reports}
 
-The op-ed you drafted in @sec-ch-07-op-eds travels light: it reaches a commuter or a council member and gets one decision out of them before the next tab loads. The testimony you prepared in @sec-ch-11-testimony is a timed appearance before a county board, spoken once and entered into the record. The report is a third instrument: long, sourced, designed to be excerpted and cited years later in a brief you will never see. Some institutional reader (a legislative staffer, an agency's policy advisor, a task force member, an advocacy research director) needs a document they can put in a folder and hand to their counsel. The op-ed is a knock on the door. Testimony is five minutes in the room. The report is the evidence you leave behind.
+The op-ed you drafted in @sec-ch-14-op-eds travels light: it reaches a commuter or a council member and gets one decision out of them before the next tab loads. The testimony you prepared in @sec-ch-17-testimony is a timed appearance before a county board, spoken once and entered into the record. The report is a third instrument: long, sourced, designed to be excerpted and cited years later in a brief you will never see. Some institutional reader (a legislative staffer, an agency's policy advisor, a task force member, an advocacy research director) needs a document they can put in a folder and hand to their counsel. The op-ed is a knock on the door. Testimony is five minutes in the room. The report is the evidence you leave behind.
 
-This is the genre chapter for the assurance module, and its artifact is Piece 3: a report section of about 2,000 words, addressed to a named Colorado **state** body, built on the disaggregated audit you constructed in @sec-ch-12-accounting and tested in @sec-ch-13-engineering. The report is where assurance meets its public. An audit that no one with authority reads is a workpaper in a drawer. A report that cannot show its workpapers is audit-washing with footnotes.
+This is the genre chapter for the assurance module, and its artifact is Piece 3: a report section of about 2,000 words, addressed to a named Colorado **state** body, built on the disaggregated audit you constructed in @sec-ch-08-accounting and tested in @sec-ch-10-engineering. The report is where assurance meets its public. An audit that no one with authority reads is a workpaper in a drawer. A report that cannot show its workpapers is audit-washing with footnotes.
 
 ## A short political economy of the policy report
 
@@ -41,7 +41,7 @@ Test the three-layer skeleton before you send anything. Print the executive summ
 
 A report is not a peer-reviewed article. What it needs is methods transparency a skeptical reader can check in an afternoon: where the data came from and when, with which parameters; a link to the repository that produced each figure; a datasheet-style note for each dataset [@gebru2021]; and a clear statement of what the analysis cannot support. The last item separates reports people cite from reports people weaponize.
 
-You have already built most of this. The manifest from @sec-ch-12-accounting answers "which data, which model, which recoding." The thresholds file answers "judged against what, and on whose authority." The changelog answers "what changed since last time." The CI badge from @sec-ch-13-engineering answers "does the code still do what the workpaper says." The four-section audit memo, especially its list of assumptions, becomes your methods section almost verbatim. A methods section that links to all four is short and very hard to dismiss.
+You have already built most of this. The manifest from @sec-ch-08-accounting answers "which data, which model, which recoding." The thresholds file answers "judged against what, and on whose authority." The changelog answers "what changed since last time." The CI badge from @sec-ch-10-engineering answers "does the code still do what the workpaper says." The four-section audit memo, especially its list of assumptions, becomes your methods section almost verbatim. A methods section that links to all four is short and very hard to dismiss.
 
 ::: {.callout-note title="In the Public Interest"}
 **Oversight** requires documentation that can travel, and reports are the documentation that travels. The specific claim of this chapter is that a report advances oversight only when it carries its own verification with it: a reader at a state agency, or the vendor's lawyer, must be able to rerun the audit from the linked manifest and get the same table. A report that asserts findings without that path is the audit-washing this module has been arguing against, written by the other side. There is a second failure the genre is prone to: the "report and forget" cycle, in which a report is launched, covered, and shelved. Recommendations aimed at a named body, with an authority it already holds and a date by which it could act, are the defense. They give the reader a remedy to pursue, not just a finding to regret.
@@ -53,7 +53,7 @@ You already have findings. Writing the report is mostly translating them into te
 
 **Name the actor.** "Someone should regulate this" is a complaint. A recommendation names the body, the authority it holds, and the calendar it works on.
 
-**Name the remedy.** An agency cannot act on "transparency." It can act on a specific disclosure requirement, a records release, a procurement clause (@sec-ch-14-govtech-civic-tech), or a rule. Your recommendation should be close to copy-pasteable into a draft bill, rule, or contract.
+**Name the remedy.** An agency cannot act on "transparency." It can act on a specific disclosure requirement, a records release, a procurement clause (@sec-ch-12-govtech-civic-tech), or a rule. Your recommendation should be close to copy-pasteable into a draft bill, rule, or contract.
 
 **Name the trade-off.** Every institutional reader has a colleague whose job is to poke holes. Name the most plausible objection (cost, vendor pushback, privacy risk from collecting protected attributes, the small-cell problem in rural counties) and explain why the recommendation still stands.
 
@@ -149,7 +149,7 @@ Build for `.docx` from day one. Retrofitting a Word-friendly layout the night be
 
 ## Reports across the lineages
 
-The report does not belong to data science. Within this module alone, it has two ancestors. The auditor's report (@sec-ch-12-accounting) documents trust through procedure: what was examined, against what standard, by whom. The engineer's incident review (@sec-ch-13-engineering) documents failure so that it is not repeated. Piece 3 borrows from both: the audit report's discipline about scope and standards, and the incident review's insistence on specific, assigned, dated changes. Say so in your methods. A report that knows its genre reads as adult.
+The report does not belong to data science. Within this module alone, it has two ancestors. The auditor's report (@sec-ch-08-accounting) documents trust through procedure: what was examined, against what standard, by whom. The engineer's incident review (@sec-ch-10-engineering) documents failure so that it is not repeated. Piece 3 borrows from both: the audit report's discipline about scope and standards, and the incident review's insistence on specific, assigned, dated changes. Say so in your methods. A report that knows its genre reads as adult.
 
 ## Exercises
 
@@ -170,7 +170,7 @@ The report does not belong to data science. Within this module alone, it has two
 
 ## Looking ahead
 
-Piece 3 asked whether a state can verify a system it depends on. Part V climbs the last rung of the ladder to the **federal** level and changes the pressure. @sec-ch-16-erosion asks what happens when the record itself decays: datasets withdrawn, links rotted, archives left without a steward. Your audit depends on federal survey infrastructure that someone has to keep running; the folktables call that worked this term is a small act of trust in that continuity. The module that follows ends in a public comment (@sec-ch-20-public-comments), a genre with the most formal route into federal decision-making of any in this book. If you choose Piece 3 for your final project, you might recast it in that genre, or deposit it with a DOI (@sec-ch-22-archival-deposits).
+Piece 3 asked whether a state can verify a system it depends on. Part V climbs the last rung of the ladder to the **federal** level and changes the pressure. @sec-ch-05-erosion-ownership asks what happens when the record itself decays: datasets withdrawn, links rotted, archives left without a steward. Your audit depends on federal survey infrastructure that someone has to keep running; the folktables call that worked this term is a small act of trust in that continuity. The module that follows ends in a public comment (@sec-ch-18-public-comments), a genre with the most formal route into federal decision-making of any in this book. If you choose Piece 3 for your final project, you might recast it in that genre, or deposit it with a DOI (@sec-ch-19-archival-deposits).
 
 ## Further Reading and Resources
 

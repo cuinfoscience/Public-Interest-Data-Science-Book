@@ -3,13 +3,13 @@ execute:
   eval: false
 ---
 
-# Testimony {#sec-ch-11-testimony}
+# Testimony {#sec-ch-17-testimony}
 
 A county hearing room is an unusual venue for data science. The Boulder County Commissioners' hearing room is on the third floor of the courthouse at 1325 Pearl Street, and most hearings there are hybrid, with some speakers in the room and others on Zoom. You sign up in advance through a link on the Commissioners' advance agenda or at a kiosk on the day. Your laptop is closed. The three commissioners sit at the front. When the chair calls your name, a clock starts, and when it runs out you will not get the extra thirty seconds you wish for.
 
-Testimony is a genre. Like the op-ed in @sec-ch-07-op-eds and the report you will write in @sec-ch-15-reports, it has conventions you can learn and a specific theory of what counts as contribution. Unlike those genres, it is also a performance, delivered in public and preserved in the record of a governing body. A well-argued op-ed persuades at scale. A well-argued report becomes institutional evidence. Testimony becomes *voice in the record*: a durable, citable mark that a particular person said a particular thing to a particular body on a particular day. The genre's rules follow from that.
+Testimony is a genre. Like the op-ed in @sec-ch-14-op-eds and the report you will write in @sec-ch-15-reports, it has conventions you can learn and a specific theory of what counts as contribution. Unlike those genres, it is also a performance, delivered in public and preserved in the record of a governing body. A well-argued op-ed persuades at scale. A well-argued report becomes institutional evidence. Testimony becomes *voice in the record*: a durable, citable mark that a particular person said a particular thing to a particular body on a particular day. The genre's rules follow from that.
 
-This chapter closes Module 2. You have an evidence ledger for a county program (@sec-ch-08-exemption), tracker entries for released requests from the county's Public Records Archive and an extraction notebook (@sec-ch-09-law), and a ledger of the exemptions the county cited and the remedies each leaves open (@sec-ch-10-oversight). Now you take that evidence to the body that can act on it: the Boulder County Board of County Commissioners. You will write a timed oral statement of three to five minutes, a written statement of about 1,000 words for the record, and prepared answers to the questions you can anticipate. The mechanics transfer: congressional hearings, state legislative committees, and European parliamentary consultations share a common structure even when the clocks differ.
+This chapter closes Module 2. You have an evidence ledger for a county program (@sec-ch-04-exemption-oversight), tracker entries for released requests from the county's Public Records Archive and an extraction notebook (@sec-ch-07-law), and a ledger of the exemptions the county cited and the remedies each leaves open (@sec-ch-04-exemption-oversight). Now you take that evidence to the body that can act on it: the Boulder County Board of County Commissioners. You will write a timed oral statement of three to five minutes, a written statement of about 1,000 words for the record, and prepared answers to the questions you can anticipate. The mechanics transfer: congressional hearings, state legislative committees, and European parliamentary consultations share a common structure even when the clocks differ.
 
 ## What testimony is and is not
 
@@ -25,7 +25,7 @@ Four features distinguish testimony from the book's other genres:
 Frances Haugen's October 2021 appearance before a Senate Commerce subcommittee is a useful genre case at the other end of the ladder [@haugen2021]. Read the transcript twice. The first time, notice how much of it is about Haugen: her training, the team she worked on, the internal research she saw. The personal voice is load-bearing; without it, the claim that the company knew about its products' harms is an assertion, and with it the claim is a witness account. The second time, mark every specific ask. There are fewer than you expect, and they are not buried. Compare her with the civil-society organizations that submitted evidence during the negotiation of the EU AI Act. Their voice was institutional rather than personal, their texts were longer, and their asks were often line edits to draft articles. Both are testimony. The difference lies in who is speaking and what the body can change.
 
 ::: {.callout-note title="In the Public Interest"}
-**Oversight**, as @sec-ch-10-oversight defined it, needs authority and remedy, and testimony is how evidence reaches an authority in public. A brilliant argument made privately to a staffer may be politically effective, but it leaves no durable mark. Written testimony does. When your written statement enters the record of a county hearing, alongside the meeting video, you have created a public document (@sec-ch-09-law) that a reporter, a future requester, or a litigant can cite years from now. The specific claim of this chapter is that testimony advances oversight only when it pairs a verifiable finding with an ask that the body in the room has the authority to grant; testimony addressed to the wrong level of government is a complaint with good production values. @sec-ch-22-archival-deposits takes up the deposit that keeps your version available even if the meeting portal changes vendors.
+**Oversight**, as @sec-ch-04-exemption-oversight defined it, needs authority and remedy, and testimony is how evidence reaches an authority in public. A brilliant argument made privately to a staffer may be politically effective, but it leaves no durable mark. Written testimony does. When your written statement enters the record of a county hearing, alongside the meeting video, you have created a public document (@sec-ch-07-law) that a reporter, a future requester, or a litigant can cite years from now. The specific claim of this chapter is that testimony advances oversight only when it pairs a verifiable finding with an ask that the body in the room has the authority to grant; testimony addressed to the wrong level of government is a complaint with good production values. @sec-ch-19-archival-deposits takes up the deposit that keeps your version available even if the meeting portal changes vendors.
 :::
 
 ## The scenario
@@ -38,7 +38,7 @@ Remember, too, who usually speaks. Einstein, Palmer, and Glick [-@einsteinWhoPar
 
 ## A pandas detour that earns one sentence
 
-Testimony that rests on impressions does not survive questioning. You need one or two facts that are yours, defensible, and citable. The first can come straight from the extraction notebook you built in @sec-ch-09-law.
+Testimony that rests on impressions does not survive questioning. You need one or two facts that are yours, defensible, and citable. The first can come straight from the extraction notebook you built in @sec-ch-07-law.
 
 ```python
 # Continue from the budget DataFrame extracted from Resolution 2025-058
@@ -131,7 +131,7 @@ Record yourself. Time it. Nearly every first draft runs long. The first cut is a
 
 Most people testify a handful of times in their lives. For all of them, the habit of *producing the paper trail* matters more than the live performance: the written statement, the notebook, the ledger, and the follow-up email are what outlast the hearing.
 
-Part IV climbs to the state. @sec-ch-12-accounting opens Module 3 with the assurance lineage and the disaggregated audit this module set aside, aimed at Colorado's state institutions and written up in the report genre of @sec-ch-15-reports. The federal public comment, a written cousin of testimony with a longer clock, waits in @sec-ch-20-public-comments.
+Part IV climbs to the state. @sec-ch-08-accounting opens Module 3 with the assurance lineage and the disaggregated audit this module set aside, aimed at Colorado's state institutions and written up in the report genre of @sec-ch-15-reports. The federal public comment, a written cousin of testimony with a longer clock, waits in @sec-ch-18-public-comments.
 
 ## Further Reading and Resources
 
