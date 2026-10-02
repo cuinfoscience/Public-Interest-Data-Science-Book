@@ -5,13 +5,13 @@ execute:
 
 # Op-Eds {#sec-ch-14-op-eds}
 
-Each module in this book ends with a genre: the form a professional lineage uses to carry its findings to the public that can act on them. Journalism's form, for a data scientist who is not a staff reporter, is the op-ed. You arrive at this chapter with the makings of one. @sec-ch-03-enclosure-openness gave you a responsible way to collect city data and a provenance log. @sec-ch-06-journalism had you reproduce a published finding and compare your numbers to the reporter's. @sec-ch-03-enclosure-openness turned your city data into a publication someone else can check. What none of that has produced yet is a reader.
+A genre is the form a professional lineage uses to carry its findings to the public that can act on them. Journalism's form, for a data scientist who is not a staff reporter, is the op-ed. This chapter assumes you have the makings of one: city data collected responsibly, with a provenance log, and published as a documented dataset someone else can check (@sec-ch-03-enclosure-openness develops both moves), and the habit of reproducing a published finding and comparing your numbers to the reporter's (@sec-ch-06-journalism). If you have not built those yet, the worked example below names each piece as it needs it. What none of that work produces on its own is a reader.
 
-This chapter is about getting one. It treats the op-ed as a genre with a history, an economy, and an anatomy; walks through a worked example built on the Boulder election contributions data from @sec-ch-03-enclosure-openness; and ends with the module's portfolio piece. The audience is a city: residents, council members, the clerk's office, and the reporters who cover them. The other modules will ask for other genres and other cases, starting fresh at the county level in Part III. This one starts with the shortest form and the widest audience.
+This chapter is about getting one. It treats the op-ed as a genre with a history, an economy, and an anatomy; walks through a worked example built on the Boulder election contributions data from @sec-ch-03-enclosure-openness; and ends with an op-ed you could pitch this week. The audience is a city: residents, council members, the clerk's office, and the reporters who cover them. Journalism and the op-ed both live most naturally at the city level, where a single local outlet can reach most of the people a decision affects. The other genres in Part IV address other levels of government, and the op-ed is the shortest form with the widest audience.
 
 ## Why the op-ed matters, and why it does not
 
-The op-ed is the 750-word argument you write for a stranger. It is not a report (@sec-ch-15-reports), which assumes a policy audience willing to read forty pages. It is not testimony (@sec-ch-17-testimony), which assumes a hearing and a microphone. It is persuasion, addressed to a general reader who has about four minutes and two competing browser tabs, written in the voice of a person who thinks something should happen. Most of what you built in this module (the scraper, the reproduction, the cleaned dataset) is illegible to that reader. The op-ed is what makes it legible.
+The op-ed is the 750-word argument you write for a stranger. It is not a report (@sec-ch-15-reports), which assumes a policy audience willing to read forty pages. It is not testimony (@sec-ch-17-testimony), which assumes a hearing and a microphone. It is persuasion, addressed to a general reader who has about four minutes and two competing browser tabs, written in the voice of a person who thinks something should happen. Most of what a data project produces (the scraper, the reproduction, the cleaned dataset) is illegible to that reader. The op-ed is what makes it legible.
 
 It is also the genre public-interest data scientists most often skip. The paper goes to the committee. The dashboard goes to the client. Neither reaches the council member whose vote is next Tuesday or the reporter who might pick up the thread if they knew it existed. An op-ed in a local outlet will be read by more members of the affected public than any peer-reviewed article you write this year. That is an uncomfortable fact, and one the profession has mostly refused to sit with.
 
@@ -27,7 +27,7 @@ What has changed since 1970 is the ecosystem. National broadsheets still publish
 
 In the Boulder and Denver area that ecosystem includes a nonprofit local newsroom (Boulder Reporting Lab), a legacy daily (the *Daily Camera*), a digital city outlet (Denverite), and a statewide nonprofit (*The Colorado Sun*), alongside neighborhood newsletters and public radio. They differ in audience, length limits, whether they accept guest opinion at all, and how they handle data-driven commentary. Read each outlet's submission guidelines and a month of its opinion section before you pitch; the guidelines change, and this book will not keep up with them. Beyond the region, *The Conversation US* commissions pieces from academic authors and republishes them under Creative Commons, which can carry a city argument to regional papers.
 
-<!-- TODO: before each term, confirm which of these outlets accept guest opinion pieces, their current word limits, and their submission addresses. -->
+<!-- TODO: before each printing, confirm which of these outlets accept guest opinion pieces, their current word limits, and their submission addresses. -->
 
 Two non-US outlets are worth reading as models of how the genre travels. *The Continent*, a pan-African weekly designed to be shared as a PDF over messaging apps, shows commentary built for distribution rather than for a front page. *Rest of World* publishes technology reporting and opinion from outside the United States and Western Europe, and is a useful corrective to the assumption that the American op-ed page is the template.
 
@@ -111,7 +111,7 @@ ax.set_title("More contributions to Boulder council candidates came from "
 for side in ("top", "right"):
     ax.spines[side].set_visible(False)
 fig.tight_layout()
-fig.savefig("ch07_outside_share.png", dpi=160, bbox_inches="tight")
+fig.savefig("ch14_outside_share.png", dpi=160, bbox_inches="tight")
 ```
 
 Three things about that chart are deliberate. The title is a complete sentence, because a newsroom reader looks at the title first and the axes second. The color codes the argument, because a newsroom reader will not parse a legend. The sample sizes sit on the bars, because a reader who does not see them will assume the difference is noise. And the chart's own title carries the openness finding, so the image argues even if it is shared without the text.
@@ -122,26 +122,25 @@ An op-ed is **openness** as argument rather than openness as data release. @sec-
 
 ## Exercises
 
-**Exercise 7.1 (Analytic).** Pick three recent op-eds on data or technology policy: one by a data scientist writing for a general audience (start with Bender [@bender2023], Raji [@raji2022], or Broussard [@broussard2023]), one from a Boulder or Denver outlet on a city issue, and one from *The Continent* or *Rest of World*. For each, identify the hook, the nut graf, and the call to action, including who is being asked to act. Produce a two-page comparison. At least one will lack a crisp nut graf. Say so.
+**Exercise 14.1 (Analytic).** Pick three recent op-eds on data or technology policy: one by a data scientist writing for a general audience (start with Bender [@bender2023], Raji [@raji2022], or Broussard [@broussard2023]), one from a Boulder or Denver outlet on a city issue, and one from *The Continent* or *Rest of World*. For each, identify the hook, the nut graf, and the call to action, including who is being asked to act. Produce a two-page comparison. At least one will lack a crisp nut graf. Say so.
 
-**Exercise 7.2 (Guided).** Reproduce the worked example's table and chart from your own cleaned Boulder data (or the equivalent for your city dataset). Then test the finding's sensitivity: recompute the share with "Boulder County" counted as inside, and with dollars instead of counts. Write 200 words on which version you would put in an op-ed and why.
+**Exercise 14.2 (Guided).** Reproduce the worked example's table and chart from your own cleaned Boulder data (or the equivalent for your city dataset). Then test the finding's sensitivity: recompute the share with "Boulder County" counted as inside, and with dollars instead of counts. Write 200 words on which version you would put in an op-ed and why.
 
-**Exercise 7.3 (Guided).** Make one publishable chart for your own finding. The title must be a full declarative sentence, the chart must carry its sample sizes, and it must work in grayscale. Export at 160 dpi and confirm it survives being shrunk to 500 pixels wide.
+**Exercise 14.3 (Guided).** Make one publishable chart for your own finding. The title must be a full declarative sentence, the chart must carry its sample sizes, and it must work in grayscale. Export at 160 dpi and confirm it survives being shrunk to 500 pixels wide.
 
-**Exercise 7.4 (Analytic).** Choose your target outlet and read a month of its opinion section and its submission guidelines. In 300 words, describe the outlet's readership, typical length, and the last three city-level pieces it ran. Then draft a right-of-reply email to the city office responsible for your data, with two specific questions and a deadline.
+**Exercise 14.4 (Analytic).** Choose your target outlet and read a month of its opinion section and its submission guidelines. In 300 words, describe the outlet's readership, typical length, and the last three city-level pieces it ran. Then draft a right-of-reply email to the city office responsible for your data, with two specific questions and a deadline.
 
-**Exercise 7.5 (Piece 1: Journalism / City / Op-ed).** Submit Piece 1, which has four parts:
+**Exercise 14.5 (Submittable artifact: an op-ed for a city outlet).** Produce a pitch-ready op-ed package with three parts:
 
-1. **Technical artifact.** Reproduce one published finding (from "Machine Bias" or a local data story) and extend it with city data that you scraped or downloaded responsibly, with a documented provenance file. Deliver it as a reproducible notebook or small repository that a classmate can clone and run, drawing on Exercises 4.5, 5.5, and 6.5.
-2. **Public text.** A 750-word op-ed for a named local outlet, plus a one-paragraph pitch. Render the op-ed to `.docx` and include the pitch as it would appear in the email body.
-3. **Installed-base note** (about 300 words). Which pressure did you meet? Which installed-base elements did your artifact build, and which are still missing? Include provenance, license, and an AI-use disclosure.
-4. **Graduate methods memo** (INFO 5871 only; 750–1,000 words). Situate the piece in at least five scholarly sources and defend one methodological choice against the literature.
+1. **Technical artifact.** A reproducible notebook or small repository that reproduces one published finding (from "Machine Bias" or a local data story, as in @sec-ch-06-journalism) or builds your own, and extends it with city data you collected or downloaded responsibly, with a documented provenance file (@sec-ch-03-enclosure-openness). Someone who has never met you should be able to clone it, run it, and get your chart.
+2. **Public text.** A 750-word op-ed for a named local outlet, rendered to `.docx`, plus the pitch exactly as it would appear in the email body, with the right-of-reply exchange from Exercise 14.4 summarized in a sentence.
+3. **Provenance and AI-use note** (about 300 words). Which pressure did your piece meet? Which installed-base elements (@sec-ch-02-installed-base) did your artifact build, and which are still missing? State the data's provenance and license and disclose how you used AI tools.
 
-If the moment for your piece arrives during the term, send the pitch.
+When the peg arrives (a council agenda item, a filing deadline, an election), send the pitch.
 
 ## Looking ahead
 
-The op-ed is the shortest genre in this book and the one with the widest audience. Part III moves up the ladder from the city to the county, with a new lineage, a new pressure, and a new case. @sec-ch-04-exemption-oversight asks who must answer for a system once you can see it, and the module ends in @sec-ch-17-testimony, a genre whose audience is not a stranger with four minutes but a board of commissioners with the power to act. The pitch mindset carries forward: know your reader, make every element earn its place, and end with an ask someone can say yes to.
+The op-ed is the shortest genre in this book and the one with the widest audience. The genres that follow address narrower readers with more power to act. @sec-ch-15-reports writes for a named federal body, in a document long enough to carry its own methods. @sec-ch-17-testimony speaks to a committee of the Colorado General Assembly, an audience that is not a stranger with four minutes but a panel of legislators with a bill in front of them and a clock on the wall. @sec-ch-04-exemption-oversight explains why that difference matters: an argument reaches oversight only when it reaches someone with the authority to act. The pitch mindset carries forward: know your reader, make every element earn its place, and end with an ask someone can say yes to.
 
 ## Further Reading and Resources
 

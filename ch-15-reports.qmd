@@ -5,33 +5,35 @@ execute:
 
 # Reports {#sec-ch-15-reports}
 
-The op-ed you drafted in @sec-ch-14-op-eds travels light: it reaches a commuter or a council member and gets one decision out of them before the next tab loads. The testimony you prepared in @sec-ch-17-testimony is a timed appearance before a county board, spoken once and entered into the record. The report is a third instrument: long, sourced, designed to be excerpted and cited years later in a brief you will never see. Some institutional reader (a legislative staffer, an agency's policy advisor, a task force member, an advocacy research director) needs a document they can put in a folder and hand to their counsel. The op-ed is a knock on the door. Testimony is five minutes in the room. The report is the evidence you leave behind.
+An op-ed (@sec-ch-14-op-eds) travels light: it reaches a commuter or a council member and gets one decision out of them before the next tab loads. Testimony (@sec-ch-17-testimony) is a timed appearance before a state legislative committee, spoken once and entered into the record. The report is a third instrument: long, sourced, designed to be excerpted and cited years later in a brief you will never see. Some institutional reader (a congressional committee staffer, an agency's policy advisor, an auditor scoping a review, a standards body drafting guidance) needs a document they can put in a folder and hand to counsel. The op-ed is a knock on the door. Testimony is five minutes in the room. The report is the evidence you leave behind.
 
-This is the genre chapter for the assurance module, and its artifact is Piece 3: a report section of about 2,000 words, addressed to a named Colorado **state** body, built on the disaggregated audit you constructed in @sec-ch-08-accounting and tested in @sec-ch-10-engineering. The report is where assurance meets its public. An audit that no one with authority reads is a workpaper in a drawer. A report that cannot show its workpapers is audit-washing with footnotes.
+This chapter writes for the **nation**. Accounting and engineering, the two lineages that taught you to verify a system rather than describe it (@sec-ch-08-accounting, @sec-ch-10-engineering), do their most consequential public work at the federal level, where systems are bought at scale, standards are set, and auditors answer to Congress. The chapter's worked example is a report section of about 2,000 words, addressed to a named federal body, built on the disaggregated audit of a model trained on national American Community Survey data that @sec-ch-08-accounting constructs and @sec-ch-10-engineering puts under test. If you have not built that audit, you need three things from it: a JSON report of findings, a manifest that records which data and model produced them, and a thresholds file that says what counts as a failure and on whose authority. The report is where assurance meets its public. An audit that no one with authority reads is a workpaper in a drawer. A report that cannot show its workpapers is audit-washing with footnotes.
 
 ## A short political economy of the policy report
 
-The modern policy report sits between academic research and advocacy, funded by foundation grants, occasional government contracts, and a small number of large philanthropic commitments to technology policy. The shops you will cite most (AI Now, Data & Society, EPIC, CDT, Brookings, New America, the Ada Lovelace Institute) calibrate that space differently: AI Now is argumentative, Data & Society explanatory, Brookings academic with a policy preamble. Read three before you write your own.
+The modern policy report sits between academic research and advocacy, funded by foundation grants, occasional government contracts, and a small number of large philanthropic commitments to technology policy. The shops you will cite most (AI Now, Data & Society, EPIC, CDT, Brookings, the Ada Lovelace Institute) calibrate that space differently: AI Now is argumentative, Data & Society explanatory, Brookings academic with a policy preamble.
 
-They share a structure: a short executive summary, findings organized by claim, methods folded in or in an appendix, recommendations aimed at a specific institutional actor, and references. Proportions differ, and they tell you where the authors think the argument lives. Each report also has a reader in mind who is not you. A report that reads as written for a general audience is almost always a worse report.
+They share a structure: executive summary, findings organized by claim, methods, recommendations aimed at a specific institutional actor, and references. Proportions differ, and they tell you where the authors think the argument lives. A report that reads as written for a general audience is almost always a worse report.
 
-Non-US reports widen the range. Access Now's #KeepItOn reporting builds a shared evidentiary record for UN human rights mechanisms and national litigants. Derechos Digitales in Santiago writes for regional advocacy and for proceedings in the Inter-American system. Paradigm Initiative in Lagos publishes *Londa*, country-by-country baselines on digital rights in Africa [@paradigm_londa]. Less foundation money, more distributed authorship, tighter ties to litigation: the genre bends to the institutions it is trying to reach.
+Government reports are the genre's strictest models. A Government Accountability Office audit follows a structure (objectives, scope and methodology, findings, recommendations, agency comments) fixed enough that you can find the recommendations in any of them in under a minute. Read one before you write; it is what your federal reader is used to receiving. The report also has ancestors in the assurance lineages: the auditor's report, which documents trust through procedure (@sec-ch-08-accounting), and the engineer's incident review, which insists on specific, assigned, dated changes (@sec-ch-10-engineering).
+
+Non-US reports widen the range. Access Now's #KeepItOn reporting builds an evidentiary record for UN human rights mechanisms. Derechos Digitales in Santiago writes for regional advocacy and the Inter-American system. Paradigm Initiative in Lagos publishes *Londa*, country-by-country baselines on digital rights in Africa [@paradigm_londa]. The genre bends to the institutions it is trying to reach.
 
 ## Reports that inform and reports that mobilize
 
 Most authors never draw this distinction explicitly. An **informing** report surveys a field, names the actors, and leaves the reader better oriented. A **mobilizing** report builds to a demand: a rule the agency should write, a clause the procurement office should add, a disclosure the vendor should make. Both are legitimate and they are not interchangeable. A mobilizing report that reads as merely informing is ignored by those who could have acted; an informing report that reads as mobilizing is discounted by those who trusted it as a survey.
 
-Read the recommendations to tell them apart. An informing report hedges ("policymakers should consider a range of approaches"). A mobilizing report is specific ("the agency should require, in its next solicitation, that the vendor deliver decision logs in CSV with a documented schema"). If your recommendations could be photocopied into a report on a different topic without changing meaning, you have written a report that will not cause anything to happen. That may be the right choice. Be sure it is a choice.
+Read the recommendations to tell them apart. An informing report hedges ("policymakers should consider a range of approaches"). A mobilizing report is specific ("the agency should require, in its next solicitation, that the vendor deliver decision logs in CSV with a documented schema"). If your recommendations could be photocopied into a report on a different topic, the report will not cause anything to happen. That may be the right choice. Be sure it is a choice.
 
-Piece 3 is a mobilizing section. It ends in recommendations to a body that can act.
+The report section you write at the end of this chapter is mobilizing. It ends in recommendations to a body that can act.
 
 ## The executive summary is the report
 
-Most readers will read exactly three things: the title, the executive summary, and the recommendations. Some will glance at the figures. Almost none will read the methods. A legislative staffer during session triages dozens of documents a week, and the executive summary is where the triage happens.
+Most readers will read exactly three things: the title, the executive summary, and the recommendations. Some will glance at the figures. Almost none will read the methods. A committee staffer triages dozens of documents a week, and the executive summary is where the triage happens.
 
-So the executive summary is not a summary. It is the argument compressed to a page or so, with evidence pointers inline. It must stand alone: if a staffer forwards only the summary to their committee chair, the chair should be able to decide whether to ask for a briefing. The recommendations belong in it. If they are not in the executive summary, they are invisible.
+So the executive summary is not a summary. It is the argument compressed to a page, with evidence pointers inline, and it must stand alone: a chair who receives only the summary should be able to decide whether to ask for a briefing. If the recommendations are not in it, they are invisible.
 
-Headings are the report's second skeleton. A skimming reader reads headings and figure captions, and if those read as a coherent outline, the reader will trust the document enough to continue. "Findings" is a weak heading. "The model's error rates differ most for groups the state serves least" is a strong one.
+Headings are the report's second skeleton: if headings and figure captions read as a coherent outline, a skimming reader will trust the document enough to continue. "Findings" is a weak heading. "Error rates differ most for the groups the data describe least" is a strong one.
 
 ::: {.callout-tip title="The Missing Manual"}
 Test the three-layer skeleton before you send anything. Print the executive summary, the headings, and the figure captions, and hand them to someone who has not seen the report. If they can tell you what you found, what you want done, and who should do it, the skeleton works. If not, your argument lives where no one will read it. A second, more technical trap: if you type the audit's numbers into the prose by hand, the report and the workpaper will drift apart the first time you rerun the audit. Read the numbers from the audit's JSON output inside the report itself, so that a rerun updates both or neither.
@@ -41,44 +43,52 @@ Test the three-layer skeleton before you send anything. Print the executive summ
 
 A report is not a peer-reviewed article. What it needs is methods transparency a skeptical reader can check in an afternoon: where the data came from and when, with which parameters; a link to the repository that produced each figure; a datasheet-style note for each dataset [@gebru2021]; and a clear statement of what the analysis cannot support. The last item separates reports people cite from reports people weaponize.
 
-You have already built most of this. The manifest from @sec-ch-08-accounting answers "which data, which model, which recoding." The thresholds file answers "judged against what, and on whose authority." The changelog answers "what changed since last time." The CI badge from @sec-ch-10-engineering answers "does the code still do what the workpaper says." The four-section audit memo, especially its list of assumptions, becomes your methods section almost verbatim. A methods section that links to all four is short and very hard to dismiss.
+If you built the audit pipeline in @sec-ch-08-accounting, you have most of this already. The manifest answers "which data, which states, which model, which recoding." The thresholds file answers "judged against what, and on whose authority." The changelog answers "what changed since last time." The continuous-integration badge from @sec-ch-10-engineering answers "does the code still do what the workpaper says." The four-section audit memo, especially its list of assumptions, becomes your methods section almost verbatim. A methods section that links to all four is short and very hard to dismiss.
+
+National data add one obligation. Pooling across states can hide disparities across places, as a single accuracy number hides them across groups. Say whether you pooled or stratified by state, and which cells fell below your minimum size. A federal reader will ask whether the finding holds in the states their members represent.
 
 ::: {.callout-note title="In the Public Interest"}
-**Oversight** requires documentation that can travel, and reports are the documentation that travels. The specific claim of this chapter is that a report advances oversight only when it carries its own verification with it: a reader at a state agency, or the vendor's lawyer, must be able to rerun the audit from the linked manifest and get the same table. A report that asserts findings without that path is the audit-washing this module has been arguing against, written by the other side. There is a second failure the genre is prone to: the "report and forget" cycle, in which a report is launched, covered, and shelved. Recommendations aimed at a named body, with an authority it already holds and a date by which it could act, are the defense. They give the reader a remedy to pursue, not just a finding to regret.
+**Oversight** requires documentation that can travel, and reports are the documentation that travels. The specific claim of this chapter is that a report advances oversight only when it carries its own verification with it: a reader at a federal agency, a GAO analyst, or the vendor's lawyer must be able to rerun the audit from the linked manifest and get the same table. A report that asserts findings without that path is the audit-washing @sec-ch-08-accounting warns against, written by the other side. The genre is also prone to a second failure: the "report and forget" cycle, in which a report is launched, covered, and shelved. Recommendations aimed at a named body, with an authority it already holds and a date by which it could act, are the defense. They give the reader a remedy to pursue, not just a finding to regret.
 :::
 
 ## The translation gap
 
-You already have findings. Writing the report is mostly translating them into terms an institutional reader can act on, and the translation has three moves first-time authors underestimate.
+Writing the report is mostly translation into terms an institutional reader can act on, in three moves first-time authors underestimate.
 
-**Name the actor.** "Someone should regulate this" is a complaint. A recommendation names the body, the authority it holds, and the calendar it works on.
+**Name the actor.** "Someone should regulate this" is a complaint. Name the body, its authority, and its calendar.
 
-**Name the remedy.** An agency cannot act on "transparency." It can act on a specific disclosure requirement, a records release, a procurement clause (@sec-ch-12-govtech-civic-tech), or a rule. Your recommendation should be close to copy-pasteable into a draft bill, rule, or contract.
+**Name the remedy.** An agency cannot act on "transparency." It can act on a specific disclosure requirement, a records release, a procurement clause (@sec-ch-12-govtech-civic-tech), a guidance document, or a rule. Your recommendation should be close to copy-pasteable into a draft bill, guidance document, or contract.
 
-**Name the trade-off.** Every institutional reader has a colleague whose job is to poke holes. Name the most plausible objection (cost, vendor pushback, privacy risk from collecting protected attributes, the small-cell problem in rural counties) and explain why the recommendation still stands.
+**Name the trade-off.** Every institutional reader has a colleague whose job is to poke holes. Name the most plausible objection (cost, vendor pushback, privacy risk from collecting protected attributes, the small-cell problem in sparsely populated states) and explain why the recommendation still stands.
 
-## Naming a Colorado state body
+## Naming a federal body
 
-The report is not written for "policymakers" any more than the op-ed was written for "the public." At the state level, three kinds of body recur, and each reads differently.
+The report is not written for "policymakers" any more than the op-ed was written for "the public." At the federal level, four kinds of body recur, and each reads differently.
 
-A **legislative committee** writes or amends statutes and oversees agencies. The Colorado General Assembly has committees of reference for each subject area and a Joint Technology Committee that oversees state information technology. <!-- TODO: verify the Joint Technology Committee's current jurisdiction and confirm the relevant committees of reference before the term. --> A committee's staff read for statutory hooks, fiscal implications, and whether your recommendation fits a bill they could carry next session.
+A **congressional committee** writes legislation, holds hearings, and oversees the agencies within the jurisdiction its chamber's rules define. Staff read for jurisdiction, for a hook in pending legislation or an upcoming hearing, and for whether your recommendation could become a letter to an agency or a request to GAO.
 
-A **state agency** writes rules, enforces statutes, and buys systems. Under SB 24-205, the Attorney General's office holds enforcement authority over the Colorado AI Act; the Governor's Office of Information Technology sets standards for state technology. <!-- TODO: re-check SB 24-205's current status and enforcement provisions, and OIT's current role in reviewing AI procurements. --> Agency staff read for whether your evidence would survive a challenge and whether the recommended action is within their existing authority.
+The **Government Accountability Office** is Congress's audit agency. It performs most of its work at the request of committees or under statutory mandates, so you rarely address a report to GAO directly; you write for the committee that might ask GAO to look. GAO has also published its own *AI Accountability Framework*, organized around governance, data, performance, and monitoring [@gao2021ai]. A report that maps its findings onto those four principles speaks the vocabulary a GAO analyst already uses.
 
-A **task force or advisory body** studies a question and reports to the legislature or the governor. Colorado has convened bodies on artificial intelligence and on related questions in recent sessions. <!-- TODO: identify any currently active Colorado task force on AI or automated decision systems, its statutory basis, and its reporting deadline; do not name one in teaching materials until verified. --> Task force members read for options and evidence they can cite in their own report, and they often have the longest time budget.
+An **inspector general** audits and investigates the agency it sits in, under the Inspector General Act of 1978, and reports to the agency head and to Congress. If your audit concerns a system a specific agency uses, its inspector general is a natural reader. Oversight.gov collects their published reports.
 
-Pick one body as the primary reader, confirm that it currently exists and has the authority your recommendation assumes, and write the executive summary to it. You cannot serve all three as the primary reader.
+The **National Institute of Standards and Technology** is a non-regulatory agency in the Department of Commerce. It cannot require anything of anyone, but its guidance travels: federal agencies, contractors, and state legislatures borrow its frameworks. Its *AI Risk Management Framework* (AI RMF 1.0, January 2023) is voluntary and organizes practice into four functions, Govern, Map, Measure, and Manage, and NIST has said it will review the framework with formal input from the AI community no later than 2028 [@nist_airmf2023]. A recommendation that NIST specify minimum reporting practices for disaggregated evaluations falls squarely within what NIST does.
 
-## Quarto as a report stack
+Agency AI use-case inventories, which OMB memorandum M-25-21 requires most agencies to keep annually [@omb_m2521; @omb_ai_inventory2024], give you a starting list of systems a federal reader is responsible for. State and city regimes make useful comparisons, because they show a rule working at a smaller scale: Colorado's AI Act (SB 24-205) places impact-assessment duties on deployers of high-risk systems [@colorado_sb24205], and New York City's Local Law 144 requires published bias audits of automated hiring tools [@nyc_ll144]. <!-- TODO: re-check SB 24-205's current status before citing it as a working model. --> Cite them as evidence of feasibility, not as the reader's authority.
 
-The technical apparatus is what you already know. A report is a Quarto project with its own `_quarto.yml`, a main `report.qmd`, a `references.bib`, and the audit repository as a dependency. Quarto renders the same source to HTML, PDF (for readers who print everything), and `.docx` (for the staffer who will run Track Changes on your recommendations).
+Pick one body as the primary reader, confirm that it currently exists and has the authority your recommendation assumes, and write the executive summary to it. You cannot serve all four as the primary reader.
+
+## Worked example: a report section for NIST
+
+Suppose your audit (@sec-ch-08-accounting) trained a simple income classifier on ACS microdata from many states through `folktables` [@ding2021], disaggregated its errors by race and sex with `fairlearn`, suppressed cells below a minimum size, and wrote a dated JSON report. The finding worth reporting is not "the model is unfair," which is unsurprising for a crude logistic regression. It is that the headline disparity metric changes depending on the minimum cell size and the states pooled, and nothing in current voluntary guidance tells an evaluator which to report. That is a gap NIST can fill. The recommendation: in its next revision of the AI RMF or a companion profile, NIST should specify that any disaggregated evaluation report per-cell sample sizes, the suppression threshold and its rationale, and a manifest that lets a second evaluator reproduce the table.
+
+A report is a Quarto project with its own `_quarto.yml`, a main `report.qmd`, a `references.bib`, and the audit repository as a dependency. Quarto renders the same source to HTML, PDF (for readers who print everything), and `.docx` (for the staffer who will run Track Changes on your recommendations).
 
 ```
 report/
   _quarto.yml
   report.qmd
   references.bib
-  audit/                 # your audit-pipeline, as a git submodule or copy
+  audit/                 # the audit pipeline, as a git submodule or copy
     manifest.yaml  thresholds.yaml  CHANGELOG.md
     reports/2027-03-11-001.json
   README.md
@@ -91,7 +101,7 @@ project:
   output-dir: _output
 author:
   - name: "Your Name"
-    affiliation: "INFO 4871/5871, University of Colorado Boulder"
+    affiliation: "Your affiliation"
 format:
   html: {toc: true, embed-resources: true}
   pdf: {toc: true, number-sections: true}
@@ -109,21 +119,23 @@ audit = json.load(open("audit/reports/2027-03-11-001.json"))
 find = {f["metric"]: f for f in audit["findings"]}
 dpd = find["demographic_parity_difference"]
 eod = find["equalized_odds_difference"]
+source = audit["manifest"]["dataset"]["source"]   # names the vintage and states
+min_n = audit["manifest"]["min_cell_size"]
 ```
 
 The executive summary then uses Quarto's inline code instead of typed numbers:
 
 ```markdown
-# Disaggregated Error Rates in an Income Classifier Trained on Colorado ACS Data
+# Disaggregated Error Rates in an Income Classifier Trained on National ACS Data
 
 ::: {.callout-important title="Executive summary"}
-Prepared for [named Colorado state body]. An audit of a model trained
-on 2018 American Community Survey records for Colorado finds a
-demographic parity difference of `{python} f"{dpd['value']:.2f}"`
-(threshold level: `{python} dpd['level']`) and an equalized odds
-difference of `{python} f"{eod['value']:.2f}"`
-(`{python} eod['level']`). We recommend that [body] (1) ...,
-(2) ..., and (3) ... before [date or session].
+Prepared for the National Institute of Standards and Technology. An
+audit of a model trained on `{python} source` finds a demographic
+parity difference of `{python} f"{dpd['value']:.2f}"` (threshold
+level: `{python} dpd['level']`) and an equalized odds difference of
+`{python} f"{eod['value']:.2f}"` (`{python} eod['level']`), with cells
+smaller than `{python} min_n` people suppressed. We recommend that
+NIST (1) ..., (2) ..., and (3) ... in its next review of the AI RMF.
 :::
 
 ## Error rates differ most for the groups the data describe least
@@ -133,10 +145,31 @@ difference of `{python} f"{eod['value']:.2f}"`
 ## Methods {#sec-methods}
 
 Audit run `{python} audit['run_id']`; manifest, thresholds, changelog,
-and CI-tested code at <https://github.com/yourname/acs-co-audit>.
+and CI-tested code at <https://github.com/yourname/acs-national-audit>.
 ```
 
-Render all three formats in one pass with `quarto render report.qmd --to html,pdf,docx`, and check that each shows the same numbers:
+The findings section needs one figure: per-group error rates with their sample sizes, drawn from the same JSON.
+
+```python
+#| label: fig-fpr
+#| fig-cap: "False positive rate by group. Labels give n; cells below the minimum size are suppressed."
+import pandas as pd
+import matplotlib.pyplot as plt
+
+g = pd.DataFrame(audit["by_group"])     # one row per reported cell
+g["cell"] = g["race"] + ", " + g["sex"]
+g = g.sort_values("fpr")
+fig, ax = plt.subplots(figsize=(6.5, 0.3 * len(g) + 1))
+ax.barh(g["cell"], g["fpr"], color="#4a5568")
+for y, (rate, n) in enumerate(zip(g["fpr"], g["n"])):
+    ax.text(rate + 0.003, y, f"n={int(n):,}", va="center", fontsize=8)
+ax.set_xlabel("False positive rate")
+fig.tight_layout()
+```
+
+If your audit stratified by state, facet by state or put the state tables in an appendix, and say which in the caption.
+
+Render all three formats in one pass and check that each shows the same numbers:
 
 ```bash
 quarto render report.qmd --to html,pdf,docx
@@ -145,42 +178,37 @@ quarto render report.qmd --to html,pdf,docx
 # => Output created: _output/report.docx
 ```
 
-Build for `.docx` from day one. Retrofitting a Word-friendly layout the night before a deadline is a surprise you can schedule out of existence.
-
-## Reports across the lineages
-
-The report does not belong to data science. Within this module alone, it has two ancestors. The auditor's report (@sec-ch-08-accounting) documents trust through procedure: what was examined, against what standard, by whom. The engineer's incident review (@sec-ch-10-engineering) documents failure so that it is not repeated. Piece 3 borrows from both: the audit report's discipline about scope and standards, and the incident review's insistence on specific, assigned, dated changes. Say so in your methods. A report that knows its genre reads as adult.
+Build for `.docx` from day one; retrofitting a Word layout the night before a deadline is a surprise you can schedule out of existence.
 
 ## Exercises
 
-**Exercise 15.1 (Structural analysis, US).** Pick a recent AI Now Institute or Data & Society report. Map its structure: how many pages go to executive summary, findings, methods, recommendations, appendices? Is it informing or mobilizing? Who is the implied institutional reader, and what tells you? Write 400 words.
+**Exercise 15.1 (Structural analysis, US).** Pick a recent AI Now Institute or Data & Society report and a recent GAO report on artificial intelligence or federal data. Map each one's structure: how many pages go to executive summary, findings, methods, recommendations, appendices? Is each informing or mobilizing? Who is the implied institutional reader, and what tells you? Write 400 words.
 
-**Exercise 15.2 (Structural analysis, non-US).** Do the same for a recent report from Access Now, Derechos Digitales, or Paradigm Initiative. Note where it assumes a reader who is not a US government. End with one paragraph comparing it to your report from 15.1: which conventions differ, and what does that say about each report's audience?
+**Exercise 15.2 (Structural analysis, non-US).** Do the same for a recent report from Access Now, Derechos Digitales, or Paradigm Initiative, and add a paragraph on which conventions differ from 15.1 and what that says about each report's audience.
 
-**Exercise 15.3 (Executive summary and outline).** Choose the Colorado state body your Piece 3 report will address. In 150 words, document that it currently exists, cite its source of authority, and name what it can actually do (amend a statute, write a rule, change a procurement standard, recommend). Then draft a one-page executive summary with recommendations inline and a section outline with one-sentence nut grafs. Exchange with a classmate and run the three-layer skeleton test from the Missing Manual callout.
+**Exercise 15.3 (Executive summary and outline).** Choose the federal body your report will address. In 150 words, document that it currently exists, cite its source of authority, and name what it can actually do (hold a hearing, request a GAO review, open an audit, revise guidance, write a rule). Then draft a one-page executive summary with recommendations inline and a section outline with one-sentence nut grafs. Hand the summary, headings, and captions to someone who has not seen your work and run the three-layer skeleton test from the Missing Manual callout.
 
-**Exercise 15.4 (Reproducible figure, laptop, real public data).** Add a figure to `report.qmd` that plots per-group error rates from your audit's JSON output, with the per-cell `n` labeled and suppressed cells noted in the caption. The caption must cite the audit `run_id`. Rerun the audit with a changed `min_cell_size`, re-render, and confirm that the figure and the inline numbers both update. Commit both renders.
+**Exercise 15.4 (Reproducible figure, laptop, real public data).** Add the per-group figure above to `report.qmd`, with the per-cell `n` labeled and suppressed cells noted in the caption. The caption must cite the audit `run_id`. Rerun the audit with a changed `min_cell_size` (or a different set of states), re-render, and confirm that the figure and the inline numbers both update. Commit both renders and write two sentences on whether the headline finding survived the change.
 
-**Exercise 15.5 (Piece 3: Assurance / State / Report).** Submit Piece 3, with all four parts:
+**Exercise 15.5 (Submittable artifact: a report section for a federal body).** Produce a report package with three parts:
 
-1. **Technical artifact.** A disaggregated audit with manifest, thresholds, changelog, and tests that run in continuous integration, as a reproducible repository a classmate can clone and run.
-2. **Public text.** A report section for a named Colorado state body: executive summary, methods, findings, recommendations (about 2,000 words).
-3. **Installed-base note** (about 300 words). Which pressure did you meet? Which installed-base elements did your artifact build, and which are still missing? Include provenance, license, and an AI-use disclosure.
-4. **Graduate methods memo** (INFO 5871 only; 750–1,000 words). Situate the piece in at least five scholarly sources and defend one methodological choice against the literature.
+1. **Technical artifact.** A disaggregated audit of a model trained on national ACS data, with manifest, thresholds, changelog, and tests that run in continuous integration, as a repository someone else can clone and run with one command.
+2. **Public text.** A report section for a named federal body (a congressional committee, an inspector general, NIST, or another body whose authority you documented in 15.3): executive summary, methods, findings, and recommendations, about 2,000 words, with every number read from the audit's JSON. Render it to HTML, PDF, and `.docx`.
+3. **Provenance, gaps, and AI-use note** (about 300 words). Which pressure did your report meet? Which installed-base elements (@sec-ch-02-installed-base) did your artifact build, and which are still missing? State the data's provenance and license and disclose how you used AI tools.
+
+If the body accepts submissions (a request for information, an inspector general's intake, a committee's hearing record), send it there, and keep the confirmation.
 
 ## Looking ahead
 
-Piece 3 asked whether a state can verify a system it depends on. Part V climbs the last rung of the ladder to the **federal** level and changes the pressure. @sec-ch-05-erosion-ownership asks what happens when the record itself decays: datasets withdrawn, links rotted, archives left without a steward. Your audit depends on federal survey infrastructure that someone has to keep running; the folktables call that worked this term is a small act of trust in that continuity. The module that follows ends in a public comment (@sec-ch-18-public-comments), a genre with the most formal route into federal decision-making of any in this book. If you choose Piece 3 for your final project, you might recast it in that genre, or deposit it with a DOI (@sec-ch-19-archival-deposits).
+A report asks whether a nation can verify a system it depends on. @sec-ch-16-research-proposals turns a report's "what the analysis cannot support" section into a case for the next study. Your audit also depends on federal survey infrastructure someone has to keep running; the `folktables` call that worked today is a small act of trust in that continuity, and @sec-ch-05-erosion-ownership asks what happens when such records decay. @sec-ch-19-archival-deposits shows how to deposit the report and its audit with a DOI, so the workpapers outlast the links in your footnotes.
 
 ## Further Reading and Resources
 
+- US Government Accountability Office, *Artificial Intelligence: An Accountability Framework for Federal Agencies and Other Entities*, GAO-21-519SP (2021) [@gao2021ai], <https://www.gao.gov/products/gao-21-519sp>. A federal auditor's vocabulary for AI accountability, and a model of the GAO report form.
+- National Institute of Standards and Technology, *AI Risk Management Framework (AI RMF 1.0)* [@nist_airmf2023], <https://doi.org/10.6028/NIST.AI.100-1>. The voluntary framework a federal report on AI evaluation will most often address.
+- Oversight.gov: <https://www.oversight.gov/>. Published reports from federal inspectors general; read three on the agency you care about.
+- Congress.gov committees: <https://www.congress.gov/committees>. Jurisdiction, hearings, and members; start here to name a committee.
 - AI Now Institute, publications: <https://ainowinstitute.org/publications>. The mobilizing report in the US technology-policy ecosystem; read one cover to cover.
-- Data & Society, library: <https://datasociety.net/library/>. A wide range of report types; notice how each is built for its implied reader.
-- Access Now, #KeepItOn: <https://www.accessnow.org/campaign/keepiton/>. A non-US advocacy report integrated with UN human rights mechanisms.
-- Derechos Digitales: <https://www.derechosdigitales.org/>. Latin American digital rights research written for regional advocacy and litigation. <!-- TODO: confirm URL. -->
 - Paradigm Initiative, *Londa*: <https://paradigmhq.org/londa>. Distributed, country-by-country reporting; the opposite of the single-institute report.
-- Colorado General Assembly: <https://leg.colorado.gov/>. Committee pages, bill histories, and interim committee schedules; start here to name your body.
 - Quarto documentation on inline code and multi-format output: <https://quarto.org/docs/computations/inline-code.html>. The feature that keeps your prose and your audit in sync.
-- Jonathan Gray and Liliana Bounegru, eds., *The Data Journalism Handbook* (2021) [@gray2021handbook]. Chapters on long-form investigative projects whose conventions travel to reports.
 - Timnit Gebru et al., "[Datasheets for datasets](https://doi.org/10.1145/3458723)" [@gebru2021]. The provenance-note template for every dataset your report relies on.
-- Pandoc manual, reference documents for `.docx`: <https://pandoc.org/MANUAL.html#option--reference-doc>. Fixes most Word formatting surprises.

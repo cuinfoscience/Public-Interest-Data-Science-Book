@@ -1,0 +1,30 @@
+# Genres
+
+A finding that never reaches someone who can act on it has not yet entered public life. Parts I through III of this book give you a diagnosis (the pressures of enclosure, exemption, and erosion, and the values of openness, oversight, and ownership that answer them), a set of professional lineages to borrow from, and a map of the conversations next door. Part IV is about delivery. Each chapter teaches one genre, the conventional form a profession uses to carry evidence to a particular public.
+
+Genre matters because readers sort what they receive by form before they weigh it by content. An editor reads a pitch for its peg. A legislative staffer reads an executive summary for its recommendations. A program officer reads a specific-aims page for its fit with an open call. A committee chair hears testimony against a clock. A county planner reads a public comment for the code criteria it addresses. A future researcher searches a repository for a persistent identifier. Send the right finding in the wrong form and it is filed, skimmed, or missed. Keegan [-@keegan2026] argues that public interest work depends on an installed base of linkability, interpretability, continuity, safe scrutiny, authority, and remedy; genres are where that installed base meets the institutions that hold authority and offer remedy.
+
+The genres also have natural audiences, and most have a natural level of government. The book's worked examples follow them:
+
+- **Op-eds** (@sec-ch-14-op-eds) reach a **city**: residents, council members, and the reporters who cover them, through a local outlet.
+- **Reports** (@sec-ch-15-reports) reach the **nation**: a named federal body such as a congressional committee, the Government Accountability Office, an inspector general, or the National Institute of Standards and Technology, which reads for evidence it can cite and recommendations it can adopt.
+- **Research proposals** (@sec-ch-16-research-proposals) reach funders and review panels. They have no single level; the government body your proposal names in its impact paragraph supplies one.
+- **Testimony** (@sec-ch-17-testimony) reaches the **state**: a committee of the Colorado General Assembly hearing a bill during its January-to-May session.
+- **Public comments** (@sec-ch-18-public-comments) reach the **county**: a Planning Commission or Board of County Commissioners deciding a land use docket. The same genre works at the state and federal levels, through agency rulemaking.
+- **Archival deposits** (@sec-ch-19-archival-deposits) reach readers who do not yet exist, through a repository that mints a persistent identifier.
+
+The levels are a teaching device, not a law of nature; a city can hold a hearing, and Congress reads op-eds. But pairing each genre with the level where it does the most work keeps you from writing to "policymakers," a reader who does not exist.
+
+## The artifact convention
+
+Every chapter in this part ends with a real artifact, not a description of one. The final exercise of each chapter asks you to produce something you could submit tomorrow: an op-ed and pitch for a named city outlet, a report section for a named federal body, a proposal package for a named funder's open call, written and oral testimony for a state legislative committee, a comment on a live county (or state or federal) matter, or a deposit with a DOI.
+
+Each artifact has three parts:
+
+1. **A public text** in the genre's form, addressed to a named reader who can act on it.
+2. **A technical artifact someone else can run**: a notebook or small repository, with its data sources and a provenance file, that reproduces every number the public text uses.
+3. **A short note on provenance, gaps, and AI use**: where the evidence came from, which elements of the installed base the work builds and which it still lacks, the license, and an honest disclosure of how AI tools were used.
+
+The pairing is the point. A public text without a runnable artifact asks to be trusted; a runnable artifact without a public text waits for a reader who may never come.
+
+The chapters can be read in any order; each links to the chapters that develop the concepts it relies on. Whether you submit what you write is your decision, but remember that a submitted comment or a deposited dataset enters a permanent record under your name.

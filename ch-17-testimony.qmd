@@ -5,52 +5,60 @@ execute:
 
 # Testimony {#sec-ch-17-testimony}
 
-A county hearing room is an unusual venue for data science. The Boulder County Commissioners' hearing room is on the third floor of the courthouse at 1325 Pearl Street, and most hearings there are hybrid, with some speakers in the room and others on Zoom. You sign up in advance through a link on the Commissioners' advance agenda or at a kiosk on the day. Your laptop is closed. The three commissioners sit at the front. When the chair calls your name, a clock starts, and when it runs out you will not get the extra thirty seconds you wish for.
+A legislative committee room is an unusual venue for data science. At the Colorado State Capitol, the General Assembly's guide to public hearings asks that you not cheer, boo, or applaud, that you leave signs and placards outside, and that you not wear clothing that announces a position on a bill before the committee [@coga_hearing_guide]. You sign up to testify through the legislature's website, in person or remotely. Your laptop is closed. The committee sits at the front, the bill's sponsor has presented it, and the chair calls witnesses. When the chair calls your name, a clock starts, and when it runs out you will not get the extra thirty seconds you wish for.
 
-Testimony is a genre. Like the op-ed in @sec-ch-14-op-eds and the report you will write in @sec-ch-15-reports, it has conventions you can learn and a specific theory of what counts as contribution. Unlike those genres, it is also a performance, delivered in public and preserved in the record of a governing body. A well-argued op-ed persuades at scale. A well-argued report becomes institutional evidence. Testimony becomes *voice in the record*: a durable, citable mark that a particular person said a particular thing to a particular body on a particular day. The genre's rules follow from that.
+Testimony is a genre. Like the op-ed in @sec-ch-14-op-eds and the report in @sec-ch-15-reports, it has conventions you can learn and a specific theory of what counts as contribution. Unlike those genres, it is also a performance, delivered in public and preserved in the record of a governing body. A well-argued op-ed persuades at scale. A well-argued report becomes institutional evidence. Testimony becomes *voice in the record*: a durable, citable mark that a particular person said a particular thing to a particular body on a particular day. The genre's rules follow from that.
 
-This chapter closes Module 2. You have an evidence ledger for a county program (@sec-ch-04-exemption-oversight), tracker entries for released requests from the county's Public Records Archive and an extraction notebook (@sec-ch-07-law), and a ledger of the exemptions the county cited and the remedies each leaves open (@sec-ch-04-exemption-oversight). Now you take that evidence to the body that can act on it: the Boulder County Board of County Commissioners. You will write a timed oral statement of three to five minutes, a written statement of about 1,000 words for the record, and prepared answers to the questions you can anticipate. The mechanics transfer: congressional hearings, state legislative committees, and European parliamentary consultations share a common structure even when the clocks differ.
+This chapter sets testimony at the **state** level, where law is made. The legal lineage (@sec-ch-07-law) treats statutes such as the Colorado Open Records Act (CORA) as the rules that decide what the public can see and what remedies it has when a custodian says no. Those rules are changed in the General Assembly, and committee hearings are where the public speaks to the people changing them. You will need evidence: a tracker of released records requests and an extraction notebook (@sec-ch-07-law), and a ledger of the exemptions custodians cited and the remedies each leaves open (@sec-ch-04-exemption-oversight). From that evidence you will write a timed oral statement of about three minutes, a written statement of about 1,000 words for the record, and prepared answers to the questions you can anticipate. The mechanics transfer: congressional hearings, county boards, and European parliamentary consultations share a common structure even when the clocks differ.
 
 ## What testimony is and is not
 
-An op-ed is persuasion at scale; you do not know your reader, and the outlet is the introduction. A report is institutional evidence; the sponsor's imprint carries you. Testimony is neither. It is voice. At a congressional hearing, a committee invites you because of who you are, and witness selection signals which perspectives it wants on the record. At a county hearing, nobody invites you. You are a resident, a student, or a researcher who signed up. That is a strength as well as a limit: the board hears from you because the law says the public may speak, not because a staffer chose you.
+An op-ed is persuasion at scale; you do not know your reader, and the outlet is the introduction. A report is institutional evidence; the sponsor's imprint carries you. Testimony is neither. It is voice. At a congressional hearing, a committee invites you because of who you are, and witness selection signals which perspectives it wants on the record. At a Colorado General Assembly committee hearing on a bill, nobody has to invite you. You are a resident, a student, or a researcher who signed up. That is a strength as well as a limit: the committee hears from you because the process is open to the public, not because a staffer chose you.
 
 Four features distinguish testimony from the book's other genres:
 
 1. **Voice.** You speak in the first person, name your affiliation and your relationship to the issue, and state the claim you came to make. An op-ed can be abstracted from its author; testimony cannot.
-2. **Brevity.** Five minutes is a congressional convention. Local bodies are often shorter. Whatever the clock, it is shorter than you want.
-3. **A specific ask.** Testimony that does not end in a request the body can act on is a lecture. A county board can adopt a policy, direct staff, amend a contract, schedule a work session, or put an item on a future agenda. Ask for one of those things.
-4. **Questions, or silence.** At some hearings, board members question speakers. At many local public-comment sessions, the board listens without responding. Either way, the exchange continues afterward, with staff, reporters, and other residents, and you need answers ready.
+2. **Brevity.** Five minutes is a congressional convention. State committees are often shorter, and the chair may limit each witness's time to fit the hearing. Whatever the clock, it is shorter than you want.
+3. **A specific ask.** Testimony that does not end in a request the committee can act on is a lecture. A committee of reference can vote a bill up or down, adopt an amendment, or send it on to another committee. Ask for one of those things, and when you sign up, say whether you are for, against, or seeking an amendment.
+4. **Questions.** Committee members may question witnesses after they speak. The exchange also continues afterward, with staff, the sponsor, lobbyists, and reporters, and you need answers ready.
 
-Frances Haugen's October 2021 appearance before a Senate Commerce subcommittee is a useful genre case at the other end of the ladder [@haugen2021]. Read the transcript twice. The first time, notice how much of it is about Haugen: her training, the team she worked on, the internal research she saw. The personal voice is load-bearing; without it, the claim that the company knew about its products' harms is an assertion, and with it the claim is a witness account. The second time, mark every specific ask. There are fewer than you expect, and they are not buried. Compare her with the civil-society organizations that submitted evidence during the negotiation of the EU AI Act. Their voice was institutional rather than personal, their texts were longer, and their asks were often line edits to draft articles. Both are testimony. The difference lies in who is speaking and what the body can change.
+Frances Haugen's October 2021 appearance before a Senate Commerce subcommittee is a useful genre case at the federal level [@haugen2021]. Read the transcript twice. The first time, notice how much of it is about Haugen: her training, the team she worked on, the internal research she saw. The personal voice is load-bearing; without it, the claim that the company knew about its products' harms is an assertion, and with it the claim is a witness account. The second time, mark every specific ask. There are fewer than you expect, and they are not buried. Compare her with the civil-society organizations that submitted evidence during the negotiation of the EU AI Act. Their voice was institutional rather than personal, their texts were longer, and their asks were often line edits to draft articles. Both are testimony. The difference lies in who is speaking and what the body can change.
 
 ::: {.callout-note title="In the Public Interest"}
-**Oversight**, as @sec-ch-04-exemption-oversight defined it, needs authority and remedy, and testimony is how evidence reaches an authority in public. A brilliant argument made privately to a staffer may be politically effective, but it leaves no durable mark. Written testimony does. When your written statement enters the record of a county hearing, alongside the meeting video, you have created a public document (@sec-ch-07-law) that a reporter, a future requester, or a litigant can cite years from now. The specific claim of this chapter is that testimony advances oversight only when it pairs a verifiable finding with an ask that the body in the room has the authority to grant; testimony addressed to the wrong level of government is a complaint with good production values. @sec-ch-19-archival-deposits takes up the deposit that keeps your version available even if the meeting portal changes vendors.
+**Oversight**, as @sec-ch-04-exemption-oversight defines it, needs authority and remedy, and a legislature is where both are written. CORA's exemptions and its remedies (a written denial, a notice of intent, a district court action) exist because a General Assembly enacted them, and a later General Assembly can widen or narrow them. Testimony is how evidence about how those rules work in practice reaches the people who can change them, in public. Written testimony submitted through the legislature's website becomes part of the public record [@coga_remote_testimony2025], a public document (@sec-ch-07-law) that a reporter, a future requester, or a litigant can cite years from now. The specific claim of this chapter is that testimony advances oversight only when it pairs a verifiable finding with an ask the committee in the room has the authority to grant; testimony addressed to the wrong level of government is a complaint with good production values. @sec-ch-19-archival-deposits takes up the deposit that keeps your version available even if the legislature's website changes.
 :::
 
 ## The scenario
 
-For the rest of the chapter, imagine that the Board of County Commissioners has scheduled a public hearing on a proposed county policy covering two things: how county offices log and report their responses to open-records requests, and whether the county should publish a register of the automated decision tools its departments use. **This hearing is hypothetical.** For Piece 2, you will target a real item on the Commissioners' advance agenda or the Board's open public comment session, and your ask will follow from your own ledgers.
+For the rest of the chapter, imagine that a bill before a committee of the Colorado General Assembly would amend CORA in two ways: it would require every records custodian to publish a log of request outcomes, including the statutory grounds for any denial, and it would require state agencies to publish a register of the automated decision tools they use. **This bill and its hearing are hypothetical.** For your own testimony, you will target a real bill during the legislative session, or a topic before an interim committee, and your ask will follow from your own evidence.
 
-Check the format before you write a word. When this chapter was drafted, the county's listing for its monthly open public comment session (usually on the first Thursday of the month) allowed up to ten speakers three minutes each and said that comments and attachments could always be emailed to the commissioners. Public hearings on specific items can follow different rules, and rules change: in 2026, county staff narrowed public comment at two advisory boards to agenda items only [@stephenson2026]. Look up the current rules for your hearing, and write a three-minute statement that can grow to five if the clock allows, not a five-minute statement that has to be amputated at the podium.
+Know the calendar before you write a word. The General Assembly must convene its regular session no later than the second Wednesday in January and must adjourn within 120 calendar days [@coga_constitutional]. Under Article V, Section 20 of the Colorado Constitution (the GAVEL amendment), every bill referred to a committee of reference must be considered on its merits and voted on, so a bill you care about will get a hearing; the question is when. Hearing notices appear in the daily House and Senate calendars, and the legislature warns that hearings are often delayed or rescheduled [@coga_remote_testimony2025]. Look up the current rules for your hearing, and write a three-minute statement that can grow if the chair allows, not a five-minute statement that has to be amputated at the table.
 
-Remember, too, who usually speaks. Einstein, Palmer, and Glick [-@einsteinWhoParticipatesLocal2019], coding minutes from local planning and zoning meetings, found that commenters were disproportionately older, male, and homeowners compared with the communities they lived in. If you are a student, your presence changes that sample slightly. If your testimony concerns people who rarely come to these rooms (families screened by a human-services tool, people in the county jail), say so, and do not claim to speak for them.
+Remember, too, who usually speaks. Einstein, Palmer, and Glick [-@einsteinWhoParticipatesLocal2019], coding minutes from local planning and zoning meetings, found that commenters were disproportionately older, male, and homeowners compared with the communities they lived in. A weekday hearing in Denver during the session has its own filters: time off work, travel, and familiarity with the process. If your testimony concerns people who rarely come to these rooms (families screened by a human-services tool, people held in county jails), say so, and do not claim to speak for them.
 
 ## A pandas detour that earns one sentence
 
-Testimony that rests on impressions does not survive questioning. You need one or two facts that are yours, defensible, and citable. The first can come straight from the extraction notebook you built in @sec-ch-07-law.
+Testimony that rests on impressions does not survive questioning. You need one or two facts that are yours, defensible, and citable. The hypothetical bill would require every custodian to publish what some already do: Boulder County posts requests it has answered, with the released records, in the Public Records Archive of its Open Records Center (@sec-ch-07-law). That is both evidence of feasibility and a dataset. The remedy ledger you build in @sec-ch-04-exemption-oversight codes each archived request's outcome, the grounds cited, and whether the response came after the statutory clock.
 
 ```python
-# Continue from the budget DataFrame extracted from Resolution 2025-058
-funds = budget.query(
-    "section == 'Section 1' and not label.str.startswith('Total')")
-total = funds["amount"].sum()
-social = funds.loc[funds["label"] == "Social Services", "amount"].item()
-print(f"${social:,} of ${total:,} ({social / total:.1%})")
-# => $67,417,221 of $745,186,611 (9.0%)
+import sqlite3
+import pandas as pd
+
+with sqlite3.connect("remedy_ledger.sqlite") as conn:
+    req = pd.read_sql("SELECT request_id, office, outcome, past_clock "
+                      "FROM requests", conn)
+
+summary = (req.groupby("outcome")
+              .size()
+              .reindex(["full", "partial", "denied", "none", "fee_hold"],
+                       fill_value=0))
+print(summary.to_dict(), "of", len(req))
+print(f"past the statutory clock: {req['past_clock'].mean():.0%}")
+# => {'full': ..., 'partial': ..., 'denied': ..., 'none': ..., 'fee_hold': ...} of n
+# => past the statutory clock: ...%
 ```
 
-That gives you a sentence you can say aloud: "The budget this Board adopted for 2026 places $67.4 million, about nine percent of all estimated expenditures, in the Social Services fund" [@bouldercounty_res2025058]. It is short, sourced, and falsifiable. The second fact comes from your remedy ledger, and it should claim exactly what the ledger supports: "Of the [number] records requests to [office] posted in the county's own Public Records Archive since [year], [number] came back in full; [number] cited trade-secret protection for vendor contracts." Pair them and you have the spine of an argument: the county spends real money on services that touch residents' lives, and the records that would let residents follow that spending are being withheld on these grounds.
+That gives you a sentence you can say aloud, and it should claim exactly what the ledger supports: "Of the [n] requests to [office] posted in Boulder County's own Public Records Archive that I coded, [k] came back in full, [k] were partly withheld, and [k] cited trade-secret protection for vendor contracts." The second fact is legal, not numerical, and comes from @sec-ch-07-law: CORA gives a requester who is denied no administrative appeal; the path runs from a written denial through a notice of intent to district court. Pair them and you have the spine of an argument: one county already publishes outcomes, the outcomes show a pattern worth seeing statewide, and without a published log a requester elsewhere cannot tell whether a denial is routine or unusual before deciding whether to go to court.
 
 A hostile listener can ask you to show your work, and you can: the written statement's footnotes link to the repository and the commit. This is the clearest answer to "why learn pandas if my goal is policy work." One well-sourced sentence in the record is worth more than a page of assertion, and code is how you produce the sentence and prove it.
 
@@ -59,50 +67,50 @@ A hostile listener can ask you to show your work, and you can: the written state
 Here is a structure for three minutes. Deviate from it deliberately, not by accident.
 
 ```
-[0:00-0:20]  Your name, where you live or study, the item,
+[0:00-0:20]  Your name, where you live or study, the bill number,
              and your position, in two sentences.
-[0:20-0:50]  One concrete finding. A number, an office, a date.
-[0:50-2:00]  The argument: why the current practice fails the
-             public. Two beats, not more.
+[0:20-0:50]  One concrete finding. A number, a custodian, a date.
+[0:50-2:00]  The argument: why current law fails the public.
+             Two beats, not more.
 [2:00-2:40]  The ask, in one sentence. Then say it again.
-[2:40-3:00]  Thank the Board. Stop talking.
+[2:40-3:00]  Thank the committee. Stop talking.
 ```
 
-For five minutes, expand the middle, not the ends: add a second finding, one sentence on what the proposal does well, and specific language you want changed. Do not add to the introduction. Your credentials are the least interesting thing about your statement.
+If the chair allows more time, expand the middle, not the ends: add a second finding, one sentence on what the bill does well, and the specific amendment language you want. Do not add to the introduction. Your credentials are the least interesting thing about your statement.
 
-Your first sentence should fit in one breath. "Chair and Commissioners, my name is [name]; I am a student at the University of Colorado Boulder and a Boulder County resident, and I am here to support a public log of records-request outcomes" is fine, but only if the next sentence is specific.
+Your first sentence should fit in one breath. "Thank you, Chair and members of the committee. My name is [name]; I am a student at the University of Colorado Boulder and a Boulder County resident, and I am here in support of [bill number] with one amendment" is fine, but only if the next sentence is specific.
 
 ::: {.callout-tip title="The Missing Manual"}
-Three things guides to public comment rarely say. First, the clock starts when the chair calls on you, not when you finish adjusting the microphone or your Zoom audio connects. Practice the first sentence aloud until it is automatic. Second, the hybrid format cuts both ways: remote speakers can be muted, dropped, or delayed, so if you speak remotely, send your written statement in advance so a dropped connection does not erase your testimony. Third, at a local body the recording may be more durable than you think and the written record less durable: the county's meeting portal keeps video and documents, but whether an emailed statement becomes part of the official record for a specific item is something to confirm with the Commissioners' Office, not assume.<!-- TODO: verify how Boulder County attaches written public comment to the hearing record. -->
+Four things guides to testifying rarely say. First, remote registration closes when the hearing on the bill begins, and only registered witnesses are admitted to the Zoom meeting; a link forwarded by a friend will not get you in [@coga_remote_testimony2025]. Second, registering does not guarantee you will be heard: the chair may limit total testimony, limit each witness's time, and call witnesses in any order, and remote witnesses with technical problems may be skipped. If that happens, the legislature lets you submit written testimony on its website until the hearing closes. Third, the record is narrower than you might assume. The legislature archives live and archived *audio* of committee hearings, but video of remote testimony is not broadcast or recorded, so your words survive and your slides do not. Fourth, hearings slip. A bill scheduled for 1:30 may be heard at 6:00, or laid over. Bring your printed statement, a charger, and patience, and send the written version whether or not you get to speak.
 :::
 
 ## The written statement for the record
 
-The written statement is what a reporter will quote, what a future requester will find, and what a lawyer might attach to a filing. For Piece 2 it runs about 1,000 words, with footnotes. The oral statement says the thing. The written statement shows the work.
+The written statement is what a reporter will quote, what a future requester will find, and what a lawyer might attach to a filing. It runs about 1,000 words, with footnotes. The oral statement says the thing. The written statement shows the work.
 
-1. **Identification.** Name, affiliation, relationship to the issue, the item, and your position.
-2. **The problem.** Two short paragraphs. What county residents cannot currently learn, and why it matters.
+1. **Identification.** Name, affiliation, relationship to the issue, the bill number, and your position (support, oppose, or amend).
+2. **The problem.** Two short paragraphs. What residents cannot currently learn, and why it matters.
 3. **The finding.** The facts you are there to put on the record, with a table from your ledger and links to the data and code.
-4. **Analysis of the proposal.** Where it is sound, where it is too narrow or too vague, and proposed language where you have it.
-5. **Response to the likely objection.** Usually cost or staff capacity. Answer it in a paragraph, citing a comparable practice if you can.
-6. **The ask.** Explicit and within the Board's authority.
+4. **Analysis of the bill.** Where it is sound, where it is too narrow or too vague, and proposed amendment language where you have it, keyed to the bill's section numbers.
+5. **Response to the likely objection.** Usually cost to custodians or the burden on small local governments. Answer it in a paragraph, citing a comparable practice if you can; the county archive is one.
+6. **The ask.** Explicit and within the committee's power: pass the bill, amend a named section, or hold it.
 7. **Contact and availability.** You are offering to follow up in writing.
 
-The written statement is not a research paper. It is closer to a brief: footnoted, argumentative, and aimed at the decision in front of the body.
+The written statement is not a research paper. It is closer to a brief: footnoted, argumentative, and aimed at the decision in front of the committee.
 
 ## Anticipating questions
 
-If the board does ask questions, a three-sentence answer is almost always the right length: the direct response, the evidence, and the connection back to your ask. Expect five types.
+If a member asks you a question, a three-sentence answer is almost always the right length: the direct response, the evidence, and the connection back to your ask. Expect five types.
 
-**The "who are you" question.** "Who funded this, and who asked you to do it?" Say it is coursework, name your instructor if asked, and say why the finding stands regardless.
+**The "who are you" question.** "Who funded this, and who asked you to do it?" Say who you are and whether anyone paid for the work, and say why the finding stands regardless.
 
-**The "overreach" question.** "Wouldn't this bury county staff in paperwork?" Acknowledge the concern and point to the narrowest version of your ask.
+**The "overreach" question.** "Isn't this an unfunded mandate on every small town clerk?" Acknowledge the concern, point to the bill's fiscal note if it has one, and point to the narrowest version of your ask.
 
 **The "wrong expert" question.** "You're a student, not a lawyer." Concede the limit, name what your analysis does show, and name the legal sources you relied on.
 
-**The "already handled" question.** "Doesn't state law already cover this?" Name the specific gap, such as the absence of any administrative appeal under the Colorado Open Records Act, and explain how the county could fill it without new state law.
+**The "already handled" question.** "Doesn't CORA already require a written denial?" Yes, for the requester. Explain that a denial sent to one person is not a pattern anyone else can see, and that the absence of an administrative appeal makes that pattern matter.
 
-**The "wrong level" question.** "Isn't this a state issue?" Sometimes it is. Say which part belongs to the legislature and which part the county controls.
+**The "wrong level" question.** "Shouldn't each county decide this for itself?" Sometimes it should. Say which part belongs in state law (what CORA requires of every custodian) and which part a county can do on its own, as Boulder County's archive shows.
 
 The worst move is answering a question you were not asked. If you do not know, say so and offer to follow up in writing. The follow-up becomes part of the record too.
 
@@ -112,34 +120,35 @@ Record yourself. Time it. Nearly every first draft runs long. The first cut is a
 
 ## Exercises
 
-**Exercise 11.1 (Guided).** Read Haugen's October 2021 Senate testimony. Mark every passage of personal voice, every empirical claim, and every specific ask. Count each category and write 200 words on what the ratios say about the genre.
+**Exercise 17.1 (Guided).** Read Haugen's October 2021 Senate testimony. Mark every passage of personal voice, every empirical claim, and every specific ask. Count each category and write 200 words on what the ratios say about the genre.
 
-**Exercise 11.2 (Runnable, real public data).** Choose a recorded Board of County Commissioners session with public comment from the county's meeting portal. For every speaker, log start and end times, whether they made a specific ask, whether the ask was within the Board's authority, and whether they cited evidence. Load the log with `pandas` and report the median duration, the share of speakers who exceeded the limit, and the share who made an actionable ask.
+**Exercise 17.2 (Runnable, real public data).** Choose an archived committee hearing on a bill from the General Assembly's website, using the hearing's archived audio. For every public witness, log start and end times, stated position, whether they made a specific ask, whether the ask was within the committee's power, and whether they cited evidence. Load the log with `pandas` and report the median duration, the share of witnesses who exceeded the chair's limit, and the share who made an actionable ask.
 
-**Exercise 11.3 (Guided).** Draft three-sentence answers to the five question types above, tailored to your own ask. Read each aloud and confirm it fits in under twenty seconds.
+**Exercise 17.3 (Guided).** Draft three-sentence answers to the five question types above, tailored to your own ask. Read each aloud and confirm it fits in under twenty seconds.
 
-**Exercise 11.4 (Timing).** Write a three-minute and a five-minute version of your oral statement. Record at least three takes of each and log the durations in a CSV. Revise until every take of the short version lands between 2:45 and 3:00.
+**Exercise 17.4 (Timing).** Write a three-minute and a two-minute version of your oral statement, because chairs sometimes cut the clock when many witnesses sign up. Record at least three takes of each and log the durations in a CSV. Revise until every take of the three-minute version lands between 2:45 and 3:00.
 
-**Exercise 11.5 (Portfolio Piece 2: Law / County / Testimony).** Submit Piece 2, due Friday, February 26, 2027, at 11:59 pm. It has the four parts every portfolio piece has:
+**Exercise 17.5 (Submittable artifact: testimony for a state legislative committee).** Produce a testimony package with three parts:
 
-1. **Technical artifact.** Tracker entries for the released request(s) you chose from Boulder County's Public Records Archive; an extraction notebook that turns the released records into a table; an exemptions and remedy ledger. Deliver it as a reproducible notebook or small repository that a classmate can clone and run.
-2. **Public text.** Written testimony (about 1,000 words) and a timed oral statement (recorded, 3–5 minutes) for a Boulder County Board of County Commissioners hearing.
-3. **Installed-base note** (about 300 words). Which pressure did you meet? Which installed-base elements did your artifact build, and which are still missing? Include provenance, license, and an AI-use disclosure.
-4. **Graduate methods memo** (INFO 5871 only; 750–1,000 words). Situate the piece in at least five scholarly sources and defend one methodological choice against the literature.
+1. **Technical artifact.** Tracker entries for the released records requests you chose (from Boulder County's Public Records Archive or another custodian's published releases), an extraction notebook that turns the released records into a table, and an exemptions and remedy ledger, delivered as a notebook or small repository someone else can clone and run.
+2. **Public text.** Written testimony (about 1,000 words) and a recorded oral statement (about three minutes) on a named bill or interim-committee topic before a named committee of the Colorado General Assembly, with your position stated as you would enter it when you register.
+3. **Provenance, gaps, and AI-use note** (about 300 words). Which pressure did you meet? Which installed-base elements (@sec-ch-02-installed-base) did your artifact build, and which are still missing? State provenance and license and disclose how you used AI tools.
+
+If the bill is heard while you are ready, register and testify, or submit the written statement through the legislature's website before the hearing closes.
 
 ## Closing and what comes next
 
 Most people testify a handful of times in their lives. For all of them, the habit of *producing the paper trail* matters more than the live performance: the written statement, the notebook, the ledger, and the follow-up email are what outlast the hearing.
 
-Part IV climbs to the state. @sec-ch-08-accounting opens Module 3 with the assurance lineage and the disaggregated audit this module set aside, aimed at Colorado's state institutions and written up in the report genre of @sec-ch-15-reports. The federal public comment, a written cousin of testimony with a longer clock, waits in @sec-ch-18-public-comments.
+Testimony has a written cousin with a longer clock. @sec-ch-18-public-comments takes it to the county, where planning decisions on land use dockets are made by a Planning Commission and a Board of County Commissioners that must take public comment, and then to the state and federal agencies that write rules. If your evidence concerns a system a federal agency uses, the report genre of @sec-ch-15-reports may reach a reader with more authority over it than any state committee.
 
 ## Further Reading and Resources
 
+- Colorado General Assembly, *Guide to Public Hearings* [@coga_hearing_guide], <https://content.leg.colorado.gov/sites/default/files/committee_public_policy.pdf>. One page on signing up and on committee-room decorum.
+- Colorado General Assembly, Executive Committee of the Legislative Council, *Regulations for Remote Testimony* (2025) [@coga_remote_testimony2025]. The rules for registering, testifying remotely, and submitting written testimony; register at <https://leg.colorado.gov/testimony>.
+- Colorado General Assembly, Office of Legislative Legal Services, "Constitutional Requirements" [@coga_constitutional], <https://content.leg.colorado.gov/agencies/office-legislative-legal-services/constitutional-requirements>. Session length, convening date, and the GAVEL requirements in one place.
 - Frances Haugen, testimony before the US Senate Committee on Commerce, Science, and Transportation, Subcommittee on Consumer Protection, Product Safety, and Data Security, October 5, 2021, <https://www.commerce.senate.gov/2021/10/protecting-kids-online-testimony-from-a-facebook-whistleblower> [@haugen2021]. Watch the questions, not just the prepared statement.
-- Boulder County, Public Meetings and Webstream: <https://bouldercounty.gov/government/public-meetings/>. How to sign up to speak, and where hearings are held.
-- Boulder County meeting portal (agendas, packets, minutes, video): <https://pub-bouldercounty.escribemeetings.com/>.
-- Brooke Stephenson (2026), "Boulder County limits public comment at key advisory boards, narrowing input to agenda items," *Boulder Reporting Lab*, <https://boulderreportinglab.org/2026/05/05/boulder-county-limits-public-comment-at-key-advisory-boards-narrowing-input-to-agenda-items/> [@stephenson2026].
 - Katherine Levine Einstein, Maxwell Palmer, and David M. Glick (2019), "Who participates in local government? Evidence from meeting minutes," *Perspectives on Politics* [@einsteinWhoParticipatesLocal2019].
 - Joy Buolamwini, testimony before the US House Committee on Oversight and Reform on facial recognition technology, May 2019. Paired with *[Gender Shades](https://proceedings.mlr.press/v81/buolamwini18a.html)* [@buolamwini2018], a model of how an audit becomes a statement. Search the Congress.gov hearings archive for the transcript.
-- Congress.gov committee hearings: <https://www.congress.gov/committees>. Recent technology testimony to compare against local statements.
+- Colorado Freedom of Information Coalition [@cfoic], <https://coloradofoic.org/>. Tracks CORA legislation each session; a good source for live bills to testify on.
 - Keegan (2026), "Public interest data infrastructuring" [@keegan2026], on remedy as usable civic procedure.

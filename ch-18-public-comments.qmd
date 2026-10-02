@@ -5,50 +5,187 @@ execute:
 
 # Public Comments {#sec-ch-18-public-comments}
 
-Federal rulemaking is where many of the country's most consequential data-policy fights are decided, and almost nobody you know has written a comment on one. You have now written up the ladder. The op-ed in @sec-ch-14-op-eds reached readers of a city outlet. The testimony in @sec-ch-17-testimony reached county commissioners who had scheduled a hearing. The report in @sec-ch-15-reports reached a named state body. A public comment reaches a federal agency drafting a rule, on the agency's schedule, in a form the agency is legally required to consider, without anyone inviting you first. The door is open. Most of the profession walks past it.
+Counties decide what gets built where, and almost nobody you know has written them a comment about it. In unincorporated Boulder County, the Community Planning and Permitting department reviews land use applications under the Boulder County Comprehensive Plan and the county's Land Use Code. A nine-member Planning Commission, appointed by the Board of County Commissioners, holds public hearings on many of those applications and on proposed changes to the code itself. For a few matters (the Comprehensive Plan and Location and Extent review) the Planning Commission decides; for everything else it recommends, and the Board of County Commissioners makes the binding decision at a later public hearing [@bouldercounty_pc_guidelines; @bouldercounty_pc]. At every step, anyone may comment in writing, cite the docket number, and have the comment made part of the public record. The door is open. Most of the profession walks past it.
 
-This chapter treats the public comment as the genre of the planning module. Planning (@sec-ch-09-planning) taught you to ask who was in the room. Notice-and-comment rulemaking is the federal government's standing answer to that question: a room anyone may enter, in writing, for a fixed number of days. You will read a Notice of Proposed Rulemaking (NPRM), find the questions the agency is asking, and draft a substantive comment that cites the notice's sections and carries evidence from your erosion audit, stewardship plan, or refusal specification. The worked examples are historical algorithmic-accountability dockets, chiefly the Federal Trade Commission's Commercial Surveillance and Data Security advance notice (FTC-2022-0053, comment period closed November 2022). For your own piece you will choose a docket that is open during the module.
+A public comment is a written argument submitted to a body that must consider it before deciding, on that body's schedule. It is the planning lineage's genre. Planning (@sec-ch-09-planning) asks who was in the room and whose knowledge counts as evidence; the comment period is its standing answer, a room anyone may enter, in writing, before a deadline. This chapter works at the **county**, where land use decisions are made and recorded. You will find a live docket in the county's own data, read the referral for the criteria the decision turns on, compute evidence from county open data, and draft a comment that carries it. A final section takes the genre to the state and federal levels, where agencies writing rules must take written comment too.
 
-## What a public comment is
+## How a county land use docket works
 
-The Administrative Procedure Act of 1946 is the scaffolding for most federal regulation. Its rulemaking section, 5 U.S.C. § 553, requires an agency proposing a substantive rule to publish notice in the Federal Register, give the public an opportunity to participate "through submission of written data, views, or arguments," and consider what it receives before issuing a final rule [@apa_553]. An agency that skips the comment step, or ignores comments raising significant issues, risks having its rule vacated as "arbitrary and capricious." The comment period is the mechanism by which federal rules are made legally durable.
+Every application or code amendment gets a docket number. The prefix names the type and the middle digits the year: `SU-25-0002` is a Special Use Review docket from 2025, `DC-25-0003` a Land Use Code text amendment. Staff refer the docket to other agencies and to the public, collect comments, and write a staff report that evaluates the proposal against the criteria in the Land Use Code. The staff report is the document your comment has to answer, because it is the document the commissioners will read.
 
-The mechanics are standardized. The NPRM names a docket, describes the proposed rule, explains the agency's authority, summarizes its evidence, and usually asks the public specific questions. It announces a comment period, typically 30 to 90 days. Anyone, citizen or not, may comment through regulations.gov. At the close, the agency reviews the comments, responds to significant issues in the final rule's preamble, and publishes.
+Timing matters more than at any other level of government. The county's referral memo for docket DC-25-0003, a 2025 package of Land Use Code clarifications, told the public that comments received by a stated deadline would go into the Planning Commission's staff packet, and that later comments would be shared with the commission and included in the packet for the Board of County Commissioners' hearing. It also said, plainly, "All comments will be made part of the public record" [@bouldercounty_dc250003]. The county's published guidelines for Planning Commission hearings add three practical rules: public testimony is generally limited to three minutes per speaker, speakers present together may pool time up to ten minutes, and handouts or long documents given to staff at least eight days before the hearing can be included in the commissioners' packets. They also say that the official record of a hearing is its audio recording [@bouldercounty_pc_guidelines]. <!-- TODO: the hearing guidelines are a 2014 form issued by the former Land Use Department; confirm the current time limits and packet deadline with Community Planning and Permitting before relying on them. -->
 
-Three features make comments worth your attention. They are written, which suits data scientists. They run on the agency's clock, not yours. And substantive comments become part of the *administrative record*, the bundle of documents a court examines if the rule is challenged. A comment you write in 2027 may be cited in an opinion years later. That is an unusual half-life for a weekend's work.
-
-## Comments about data: the Paperwork Reduction Act
-
-For this module, the most useful dockets are often not headline rules at all. Under the Paperwork Reduction Act, an agency that wants to start, change, or renew a collection of information from the public (a survey, a reporting form, a federal data system's required fields) must publish a notice in the Federal Register and invite comment, first for 60 days and then for 30 days while the Office of Information and Regulatory Affairs reviews it. These notices ask the same four questions every time: whether the collection is necessary and has practical utility, whether the burden estimate is accurate, how to enhance the quality, utility, and clarity of the information, and how to minimize the burden on respondents.
-
-Read those questions with Part V in mind. "Practical utility" is where an erosion audit shows who depends on a dataset the agency proposes to cut. "Quality, utility, and clarity" is where a datasheet shows what documentation is missing. "Minimize the burden" is where a refusal specification argues that a field should not be collected at all. The Paperwork Reduction Act turns every federal data collection into a small, recurring rulemaking, and almost nobody comments on them.
+County comments are written, which suits data scientists. They are read, because they go into the commissioners' packet. And they enter a record that outlasts the decision: years later, when someone asks why a parcel was rezoned, the docket file is where they look.
 
 ## Why data scientists underuse this genre
 
-Comments are lower-friction than testimony and higher-leverage than op-eds, and the profession submits shockingly few. Three reasons recur. Nobody invited you: rulemaking publishes the notice and waits for whoever shows up, which is disorienting for people trained on peer review. The form is unfamiliar: agencies do not publish style guides for comments the way newspapers publish pitch guidelines, so you have to learn that a substantive comment cites section numbers, attaches evidence, and proposes specific changes. And the outcome is uncertain: the agency may adopt, partly adopt, or reject your suggestion in a paragraph of a preamble months later. For a profession that likes metrics, a genre whose effect is cumulative can feel unrewarding. It is, nonetheless, how most federal regulation is shaped.
+Comments are lower-friction than testimony and higher-leverage than op-eds, and the profession submits shockingly few. Nobody invited you; the form is unfamiliar, since no county publishes a style guide for comments the way newspapers publish pitch guidelines; and the outcome is uncertain, because the commission may adopt your proposed condition, mention your comment in passing, or neither. A genre whose effect is cumulative feels unrewarding to a profession that likes metrics. It is, nonetheless, how much of the built environment gets shaped.
 
 ## The substantive comment standard
 
-Agencies distinguish, informally but consistently, between *substantive* and *form-letter* comments. A substantive comment identifies the specific provisions it responds to, offers evidence or analysis the agency did not already have, and proposes specific changes. A form letter repeats text a campaign asked supporters to paste. Both are counted, differently. A thousand identical letters are evidence of sentiment; one substantive comment may be evidence the agency must address in the final rule. Courts reviewing a rule look for engagement with substantive comments, not a paragraph-by-paragraph response to a campaign [@crs_public_comments].
+Decision makers distinguish *substantive* comments from expressions of sentiment. A substantive comment identifies the specific provisions or criteria it responds to, offers evidence or analysis the staff report does not already contain, and proposes specific changes: a revised code sentence, a condition of approval, a request that staff supply a missing analysis before the hearing. A sentiment comment says the writer supports or opposes the proposal. A hundred letters of opposition tell the commissioners how a neighborhood feels; one substantive comment can change what the staff report says.
 
-This is good news. You cannot out-organize a thousand-member advocacy group at volume. You can produce one comment the agency is legally obliged to take seriously.
+County land use has a wrinkle the federal process lacks. Decisions on individual applications are often treated as quasi-judicial: the commissioners act like judges applying the code's criteria to evidence in the record, and contacts with them outside the hearing may be restricted. Code amendments, by contrast, are legislative. <!-- TODO: verify how Boulder County classifies its land use proceedings and its rules on ex parte contact with Planning Commissioners and County Commissioners. --> Ask the docket planner which kind yours is. For a quasi-judicial docket, put everything in the written record and tie every claim to a criterion.
 
 ::: {.callout-tip title="The Missing Manual"}
-Agencies treat identical or near-identical comments as one comment with many signatories. Your carefully written comment is not drowned out, but a comment that looks like a flood entry (no section citations, no evidence, no specifics) is processed accordingly, whatever your credentials. The flood problem has also become an authenticity problem: the Federal Communications Commission's 2017 net neutrality docket drew millions of comments filed under fabricated or stolen identities, and generative models now make plausible-looking comments nearly free. <!-- TODO: cite the New York Attorney General's 2021 report on fake FCC comments if this sentence stays. --> Agencies respond by leaning harder on evidence they can check, which favors you. Separately, the regulations.gov API has changed versions and authentication more than once. Before writing code, confirm the current version at <https://open.gsa.gov/api/regulationsgov/> and note any divergence from this chapter in Exercise 20.1.
+Boulder County publishes its land use dockets as a public map layer, and the layer behaves like what it is: a view of a permitting database, not a dataset designed for you. Old docket numbers reappear with new application dates (a 1985 docket can show a 2026 date when the record is reopened), many records have no status, and the status vocabulary is long and inconsistent ("Closed," "Closed Complete," "Accepted Completed"). The server returns at most 1,000 records per request, so a broad query silently stops at 1,000 unless you page with `resultOffset`. The layer also carries owner names. You do not need them to write a comment, so do not request them: name the fields you want in `outFields` rather than asking for `*`. Finally, the county's zoning layer includes each incorporated municipality as a single polygon with an `X` prefix (`XBO` for Boulder); county zoning does not apply there, so drop those polygons before computing anything about the unincorporated county.
 :::
 
-## The regulations.gov API
+## Tutorial, part 1: finding a live docket
 
-Regulations.gov is the shared federal portal where most agencies post dockets and collect comments. Its API runs through api.data.gov and needs a free key [@regulationsgov_api]. The endpoints you will use most are document search (`/v4/documents`), docket retrieval (`/v4/dockets/{docketId}`), and comment retrieval (`/v4/comments`). Submission through the API uses a separate key and process; for a single comment, the web form is simpler.
+Community Planning and Permitting lists applications under review on its website and links them to a map. The same records are queryable through the county's ArcGIS REST service, which means you can filter dockets by type and date without scraping.
+
+```python
+import requests
+import pandas as pd
+
+ACCELA = ("https://maps.bouldercounty.org/arcgis/rest/services/"
+          "PLANNING/OP_Accela_Poly/MapServer/0/query")
+FIELDS = "CAPID,DocketType,ApplicationDate,ApplicationStatus,DocumentTitle,DocketLink"
+HEARD = ["Special Use Review", "Rezoning", "Location and Extent Review",
+         "Boulder County Comprehensive Plan Amendment"]
+
+def dockets(since="2025-01-01"):
+    types = ", ".join(f"'{t}'" for t in HEARD)
+    params = {"where": f"DocketType IN ({types}) AND ApplicationDate >= DATE '{since}'",
+              "outFields": FIELDS, "returnGeometry": "false",
+              "orderByFields": "ApplicationDate DESC", "f": "json"}
+    r = requests.get(ACCELA, params=params, timeout=60)
+    r.raise_for_status()
+    df = pd.DataFrame([f["attributes"] for f in r.json()["features"]])
+    df["ApplicationDate"] = pd.to_datetime(df["ApplicationDate"], unit="ms").dt.date
+    return df
+
+d = dockets()
+print(len(d))
+print(d[["CAPID", "ApplicationDate", "ApplicationStatus"]].head(4).to_string(index=False))
+# => 12
+# =>      CAPID ApplicationDate ApplicationStatus
+# => SU-26-0003      2026-04-28        Incomplete
+# => SU-26-0002      2026-03-10        Incomplete
+# => SU-85-0023      2026-03-05              None
+# => LE-90-0008      2026-02-25              None
+# (as of October 2026; results change as dockets move)
+```
+
+The `HEARD` list picks docket types that usually go to a public hearing. Each `DocketLink` opens the docket page, with the referral packet, staff report, and hearing dates. Code amendment (`DC`) dockets are listed separately on the county's Land Use Code update page.
+
+## Tutorial, part 2: evidence for a code amendment
+
+Take DC-25-0003 as a worked example. Its referral packet proposed, among other things, new text for parking standards in three zoning districts: Transitional (T), Multiple Family (MF), and Niwot Rural Community District I (NRCD I) [@bouldercounty_dc250003]. Its referral period closed in December 2025, so treat it as practice. <!-- TODO: check the docket's final disposition (hearing dates and whether the Board adopted the amendments) before describing its outcome. --> A reader of the packet would want to know a simple thing the packet does not say: how much of the county does the parking change touch? The county's open zoning and parcel layers answer it.
+
+```python
+import geopandas as gpd
+
+BASE = "https://maps.bouldercounty.org/arcgis/rest/services/"
+ZONING = BASE + "PLANNING/LUC_ZoningDistricts/MapServer/0/query"
+PARCELS = BASE + "Emap/BOCO_Parcels/MapServer/0/query"
+
+def layer(url, **params):
+    params = {"outSR": 4326, "f": "geojson", **params}
+    r = requests.get(url, params=params, timeout=60)
+    r.raise_for_status()
+    return gpd.GeoDataFrame.from_features(r.json()["features"], crs="EPSG:4326")
+
+zones = layer(ZONING, where="ZONECLASS IN ('T','MF','NRCD1')",
+              outFields="ZONECLASS,ZONEDESC").to_crs("EPSG:26913")
+zones["acres"] = zones.area / 4046.8564224          # UTM 13N, meters
+print(zones.groupby("ZONECLASS").agg(polygons=("acres", "size"),
+                                     acres=("acres", "sum")).round(1))
+# =>            polygons  acres
+# => ZONECLASS
+# => MF                7  234.6
+# => NRCD1             1   10.1
+# => T                 7   50.4
+```
+
+About 295 acres, roughly 0.07 percent of the unincorporated county's zoned area. The parcel count tells a different story:
+
+```python
+frames = []
+for geom in zones.to_crs(4326).geometry:   # one box per polygon; each stays under the 5,000-record cap
+    x0, y0, x1, y1 = geom.bounds
+    frames.append(layer(PARCELS, where="1=1", outFields="PARCEL_NO",
+                        geometry=f"{x0},{y0},{x1},{y1}",
+                        geometryType="esriGeometryEnvelope", inSR=4326))
+parcels = pd.concat(frames).drop_duplicates("PARCEL_NO").to_crs("EPSG:26913")
+parcels["geometry"] = parcels.representative_point()
+inside = gpd.sjoin(parcels, zones[["ZONECLASS", "geometry"]], predicate="within")
+print(inside.groupby("ZONECLASS")["PARCEL_NO"].nunique().to_dict())
+# => {'MF': 1626, 'NRCD1': 27, 'T': 155}
+```
+
+A tiny share of the land, but about 1,800 parcels, most in multifamily districts where condominium units are often separate parcels. That finding neither supports nor opposes the amendment, but it tells the commission whom the amendment affects, and it suggests a request (map the districts in the packet; notify the affected owners and residents) the county could grant without changing a word of the proposal.
+
+## The shape of a substantive county comment
+
+A county comment has a header, an introduction, a body organized by the criteria or code sections at issue, and a conclusion listing specific requests.
+
+```
+[Name, address or affiliation, contact]          [Date]
+
+To: Community Planning and Permitting, [docket planner]
+Re: Docket [DC-25-0003], [title]
+    Comment for the [Planning Commission / Board of County Commissioners] packet
+```
+
+The introduction says who you are, which sections of the proposal you address, and your position in a paragraph. The body answers the criteria:
+
+```
+Proposed parking standards for the T, MF, and NRCD I districts (Appendix A)
+
+The referral packet does not state how many properties the change affects.
+Using the county's zoning and parcel layers (Exhibit A, with code), I
+count about 1,800 parcels within these districts, 1,626 of them in MF
+districts. I ask that the staff report include a map of the affected
+districts and that notice of the hearing reach owners and residents of
+these parcels.
+```
+
+That paragraph names the section, adds evidence the packet lacked, shows its method, and makes a request staff could adopt as written. Attach the exhibits (the CSV, the map, the notebook), send it before the packet deadline, and if you can, speak at the hearing, pointing to the written comment rather than reading it.
+
+## Tracking the docket
+
+A docket accumulates documents over months: referral, staff report, recommendation, resolution. The SQLite tracker for records requests in @sec-ch-07-law extends naturally with one table that serves every level of government.
+
+```python
+import sqlite3
+
+SCHEMA = """
+CREATE TABLE IF NOT EXISTS dockets (
+    docket_id TEXT PRIMARY KEY,           -- 'DC-25-0003', 'FTC-2022-0053'
+    level TEXT CHECK (level IN ('county','state','federal')),
+    body TEXT NOT NULL, title TEXT NOT NULL,
+    comment_deadline TEXT, hearing_date TEXT,
+    status TEXT CHECK (status IN ('open','closed','decided','withdrawn')),
+    my_comment_url TEXT);
+"""
+with sqlite3.connect("docket_tracker.sqlite") as conn:
+    conn.executescript(SCHEMA)
+```
+
+A weekly job that flags dockets whose comment deadline falls within fourteen days will keep you from the most common first-time failure: missing the packet.
+
+::: {.callout-note title="In the Public Interest"}
+A county comment is **ownership** in procedural form. @sec-ch-05-erosion-ownership defines ownership as collective, accountable governance over how public-relevant data and decisions are kept and used, and @sec-ch-09-planning shows how planning gave participation procedural teeth. A comment that enters the docket file is the public asserting a stake in a decision it does not control, in a record the county must keep. It is also **oversight** at the smallest scale, because your comment is now in the record the decision must rest on. The specific claim of this chapter is that a comment advances these values only when it adds checkable evidence about the criteria the decision turns on. A comment that reads as sentiment is participation of the kind Arnstein [-@arnstein1969] placed on the lower rungs: heard, counted, and set aside. Write it so it reads well out of context years from now, because that is when someone opening the docket file may need it.
+:::
+
+## Commenting at the state and federal levels
+
+The genre works the same way above the county, with longer documents and more formal rules. In Colorado, the State Administrative Procedure Act requires an agency proposing a rule to publish notice in the *Colorado Register* and give the public an opportunity to submit written comments and to be heard. <!-- TODO: verify the notice, comment, and hearing requirements of C.R.S. 24-4-103 and the Colorado Register's current location before teaching from them. --> Check the Register when a technology law you care about passes; rulemaking is where it becomes operational.
+
+At the federal level, the Administrative Procedure Act's rulemaking section, 5 U.S.C. § 553, requires an agency proposing a substantive rule to publish notice in the Federal Register, give the public an opportunity to participate "through submission of written data, views, or arguments," and consider what it receives [@apa_553]. Substantive comments become part of the *administrative record* a court examines if the rule is challenged, and courts look for an agency's engagement with substantive comments, not a response to each copy of a campaign letter [@crs_public_comments]. Agencies treat identical comments as one comment with many signatories, and the Federal Communications Commission's 2017 net neutrality docket showed that floods can be faked: millions of its comments were filed under fabricated or stolen identities. <!-- TODO: cite the New York Attorney General's 2021 report on fake FCC comments if this sentence stays. --> In 2025 the White House directed agencies to lean on the "good cause" exception when repealing rules, which skips comment altogether. <!-- TODO: verify the April 2025 presidential memorandum on repealing regulations without notice and comment, and cite it if the sentence stays. -->
+
+For data scientists, the most useful federal dockets are often Paperwork Reduction Act notices. An agency that wants to start, change, or renew a collection of information from the public (a survey, a reporting form, the required fields of a federal data system) must publish a notice and invite comment, first for 60 days and then for 30 while the Office of Information and Regulatory Affairs reviews it. The notices ask the same four questions every time: whether the collection is necessary and has practical utility, whether the burden estimate is accurate, how to enhance the quality, utility, and clarity of the information, and how to minimize the burden on respondents. "Practical utility" is where an erosion audit (@sec-ch-05-erosion-ownership) shows who depends on a dataset an agency proposes to cut; "minimize the burden" is where a refusal specification (@sec-ch-13-critical-data-studies-refusal) argues a field should not be collected at all.
+
+Regulations.gov, the shared federal docket system, has an API through api.data.gov with a free key [@regulationsgov_api]. Document search, docket retrieval, and comment retrieval are separate endpoints; submission uses a separate key, and for a single comment the web form is simpler.
 
 ```python
 import os
-import requests
 
 API_KEY = os.environ["REGULATIONS_GOV_API_KEY"]
 BASE = "https://api.regulations.gov/v4"
-HEADERS = {"X-Api-Key": API_KEY,
-           "User-Agent": "PublicInterestDataScience/0.1 (your-email@example.edu)"}
+HEADERS = {"X-Api-Key": API_KEY}
 
 def open_documents(keyword, doc_type="Proposed Rule", after="2027-04-01"):
     params = {"filter[searchTerm]": keyword,
@@ -59,130 +196,42 @@ def open_documents(keyword, doc_type="Proposed Rule", after="2027-04-01"):
     r.raise_for_status()
     return r.json()["data"]
 
-for h in open_documents("information collection environmental")[:5]:
+for h in open_documents("information collection", doc_type="Notice")[:5]:
     a = h["attributes"]
     print(a["docketId"], a.get("commentEndDate"), a["title"][:60])
-# => EPA-HQ-OAR-2027-XXXX  2027-05-10T03:59:59Z  Agency Information Collection ...
-# (illustrative; results depend on the day you run it)
+# (results depend on the day you run it)
 ```
 
-The payload follows the JSON:API convention, with fields under `attributes` and links under `relationships`. Print one result with `json.dumps(..., indent=2)` before writing parsing code against it.
-
-## Reading an NPRM for its questions
-
-An NPRM has a predictable structure: preamble, statutory authority, background, alternatives, proposed regulatory text, and almost always a list of questions for the public. Those questions are the most valuable part of the document for a commenter. If the agency asked a question and you answered it with evidence, your comment is substantive on its face.
-
-```python
-from bs4 import BeautifulSoup
-import re
-
-def extract_questions(html_text):
-    soup = BeautifulSoup(html_text, "html.parser")
-    out = []
-    for p in soup.find_all(["p", "li"]):
-        text = p.get_text(" ", strip=True)
-        if re.search(r"\?\s*$", text) and len(text) > 40:
-            out.append(text)
-    return out
-
-# The FTC commercial surveillance advance notice asked 95 numbered questions.
-# A PRA notice asks the same four every time; the substance is in the
-# collection instrument and its supporting statement, so read those too.
-```
-
-You are not obliged to answer every question. Ask which two or three overlap your evidence, and answer those as well as you can.
-
-## Tracking the docket
-
-A rule accumulates documents over months: the notice, extensions, supplemental notices, the final rule. The SQLite tracker you built in @sec-ch-07-law extends naturally with two tables.
-
-```python
-import sqlite3
-
-SCHEMA = """
-CREATE TABLE IF NOT EXISTS rulemakings (
-    docket_id TEXT PRIMARY KEY, agency TEXT NOT NULL, title TEXT NOT NULL,
-    comment_end_date TEXT,
-    status TEXT CHECK (status IN ('open','closed','final','withdrawn')));
-CREATE TABLE IF NOT EXISTS comments (
-    id INTEGER PRIMARY KEY,
-    docket_id TEXT REFERENCES rulemakings(docket_id),
-    submitter TEXT, date_submitted TEXT, substantive INTEGER, url TEXT);
-"""
-with sqlite3.connect("rulemaking_tracker.sqlite") as conn:
-    conn.executescript(SCHEMA)
-```
-
-A weekly job that flags dockets closing within 14 days will keep you from the single most common first-time failure: missing the window.
-
-## The shape of a substantive comment
-
-A comment has a header, an introduction, a body organized by the notice's sections or questions, and a conclusion listing specific changes.
-
-```
-[Name, affiliation, contact]            [Date]
-
-Re: Comment on [Agency] [Docket Number]
-    [Title of the notice]; [Federal Register citation, e.g., 87 Fed. Reg. 51,273]
-
-I submit this comment as a [student, researcher, data scientist] whose work
-focuses on [area]. I write in my individual capacity.
-```
-
-The introduction establishes standing, names the sections you address, and summarizes your position in a paragraph. The body answers specific questions:
-
-```
-Response to Question 2 (practical utility of the information)
-
-The agency proposes to discontinue Table 4 of the annual release. My audit
-of the agency's own catalog (Exhibit A) found that 14 of 50 resource links
-for this series already fail, and that state and county agencies cite
-Table 4 as their only source for [measure] (Exhibit B). I propose that the
-agency retain Table 4 and publish a datasheet documenting its methods.
-```
-
-That paragraph names the question, cites evidence the agency did not have, and proposes a concrete change that staff could adopt without interpolation. Attach your evidence as exhibits: the audit CSV, the datasheet, the stewardship plan or refusal specification. A comment with exhibits reads as materially different from one without.
-
-Many influential comments on the mid-2020s AI rulemakings were coalition submissions, which carry institutional weight and dilute individual voice. A heuristic: if your argument rests on an audit you conducted, or has not been made in this form by any coalition letter, sign it yourself.
-
-::: {.callout-note title="In the Public Interest"}
-A comment becomes part of the administrative record the moment the agency accepts it, and the record is what a court reviews when the rule is challenged. That is **oversight** as @sec-ch-04-exemption-oversight defined it: authority and remedy wired into law. In this module it is also **ownership**. A Paperwork Reduction Act notice is the one formal moment when the public can contest the erosion of a federal dataset before it happens, and a comment backed by an erosion audit is the public asserting a stake in a record it does not control. That channel can erode too. Agencies may skip notice and comment for "good cause," and in 2025 the White House directed agencies to lean on that exception when repealing rules. <!-- TODO: verify the April 2025 presidential memorandum on repealing regulations without notice and comment, and cite it if the sentence stays. --> Write your comment so it reads well out of context years from now, because that is when it may matter.
-:::
-
-## Timing and the regulatory calendar
-
-The comment period is non-negotiable. A comment filed after the window closes is, legally, absent from the record. Watch the close date, watch the Federal Register for extensions, and watch for supplemental notices that reopen comment on a narrower issue. The Office of Information and Regulatory Affairs' dashboard at reginfo.gov shows which rules and information collections are under review. The FTC docket used as an example here closed long ago; your instructor will help you pick an open docket in early April.
+The API has changed versions and authentication more than once; confirm the current version before writing code. A federal comment has the same shape as a county one, with the Federal Register citation in the header and the body organized by the notice's numbered questions. The Federal Trade Commission's 2022 commercial surveillance docket (FTC-2022-0053) holds good academic comments to read as templates.
 
 ## Exercises
 
-**Exercise 20.1 (Guided; laptop, real data).** Request a regulations.gov API key through api.data.gov. Use `open_documents()` to find three dockets open during this module that relate to the federal dataset you audited in @sec-ch-05-erosion-ownership: an NPRM, a Paperwork Reduction Act notice, or an environmental review. Record the docket ID, agency, title, document type, and comment end date in a table, and add them to your `rulemaking_tracker.sqlite`.
+**Exercise 18.1 (Guided; laptop, real data).** Run `dockets()` with today's date range. Pick three dockets that are open or scheduled for a hearing, open each `DocketLink`, and record the docket ID, type, status, referral or comment deadline, and hearing dates in `docket_tracker.sqlite`. Note one record whose status or date in the map layer disagrees with the docket page.
 
-**Exercise 20.2 (Guided).** Choose one docket from 20.1. Extract every question the notice asks the public, grouped by section, with one sentence per question naming the evidence that would be responsive. For a PRA notice, also read the supporting statement and the collection instrument, and list the specific fields or tables your evidence speaks to.
+**Exercise 18.2 (Guided).** For one docket, read the referral packet or staff report and list every criterion or code section the decision turns on. For each, write one sentence naming the evidence that would bear on it and whether county open data could supply it.
 
-**Exercise 20.3 (Analytic).** Retrieve three comments already filed on your docket, or on a closed docket at the same agency if yours has none yet. Classify each as substantive, form letter, or off-topic using this chapter's criteria, and justify each judgment in 150 words with quotations.
+**Exercise 18.3 (Runnable, real public data).** Compute one piece of evidence for your docket from the county's open data layers: affected parcels, acreage by district, distance to a resource the Comprehensive Plan protects, or another measure tied to a criterion from 18.2. Save the notebook and a CSV exhibit, and write two sentences on the measure's limits.
 
-**Exercise 20.4 (Workshop).** Draft the core of your comment: responses to two questions from 20.2, each with a cited section, evidence from your erosion audit, and proposed text or a concrete requested change. Exchange drafts with a classmate and review theirs against the substantive comment standard in no more than 300 words.
+**Exercise 18.4 (Other levels).** Use `open_documents()` or the *Colorado Register* to find an open state or federal docket related to a dataset you have used. List the questions it asks, and classify three comments already filed there (or on a closed docket at the same agency) as substantive, sentiment, or off-topic, justifying each in 150 words.
 
-**Exercise 20.5 (Piece 4: Planning / Federal / Public comment).** Submit the module's portfolio piece, due Friday, April 16. It has the same four parts as every piece:
+**Exercise 18.5 (Submittable artifact: a public comment on a live matter).** Produce a comment package with three parts:
 
-1. **Technical artifact.** An erosion audit of a federal dataset (link rot, Wayback recovery, datasheet) plus either a stewardship plan or a refusal specification, as a reproducible notebook or small repository a classmate can clone and run (Exercises 16.1 to 16.3, with 18.3 or 19.2).
-2. **Public text.** A substantive public comment on a live federal rulemaking, ready to submit on regulations.gov: docket number and section citations, evidence from your artifact attached as exhibits, and concrete proposed changes.
-3. **Installed-base note** (about 300 words). Which pressure did you meet? Which installed-base elements did your artifact build, and which are still missing? Include provenance, license, and an AI-use disclosure.
-4. **Graduate methods memo** (INFO 5871 only; 750 to 1,000 words). Situate the piece in at least five scholarly sources and defend one methodological choice against the literature.
+1. **Technical artifact.** The notebook and exhibits from 18.3 (or equivalent evidence for a state or federal docket), as a repository someone else can clone and run, with a provenance file for every layer or dataset used.
+2. **Public text.** A substantive comment on a live Boulder County land use docket (or, if none fits your evidence, a live state or federal docket), ready to submit: docket number in the header, the criteria or sections you address, evidence attached as exhibits, and concrete requested changes.
+3. **Provenance, gaps, and AI-use note** (about 300 words). Which pressure did you meet? Which installed-base elements (@sec-ch-02-installed-base) did your artifact build, and which are still missing? State provenance and license and disclose how you used AI tools.
 
-Submitting the comment to the agency is optional and requires instructor approval, because a submitted comment enters the permanent federal record under your name. If you submit, archive the tracking number and confirmation, and record the comment's docket URL once it posts.
+A submitted comment enters a permanent public record under your name. Submit it before the packet deadline if you stand behind it, keep the confirmation, and record the docket URL in your tracker.
 
 ## Looking ahead
 
-With Piece 4 you have written for all four rungs of the ladder: a city outlet, a county board, a state body, and a federal agency. Part VI, Beyond the Portfolio, is where one of those pieces goes further. @sec-ch-16-research-proposals introduces the research proposal, a genre graduate students may use to recast a piece for the final project. @sec-ch-19-archival-deposits then teaches you to deposit your final work with a DOI, so that your audit and your comment outlive the agency web pages they were written to protect. That last step closes the loop this module opened: you will become, in a small way, a steward of the record.
+A comment is written for a decision about to be made. @sec-ch-19-archival-deposits writes for readers who come after the decision: it shows how to deposit your evidence, exhibits, and comment with a DOI, so the record you contributed to does not depend on a county website or a federal portal staying where it is. If your comment surfaced a question the docket could not answer, @sec-ch-16-research-proposals shows how to ask someone to pay for the answer.
 
 ## Further Reading and Resources
 
-- Regulations.gov: <https://www.regulations.gov/>. The shared federal docket system; browse open dockets by agency and close date.
-- Office of the Federal Register, "A Guide to the Rulemaking Process": <https://www.federalregister.gov/uploads/2011/01/the_rulemaking_process.pdf>. A short primer on how notices, comments, and final rules fit together. <!-- TODO: verify this PDF URL; the earlier edition linked "the_publics_guide.pdf". -->
-- Congressional Research Service, *A Brief Overview of Rulemaking and Judicial Review*, CRS Report R41546 [@crs_public_comments]. How notice-and-comment rulemaking produces legally durable regulation.
-- Regulations.gov API documentation: <https://open.gsa.gov/api/regulationsgov/> [@regulationsgov_api]. Verify against the version posted at the start of your semester.
-- Office of Information and Regulatory Affairs: <https://www.reginfo.gov/public/>. Rules and information collections under review, including Paperwork Reduction Act submissions.
-- Administrative Conference of the United States: <https://www.acus.gov/>. Recommendations and research on rulemaking practice, including mass and computer-generated comments.
-- FTC Commercial Surveillance advance notice docket, FTC-2022-0053: <https://www.regulations.gov/docket/FTC-2022-0053>. Read two or three of the substantive academic comments as templates.
-- Administrative Procedure Act, 5 U.S.C. § 553 [@apa_553]: <https://www.law.cornell.edu/uscode/text/5/553>. The paragraphs of statute every commenter should have read once.
+- Boulder County Planning Commission: <https://bouldercounty.gov/government/boards-and-commissions/planning-commission/> [@bouldercounty_pc]. Meeting schedule, how to comment, and the hearing guidelines.
+- Boulder County Comprehensive Plan: <https://bouldercounty.gov/property-and-land/land-use/planning/boulder-county-comprehensive-plan/>. The policies a land use comment should cite.
+- Boulder County Open Data: <https://opendata-bouldercounty.hub.arcgis.com/>. Zoning, parcels, and planning layers under a Creative Commons license.
+- Sherry Arnstein, "A Ladder of Citizen Participation" [@arnstein1969]. The vocabulary for telling a comment process that shares power from one that performs it.
+- Regulations.gov API documentation: <https://open.gsa.gov/api/regulationsgov/> [@regulationsgov_api]. Verify against the current version before writing code.
+- Congressional Research Service, *A Brief Overview of Rulemaking and Judicial Review* [@crs_public_comments]. How notice-and-comment rulemaking produces legally durable regulation.
+- Administrative Procedure Act, 5 U.S.C. § 553 [@apa_553]: <https://www.law.cornell.edu/uscode/text/5/553>. The paragraphs of statute every federal commenter should have read once.
