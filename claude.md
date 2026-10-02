@@ -81,7 +81,7 @@ Suggested BibTeX entries you cannot verify should go into `references.bib` with 
 
 The last chapter of each module part (Chapters 7, 11, 15, and 20) is a genre chapter, and its final exercise is that module's portfolio piece. Not a thought experiment, not a paragraph saying what the reader would write if they wrote one. Every piece has a technical artifact someone else can run, a public text addressed to a named audience at the module's level of government (an op-ed, a testimony statement, a report section, or a public comment on a live rulemaking), and a short installed-base note on provenance, gaps, and AI use. Graduate readers add a methods memo.
 
-The other chapters in a module part each carry at least one exercise that builds a component of the piece. Part VI chapters support the final project: deepen one piece, recast it in a new genre, and deposit it with a resolvable identifier. If a genre chapter's last exercise does not produce a piece, the chapter is not finished.
+The other chapters in a module part each carry at least one exercise that builds a component of the piece. Part VI chapters support the final project: deepen one piece, recast it in a new genre, and deposit it with a DOI (Zenodo or another DOI-minting repository). If a genre chapter's last exercise does not produce a piece, the chapter is not finished.
 
 ## Voice in the technical prose
 

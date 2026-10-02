@@ -6,7 +6,7 @@ This book teaches data science for public-interest ends. It has six parts. The f
 
 1. **Foundations**. The contested public interest; the framework of pressures (enclosure, exemption, erosion), values (openness, oversight, ownership), and the installed base; and neighboring fields.
 2. **Journalism: The City**. Enclosure → openness. Reproduce an investigation, publish city data, write an op-ed.
-3. **Law: The County**. Exemption → oversight. Request county records under CORA, build an exemptions and remedy ledger, write testimony.
+3. **Law: The County**. Exemption → oversight. Work with county records already released under CORA, build an exemptions and remedy ledger, write testimony.
 4. **Assurance: The State**. Accounting and engineering. Audit-washing → oversight. Run and test a disaggregated audit, write a report for a state body.
 5. **Planning: The Nation**. Erosion → ownership. Audit a federal dataset's decay, design stewardship or refusal, write a public comment on a federal rulemaking.
 6. **Beyond the Portfolio**. Research proposals, archival deposits, and the limits of the framework.

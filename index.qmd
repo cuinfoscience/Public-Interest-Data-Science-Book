@@ -18,10 +18,10 @@ The book teaches that framework through the professions that have already solved
 
 1. **Foundations** (@sec-ch-01-introduction to @sec-ch-03-pit-data-for-good). The contested idea of "the public interest," the framework and its installed base, and the neighboring fields (public interest technology, data for good, civic tech) that clarify what this work is and is not.
 2. **Journalism: The City** (@sec-ch-04-enclosure to @sec-ch-07-op-eds). Enclosure meets the watchdog tradition. You reproduce a published investigation, collect city data responsibly, publish it openly, and write an **op-ed** for a local outlet.
-3. **Law: The County** (@sec-ch-08-exemption to @sec-ch-11-testimony). Exemption meets public interest law. You request county records under the Colorado Open Records Act, turn released documents into data, build a ledger of exemptions and remedies, and write **testimony** for a county hearing.
+3. **Law: The County** (@sec-ch-08-exemption to @sec-ch-11-testimony). Exemption meets public interest law. You work with records Boulder County has already released under the Colorado Open Records Act, turn them into data, build a ledger of exemptions and remedies, and write **testimony** for a county hearing.
 4. **Assurance: The State** (@sec-ch-12-accounting to @sec-ch-15-reports). Audit-washing meets accounting and engineering. You run a disaggregated audit, test it like safety-critical code, examine procurement as governance, and write a **report** for a state body.
 5. **Planning: The Nation** (@sec-ch-16-erosion to @sec-ch-20-public-comments). Erosion meets advocacy planning, stewardship, sovereignty, and refusal. You audit the decay of a federal dataset, design a stewardship plan or a refusal specification, and write a **public comment** on a federal rulemaking.
-6. **Beyond the Portfolio** (@sec-ch-21-research-proposals to @sec-ch-23-limits). Research proposals, archival deposits with persistent identifiers, and the limits of the framework itself.
+6. **Beyond the Portfolio** (@sec-ch-21-research-proposals to @sec-ch-23-limits). Research proposals, archival deposits with DOIs, and the limits of the framework itself.
 
 Each module part follows the same order: a pressure, a lineage, a value, and a genre. Each uses a national anchor case, a non-US counter-case, and a local case at its level of government. Each ends with a portfolio piece.
 
@@ -33,14 +33,14 @@ Code blocks do not run at build time. They are illustrative: you are expected to
 
 Every chapter has **at least one "Missing Manual" callout** flagging something that textbooks usually omit: a surprising library default, a real-world API friction, the politics of a "simple" choice. Every chapter has **at least one "In the Public Interest" callout** tying the technical material back to openness, oversight, or ownership. Every chapter ends with **4–5 graduated exercises**, from guided ("follow these steps") to open-ended ("design a pipeline that…"), and a curated list of further resources.
 
-The genre chapter that closes each module part has one additional rule: it must end with a real, submittable portfolio piece. Not a thought experiment. A technical artifact someone else can run, a public text (an op-ed, a testimony statement, a report section, or a public comment on a live rulemaking) addressed to a named audience, and a short note on what installed base the work built. A reader who finishes the four module parts has a portfolio of four pieces at four levels of government. Part VI shows how to take one of them further and archive it with a resolvable identifier.
+The genre chapter that closes each module part has one additional rule: it must end with a real, submittable portfolio piece. Not a thought experiment. A technical artifact someone else can run, a public text (an op-ed, a testimony statement, a report section, or a public comment on a live rulemaking) addressed to a named audience, and a short note on what installed base the work built. A reader who finishes the four module parts has a portfolio of four pieces at four levels of government. Part VI shows how to take one of them further and archive it with a DOI.
 
 ## Running examples
 
 To give the book coherence across 23 chapters, a small set of running examples is threaded throughout, arranged by the level of government each part works at. When a chapter needs a case, it reaches for one of these before inventing a new one:
 
 - **City:** City of Boulder and City and County of Denver records (campaign finance, meeting minutes, agendas, budgets, permits, 311 requests).
-- **County:** Boulder County records requested under the Colorado Open Records Act, and the county's public meeting packets.
+- **County:** Boulder County records already released under the Colorado Open Records Act (from the Public Records Archive of its Open Records Center), and the county's public meeting packets.
 - **State:** Colorado data from the American Community Survey (via `folktables`) and the Colorado AI Act as a state accountability regime.
 - **Federal:** federal environmental and scientific data (EPA, NOAA, USGS, Census) as at-risk datasets, and regulations.gov for federal rulemaking.
 - Census and FRED APIs for demographic and economic context.
@@ -49,7 +49,7 @@ To give the book coherence across 23 chapters, a small set of running examples i
 - A small synthetic worker-log fixture that lets us teach audit methods without violating anyone's privacy.
 - Public FOIA and CORA request data as a class-wide shared resource.
 
-By the end of the book you will have built, in parts, a small public-interest data infrastructure of your own: a reproduced investigation and a documented city dataset with an op-ed; county records turned into data with a ledger of exemptions and remedies, and testimony; a tested, disaggregated audit with a report for a state body; a federal dataset's erosion audit, a stewardship plan or refusal specification, and a public comment on a live rulemaking; and, finally, one of those pieces deepened, recast, and deposited on the Internet Archive or Zenodo.
+By the end of the book you will have built, in parts, a small public-interest data infrastructure of your own: a reproduced investigation and a documented city dataset with an op-ed; county records turned into data with a ledger of exemptions and remedies, and testimony; a tested, disaggregated audit with a report for a state body; a federal dataset's erosion audit, a stewardship plan or refusal specification, and a public comment on a live rulemaking; and, finally, one of those pieces deepened, recast, and deposited on Zenodo with a DOI.
 
 ## What the book does not do
 
