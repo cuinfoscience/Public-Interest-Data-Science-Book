@@ -53,7 +53,7 @@ The installed base makes records durable. It says little about whether the recor
 
 ### Lineages as inheritance
 
-Each lineage solved a version of the accountability problem, and each carries pathologies the book mostly presents as lessons rather than inheritances. Public interest law splits into a well-funded strategic tier and an overstretched front-line tier [@albiston2017]. Accounting's independence norms coexisted with Arthur Andersen. Planning's "public interest" built Robert Moses's expressways before Davidoff [-@davidoff1965] tried to pluralize it. @stapleton2022 ask who benefits when a field claims the label "public interest" at all. Borrowing a profession's methods also borrows its gatekeeping, its credentialing, and its assumptions about who gets to speak.
+Each lineage solved a version of the accountability problem, and each carries pathologies the book mostly presents as lessons rather than inheritances. Public interest law splits into a well-funded strategic tier and an overstretched front-line tier [@albiston2017]. Accounting's independence norms coexisted with Arthur Andersen. Planning's "public interest" built Robert Moses's expressways before Davidoff [-@davidoff1965] tried to pluralize it. @stapletonWhoHasInterest2022 ask who benefits when a field claims the label "public interest" at all. Borrowing a profession's methods also borrows its gatekeeping, its credentialing, and its assumptions about who gets to speak.
 
 ### A ladder that presumes the building
 
