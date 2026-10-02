@@ -1,0 +1,156 @@
+---
+execute:
+  eval: false
+---
+
+# Op-Eds {#sec-ch-14-op-eds}
+
+A genre is the form a professional lineage uses to carry its findings to the public that can act on them. Journalism's form, for a data scientist who is not a staff reporter, is the op-ed. This chapter assumes you have the makings of one: city data collected responsibly, with a provenance log, and published as a documented dataset someone else can check (@sec-ch-03-enclosure-openness develops both moves), and the habit of reproducing a published finding and comparing your numbers to the reporter's (@sec-ch-06-journalism). If you have not built those yet, the worked example below names each piece as it needs it. What none of that work produces on its own is a reader.
+
+This chapter is about getting one. It treats the op-ed as a genre with a history, an economy, and an anatomy; walks through a worked example built on the Boulder election contributions data from @sec-ch-03-enclosure-openness; and ends with an op-ed you could pitch this week. The audience is a city: residents, council members, the clerk's office, and the reporters who cover them. Journalism and the op-ed both live most naturally at the city level, where a single local outlet can reach most of the people a decision affects. The other genres in Part IV address other levels of government, and the op-ed is the shortest form with the widest audience.
+
+## Why the op-ed matters, and why it does not
+
+The op-ed is the 750-word argument you write for a stranger. It is not a report (@sec-ch-15-reports), which assumes a policy audience willing to read forty pages. It is not testimony (@sec-ch-17-testimony), which assumes a hearing and a microphone. It is persuasion, addressed to a general reader who has about four minutes and two competing browser tabs, written in the voice of a person who thinks something should happen. Most of what a data project produces (the scraper, the reproduction, the cleaned dataset) is illegible to that reader. The op-ed is what makes it legible.
+
+It is also the genre public-interest data scientists most often skip. The paper goes to the committee. The dashboard goes to the client. Neither reaches the council member whose vote is next Tuesday or the reporter who might pick up the thread if they knew it existed. An op-ed in a local outlet will be read by more members of the affected public than any peer-reviewed article you write this year. That is an uncomfortable fact, and one the profession has mostly refused to sit with.
+
+## A short history of a strange page
+
+The op-ed page (literally, the page opposite the editorial) is younger than most of the datasets you work with. *The New York Times* ran its first recognizable op-ed page on September 21, 1970, under editorial page editor John B. Oakes and op-ed editor Harrison Salisbury [@oakes1970]. The idea was to make room for outside voices facing the paper's unsigned editorials: voices that did not agree with the *Times*, that came from outside journalism, and that addressed the day's questions with a specificity the editorial page was too institutional to risk.
+
+The form spread through the 1970s and 1980s, and with it conventions that still govern most pitches: roughly 750 words, an argument pegged to the news, a voice the paper's own columnists cannot reliably produce. In 2021 the *Times* renamed the form "guest essays" [@kingsbury2021]. Writers still call them op-eds.
+
+## The city outlet ecosystem
+
+What has changed since 1970 is the ecosystem. National broadsheets still publish op-eds, but their slush piles are brutal and their response times are measured in weeks. For a city-level argument, the national page is usually the wrong target anyway. The readers you need are local, and so are the outlets.
+
+In the Boulder and Denver area that ecosystem includes a nonprofit local newsroom (Boulder Reporting Lab), a legacy daily (the *Daily Camera*), a digital city outlet (Denverite), and a statewide nonprofit (*The Colorado Sun*), alongside neighborhood newsletters and public radio. They differ in audience, length limits, whether they accept guest opinion at all, and how they handle data-driven commentary. Read each outlet's submission guidelines and a month of its opinion section before you pitch; the guidelines change, and this book will not keep up with them. Beyond the region, *The Conversation US* commissions pieces from academic authors and republishes them under Creative Commons, which can carry a city argument to regional papers.
+
+<!-- TODO: before each printing, confirm which of these outlets accept guest opinion pieces, their current word limits, and their submission addresses. -->
+
+Two non-US outlets are worth reading as models of how the genre travels. *The Continent*, a pan-African weekly designed to be shared as a PDF over messaging apps, shows commentary built for distribution rather than for a front page. *Rest of World* publishes technology reporting and opinion from outside the United States and Western Europe, and is a useful corrective to the assumption that the American op-ed page is the template.
+
+## Who gets published where
+
+The op-ed page is not a neutral meritocracy. The Op-Ed Project has for years documented the demographic distribution of bylines in major U.S. opinion pages, finding that men write a large majority of them and that writers of color are underrepresented, with improvement that has been slow and uneven [@opedproject_byline; @opedproject]. Part of the explanation is that the pitch economy runs on weak-tie networks (editors' contacts, conference circuits, direct messages), and those networks reproduce the profession's existing shape. Local outlets are often more open to new voices than national ones, but they are not exempt. If you are reading this book, your reasons to pitch are exactly as legitimate as anyone else's. Pitch anyway.
+
+The political economy also shapes what counts as an op-ed-able argument. A piece that says the city's campaign finance data should be published in a usable form is op-ed-able almost anywhere. A piece that says local elections are bought is, at most outlets, not, unless the evidence is overwhelming. The constraint is not a conspiracy. It is a product of what editors believe their median reader will finish. Understand the constraint, write around it where you can, and name it when you cannot.
+
+## The anatomy of a 750-word argument
+
+An op-ed is not a short paper. It is an argument with a load-bearing structure, and editors can tell within sixty seconds whether the structure is there. Five parts:
+
+**The hook** is the first sentence or two: the news peg, the anecdote, the surprising number. Its job is to earn the next paragraph.
+
+**The nut graf** is where you tell the reader what you want them to believe by the end. If you cannot write it as a single declarative sentence, the argument is not ready.
+
+**The argument** is two to four paragraphs that develop the claim. One paragraph, one move.
+
+**The evidence** is where your data lives: one chart, one number, one case, a named source. You are not proving the argument the way a paper would; you are giving the reader enough to trust you. A single well-chosen statistic with a live hyperlink is worth a paragraph of hedged prose.
+
+**The call to action** is the last paragraph. What should happen, and who should make it happen? "Policymakers should consider" is the call to action of a piece that has none. "The City Council should direct the clerk to publish every filing since 2018 as open data before the next election" is a call to action. Specificity is the whole game.
+
+## Pitching is half the work
+
+Editors do not read op-eds they have not been pitched. The most common failure among first-time authors is a brilliant 750 words attached to an email that says "Please consider the attached." The draft is the easy half. The pitch paragraph is the hard half.
+
+A working pitch has a specific shape. The subject line names the genre and the angle: "Op-ed pitch: what Boulder's campaign finance data can no longer tell voters." The body opens with the argument in one sentence. The second sentence says why now (a vote, a filing deadline, an election, a report). The third says why you: your credential is not your degree, it is the work you have already done on the question. Paste the full draft below the pitch and attach it as `.docx`. Put your phone number in the signature.
+
+::: {.callout-tip title="The Missing Manual"}
+Op-ed editors want a pitch and a draft that is one click from publishable. A Google Doc with tracked changes, a PDF, or a link to a notebook tells the editor you do not know the genre. Paste the text into the email body and attach a `.docx` for the copy desk. Render from Quarto with `quarto render draft.qmd --to docx`; editors do not accept `.qmd`, `.ipynb`, or `.tex`. Cite with in-text hyperlinks, not footnotes, and do not include a bibliography unless asked. Pitch one outlet at a time: sending the same piece to several editors at once, without saying so, is the fastest way to be remembered for the wrong reason. If an outlet has not answered within its stated window (often a few days for timely pieces), withdraw politely and move on.
+:::
+
+## A worked example: Boulder's contributions data as an op-ed
+
+Start from the cleaned contributions data you published in @sec-ch-03-enclosure-openness. The first-pass question a city reader might care about is simple: what share of contributions to council candidates came from donors whose mailing address is outside Boulder?
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+c = pd.read_parquet("data/boulder_contributions_clean.parquet")
+c = c[(c["type"] == "Official Candidate Committee")
+      & (c["contribution_type"] == "Monetary")
+      & (c["amount"] > 0)
+      & c["city"].notna()
+      & ~c["city"].str.strip().str.upper().isin(["N/A", "NA", ""])]
+c["cycle"] = c["filing_date"].dt.year
+
+by_cycle = (c[c["cycle"].isin([2011, 2013, 2015, 2017])]
+            .groupby("cycle")
+            .agg(n=("amount", "size"),
+                 outside=("city_is_boulder", lambda s: 1 - s.mean())))
+by_cycle.round(3)
+# =>          n  outside
+# => 2011  1310    0.164
+# => 2013  1064    0.123
+# => 2015  1699    0.178
+# => 2017  1970    0.217
+```
+
+That is a modest trend, and an honest op-ed says so. Roughly one contribution in eight came from outside a Boulder mailing address in 2013; by 2017 it was more than one in five. The caveats are real: a mailing city is not city limits, "Boulder County" counts as outside, and the dollar share moved less than the count share. Those caveats belong in your methods note and, compressed to a clause, in the op-ed.
+
+Then notice the more striking finding, the one @sec-ch-03-enclosure-openness put in your datasheet: the city's open data stops with filings from January 2018. You cannot extend the chart to the elections that followed from this source. Before that becomes an argument, it has to survive right of reply (@sec-ch-06-journalism). Check the City Clerk's website for where later filings live and in what format, and email the clerk's office with a specific question and a deadline. If later filings are published elsewhere as open data, your op-ed is about the trend, and the open data finding shrinks to a sentence. If they exist only as individual filings or in a system with no bulk export, the op-ed is about openness itself.
+
+Suppose your check confirms the second case. The hook is the next council election. The nut graf: Boulder voters cannot see whether the trend in out-of-town giving has continued, because the city's own open data stops in 2018, and the council should fix that before the next filing deadline. The argument is two paragraphs on what the 2011–2017 data shows and one on what it cannot show. The evidence is one chart. The call: direct the clerk to publish all filings since 2018 in the same open layer, with the committee numbers that make filings linkable and a note when the series is updated.
+
+Here is the chart. One chart. You will not get two.
+
+```python
+fig, ax = plt.subplots(figsize=(6.5, 3.8))
+bars = ax.bar(by_cycle.index.astype(str), by_cycle["outside"],
+              color=["#9aa5b1", "#9aa5b1", "#9aa5b1", "#2b6cb0"])
+for bar, n in zip(bars, by_cycle["n"]):
+    ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.008,
+            f"n={n:,}", ha="center", fontsize=9)
+ax.set_ylabel("Share of contributions from\noutside a Boulder mailing address")
+ax.set_ylim(0, 0.3)
+ax.set_title("More contributions to Boulder council candidates came from "
+             "non-Boulder addresses,\n2011–2017; the city's open data stops there")
+for side in ("top", "right"):
+    ax.spines[side].set_visible(False)
+fig.tight_layout()
+fig.savefig("ch14_outside_share.png", dpi=160, bbox_inches="tight")
+```
+
+Three things about that chart are deliberate. The title is a complete sentence, because a newsroom reader looks at the title first and the axes second. The color codes the argument, because a newsroom reader will not parse a legend. The sample sizes sit on the bars, because a reader who does not see them will assume the difference is noise. And the chart's own title carries the openness finding, so the image argues even if it is shared without the text.
+
+::: {.callout-note title="In the Public Interest"}
+An op-ed is **openness** as argument rather than openness as data release. @sec-ch-03-enclosure-openness taught you to publish a dataset with documentation and a durable identifier; that is necessary and insufficient, because a dataset nobody reads is openness in form without openness in effect. The worked example makes a specific claim: the most consequential thing a city-level data op-ed can do is sometimes to argue for the openness of the data itself, because a public that cannot see the last four elections cannot judge the next one. An op-ed in a local outlet the week before a council discussion does more for that public than the same finding in a report the council staff skims in a briefing. The difference between a data release that changes a decision and one that does not is often a 750-word argument somebody pitched to an editor who picked up the phone.
+:::
+
+## Exercises
+
+**Exercise 14.1 (Analytic).** Pick three recent op-eds on data or technology policy: one by a data scientist writing for a general audience (start with Bender [@bender2023], Raji [@raji2022], or Broussard [@broussard2023]), one from a Boulder or Denver outlet on a city issue, and one from *The Continent* or *Rest of World*. For each, identify the hook, the nut graf, and the call to action, including who is being asked to act. Produce a two-page comparison. At least one will lack a crisp nut graf. Say so.
+
+**Exercise 14.2 (Guided).** Reproduce the worked example's table and chart from your own cleaned Boulder data (or the equivalent for your city dataset). Then test the finding's sensitivity: recompute the share with "Boulder County" counted as inside, and with dollars instead of counts. Write 200 words on which version you would put in an op-ed and why.
+
+**Exercise 14.3 (Guided).** Make one publishable chart for your own finding. The title must be a full declarative sentence, the chart must carry its sample sizes, and it must work in grayscale. Export at 160 dpi and confirm it survives being shrunk to 500 pixels wide.
+
+**Exercise 14.4 (Analytic).** Choose your target outlet and read a month of its opinion section and its submission guidelines. In 300 words, describe the outlet's readership, typical length, and the last three city-level pieces it ran. Then draft a right-of-reply email to the city office responsible for your data, with two specific questions and a deadline.
+
+**Exercise 14.5 (Submittable artifact: an op-ed for a city outlet).** Produce a pitch-ready op-ed package with three parts:
+
+1. **Technical artifact.** A reproducible notebook or small repository that reproduces one published finding (from "Machine Bias" or a local data story, as in @sec-ch-06-journalism) or builds your own, and extends it with city data you collected or downloaded responsibly, with a documented provenance file (@sec-ch-03-enclosure-openness). Someone who has never met you should be able to clone it, run it, and get your chart.
+2. **Public text.** A 750-word op-ed for a named local outlet, rendered to `.docx`, plus the pitch exactly as it would appear in the email body, with the right-of-reply exchange from Exercise 14.4 summarized in a sentence.
+3. **Provenance and AI-use note** (about 300 words). Which pressure did your piece meet? Which installed-base elements (@sec-ch-02-installed-base) did your artifact build, and which are still missing? State the data's provenance and license and disclose how you used AI tools.
+
+When the peg arrives (a council agenda item, a filing deadline, an election), send the pitch.
+
+## Looking ahead
+
+The op-ed is the shortest genre in this book and the one with the widest audience. The genres that follow address narrower readers with more power to act. @sec-ch-15-reports writes for a named federal body, in a document long enough to carry its own methods. @sec-ch-17-testimony speaks to a committee of the Colorado General Assembly, an audience that is not a stranger with four minutes but a panel of legislators with a bill in front of them and a clock on the wall. @sec-ch-04-exemption-oversight explains why that difference matters: an argument reaches oversight only when it reaches someone with the authority to act. The pitch mindset carries forward: know your reader, make every element earn its place, and end with an ask someone can say yes to.
+
+## Further Reading and Resources
+
+- The Op-Ed Project, <https://www.theopedproject.org/>. Handbook, byline research, and pitch coaching. If you read one external resource from this chapter, read this one.
+- *The Conversation US*, pitch guidelines: <https://theconversation.com/us/pitches>. The most accessible U.S. outlet for academic authors; pieces are republished under Creative Commons.
+- Boulder Reporting Lab: <https://boulderreportinglab.org/>. Read its city coverage before pitching a Boulder argument anywhere.
+- *The Colorado Sun*: <https://coloradosun.com/>. Statewide nonprofit news, and a model of how city stories are framed for a wider Colorado audience.
+- *The Continent*: <https://www.thecontinent.org/>. A pan-African weekly built for sharing on messaging apps; a non-US model of commentary designed for distribution.
+- *Rest of World*: <https://restofworld.org/>. Technology reporting and opinion centered outside the United States and Western Europe.
+- Inioluwa Deborah Raji, "How our data encodes systematic racism," *MIT Technology Review*, December 2020 [@raji2022]. A data-scientist op-ed that leads with a case and a number, not a methodology.
+- *The Associated Press Stylebook* [@apstylebook]. Read the entries on numbers, dates, and attribution before your first pitch.
+- Kathleen Kingsbury, "Why we're retiring the term op-ed," *The New York Times*, April 2021 [@kingsbury2021]. Context on the genre's current self-understanding.
+- Keegan [-@keegan2026], "Public interest data infrastructuring." The framework this book extends; read Case 1, "Mining municipal archives," for the larger project an op-ed about city records belongs to.

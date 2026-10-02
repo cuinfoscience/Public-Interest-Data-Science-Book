@@ -8,7 +8,7 @@
 
 <meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
 
-<title>Appendix A — Appendix A: AI Assistance Disclosure – Public Interest Data Science</title>
+<title>Genres – Public Interest Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -65,8 +85,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./appendix-further.html" rel="next">
-<link href="./ch-20-limits.html" rel="prev">
+<link href="./ch-14-op-eds.html" rel="next">
+<link href="./ch-13-critical-data-studies-refusal.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -118,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-4-genres.html">Genres</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -283,7 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./part-4-genres.html" class="sidebar-item-text sidebar-link">
+            <a href="./part-4-genres.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Genres</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -356,7 +376,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link active">
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
   </div>
 </li>
@@ -378,20 +398,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#what-was-ai-assisted" id="toc-what-was-ai-assisted" class="nav-link active" data-scroll-target="#what-was-ai-assisted"><span class="header-section-number">A.1</span> What was AI-assisted</a></li>
-  <li><a href="#what-was-not-ai-assisted" id="toc-what-was-not-ai-assisted" class="nav-link" data-scroll-target="#what-was-not-ai-assisted"><span class="header-section-number">A.2</span> What was not AI-assisted</a></li>
-  <li><a href="#how-to-verify" id="toc-how-to-verify" class="nav-link" data-scroll-target="#how-to-verify"><span class="header-section-number">A.3</span> How to verify</a></li>
-  <li><a href="#why-disclose" id="toc-why-disclose" class="nav-link" data-scroll-target="#why-disclose"><span class="header-section-number">A.4</span> Why disclose</a></li>
-  <li><a href="#versioning" id="toc-versioning" class="nav-link" data-scroll-target="#versioning"><span class="header-section-number">A.5</span> Versioning</a></li>
+  <li><a href="#the-artifact-convention" id="toc-the-artifact-convention" class="nav-link active" data-scroll-target="#the-artifact-convention">The artifact convention</a></li>
   </ul>
-<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/appendix-ai-disclosure.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/part-4-genres.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Appendix A — Appendix A: AI Assistance Disclosure</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Genres</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -408,36 +424,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="what-was-ai-assisted" class="level2" data-number="A.1">
-<h2 data-number="A.1" class="anchored" data-anchor-id="what-was-ai-assisted"><span class="header-section-number">A.1</span> What was AI-assisted</h2>
-<p>Draft zero of this book was produced with substantial assistance from Claude, an assistant made by Anthropic. The assistant generated first-pass prose for the original twenty-two chapters and the index, following a detailed editorial prompt written by the author. The author then reviewed, revised, and (in many places) rewrote the output. The book’s framework, chapter scope, running examples, and exercise design originate with the author. The prose does not.</p>
-<p>The 2027 revisions were also AI-assisted. Working from the author’s course design for INFO 4871/5871 (Spring 2027) and the author’s article on public interest data infrastructuring, Claude first reorganized the book into course modules and then, at the author’s direction, regrouped it by theme: it paired each pressure with its value in a single chapter, expanded the installed-base chapter with its intellectual predecessors, revised framing, cases, levels of government, and exercises, moved tutorials between chapters, and drafted the new chapter on the limits of the framework. Those revisions are under author review. Commits from them are marked in the repository history, and new bibliography entries are flagged for verification.</p>
-<p>This disclosure exists because a book about public interest data science should not hide how it was made. The same principle that asks a model card to document training data asks an author to document drafting practice.</p>
-</section>
-<section id="what-was-not-ai-assisted" class="level2" data-number="A.2">
-<h2 data-number="A.2" class="anchored" data-anchor-id="what-was-not-ai-assisted"><span class="header-section-number">A.2</span> What was not AI-assisted</h2>
-<p>The bibliography’s selection reflects the author’s reading, not the assistant’s. The running examples (Boulder and Denver municipal records, a synthetic worker-log fixture, a class-wide FOIA tracker, the regulations.gov walkthrough) are authorial choices grounded in the companion course. The “Missing Manual” and “In the Public Interest” callout convention is the author’s. The genre structure, and particularly its commitment to producing submittable artifacts, is the author’s pedagogical argument.</p>
-<p>The assistant was asked not to invent citations. Where a suggested reference could not be verified, the bibliography flags the entry for follow-up rather than recording a fabricated one. Readers who find a citation that cannot be located should open an issue.</p>
-</section>
-<section id="how-to-verify" class="level2" data-number="A.3">
-<h2 data-number="A.3" class="anchored" data-anchor-id="how-to-verify"><span class="header-section-number">A.3</span> How to verify</h2>
+<p>A finding that never reaches someone who can act on it has not yet entered public life. Parts I through III of this book give you a diagnosis (the pressures of enclosure, exemption, and erosion, and the values of openness, oversight, and ownership that answer them), a set of professional lineages to borrow from, and a map of the conversations next door. Part IV is about delivery. Each chapter teaches one genre, the conventional form a profession uses to carry evidence to a particular public.</p>
+<p>Genre matters because readers sort what they receive by form before they weigh it by content. An editor reads a pitch for its peg. A legislative staffer reads an executive summary for its recommendations. A program officer reads a specific-aims page for its fit with an open call. A committee chair hears testimony against a clock. A county planner reads a public comment for the code criteria it addresses. A future researcher searches a repository for a persistent identifier. Send the right finding in the wrong form and it is filed, skimmed, or missed. Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> argues that public interest work depends on an installed base of linkability, interpretability, continuity, safe scrutiny, authority, and remedy; genres are where that installed base meets the institutions that hold authority and offer remedy.</p>
+<p>The genres also have natural audiences, and most have a natural level of government. The book’s worked examples follow them:</p>
 <ul>
-<li>The prompt used to generate draft zero is preserved in the repository’s issue history under the label <code>prompt-archive</code>.</li>
-<li>Each chapter’s first commit is the AI-generated draft. Later commits include human revisions and the AI-assisted 2027 restructure; commit messages say which. Use <code>git log --follow ch-NN-slug.qmd</code> to inspect a chapter’s editorial history.</li>
-<li>Chapter-by-chapter revision notes are maintained in <code>claude.md</code> and in pull-request discussions.</li>
+<li><strong>Op-eds</strong> (<a href="ch-14-op-eds.html" class="quarto-xref"><span>14&nbsp; Op-Eds</span></a>) reach a <strong>city</strong>: residents, council members, and the reporters who cover them, through a local outlet.</li>
+<li><strong>Reports</strong> (<a href="ch-15-reports.html" class="quarto-xref"><span>15&nbsp; Reports</span></a>) reach the <strong>nation</strong>: a named federal body such as a congressional committee, the Government Accountability Office, an inspector general, or the National Institute of Standards and Technology, which reads for evidence it can cite and recommendations it can adopt.</li>
+<li><strong>Research proposals</strong> (<a href="ch-16-research-proposals.html" class="quarto-xref"><span>16&nbsp; Research Proposals</span></a>) reach funders and review panels. They have no single level; the government body your proposal names in its impact paragraph supplies one.</li>
+<li><strong>Testimony</strong> (<a href="ch-17-testimony.html" class="quarto-xref"><span>17&nbsp; Testimony</span></a>) reaches the <strong>state</strong>: a committee of the Colorado General Assembly hearing a bill during its January-to-May session.</li>
+<li><strong>Public comments</strong> (<a href="ch-18-public-comments.html" class="quarto-xref"><span>18&nbsp; Public Comments</span></a>) reach the <strong>county</strong>: a Planning Commission or Board of County Commissioners deciding a land use docket. The same genre works at the state and federal levels, through agency rulemaking.</li>
+<li><strong>Archival deposits</strong> (<a href="ch-19-archival-deposits.html" class="quarto-xref"><span>19&nbsp; Archival Deposits</span></a>) reach readers who do not yet exist, through a repository that mints a persistent identifier.</li>
 </ul>
-</section>
-<section id="why-disclose" class="level2" data-number="A.4">
-<h2 data-number="A.4" class="anchored" data-anchor-id="why-disclose"><span class="header-section-number">A.4</span> Why disclose</h2>
-<p>Because readers deserve to know. Because other authors deciding whether to use similar tools need honest reports of what worked and what did not. Because a book that argues for documentation of automated systems must document its own use of one. And because the professional lineages this book draws on (journalism, law, accounting, planning, engineering) all insist on provenance: whose work, whose hand, whose judgment.</p>
-</section>
-<section id="versioning" class="level2" data-number="A.5">
-<h2 data-number="A.5" class="anchored" data-anchor-id="versioning"><span class="header-section-number">A.5</span> Versioning</h2>
-<p>This disclosure was last updated on the date of the most recent commit to this file. See <code>git log appendix-ai-disclosure.qmd</code> for the authoritative version history.</p>
+<p>The levels are a teaching device, not a law of nature; a city can hold a hearing, and Congress reads op-eds.&nbsp;But pairing each genre with the level where it does the most work keeps you from writing to “policymakers,” a reader who does not exist.</p>
+<section id="the-artifact-convention" class="level2">
+<h2 class="anchored" data-anchor-id="the-artifact-convention">The artifact convention</h2>
+<p>Every chapter in this part ends with a real artifact, not a description of one. The final exercise of each chapter asks you to produce something you could submit tomorrow: an op-ed and pitch for a named city outlet, a report section for a named federal body, a proposal package for a named funder’s open call, written and oral testimony for a state legislative committee, a comment on a live county (or state or federal) matter, or a deposit with a DOI.</p>
+<p>Each artifact has three parts:</p>
+<ol type="1">
+<li><strong>A public text</strong> in the genre’s form, addressed to a named reader who can act on it.</li>
+<li><strong>A technical artifact someone else can run</strong>: a notebook or small repository, with its data sources and a provenance file, that reproduces every number the public text uses.</li>
+<li><strong>A short note on provenance, gaps, and AI use</strong>: where the evidence came from, which elements of the installed base the work builds and which it still lacks, the license, and an honest disclosure of how AI tools were used.</li>
+</ol>
+<p>The pairing is the point. A public text without a runnable artifact asks to be trusted; a runnable artifact without a public text waits for a reader who may never come.</p>
+<p>The chapters can be read in any order; each links to the chapters that develop the concepts it relies on. Whether you submit what you write is your decision, but remember that a submitted comment or a deposited dataset enters a permanent record under your name.</p>
 
 
 <!-- -->
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Under Review</em>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1055,51 +1073,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ch-20-limits.html" class="pagination-link" aria-label="The Limits of the Framework">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">The Limits of the Framework</span></span>
+      <a href="./ch-13-critical-data-studies-refusal.html" class="pagination-link" aria-label="Critical Data Studies, Data Justice, and Refusal">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./appendix-further.html" class="pagination-link" aria-label="Appendix B: Further Resources">
-        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ch-14-op-eds.html" class="pagination-link" aria-label="Op-Eds">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Op-Eds</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Appendix A: AI Assistance Disclosure"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Genres</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>A finding that never reaches someone who can act on it has not yet entered public life. Parts I through III of this book give you a diagnosis (the pressures of enclosure, exemption, and erosion, and the values of openness, oversight, and ownership that answer them), a set of professional lineages to borrow from, and a map of the conversations next door. Part IV is about delivery. Each chapter teaches one genre, the conventional form a profession uses to carry evidence to a particular public.</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## What was AI-assisted</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Genre matters because readers sort what they receive by form before they weigh it by content. An editor reads a pitch for its peg. A legislative staffer reads an executive summary for its recommendations. A program officer reads a specific-aims page for its fit with an open call. A committee chair hears testimony against a clock. A county planner reads a public comment for the code criteria it addresses. A future researcher searches a repository for a persistent identifier. Send the right finding in the wrong form and it is filed, skimmed, or missed. Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> argues that public interest work depends on an installed base of linkability, interpretability, continuity, safe scrutiny, authority, and remedy; genres are where that installed base meets the institutions that hold authority and offer remedy.</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Draft zero of this book was produced with substantial assistance from Claude, an assistant made by Anthropic. The assistant generated first-pass prose for the original twenty-two chapters and the index, following a detailed editorial prompt written by the author. The author then reviewed, revised, and (in many places) rewrote the output. The book's framework, chapter scope, running examples, and exercise design originate with the author. The prose does not.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>The genres also have natural audiences, and most have a natural level of government. The book's worked examples follow them:</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>The 2027 revisions were also AI-assisted. Working from the author's course design for INFO 4871/5871 (Spring 2027) and the author's article on public interest data infrastructuring, Claude first reorganized the book into course modules and then, at the author's direction, regrouped it by theme: it paired each pressure with its value in a single chapter, expanded the installed-base chapter with its intellectual predecessors, revised framing, cases, levels of government, and exercises, moved tutorials between chapters, and drafted the new chapter on the limits of the framework. Those revisions are under author review. Commits from them are marked in the repository history, and new bibliography entries are flagged for verification.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>This disclosure exists because a book about public interest data science should not hide how it was made. The same principle that asks a model card to document training data asks an author to document drafting practice.</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## What was not AI-assisted</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>The bibliography's selection reflects the author's reading, not the assistant's. The running examples (Boulder and Denver municipal records, a synthetic worker-log fixture, a class-wide FOIA tracker, the regulations.gov walkthrough) are authorial choices grounded in the companion course. The "Missing Manual" and "In the Public Interest" callout convention is the author's. The genre structure, and particularly its commitment to producing submittable artifacts, is the author's pedagogical argument.</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>The assistant was asked not to invent citations. Where a suggested reference could not be verified, the bibliography flags the entry for follow-up rather than recording a fabricated one. Readers who find a citation that cannot be located should open an issue.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to verify</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The prompt used to generate draft zero is preserved in the repository's issue history under the label <span class="in">`prompt-archive`</span>.</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Each chapter's first commit is the AI-generated draft. Later commits include human revisions and the AI-assisted 2027 restructure; commit messages say which. Use <span class="in">`git log --follow ch-NN-slug.qmd`</span> to inspect a chapter's editorial history.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Chapter-by-chapter revision notes are maintained in <span class="in">`claude.md`</span> and in pull-request discussions.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why disclose</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Because readers deserve to know. Because other authors deciding whether to use similar tools need honest reports of what worked and what did not. Because a book that argues for documentation of automated systems must document its own use of one. And because the professional lineages this book draws on (journalism, law, accounting, planning, engineering) all insist on provenance: whose work, whose hand, whose judgment.</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Versioning</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>This disclosure was last updated on the date of the most recent commit to this file. See <span class="in">`git log appendix-ai-disclosure.qmd`</span> for the authoritative version history.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Op-eds** (@sec-ch-14-op-eds) reach a **city**: residents, council members, and the reporters who cover them, through a local outlet.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Reports** (@sec-ch-15-reports) reach the **nation**: a named federal body such as a congressional committee, the Government Accountability Office, an inspector general, or the National Institute of Standards and Technology, which reads for evidence it can cite and recommendations it can adopt.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Research proposals** (@sec-ch-16-research-proposals) reach funders and review panels. They have no single level; the government body your proposal names in its impact paragraph supplies one.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Testimony** (@sec-ch-17-testimony) reaches the **state**: a committee of the Colorado General Assembly hearing a bill during its January-to-May session.</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Public comments** (@sec-ch-18-public-comments) reach the **county**: a Planning Commission or Board of County Commissioners deciding a land use docket. The same genre works at the state and federal levels, through agency rulemaking.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Archival deposits** (@sec-ch-19-archival-deposits) reach readers who do not yet exist, through a repository that mints a persistent identifier.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>The levels are a teaching device, not a law of nature; a city can hold a hearing, and Congress reads op-eds. But pairing each genre with the level where it does the most work keeps you from writing to "policymakers," a reader who does not exist.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## The artifact convention</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Every chapter in this part ends with a real artifact, not a description of one. The final exercise of each chapter asks you to produce something you could submit tomorrow: an op-ed and pitch for a named city outlet, a report section for a named federal body, a proposal package for a named funder's open call, written and oral testimony for a state legislative committee, a comment on a live county (or state or federal) matter, or a deposit with a DOI.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Each artifact has three parts:</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**A public text** in the genre's form, addressed to a named reader who can act on it.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**A technical artifact someone else can run**: a notebook or small repository, with its data sources and a provenance file, that reproduces every number the public text uses.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**A short note on provenance, gaps, and AI use**: where the evidence came from, which elements of the installed base the work builds and which it still lacks, the license, and an honest disclosure of how AI tools were used.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>The pairing is the point. A public text without a runnable artifact asks to be trusted; a runnable artifact without a public text waits for a reader who may never come.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>The chapters can be read in any order; each links to the chapters that develop the concepts it relies on. Whether you submit what you write is your decision, but remember that a submitted comment or a deposited dataset enters a permanent record under your name.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/appendix-ai-disclosure.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/part-4-genres.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

@@ -1,0 +1,457 @@
+---
+execute:
+  eval: false
+---
+
+# Enclosure and Openness {#sec-ch-03-enclosure-openness}
+
+In the sixteenth and seventeenth centuries, across England and Scotland, common pastures and woodlands that had been used collectively for generations were fenced off by landowners and Parliament. The legal instruments were workmanlike. The consequences were not. Villagers who had grazed sheep on the commons and gleaned fallen grain from open fields found themselves dependent on wage labor, migrating to cities, or both. Enclosure was not a failure of the commons. It was a project, by those with power, to convert shared resources into private ones, often with the language of improvement attached.
+
+James Boyle [-@boyle2017] argued two decades ago that a "second enclosure movement" was underway, this time over ideas, code, and data. The enclosure most relevant to this book has moved past ideas and into observation itself. Keegan [-@keegan2026] names it as the first of three pressures on public knowledge: enclosure reorganizes **who can observe**, redesigning interfaces, archives, and rights-to-know so that scrutiny becomes costly or infeasible. The value that answers it is **openness**, which Keegan defines not as downloadability but as the **durable legibility of evidentiary traces**: records that a non-expert can still find, read, cite, and compare long after the moment they were posted.
+
+This chapter pairs the pressure with the value. The first half shows enclosure at two scales: global platforms, where it is loud, and city hall, where it is quiet and often more consequential. A bridge asks what openness can and cannot do against enclosure, including when the public-interest choice is not to collect at all. The second half builds openness as a practice on a real city campaign finance table that is formally open and practically treacherous. The worked examples sit at the city, the level where journalism (@sec-ch-06-journalism) and op-eds (@sec-ch-14-op-eds) do their work.
+
+The chapter relies on one concept from @sec-ch-02-installed-base: the **installed base**, the six capacities (linkability, interpretability, continuity, safe scrutiny, authority, and remedy) that let a data system serve the public rather than merely invoke it. Enclosure attacks linkability, interpretability, and safe scrutiny. Openness rebuilds them.
+
+## The pressure: who can observe?
+
+### The last ten years, briefly
+
+The easiest way to feel enclosure as a data scientist is to list retrievals you could have done ten years ago and try them today:
+
+- Pull one percent of public tweets through the Twitter streaming API, filtered by keyword, for a dissertation on political discourse.
+- Fetch the complete comment history of a subreddit from Pushshift, with timestamps and scores, for a study of moderation.
+- Query Facebook's Graph API for public-page posts about a municipal election.
+- Retrieve CrowdTangle data on viral content during a disaster.
+
+Each was a routine graduate-student assignment within the last decade. None is routine now. Some require partnerships most researchers cannot get; some are impossible; some have become expensive products. Freelon [-@Freelon_ComputationalResearchPostAPI_2018] warned of a "post-API age," and Bruns [-@bruns2019] called the shift the **APIcalypse**: platforms that depended on researcher goodwill in their growth phase decided, in their extraction phase, that goodwill is an expensive luxury.
+
+Twitter (now X) is the sharpest case. For years its API included a credible research tier and fed an enormous literature. In February 2023 the company announced that free API access would end; the replacement tiers cost tens of thousands of dollars per month at research volumes. Longitudinal panels built over a decade became unrenewable.
+
+The political economy is not mysterious. Wu [-@wu2021] describes a new Gilded Age of concentrated platform power: a handful of firms hold the data that describes contemporary public life, and their incentives run toward monetizing it rather than letting outsiders audit it.
+
+### A worked timeline: Reddit and Pushshift, 2015–2024
+
+Writing one platform's access history as a timeline forces you to treat enclosure as a series of concrete decisions rather than a diffuse climate. Pushshift, a volunteer-run archive, collected and served Reddit data from 2015 until it lost its public API in 2023 after Reddit revoked its access [@lift_ticket83_RedditDataAPI_2023]. Reddit's own API pricing, announced weeks later, pushed third-party clients (including accessibility tools like Apollo) out of the ecosystem and put researcher access behind tiers that, for any nontrivial use, meant large bills. The table below is a first pass; Exercise 3.6 asks you to extend and verify it.
+
+| Year | Event | Consequence for researchers |
+|------|-------|------------------------------|
+| 2015 | Pushshift begins continuous archiving of Reddit submissions and comments. | A reasonably complete corpus becomes queryable through a free API. |
+| 2018 | Gaffney and Matias [-@gaffney2018] document silent gaps in the Pushshift mirror. | Researchers learn the archive is incomplete; many published studies rest on the incomplete slice. |
+| 2023 | Reddit revokes Pushshift's access and announces API pricing [@isaac_RedditWantsGet_2023]. | The public Pushshift API goes dark. Third-party clients exit or retreat. |
+| June 2023 | Large subreddits go private in protest ("the blackout"). | Moderator labor, the free substrate of Reddit's data, becomes briefly legible as labor. |
+| Early 2024 | Reddit announces a data-licensing deal with Google for model training. | Data refused to researchers is sold, as training data, to a firm that can afford it. |
+
+<!-- TODO: verify exact month for the Reddit-Google licensing announcement and the IPO filing before adding the IPO row back. -->
+
+Two observations follow. First, the shutdown was a loss of old data, not only new data: the archive lost the credential it needed to keep serving what it had already collected, and the 2018 audit means the old data you thought you had is incomplete in ways you cannot now fill in. Second, the data withdrawn from researchers was sold, within a year, to a commercial AI firm. Enclosure is not "the platform closed up." It is "the platform closed *you* out while opening further to capital." Acker and Kreisberg [-@acker2019] saw this coming in their work on social-media archives; Suzor and colleagues [-@suzor2018] place it within a broader problem of platform governance legitimacy.
+
+### Soft enclosure at city hall
+
+City government is the quiet case. Every council meeting, permit, contract, and vote leaves a record, and sunshine laws say most of those records are public. Keegan [-@keegan2026] calls what happens next **soft enclosure**: records that are nominally public but practically fenced off by scanned PDFs, inconsistent metadata, fragile portals, and weak search. Researchers who have tried to build datasets of local meetings describe the same obstacles: materials scattered across departmental sites, agenda packets posted as image scans, and video hosted on third-party services that make systematic analysis a project rather than a query [@brownCouncilDataProject2021; @barariLocalViewDatabasePublic2023; @barariPromiseTextAudio2025a].
+
+Two Colorado cities show the pattern. When this chapter was revised in October 2026, the City of Boulder's "City Council Agendas and Materials" page pointed to a meeting portal hosted by a vendor, PrimeGov, and to folders in a Laserfiche document repository. The portal's `robots.txt` file contained two lines: `User-agent: *` and `Disallow: /`. Every automated agent is asked to stay out of every page. The City and County of Denver runs its council records through Legistar, which exposes a public JSON web API listing meetings, agenda files, and minutes files; the agendas and minutes themselves are PDFs. Neither is a scandal. Both platforms help clerks publish agendas on deadline, not residents ask questions across ten years of votes. Soft enclosure is rarely anyone's decision. It is the accumulated side effect of procurement choices made for other reasons.
+
+<!-- TODO: re-verify the Boulder and Denver platform details (PrimeGov, Laserfiche WebLink, Legistar, robots.txt contents) before each revision; vendors and portals change. -->
+
+The responsible move depends on where city data sits: behind a documented API and an open license, behind a portal that asks you not to crawl it, or in PDFs you download one at a time.
+
+### Reading what the platform tells you you can do
+
+Before you write any code, read two documents: `robots.txt` and the Terms of Service. Neither is a law. Both are signals you ignore at your peril.
+
+A `robots.txt` file is served at the root of a domain and tells automated agents which paths are and are not welcome. The Robots Exclusion Protocol dates to 1994 and was standardized as RFC 9309 in 2022. Python's standard library reads it:
+
+```python
+import urllib.robotparser
+
+rp = urllib.robotparser.RobotFileParser()
+rp.set_url("https://open-data.bouldercolorado.gov/robots.txt")
+rp.read()
+
+rp.can_fetch("PublicInterestDataScience/0.1",
+             "https://open-data.bouldercolorado.gov/datasets/")
+# => True
+rp.crawl_delay("PublicInterestDataScience/0.1")
+# => 60   (as of October 2026: one request per minute for crawlers)
+```
+
+The parser answers per path and user agent and surfaces any declared crawl delay. A sixty-second crawl delay is a strong hint that the city does not want its portal pages crawled, and a weak hint about where it does want you to go: the documented data API.
+
+Terms of Service are harder. For years it was unclear whether violating a ToS could be prosecuted as "unauthorized access" under the U.S. Computer Fraud and Abuse Act (CFAA). The *Sandvig v. Barr* litigation [@aclu2019] established in 2020 that academic research violating a ToS is not by that fact alone a criminal CFAA violation. That is not a blanket license: you can still be sued, banned, or sent a cease-and-desist. Read the ToS, save a dated copy, and know which clauses you rely on. @sec-ch-04-exemption-oversight returns to the CFAA as a shield for the audited.
+
+::: {.callout-tip title="The Missing Manual"}
+A bare `requests.get(url)` does not arrive as "anonymous." It arrives as `python-requests/2.x`, a default string many content delivery networks block. Set a `User-Agent` that names your project and a contact email, so an operator who needs you to stop can email you instead of banning your subnet. A second surprise: when a `robots.txt` request returns HTTP 401 or 403, Python's `RobotFileParser` concludes that *everything* is disallowed. The ArcGIS host that serves Boulder's open data API returned 403 for `/robots.txt` in October 2026, so a strict check refuses a CC0 dataset the city publishes precisely for reuse. The parser is not wrong, exactly. It is answering a narrower question than the one you are asking.
+:::
+
+### A responsible scraper, from scratch
+
+You will reuse the function below in the second half of this chapter. The design goals are plain: every request identifies itself, respects `robots.txt` by default, rate-limits, retries on transient errors, and fails loudly on permanent ones.
+
+```python
+import time
+import logging
+from urllib.parse import urlparse
+from urllib.robotparser import RobotFileParser
+
+import requests
+
+log = logging.getLogger("responsible_scraper")
+
+DEFAULT_UA = (
+    "PublicInterestDataScience/0.1 "
+    "(+https://github.com/yourname/pids-book; you@example.edu)"
+)
+
+
+def check_robots(url, user_agent=DEFAULT_UA):
+    """Return True if robots.txt allows user_agent to fetch url."""
+    parsed = urlparse(url)
+    robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
+    rp = RobotFileParser()
+    try:
+        rp.set_url(robots_url)
+        rp.read()
+    except Exception as exc:
+        log.warning("Could not read %s: %s", robots_url, exc)
+        # Conservative default: if we can't read robots.txt, assume we
+        # should not fetch. Override explicitly if you know better.
+        return False
+    return rp.can_fetch(user_agent, url)
+
+
+def polite_get(
+    url,
+    headers=None,
+    params=None,
+    user_agent=DEFAULT_UA,
+    min_interval=1.0,
+    max_retries=3,
+    backoff=2.0,
+    timeout=30,
+    respect_robots=True,
+):
+    """Fetch a URL with rate limiting, retries, and a named User-Agent.
+
+    Returns a requests.Response on success.
+    Raises requests.HTTPError on non-retryable failure.
+    """
+    if respect_robots and not check_robots(url, user_agent=user_agent):
+        raise PermissionError(f"robots.txt disallows fetching {url}")
+
+    hdrs = {"User-Agent": user_agent, "Accept": "application/json"}
+    if headers:
+        hdrs.update(headers)
+
+    last_err = None
+    for attempt in range(1, max_retries + 1):
+        try:
+            response = requests.get(
+                url, headers=hdrs, params=params, timeout=timeout
+            )
+        except requests.RequestException as exc:
+            last_err = exc
+            log.warning("Attempt %d: network error %s", attempt, exc)
+        else:
+            if response.status_code in (429, 500, 502, 503, 504):
+                log.warning(
+                    "Attempt %d: status %s from %s",
+                    attempt, response.status_code, url,
+                )
+                last_err = requests.HTTPError(response=response)
+            else:
+                response.raise_for_status()
+                time.sleep(min_interval)
+                return response
+        time.sleep(backoff ** attempt)
+
+    raise last_err or RuntimeError("polite_get exhausted retries")
+```
+
+The `respect_robots` flag defaults to `True`; flipping it needs a reason, written into the calling code. The function retries 429 and 5xx responses with exponential backoff, treats other 4xx responses as permanent, and sleeps after every success, the crudest form of rate limiting and the one that gets you furthest. A production version would honor `Retry-After`, cache to disk, and respect the declared crawl delay; Exercise 3.4 pushes you there.
+
+Here is the function used on a real city dataset: Boulder's Election Contributions table, published on the city's open data portal under CC0 and served through an ArcGIS REST endpoint. Notice the documented override, and notice that every fetch writes a provenance record.
+
+```python
+import hashlib
+import json
+from datetime import datetime, timezone
+
+LAYER = (
+    "https://services.arcgis.com/ePKBjXrBZ2vEEgWd/arcgis/rest/services/"
+    "Election_Contributions/FeatureServer/0/query"
+)
+
+# Override: the API host's robots.txt returns 403, which RobotFileParser
+# reads as "disallow all". The city publishes this layer under CC0 through
+# a documented query API, and we request it a few times, not crawl it.
+resp = polite_get(
+    LAYER,
+    params={"where": "1=1", "returnCountOnly": "true", "f": "json"},
+    respect_robots=False,
+)
+resp.json()
+# => {'count': 9921}   (October 2026)
+
+def log_provenance(resp, path="provenance.jsonl", note=""):
+    record = {
+        "url": resp.url,
+        "retrieved_at": datetime.now(timezone.utc).isoformat(),
+        "status": resp.status_code,
+        "sha256": hashlib.sha256(resp.content).hexdigest(),
+        "user_agent": resp.request.headers["User-Agent"],
+        "note": note,
+    }
+    with open(path, "a") as fh:
+        fh.write(json.dumps(record) + "\n")
+    return record
+
+log_provenance(resp, note="robots override: CC0 layer via documented API")
+```
+
+The provenance file is boring on purpose. It answers a skeptical editor's questions (what, when, from where, in what state) without relying on your memory, and it is the first evidentiary trace you produce yourself.
+
+### A counter-move: Article 40 of the Digital Services Act
+
+Enclosure is a policy choice, which means it can be met with policy. The European Union's Digital Services Act [@eu_dsa2022] includes, in Article 40, a legal pathway for vetted researchers to obtain data from very large online platforms and search engines in order to study systemic risks, along with provisions on access to publicly accessible data. In July 2025 the European Commission adopted the delegated act that sets out how researchers apply and how platforms must respond, including a data access portal [@eu_dsa_delegated2025]. In 2024, European authorities were already investigating X's refusal of researcher API access as a possible breach [@stokel-walker_under_2024].
+
+Article 40 tests the American assumption that access is something platforms grant. In the EU it is, in part, something the law requires. The limits are real: access runs through vetting and conditions, covers only the largest services, and does nothing for a city's agenda portal. Openness that depends on qualifying as a vetted researcher is better than none and narrower than the public.
+
+## The bridge: what openness can and cannot answer
+
+The firms and vendors that hold the records of public life observe them in extraordinary detail. Everyone outside (journalists, academics, civil-society groups, residents) is left with `robots.txt` files, PDF fragments, and the occasional leak.
+
+Keegan [-@keegan2026] takes seriously what the article calls the realist objection: platforms now treat data as a strategic asset, governments have withdrawn or underfunded key datasets, and calls for renewed openness can sound nostalgic. The article accepts the description and rejects the fatalism. Realism, it argues, relocates the work from voluntary access to the installed base. Under enclosure, openness becomes a retention and reference problem: keep redundant copies so evidence does not disappear; insist on persistent identifiers so traces can be linked as interfaces change; make provenance mandatory so visible data can be interpreted and contested; use tiered access with accountable intermediaries where full openness is infeasible; and build escalation pathways (statutory access rights, mandated research portals) that turn noncooperation into an enforceable obligation. Article 40 is an escalation pathway. Your `provenance.jsonl` is a small act of retention and reference.
+
+Against platform enclosure, openness cannot reopen an API. It can make sure that whatever you did observe stays observable: copies you control, provenance that lets a stranger check them, and a deposit that outlives your access (@sec-ch-19-archival-deposits). It also obliges honesty: a study conditioned on platform-provided data is a study of what the platform chose to show you. Against soft enclosure at city hall, openness reaches further, because the records are already public in law. The work there is to turn posted records into published ones, which the second half of this chapter does.
+
+Openness also fails in two ways that Keegan [-@keegan2026] anticipates in the first case, mining municipal archives, and both apply to you. The first is capacity: many cities lack the staff to do more than post, and proposals for metadata standards or AI-assisted search can read as techno-solutionism from people who will not maintain them. The answer is shared services (common tooling, templates, and custodial partnerships with libraries and archives) rather than heroic one-off projects. The second is vendor capture: a commercial indexing service can make records searchable while creating a new enclosure around public memory, producing what Keegan calls "transparency theater." The test is whether indices are exportable, ranking is auditable, and the public, not the vendor, controls the memory layer. A student scraper that indexes a city's packets for one semester and then disappears is a project, not infrastructure.
+
+Finally, openness is not maximal collection, and sometimes not collecting is the legitimate choice. Keegan treats visibility as something to be governed: without safeguards, maximal openness can become a vector for harassment, retaliation, or extraction. Zong and Matias [-@zong2024] treat refusal by data subjects as a legitimate counter-move rather than an obstacle, and @sec-ch-13-critical-data-studies-refusal argues that declining to collect, or declining to republish, can be the public-interest choice. A city vendor's `Disallow: /` is a procurement artifact you may reasonably route around through a documented API or a records request. A community forum's request not to be scraped is a different kind of signal. Enclosure is a fence built by the powerful around what they hold; refusal is a boundary drawn by the less powerful around themselves. Openness answers the first and should respect the second.
+
+::: {.callout-note title="In the Public Interest"}
+Enclosure does not abolish observation; it reallocates it. When a platform cuts off independent researchers while licensing data to a model developer, observation flows toward capital. When a city's meeting portal disallows every crawler, observation of city government flows toward the vendor and the few residents with time to click through packets one at a time. Naming either as an **openness** failure, rather than a business or procurement decision, is the first move that lets you push back. The second move is to make your own observations durable: a provenance log, a copy you control, and a release that someone without your access can still read.
+:::
+
+## The value: openness as durable legibility
+
+Open data as a programmatic idea is roughly twenty years old. It has produced real goods: the federal data.gov portal, municipal 311 feeds, the census API. It has also produced what practitioners call, with resignation, the data dump: a civic file dropped onto a portal with a permissive license, thin documentation, inconsistent columns, and no plan for next year. It satisfies the ordinance. For any public that does not already work inside the agency, it is close to unusable.
+
+The distinction this half insists on is between **formal openness** and **durable legibility**. Formal openness is what a compliance officer can certify: the file exists at a URL, the license permits redistribution, the API returns a 200. Durable legibility is what a non-expert can actually do with the thing six months from now: load it, understand its columns, cite it, compare it to last year's version. Formal openness without legibility quietly lets an agency off the hook. It has disclosed, and nobody outside can use the disclosure to ask it a question. (@sec-ch-04-exemption-oversight gives that failure its proper name.)
+
+### Posting is not publishing
+
+A PDF uploaded to a webserver with no metadata is not a publication, though it has been "posted." A publication is a document, plus a record about the document (title, author, date, version, license), plus a citable handle, plus a commitment from some institution that the handle will keep resolving. Publication is a social act, not a file-system operation.
+
+The same holds for data. `df.to_csv("out.csv")` produces a file, not a publication. A published dataset requires provenance, documentation, a license, a citation, and a hosting commitment. The FAIR principles (findable, accessible, interoperable, reusable) name most of these. This chapter adds legibility to publics, which FAIR understates: a dataset that is machine-interoperable and human-inscrutable is FAIR and useless. Hutchinson and colleagues [-@hutchinson2021] make the adjacent argument for machine-learning datasets, treating a dataset as an artifact with a lifecycle, not a file.
+
+Zuiderwijk and Janssen [-@zuiderwijk2014] found national open-data policies clearest on what agencies must post and weakest on what they must sustain. You can write an open-data ordinance in an afternoon, but not the labor that keeps a civic dataset findable, legible, and citable three budget cycles from now. That labor is what Star and Ruhleder [-@star1994] named the installed base, and what Karasti and Blomberg [-@karasti2018] insisted be studied as work rather than assumed as context.
+
+### Two kinds of city openness
+
+At the city level, "open data" usually means a portal: tables of permits, crashes, budgets, and contributions, published under an open license. The richer record of city government lives elsewhere, in agendas, packets, minutes, and meeting video. Keegan [-@keegan2026] treats that second record as the first of three cases, *mining municipal archives*, and argues that it fails less through secrecy than through soft enclosure: records are posted but not publishable, because they cannot be followed from an agenda item to a vote to a contract to an expenditure to an outcome. The goal Keegan sets is a municipal "public memory layer" that makes the everyday operations of government *followable*.
+
+Denver shows both halves at once. Its council records system exposes structured metadata through a public API:
+
+```python
+import requests
+
+events = requests.get(
+    "https://webapi.legistar.com/v1/denver/events",
+    params={"$filter": "EventBodyId eq 138 and "
+                       "EventDate ge datetime'2025-01-01' and "
+                       "EventDate lt datetime'2026-01-01'"},
+    timeout=60,
+).json()
+len(events)
+# => 48   (City Council meetings in 2025, as of October 2026)
+sum(bool(e["EventAgendaFile"]) for e in events)
+# => 48   (every agenda is a link to a PDF)
+```
+
+The *metadata* is published: dates, bodies, statuses, stable identifiers. The *substance* is posted: PDFs you must download and extract one at a time. Einstein, Palmer, and Glick [-@einsteinWhoParticipatesLocal2019] could show who speaks at local land-use meetings only because they turned minutes into data, and projects like LocalView [@barariLocalViewDatabasePublic2023] exist because cities rarely do that work themselves. The line between posting and publishing runs through the middle of a single city system. County land-use dockets, which @sec-ch-09-planning takes up, draw the same line in the same place.
+
+### Licensing as a governance choice
+
+An open license is a small act of governance: it tells downstream users what they may do and what they owe in return. **CC-BY 4.0** permits any reuse with attribution. **CC0** waives copyright, placing the dataset as close to the public domain as a legal instrument can reach; it suits data that is already the product of public work. **PDDL** is CC0's database-specific cousin. For U.S. city data, CC-BY 4.0 or CC0 covers almost every case.
+
+What to avoid: "non-commercial" restrictions. Local newsrooms sell their work. A non-commercial clause tells the local paper it cannot use the dataset without a lawyer's letter. That is not openness. It is a defensive crouch in a compliance costume.
+
+### Tutorial: Boulder election contributions
+
+The tutorial returns to the Boulder Election Contributions table you counted earlier. Campaign finance is the most politically interesting of the common civic datasets because it sits where accountability meets mess, and this one is a good teacher. When this chapter was revised in October 2026, the layer held 9,921 rows, its filings ran from September 2010 to January 2018, and its last edit was in August 2020. The portal still lists it. Nothing on the page says the series stopped.
+
+<!-- TODO: before each revision, confirm where the City Clerk publishes post-2018 campaign finance filings and whether this layer has been updated or retired. -->
+
+**Ingest.** The service returns at most 2,000 records per request, so you page through it. Reuse `polite_get` from earlier in this chapter, with the same documented robots override, and save the raw pull before you touch it.
+
+```python
+import re
+import pandas as pd
+
+LAYER = ("https://services.arcgis.com/ePKBjXrBZ2vEEgWd/arcgis/rest/"
+         "services/Election_Contributions/FeatureServer/0/query")
+
+def fetch_all(layer, page=2000):
+    rows, offset = [], 0
+    while True:
+        payload = polite_get(layer, respect_robots=False, params={
+            "where": "1=1", "outFields": "*", "f": "json",
+            "orderByFields": "ObjectId",
+            "resultOffset": offset, "resultRecordCount": page,
+        }).json()
+        rows += [f["attributes"] for f in payload["features"]]
+        if not payload.get("exceededTransferLimit"):
+            return pd.DataFrame(rows)
+        offset += page
+
+raw = fetch_all(LAYER)
+raw.to_csv("data/boulder_contributions_raw.csv", index=False)
+raw.shape
+# => (9921, 20)
+```
+
+Treat the raw file as immutable, and do not open it in Excel, which strips leading zeros from ZIP codes.
+
+**Clean.**
+
+```python
+df = raw.copy()
+df.columns = [re.sub(r"(?<!^)(?=[A-Z])", "_", c).lower()
+              for c in df.columns]           # TransactionDate -> transaction_date
+
+# Dates arrive as epoch milliseconds
+for col in ["filing_date", "amended_date", "transaction_date"]:
+    df[col] = pd.to_datetime(df[col], unit="ms")
+(df["transaction_date"].dt.year > 2030).sum()
+# => 6    six contributions dated between 2100 and 2115; keep them, flag them
+df["date_flag"] = df["transaction_date"] > df["filing_date"]
+
+# Money arrives as text: "$50.00 " and refunds as "(100.00)"
+df["amount_raw"] = df["contribution"]
+df["amount"] = pd.to_numeric(
+    df["contribution"].str.strip()
+      .str.replace(r"[\$,]", "", regex=True)
+      .str.replace(r"^\((.*)\)$", r"-\1", regex=True),
+    errors="coerce",
+).astype("Float64")
+(df["amount"] < 0).sum()
+# => 279
+
+# One city, many spellings
+key = df["city"].fillna("").str.lower().str.replace(r"[^a-z]", "", regex=True)
+is_boulder = key.str.startswith("bou") & key.ne("bouldercounty")
+df.loc[is_boulder, "city"].nunique()
+# => 26   ("Boulder", "boulder", "BOULDER", "Bouldr", "Boul;der", ...)
+df["city_is_boulder"] = is_boulder
+
+# Names are not identifiers
+df["committee_num"].nunique(), df["committee"].nunique()
+# => (131, 114)   16 committee names recur across cycles with new numbers
+```
+
+**Normalize and save.**
+
+```python
+keep = ["object_id", "committee_num", "committee", "type", "candidate",
+        "filing_date", "official_filing", "transaction_date", "date_flag",
+        "last_name", "first_name", "city", "city_is_boulder", "state",
+        "zip", "amount", "amount_raw", "contribution_type", "match"]
+clean = df[keep].sort_values("transaction_date").reset_index(drop=True)
+clean.to_csv("data/boulder_contributions_clean.csv", index=False)
+clean.to_parquet("data/boulder_contributions_clean.parquet")
+```
+
+Two formats, intentionally. CSV is the compatibility format. Parquet preserves the types you just fought to recover, including ZIP codes as text, so whoever reads it next does not repeat your work. Notice what is missing from `keep`: the `street` column. That is a decision, not an oversight, and the end of this section explains it.
+
+Three habits are worth naming. Every destructive transformation keeps the original column (`amount_raw` beside `amount`, `city` beside `city_is_boulder`). Failures stay visible rather than dropped. And every normalization is documented inline, because "we treated 26 spellings as Boulder" is a choice future you will have forgotten, and one with a caveat: a mailing city of "Boulder" is not the same as an address inside city limits, since some unincorporated addresses use a Boulder mailing city. The committee check makes the linkability point concrete. If you joined filings across elections by committee name, you would silently merge different committees from different cycles; the clerk's year-coded number is the identifier, and it is the column you must never drop.
+
+::: {.callout-tip title="The Missing Manual"}
+Three things about this portal are not in its quickstart. First, the ArcGIS query endpoint silently caps each response at the layer's `maxRecordCount` (2,000 here) and signals truncation only through an `exceededTransferLimit` flag; forget to check it and you will analyze a fifth of the data with total confidence. Second, the portal's "last updated" date describes the item page, not the data, and neither tells you the filing series ended years earlier. Third, `df.to_csv("out.csv")` is still not publication. Until you have metadata, a citation, a license, and a place the file will live, you have a file.
+:::
+
+### Writing the README and the datasheet
+
+A README is the first thing a non-specialist reads and often the only thing. Write it as prose, with six sections: **what this is** (one plain paragraph); **provenance** (source URL, retrieval date, and your `provenance.jsonl`); **what was done to it** (a short narrative pointing to the script); **column documentation** (every column, units, missing-value conventions); **license**; and **canonical citation** (a versioned URL and date until @sec-ch-19-archival-deposits gives you a DOI).
+
+A **datasheet** is for auditors and future maintainers. Gebru and colleagues [-@gebru2021] proposed the form; a compact version has seven sections: motivation, composition (including sensitive fields such as donor street addresses), collection process (under what legal authority), preprocessing, uses (appropriate and cautioned), distribution, and maintenance. For this dataset, "maintenance" is where you write down that the series stopped in 2018 and nobody said so. Two pages is plenty: a reader who will never meet you should be able to decide from it whether to trust the file. @sec-ch-05-erosion-ownership returns to datasheets as a defense against forgetting.
+
+::: {.callout-note title="In the Public Interest"}
+**Openness**, as this book uses the word, is durable legibility, and the Boulder table shows why the adjective matters. The city did the formal part: a CC0 license, a public API, a portal listing. What it did not do is sustain the series or say that it stopped, so a resident who downloads it today can draw conclusions about "recent" elections from data that ends in 2018. Your README and datasheet supply the **interpretability** the portal lacks; your versioned citation supplies **continuity**; your preserved `committee_num` and `object_id` columns supply **linkability**, so a row in your release can be joined back to the source. A city dataset that skips those steps has satisfied the ordinance and failed the public.
+:::
+
+### Publishing with Datasette
+
+Datasette, Simon Willison's open-source tool, publishes a SQLite database as a browsable website with faceted search, a read-only SQL console, and a JSON API: the smallest plausible infrastructure that turns a cleaned CSV into something a reporter can explore.
+
+```bash
+pip install datasette sqlite-utils
+
+sqlite-utils insert boulder.db contributions \
+  data/boulder_contributions_clean.csv --csv --detect-types
+
+datasette serve boulder.db --metadata metadata.yml --port 8001
+```
+
+The `metadata.yml` file is where your README's column documentation lives inside Datasette:
+
+```yaml
+description_html: |
+  <p>City of Boulder election contributions, 2010 to 2018 filings,
+  cleaned. See README.md and datasheet.md for provenance.</p>
+license: CC0 1.0
+license_url: https://creativecommons.org/publicdomain/zero/1.0/
+source: City of Boulder Open Data, Election Contributions
+source_url: https://open-data.bouldercolorado.gov/
+databases:
+  boulder:
+    tables:
+      contributions:
+        description: "One row per reported contribution, post-cleaning."
+        columns:
+          committee_num: "Committee identifier assigned by the City Clerk."
+          transaction_date: "Date of the contribution (see date_flag)."
+          amount: "USD. Negative values are refunds (parentheses in source)."
+          city_is_boulder: "Mailing city matches a Boulder spelling; not city limits."
+```
+
+Open `http://localhost:8001/`. A column without a description tells your reader nothing. `datasette publish` can deploy the same database to a hosted service when you want a public URL, but a live URL is a front door, not a citation: the layered model is Datasette for exploration, a versioned deposit (@sec-ch-19-archival-deposits) for the permanent record, and the README tying them together.
+
+Before you publish, run a category audit, which @sec-ch-13-critical-data-studies-refusal develops: is anyone harmed by how this file names, categorizes, or makes people joinable? The city published donors' street addresses under CC0. That does not oblige you to republish them. Dropping `street` from your derived release while documenting that you did so is the bridge section's argument in miniature: openness with judgment, legible about what it leaves out. @sec-ch-05-erosion-ownership extends the theme.
+
+## Exercises
+
+**Exercise 3.1 (Guided).** Fetch and read the `robots.txt` files for three sites: Wikipedia, Reddit, and one city meeting-records platform (Boulder's agenda portal or Denver's Legistar site). Use `urllib.robotparser` to check five paths per site and record any crawl delay. Write a 200-word comparison: which is most permissive, which most restrictive, and which surprised you.
+
+**Exercise 3.2 (Guided; laptop, real data).** Pull the Boulder Election Contributions layer (or a Denver open data table of your choice) and reproduce the ingest and clean steps, logging each retrieval to `provenance.jsonl`. Commit the script, the raw pull, and the cleaned CSV and Parquet files. Write 150 words on one cleaning decision a reasonable person could have made differently.
+
+**Exercise 3.3 (Guided).** Write a README (one page) and a datasheet (two pages) for the dataset from Exercise 3.2. Choose a license and justify it in one sentence.
+
+**Exercise 3.4 (Technical).** Implement `polite_get` from scratch, without copying the listing. Add two features the book's version lacks: honor the `Crawl-delay` a site declares, and either honor `Retry-After` on 429 responses or cache responses in a local SQLite database keyed by URL. Commit the function with a docstring and a test that exercises one feature against a public endpoint.
+
+**Exercise 3.5 (Technical).** Build a SQLite database from your cleaned file, write `metadata.yml` with column descriptions, and run `datasette serve`. Submit a screenshot of a column description rendering. Optional: deploy it and record one thing that broke.
+
+**Exercise 3.6 (Analytic).** Extend the Reddit timeline with three verified rows since 2024. Then write a second timeline, with at least five dated events, for the DSA Article 40 regime or a city's meeting-records platform, citing a primary document for each date where one exists.
+
+**Exercise 3.7 (Diagnostic).** Using Denver's council API or Boulder's agenda portal (respecting its `robots.txt`; download by hand if crawling is disallowed), trace one agenda item from the last year from agenda to vote to contract or expenditure. For each link, record the format, whether it has a stable identifier, and whether you could have found it in bulk. In 400 words, name where the chain breaks and which installed-base element is missing.
+
+**Exercise 3.8 (Open-ended; submittable artifact).** Choose a city dataset you would use to extend a published finding: a Boulder or Denver open data table, or a set of council records. First, write a 400-word access memo: who controls the data, under what license and Terms of Service (save a dated copy and mark the clauses that permit, restrict, or leave research ambiguous), which pathway you will use (bulk download, API, page-by-page download, records request), and your fallback if it closes. Second, package the data as a publication: raw pull, cleaning script, cleaned data, README, short datasheet, license, `provenance.jsonl`, and a two-sentence category-audit note on what you excluded and why. The package is the technical half of the op-ed artifact in @sec-ch-14-op-eds and is ready to deposit following @sec-ch-19-archival-deposits.
+
+## Closing
+
+Enclosure asks *who can observe?* and answers, increasingly, "whoever owns the record, and whoever can pay." Openness does not reverse that answer by wishing. It works on what remains in reach: the records a city already holds, the observations you already made, the documentation that turns a posted file into a published one. The two halves of this chapter meet in a single habit: every fetch leaves a trace, and every trace you release should be legible to someone who never had your access. The habit has limits. It cannot compel a platform, it can drift into transparency theater, and it must yield where people have good reason not to be seen.
+
+The next pressure is different. @sec-ch-04-exemption-oversight asks not who can observe but *who must answer*, and pairs it with oversight. For openness as a professional tradition, @sec-ch-06-journalism reproduces ProPublica's "Machine Bias," a public dataset only because a newsroom chose to publish its evidence.
+
+## Further Reading and Resources
+
+- Axel Bruns (2019), "[After the 'APIcalypse': Social media platforms and their fight against critical scholarly research](https://doi.org/10.1080/1369118X.2019.1637447)," *Information, Communication & Society* 22(11). The article that gave the post-2018 shift its name.
+- James Boyle (2008), *The Public Domain: Enclosing the Commons of the Mind*. Duke University Press. Open access at <https://www.thepublicdomain.org/>. The enclosure analogy in its fullest form.
+- Jonathan Zong and J. Nathan Matias (2024), "[Data refusal from below](https://doi.org/10.1145/3630107)." The counterweight to this chapter: when enclosure is not the problem, refusal might be the answer.
+- Robots Exclusion Protocol, RFC 9309 (2022): <https://www.rfc-editor.org/rfc/rfc9309.html>. A short, readable standard most scrapers violate out of ignorance.
+- Regulation (EU) 2022/2065, the Digital Services Act: <https://eur-lex.europa.eu/eli/reg/2022/2065/oj>. Read Article 40, then the Commission's 2025 announcement of the delegated act on data access: <https://digital-strategy.ec.europa.eu/en/news/commission-adopts-delegated-act-data-access-under-digital-services-act>.
+- Council Data Project: <https://councildataproject.org/>. Open-source infrastructure for making council meetings followable, documented in Brown and colleagues [-@brownCouncilDataProject2021]; the clearest working answer to soft enclosure.
+- LocalView: <https://www.localview.net/>. A research database of local public meetings, and a sense of what becomes possible when meeting video is made systematic.
+- Gebru et al. (2021), "[Datasheets for datasets](https://doi.org/10.1145/3458723)," *Communications of the ACM* 64(12): 86–92. The source for this chapter's datasheet template.
+- The FAIR Guiding Principles: <https://www.go-fair.org/fair-principles/>. The four-letter scaffold this chapter extends toward legibility to publics.
+- Datasette documentation: <https://docs.datasette.io/>. Read "getting started" and "metadata" before the deploy section.

@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
+
+<title>10&nbsp; Engineering – Public Interest Data Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./part-3-adjacent-conversations.html" rel="next">
+<link href="./ch-09-planning.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-9a023c9ade86a60361e96e3e3f11bc54.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-684e263fd5eaab04d06708158183ff95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-063d023c011e3855d99747d2bbbf274a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-2-lineages.html">Lineages</a></li><li class="breadcrumb-item"><a href="./ch-10-engineering.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Engineering</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Public Interest Data Science</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-1-pressures-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pressures and Values</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-02-installed-base.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Installed Base</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-03-enclosure-openness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure and Openness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-04-exemption-oversight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exemption and Oversight</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-05-erosion-ownership.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Erosion and Ownership</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-2-lineages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lineages</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-06-journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-07-law.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Law</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-08-accounting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-09-planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-10-engineering.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Engineering</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-3-adjacent-conversations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Adjacent Conversations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-11-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-12-govtech-civic-tech.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-13-critical-data-studies-refusal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-4-genres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Genres</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-14-op-eds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Op-Eds</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-15-reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-16-research-proposals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Research Proposals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-17-testimony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testimony</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-18-public-comments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Public Comments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-19-archival-deposits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Archival Deposits</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-5-closing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Closing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-20-limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">The Limits of the Framework</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#the-engineers-duty-to-the-public" id="toc-the-engineers-duty-to-the-public" class="nav-link active" data-scroll-target="#the-engineers-duty-to-the-public"><span class="header-section-number">10.1</span> The engineer’s duty to the public</a></li>
+  <li><a href="#normalization-of-deviance" id="toc-normalization-of-deviance" class="nav-link" data-scroll-target="#normalization-of-deviance"><span class="header-section-number">10.2</span> Normalization of deviance</a></li>
+  <li><a href="#tutorial-a-test-suite-for-the-audit" id="toc-tutorial-a-test-suite-for-the-audit" class="nav-link" data-scroll-target="#tutorial-a-test-suite-for-the-audit"><span class="header-section-number">10.3</span> Tutorial: a test suite for the audit</a></li>
+  <li><a href="#deliberately-introducing-a-bug" id="toc-deliberately-introducing-a-bug" class="nav-link" data-scroll-target="#deliberately-introducing-a-bug"><span class="header-section-number">10.4</span> Deliberately introducing a bug</a></li>
+  <li><a href="#the-post-incident-review" id="toc-the-post-incident-review" class="nav-link" data-scroll-target="#the-post-incident-review"><span class="header-section-number">10.5</span> The post-incident review</a></li>
+  <li><a href="#incident-learning-from-below-worker-observatories" id="toc-incident-learning-from-below-worker-observatories" class="nav-link" data-scroll-target="#incident-learning-from-below-worker-observatories"><span class="header-section-number">10.6</span> Incident learning from below: worker observatories</a></li>
+  <li><a href="#continuous-integration" id="toc-continuous-integration" class="nav-link" data-scroll-target="#continuous-integration"><span class="header-section-number">10.7</span> Continuous integration</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">10.8</span> Exercises</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">10.9</span> Looking ahead</a></li>
+  <li><a href="#further-reading-and-resources" id="toc-further-reading-and-resources" class="nav-link" data-scroll-target="#further-reading-and-resources"><span class="header-section-number">10.10</span> Further Reading and Resources</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-10-engineering.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-2-lineages.html">Lineages</a></li><li class="breadcrumb-item"><a href="./ch-10-engineering.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Engineering</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-ch-10-engineering" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Engineering</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Most bridges do not fall down. This is unremarkable until you notice how many there are, how heavy the trucks on them are, and how few engineers are on site at any given bridge on any given day. The low background rate of collapse is a professional accomplishment. It rests on standards, inspection schedules, conservative design margins, licensure, and the slow accumulation of what Henry Petroski <span class="citation" data-cites="petroski1992">(<a href="#ref-petroski1992" role="doc-biblioref">1992</a>)</span> calls the knowledge of failure. Engineering became a profession partly by agreeing to pay close attention to its own disasters: the Tay Bridge, the Tacoma Narrows, the DC-10 cargo door. A failure taxonomy on an engineer’s bookshelf is one of the most important cultural facts about the field.</p>
+<p>Data science does not yet have that bookshelf. It has papers on bias, a growing body of audit work, and a scattered practice of post-incident reviews at firms that run production systems. What it lacks is a professional identity organized around the question “what failed, why, and what will we change so it does not fail again.” <a href="ch-08-accounting.html" class="quarto-xref"><span>Chapter 8</span></a> develops accounting’s half of <em>assurance</em>: workpapers, independence, thresholds fixed in advance. This chapter supplies the other half. Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> describes safety engineering as the lineage that operationalizes <strong>oversight</strong> through “standards, testing, incident learning, and high-reliability operations,” creating “feedback loops that keep infrastructures governable rather than merely optimized.” The national audit built in <a href="ch-08-accounting.html" class="quarto-xref"><span>Chapter 8</span></a> is the thing under test here; if you have not built it, the fixture below lets you follow along. Most of the tests you write will fail at first. That is the point.</p>
+<section id="the-engineers-duty-to-the-public" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="the-engineers-duty-to-the-public"><span class="header-section-number">10.1</span> The engineer’s duty to the public</h2>
+<p>Engineering’s claim to be a profession rests on codes of ethics that put the public ahead of the client. The National Society of Professional Engineers code places “hold paramount the safety, health, and welfare of the public” first among its fundamental canons. An engineer who signs off on a bridge they know to be unsafe has not disappointed a customer. They have violated a duty to the people who will drive over it, and that duty survives the contract. In the United States the license is a <strong>state</strong> matter: states license professional engineers, and in Colorado a licensing board within the Department of Regulatory Agencies can discipline or revoke. <!-- TODO: verify the current name of Colorado's engineering licensure board and its placement within DORA. --> The learning from failure is national. The National Transportation Safety Board investigates accidents across every state and publishes what it finds, and federal standards bodies turn those findings into rules. That is the level at which this chapter works, testing the national audit built in <a href="ch-08-accounting.html" class="quarto-xref"><span>Chapter 8</span></a>.</p>
+<p>When you write a pipeline that supports a public decision, you inherit a weaker version of that obligation. You cannot stamp a dataset with a license seal. You can agree that the client’s deadline does not overrule the public’s exposure to a quietly broken number.</p>
+</section>
+<section id="normalization-of-deviance" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="normalization-of-deviance"><span class="header-section-number">10.2</span> Normalization of deviance</h2>
+<p>The second thing you borrow is a vocabulary for how safe systems go bad. Diane Vaughan’s <span class="citation" data-cites="vaughan1996">(<a href="#ref-vaughan1996" role="doc-biblioref">1996</a>)</span> study of the <em>Challenger</em> launch decision introduced <strong>normalization of deviance</strong>: over a series of flights, NASA engineers came to treat O-ring erosion as acceptable even though it was never part of the design. Each decision to fly was defensible on the data at hand. The drift was collective and gradual. By the night before the launch, the engineers who objected had to prove the shuttle was unsafe, rather than the other way around. Sidney Dekker <span class="citation" data-cites="dekkerDriftFailureHunting2016">(<a href="#ref-dekkerDriftFailureHunting2016" role="doc-biblioref">2016</a>)</span> generalizes the pattern as <em>drift into failure</em>: no broken component, just a long sequence of locally reasonable adjustments.</p>
+<p>The audit pipeline from <a href="ch-08-accounting.html" class="quarto-xref"><span>Chapter 8</span></a> has an obvious drift path. Suppose a better model than the chapter’s crude one lands at an equalized-odds difference of 0.07 every quarter, just over the 0.05 warning line. Someone proposes raising the warning threshold to 0.08 “to reduce alert fatigue.” Nobody objects, because the number has always been 0.07 and nothing bad has happened. A year later the thresholds file is an archaeological record of a standard that moved to meet the system instead of the reverse. That is audit-washing achieved without anyone intending it. Incident reviews and tests, done well, put the question “when did we stop noticing this” on the table and keep it there.</p>
+<p>Karl Weick and Kathleen Sutcliffe’s work on high-reliability organizations <span class="citation" data-cites="weick1999">(<a href="#ref-weick1999" role="doc-biblioref">Weick, Sutcliffe, and Obstfeld 1999</a>)</span> describes what organizations with low failure rates share: preoccupation with failure, reluctance to simplify, sensitivity to operations, commitment to resilience, deference to expertise. Charles Perrow <span class="citation" data-cites="perrow1984">(<a href="#ref-perrow1984" role="doc-biblioref">1984</a>)</span> answered that some systems are so tightly coupled that accidents in them are “normal.” The debate is unresolved and productive. The takeaway is that reliability is organizational before it is technical. Tests do not run themselves.</p>
+</section>
+<section id="tutorial-a-test-suite-for-the-audit" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="tutorial-a-test-suite-for-the-audit"><span class="header-section-number">10.3</span> Tutorial: a test suite for the audit</h2>
+<p>Software engineering has sometimes claimed this tradition and sometimes squatted on it. The Therac-25, the 737 MAX, and the UK Post Office’s Horizon system are software failures the older professions would recognize at once. Data pipelines are usually less safety-critical one at a time and often more consequential in aggregate. What converts the workpapers of <a href="ch-08-accounting.html" class="quarto-xref"><span>Chapter 8</span></a> from a genre into a discipline is a test suite. Add it to the project:</p>
+<pre><code>audit-pipeline/
+├── audit.py   manifest.yaml   thresholds.yaml   CHANGELOG.md
+├── requirements.txt
+├── tests/
+│   ├── conftest.py
+│   ├── fixtures/
+│   │   ├── tiny_acs.csv
+│   │   └── expected.json
+│   ├── test_shape.py
+│   ├── test_rules.py
+│   └── test_regression.py
+└── .github/workflows/ci.yml</code></pre>
+<p><code>tiny_acs.csv</code> is a fifty-row synthetic file with the same columns as the national evaluation set you exported from folktables, including <code>state</code>. It looks like the real input but is not, so it can be committed, shared, and run in about a second with no network. Build it so every (race, sex) cell has at least one positive and one negative label; otherwise false positive and false negative rates are undefined for that cell and the snapshot fills with <code>NaN</code>. A rule-based stand-in model keeps the tests independent of a pickled file:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tests/conftest.py</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> RuleModel:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Deterministic stand-in: predicts high income for full-time hours."""</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> predict(<span class="va">self</span>, X):</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (X[<span class="st">"WKHP"</span>] <span class="op">&gt;=</span> <span class="dv">40</span>).to_numpy()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="at">@pytest.fixture</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> df():</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.read_csv(<span class="st">"tests/fixtures/tiny_acs.csv"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="at">@pytest.fixture</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rule_model():</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> RuleModel()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="shape-and-range-tests" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="shape-and-range-tests"><span class="header-section-number">10.3.1</span> Shape and range tests</h3>
+<p>The first tests catch the failure modes a data pipeline actually has. Not “does this function return 42,” but “does the table have the columns I expect, and do the values fall where the ACS data dictionary says they can.”</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tests/test_shape.py</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>REQUIRED <span class="op">=</span> [<span class="st">"AGEP"</span>, <span class="st">"SCHL"</span>, <span class="st">"WKHP"</span>, <span class="st">"SEX"</span>, <span class="st">"RAC1P"</span>, <span class="st">"label"</span>, <span class="st">"race"</span>, <span class="st">"sex"</span>, <span class="st">"state"</span>]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_required_columns(df):</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    missing <span class="op">=</span> <span class="bu">set</span>(REQUIRED) <span class="op">-</span> <span class="bu">set</span>(df.columns)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="kw">not</span> missing, <span class="ss">f"missing columns: </span><span class="sc">{</span>missing<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_row_count(df):</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="dv">40</span> <span class="op">&lt;=</span> <span class="bu">len</span>(df) <span class="op">&lt;=</span> <span class="dv">60</span>      <span class="co"># a range, never an equality</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="at">@pytest.mark.parametrize</span>(<span class="st">"col,low,high"</span>, [</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"AGEP"</span>, <span class="dv">17</span>, <span class="dv">99</span>),               <span class="co"># ACSIncome keeps ages over 16</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"WKHP"</span>, <span class="dv">1</span>, <span class="dv">99</span>),                <span class="co"># usual hours worked per week</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"SEX"</span>, <span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"RAC1P"</span>, <span class="dv">1</span>, <span class="dv">9</span>),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_bounds(df, col, low, high):</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> df[col].between(low, high).<span class="bu">all</span>(), <span class="ss">f"</span><span class="sc">{</span>col<span class="sc">}</span><span class="ss"> outside [</span><span class="sc">{</span>low<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>high<span class="sc">}</span><span class="ss">]"</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_sex_labels_match_codes(df):</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    pairs <span class="op">=</span> <span class="bu">set</span>(<span class="bu">zip</span>(df[<span class="st">"SEX"</span>], df[<span class="st">"sex"</span>]))</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> pairs <span class="op">&lt;=</span> {(<span class="dv">1</span>, <span class="st">"Male"</span>), (<span class="dv">2</span>, <span class="st">"Female"</span>)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The last test looks trivial. It is the one that catches a mis-keyed recoding dictionary, which is among the most common silent errors in demographic analysis. An early draft of this book’s own audit code mapped several <code>RAC1P</code> codes to the wrong labels; a test like this one, written for race, would have caught it on the first run.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Missing Manual
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Most testing tutorials teach the web-application kind: assert that the login endpoint returns 200 and the body says “Welcome.” A data test written that way (“there are exactly 18,472 rows”) is almost always wrong, because data moves. Write assertions in the shape of ranges and distributions, and reach for <code>pytest.mark.parametrize</code> early: without it you write fifteen near-identical bounds tests, and the fifteenth is where the bug lives. The second surprise is subtler. A regression snapshot tests the <em>numbers</em>. It does not test the <em>judgment</em> applied to them. If the code that converts a metric into PASS, WARN, or FAIL is wrong, every number can match the snapshot while the audit reports a failing system as merely worth watching. Test the decision rule directly.</p>
+</div>
+</div>
+</section>
+<section id="rule-tests-and-a-regression-snapshot" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="rule-tests-and-a-regression-snapshot"><span class="header-section-number">10.3.2</span> Rule tests and a regression snapshot</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tests/test_rules.py</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest, yaml</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> audit <span class="im">import</span> evaluate</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>RULES <span class="op">=</span> {<span class="st">"demographic_parity_difference"</span>: {<span class="st">"warn"</span>: <span class="fl">0.05</span>, <span class="st">"fail"</span>: <span class="fl">0.10</span>}}</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">@pytest.mark.parametrize</span>(<span class="st">"value,expected"</span>, [</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    (<span class="fl">0.01</span>, <span class="st">"PASS"</span>), (<span class="fl">0.07</span>, <span class="st">"WARN"</span>), (<span class="fl">0.10</span>, <span class="st">"FAIL"</span>), (<span class="fl">0.25</span>, <span class="st">"FAIL"</span>),</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_threshold_levels(value, expected):</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    [finding] <span class="op">=</span> evaluate({<span class="st">"demographic_parity_difference"</span>: value}, RULES)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> finding[<span class="st">"level"</span>] <span class="op">==</span> expected</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_threshold_change_is_logged():</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    adopted <span class="op">=</span> yaml.safe_load(<span class="bu">open</span>(<span class="st">"thresholds.yaml"</span>))[<span class="st">"adopted"</span>]</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> adopted <span class="kw">in</span> <span class="bu">open</span>(<span class="st">"CHANGELOG.md"</span>).read()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The second test is a governance rule written as code. Nobody can change <code>thresholds.yaml</code> and its <code>adopted</code> date without a matching changelog entry, or the build goes red. It does not stop drift. It makes drift visible and attributable, which is the antidote Vaughan’s account calls for.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tests/test_regression.py</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json, pathlib</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> audit <span class="im">import</span> run_audit</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>MANIFEST <span class="op">=</span> {<span class="st">"protected_attributes"</span>: [<span class="st">"race"</span>, <span class="st">"sex"</span>], <span class="st">"strata"</span>: [<span class="st">"state"</span>],</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">"min_cell_size"</span>: <span class="dv">1</span>}</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_summaries_match_snapshot(df, rule_model):</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    _, summaries <span class="op">=</span> run_audit(df, rule_model, MANIFEST)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    expected <span class="op">=</span> json.loads(pathlib.Path(<span class="st">"tests/fixtures/expected.json"</span>).read_text())</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, value <span class="kw">in</span> expected.items():</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="bu">abs</span>(summaries[name] <span class="op">-</span> value) <span class="op">&lt;</span> <span class="fl">1e-9</span>, name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Generate <code>expected.json</code> once by running <code>run_audit</code> on the fixture and saving the summaries. When the snapshot changes, the diff in the pull request becomes part of the documentation, and someone has to explain it in the changelog.</p>
+<p>Run the suite:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pytest</span> <span class="at">-q</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; .............                                   [100%]</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; 13 passed in 1.3s</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="deliberately-introducing-a-bug" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="deliberately-introducing-a-bug"><span class="header-section-number">10.4</span> Deliberately introducing a bug</h2>
+<p>You learn more from breaking the pipeline on purpose than from any amount of testing theory. On a branch, swap the order of the two comparisons in <code>evaluate</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># audit.py, on branch demo/threshold-bug</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>level <span class="op">=</span> (<span class="st">"WARN"</span> <span class="cf">if</span> value <span class="op">&gt;=</span> rule[<span class="st">"warn"</span>]          <span class="co"># checked first: bug</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>         <span class="cf">else</span> <span class="st">"FAIL"</span> <span class="cf">if</span> value <span class="op">&gt;=</span> rule[<span class="st">"fail"</span>] <span class="cf">else</span> <span class="st">"PASS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> demo/threshold-bug</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-am</span> <span class="st">"demo: check warn before fail in evaluate()"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pytest</span> <span class="at">-q</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; ...FF........</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; FAILED tests/test_rules.py::test_threshold_levels[0.1-FAIL]</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; FAILED tests/test_rules.py::test_threshold_levels[0.25-FAIL]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Notice what passed. The regression snapshot is green, because every metric is computed correctly. Only the rule test catches the bug, and the bug is the worst kind an audit can have: it downgrades every failure to a warning. No number is wrong. The escalation is. A reviewer skimming the report would see sensible values and a reassuring column of WARNs. Fix the order, rerun, and commit. The two-commit sequence is the evidence that the test does real work.</p>
+</section>
+<section id="the-post-incident-review" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="the-post-incident-review"><span class="header-section-number">10.5</span> The post-incident review</h2>
+<p>The fix is not the end of the response. The review is. Engineering’s contribution to public documentation genres is the post-incident review (in aviation, the accident report). A useful template has five sections:</p>
+<ul>
+<li><strong>Summary.</strong> What broke, when it was detected, who was affected, what was done.</li>
+<li><strong>Timeline.</strong> Detection, response, each diagnostic step, mitigation, all-clear, in UTC. Timestamps are non-negotiable.</li>
+<li><strong>Impact.</strong> How many published findings were wrong, for how long, and which decisions might have relied on them.</li>
+<li><strong>Contributing factors.</strong> Plural. Design choices, process gaps, missing tests, organizational pressure, plain error. Blameless does not mean vague.</li>
+<li><strong>What changes.</strong> Specific, assigned, dated. A change assigned to nobody is not a change.</li>
+</ul>
+<p>For the threshold bug, the timeline shows it introduced and caught by <code>pytest</code> minutes later in a pre-merge run. Impact is zero because nothing shipped. Contributing factors include a decision rule with no direct test until this chapter and a snapshot that gave false comfort. Publishing the review, even for a demo, is the habit. The NTSB, NASA, and many software firms publish theirs, and writing for an outside reader forces a different standard of clarity.</p>
+</section>
+<section id="incident-learning-from-below-worker-observatories" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="incident-learning-from-below-worker-observatories"><span class="header-section-number">10.6</span> Incident learning from below: worker observatories</h2>
+<p>Every review above assumes that the organization running the system also runs the review. Often it does not, and it will not. Keegan’s <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> second case, <em>supporting worker observatories</em>, is this chapter’s counter-case for exactly that situation. On ride-hailing and delivery platforms, pay formulas, ranking rules, and deactivation triggers change without notice, and the platform keeps the only logs <span class="citation" data-cites="jarrahiAlgorithmicManagementWork2021">(<a href="#ref-jarrahiAlgorithmicManagementWork2021" role="doc-biblioref">Jarrahi et al. 2021</a>)</span>. When a pay change cuts earnings, there is no published post-incident review, because from the platform’s side nothing went wrong.</p>
+<p>Worker observatories build the counter-record. Calacci and Pentland <span class="citation" data-cites="calacciBargainingBlackBoxDesigning2022">(<a href="#ref-calacciBargainingBlackBoxDesigning2022" role="doc-biblioref">2022</a>)</span> built a tool with gig shoppers that let them pool pay data and test whether an algorithm change had lowered earnings. Dalal <span class="citation" data-cites="dalalLessonsWorkersInquiry2024">(<a href="#ref-dalalLessonsWorkersInquiry2024" role="doc-biblioref">2024</a>)</span> frames such work as a sociotechnical audit grounded in the tradition of workers’ inquiry. In the UK, Worker Info Exchange helps drivers and couriers use data-protection access rights to obtain the data platforms hold about them, turning individual requests into collective evidence. Keegan calls the result “an installed base for contestation”: shared conventions for naming events like deactivations, documented methods so evidence cannot be dismissed as “folk statistics,” and tiered access, governed by workers, so contributors are not exposed to retaliation <span class="citation" data-cites="calacciAccessUnderstandingCollective2023">(<a href="#ref-calacciAccessUnderstandingCollective2023" role="doc-biblioref">Calacci and Stein 2023</a>)</span>.</p>
+<p>Read with this chapter’s tools, an observatory is an incident database kept by the people the incident happened to. Its logs are the timeline. Its pooled pay data are the impact section. Its organizers write the contributing factors the platform would leave out. Miceli, Posada, and Yang <span class="citation" data-cites="miceli2022">(<a href="#ref-miceli2022" role="doc-biblioref">2022</a>)</span> argue that talk of “bias” in data often hides questions of power over who defines categories and who records what; observatories answer by moving the pen. They also catch drift the platform has normalized, because the worker whose pay falls a little each month notices the gradient that a quarterly dashboard smooths away.</p>
+<p>Official channels show the same gap at every level. The federal AI use case inventory asks agencies whether ongoing monitoring has been established for each high-impact use; of the 227 deployed high-impact uses in the 2025 inventory, 40 answer yes, 85 say in progress, and 102 leave the field blank <span class="citation" data-cites="omb_inventory2025">(<a href="#ref-omb_inventory2025" role="doc-biblioref">Office of Management and Budget 2026</a>)</span>. Colorado’s 2024 AI Act would have required developers to report discovered algorithmic discrimination to the Attorney General; its 2026 replacement dropped that duty <span class="citation" data-cites="colorado_sb26189">(<a href="#ref-colorado_sb26189" role="doc-biblioref">Colorado General Assembly 2026</a>)</span>. Self-reporting channels carry only the incidents an operator chooses to discover. A report from below needs a route in too, which is a question about remedy that <a href="ch-04-exemption-oversight.html" class="quarto-xref"><span>Chapter 4</span></a> raises and <a href="ch-15-reports.html" class="quarto-xref"><span>Chapter 15</span></a> asks you to address to a named federal body.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In the Public Interest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Oversight</strong> is not a heroic intervention. It is routine scrutiny, organized so that the routine itself surfaces surprises. Tests and continuous integration are that routine at the pipeline layer; they are how you earn the right to make a public claim about a number. The specific claim of this chapter is that oversight fails in two predictable places: in the decision rule that converts a metric into an escalation, where a single swapped comparison launders a failure into a warning, and in the choice of who keeps the incident record. A tested audit addresses the first. Worker observatories address the second, by making the people affected into record-keepers with standing. Both serve the <strong>continuity</strong> element of the installed base (<a href="ch-02-installed-base.html" class="quarto-xref"><span>Chapter 2</span></a>): the next person who inherits the system can tell, from the tests and the reviews alone, what it is for and when it broke.</p>
+</div>
+</div>
+</section>
+<section id="continuous-integration" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="continuous-integration"><span class="header-section-number">10.7</span> Continuous integration</h2>
+<p>Tests you do not run are decorations. One YAML file makes <code>pytest</code> run on every push:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># .github/workflows/ci.yml</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> ci</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">push</span><span class="kw">,</span><span class="at"> pull_request</span><span class="kw">]</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">test</span><span class="kw">:</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v5</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.11"</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pip install -r requirements.txt pytest</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pytest -v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pin versions in <code>requirements.txt</code> (<code>fairlearn==...</code>, <code>scikit-learn==...</code>) so that CI and the changelog agree about what ran. Push a branch and open a pull request. GitHub Actions marks the check green or red next to the commit, and with branch protection on, a red check blocks the merge. The cost is minutes. The return is that the whole suite runs on a clean machine, with declared dependencies, every time anyone proposes a change. A test that runs only on the author’s laptop does not, for the purposes of the installed base, exist.</p>
+</section>
+<section id="exercises" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="exercises"><span class="header-section-number">10.8</span> Exercises</h2>
+<p><strong>Exercise 10.1 (Guided, laptop, real public data).</strong> Add <code>tests/</code> to the <code>audit-pipeline/</code> you built in <a href="ch-08-accounting.html" class="quarto-xref"><span>Chapter 8</span></a>, with a shape test, a parametrized range test, a rule test, and a regression snapshot against a fifty-row synthetic fixture. The suite must run in under two seconds. Then point the <code>df</code> fixture at your real national evaluation set and run the shape and range tests again. Record which assertions fail on real ACS data and whether each failure is a bug in the data, the code, or the test. Document in <code>tests/README.md</code> what each test asserts and why.</p>
+<p><strong>Exercise 10.2 (Guided).</strong> On a branch named <code>demo/bug</code>, introduce a silent error of your choice: the swapped comparison above, a mis-keyed <code>RAC1P</code> map, or a filter that drops a group. Commit it with an honest message, confirm a test fails, then fix it in a second commit. Do not merge. The two-commit history is the artifact. If no test failed, write the test that would have caught it first.</p>
+<p><strong>Exercise 10.3 (Analytic).</strong> Write a post-incident review for the bug in Exercise 10.2 using the five-section template, with commit SHAs and UTC timestamps. Write it as though an inspector general’s staff might read it, because in the public version of this work they might.</p>
+<p><strong>Exercise 10.4 (Submittable artifact).</strong> Add <code>.github/workflows/ci.yml</code> and <code>test_threshold_change_is_logged</code>. Push, confirm a green check, then push the bug branch and confirm a red one. Add the CI status badge to your <code>README.md</code>. The tested, CI-backed audit is the technical appendix of the report you write in <a href="ch-15-reports.html" class="quarto-xref"><span>Chapter 15</span></a>.</p>
+<p><strong>Exercise 10.5 (Open-ended).</strong> Find a public worker-led data project (Worker Info Exchange or another observatory you can document from its own publications) and one corporate incident review (Cloudflare, GitLab, or a NASA mishap report). In 500 words, compare them on the five template sections. Which sections does each omit, and why? Who could act on each record, and through what federal or state channel?</p>
+</section>
+<section id="looking-ahead" class="level2" data-number="10.9">
+<h2 data-number="10.9" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">10.9</span> Looking ahead</h2>
+<p>Tests and reviews are what a careful team does for itself. Most public systems are not built by careful teams inside government. They are bought. <a href="ch-12-govtech-civic-tech.html" class="quarto-xref"><span>Chapter 12</span></a> turns to government as a buyer, where assurance is either written into a procurement contract or quietly given up, and where a requirement that a vendor run tests like these in CI and share the results is worth more than any promise in a sales deck.</p>
+</section>
+<section id="further-reading-and-resources" class="level2" data-number="10.10">
+<h2 data-number="10.10" class="anchored" data-anchor-id="further-reading-and-resources"><span class="header-section-number">10.10</span> Further Reading and Resources</h2>
+<ul>
+<li>Henry Petroski (1992), <em><a href="https://archive.org/details/toengineerishuma0000petr">To Engineer Is Human: The Role of Failure in Successful Design</a></em>. The accessible entry point to engineering’s culture of learning from disaster.</li>
+<li>Diane Vaughan (1996), <em><a href="https://press.uchicago.edu/ucp/books/book/chicago/C/bo22781921.html">The Challenger Launch Decision</a></em>. Worth it for “normalization of deviance” alone.</li>
+<li>Charles Perrow (1984), <em><a href="https://press.princeton.edu/books/paperback/9780691004129/normal-accidents">Normal Accidents</a></em>. The counterweight to high-reliability optimism.</li>
+<li>Dana Calacci and Alex Pentland (2022), “Bargaining with the Black-Box: Designing and Deploying Worker-Centric Tools to Audit Algorithmic Management,” <em>Proceedings of the ACM on Human-Computer Interaction</em> 6(CSCW2). A worker-led audit, built and deployed.</li>
+<li>Worker Info Exchange: <a href="https://www.workerinfoexchange.org/" class="uri">https://www.workerinfoexchange.org/</a>. A UK organization helping workers obtain and pool the data platforms hold about them.</li>
+<li>Betsy Beyer et al., eds., <em>Site Reliability Engineering</em> (2016), free at <a href="https://sre.google/books/" class="uri">https://sre.google/books/</a>. Read the chapter on postmortem culture.</li>
+<li>NTSB investigations: <a href="https://www.ntsb.gov/investigations/" class="uri">https://www.ntsb.gov/investigations/</a>. The gold standard for the incident review as a public document.</li>
+<li>pytest documentation: <a href="https://docs.pytest.org/" class="uri">https://docs.pytest.org/</a>. The <code>parametrize</code>, <code>fixture</code>, and <code>conftest.py</code> sections.</li>
+<li>GitHub Actions documentation for Python: <a href="https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python" class="uri">https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python</a>. The setup this chapter’s workflow condenses.</li>
+<li>NSPE Code of Ethics for Engineers: <a href="https://www.nspe.org/career-growth/ethics/code-ethics" class="uri">https://www.nspe.org/career-growth/ethics/code-ethics</a>. Two pages. Read alongside Baker <span class="citation" data-cites="baker2005">(<a href="#ref-baker2005" role="doc-biblioref">2005</a>)</span> on accounting’s parallel code.</li>
+</ul>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-baker2005" class="csl-entry" role="listitem">
+Baker, C. Richard. 2005. <span>“What Is the Meaning of <span><span>‘the Public Interest’</span>?</span> Examining the Ideology of the <span>American</span> Public Accounting Profession.”</span> <em>Accounting, Auditing <span>&amp;</span> Accountability Journal</em> 18 (5): 690–703. <a href="https://doi.org/10.1108/09513570510620510">https://doi.org/10.1108/09513570510620510</a>.
+</div>
+<div id="ref-calacciBargainingBlackBoxDesigning2022" class="csl-entry" role="listitem">
+Calacci, Dana, and Alex Pentland. 2022. <span>“Bargaining with the <span>Black-Box</span>: <span>Designing</span> and <span>Deploying Worker-Centric Tools</span> to <span>Audit Algorithmic Management</span>.”</span> <em>Proc. ACM Hum.-Comput. Interact.</em> 6 (CSCW2): 428:1–24.
+</div>
+<div id="ref-calacciAccessUnderstandingCollective2023" class="csl-entry" role="listitem">
+Calacci, Dana, and Jake Stein. 2023. <span>“From Access to Understanding: <span>Collective</span> Data Governance for Workers.”</span> <em>European Labour Law Journal</em> 14 (2): 253–82.
+</div>
+<div id="ref-colorado_sb26189" class="csl-entry" role="listitem">
+Colorado General Assembly. 2026. <span>“<span>SB</span> 26-189: Automated Decision-Making Technology.”</span> Colorado General Assembly. <a href="https://leg.colorado.gov/bills/sb26-189">https://leg.colorado.gov/bills/sb26-189</a>.
+</div>
+<div id="ref-dalalLessonsWorkersInquiry2024" class="csl-entry" role="listitem">
+Dalal, Samantha. 2024. <span>“Lessons from <span>Workers</span>’ <span>Inquiry</span>: <span>A Sociotechnical Approach</span> to <span>Audits</span> of <span>Algorithmic Management Systems</span>.”</span> <em>XRDS: Crossroads, The ACM Magazine for Students</em> 30 (4): 36–40.
+</div>
+<div id="ref-dekkerDriftFailureHunting2016" class="csl-entry" role="listitem">
+Dekker, Sidney. 2016. <em>Drift into <span>Failure</span>: <span>From Hunting Broken Components</span> to <span>Understanding Complex Systems</span></em>. London: CRC Press.
+</div>
+<div id="ref-jarrahiAlgorithmicManagementWork2021" class="csl-entry" role="listitem">
+Jarrahi, Mohammad Hossein, Gemma Newlands, Min Kyung Lee, Christine T. Wolf, Eliscia Kinder, and Will Sutherland. 2021. <span>“Algorithmic Management in a Work Context.”</span> <em>Big Data &amp; Society</em> 8 (2): 20539517211020332.
+</div>
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Under Review</em>.
+</div>
+<div id="ref-miceli2022" class="csl-entry" role="listitem">
+Miceli, Milagros, Julian Posada, and Tianling Yang. 2022. <span>“Studying up Machine Learning Data: Why Talk about Bias When We Mean Power?”</span> <em>Proceedings of the ACM on Human-Computer Interaction</em> 6 (GROUP). <a href="https://doi.org/10.1145/3492853">https://doi.org/10.1145/3492853</a>.
+</div>
+<div id="ref-omb_inventory2025" class="csl-entry" role="listitem">
+Office of Management and Budget. 2026. <span>“2025 Federal Agency <span>AI</span> Use Case Inventory.”</span> GitHub repository. <a href="https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory">https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory</a>.
+</div>
+<div id="ref-perrow1984" class="csl-entry" role="listitem">
+Perrow, Charles. 1984. <em>Normal Accidents: Living with High-Risk Technologies</em>. New York: Basic Books. <a href="https://press.princeton.edu/books/paperback/9780691004129/normal-accidents">https://press.princeton.edu/books/paperback/9780691004129/normal-accidents</a>.
+</div>
+<div id="ref-petroski1992" class="csl-entry" role="listitem">
+Petroski, Henry. 1992. <em>To Engineer Is Human: The Role of Failure in Successful Design</em>. New York: Vintage Books. <a href="https://archive.org/details/toengineerishuma0000petr">https://archive.org/details/toengineerishuma0000petr</a>.
+</div>
+<div id="ref-vaughan1996" class="csl-entry" role="listitem">
+Vaughan, Diane. 1996. <em>The <span>Challenger</span> Launch Decision: Risky Technology, Culture, and Deviance at <span>NASA</span></em>. Chicago: University of Chicago Press. <a href="https://press.uchicago.edu/ucp/books/book/chicago/C/bo22781921.html">https://press.uchicago.edu/ucp/books/book/chicago/C/bo22781921.html</a>.
+</div>
+<div id="ref-weick1999" class="csl-entry" role="listitem">
+Weick, Karl E., Kathleen M. Sutcliffe, and David Obstfeld. 1999. <span>“Organizing for High Reliability: Processes of Collective Mindfulness.”</span> <em>Research in Organizational Behavior</em> 21: 81–123.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch-09-planning.html" class="pagination-link" aria-label="Planning">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Planning</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./part-3-adjacent-conversations.html" class="pagination-link" aria-label="Adjacent Conversations">
+        <span class="nav-page-text">Adjacent Conversations</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb10" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Engineering {#sec-ch-10-engineering}</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>Most bridges do not fall down. This is unremarkable until you notice how many there are, how heavy the trucks on them are, and how few engineers are on site at any given bridge on any given day. The low background rate of collapse is a professional accomplishment. It rests on standards, inspection schedules, conservative design margins, licensure, and the slow accumulation of what Henry Petroski <span class="co">[</span><span class="ot">-@petroski1992</span><span class="co">]</span> calls the knowledge of failure. Engineering became a profession partly by agreeing to pay close attention to its own disasters: the Tay Bridge, the Tacoma Narrows, the DC-10 cargo door. A failure taxonomy on an engineer's bookshelf is one of the most important cultural facts about the field.</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>Data science does not yet have that bookshelf. It has papers on bias, a growing body of audit work, and a scattered practice of post-incident reviews at firms that run production systems. What it lacks is a professional identity organized around the question "what failed, why, and what will we change so it does not fail again." @sec-ch-08-accounting develops accounting's half of *assurance*: workpapers, independence, thresholds fixed in advance. This chapter supplies the other half. Keegan [-@keegan2026] describes safety engineering as the lineage that operationalizes **oversight** through "standards, testing, incident learning, and high-reliability operations," creating "feedback loops that keep infrastructures governable rather than merely optimized." The national audit built in @sec-ch-08-accounting is the thing under test here; if you have not built it, the fixture below lets you follow along. Most of the tests you write will fail at first. That is the point.</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## The engineer's duty to the public</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>Engineering's claim to be a profession rests on codes of ethics that put the public ahead of the client. The National Society of Professional Engineers code places "hold paramount the safety, health, and welfare of the public" first among its fundamental canons. An engineer who signs off on a bridge they know to be unsafe has not disappointed a customer. They have violated a duty to the people who will drive over it, and that duty survives the contract. In the United States the license is a **state** matter: states license professional engineers, and in Colorado a licensing board within the Department of Regulatory Agencies can discipline or revoke. <span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: verify the current name of Colorado's engineering licensure board and its placement within DORA. --&gt;</span> The learning from failure is national. The National Transportation Safety Board investigates accidents across every state and publishes what it finds, and federal standards bodies turn those findings into rules. That is the level at which this chapter works, testing the national audit built in @sec-ch-08-accounting.</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>When you write a pipeline that supports a public decision, you inherit a weaker version of that obligation. You cannot stamp a dataset with a license seal. You can agree that the client's deadline does not overrule the public's exposure to a quietly broken number.</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Normalization of deviance</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>The second thing you borrow is a vocabulary for how safe systems go bad. Diane Vaughan's <span class="co">[</span><span class="ot">-@vaughan1996</span><span class="co">]</span> study of the *Challenger* launch decision introduced **normalization of deviance**: over a series of flights, NASA engineers came to treat O-ring erosion as acceptable even though it was never part of the design. Each decision to fly was defensible on the data at hand. The drift was collective and gradual. By the night before the launch, the engineers who objected had to prove the shuttle was unsafe, rather than the other way around. Sidney Dekker [-@dekkerDriftFailureHunting2016] generalizes the pattern as *drift into failure*: no broken component, just a long sequence of locally reasonable adjustments.</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>The audit pipeline from @sec-ch-08-accounting has an obvious drift path. Suppose a better model than the chapter's crude one lands at an equalized-odds difference of 0.07 every quarter, just over the 0.05 warning line. Someone proposes raising the warning threshold to 0.08 "to reduce alert fatigue." Nobody objects, because the number has always been 0.07 and nothing bad has happened. A year later the thresholds file is an archaeological record of a standard that moved to meet the system instead of the reverse. That is audit-washing achieved without anyone intending it. Incident reviews and tests, done well, put the question "when did we stop noticing this" on the table and keep it there.</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>Karl Weick and Kathleen Sutcliffe's work on high-reliability organizations <span class="co">[</span><span class="ot">@weick1999</span><span class="co">]</span> describes what organizations with low failure rates share: preoccupation with failure, reluctance to simplify, sensitivity to operations, commitment to resilience, deference to expertise. Charles Perrow <span class="co">[</span><span class="ot">-@perrow1984</span><span class="co">]</span> answered that some systems are so tightly coupled that accidents in them are "normal." The debate is unresolved and productive. The takeaway is that reliability is organizational before it is technical. Tests do not run themselves.</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tutorial: a test suite for the audit</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>Software engineering has sometimes claimed this tradition and sometimes squatted on it. The Therac-25, the 737 MAX, and the UK Post Office's Horizon system are software failures the older professions would recognize at once. Data pipelines are usually less safety-critical one at a time and often more consequential in aggregate. What converts the workpapers of @sec-ch-08-accounting from a genre into a discipline is a test suite. Add it to the project:</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="in">audit-pipeline/</span></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="in">├── audit.py   manifest.yaml   thresholds.yaml   CHANGELOG.md</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="in">├── requirements.txt</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="in">├── tests/</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── conftest.py</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── fixtures/</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   ├── tiny_acs.csv</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   └── expected.json</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── test_shape.py</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── test_rules.py</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── test_regression.py</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="in">└── .github/workflows/ci.yml</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="in">`tiny_acs.csv`</span> is a fifty-row synthetic file with the same columns as the national evaluation set you exported from folktables, including <span class="in">`state`</span>. It looks like the real input but is not, so it can be committed, shared, and run in about a second with no network. Build it so every (race, sex) cell has at least one positive and one negative label; otherwise false positive and false negative rates are undefined for that cell and the snapshot fills with <span class="in">`NaN`</span>. A rule-based stand-in model keeps the tests independent of a pickled file:</span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="co"># tests/conftest.py</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> RuleModel:</span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Deterministic stand-in: predicts high income for full-time hours."""</span></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> predict(<span class="va">self</span>, X):</span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (X[<span class="st">"WKHP"</span>] <span class="op">&gt;=</span> <span class="dv">40</span>).to_numpy()</span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="at">@pytest.fixture</span></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> df():</span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.read_csv(<span class="st">"tests/fixtures/tiny_acs.csv"</span>)</span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a><span class="at">@pytest.fixture</span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rule_model():</span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> RuleModel()</span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a><span class="fu">### Shape and range tests</span></span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a>The first tests catch the failure modes a data pipeline actually has. Not "does this function return 42," but "does the table have the columns I expect, and do the values fall where the ACS data dictionary says they can."</span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a><span class="co"># tests/test_shape.py</span></span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a>REQUIRED <span class="op">=</span> [<span class="st">"AGEP"</span>, <span class="st">"SCHL"</span>, <span class="st">"WKHP"</span>, <span class="st">"SEX"</span>, <span class="st">"RAC1P"</span>, <span class="st">"label"</span>, <span class="st">"race"</span>, <span class="st">"sex"</span>, <span class="st">"state"</span>]</span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_required_columns(df):</span>
+<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a>    missing <span class="op">=</span> <span class="bu">set</span>(REQUIRED) <span class="op">-</span> <span class="bu">set</span>(df.columns)</span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="kw">not</span> missing, <span class="ss">f"missing columns: </span><span class="sc">{</span>missing<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_row_count(df):</span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="dv">40</span> <span class="op">&lt;=</span> <span class="bu">len</span>(df) <span class="op">&lt;=</span> <span class="dv">60</span>      <span class="co"># a range, never an equality</span></span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a><span class="at">@pytest.mark.parametrize</span>(<span class="st">"col,low,high"</span>, [</span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"AGEP"</span>, <span class="dv">17</span>, <span class="dv">99</span>),               <span class="co"># ACSIncome keeps ages over 16</span></span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"WKHP"</span>, <span class="dv">1</span>, <span class="dv">99</span>),                <span class="co"># usual hours worked per week</span></span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"SEX"</span>, <span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"RAC1P"</span>, <span class="dv">1</span>, <span class="dv">9</span>),</span>
+<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_bounds(df, col, low, high):</span>
+<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> df[col].between(low, high).<span class="bu">all</span>(), <span class="ss">f"</span><span class="sc">{</span>col<span class="sc">}</span><span class="ss"> outside [</span><span class="sc">{</span>low<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>high<span class="sc">}</span><span class="ss">]"</span></span>
+<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_sex_labels_match_codes(df):</span>
+<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a>    pairs <span class="op">=</span> <span class="bu">set</span>(<span class="bu">zip</span>(df[<span class="st">"SEX"</span>], df[<span class="st">"sex"</span>]))</span>
+<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> pairs <span class="op">&lt;=</span> {(<span class="dv">1</span>, <span class="st">"Male"</span>), (<span class="dv">2</span>, <span class="st">"Female"</span>)}</span>
+<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a>The last test looks trivial. It is the one that catches a mis-keyed recoding dictionary, which is among the most common silent errors in demographic analysis. An early draft of this book's own audit code mapped several <span class="in">`RAC1P`</span> codes to the wrong labels; a test like this one, written for race, would have caught it on the first run.</span>
+<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="The Missing Manual"}</span>
+<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a>Most testing tutorials teach the web-application kind: assert that the login endpoint returns 200 and the body says "Welcome." A data test written that way ("there are exactly 18,472 rows") is almost always wrong, because data moves. Write assertions in the shape of ranges and distributions, and reach for <span class="in">`pytest.mark.parametrize`</span> early: without it you write fifteen near-identical bounds tests, and the fifteenth is where the bug lives. The second surprise is subtler. A regression snapshot tests the *numbers*. It does not test the *judgment* applied to them. If the code that converts a metric into PASS, WARN, or FAIL is wrong, every number can match the snapshot while the audit reports a failing system as merely worth watching. Test the decision rule directly.</span>
+<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a><span class="fu">### Rule tests and a regression snapshot</span></span>
+<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a><span class="co"># tests/test_rules.py</span></span>
+<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest, yaml</span>
+<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> audit <span class="im">import</span> evaluate</span>
+<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a>RULES <span class="op">=</span> {<span class="st">"demographic_parity_difference"</span>: {<span class="st">"warn"</span>: <span class="fl">0.05</span>, <span class="st">"fail"</span>: <span class="fl">0.10</span>}}</span>
+<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a><span class="at">@pytest.mark.parametrize</span>(<span class="st">"value,expected"</span>, [</span>
+<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a>    (<span class="fl">0.01</span>, <span class="st">"PASS"</span>), (<span class="fl">0.07</span>, <span class="st">"WARN"</span>), (<span class="fl">0.10</span>, <span class="st">"FAIL"</span>), (<span class="fl">0.25</span>, <span class="st">"FAIL"</span>),</span>
+<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_threshold_levels(value, expected):</span>
+<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a>    [finding] <span class="op">=</span> evaluate({<span class="st">"demographic_parity_difference"</span>: value}, RULES)</span>
+<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> finding[<span class="st">"level"</span>] <span class="op">==</span> expected</span>
+<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_threshold_change_is_logged():</span>
+<span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a>    adopted <span class="op">=</span> yaml.safe_load(<span class="bu">open</span>(<span class="st">"thresholds.yaml"</span>))[<span class="st">"adopted"</span>]</span>
+<span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> adopted <span class="kw">in</span> <span class="bu">open</span>(<span class="st">"CHANGELOG.md"</span>).read()</span>
+<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-123"><a href="#cb10-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a>The second test is a governance rule written as code. Nobody can change <span class="in">`thresholds.yaml`</span> and its <span class="in">`adopted`</span> date without a matching changelog entry, or the build goes red. It does not stop drift. It makes drift visible and attributable, which is the antidote Vaughan's account calls for.</span>
+<span id="cb10-125"><a href="#cb10-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a><span class="co"># tests/test_regression.py</span></span>
+<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json, pathlib</span>
+<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> audit <span class="im">import</span> run_audit</span>
+<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a>MANIFEST <span class="op">=</span> {<span class="st">"protected_attributes"</span>: [<span class="st">"race"</span>, <span class="st">"sex"</span>], <span class="st">"strata"</span>: [<span class="st">"state"</span>],</span>
+<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a>            <span class="st">"min_cell_size"</span>: <span class="dv">1</span>}</span>
+<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_summaries_match_snapshot(df, rule_model):</span>
+<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a>    _, summaries <span class="op">=</span> run_audit(df, rule_model, MANIFEST)</span>
+<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a>    expected <span class="op">=</span> json.loads(pathlib.Path(<span class="st">"tests/fixtures/expected.json"</span>).read_text())</span>
+<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, value <span class="kw">in</span> expected.items():</span>
+<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="bu">abs</span>(summaries[name] <span class="op">-</span> value) <span class="op">&lt;</span> <span class="fl">1e-9</span>, name</span>
+<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-140"><a href="#cb10-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-141"><a href="#cb10-141" aria-hidden="true" tabindex="-1"></a>Generate <span class="in">`expected.json`</span> once by running <span class="in">`run_audit`</span> on the fixture and saving the summaries. When the snapshot changes, the diff in the pull request becomes part of the documentation, and someone has to explain it in the changelog.</span>
+<span id="cb10-142"><a href="#cb10-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-143"><a href="#cb10-143" aria-hidden="true" tabindex="-1"></a>Run the suite:</span>
+<span id="cb10-144"><a href="#cb10-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-145"><a href="#cb10-145" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb10-146"><a href="#cb10-146" aria-hidden="true" tabindex="-1"></a><span class="ex">pytest</span> <span class="at">-q</span></span>
+<span id="cb10-147"><a href="#cb10-147" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; .............                                   [100%]</span></span>
+<span id="cb10-148"><a href="#cb10-148" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; 13 passed in 1.3s</span></span>
+<span id="cb10-149"><a href="#cb10-149" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-150"><a href="#cb10-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-151"><a href="#cb10-151" aria-hidden="true" tabindex="-1"></a><span class="fu">## Deliberately introducing a bug</span></span>
+<span id="cb10-152"><a href="#cb10-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-153"><a href="#cb10-153" aria-hidden="true" tabindex="-1"></a>You learn more from breaking the pipeline on purpose than from any amount of testing theory. On a branch, swap the order of the two comparisons in <span class="in">`evaluate`</span>:</span>
+<span id="cb10-154"><a href="#cb10-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-155"><a href="#cb10-155" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb10-156"><a href="#cb10-156" aria-hidden="true" tabindex="-1"></a><span class="co"># audit.py, on branch demo/threshold-bug</span></span>
+<span id="cb10-157"><a href="#cb10-157" aria-hidden="true" tabindex="-1"></a>level <span class="op">=</span> (<span class="st">"WARN"</span> <span class="cf">if</span> value <span class="op">&gt;=</span> rule[<span class="st">"warn"</span>]          <span class="co"># checked first: bug</span></span>
+<span id="cb10-158"><a href="#cb10-158" aria-hidden="true" tabindex="-1"></a>         <span class="cf">else</span> <span class="st">"FAIL"</span> <span class="cf">if</span> value <span class="op">&gt;=</span> rule[<span class="st">"fail"</span>] <span class="cf">else</span> <span class="st">"PASS"</span>)</span>
+<span id="cb10-159"><a href="#cb10-159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-160"><a href="#cb10-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-161"><a href="#cb10-161" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb10-162"><a href="#cb10-162" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> demo/threshold-bug</span>
+<span id="cb10-163"><a href="#cb10-163" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-am</span> <span class="st">"demo: check warn before fail in evaluate()"</span></span>
+<span id="cb10-164"><a href="#cb10-164" aria-hidden="true" tabindex="-1"></a><span class="ex">pytest</span> <span class="at">-q</span></span>
+<span id="cb10-165"><a href="#cb10-165" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; ...FF........</span></span>
+<span id="cb10-166"><a href="#cb10-166" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; FAILED tests/test_rules.py::test_threshold_levels[0.1-FAIL]</span></span>
+<span id="cb10-167"><a href="#cb10-167" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; FAILED tests/test_rules.py::test_threshold_levels[0.25-FAIL]</span></span>
+<span id="cb10-168"><a href="#cb10-168" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-169"><a href="#cb10-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-170"><a href="#cb10-170" aria-hidden="true" tabindex="-1"></a>Notice what passed. The regression snapshot is green, because every metric is computed correctly. Only the rule test catches the bug, and the bug is the worst kind an audit can have: it downgrades every failure to a warning. No number is wrong. The escalation is. A reviewer skimming the report would see sensible values and a reassuring column of WARNs. Fix the order, rerun, and commit. The two-commit sequence is the evidence that the test does real work.</span>
+<span id="cb10-171"><a href="#cb10-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-172"><a href="#cb10-172" aria-hidden="true" tabindex="-1"></a><span class="fu">## The post-incident review</span></span>
+<span id="cb10-173"><a href="#cb10-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-174"><a href="#cb10-174" aria-hidden="true" tabindex="-1"></a>The fix is not the end of the response. The review is. Engineering's contribution to public documentation genres is the post-incident review (in aviation, the accident report). A useful template has five sections:</span>
+<span id="cb10-175"><a href="#cb10-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-176"><a href="#cb10-176" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Summary.** What broke, when it was detected, who was affected, what was done.</span>
+<span id="cb10-177"><a href="#cb10-177" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Timeline.** Detection, response, each diagnostic step, mitigation, all-clear, in UTC. Timestamps are non-negotiable.</span>
+<span id="cb10-178"><a href="#cb10-178" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Impact.** How many published findings were wrong, for how long, and which decisions might have relied on them.</span>
+<span id="cb10-179"><a href="#cb10-179" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Contributing factors.** Plural. Design choices, process gaps, missing tests, organizational pressure, plain error. Blameless does not mean vague.</span>
+<span id="cb10-180"><a href="#cb10-180" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**What changes.** Specific, assigned, dated. A change assigned to nobody is not a change.</span>
+<span id="cb10-181"><a href="#cb10-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-182"><a href="#cb10-182" aria-hidden="true" tabindex="-1"></a>For the threshold bug, the timeline shows it introduced and caught by <span class="in">`pytest`</span> minutes later in a pre-merge run. Impact is zero because nothing shipped. Contributing factors include a decision rule with no direct test until this chapter and a snapshot that gave false comfort. Publishing the review, even for a demo, is the habit. The NTSB, NASA, and many software firms publish theirs, and writing for an outside reader forces a different standard of clarity.</span>
+<span id="cb10-183"><a href="#cb10-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-184"><a href="#cb10-184" aria-hidden="true" tabindex="-1"></a><span class="fu">## Incident learning from below: worker observatories</span></span>
+<span id="cb10-185"><a href="#cb10-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-186"><a href="#cb10-186" aria-hidden="true" tabindex="-1"></a>Every review above assumes that the organization running the system also runs the review. Often it does not, and it will not. Keegan's <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> second case, *supporting worker observatories*, is this chapter's counter-case for exactly that situation. On ride-hailing and delivery platforms, pay formulas, ranking rules, and deactivation triggers change without notice, and the platform keeps the only logs <span class="co">[</span><span class="ot">@jarrahiAlgorithmicManagementWork2021</span><span class="co">]</span>. When a pay change cuts earnings, there is no published post-incident review, because from the platform's side nothing went wrong.</span>
+<span id="cb10-187"><a href="#cb10-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-188"><a href="#cb10-188" aria-hidden="true" tabindex="-1"></a>Worker observatories build the counter-record. Calacci and Pentland <span class="co">[</span><span class="ot">-@calacciBargainingBlackBoxDesigning2022</span><span class="co">]</span> built a tool with gig shoppers that let them pool pay data and test whether an algorithm change had lowered earnings. Dalal <span class="co">[</span><span class="ot">-@dalalLessonsWorkersInquiry2024</span><span class="co">]</span> frames such work as a sociotechnical audit grounded in the tradition of workers' inquiry. In the UK, Worker Info Exchange helps drivers and couriers use data-protection access rights to obtain the data platforms hold about them, turning individual requests into collective evidence. Keegan calls the result "an installed base for contestation": shared conventions for naming events like deactivations, documented methods so evidence cannot be dismissed as "folk statistics," and tiered access, governed by workers, so contributors are not exposed to retaliation <span class="co">[</span><span class="ot">@calacciAccessUnderstandingCollective2023</span><span class="co">]</span>.</span>
+<span id="cb10-189"><a href="#cb10-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-190"><a href="#cb10-190" aria-hidden="true" tabindex="-1"></a>Read with this chapter's tools, an observatory is an incident database kept by the people the incident happened to. Its logs are the timeline. Its pooled pay data are the impact section. Its organizers write the contributing factors the platform would leave out. Miceli, Posada, and Yang <span class="co">[</span><span class="ot">-@miceli2022</span><span class="co">]</span> argue that talk of "bias" in data often hides questions of power over who defines categories and who records what; observatories answer by moving the pen. They also catch drift the platform has normalized, because the worker whose pay falls a little each month notices the gradient that a quarterly dashboard smooths away.</span>
+<span id="cb10-191"><a href="#cb10-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-192"><a href="#cb10-192" aria-hidden="true" tabindex="-1"></a>Official channels show the same gap at every level. The federal AI use case inventory asks agencies whether ongoing monitoring has been established for each high-impact use; of the 227 deployed high-impact uses in the 2025 inventory, 40 answer yes, 85 say in progress, and 102 leave the field blank <span class="co">[</span><span class="ot">@omb_inventory2025</span><span class="co">]</span>. Colorado's 2024 AI Act would have required developers to report discovered algorithmic discrimination to the Attorney General; its 2026 replacement dropped that duty <span class="co">[</span><span class="ot">@colorado_sb26189</span><span class="co">]</span>. Self-reporting channels carry only the incidents an operator chooses to discover. A report from below needs a route in too, which is a question about remedy that @sec-ch-04-exemption-oversight raises and @sec-ch-15-reports asks you to address to a named federal body.</span>
+<span id="cb10-193"><a href="#cb10-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-194"><a href="#cb10-194" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="In the Public Interest"}</span>
+<span id="cb10-195"><a href="#cb10-195" aria-hidden="true" tabindex="-1"></a>**Oversight** is not a heroic intervention. It is routine scrutiny, organized so that the routine itself surfaces surprises. Tests and continuous integration are that routine at the pipeline layer; they are how you earn the right to make a public claim about a number. The specific claim of this chapter is that oversight fails in two predictable places: in the decision rule that converts a metric into an escalation, where a single swapped comparison launders a failure into a warning, and in the choice of who keeps the incident record. A tested audit addresses the first. Worker observatories address the second, by making the people affected into record-keepers with standing. Both serve the **continuity** element of the installed base (@sec-ch-02-installed-base): the next person who inherits the system can tell, from the tests and the reviews alone, what it is for and when it broke.</span>
+<span id="cb10-196"><a href="#cb10-196" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb10-197"><a href="#cb10-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-198"><a href="#cb10-198" aria-hidden="true" tabindex="-1"></a><span class="fu">## Continuous integration</span></span>
+<span id="cb10-199"><a href="#cb10-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-200"><a href="#cb10-200" aria-hidden="true" tabindex="-1"></a>Tests you do not run are decorations. One YAML file makes <span class="in">`pytest`</span> run on every push:</span>
+<span id="cb10-201"><a href="#cb10-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-202"><a href="#cb10-202" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb10-203"><a href="#cb10-203" aria-hidden="true" tabindex="-1"></a><span class="co"># .github/workflows/ci.yml</span></span>
+<span id="cb10-204"><a href="#cb10-204" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> ci</span></span>
+<span id="cb10-205"><a href="#cb10-205" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">push</span><span class="kw">,</span><span class="at"> pull_request</span><span class="kw">]</span></span>
+<span id="cb10-206"><a href="#cb10-206" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb10-207"><a href="#cb10-207" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">test</span><span class="kw">:</span></span>
+<span id="cb10-208"><a href="#cb10-208" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb10-209"><a href="#cb10-209" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb10-210"><a href="#cb10-210" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
+<span id="cb10-211"><a href="#cb10-211" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v5</span></span>
+<span id="cb10-212"><a href="#cb10-212" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb10-213"><a href="#cb10-213" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.11"</span></span>
+<span id="cb10-214"><a href="#cb10-214" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pip install -r requirements.txt pytest</span></span>
+<span id="cb10-215"><a href="#cb10-215" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pytest -v</span></span>
+<span id="cb10-216"><a href="#cb10-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-217"><a href="#cb10-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-218"><a href="#cb10-218" aria-hidden="true" tabindex="-1"></a>Pin versions in <span class="in">`requirements.txt`</span> (<span class="in">`fairlearn==...`</span>, <span class="in">`scikit-learn==...`</span>) so that CI and the changelog agree about what ran. Push a branch and open a pull request. GitHub Actions marks the check green or red next to the commit, and with branch protection on, a red check blocks the merge. The cost is minutes. The return is that the whole suite runs on a clean machine, with declared dependencies, every time anyone proposes a change. A test that runs only on the author's laptop does not, for the purposes of the installed base, exist.</span>
+<span id="cb10-219"><a href="#cb10-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-220"><a href="#cb10-220" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
+<span id="cb10-221"><a href="#cb10-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-222"><a href="#cb10-222" aria-hidden="true" tabindex="-1"></a>**Exercise 10.1 (Guided, laptop, real public data).** Add <span class="in">`tests/`</span> to the <span class="in">`audit-pipeline/`</span> you built in @sec-ch-08-accounting, with a shape test, a parametrized range test, a rule test, and a regression snapshot against a fifty-row synthetic fixture. The suite must run in under two seconds. Then point the <span class="in">`df`</span> fixture at your real national evaluation set and run the shape and range tests again. Record which assertions fail on real ACS data and whether each failure is a bug in the data, the code, or the test. Document in <span class="in">`tests/README.md`</span> what each test asserts and why.</span>
+<span id="cb10-223"><a href="#cb10-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-224"><a href="#cb10-224" aria-hidden="true" tabindex="-1"></a>**Exercise 10.2 (Guided).** On a branch named <span class="in">`demo/bug`</span>, introduce a silent error of your choice: the swapped comparison above, a mis-keyed <span class="in">`RAC1P`</span> map, or a filter that drops a group. Commit it with an honest message, confirm a test fails, then fix it in a second commit. Do not merge. The two-commit history is the artifact. If no test failed, write the test that would have caught it first.</span>
+<span id="cb10-225"><a href="#cb10-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-226"><a href="#cb10-226" aria-hidden="true" tabindex="-1"></a>**Exercise 10.3 (Analytic).** Write a post-incident review for the bug in Exercise 10.2 using the five-section template, with commit SHAs and UTC timestamps. Write it as though an inspector general's staff might read it, because in the public version of this work they might.</span>
+<span id="cb10-227"><a href="#cb10-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-228"><a href="#cb10-228" aria-hidden="true" tabindex="-1"></a>**Exercise 10.4 (Submittable artifact).** Add <span class="in">`.github/workflows/ci.yml`</span> and <span class="in">`test_threshold_change_is_logged`</span>. Push, confirm a green check, then push the bug branch and confirm a red one. Add the CI status badge to your <span class="in">`README.md`</span>. The tested, CI-backed audit is the technical appendix of the report you write in @sec-ch-15-reports.</span>
+<span id="cb10-229"><a href="#cb10-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-230"><a href="#cb10-230" aria-hidden="true" tabindex="-1"></a>**Exercise 10.5 (Open-ended).** Find a public worker-led data project (Worker Info Exchange or another observatory you can document from its own publications) and one corporate incident review (Cloudflare, GitLab, or a NASA mishap report). In 500 words, compare them on the five template sections. Which sections does each omit, and why? Who could act on each record, and through what federal or state channel?</span>
+<span id="cb10-231"><a href="#cb10-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-232"><a href="#cb10-232" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking ahead</span></span>
+<span id="cb10-233"><a href="#cb10-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-234"><a href="#cb10-234" aria-hidden="true" tabindex="-1"></a>Tests and reviews are what a careful team does for itself. Most public systems are not built by careful teams inside government. They are bought. @sec-ch-12-govtech-civic-tech turns to government as a buyer, where assurance is either written into a procurement contract or quietly given up, and where a requirement that a vendor run tests like these in CI and share the results is worth more than any promise in a sales deck.</span>
+<span id="cb10-235"><a href="#cb10-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-236"><a href="#cb10-236" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading and Resources</span></span>
+<span id="cb10-237"><a href="#cb10-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-238"><a href="#cb10-238" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Henry Petroski (1992), *[To Engineer Is Human: The Role of Failure in Successful Design](https://archive.org/details/toengineerishuma0000petr)*. The accessible entry point to engineering's culture of learning from disaster.</span>
+<span id="cb10-239"><a href="#cb10-239" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Diane Vaughan (1996), *[The Challenger Launch Decision](https://press.uchicago.edu/ucp/books/book/chicago/C/bo22781921.html)*. Worth it for "normalization of deviance" alone.</span>
+<span id="cb10-240"><a href="#cb10-240" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Charles Perrow (1984), *[Normal Accidents](https://press.princeton.edu/books/paperback/9780691004129/normal-accidents)*. The counterweight to high-reliability optimism.</span>
+<span id="cb10-241"><a href="#cb10-241" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Dana Calacci and Alex Pentland (2022), "Bargaining with the Black-Box: Designing and Deploying Worker-Centric Tools to Audit Algorithmic Management," *Proceedings of the ACM on Human-Computer Interaction* 6(CSCW2). A worker-led audit, built and deployed.</span>
+<span id="cb10-242"><a href="#cb10-242" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Worker Info Exchange: <span class="ot">&lt;https://www.workerinfoexchange.org/&gt;</span>. A UK organization helping workers obtain and pool the data platforms hold about them.</span>
+<span id="cb10-243"><a href="#cb10-243" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Betsy Beyer et al., eds., *Site Reliability Engineering* (2016), free at <span class="ot">&lt;https://sre.google/books/&gt;</span>. Read the chapter on postmortem culture.</span>
+<span id="cb10-244"><a href="#cb10-244" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>NTSB investigations: <span class="ot">&lt;https://www.ntsb.gov/investigations/&gt;</span>. The gold standard for the incident review as a public document.</span>
+<span id="cb10-245"><a href="#cb10-245" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>pytest documentation: <span class="ot">&lt;https://docs.pytest.org/&gt;</span>. The <span class="in">`parametrize`</span>, <span class="in">`fixture`</span>, and <span class="in">`conftest.py`</span> sections.</span>
+<span id="cb10-246"><a href="#cb10-246" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>GitHub Actions documentation for Python: <span class="ot">&lt;https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python&gt;</span>. The setup this chapter's workflow condenses.</span>
+<span id="cb10-247"><a href="#cb10-247" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>NSPE Code of Ethics for Engineers: <span class="ot">&lt;https://www.nspe.org/career-growth/ethics/code-ethics&gt;</span>. Two pages. Read alongside Baker <span class="co">[</span><span class="ot">-@baker2005</span><span class="co">]</span> on accounting's parallel code.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-10-engineering.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

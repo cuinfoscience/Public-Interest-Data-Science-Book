@@ -8,7 +8,7 @@
 
 <meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
 
-<title>Appendix A — Appendix A: AI Assistance Disclosure – Public Interest Data Science</title>
+<title>Closing – Public Interest Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -65,8 +85,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./appendix-further.html" rel="next">
-<link href="./ch-20-limits.html" rel="prev">
+<link href="./ch-20-limits.html" rel="next">
+<link href="./ch-19-archival-deposits.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -118,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-5-closing.html">Closing</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -330,7 +350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./part-5-closing.html" class="sidebar-item-text sidebar-link">
+            <a href="./part-5-closing.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Closing</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -356,7 +376,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link active">
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
   </div>
 </li>
@@ -378,20 +398,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#what-was-ai-assisted" id="toc-what-was-ai-assisted" class="nav-link active" data-scroll-target="#what-was-ai-assisted"><span class="header-section-number">A.1</span> What was AI-assisted</a></li>
-  <li><a href="#what-was-not-ai-assisted" id="toc-what-was-not-ai-assisted" class="nav-link" data-scroll-target="#what-was-not-ai-assisted"><span class="header-section-number">A.2</span> What was not AI-assisted</a></li>
-  <li><a href="#how-to-verify" id="toc-how-to-verify" class="nav-link" data-scroll-target="#how-to-verify"><span class="header-section-number">A.3</span> How to verify</a></li>
-  <li><a href="#why-disclose" id="toc-why-disclose" class="nav-link" data-scroll-target="#why-disclose"><span class="header-section-number">A.4</span> Why disclose</a></li>
-  <li><a href="#versioning" id="toc-versioning" class="nav-link" data-scroll-target="#versioning"><span class="header-section-number">A.5</span> Versioning</a></li>
+  <li><a href="#why-close-with-limits" id="toc-why-close-with-limits" class="nav-link active" data-scroll-target="#why-close-with-limits">Why close with limits</a></li>
+  <li><a href="#how-to-read-it" id="toc-how-to-read-it" class="nav-link" data-scroll-target="#how-to-read-it">How to read it</a></li>
   </ul>
-<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/appendix-ai-disclosure.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/part-5-closing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix-ai-disclosure.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Appendix A — Appendix A: AI Assistance Disclosure</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Closing</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -408,36 +425,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="what-was-ai-assisted" class="level2" data-number="A.1">
-<h2 data-number="A.1" class="anchored" data-anchor-id="what-was-ai-assisted"><span class="header-section-number">A.1</span> What was AI-assisted</h2>
-<p>Draft zero of this book was produced with substantial assistance from Claude, an assistant made by Anthropic. The assistant generated first-pass prose for the original twenty-two chapters and the index, following a detailed editorial prompt written by the author. The author then reviewed, revised, and (in many places) rewrote the output. The book’s framework, chapter scope, running examples, and exercise design originate with the author. The prose does not.</p>
-<p>The 2027 revisions were also AI-assisted. Working from the author’s course design for INFO 4871/5871 (Spring 2027) and the author’s article on public interest data infrastructuring, Claude first reorganized the book into course modules and then, at the author’s direction, regrouped it by theme: it paired each pressure with its value in a single chapter, expanded the installed-base chapter with its intellectual predecessors, revised framing, cases, levels of government, and exercises, moved tutorials between chapters, and drafted the new chapter on the limits of the framework. Those revisions are under author review. Commits from them are marked in the repository history, and new bibliography entries are flagged for verification.</p>
-<p>This disclosure exists because a book about public interest data science should not hide how it was made. The same principle that asks a model card to document training data asks an author to document drafting practice.</p>
+<p>The book has one framework, and it has used it on almost everything. Part I named three pressures on public knowledge (enclosure, exemption, and erosion), paired each with the value that answers it (openness, oversight, and ownership), and described the installed base that makes those values last. Part II borrowed methods from five professions. Part III mapped the adjacent conversations that build, deliver, and contest data systems. Part IV turned all of it into genres addressed to bodies that can act: an op-ed to a city, a public comment to a county, testimony to a state legislature, a report to a federal agency, a proposal to a funder, and a deposit to whoever comes next.</p>
+<p>This last part has a single chapter and a different job. It does not add a lineage, a level of government, or a pressure. It asks where the framework stops working.</p>
+<section id="why-close-with-limits" class="level2">
+<h2 class="anchored" data-anchor-id="why-close-with-limits">Why close with limits</h2>
+<p>Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> anticipates five critiques of the framework (the realist, the critical, the libertarian, the positivist, and the pessimist) and answers each by specifying more infrastructure. That conversion is the framework’s strength, and it is also a bias: a critique that cannot be answered with an identifier, a retention rule, or an escalation pathway has nowhere to land. The book’s introduction admits several partialities of its own. It is US-centric. It is more comfortable with records than with refusal. It is thin on the labor that keeps records alive and on whether the records measure what they claim. Admissions like these are easy to make and rarely checked.</p>
+<p><a href="ch-20-limits.html" class="quarto-xref"><span>20&nbsp; The Limits of the Framework</span></a> checks them. It sets out the five critiques, then seven limits the framework does not resolve, from US-centrism to the way its four levels of government presume functioning institutions at each one. It then borrows the method of the audit chapters and applies it to the book itself: a reflexive audit that codes the book’s own cases by region, level of government, pressure, value, remedy, and fit, and counts where refusal appears and where the taxonomy strains. The chapter closes with a critical-reflection memo you write about your own work, asking whose interests it serves, who was not consulted, and where the framework failed for your case.</p>
 </section>
-<section id="what-was-not-ai-assisted" class="level2" data-number="A.2">
-<h2 data-number="A.2" class="anchored" data-anchor-id="what-was-not-ai-assisted"><span class="header-section-number">A.2</span> What was not AI-assisted</h2>
-<p>The bibliography’s selection reflects the author’s reading, not the assistant’s. The running examples (Boulder and Denver municipal records, a synthetic worker-log fixture, a class-wide FOIA tracker, the regulations.gov walkthrough) are authorial choices grounded in the companion course. The “Missing Manual” and “In the Public Interest” callout convention is the author’s. The genre structure, and particularly its commitment to producing submittable artifacts, is the author’s pedagogical argument.</p>
-<p>The assistant was asked not to invent citations. Where a suggested reference could not be verified, the bibliography flags the entry for follow-up rather than recording a fabricated one. Readers who find a citation that cannot be located should open an issue.</p>
-</section>
-<section id="how-to-verify" class="level2" data-number="A.3">
-<h2 data-number="A.3" class="anchored" data-anchor-id="how-to-verify"><span class="header-section-number">A.3</span> How to verify</h2>
-<ul>
-<li>The prompt used to generate draft zero is preserved in the repository’s issue history under the label <code>prompt-archive</code>.</li>
-<li>Each chapter’s first commit is the AI-generated draft. Later commits include human revisions and the AI-assisted 2027 restructure; commit messages say which. Use <code>git log --follow ch-NN-slug.qmd</code> to inspect a chapter’s editorial history.</li>
-<li>Chapter-by-chapter revision notes are maintained in <code>claude.md</code> and in pull-request discussions.</li>
-</ul>
-</section>
-<section id="why-disclose" class="level2" data-number="A.4">
-<h2 data-number="A.4" class="anchored" data-anchor-id="why-disclose"><span class="header-section-number">A.4</span> Why disclose</h2>
-<p>Because readers deserve to know. Because other authors deciding whether to use similar tools need honest reports of what worked and what did not. Because a book that argues for documentation of automated systems must document its own use of one. And because the professional lineages this book draws on (journalism, law, accounting, planning, engineering) all insist on provenance: whose work, whose hand, whose judgment.</p>
-</section>
-<section id="versioning" class="level2" data-number="A.5">
-<h2 data-number="A.5" class="anchored" data-anchor-id="versioning"><span class="header-section-number">A.5</span> Versioning</h2>
-<p>This disclosure was last updated on the date of the most recent commit to this file. See <code>git log appendix-ai-disclosure.qmd</code> for the authoritative version history.</p>
+<section id="how-to-read-it" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-read-it">How to read it</h2>
+<p>You can read <a href="ch-20-limits.html" class="quarto-xref"><span>20&nbsp; The Limits of the Framework</span></a> first. A skeptical reader may prefer to, since it states plainly what the rest of the book takes for granted. Its tutorial needs only <code>pandas</code> and an inline table, and each limit links to the chapters whose cases it questions. Read last, it works as an audit of everything before it. Read first, it is a list of things to watch for. Either way, the book’s last instruction is to recode the cases you disagree with, and to send the revision back.</p>
 
 
 <!-- -->
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Under Review</em>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1055,51 +1061,35 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ch-20-limits.html" class="pagination-link" aria-label="The Limits of the Framework">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">The Limits of the Framework</span></span>
+      <a href="./ch-19-archival-deposits.html" class="pagination-link" aria-label="Archival Deposits">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Archival Deposits</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./appendix-further.html" class="pagination-link" aria-label="Appendix B: Further Resources">
-        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ch-20-limits.html" class="pagination-link" aria-label="The Limits of the Framework">
+        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">The Limits of the Framework</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Appendix A: AI Assistance Disclosure"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Closing</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>The book has one framework, and it has used it on almost everything. Part I named three pressures on public knowledge (enclosure, exemption, and erosion), paired each with the value that answers it (openness, oversight, and ownership), and described the installed base that makes those values last. Part II borrowed methods from five professions. Part III mapped the adjacent conversations that build, deliver, and contest data systems. Part IV turned all of it into genres addressed to bodies that can act: an op-ed to a city, a public comment to a county, testimony to a state legislature, a report to a federal agency, a proposal to a funder, and a deposit to whoever comes next.</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## What was AI-assisted</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>This last part has a single chapter and a different job. It does not add a lineage, a level of government, or a pressure. It asks where the framework stops working.</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Draft zero of this book was produced with substantial assistance from Claude, an assistant made by Anthropic. The assistant generated first-pass prose for the original twenty-two chapters and the index, following a detailed editorial prompt written by the author. The author then reviewed, revised, and (in many places) rewrote the output. The book's framework, chapter scope, running examples, and exercise design originate with the author. The prose does not.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why close with limits</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>The 2027 revisions were also AI-assisted. Working from the author's course design for INFO 4871/5871 (Spring 2027) and the author's article on public interest data infrastructuring, Claude first reorganized the book into course modules and then, at the author's direction, regrouped it by theme: it paired each pressure with its value in a single chapter, expanded the installed-base chapter with its intellectual predecessors, revised framing, cases, levels of government, and exercises, moved tutorials between chapters, and drafted the new chapter on the limits of the framework. Those revisions are under author review. Commits from them are marked in the repository history, and new bibliography entries are flagged for verification.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> anticipates five critiques of the framework (the realist, the critical, the libertarian, the positivist, and the pessimist) and answers each by specifying more infrastructure. That conversion is the framework's strength, and it is also a bias: a critique that cannot be answered with an identifier, a retention rule, or an escalation pathway has nowhere to land. The book's introduction admits several partialities of its own. It is US-centric. It is more comfortable with records than with refusal. It is thin on the labor that keeps records alive and on whether the records measure what they claim. Admissions like these are easy to make and rarely checked.</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>This disclosure exists because a book about public interest data science should not hide how it was made. The same principle that asks a model card to document training data asks an author to document drafting practice.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>@sec-ch-20-limits checks them. It sets out the five critiques, then seven limits the framework does not resolve, from US-centrism to the way its four levels of government presume functioning institutions at each one. It then borrows the method of the audit chapters and applies it to the book itself: a reflexive audit that codes the book's own cases by region, level of government, pressure, value, remedy, and fit, and counts where refusal appears and where the taxonomy strains. The chapter closes with a critical-reflection memo you write about your own work, asking whose interests it serves, who was not consulted, and where the framework failed for your case.</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## What was not AI-assisted</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to read it</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>The bibliography's selection reflects the author's reading, not the assistant's. The running examples (Boulder and Denver municipal records, a synthetic worker-log fixture, a class-wide FOIA tracker, the regulations.gov walkthrough) are authorial choices grounded in the companion course. The "Missing Manual" and "In the Public Interest" callout convention is the author's. The genre structure, and particularly its commitment to producing submittable artifacts, is the author's pedagogical argument.</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>The assistant was asked not to invent citations. Where a suggested reference could not be verified, the bibliography flags the entry for follow-up rather than recording a fabricated one. Readers who find a citation that cannot be located should open an issue.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to verify</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The prompt used to generate draft zero is preserved in the repository's issue history under the label <span class="in">`prompt-archive`</span>.</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Each chapter's first commit is the AI-generated draft. Later commits include human revisions and the AI-assisted 2027 restructure; commit messages say which. Use <span class="in">`git log --follow ch-NN-slug.qmd`</span> to inspect a chapter's editorial history.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Chapter-by-chapter revision notes are maintained in <span class="in">`claude.md`</span> and in pull-request discussions.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why disclose</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Because readers deserve to know. Because other authors deciding whether to use similar tools need honest reports of what worked and what did not. Because a book that argues for documentation of automated systems must document its own use of one. And because the professional lineages this book draws on (journalism, law, accounting, planning, engineering) all insist on provenance: whose work, whose hand, whose judgment.</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Versioning</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>This disclosure was last updated on the date of the most recent commit to this file. See <span class="in">`git log appendix-ai-disclosure.qmd`</span> for the authoritative version history.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>You can read @sec-ch-20-limits first. A skeptical reader may prefer to, since it states plainly what the rest of the book takes for granted. Its tutorial needs only <span class="in">`pandas`</span> and an inline table, and each limit links to the chapters whose cases it questions. Read last, it works as an audit of everything before it. Read first, it is a list of things to watch for. Either way, the book's last instruction is to recode the cases you disagree with, and to send the revision back.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/appendix-ai-disclosure.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/part-5-closing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

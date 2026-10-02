@@ -1,0 +1,262 @@
+---
+execute:
+  eval: false
+---
+
+# The Limits of the Framework {#sec-ch-20-limits}
+
+For nineteen chapters this book has used one framework as a diagnostic. Three pressures (enclosure, exemption, erosion) narrow what the public can observe; three values (openness, oversight, ownership) push back; an installed base of identifiers, records, access tiers, retention rules, and escalation pathways makes those values last. The worked examples applied it at four levels of government: a city's council and campaign finance records, a county's land use dockets and records archive, a state's open records statute and AI law, and the nation's AI inventories and vanishing datasets. This closing chapter does the thing every good audit eventually does: it points the instrument at itself.
+
+A framework that cannot name where it fails is not a framework; it is a brand. Keegan [-@keegan2026] anticipates five critiques and treats each as a *design constraint* on the installed base rather than an attack to deflect. But a framework's author is the person least able to see what it cannot see. The book's introduction lists five ways it is partial: US-centric, comfortable with records and less comfortable with refusal, thin on labor, thin on measurement theory, and over-reliant on professional lineages. Those admissions are honest. They are also unaudited.
+
+The question is therefore empirical as well as conceptual: *where, in the cases this book actually uses, does the framework bind?* By the end you will have coded the book's own cases, counted them, and written a critical-reflection memo on a piece of your own work.
+
+## Five critiques the framework anticipates
+
+Keegan [-@keegan2026] names five objections and answers each with installed-base requirements.
+
+The **realist** says the open-data era is over. The framework accepts the description and rejects the fatalism: if voluntary access is gone, openness becomes a retention and reference problem (redundant repositories, persistent identifiers, statutory access rights). @sec-ch-19-archival-deposits is the realist's answer in miniature.
+
+The **critical** objection asks how this differs from data for good, civic tech, and responsible AI (the conversations mapped in @sec-ch-11-pit-data-for-good). The answer is a testable design stance: a project that cannot specify identifiers, provenance, retention, access tiers, and escalation pathways is probably another pilot that will not survive enclosure and erosion.
+
+The **libertarian** says oversight will kill innovation. The framework replies that standardized logging, versioning, and audit interfaces can *reduce* friction by making expectations predictable.
+
+The **positivist** says data science should not be political. The framework answers procedurally: documented assumptions and reproducible outputs are what rigor already demands. @greenDataSciencePolitical2021 makes the stronger reply, that data science is already political action whether or not its practitioners say so.
+
+The **pessimist** says these systems are too complex to oversee. The framework answers with "auditable complexity": change logs, provenance, retention, and role-based access for specialized intermediaries.
+
+Notice the shape: each critique becomes a requirement for *more* infrastructure. That conversion is the framework's strength and its signature bias. A critique that cannot be answered with an installed-base element has nowhere to land.
+
+## Seven limits the framework does not resolve
+
+These limits are not bugs to patch; they are where the framework's assumptions show.
+
+### US-centrism
+
+The book's legal machinery is American: FOIA, CORA, the Administrative Procedure Act, the CFAA, NYC Local Law 144. Non-US cases appear mostly as counter-cases, one or two per chapter, which is better than none and worse than parity. A counter-case is defined by what it counters: SyRI [@syri2020] enters the book as a test of oversight, not as the center of a Dutch administrative-law tradition. @taylorGlobalDataJustice2019 calls for data justice framed globally rather than from one country outward. This book frames from one country outward.
+
+### Records over refusal
+
+The installed base takes linkability, durable identifiers, and retention as load-bearing. @sec-ch-13-critical-data-studies-refusal takes refusal seriously, drawing on @zong2024, @dignazio2020, @garcia2022, @carroll2020, and Te Mana Raraunga [@temanararaunga]. But the framework's own discussion section concedes the problem: identifiers "can intensify surveillance and cross-system targeting," and retention "can preserve harmful traces indefinitely" [@keegan2026]. Its proposed fix is "minimum viable safeguards" (access tiers, minimization, accountable intermediaries). That is still a records-first answer. Starting from refusal and arriving at records is a different book.
+
+### The labor inside data work
+
+Someone transcribes the minutes, labels the training data, answers the CORA request, and keeps the checksums current. @gray2019 documents the hidden workforce behind automated systems; @jarrahiAlgorithmicManagementWork2021 describes how algorithmic management reorganizes work around data. Keegan's research agenda names "the labor of custodians, clerks, librarians, compliance officers, community archivists, and worker organizers who keep evidence alive" [@keegan2026], and @sec-ch-10-engineering meets worker observatories and worker-built tools for auditing algorithmic management [@calacciBargainingBlackBoxDesigning2022]. Yet the six installed-base elements contain no element for *who does the work, under what conditions, and for what pay*. Maintenance appears as continuity, a property of records, rather than as a relation between people.
+
+### The state as partner and threat
+
+The framework's escalation pathways run through public institutions: courts, inspectors general, regulators, records offices. The book needs the state to be a partner. The book's own cases show the state as a threat: SyRI and the Dutch childcare-benefits scandal [@amnesty2021], the Allegheny screening tool [@eubanks2018], the LAPD programs that the Stop LAPD Spying Coalition refused [@stoplapdspying2020], and the federal dataset removals of @sec-ch-05-erosion-ownership. @levyWhenOpenData2016 show how transparency itself can be weaponized: demands for "open data" have been used to exclude inconvenient science from rulemaking. An installed base built to serve oversight can be captured to serve the overseen.
+
+### The measurement problem
+
+The installed base makes records durable, not valid. A disaggregated audit in @sec-ch-08-accounting reports error rates by group, but the groups are census categories, the outcome is a proxy, and the threshold is a policy choice. @selbst2019fairness call this the family of "abstraction traps"; @bowker2000 showed decades ago that classification systems encode the politics of whoever built them. Provenance records *how* a number was made, not whether it should exist.
+
+### Lineages as inheritance
+
+Each lineage solved a version of the accountability problem, and each carries pathologies the book mostly presents as lessons rather than inheritances. Public interest law splits into a well-funded strategic tier and an overstretched front-line tier [@albiston2017]. Accounting's independence norms coexisted with Arthur Andersen. Planning's "public interest" built Robert Moses's expressways before Davidoff [-@davidoff1965] tried to pluralize it. @stapletonWhoHasInterest2022 ask who benefits when a field claims the label "public interest" at all. Borrowing a profession's methods borrows its gatekeeping and its assumptions about who gets to speak.
+
+### Four levels that presume the building
+
+The book gives each lineage and genre a level of government: journalism and op-eds the city, planning and public comments the county, law and testimony the state, accounting, engineering, and reports the nation. Matching evidence and genre to the body that can act presumes that each level holds a functioning institution: a council that holds hearings, a county that reads comments, a legislature that hears testimony, an agency that reads reports. When the federal agency is the one deleting the datasets, a report to it is addressed to the eroder. When a tribal nation, an employer, a platform, or the European Union is the body that matters, the four levels have no place for it at all. They are a teaching device built for dense, functioning institutions, and they travel badly to places and moments without them.
+
+## From suspicion to a count
+
+A better move than arguing borrows from @sec-ch-08-accounting: stop asserting and start sampling. If the book is US-centric, the cases it uses should be disproportionately American. If it prefers records to refusal, the remedies it reaches for should be disproportionately "more records." If the four levels presume functioning governments, a large share of cases should address no government at those levels.
+
+These are claims about a corpus, and the book is a corpus. Turning cases into rows makes every column a judgment; the tutorial makes those judgments explicit, so you can disagree with them in code rather than in vibes.
+
+## Tutorial: a reflexive audit of the book's cases
+
+### The code book
+
+Each row is a case the book uses as an anchor, counter-case, or worked example, with seven codes:
+
+- `part`: the book part where the case does its main work (I to IV; Part V holds only this chapter).
+- `region`: `US`, or the region of the non-US case.
+- `level`: the level of government that the case's remedy addresses. The four levels are `city`, `county`, `state`, and `nation`, where `nation` means any national government, US or not. Everything else gets `supranational`, `indigenous_nation`, or `non_state` (a platform, employer, vendor, or network).
+- `pressure`: `enclosure`, `exemption`, or `erosion`.
+- `value`: `openness`, `oversight`, or `ownership`.
+- `remedy`: `records` if the book's response is more or better records (disclosure, audits, archives, access), `refusal` if it is less collection, less linkage, or not building the system.
+- `fit`: `clean` if the pressure and value codes fit without strain, `forced` if you had to squeeze the case into the taxonomy.
+
+The `fit` column is the reflexive move. It records the coder's own discomfort as data.
+
+### The case table
+
+The table lives inline so the audit is reproducible from this page alone.
+
+```python
+import io
+import pandas as pd
+
+CASES = """case,part,region,level,pressure,value,remedy,fit
+Reddit API pricing and Pushshift,I,US,non_state,enclosure,openness,records,clean
+DSA Article 40 researcher access,I,Europe,supranational,enclosure,openness,records,clean
+Boulder campaign finance,I,US,city,enclosure,openness,records,clean
+Allegheny Family Screening Tool,I,US,county,exemption,oversight,records,clean
+SyRI,I,Europe,nation,exemption,oversight,refusal,clean
+Dutch childcare benefits scandal,I,Europe,nation,exemption,oversight,refusal,clean
+EPA and NOAA dataset removals,I,US,nation,erosion,ownership,records,clean
+Boulder and Denver council records,II,US,city,erosion,openness,records,clean
+Machine Bias (COMPAS),II,US,county,exemption,oversight,records,clean
+Pegasus Project,II,Global,nation,exemption,oversight,records,clean
+Colorado Open Records Act,II,US,state,exemption,oversight,records,clean
+Sandvig v. Barr (CFAA),II,US,nation,exemption,oversight,records,clean
+Colorado AI Act (SB 24-205; SB 26-189),II,US,state,exemption,oversight,records,clean
+NYC Local Law 144,II,US,city,exemption,oversight,records,clean
+Gender Shades,II,US,non_state,exemption,oversight,records,clean
+National folktables audit,II,US,nation,exemption,oversight,records,clean
+EU AI Act,II,Europe,supranational,exemption,oversight,records,clean
+Worker Info Exchange,II,Europe,non_state,exemption,oversight,records,clean
+Robert Moses and urban renewal,II,US,city,exemption,oversight,records,forced
+Boulder County Public Records Archive,II,US,county,exemption,oversight,records,clean
+Central 70,II,US,state,erosion,ownership,records,forced
+GetCalFresh,III,US,state,erosion,openness,records,forced
+Ushahidi,III,East Africa,non_state,enclosure,openness,records,clean
+Aadhaar,III,South Asia,nation,exemption,ownership,refusal,forced
+Canada Algorithmic Impact Assessment,III,Canada,nation,exemption,oversight,records,clean
+Federal AI procurement and inventories,III,US,nation,exemption,oversight,records,clean
+Denver HMIS,III,US,county,exemption,ownership,refusal,forced
+Stop LAPD Spying,III,US,city,exemption,ownership,refusal,forced
+Te Mana Raraunga,III,Oceania,indigenous_nation,enclosure,ownership,refusal,forced
+CARE Principles,III,Global,non_state,enclosure,ownership,refusal,forced
+OCAP,III,Canada,indigenous_nation,enclosure,ownership,refusal,forced
+Haugen Senate testimony,IV,US,nation,enclosure,oversight,records,clean
+Colorado General Assembly testimony,IV,US,state,exemption,oversight,records,clean
+Boulder County land use comment,IV,US,county,erosion,openness,records,clean
+Federal rulemaking comments,IV,US,nation,erosion,oversight,records,forced
+EPA Toxics Release Inventory,IV,US,nation,erosion,ownership,records,clean
+"""
+
+cases = pd.read_csv(io.StringIO(CASES))
+print(cases.shape)
+# => (36, 8)
+```
+
+Thirty-six cases is not every example in the book; the selection, which favors the cases that carry the most weight in each part, is also a choice.
+
+### Tabulate
+
+Start with geography, then the levels, then the remedy.
+
+```python
+cases["us"] = cases["region"].eq("US").map({True: "US", False: "non-US"})
+print(cases["us"].value_counts())
+# => us
+#    US        24
+#    non-US    12
+#    Name: count, dtype: int64
+
+LEVELS = ["city", "county", "state", "nation"]
+OTHER = ["supranational", "indigenous_nation", "non_state"]
+print(pd.crosstab(cases["level"], cases["us"]).reindex(LEVELS + OTHER))
+# => us                 US  non-US
+#    level
+#    city                5       0
+#    county              5       0
+#    state               5       0
+#    nation              7       5
+#    supranational       0       2
+#    indigenous_nation   0       2
+#    non_state           2       3
+
+print(pd.crosstab(cases["us"], cases["remedy"], margins=True))
+# => remedy  records  refusal  All
+#    us
+#    US           22        2   24
+#    non-US        6        6   12
+#    All          28        8   36
+
+print(pd.crosstab(cases["part"], cases["remedy"]))
+# => remedy  records  refusal
+#    part
+#    I             5        2
+#    II           14        0
+#    III           4        6
+#    IV            5        0
+
+print(pd.crosstab(cases["remedy"], cases["fit"]))
+# => fit      clean  forced
+#    remedy
+#    records     24       4
+#    refusal      2       6
+```
+
+### Plot
+
+One chart is enough. It shows where in the book refusal appears.
+
+```python
+import matplotlib.pyplot as plt
+
+tab = (pd.crosstab(cases["part"], cases["remedy"])
+         .reindex(["I", "II", "III", "IV"]))
+ax = tab.plot.barh(stacked=True,
+                   color={"records": "#2a78d6", "refusal": "#eb6834"},
+                   edgecolor="white", linewidth=2, figsize=(6, 3.5))
+ax.invert_yaxis()
+ax.set_xlabel("Number of cases")
+ax.set_ylabel("Part of the book")
+ax.set_title("Remedy the book reaches for, by part")
+ax.legend(title="Remedy", frameon=False)
+for side in ["top", "right"]:
+    ax.spines[side].set_visible(False)
+plt.tight_layout()
+plt.savefig("remedy_by_part.png", dpi=150)
+# => Parts II and IV are all blue; Part III is mostly orange.
+```
+
+::: {.callout-tip title="The Missing Manual"}
+`pd.crosstab` and `value_counts()` silently drop rows whose key is missing. Suppose you could not decide how to code Aadhaar's remedy and left the cell blank. The crosstab of `us` by `remedy` now shows eleven non-US cases instead of twelve, with no warning, and the remaining shares look tidier than your actual judgment. `value_counts()` hides the gap too; only `value_counts(dropna=False)` shows the `NaN`. In a reflexive audit, the cases you could not code are the most informative rows you have. Fill them explicitly (`cases["remedy"].fillna("uncoded")`) before you tabulate anything. A CSV looks neutral and is not: every column header is an argument.
+:::
+
+## What the counts reveal
+
+Read the tables as evidence with a known sampling frame and known coder bias, not a verdict.
+
+**The book is US-centric by design and by count.** Twenty-four of thirty-six cases are American. The twelve non-US cases arrive one or two per chapter, mostly as counter-cases. Every Part IV case is American: the genres teach you to write only to US bodies.
+
+**Refusal is outsourced.** Only two of twenty-four US cases (Denver HMIS and Stop LAPD Spying) end in refusal; six of twelve non-US cases do. Six of the eight refusal cases sit in Part III, and the other two are Dutch counter-cases in Part I. The lineages of Part II and the genres of Part IV contain none. The book files refusal under what its neighbors say, not what its professions do, and borrows most of it from elsewhere: Dutch courts, Māori and First Nations governance, global Indigenous data networks. The introduction admitted this in prose; the table shows its shape.
+
+**Refusal does not fit the taxonomy.** Six of the eight refusal cases were coded `forced`, against four of twenty-eight records cases. When a case's answer is "do not collect," the coder had to stretch "ownership" to cover it and invent a pressure (usually "enclosure") that the community itself might reject. Te Mana Raraunga does not describe Māori data as *enclosed*; it describes it as *Māori*. The framework's vocabulary has no native word for that.
+
+**The four levels do not hold the world.** The US cases spread almost evenly across the levels (five city, five county, five state, seven nation), but that evenness measures the book's own rule for assigning lineages and genres to levels, not the world. Coding any national government as `nation` lets five non-US cases sit on the levels, yet none of them reaches a Part IV genre. Nine of thirty-six cases address no government at the four levels at all: five non-state actors (two of them American, the Reddit API and Gender Shades), two supranational regimes, and two Indigenous nations.
+
+**Labor and measurement are absent because they were never columns.** No code records who did the work or whether the measure was valid. That absence is the most important finding and the hardest to see, because a table counts only what its code book names. Exercise 20.2 asks you to add the columns.
+
+None of this refutes the framework. It locates it. @neffCritiqueContributePracticeBased2017 argue that critical data studies and data science improve each other only when critique is practiced *inside* the work. A framework that ships with its own audit, and invites you to recode it, is doing that.
+
+::: {.callout-note title="In the Public Interest"}
+This chapter is about **ownership** of the framework itself. Someone owns the framework's definitions: what counts as a "record," which pressures have names, which levels of government count. Ownership in the sense of @sec-ch-05-erosion-ownership means stewardship with duties to beneficiaries, and the beneficiaries of a framework are the communities it is applied to. The specific claim: the reflexive audit is a stewardship tool only if its code book is open to revision by the people being coded. A case table that Te Mana Raraunga or Worker Info Exchange could not edit is a records-first instrument describing refusal from the outside. Opening the code book (literally, as a pull request to this book) is how the framework's ownership becomes shared rather than declared.
+:::
+
+## Exercises
+
+**Exercise 20.1 (Guided).** Run the audit exactly as written and confirm the tables match. Then recode three cases you disagree with (for example, is the Haugen testimony really `enclosure`? Is the Colorado AI Act's remedy only `records`?). Rerun every table. In 300 words, report which shares changed and whether any finding in "What the counts reveal" reverses. Save as `exercises/ch20_recode.md`.
+
+**Exercise 20.2 (Guided).** Add two columns the code book lacks: `labor` (who does the maintenance work the case depends on: `paid_staff`, `volunteer`, `contract`, `affected_community`, or `unknown`) and `measure_contested` (`yes` if the case turns on whether a measure is valid). Code all thirty-six cases, using `unknown` honestly. Tabulate both. In 300 words, explain what the new columns reveal that the original seven concealed.
+
+**Exercise 20.3 (Runnable, real public data).** Clone the book's public repository (<https://github.com/cuinfoscience/Public-Interest-Data-Science-Book>) and use pandas to count, for every `ch-*.qmd` file, mentions of a list of jurisdictions you choose (for example "Colorado", "Netherlands", "India", "Kenya", "Aotearoa", "Brazil"). Produce a chapter-by-jurisdiction table. Compare it with the tutorial's hand-coded table. Where do mention counts and case codes disagree, and which better measures "US-centric"?
+
+**Exercise 20.4 (Open-ended).** Pick one of the seven limits and draft a one-page proposal for the chapter-scale revision the book would need to address it: the new section's argument, one non-US or refusal-first anchor case, a tutorial sketch, and three sources. If you want the revision to reach the book, open it as a pull request.
+
+**Exercise 20.5 (Open-ended: critical-reflection memo).** Write a 500-word critical-reflection memo on a piece of public interest data work you have produced, such as an artifact from a Part IV chapter. Answer four questions. First, whose interests does the work serve, and whose might it harm? Name groups, not abstractions. Second, which affected communities were not consulted, and why not? "Time" is an answer only if you say what consultation would have required. Third, where does the framework fail for this case? Code your own piece with the tutorial's code book; if any column was `forced`, say why. Fourth, what would you do with more time, and what would you decide *not* to do? If you deposit the work (@sec-ch-19-archival-deposits), put the memo in the deposit so the reflection travels with the artifact.
+
+## Closing the book
+
+The book began with a few lines of Python against the Wikimedia pageviews API and a claim that "public interest" is an operational question rather than a slogan. It ends with a count of the book's own blind spots and a memo about where your work falls short. That sequence is the practice: build the record, then audit the record, including the one you built.
+
+The framework will change. The next version should start from more places than Boulder, take refusal as a first move rather than a neighbor's idea, count the people who keep the records alive, and admit that the four levels of government are a scaffold, not a law of nature. Some of those revisions will come from readers; the repository accepts pull requests.
+
+Until then, the work is the same as it was on page one. Find the pressure. Name the value. Build the installed base that lets the value last, and ask, every time, who it is for and who it leaves out. Then deposit what you made, so that the next public, the one that will argue with you, can find it.
+
+## Further Reading and Resources
+
+- Keegan (2026) [@keegan2026]. Reread "Anticipating critiques" and "Discussion" after this chapter.
+- Te Mana Raraunga, "Principles of Māori Data Sovereignty": <https://www.temanararaunga.maori.nz/tutohinga>. A governance tradition that does not start from openness.
+- Global Indigenous Data Alliance, CARE Principles for Indigenous Data Governance: <https://www.gida-global.org/careprinciples>. The principles behind @carroll2020, with implementation resources.
+- Global Data Justice project: <https://globaldatajustice.org/>. Comparative, non-US-first research on data governance, building on @taylorGlobalDataJustice2019.
+- Worker Info Exchange: <https://www.workerinfoexchange.org/>. A working counter-record: workers using data-protection rights against algorithmic management.
+- Our Data Bodies: <https://www.odbproject.org/>. Community research on how data collection is experienced in marginalized neighborhoods in the United States.
+- Selbst et al., "Fairness and Abstraction in Sociotechnical Systems": <https://doi.org/10.1145/3287560.3287598>. The abstraction traps behind the measurement problem.
+- Levy and Johns, "When open data is a Trojan Horse": <https://doi.org/10.1177/2053951715621568>. How transparency demands can be weaponized by the state.

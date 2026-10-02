@@ -1,0 +1,15 @@
+# Closing
+
+The book has one framework, and it has used it on almost everything. Part I named three pressures on public knowledge (enclosure, exemption, and erosion), paired each with the value that answers it (openness, oversight, and ownership), and described the installed base that makes those values last. Part II borrowed methods from five professions. Part III mapped the adjacent conversations that build, deliver, and contest data systems. Part IV turned all of it into genres addressed to bodies that can act: an op-ed to a city, a public comment to a county, testimony to a state legislature, a report to a federal agency, a proposal to a funder, and a deposit to whoever comes next.
+
+This last part has a single chapter and a different job. It does not add a lineage, a level of government, or a pressure. It asks where the framework stops working.
+
+## Why close with limits
+
+Keegan [-@keegan2026] anticipates five critiques of the framework (the realist, the critical, the libertarian, the positivist, and the pessimist) and answers each by specifying more infrastructure. That conversion is the framework's strength, and it is also a bias: a critique that cannot be answered with an identifier, a retention rule, or an escalation pathway has nowhere to land. The book's introduction admits several partialities of its own. It is US-centric. It is more comfortable with records than with refusal. It is thin on the labor that keeps records alive and on whether the records measure what they claim. Admissions like these are easy to make and rarely checked.
+
+@sec-ch-20-limits checks them. It sets out the five critiques, then seven limits the framework does not resolve, from US-centrism to the way its four levels of government presume functioning institutions at each one. It then borrows the method of the audit chapters and applies it to the book itself: a reflexive audit that codes the book's own cases by region, level of government, pressure, value, remedy, and fit, and counts where refusal appears and where the taxonomy strains. The chapter closes with a critical-reflection memo you write about your own work, asking whose interests it serves, who was not consulted, and where the framework failed for your case.
+
+## How to read it
+
+You can read @sec-ch-20-limits first. A skeptical reader may prefer to, since it states plainly what the rest of the book takes for granted. Its tutorial needs only `pandas` and an inline table, and each limit links to the chapters whose cases it questions. Read last, it works as an audit of everything before it. Read first, it is a list of things to watch for. Either way, the book's last instruction is to recode the cases you disagree with, and to send the revision back.

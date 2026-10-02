@@ -1,0 +1,384 @@
+---
+execute:
+  eval: false
+---
+
+# Exemption and Oversight {#sec-ch-04-exemption-oversight}
+
+Enclosure, the pressure taken up in @sec-ch-03-enclosure-openness, asks *who can observe?* This chapter asks the next question. Suppose you *can* see the outputs of a system. They sit in a published spreadsheet, a board packet, or a caseworker's screen. Who is obliged to explain how they were produced? Who has to answer when they go wrong? For a remarkable share of consequential automated decisions in the United States in the mid-2020s, the honest answer is: no one with enforceable authority, on any clock that a parent, a reporter, or a county commissioner can use.
+
+Keegan [-@keegan2026] names that condition **exemption**, "a lack of enforceable governance": the absence, weakness, or non-enforcement of duties that would otherwise require disclosure, auditability, and remedy. Where enclosure works through the terms of access to data, exemption works through trade-secret law, procurement contracts, sovereign immunity, statutory carve-outs from public-records regimes, and the plain fact that many public agencies run software they did not build and cannot fully inspect. Pasquale [-@pasquale2016] called the result the *black box society*: scoring machinery sealed off from the people it sorts. The value that answers exemption is **oversight**, which Keegan defines as "routinized, testable scrutiny." Both adjectives carry weight. *Routinized* means scrutiny that does not depend on one heroic records request or one lucky leak. *Testable* means claims an outsider can check against a record, which someone with authority must act on when the check fails.
+
+The first half of this chapter follows exemption through the Allegheny Family Screening Tool (AFST), a risk-scoring system used since 2016 by the child-welfare hotline of Allegheny County, Pennsylvania, and through the Dutch state's Systeem Risico Indicatie (SyRI), one of the rare cases in which a court found an automated decision system unlawful and shut it down [@syri2020]. A bridge shows how oversight answers exemption and where it fails. The second half builds oversight from records a county has already released under the Colorado Open Records Act (CORA). The chapter relies on the installed base from @sec-ch-02-installed-base and points to @sec-ch-07-law for the mechanics of CORA and to @sec-ch-08-accounting for the full disaggregated audit.
+
+Counties are where exemption bites. They run jails, assess property, and in many states deliver the human services that touch the most vulnerable residents. Colorado is one of the handful of states (nine, by one Colorado legislative staff count) where child welfare is state-supervised but county-administered; Pennsylvania also runs child welfare through its counties.<!-- TODO: verify the Pennsylvania county-administered characterization against a primary source (e.g., PA DHS). --> They also get less press attention than cities and less legislative scrutiny than states. When the exempt actor is a county department using a vendor's model to decide which families get investigated, the pretense of an arm's-length relationship collapses.
+
+## Exemption: who must answer?
+
+### Two kinds of exemption
+
+Keegan [-@keegan2026] separates **legal exemption** from **practical exemption**, and you should too before you go near a keyboard.
+
+Legal exemption is formal: carve-outs, thin statutory duties, and jurisdictional gaps where disclosure duties do not reach. Federal FOIA exemptions 4 (trade secrets) and 7 (law enforcement) are routinely invoked to withhold model specifications and performance audits, and state public-records laws, including Colorado's, have their own versions (@sec-ch-07-law). Trade-secret protections under the Defend Trade Secrets Act and state analogues travel with a vendor into a county's procurement file. The Computer Fraud and Abuse Act (CFAA) historically chilled independent testing: until *Sandvig v. Barr* [@aclu2019], academic auditors faced a credible threat of federal prosecution for creating test accounts that violated a platform's terms. *Sandvig* narrowed that risk for research but did not eliminate civil exposure and did not reach state computer-crime laws.
+
+Practical exemption is the larger space. Keegan calls it opacity by design: trade-secret claims stamped on every page of a deliverable, restrictive terms of service (which tie back to @sec-ch-03-enclosure-openness), contractual barriers to research, and technical controls. Even where the law requires disclosure, the route is slow and under-enforced. A reporter requests a vendor contract and receives, weeks later, a PDF with most of its text redacted. A parent whose family was screened in for investigation reads a letter citing an "assessment" without naming the model, the version, the features, or the threshold. The information exists; nobody is obliged to aggregate it. Exemption does not require secrecy, only that the cost of reconstructing the picture exceed what a resident, a reporter, or an underfunded nonprofit can afford. Fragmentation is the weapon.
+
+::: {.callout-note title="In the Public Interest"}
+**Oversight**, as the second half of this chapter develops it, is not a property of a single document. It is a property of the *linkage* between documents: a procurement contract that names a vendor, a methodology report that describes that vendor's model, a records response that discloses subgroup performance, a court filing that tests a denied claim. Exemption thrives on fragmentation: the contract does not name the model, the methodology report does not mention the contract, and the letter to the family mentions neither. Keegan [-@keegan2026] calls the missing ingredient **linkability**, and without it oversight is a pile of disconnected complaints. The specific claim of this section is that an evidence ledger is the cheapest linkability infrastructure you can build: it turns scattered county documents into one record that a lawyer, a commissioner, or a custodian can be asked to answer.
+:::
+
+### The Allegheny Family Screening Tool, as a county object
+
+Allegheny County's Department of Human Services runs the hotline that receives child-welfare referrals. Since August 2016, screeners have seen, alongside the case narrative, a score produced by the Allegheny Family Screening Tool. The score estimates the likelihood of a future child-welfare event, such as removal from the home, for a child named in the referral. Screeners use it as one input in deciding whether to open an investigation.
+
+Eubanks [-@eubanks2018] treated AFST as a paradigmatic case of a predictive instrument that extends surveillance into poor families under the banner of decision support; the county and the developers have disputed some of her characterizations and affirmed others. AFST is unusual because a reader can assemble a nontrivial picture of it from public sources, many published by the county itself. It is typical because the picture is incomplete, and not at random.
+
+It is also not a Pennsylvania curiosity. When the Associated Press reported in January 2023 that the U.S. Department of Justice was scrutinizing AFST over possible discrimination against families with disabilities, it analyzed Allegheny's algorithm "and those inspired by it," naming Los Angeles County, Oregon, and Douglas County, Colorado [@ho2023]. A county system travels between counties through procurement and research partnerships; the evidence about it does not.
+
+### The evidence ledger
+
+The technique is deliberately unglamorous: read every public document about the system and record what each tells you and what it does not. The `pandas` DataFrame below is an *evidence ledger*: a structured record of provenance that puts gaps on the same footing as findings.
+
+```python
+import pandas as pd
+
+rows = [
+    {"source": "Allegheny County RFP and vendor selection memo",
+     "date": "2014-11", "type": "procurement",
+     "what_it_tells_us": "Names the selected research team and the "
+         "county data systems to be integrated.",
+     "what_it_doesnt": "Does not disclose price, model family, or "
+         "performance targets."},
+    {"source": "Vaithianathan et al. methodology report",
+     "date": "2019-04", "type": "technical_report",
+     "what_it_tells_us": "Describes features drawn from the county's "
+         "integrated data warehouse; reports AUC and calibration.",
+     "what_it_doesnt": "Does not disclose the production threshold, "
+         "retraining cadence, or deployed subgroup performance."},
+    {"source": "Chouldechova et al., FAT* 2018",
+     "date": "2018-02", "type": "peer_reviewed",
+     "what_it_tells_us": "Subgroup error-rate analysis on a research "
+         "version of the model.",
+     "what_it_doesnt": "Research version is not the fielded tool; "
+         "labels are proxies, as the authors acknowledge."},
+    {"source": "Eubanks, Automating Inequality, ch. 4",
+     "date": "2018-01", "type": "book",
+     "what_it_tells_us": "Situates AFST in the county's data "
+         "integration project; documents community concerns.",
+     "what_it_doesnt": "Predates later model revisions."},
+    {"source": "Associated Press (Ho and Burke)",
+     "date": "2022-04", "type": "press",
+     "what_it_tells_us": "Reports a Carnegie Mellon analysis of "
+         "racial disparity in 'mandatory' screen-in scores.",
+     "what_it_doesnt": "County disputed the data vintage; the story "
+         "cannot show the current version or threshold."},
+    {"source": "Associated Press (Ho and Burke)",
+     "date": "2023-01", "type": "press",
+     "what_it_tells_us": "Reports DOJ scrutiny over disability-related "
+         "features; names counties with similar tools.",
+     "what_it_doesnt": "DOJ materials are not public; we learn an "
+         "inquiry exists, not what it found."},
+]
+# TODO: verify the RFP date and contents against the county's posted
+# procurement documents before treating row 1 as sourced.
+
+evidence = pd.DataFrame(rows)
+evidence["date"] = pd.to_datetime(evidence["date"])
+evidence = evidence.sort_values("date").reset_index(drop=True)
+print(evidence.shape)
+# => (6, 5)
+
+evidence[["date", "source", "what_it_doesnt"]].to_csv(
+    "afst_gaps.csv", index=False)
+```
+
+Six rows is not a lot; a mature ledger for a deployed county system might run to forty. The two text columns carry the method. `what_it_tells_us` is the affirmative claim you can cite. `what_it_doesnt` is the negative space: what you would still need to request, subpoena, or discover to make a stronger claim. A one-column ledger is a bibliography. A two-column ledger is the beginning of an accountability argument.
+
+Notice two things. The most technical document, the methodology report [@vaithianathan2019], is silent on the deployed threshold. The most politically charged finding, the federal inquiry [@ho2023], has the least available record. Both are facts about the records, not the model's math.
+
+::: {.callout-tip title="The Missing Manual"}
+The methodology report does not say. The press story cannot say. Those silences are data. Accountability writing often treats absence as a flourish ("notably, the county does not disclose...") and moves on. Do not move on. Write the absence into the ledger as an object with a date, a source, and a `what_it_doesnt` entry. You will use it when you draft a records request (@sec-ch-07-law) and when you testify (@sec-ch-17-testimony). An absence with a citation is one you can ask a custodian to fill, or a court to compel. An absence you only gestured at in prose is a complaint.
+:::
+
+### From a gap to a request
+
+Each `what_it_doesnt` entry is a candidate line item for a records request, and the request is how a county-level gap becomes a county-level duty to answer. A few lines of `pandas` make the move explicit.
+
+```python
+gaps = evidence.loc[evidence["type"].isin(
+    ["procurement", "technical_report"]), ["source", "what_it_doesnt"]]
+
+for i, row in enumerate(gaps.itertuples(), start=1):
+    print(f"({i}) Records sufficient to show what {row.source} omits: "
+          f"{row.what_it_doesnt}")
+# => (1) Records sufficient to show what Allegheny County RFP ...
+# => (2) Records sufficient to show what Vaithianathan et al. ...
+```
+
+The output is not a finished request. Custodians answer requests for *records*, not questions, so each line must be rewritten as a category of document ("contracts and amendments," "validation reports delivered to the county"); @sec-ch-07-law shows how. The habit matters: every gap in your ledger should map to a record that some office holds or a record that no office holds. The second kind is a finding.
+
+### Reading the deployed model from the outside
+
+The ledger tells you what documentation exists, not how the model behaves today. Three kinds of lawful external inference are available. The first is **decision-record inspection**: released aggregate screening statistics let you estimate crudely whether the tool shifted screen-in rates. The second is **disparate-impact analysis on outcomes**, using downstream data obtained by request or partnership, as Chouldechova and colleagues [-@chouldechova2018] did for a pre-deployment version. The third is **audit-by-adversarial-use**: submitting test cases through a live interface. CFAA exposure matters here, and county child-welfare systems expose no interface to query, so audit-by-use is common in hiring and advertising and rare here.
+
+```python
+# Illustrative skeleton. Do not run against a live agency system.
+def selection_rates(decisions):
+    """Screen-in rates by group; one row per referral with columns
+    referral_id, group, screened_in."""
+    g = decisions.groupby("group").agg(
+        n=("referral_id", "count"),
+        screened_in=("screened_in", "sum"))
+    g["rate"] = g["screened_in"] / g["n"]
+    return g.reset_index()
+# Expected output columns: group, n, screened_in, rate
+```
+
+None of this code is the audit. It is scaffolding, so that when an agency publishes aggregates or signs a data-sharing agreement you have somewhere to put the numbers. The full disaggregated audit, run on national data, is taught in @sec-ch-08-accounting.
+
+### SyRI: a state that would not explain
+
+The Dutch case inverts a U.S. habit. In the usual U.S. story, the adversary is a vendor whose system a public agency adopted: the vendor holds the trade-secret claim, the agency carries the disclosure duty, and advocates play them against each other. In SyRI, the adversary was the state itself.
+
+Systeem Risico Indicatie was a cross-agency tool that linked welfare, tax, labor, and housing data to score residents for fraud risk, deployed in targeted, mostly low-income neighborhoods. In February 2020, the District Court of The Hague ruled in *NJCM v. the Netherlands* that the legislation authorizing SyRI violated Article 8 of the European Convention on Human Rights, because the state's interest in fraud detection did not justify the system's opacity and breadth [@syri2020]. The ruling turned not on the model's accuracy but on the state's failure to make the system legible enough for residents to understand and challenge. Successor practices adapted the legal wrapper without abandoning the approach [@deArruda2024], and the *toeslagenaffaire* childcare-benefits scandal exposed a more damaging pattern: Amnesty International [-@amnesty2021] documents how a tax-administration risk model treated nationality as a risk factor, triggering clawbacks that pushed thousands of families into debt. Families could not learn why they were flagged; such patterns surfaced only when journalists and parliamentary inquiry reconstructed them from outside [@rotterdam_lighthouse2023].
+
+Three contrasts with AFST matter. The Dutch regime offered a forum (the Article 8 claim) in which system-level opacity could be litigated directly, rather than through the U.S. habit of challenging individual denials. The affected class was organized well enough, through civil-society coalitions and parliamentary allies, to press the claim. And the remedy was shutdown, not disclosure: the court did not order SyRI opened. It ordered it stopped. @sec-ch-07-law asks what U.S. doctrine offers in its place.
+
+::: {.callout-tip title="The Missing Manual"}
+When the state is the exempt actor, strategies that assume the state is a neutral referee between resident and vendor stop working. Most accountability tooling (model cards, datasheets, fairness audits) assumes the state is demanding accountability from a vendor. In SyRI and the *toeslagenaffaire*, the party deploying the system, the party holding the data, and the party refusing disclosure were the same government. The same can be true of a county: the office that runs the tool may also be the office that answers your records request. Notice when you are in that situation; your methods have to change.
+:::
+
+### Practical exemption as a design choice
+
+Exemption is not fate. It is a set of design and procurement choices. The EU's 2024 AI Act, New York City's Local Law 144, and Colorado's AI Act (SB 24-205, repealed and reenacted before it took effect as the narrower SB 26-189, in force January 1, 2027) [@colorado_sb24205; @colorado_sb26189] are attempts to legislate a floor under transparency. Colorado's retreat is itself a lesson in how exemption is negotiated. @sec-ch-07-law reads the Colorado statute as a rule maker, and @sec-ch-08-accounting compares all three. Whether any of them produces working oversight depends on the six installed-base elements (@sec-ch-02-installed-base), from linkable records to remedy that reaches the affected. A statute that requires a "model card" without linking it to deployment records produces compliance artifacts and no oversight.
+
+The public-interest response has two parts: the patient work of building ledgers that make absences visible, and designing forward, writing linkability into a procurement, a contract, or a county policy whenever you can shape one. The second move is oversight.
+
+## From exemption to oversight
+
+Oversight answers exemption only if it changes who must answer, and on what schedule. Two distinctions show where that holds and where it gives way.
+
+### Routine auditability versus episodic audits
+
+In 2018, Joy Buolamwini and Timnit Gebru published "Gender Shades," a disaggregated audit of three commercial gender-classification systems [@buolamwini2018]. The systems misclassified darker-skinned women far more often than lighter-skinned men, a gap every vendor's aggregate accuracy number had hidden. What followed mattered as much as what it found: sustained pressure from advocates, company decisions to pause face-recognition sales, the end-to-end auditing framework that Raji and colleagues [-@raji2020] later formalized, and legislation that cited the work by name. An audit is a technique. Oversight is an arrangement, and two different arrangements get called "audits."
+
+**Routine auditability** is built into a system. Logs are kept in a form an outsider can parse. Versions are archived. Metrics are recomputed and published on a schedule. The inputs to a check already exist, and nobody's permission is needed. This is what Keegan's "routinized" means. Public accounting aspires to it, though Baker [-@baker2005] warns that audit professions do not stay public-interested on their own.
+
+**Episodic audits** are one-off events. A regulator commissions a report, a researcher publishes a paper, a reporter files a records request and runs the numbers. Their power is bounded by the moment and by the audited party's willingness to cooperate twice. Gender Shades was episodic; so is every row of the AFST ledger.
+
+Much of the 2020s legislative wave sits uneasily between the two. New York City's Local Law 144, which took effect in 2023, requires "bias audits" of automated employment decision tools and publication of impact ratios. It does not say what counts as an adequate auditor, how data must be collected, or what happens when an audit finds a problem, and an early empirical study found that few covered employers posted audits at all [@wright2024nullcompliance]. The law created the appearance of routine auditability without authority to enforce it, episodic audits dressed as routine: what Goodman and Trehu [-@goodman2023] call *audit-washing*. Records requests have the same structure. A single request is episodic; a group that codes a county's released requests every year, logs every response in the same schema, and publishes the pattern is building something closer to routine auditability of that county's records practice.
+
+### Where oversight fails: the state as adversary
+
+Remedy looks different when the party you seek remedy from also controls the records. The SyRI coalition did not ask the ministry to fix its model; it went to court, and the remedy was structural [@syri2020]. In the *toeslagenaffaire*, remedy arrived only after outsiders reconstructed what the tax authority would not explain, and it took the political form of a cabinet resignation and the slow, contested financial form of compensation [@amnesty2021]. Remedy can be restorative (reinstating a benefit), structural (decommissioning a tool), or financial (damages and fees); each needs a different authority.
+
+Allegheny County has revised AFST over time and published evaluations and ethical reviews alongside it, closer to routine auditability than most counties attempt. But the pathways that matter most to a screened-in family run through the child-welfare process itself, and the most consequential external review, the federal civil-rights scrutiny reported in 2023, produced no public record [@ho2023]. Disclosure by the county is not the same as remedy for the family. Oversight fails at the point Keegan [-@keegan2026] marks as its last link: "Evidence matters only if it can trigger remedy." Remove authority and you have findings nobody can act on. Remove remedy and you have an authority that can document harm but cannot repair it. The failure the rest of this chapter makes visible is the remedy that exists on paper and nowhere else: an appeal right nobody knows about, a complaint channel that routes to an empty inbox, a court pathway whose cost exceeds the value of the record.
+
+::: {.callout-note title="In the Public Interest"}
+**Oversight** depends on two elements that no audit or records request can supply by itself: **authority** and **remedy**. When you read an audit report or a county records denial, your first two questions are not about method: who has authority to act on this, and what remedy is available to the people affected? If the answers are "nobody" and "none," you are reading audit-washing or its records equivalent. The specific claim of what follows is that a remedy ledger advances oversight by converting each withheld record into a named pathway with a clock, so that a county's exemptions become a pattern an authority can act on rather than a series of private disappointments.
+:::
+
+## Oversight: routinized, testable scrutiny
+
+Data about this failure is already public. Boulder County's Public Records Archive, part of its Open Records Center, posts CORA requests that others filed and the county answered: some in full, some partially, some late, some not at all. Each response is a small act of oversight or of exemption, with a legal basis and a set of escalation options. The grounds a county custodian cites are not the county's invention. They are exemptions authorized by state law, in CORA (C.R.S. § 24-72-201 et seq.) and, for criminal justice records, the Colorado Criminal Justice Records Act (CCJRA) [@cora_statute]. The General Assembly wrote the menu; the county orders from it. @sec-ch-07-law covers the statute's clock, fees, and exemptions. This half of the chapter turns released requests into an **exemptions and remedy ledger**: which exemptions were cited, how often, by which office, what pathway each left open, and, where the record shows it, what happened next.
+
+### Remedy as civic procedure
+
+Keegan [-@keegan2026] calls this element *remedy justice* and treats escalation pathways (complaint channels, audit triggers, appeals, reporting cadences, enforcement hooks) as "usable civic procedure." A pathway counts only if it is **accessible** in language, time, and cost; **protective** against retaliation; and **consequential**, with clear timelines and someone with authority to decide. A pathway that fails any of the three is decorative.
+
+Apply that test to CORA. Colorado's remedy ladder for a records denial is short and steep [@cfoic]:
+
+1. **Ask.** Request a written statement of the grounds for denial, citing the legal authority. For criminal justice records, ask the custodian to articulate the CCJRA public-interest balancing.
+2. **Negotiate.** Narrow the request, clarify it, or ask for an itemized fee estimate.
+3. **Give notice.** Before going to court, send the custodian written notice of intent to file, generally at least fourteen days ahead.
+4. **Go to court.** Apply to the district court, which must hold a hearing promptly. A requester who prevails is generally entitled to court costs and reasonable attorney fees.
+
+There is no administrative appeal in between, so the ladder is *consequential* (a court can order disclosure and fees) but not very *accessible*: the step after "negotiate" is litigation, and most requesters stop at step two. Alongside the legal ladder runs a political one. The county's own guidance invites requesters to call the County Attorney's Office for help with the process, the Board of County Commissioners takes public comment (@sec-ch-18-public-comments), the General Assembly committees that amend CORA take testimony (@sec-ch-17-testimony), and a pattern of withholding is a story a local newsroom can tell.
+
+### Tutorial: an exemptions and remedy ledger
+
+The tutorial is built for released CORA records but runs on a small fixture, so you can work through it before coding any. **The fixture is invented for teaching.** Its offices are labeled A, B, and C, and its rows do not describe any real Boulder County request, office, or response. Once your request tracker (@sec-ch-07-law) holds the released requests you chose, replace the fixture with it and rerun.
+
+Each row is one *citation*: a request can cite several grounds, and a request with no withholding still gets a row.
+
+```python
+import sqlite3
+import numpy as np
+import pandas as pd
+
+# ILLUSTRATIVE FIXTURE: invented for teaching. These rows do not describe
+# any real Boulder County request, office, or response.
+cols = ["request_id", "office", "regime", "submitted", "responded",
+        "outcome", "cited_as"]
+citations = pd.DataFrame([
+    (1, "Office A", "CORA",  "2027-01-28", "2027-02-02", "full",     None),
+    (2, "Office A", "CORA",  "2027-01-28", "2027-02-11", "partial",  "Trade secret / confidential commercial info"),
+    (2, "Office A", "CORA",  "2027-01-28", "2027-02-11", "partial",  "personnel file"),
+    (3, "Office B", "CORA",  "2027-01-28", "2027-02-11", "partial",  "trade secrets"),
+    (4, "Office B", "CORA",  "2027-01-28", None,         "none",     None),
+    (5, "Office C", "CCJRA", "2027-01-28", "2027-02-09", "denied",   "CCJRA - contrary to public interest"),
+    (6, "Office C", "CCJRA", "2027-01-28", "2027-02-09", "partial",  "Contrary to the public interest (CCJRA)"),
+    (6, "Office C", "CCJRA", "2027-01-28", "2027-02-09", "partial",  "ongoing investigation"),
+    (7, "Office A", "CORA",  "2027-01-28", "2027-02-04", "fee_hold", None),
+    (8, "Office B", "CORA",  "2027-01-29", "2027-02-03", "partial",  "attorney-client privileged"),
+], columns=cols)
+print(citations.shape)
+# => (10, 7)
+```
+
+Custodians do not write exemptions in a controlled vocabulary: "Trade secret / confidential commercial info" and "trade secrets" are the same ground. Normalize them into categories, but keep the original text beside the category, because the custodian's wording is the record and your category is an interpretation.
+
+```python
+CATEGORY = {
+    "trade secret": "trade_secret",
+    "personnel": "personnel",
+    "public interest": "ccjra_balancing",
+    "investigation": "investigation",
+    "attorney-client": "privilege",
+}
+
+def categorize(text):
+    t = text.lower()
+    hits = [cat for key, cat in CATEGORY.items() if key in t]
+    return hits[0] if hits else "UNMAPPED"
+
+citations["category"] = citations["cited_as"].map(categorize, na_action="ignore")
+
+counts = (citations.dropna(subset=["category"])
+          .groupby("category")
+          .agg(times_cited=("request_id", "size"),
+               requests=("request_id", "nunique"),
+               offices=("office", "nunique"))
+          .sort_values("times_cited", ascending=False, kind="stable"))
+print(counts)
+# =>                  times_cited  requests  offices
+# => category
+# => ccjra_balancing            2         2        1
+# => trade_secret               2         2        2
+# => investigation              1         1        1
+# => personnel                  1         1        1
+# => privilege                  1         1        1
+```
+
+The `"UNMAPPED"` fallback is deliberate: an unanticipated phrasing should show up loudly in the counts, not vanish into the wrong category.
+
+Next, collapse to one row per request and count the working days each took against CORA's ten-working-day outer limit (three working days, extendable by seven; see @sec-ch-07-law). An unanswered request is measured up to an "as of" date.
+
+```python
+AS_OF = pd.Timestamp("2027-02-16")
+req = (citations.groupby("request_id")
+       .agg(office=("office", "first"), regime=("regime", "first"),
+            submitted=("submitted", "first"),
+            responded=("responded", "first"),
+            outcome=("outcome", "first"),
+            exemptions=("category",
+                        lambda s: ", ".join(sorted(s.dropna().unique()))))
+       .reset_index())
+
+start = pd.to_datetime(req["submitted"]).values.astype("datetime64[D]")
+end = (pd.to_datetime(req["responded"]).fillna(AS_OF)
+       .values.astype("datetime64[D]"))
+req["workdays"] = np.busday_count(start, end)
+req["past_clock"] = req["workdays"] > 10
+print(req[["request_id", "office", "outcome", "exemptions",
+           "workdays", "past_clock"]].to_string(index=False))
+# =>  request_id   office  outcome                     exemptions  workdays  past_clock
+# =>           1 Office A     full                                        3       False
+# =>           2 Office A  partial        personnel, trade_secret        10       False
+# =>           3 Office B  partial                   trade_secret        10       False
+# =>           4 Office B     none                                       13        True
+# =>           5 Office C   denied                ccjra_balancing         8       False
+# =>           6 Office C  partial ccjra_balancing, investigation         8       False
+# =>           7 Office A fee_hold                                        5       False
+# =>           8 Office B  partial                      privilege         3       False
+```
+
+Finally, attach a pathway to every outcome and store the tables in SQLite, where they join with the request tracker from @sec-ch-07-law.
+
+```python
+PATHWAYS = pd.DataFrame([
+    ("full",     "none needed",                                   "record and archive"),
+    ("partial",  "written grounds; narrow; 14-day notice; court", "ask for written grounds"),
+    ("denied",   "written grounds; 14-day notice; court",         "ask for written grounds"),
+    ("none",     "reminder; 14-day notice; court",                "send reminder citing clock"),
+    ("fee_hold", "itemized estimate; narrow; ask for waiver",     "ask for itemized estimate"),
+], columns=["outcome", "pathway", "next_step"])
+
+with sqlite3.connect("remedy_ledger.sqlite") as conn:
+    citations.to_sql("citations", conn, if_exists="replace", index=False)
+    req.to_sql("requests", conn, if_exists="replace", index=False)
+    PATHWAYS.to_sql("pathways", conn, if_exists="replace", index=False)
+    ledger = pd.read_sql("""
+        SELECT r.request_id, r.office, r.outcome, r.past_clock, p.next_step
+        FROM requests r JOIN pathways p USING (outcome)
+        WHERE r.outcome != 'full'
+        ORDER BY r.past_clock DESC, r.request_id
+    """, conn)
+print(ledger.to_string(index=False))
+# =>  request_id   office  outcome  past_clock                  next_step
+# =>           4 Office B     none           1 send reminder citing clock
+# =>           2 Office A  partial           0    ask for written grounds
+# =>           3 Office B  partial           0    ask for written grounds
+# =>           5 Office C   denied           0    ask for written grounds
+# =>           6 Office C  partial           0    ask for written grounds
+# =>           7 Office A fee_hold           0  ask for itemized estimate
+```
+
+The last table is the ledger's working face: every request that did not come back whole, the one past its statutory clock on top, each with its next step. Add an `outcome_of_escalation` column wherever the archive or other public records show a requester taking a step, and the ledger becomes a record of what the remedy ladder actually delivered. That is oversight in Keegan's two senses: the schema makes the scrutiny repeatable every time the archive grows, and the clock makes each claim of lateness testable against the statute.
+
+::: {.callout-tip title="The Missing Manual"}
+Three choices here look technical and are not. First, *what you count*: counting citations makes an office that cites four grounds in one letter look four times as secretive as one that denies outright on one ground. Report both, as `times_cited` and `requests` do. Second, *which clock*: the fixture applies CORA's working-day clock to every row, including the CCJRA rows. Whether the same deadlines govern criminal justice records is a question to check against the statute, not to settle by default.<!-- TODO: verify CCJRA response-time requirements and how Boulder County applies them. --> Third, *what "past the clock" means*: `np.busday_count` skips weekends but not county holidays unless you pass them in. A ledger that accuses an office of lateness on the strength of a forgotten holiday has handed the office its rebuttal.
+:::
+
+### Reading the ledger
+
+Even a fixture this small supports honest sentences. Trade-secret claims appeared at two of three offices, which suggests a contracting pattern rather than one office's habit; it is also the point where this ledger meets the AFST one, because a vendor's trade-secret claim is the most common way practical exemption enters a public file. The criminal-justice office leaned on the CCJRA balancing test, so the remedy question there is whether the custodian articulated the balance. One request went unanswered past the outer limit: the clearest fact in the table, and the one a commissioner could act on fastest. One was held behind a fee estimate, which is not an exemption but functions like one if the requester cannot pay.
+
+The ledger cannot say whether a withholding was lawful; only a court can. Nor do eight requests represent the county's practice. What it can do is make a pattern *followable*, in Keegan's [-@keegan2026] word, so that the next requester, reporter, or commissioner starts from your record instead of from nothing.
+
+### What survives political change
+
+Three things separate oversight regimes that survive political change from those that collapse into theater. The first is **authority**: a named institution with a budget and a mandate that can demand evidence and act on it. For a county, that might be the Board of County Commissioners, the district attorney, or a state court. When no such authority is willing, a ledger is an artifact looking for a reader.
+
+The second is **remedy** that reaches the affected. Local Law 144's core defect is that it requires disclosure of disparate impact but gives no right of action to a candidate screened out by a tool with a poor impact ratio [@goodman2023]. CORA's strength is the reverse: a requester who wins in court can recover attorney fees. Its weakness is that nothing sits between a custodian's denial and a lawsuit.
+
+The third is **scope protection**. Regimes erode when their scope narrows and nobody defends the frame: "advisory" systems that are decisive in practice, "pilot programs" that run for a decade, records reclassified from administrative to criminal justice. That is the logic of exemption again. A regime whose scope is a negotiated floor will be negotiated downward by the entities it constrains. A ledger maintained across terms of office is one of the few instruments that can show the floor moving.
+
+## Exercises
+
+**Exercise 4.1 (Guided).** Run the fixture tutorial end to end. Add two rows of your own invention (still labeled as fixture), one with a phrasing that falls through to `"UNMAPPED"`. Fix the `CATEGORY` map, rerun, and write two sentences on why the fallback exists.
+
+**Exercise 4.2 (Guided).** Extend the AFST ledger to at least twelve rows from the county's evaluations and ethical reviews, the developers' responses, litigation, and community-organization statements. Fill both text columns and replace any row you cannot verify. Save as `exercises/ch04_afst_ledger.csv` and write 300 words on the three largest gaps.
+
+**Exercise 4.3 (Runnable, real public data).** Choose a Boulder County program or office whose released requests appear in the county's Public Records Archive (<https://bouldercountyco.govqa.us/WEBAPP/_rs/supporthome.aspx>) and build an evidence ledger of at least eight rows for it from sources you can download on a laptop: the released records, the county's budget documents (<https://bouldercounty.gov/government/budget-and-finance/county-budget/>), Board of County Commissioners agendas, minutes, and packets, and press coverage. Run the gap-to-request loop and mark which `what_it_doesnt` entries the released requests already cover. Save as `exercises/ch04_evidence_ledger.csv`.
+
+**Exercise 4.4 (Runnable, real public data).** Replace the fixture with the released requests from Exercise 4.3, drawn from your request tracker (@sec-ch-07-law). Record every ground exactly as the custodian wrote it, note the state statute that authorizes it, normalize it, compute clocks with the county's holiday calendar, and attach a next step. A full release and a silence are both outcomes and both get rows. Save as `exercises/ch04_remedy_ledger.sqlite` with a five-sentence `exercises/ch04_remedy_ledger.md` stating the pattern and its limits.
+
+**Exercise 4.5 (Comparative, real public data).** Sample at least ten released requests to *other* offices from the same archive, code them with the same schema, and compare the counts with Exercise 4.4. What does the published archive leave out by design?
+
+**Exercise 4.6 (Analytic).** Read the SyRI judgment (ECLI:NL:RBDHA:2020:1878) in English translation. In 500 words, state the court's legal theory, name the treaty article it rested on, and explain whether an equivalent argument would be available in a U.S. federal court. Name the sources of any uncertainty.
+
+**Exercise 4.7 (Analytic).** Evaluate one rung of Colorado's remedy ladder against Keegan's three tests (accessible, protective, consequential), using the Colorado Freedom of Information Coalition guide and at least one other source. In 500 words, name the rung's strongest and weakest dimension and one statutory or county-policy change that would strengthen the weakest.
+
+**Exercise 4.8 (Open-ended).** For the program in Exercise 4.3, write a 1,000-word memo to a named county actor (a commissioner, the County Attorney's Office, a department director) on what would make it *observable* and its records practice *overseeable*. Propose one escalation pathway the county could adopt without new state law (a published log of CORA denials with grounds, a response-time report to the Board, an ombuds contact for records disputes): who maintains it, who triggers it, what happens then, and how you would know in two years whether it worked. List what would instead need state legislation, litigation, or procurement reform; the legislative items are candidate asks for testimony before a General Assembly committee (@sec-ch-17-testimony). Save as `exercises/ch04_oversight_memo.md`.
+
+## Closing
+
+Enclosure keeps data out of reach. Exemption keeps the people and institutions that use data out of reach. Oversight answers by making scrutiny a routine with a schema and a clock: the evidence ledger names what a county has not told you, and the remedy ledger names what a requester can do about it and whether anyone did. Neither ledger is remedy. Both are the record an authority needs before remedy can happen.
+
+Both also presume that the records will still be there next year. Archives migrate to new vendors, methodology reports vanish from county sites, portals stop serving old releases. That is the third pressure, erosion, which @sec-ch-05-erosion-ownership pairs with ownership. The lineages that sharpen this chapter's tools follow in @sec-ch-07-law and @sec-ch-08-accounting.
+
+## Further Reading and Resources
+
+- Keegan (2026), "Public interest data infrastructuring," especially "Authority, trust, and contestable oversight" and "Remedy justice" [@keegan2026].
+- Frank Pasquale (2016), *[The Black Box Society](https://www.hup.harvard.edu/books/9780674970847)*.. The legal architecture of scored decision-making's opacity.
+- Virginia Eubanks (2018), *[Automating Inequality](https://us.macmillan.com/books/9781250215789/automatinginequality)*.. Chapter 4 treats AFST; read it with the developers' published responses.
+- Allegheny County Department of Human Services analytics site, <https://www.alleghenycountyanalytics.us/>. The county's own documentation, best read in date order.
+- District Court of The Hague (2020), SyRI judgment, ECLI:NL:RBDHA:2020:1878, <https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2020:1878> [@syri2020].
+- Amnesty International (2021), *Xenophobic Machines*, <https://www.amnesty.org/en/documents/eur35/4686/2021/en/> [@amnesty2021].
+- Lighthouse Reports (2023), "Inside the Suspicion Machine," <https://www.lighthousereports.com/investigation/inside-the-suspicion-machine/>.
+- Inioluwa Deborah Raji et al. (2020), "[Closing the AI accountability gap](https://doi.org/10.1145/3351095.3372873)," *Proceedings of FAT\* 2020* [@raji2020].
+- Bryce Goodman and Julia Trehu, "[AI audit washing and accountability](https://doi.org/10.2139/ssrn.4227350)" (2023) [@goodman2023].
+- Lucas Wright et al. (2024), "[Null Compliance: NYC Local Law 144 and the challenges of algorithm accountability](https://doi.org/10.1145/3630106.3658998)," *FAccT '24* [@wright2024nullcompliance].
+- Colorado Freedom of Information Coalition, open government guide: <https://coloradofoic.org/open-government-guide/> [@cfoic].
+- Boulder County, Colorado Open Records Act page: <https://bouldercounty.gov/records/colorado-open-records-act/>. The route to the Public Records Archive.

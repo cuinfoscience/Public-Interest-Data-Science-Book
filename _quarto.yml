@@ -4,7 +4,7 @@ project:
 
 book:
   title: "Public Interest Data Science"
-  subtitle: "Lineages, Levels, and Genres for Accountable Data Work"
+  subtitle: "Pressures, Values, Lineages, and Genres"
   author: "Brian C. Keegan"
   date: "2026"
   description: |
@@ -21,41 +21,36 @@ book:
   page-navigation: true
   chapters:
     - index.qmd
-    - part: part-1-foundations.qmd
+    - part: part-1-pressures-values.qmd
       chapters:
         - ch-01-introduction.qmd
         - ch-02-installed-base.qmd
-        - ch-03-pit-data-for-good.qmd
-    - part: part-2-journalism-city.qmd
+        - ch-03-enclosure-openness.qmd
+        - ch-04-exemption-oversight.qmd
+        - ch-05-erosion-ownership.qmd
+    - part: part-2-lineages.qmd
       chapters:
-        - ch-04-enclosure.qmd
-        - ch-05-journalism.qmd
-        - ch-06-openness.qmd
-        - ch-07-op-eds.qmd
-    - part: part-3-law-county.qmd
+        - ch-06-journalism.qmd
+        - ch-07-law.qmd
+        - ch-08-accounting.qmd
+        - ch-09-planning.qmd
+        - ch-10-engineering.qmd
+    - part: part-3-adjacent-conversations.qmd
       chapters:
-        - ch-08-exemption.qmd
-        - ch-09-law.qmd
-        - ch-10-oversight.qmd
-        - ch-11-testimony.qmd
-    - part: part-4-assurance-state.qmd
+        - ch-11-pit-data-for-good.qmd
+        - ch-12-govtech-civic-tech.qmd
+        - ch-13-critical-data-studies-refusal.qmd
+    - part: part-4-genres.qmd
       chapters:
-        - ch-12-accounting.qmd
-        - ch-13-engineering.qmd
-        - ch-14-govtech-civic-tech.qmd
+        - ch-14-op-eds.qmd
         - ch-15-reports.qmd
-    - part: part-5-planning-nation.qmd
+        - ch-16-research-proposals.qmd
+        - ch-17-testimony.qmd
+        - ch-18-public-comments.qmd
+        - ch-19-archival-deposits.qmd
+    - part: part-5-closing.qmd
       chapters:
-        - ch-16-erosion.qmd
-        - ch-17-planning.qmd
-        - ch-18-ownership.qmd
-        - ch-19-critical-data-studies-refusal.qmd
-        - ch-20-public-comments.qmd
-    - part: part-6-beyond-portfolio.qmd
-      chapters:
-        - ch-21-research-proposals.qmd
-        - ch-22-archival-deposits.qmd
-        - ch-23-limits.qmd
+        - ch-20-limits.qmd
   appendices:
     - appendix-ai-disclosure.qmd
     - appendix-further.qmd

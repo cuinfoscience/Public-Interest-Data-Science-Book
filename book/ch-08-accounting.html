@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
+
+<title>8&nbsp; Accounting and Auditing – Public Interest Data Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch-09-planning.html" rel="next">
+<link href="./ch-07-law.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-9a023c9ade86a60361e96e3e3f11bc54.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-684e263fd5eaab04d06708158183ff95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-063d023c011e3855d99747d2bbbf274a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-2-lineages.html">Lineages</a></li><li class="breadcrumb-item"><a href="./ch-08-accounting.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Public Interest Data Science</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-1-pressures-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pressures and Values</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-02-installed-base.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Installed Base</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-03-enclosure-openness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure and Openness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-04-exemption-oversight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exemption and Oversight</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-05-erosion-ownership.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Erosion and Ownership</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-2-lineages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lineages</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-06-journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-07-law.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Law</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-08-accounting.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-09-planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-10-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Engineering</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-3-adjacent-conversations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Adjacent Conversations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-11-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-12-govtech-civic-tech.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-13-critical-data-studies-refusal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-4-genres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Genres</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-14-op-eds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Op-Eds</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-15-reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-16-research-proposals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Research Proposals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-17-testimony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testimony</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-18-public-comments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Public Comments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-19-archival-deposits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Archival Deposits</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-5-closing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Closing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-20-limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">The Limits of the Framework</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#audit-washing-exemption-in-oversights-clothes" id="toc-audit-washing-exemption-in-oversights-clothes" class="nav-link active" data-scroll-target="#audit-washing-exemption-in-oversights-clothes"><span class="header-section-number">8.1</span> Audit-washing: exemption in oversight’s clothes</a></li>
+  <li><a href="#tutorial-part-1-reading-the-federal-ledger" id="toc-tutorial-part-1-reading-the-federal-ledger" class="nav-link" data-scroll-target="#tutorial-part-1-reading-the-federal-ledger"><span class="header-section-number">8.2</span> Tutorial, part 1: reading the federal ledger</a></li>
+  <li><a href="#tutorial-part-2-a-disaggregated-audit-on-national-data" id="toc-tutorial-part-2-a-disaggregated-audit-on-national-data" class="nav-link" data-scroll-target="#tutorial-part-2-a-disaggregated-audit-on-national-data"><span class="header-section-number">8.3</span> Tutorial, part 2: a disaggregated audit on national data</a></li>
+  <li><a href="#tutorial-part-3-from-notebook-to-workpaper" id="toc-tutorial-part-3-from-notebook-to-workpaper" class="nav-link" data-scroll-target="#tutorial-part-3-from-notebook-to-workpaper"><span class="header-section-number">8.4</span> Tutorial, part 3: from notebook to workpaper</a></li>
+  <li><a href="#writing-the-audit-for-a-non-technical-reader" id="toc-writing-the-audit-for-a-non-technical-reader" class="nav-link" data-scroll-target="#writing-the-audit-for-a-non-technical-reader"><span class="header-section-number">8.5</span> Writing the audit for a non-technical reader</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">8.6</span> Exercises</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">8.7</span> Looking ahead</a></li>
+  <li><a href="#further-reading-and-resources" id="toc-further-reading-and-resources" class="nav-link" data-scroll-target="#further-reading-and-resources"><span class="header-section-number">8.8</span> Further Reading and Resources</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-08-accounting.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-2-lineages.html">Lineages</a></li><li class="breadcrumb-item"><a href="./ch-08-accounting.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-ch-08-accounting" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In October 1929, the New York Stock Exchange lost roughly a quarter of its value in a week. Congress spent the next several years arguing about why, and produced two statutes (the Securities Act of 1933 and the Securities Exchange Act of 1934) that required publicly traded companies to file financial statements examined by an independent auditor. The external audit went from a discretionary service a firm might commission to reassure its banker to a legally mandated act of public verification. The profession that performed it acquired, as part of the bargain, a public interest mandate. A certified public accountant’s client is the company paying the invoice. The duty of care runs to shareholders, lenders, regulators, and everyone downstream of the company’s claims about itself.</p>
+<p>That bargain has been renegotiated since. Arthur Andersen signed off on Enron’s financial statements for years before Enron collapsed in 2001; its consulting practice had been earning more from Enron than its audit practice, and its shredded workpapers became the emblem of audit failure. Congress responded with the Sarbanes-Oxley Act of 2002, which tightened independence rules and created the Public Company Accounting Oversight Board to audit the auditors. The mandate was recertified under closer supervision.</p>
+<p>Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> codes accounting as a lineage of <strong>oversight</strong>: it formalizes “legible records, standardized controls, and independent verification.” Engineering, its partner in this book’s account of <em>assurance</em>, adds testing and incident learning (<a href="ch-10-engineering.html" class="quarto-xref"><span>Chapter 10</span></a>). The pressure both answer is <strong>exemption</strong> (<a href="ch-04-exemption-oversight.html" class="quarto-xref"><span>Chapter 4</span></a>) in a particular costume. Lee <span class="citation" data-cites="leeProfessionalizationAccountancyHistory1995">(<a href="#ref-leeProfessionalizationAccountancyHistory1995" role="doc-biblioref">1995</a>)</span> describes accountancy’s professional history as “protecting the public interest in a self-interested way,” and Baker <span class="citation" data-cites="baker2005">(<a href="#ref-baker2005" role="doc-biblioref">2005</a>)</span> finds the profession’s own pronouncements invoking “the public” as a legitimating abstraction while serving the paying client. Algorithmic auditing is about to repeat that history unless it studies it.</p>
+<p>The natural level for this lineage is the <strong>nation</strong>. Securities law, the Government Accountability Office (GAO), and the inspectors general are federal institutions, and federal agencies now report thousands of uses of AI in their own operations. This chapter’s audit therefore runs on national data, and its frame is the federal government’s own ledger of the algorithms it uses.</p>
+<section id="audit-washing-exemption-in-oversights-clothes" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="audit-washing-exemption-in-oversights-clothes"><span class="header-section-number">8.1</span> Audit-washing: exemption in oversight’s clothes</h2>
+<p>Raji and colleagues <span class="citation" data-cites="raji2020">(<a href="#ref-raji2020" role="doc-biblioref">2020</a>)</span> propose an internal algorithmic auditing framework borrowed from accounting, aerospace, and medicine. It names five stages (scoping, mapping, artifact collection, testing, reflection) and insists on durable, dated workpapers. A good audit produces documents a reasonable outsider could read a year later and use to reconstruct what was examined, what was found, and what was decided. A bad one produces a one-paragraph attestation.</p>
+<p>The federal government has built the first layer of such a record. Executive Order 13960, signed in December 2020, required agencies to inventory their uses of artificial intelligence <span class="citation" data-cites="eo13960">(<a href="#ref-eo13960" role="doc-biblioref">Executive Office of the President 2020</a>)</span>. OMB Memorandum M-25-21, issued in April 2025, keeps the annual inventory and requires agencies to apply minimum risk-management practices to use cases they judge “high-impact” <span class="citation" data-cites="omb_m2521">(<a href="#ref-omb_m2521" role="doc-biblioref">Office of Management and Budget 2025</a>)</span>. The consolidated 2025 inventory, published on GitHub, lists 3,611 use cases from 41 agencies, 445 of them self-designated high-impact <span class="citation" data-cites="omb_inventory2025">(<a href="#ref-omb_inventory2025" role="doc-biblioref">Office of Management and Budget 2026</a>)</span>. The federal auditor has also written the standard such records should meet. GAO’s AI accountability framework organizes its key practices under governance, data, performance, and monitoring, with questions written for auditors and third-party assessors <span class="citation" data-cites="gao2021ai">(<a href="#ref-gao2021ai" role="doc-biblioref">US Government Accountability Office 2021</a>)</span>. When GAO examined the first round of inventories, it found that 15 of the 20 agencies reporting use cases had submitted incomplete or inaccurate information <span class="citation" data-cites="gao_24105980">(<a href="#ref-gao_24105980" role="doc-biblioref">US Government Accountability Office 2023</a>)</span>.</p>
+<p>Compare the city and the state. New York City’s Local Law 144, enforced since July 2023, requires employers using automated employment decision tools to commission an independent “bias audit” and publish a summary of selection rates and impact ratios by sex and race/ethnicity <span class="citation" data-cites="nyc_ll144">(<a href="#ref-nyc_ll144" role="doc-biblioref">NYC Department of Consumer and Worker Protection 2023</a>)</span>. Goodman and Trehu <span class="citation" data-cites="goodman2023">(<a href="#ref-goodman2023" role="doc-biblioref">2023</a>)</span> use it to illustrate <strong>audit-washing</strong>: audits whose institutional form looks like oversight but whose content is shallow enough to credential almost any system. Some published LL144 audits are serious. Others are short PDFs that say which tool was audited and little about which data, metric choices, or population. A regime that accepts both as compliant has granted an exemption while appearing to deny one.</p>
+<p>Colorado’s AI Act (SB 24-205) went further on paper, placing risk-management and impact-assessment duties on developers and deployers of “high-risk” systems <span class="citation" data-cites="colorado_sb24205">(<a href="#ref-colorado_sb24205" role="doc-biblioref">Colorado General Assembly 2024</a>)</span>. It never took effect. A 2025 special session delayed it, and in May 2026 the legislature repealed and reenacted it as SB 26-189, effective January 1, 2027, which drops the impact assessments and risk-management programs and keeps notices, explanations of adverse decisions, rights to correction and human review, and Attorney General enforcement <span class="citation" data-cites="colorado_sb26189">(<a href="#ref-colorado_sb26189" role="doc-biblioref">Colorado General Assembly 2026</a>)</span>. <!-- TODO: verify the status of the 2026 federal court challenge to the Colorado Act and whether any stay reaches SB 26-189. --> <a href="ch-07-law.html" class="quarto-xref"><span>Chapter 7</span></a> reads that sequence as state lawmaking. Here it is a lesson in assurance: audit duties are negotiated, delayed, and narrowed long before anyone audits anything.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In the Public Interest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Oversight</strong>, as <a href="ch-04-exemption-oversight.html" class="quarto-xref"><span>Chapter 4</span></a> develops it, needs authority and remedy that an audit cannot supply by itself. Accounting adds what an audit must supply on its own: dated workpapers, separation of audit from consulting, standards fixed before the numbers are seen, and a credential that can be revoked. An algorithmic audit that lacks all four performs oversight rather than providing it, and that performance is how exemption survives inside a regime that looks like regulation. The <strong>continuity</strong> element of the installed base (<a href="ch-02-installed-base.html" class="quarto-xref"><span>Chapter 2</span></a>) matters for the same reason: an audit that cannot be rerun next quarter because the analyst’s laptop was wiped is, for public purposes, an audit that did not happen. The specific claim of this chapter is that a manifest, a thresholds file, and a changelog are the minimum installed base for independent verification.</p>
+</div>
+</div>
+</section>
+<section id="tutorial-part-1-reading-the-federal-ledger" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="tutorial-part-1-reading-the-federal-ledger"><span class="header-section-number">8.2</span> Tutorial, part 1: reading the federal ledger</h2>
+<p>Begin where an auditor begins: with the client’s own books. The inventory is a CSV, and its high-impact columns record whether each minimum practice was carried out.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>INV <span class="op">=</span> (<span class="st">"https://raw.githubusercontent.com/ombegov/"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>       <span class="st">"2025-Federal-Agency-AI-Use-Case-Inventory/main/Data/"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>       <span class="st">"2025_individually_reported_AI_use_cases.csv"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>inv <span class="op">=</span> pd.read_csv(INV, low_memory<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(inv.shape)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (3611, 36)   (repository as of May 2026)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>hi <span class="op">=</span> inv.query(<span class="st">"is_high_impact == 'High-impact' and development_stage == 'Deployed'"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(hi), hi[<span class="st">"hi_assessment_completed"</span>].fillna(<span class="st">"(blank)"</span>).value_counts().to_dict())</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; 227 {'(blank)': 101, 'In-progress': 90, 'Yes': 36}</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hi.loc[hi[<span class="st">"hi_assessment_completed"</span>].isna(), <span class="st">"agency_name"</span>].value_counts().head(<span class="dv">2</span>))</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Department of Veterans Affairs           94</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; National Credit Union Administration     5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Of 227 deployed high-impact uses, 36 report a completed impact assessment. Do not write “101 have no assessment.” A blank is not a “No”; 94 of the blanks come from one agency, which suggests a reporting format rather than 94 separate decisions. An auditor’s next move is a request for the agency’s own inventory and its supporting documents, not a headline.</p>
+</section>
+<section id="tutorial-part-2-a-disaggregated-audit-on-national-data" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="tutorial-part-2-a-disaggregated-audit-on-national-data"><span class="header-section-number">8.3</span> Tutorial, part 2: a disaggregated audit on national data</h2>
+<p>Gender Shades <span class="citation" data-cites="buolamwini2018">(<a href="#ref-buolamwini2018" role="doc-biblioref">Buolamwini and Gebru 2018</a>)</span> showed that a single accuracy number can hide large disparities across intersectional groups. The disaggregated audit is the technique that refuses the single number. You will run one on <strong>folktables</strong> <span class="citation" data-cites="ding2021">(<a href="#ref-ding2021" role="doc-biblioref">Ding et al. 2021</a>)</span>, which packages American Community Survey (ACS) microdata into prediction tasks, using <strong>fairlearn</strong> for disaggregated metrics. The task, <code>ACSIncome</code>, predicts whether a working adult’s income exceeds $50,000. It is deliberately banal. Load it state by state, keeping only the task’s columns, so the national file fits on a laptop.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pip install folktables fairlearn scikit-learn pandas pyyaml joblib</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> folktables <span class="im">import</span> ACSDataSource, ACSIncome, state_list</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> ACSDataSource(survey_year<span class="op">=</span><span class="st">"2018"</span>, horizon<span class="op">=</span><span class="st">"1-Year"</span>, survey<span class="op">=</span><span class="st">"person"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>frames <span class="op">=</span> []</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> st <span class="kw">in</span> state_list:                          <span class="co"># 50 states and Puerto Rico</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    raw <span class="op">=</span> source.get_data(states<span class="op">=</span>[st], download<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    X, y, _ <span class="op">=</span> ACSIncome.df_to_pandas(raw)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    frames.append(X.assign(label<span class="op">=</span>y.squeeze().to_numpy(), state<span class="op">=</span>st))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>acs <span class="op">=</span> pd.concat(frames, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(acs.shape, <span class="bu">round</span>(acs[<span class="st">"label"</span>].mean(), <span class="dv">3</span>))</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (1664500, 12) 0.369</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The first run downloads about 2 GB. <code>state_list</code> has no District of Columbia, so “national” here means fifty states and Puerto Rico. Write that into the manifest. Now recode race from the ACS <code>RAC1P</code> code and sex from <code>SEX</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>RAC1P <span class="op">=</span> {<span class="dv">1</span>: <span class="st">"White"</span>, <span class="dv">2</span>: <span class="st">"Black"</span>, <span class="dv">3</span>: <span class="st">"AIAN"</span>, <span class="dv">4</span>: <span class="st">"AIAN"</span>, <span class="dv">5</span>: <span class="st">"AIAN"</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>         <span class="dv">6</span>: <span class="st">"Asian"</span>, <span class="dv">7</span>: <span class="st">"NHPI"</span>, <span class="dv">8</span>: <span class="st">"Some other race"</span>, <span class="dv">9</span>: <span class="st">"Two or more"</span>}</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>race <span class="op">=</span> acs[<span class="st">"RAC1P"</span>].<span class="bu">map</span>(RAC1P).fillna(<span class="st">"Unknown"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>sex <span class="op">=</span> acs[<span class="st">"SEX"</span>].<span class="bu">map</span>({<span class="dv">1</span>: <span class="st">"Male"</span>, <span class="dv">2</span>: <span class="st">"Female"</span>})</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>features <span class="op">=</span> acs.drop(columns<span class="op">=</span>[<span class="st">"label"</span>, <span class="st">"state"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Check every key against the ACS PUMS data dictionary for your vintage. Codes 3 through 5 are three American Indian and Alaska Native categories, which this map collapses. Hispanic origin is a separate variable (<code>HISP</code>) and is not in the task. <code>RAC1P</code> and <code>SEX</code> are also model features in <code>ACSIncome</code>, which is itself a choice an auditor should question. Write all of these down. Then fit the simplest defensible model:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>X_tr, X_te, y_tr, y_te, r_tr, r_te, s_tr, s_te, st_tr, st_te <span class="op">=</span> train_test_split(</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    features, acs[<span class="st">"label"</span>], race, sex, acs[<span class="st">"state"</span>],</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>, stratify<span class="op">=</span>acs[<span class="st">"label"</span>])</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> make_pipeline(StandardScaler(), LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>))</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>model.fit(X_tr, y_tr)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X_te)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The model is crude (occupation and birthplace codes are treated as numbers), which is fine: the audit should be method-agnostic.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fairlearn.metrics <span class="im">import</span> (MetricFrame, count, selection_rate,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    false_positive_rate, false_negative_rate,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    demographic_parity_difference, equalized_odds_difference)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>sensitive <span class="op">=</span> pd.DataFrame({<span class="st">"race"</span>: r_te, <span class="st">"sex"</span>: s_te})</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>mf <span class="op">=</span> MetricFrame(</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    metrics<span class="op">=</span>{<span class="st">"n"</span>: count, <span class="st">"accuracy"</span>: accuracy_score,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>             <span class="st">"selection_rate"</span>: selection_rate,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>             <span class="st">"fpr"</span>: false_positive_rate, <span class="st">"fnr"</span>: false_negative_rate},</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    y_true<span class="op">=</span>y_te, y_pred<span class="op">=</span>y_pred, sensitive_features<span class="op">=</span>sensitive)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mf.by_group.sort_values(<span class="st">"n"</span>).<span class="bu">round</span>(<span class="dv">3</span>))</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;                            n  accuracy  selection_rate    fpr    fnr</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; NHPI            Female  436.0     0.846           0.128  0.057  0.566</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; NHPI            Male    450.0     0.758           0.282  0.155  0.436</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; ...                                (14 cells in all)</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; White           Male 205533.0     0.754           0.461  0.224  0.271</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>dpd <span class="op">=</span> demographic_parity_difference(y_te, y_pred, sensitive_features<span class="op">=</span>sensitive)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>eod <span class="op">=</span> equalized_odds_difference(y_te, y_pred, sensitive_features<span class="op">=</span>sensitive)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"DPD </span><span class="sc">{</span>dpd<span class="sc">:.3f}</span><span class="ss">  EOD </span><span class="sc">{</span>eod<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; DPD 0.481  EOD 0.545</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These numbers come from one run with fairlearn 0.14.0, scikit-learn 1.9.1, and pandas 3.0.6. The two summaries are not “the” fairness score. Each is the gap between two cells: Asian men, selected at 0.541, and women of some other race, at 0.061, for parity; the false-negative rates of the same two groups, 0.184 and 0.729, for equalized odds. <code>MetricFrame.by_group</code> is the centerpiece, and its <code>n</code> column tells your reader whether any other number means anything.</p>
+<p>A national auditor also asks whether one model serves every state equally. Pass <code>st_te</code> as the sensitive feature and the gap in accuracy between the best and worst state is 0.073 (Utah at 0.809, Wyoming at 0.736).</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Missing Manual
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>fairlearn</code> will not tell you which parity metric is defensible. Demographic parity asks whether positive predictions are allocated at the same rate across groups; equalized odds asks whether error rates are balanced given the true label. With unequal base rates they cannot both be satisfied, which is a mathematical result, not a political one. Two quieter surprises. First, <code>demographic_parity_difference</code> is the gap between the highest and lowest group, computed over every cell you pass in. Cross state, race, and sex and you get 714 cells, 244 of them with fewer than thirty people, and a parity difference of exactly 1.0: somewhere a tiny cell had everyone selected and another had no one. The headline is set by your smallest group. Second, nothing in the library warns you about small cells. Report <code>n</code> beside every metric, suppress cells below a documented minimum, and say in prose which groups the audit cannot speak to.</p>
+</div>
+</div>
+<p>Save the evaluation set and the model so the workpaper can verify them:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>X_te.assign(label<span class="op">=</span>y_te.values, race<span class="op">=</span>r_te.values, sex<span class="op">=</span>s_te.values,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>            state<span class="op">=</span>st_te.values).to_csv(<span class="st">"data/acs_2018_test.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>joblib.dump(model, <span class="st">"models/logit-v1.joblib"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="tutorial-part-3-from-notebook-to-workpaper" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="tutorial-part-3-from-notebook-to-workpaper"><span class="header-section-number">8.4</span> Tutorial, part 3: from notebook to workpaper</h2>
+<p>A notebook produced those numbers once. An audit has to produce them on demand, with a record of every decision and a log of what changed between runs. Build this layout:</p>
+<pre><code>audit-pipeline/
+├── CHANGELOG.md   Makefile   manifest.yaml   thresholds.yaml   audit.py
+├── data/      models/      reports/</code></pre>
+<p><code>manifest.yaml</code> is the input contract. A reviewer a year from now should be able to reconstruct the run without guessing.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">audit</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"ACSIncome national disaggregated audit"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run_id</span><span class="kw">:</span><span class="at"> </span><span class="st">"2027-03-04-001"</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">analyst</span><span class="kw">:</span><span class="at"> </span><span class="st">"your.name@colorado.edu"</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dataset</span><span class="kw">:</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">source</span><span class="kw">:</span><span class="at"> </span><span class="st">"ACS PUMS 2018 1-Year, 50 states and Puerto Rico, via folktables ACSIncome"</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">local_path</span><span class="kw">:</span><span class="at"> </span><span class="st">"data/acs_2018_test.csv"</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sha256</span><span class="kw">:</span><span class="at"> </span><span class="st">"&lt;output of sha256sum&gt;"</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">retrieved_on</span><span class="kw">:</span><span class="at"> </span><span class="st">"2027-03-04"</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">recoding</span><span class="kw">:</span><span class="at"> </span><span class="st">"RAC1P 3-5 collapsed to AIAN; HISP not used; DC not in state_list"</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">model</span><span class="kw">:</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">path</span><span class="kw">:</span><span class="at"> </span><span class="st">"models/logit-v1.joblib"</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sha256</span><span class="kw">:</span><span class="at"> </span><span class="st">"&lt;output of sha256sum&gt;"</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"StandardScaler + LogisticRegression, random_state=42"</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="fu">protected_attributes</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">race</span><span class="kw">,</span><span class="at"> sex</span><span class="kw">]</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="fu">strata</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">state</span><span class="kw">]</span><span class="co">           # carried in the file, never passed to the model</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">min_cell_size</span><span class="kw">:</span><span class="at"> </span><span class="dv">100</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="fu">thresholds_file</span><span class="kw">:</span><span class="at"> </span><span class="st">"thresholds.yaml"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>thresholds.yaml</code> carries the decision rules separately, because they change on a different cadence and need their own authority:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">demographic_parity_difference</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">warn</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.05</span><span class="kw">,</span><span class="at"> </span><span class="fu">fail</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.10</span><span class="kw">}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">equalized_odds_difference</span><span class="kw">:</span><span class="at">     </span><span class="kw">{</span><span class="fu">warn</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.05</span><span class="kw">,</span><span class="at"> </span><span class="fu">fail</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.10</span><span class="kw">}</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">adopted</span><span class="kw">:</span><span class="at"> </span><span class="st">"2027-03-04"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">authority</span><span class="kw">: </span><span class="ch">&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  Teaching values. A real audit cites the statute, rule, policy,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  or contract clause that set them, and who may change them.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Most algorithmic audits skip the <code>authority</code> field, which is how thresholds drift without anyone deciding to move them.</p>
+<p><code>audit.py</code> reads the manifest, verifies the hashes, runs the disaggregation, applies the thresholds, and writes a dated report:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hashlib, json, pathlib, sys</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime, timezone</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib, pandas <span class="im">as</span> pd, yaml</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fairlearn.metrics <span class="im">import</span> (MetricFrame, count, selection_rate,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    false_positive_rate, false_negative_rate,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    demographic_parity_difference, equalized_odds_difference)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>SUMMARIES <span class="op">=</span> {<span class="st">"demographic_parity_difference"</span>: demographic_parity_difference,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>             <span class="st">"equalized_odds_difference"</span>: equalized_odds_difference}</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sha256_of(path):</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> hashlib.sha256(pathlib.Path(path).read_bytes()).hexdigest()</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> verify(m):</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    pairs <span class="op">=</span> [(<span class="st">"dataset"</span>, m[<span class="st">"dataset"</span>][<span class="st">"local_path"</span>]), (<span class="st">"model"</span>, m[<span class="st">"model"</span>][<span class="st">"path"</span>])]</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    bad <span class="op">=</span> [k <span class="cf">for</span> k, p <span class="kw">in</span> pairs <span class="cf">if</span> sha256_of(p) <span class="op">!=</span> m[k][<span class="st">"sha256"</span>]]</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> bad:</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>        sys.exit(<span class="ss">f"hash mismatch: </span><span class="sc">{</span>bad<span class="sc">}</span><span class="ss">"</span>)      <span class="co"># no report for unverified inputs</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> run_audit(df, model, m):</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    attrs <span class="op">=</span> m[<span class="st">"protected_attributes"</span>]</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    y_true <span class="op">=</span> df[<span class="st">"label"</span>]</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">"label"</span>] <span class="op">+</span> attrs <span class="op">+</span> m.get(<span class="st">"strata"</span>, []))</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    y_pred <span class="op">=</span> model.predict(X)</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    mf <span class="op">=</span> MetricFrame(metrics<span class="op">=</span>{<span class="st">"n"</span>: count, <span class="st">"selection_rate"</span>: selection_rate,</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>                              <span class="st">"fpr"</span>: false_positive_rate, <span class="st">"fnr"</span>: false_negative_rate},</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>                     y_true<span class="op">=</span>y_true, y_pred<span class="op">=</span>y_pred, sensitive_features<span class="op">=</span>df[attrs])</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    by_group <span class="op">=</span> mf.by_group[mf.by_group[<span class="st">"n"</span>] <span class="op">&gt;=</span> m[<span class="st">"min_cell_size"</span>]]</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>    summaries <span class="op">=</span> {k: <span class="bu">float</span>(f(y_true, y_pred, sensitive_features<span class="op">=</span>df[attrs]))</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>                 <span class="cf">for</span> k, f <span class="kw">in</span> SUMMARIES.items()}</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> by_group, summaries</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> evaluate(summaries, thresholds):</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> []</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, value <span class="kw">in</span> summaries.items():</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>        rule <span class="op">=</span> thresholds[name]</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>        level <span class="op">=</span> (<span class="st">"FAIL"</span> <span class="cf">if</span> value <span class="op">&gt;=</span> rule[<span class="st">"fail"</span>]</span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>                 <span class="cf">else</span> <span class="st">"WARN"</span> <span class="cf">if</span> value <span class="op">&gt;=</span> rule[<span class="st">"warn"</span>] <span class="cf">else</span> <span class="st">"PASS"</span>)</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>        out.append({<span class="st">"metric"</span>: name, <span class="st">"value"</span>: <span class="bu">round</span>(value, <span class="dv">4</span>), <span class="st">"level"</span>: level})</span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> out</span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> yaml.safe_load(<span class="bu">open</span>(<span class="st">"manifest.yaml"</span>))</span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>    thresholds <span class="op">=</span> yaml.safe_load(<span class="bu">open</span>(m[<span class="st">"thresholds_file"</span>]))</span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>    verify(m)</span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_csv(m[<span class="st">"dataset"</span>][<span class="st">"local_path"</span>])</span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>    by_group, summaries <span class="op">=</span> run_audit(df, joblib.load(m[<span class="st">"model"</span>][<span class="st">"path"</span>]), m)</span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>    report <span class="op">=</span> {<span class="st">"run_id"</span>: m[<span class="st">"audit"</span>][<span class="st">"run_id"</span>],</span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>              <span class="st">"generated_at"</span>: datetime.now(timezone.utc).isoformat(),</span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>              <span class="st">"manifest"</span>: m, <span class="st">"findings"</span>: evaluate(summaries, thresholds),</span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>              <span class="st">"by_group"</span>: by_group.reset_index().to_dict(orient<span class="op">=</span><span class="st">"records"</span>)}</span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>    pathlib.Path(<span class="st">"reports"</span>).mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> pathlib.Path(<span class="ss">f"reports/</span><span class="sc">{</span>m[<span class="st">'audit'</span>][<span class="st">'run_id'</span>]<span class="sc">}</span><span class="ss">.json"</span>)</span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>    out.write_text(json.dumps(report, indent<span class="op">=</span><span class="dv">2</span>, default<span class="op">=</span><span class="bu">str</span>))</span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(json.dumps(report[<span class="st">"findings"</span>], indent<span class="op">=</span><span class="dv">2</span>))</span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a>    main()</span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; [{"metric": "demographic_parity_difference", "value": 0.4806, "level": "FAIL"},</span></span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;  {"metric": "equalized_odds_difference", "value": 0.5449, "level": "FAIL"}]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The script refuses to run on inputs whose hashes do not match the manifest, suppresses small cells by a rule written down in advance, and stamps the run in UTC. Each behavior is borrowed from financial audit practice, where a workpaper exists to be legible to someone who was not in the room.</p>
+<p>The <code>Makefile</code> is the one-command interface: an <code>audit</code> target that runs <code>python audit.py</code> and a <code>clean</code> target that removes <code>reports/*.json</code>. If a reviewer cannot type <code>make audit</code> and get a report, the pipeline is not reproducible. <code>clean</code> removes generated reports, never inputs. You do not delete workpapers. You archive them. <code>CHANGELOG.md</code> is the narrative companion to the numbers: one dated entry per <code>run_id</code>, recording the input hashes, the threshold adoption date, the <code>fairlearn</code> and <code>scikit-learn</code> versions, and any change in findings with its root cause.</p>
+<p>Commit the directory, run <code>make audit</code>, and read the report for what it does not say: which columns were features, whether the model was evaluated on a holdout. A week later, update <code>run_id</code> and run again. Usually nothing moves. Sometimes a library release changes a default and a metric shifts in the third decimal place. The discipline is not preventing drift. It is noticing it, logging it, and deciding whether it changes the conclusion.</p>
+</section>
+<section id="writing-the-audit-for-a-non-technical-reader" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="writing-the-audit-for-a-non-technical-reader"><span class="header-section-number">8.5</span> Writing the audit for a non-technical reader</h2>
+<p>The JSON report is raw material. The audit is what you write around it, and it is the seed of the report genre in <a href="ch-15-reports.html" class="quarto-xref"><span>Chapter 15</span></a>. Use four sections.</p>
+<ol type="1">
+<li><strong>What the model is, and is not.</strong> A logistic regression trained on one year of national ACS data. A teaching artifact, not a procurement recommendation.</li>
+<li><strong>Who is in the data.</strong> The per-cell counts, with the smallest cells named in prose, including those below <code>min_cell_size</code> that the audit cannot speak to. Audits that silently drop small cells pretend to a completeness they lack.</li>
+<li><strong>What the metrics show.</strong> The disaggregated table with a plain-language reading of each gap, its threshold level, and its direction, plus the by-state spread.</li>
+<li><strong>What the audit rests on.</strong> The recoding, the omitted Hispanic-origin variable, the missing District of Columbia, self-reported and sampled survey data, a single vintage and a single holdout. Name each choice and how a second auditor might make it differently.</li>
+</ol>
+<p>Section 4 is where audit-washing hides. If the next auditor cannot reproduce your table from your manifest, the audit is not an instrument of oversight. It is a press release.</p>
+</section>
+<section id="exercises" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">8.6</span> Exercises</h2>
+<p><strong>Exercise 8.1 (Guided, laptop, real public data).</strong> Run the national <code>ACSIncome</code> audit above end to end, then build the <code>audit-pipeline/</code> directory, fill <code>manifest.yaml</code> with real hashes from <code>sha256sum</code>, commit it, and run <code>make audit</code>. Submit the repository URL and the generated report. If your numbers differ from the chapter’s, record your library versions and say where the difference enters.</p>
+<p><strong>Exercise 8.2 (Guided).</strong> One week later, rerun with a new <code>run_id</code>. Write a changelog entry stating the exact <code>fairlearn</code> and <code>scikit-learn</code> versions and what changed, even if nothing did.</p>
+<p><strong>Exercise 8.3 (Analytic, real public data).</strong> Load the 2025 federal AI use case inventory. For one agency with at least five high-impact use cases, tabulate every <code>hi_</code> column. In 400 words, assess the agency’s entries against the four principles of GAO’s accountability framework <span class="citation" data-cites="gao2021ai">(<a href="#ref-gao2021ai" role="doc-biblioref">US Government Accountability Office 2021</a>)</span>. Which workpaper is missing? Distinguish blanks from answers, and name the document you would request to resolve each blank.</p>
+<p><strong>Exercise 8.4 (Comparative).</strong> In 500 words, compare a published LL144 bias audit summary, the Colorado Act as reenacted by SB 26-189, and M-25-21’s high-impact practices on three dimensions: which systems are covered, who performs the assessment, and what is published. Quote each text. Is the LL144 summary audit-washing in Goodman and Trehu’s <span class="citation" data-cites="goodman2023">(<a href="#ref-goodman2023" role="doc-biblioref">2023</a>)</span> sense? Say what evidence would change your verdict.</p>
+<p><strong>Exercise 8.5 (Open-ended; submittable artifact).</strong> Extend your pipeline with a second folktables task (<code>ACSEmployment</code> or <code>ACSPublicCoverage</code>) or a second sensitive attribute, still national. Rewrite <code>thresholds.yaml</code> so its <code>authority</code> field names a real federal body and the instrument it could use to adopt such thresholds (an OMB memorandum, a NIST standard, a GAO recommendation). Then write the four-section audit memo (about 800 words). It becomes the methods and findings of a report addressed to that body (<a href="ch-15-reports.html" class="quarto-xref"><span>Chapter 15</span></a>).</p>
+</section>
+<section id="looking-ahead" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">8.7</span> Looking ahead</h2>
+<p>A workpaper records what you did. It does not prove that the code does what the workpaper says. <a href="ch-10-engineering.html" class="quarto-xref"><span>Chapter 10</span></a> puts this pipeline under test: shape and range checks on a fixture, a regression snapshot, a deliberately introduced bug, a post-incident review, and continuous integration. Engineering also asks who keeps the record when the audited party will not, which is where worker observatories enter.</p>
+</section>
+<section id="further-reading-and-resources" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="further-reading-and-resources"><span class="header-section-number">8.8</span> Further Reading and Resources</h2>
+<ul>
+<li>C. Richard Baker (2005), “<a href="https://doi.org/10.1108/09513570510620510">What is the meaning of ‘the public interest’? Examining the ideology of the American public accounting profession</a>,” <em>Accounting, Auditing &amp; Accountability Journal</em> 18(5). The close reading of AICPA language this chapter leans on.</li>
+<li>Inioluwa Deborah Raji et al.&nbsp;(2020), “<a href="https://doi.org/10.1145/3351095.3372873">Closing the AI accountability gap</a>,” <em>Proceedings of FAccT 2020</em>. Audit as a practice rather than a metric.</li>
+<li>Bryce Goodman and Julia Trehu (2023), “<a href="https://doi.org/10.2139/ssrn.4227350">AI audit washing and accountability</a>.” The term in its useful form.</li>
+<li>U.S. GAO (2021), <em>Artificial Intelligence: An Accountability Framework for Federal Agencies and Other Entities</em>, GAO-21-519SP: <a href="https://www.gao.gov/products/gao-21-519sp" class="uri">https://www.gao.gov/products/gao-21-519sp</a>. The federal auditor’s own questions for AI.</li>
+<li>OMB, 2025 Federal Agency AI Use Case Inventory: <a href="https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory" class="uri">https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory</a>. Read the data dictionary and standardization report in <code>Validation/</code> before you count anything.</li>
+<li>NYC Department of Consumer and Worker Protection, Local Law 144 page: <a href="https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page" class="uri">https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page</a>. Read the final rule, not only the FAQ.</li>
+<li>Colorado General Assembly, SB 26-189: <a href="https://leg.colorado.gov/bills/sb26-189" class="uri">https://leg.colorado.gov/bills/sb26-189</a>, with SB 24-205 at <a href="https://leg.colorado.gov/bills/sb24-205" class="uri">https://leg.colorado.gov/bills/sb24-205</a>. Read the two side by side.</li>
+<li><code>folktables</code> repository and paper: <a href="https://github.com/socialfoundations/folktables" class="uri">https://github.com/socialfoundations/folktables</a>. Read the documentation on the limits of ACS tasks as benchmarks.</li>
+<li><code>fairlearn</code> user guide: <a href="https://fairlearn.org/main/user_guide/" class="uri">https://fairlearn.org/main/user_guide/</a>. The sections on <code>MetricFrame</code> and on disagreement between parity metrics.</li>
+</ul>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-baker2005" class="csl-entry" role="listitem">
+Baker, C. Richard. 2005. <span>“What Is the Meaning of <span><span>‘the Public Interest’</span>?</span> Examining the Ideology of the <span>American</span> Public Accounting Profession.”</span> <em>Accounting, Auditing <span>&amp;</span> Accountability Journal</em> 18 (5): 690–703. <a href="https://doi.org/10.1108/09513570510620510">https://doi.org/10.1108/09513570510620510</a>.
+</div>
+<div id="ref-buolamwini2018" class="csl-entry" role="listitem">
+Buolamwini, Joy, and Timnit Gebru. 2018. <span>“Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification.”</span> In <em>Proceedings of the 1st Conference on Fairness, Accountability, and Transparency</em>, 77–91. <a href="https://proceedings.mlr.press/v81/buolamwini18a.html">https://proceedings.mlr.press/v81/buolamwini18a.html</a>.
+</div>
+<div id="ref-colorado_sb24205" class="csl-entry" role="listitem">
+Colorado General Assembly. 2024. <span>“<span>SB</span> 24-205: Consumer Protections for Artificial Intelligence.”</span> Colorado General Assembly. <a href="https://leg.colorado.gov/bills/sb24-205">https://leg.colorado.gov/bills/sb24-205</a>.
+</div>
+<div id="ref-colorado_sb26189" class="csl-entry" role="listitem">
+———. 2026. <span>“<span>SB</span> 26-189: Automated Decision-Making Technology.”</span> Colorado General Assembly. <a href="https://leg.colorado.gov/bills/sb26-189">https://leg.colorado.gov/bills/sb26-189</a>.
+</div>
+<div id="ref-ding2021" class="csl-entry" role="listitem">
+Ding, Frances, Moritz Hardt, John Miller, and Ludwig Schmidt. 2021. <span>“Retiring Adult: New Datasets for Fair Machine Learning.”</span> In <em>Advances in Neural Information Processing Systems</em>. Vol. 34. <a href="https://github.com/socialfoundations/folktables">https://github.com/socialfoundations/folktables</a>.
+</div>
+<div id="ref-eo13960" class="csl-entry" role="listitem">
+Executive Office of the President. 2020. <span>“Executive Order 13960: Promoting the Use of Trustworthy Artificial Intelligence in the Federal Government.”</span> Federal Register 85(236): 78939. <a href="https://www.govinfo.gov/content/pkg/FR-2020-12-08/pdf/2020-27065.pdf">https://www.govinfo.gov/content/pkg/FR-2020-12-08/pdf/2020-27065.pdf</a>.
+</div>
+<div id="ref-goodman2023" class="csl-entry" role="listitem">
+Goodman, Bryce, and Julia Trehu. 2023. <span>“<span>AI</span> Audit Washing and Accountability.”</span> <em>SSRN</em>. <a href="https://doi.org/10.2139/ssrn.4227350">https://doi.org/10.2139/ssrn.4227350</a>.
+</div>
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Under Review</em>.
+</div>
+<div id="ref-leeProfessionalizationAccountancyHistory1995" class="csl-entry" role="listitem">
+Lee, Tom. 1995. <span>“The Professionalization of Accountancy: A History of Protecting the Public Interest in a Self-Interested Way.”</span> <em>Accounting, Auditing &amp; Accountability Journal</em> 8 (4): 48–69.
+</div>
+<div id="ref-nyc_ll144" class="csl-entry" role="listitem">
+NYC Department of Consumer and Worker Protection. 2023. <span>“Automated Employment Decision Tools (<span>AEDT</span>).”</span> City of New York. <a href="https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page">https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page</a>.
+</div>
+<div id="ref-omb_m2521" class="csl-entry" role="listitem">
+Office of Management and Budget. 2025. <span>“Accelerating Federal Use of <span>AI</span> Through Innovation, Governance, and Public Trust (<span>M-25-21</span>).”</span> Executive Office of the President. <a href="https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf">https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf</a>.
+</div>
+<div id="ref-omb_inventory2025" class="csl-entry" role="listitem">
+———. 2026. <span>“2025 Federal Agency <span>AI</span> Use Case Inventory.”</span> GitHub repository. <a href="https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory">https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory</a>.
+</div>
+<div id="ref-raji2020" class="csl-entry" role="listitem">
+Raji, Inioluwa Deborah, Andrew Smart, Rebecca N. White, Margaret Mitchell, Timnit Gebru, Ben Hutchinson, Jamila Smith-Loud, Daniel Theron, and Parker Barnes. 2020. <span>“Closing the <span>AI</span> Accountability Gap: Defining an End-to-End Framework for Internal Algorithmic Auditing.”</span> In <em>Proceedings of FAccT 2020</em>, 33–44. <a href="https://doi.org/10.1145/3351095.3372873">https://doi.org/10.1145/3351095.3372873</a>.
+</div>
+<div id="ref-gao2021ai" class="csl-entry" role="listitem">
+US Government Accountability Office. 2021. <span>“Artificial Intelligence: An Accountability Framework for Federal Agencies and Other Entities.”</span> GAO-21-519SP. US Government Accountability Office. <a href="https://www.gao.gov/products/gao-21-519sp">https://www.gao.gov/products/gao-21-519sp</a>.
+</div>
+<div id="ref-gao_24105980" class="csl-entry" role="listitem">
+———. 2023. <span>“Artificial Intelligence: Agencies Have Begun Implementation but Need to Complete Key Requirements.”</span> GAO-24-105980. US Government Accountability Office. <a href="https://www.gao.gov/products/gao-24-105980">https://www.gao.gov/products/gao-24-105980</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch-07-law.html" class="pagination-link" aria-label="Law">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Law</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch-09-planning.html" class="pagination-link" aria-label="Planning">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Planning</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb11" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Accounting and Auditing {#sec-ch-08-accounting}</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>In October 1929, the New York Stock Exchange lost roughly a quarter of its value in a week. Congress spent the next several years arguing about why, and produced two statutes (the Securities Act of 1933 and the Securities Exchange Act of 1934) that required publicly traded companies to file financial statements examined by an independent auditor. The external audit went from a discretionary service a firm might commission to reassure its banker to a legally mandated act of public verification. The profession that performed it acquired, as part of the bargain, a public interest mandate. A certified public accountant's client is the company paying the invoice. The duty of care runs to shareholders, lenders, regulators, and everyone downstream of the company's claims about itself.</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>That bargain has been renegotiated since. Arthur Andersen signed off on Enron's financial statements for years before Enron collapsed in 2001; its consulting practice had been earning more from Enron than its audit practice, and its shredded workpapers became the emblem of audit failure. Congress responded with the Sarbanes-Oxley Act of 2002, which tightened independence rules and created the Public Company Accounting Oversight Board to audit the auditors. The mandate was recertified under closer supervision.</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> codes accounting as a lineage of **oversight**: it formalizes "legible records, standardized controls, and independent verification." Engineering, its partner in this book's account of *assurance*, adds testing and incident learning (@sec-ch-10-engineering). The pressure both answer is **exemption** (@sec-ch-04-exemption-oversight) in a particular costume. Lee <span class="co">[</span><span class="ot">-@leeProfessionalizationAccountancyHistory1995</span><span class="co">]</span> describes accountancy's professional history as "protecting the public interest in a self-interested way," and Baker <span class="co">[</span><span class="ot">-@baker2005</span><span class="co">]</span> finds the profession's own pronouncements invoking "the public" as a legitimating abstraction while serving the paying client. Algorithmic auditing is about to repeat that history unless it studies it.</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>The natural level for this lineage is the **nation**. Securities law, the Government Accountability Office (GAO), and the inspectors general are federal institutions, and federal agencies now report thousands of uses of AI in their own operations. This chapter's audit therefore runs on national data, and its frame is the federal government's own ledger of the algorithms it uses.</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Audit-washing: exemption in oversight's clothes</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>Raji and colleagues <span class="co">[</span><span class="ot">-@raji2020</span><span class="co">]</span> propose an internal algorithmic auditing framework borrowed from accounting, aerospace, and medicine. It names five stages (scoping, mapping, artifact collection, testing, reflection) and insists on durable, dated workpapers. A good audit produces documents a reasonable outsider could read a year later and use to reconstruct what was examined, what was found, and what was decided. A bad one produces a one-paragraph attestation.</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>The federal government has built the first layer of such a record. Executive Order 13960, signed in December 2020, required agencies to inventory their uses of artificial intelligence <span class="co">[</span><span class="ot">@eo13960</span><span class="co">]</span>. OMB Memorandum M-25-21, issued in April 2025, keeps the annual inventory and requires agencies to apply minimum risk-management practices to use cases they judge "high-impact" <span class="co">[</span><span class="ot">@omb_m2521</span><span class="co">]</span>. The consolidated 2025 inventory, published on GitHub, lists 3,611 use cases from 41 agencies, 445 of them self-designated high-impact <span class="co">[</span><span class="ot">@omb_inventory2025</span><span class="co">]</span>. The federal auditor has also written the standard such records should meet. GAO's AI accountability framework organizes its key practices under governance, data, performance, and monitoring, with questions written for auditors and third-party assessors <span class="co">[</span><span class="ot">@gao2021ai</span><span class="co">]</span>. When GAO examined the first round of inventories, it found that 15 of the 20 agencies reporting use cases had submitted incomplete or inaccurate information <span class="co">[</span><span class="ot">@gao_24105980</span><span class="co">]</span>.</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>Compare the city and the state. New York City's Local Law 144, enforced since July 2023, requires employers using automated employment decision tools to commission an independent "bias audit" and publish a summary of selection rates and impact ratios by sex and race/ethnicity <span class="co">[</span><span class="ot">@nyc_ll144</span><span class="co">]</span>. Goodman and Trehu <span class="co">[</span><span class="ot">-@goodman2023</span><span class="co">]</span> use it to illustrate **audit-washing**: audits whose institutional form looks like oversight but whose content is shallow enough to credential almost any system. Some published LL144 audits are serious. Others are short PDFs that say which tool was audited and little about which data, metric choices, or population. A regime that accepts both as compliant has granted an exemption while appearing to deny one.</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>Colorado's AI Act (SB 24-205) went further on paper, placing risk-management and impact-assessment duties on developers and deployers of "high-risk" systems <span class="co">[</span><span class="ot">@colorado_sb24205</span><span class="co">]</span>. It never took effect. A 2025 special session delayed it, and in May 2026 the legislature repealed and reenacted it as SB 26-189, effective January 1, 2027, which drops the impact assessments and risk-management programs and keeps notices, explanations of adverse decisions, rights to correction and human review, and Attorney General enforcement <span class="co">[</span><span class="ot">@colorado_sb26189</span><span class="co">]</span>. <span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: verify the status of the 2026 federal court challenge to the Colorado Act and whether any stay reaches SB 26-189. --&gt;</span> @sec-ch-07-law reads that sequence as state lawmaking. Here it is a lesson in assurance: audit duties are negotiated, delayed, and narrowed long before anyone audits anything.</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="In the Public Interest"}</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>**Oversight**, as @sec-ch-04-exemption-oversight develops it, needs authority and remedy that an audit cannot supply by itself. Accounting adds what an audit must supply on its own: dated workpapers, separation of audit from consulting, standards fixed before the numbers are seen, and a credential that can be revoked. An algorithmic audit that lacks all four performs oversight rather than providing it, and that performance is how exemption survives inside a regime that looks like regulation. The **continuity** element of the installed base (@sec-ch-02-installed-base) matters for the same reason: an audit that cannot be rerun next quarter because the analyst's laptop was wiped is, for public purposes, an audit that did not happen. The specific claim of this chapter is that a manifest, a thresholds file, and a changelog are the minimum installed base for independent verification.</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tutorial, part 1: reading the federal ledger</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>Begin where an auditor begins: with the client's own books. The inventory is a CSV, and its high-impact columns record whether each minimum practice was carried out.</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>INV <span class="op">=</span> (<span class="st">"https://raw.githubusercontent.com/ombegov/"</span></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>       <span class="st">"2025-Federal-Agency-AI-Use-Case-Inventory/main/Data/"</span></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>       <span class="st">"2025_individually_reported_AI_use_cases.csv"</span>)</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>inv <span class="op">=</span> pd.read_csv(INV, low_memory<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(inv.shape)</span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (3611, 36)   (repository as of May 2026)</span></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>hi <span class="op">=</span> inv.query(<span class="st">"is_high_impact == 'High-impact' and development_stage == 'Deployed'"</span>)</span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(hi), hi[<span class="st">"hi_assessment_completed"</span>].fillna(<span class="st">"(blank)"</span>).value_counts().to_dict())</span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; 227 {'(blank)': 101, 'In-progress': 90, 'Yes': 36}</span></span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hi.loc[hi[<span class="st">"hi_assessment_completed"</span>].isna(), <span class="st">"agency_name"</span>].value_counts().head(<span class="dv">2</span>))</span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; Department of Veterans Affairs           94</span></span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; National Credit Union Administration     5</span></span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a>Of 227 deployed high-impact uses, 36 report a completed impact assessment. Do not write "101 have no assessment." A blank is not a "No"; 94 of the blanks come from one agency, which suggests a reporting format rather than 94 separate decisions. An auditor's next move is a request for the agency's own inventory and its supporting documents, not a headline.</span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tutorial, part 2: a disaggregated audit on national data</span></span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>Gender Shades <span class="co">[</span><span class="ot">@buolamwini2018</span><span class="co">]</span> showed that a single accuracy number can hide large disparities across intersectional groups. The disaggregated audit is the technique that refuses the single number. You will run one on **folktables** [@ding2021], which packages American Community Survey (ACS) microdata into prediction tasks, using **fairlearn** for disaggregated metrics. The task, <span class="in">`ACSIncome`</span>, predicts whether a working adult's income exceeds $50,000. It is deliberately banal. Load it state by state, keeping only the task's columns, so the national file fits on a laptop.</span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a><span class="co"># pip install folktables fairlearn scikit-learn pandas pyyaml joblib</span></span>
+<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> folktables <span class="im">import</span> ACSDataSource, ACSIncome, state_list</span>
+<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> ACSDataSource(survey_year<span class="op">=</span><span class="st">"2018"</span>, horizon<span class="op">=</span><span class="st">"1-Year"</span>, survey<span class="op">=</span><span class="st">"person"</span>)</span>
+<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a>frames <span class="op">=</span> []</span>
+<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> st <span class="kw">in</span> state_list:                          <span class="co"># 50 states and Puerto Rico</span></span>
+<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a>    raw <span class="op">=</span> source.get_data(states<span class="op">=</span>[st], download<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a>    X, y, _ <span class="op">=</span> ACSIncome.df_to_pandas(raw)</span>
+<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a>    frames.append(X.assign(label<span class="op">=</span>y.squeeze().to_numpy(), state<span class="op">=</span>st))</span>
+<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a>acs <span class="op">=</span> pd.concat(frames, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(acs.shape, <span class="bu">round</span>(acs[<span class="st">"label"</span>].mean(), <span class="dv">3</span>))</span>
+<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; (1664500, 12) 0.369</span></span>
+<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a>The first run downloads about 2 GB. <span class="in">`state_list`</span> has no District of Columbia, so "national" here means fifty states and Puerto Rico. Write that into the manifest. Now recode race from the ACS <span class="in">`RAC1P`</span> code and sex from <span class="in">`SEX`</span>:</span>
+<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a>RAC1P <span class="op">=</span> {<span class="dv">1</span>: <span class="st">"White"</span>, <span class="dv">2</span>: <span class="st">"Black"</span>, <span class="dv">3</span>: <span class="st">"AIAN"</span>, <span class="dv">4</span>: <span class="st">"AIAN"</span>, <span class="dv">5</span>: <span class="st">"AIAN"</span>,</span>
+<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a>         <span class="dv">6</span>: <span class="st">"Asian"</span>, <span class="dv">7</span>: <span class="st">"NHPI"</span>, <span class="dv">8</span>: <span class="st">"Some other race"</span>, <span class="dv">9</span>: <span class="st">"Two or more"</span>}</span>
+<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a>race <span class="op">=</span> acs[<span class="st">"RAC1P"</span>].<span class="bu">map</span>(RAC1P).fillna(<span class="st">"Unknown"</span>)</span>
+<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a>sex <span class="op">=</span> acs[<span class="st">"SEX"</span>].<span class="bu">map</span>({<span class="dv">1</span>: <span class="st">"Male"</span>, <span class="dv">2</span>: <span class="st">"Female"</span>})</span>
+<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a>features <span class="op">=</span> acs.drop(columns<span class="op">=</span>[<span class="st">"label"</span>, <span class="st">"state"</span>])</span>
+<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a>Check every key against the ACS PUMS data dictionary for your vintage. Codes 3 through 5 are three American Indian and Alaska Native categories, which this map collapses. Hispanic origin is a separate variable (<span class="in">`HISP`</span>) and is not in the task. <span class="in">`RAC1P`</span> and <span class="in">`SEX`</span> are also model features in <span class="in">`ACSIncome`</span>, which is itself a choice an auditor should question. Write all of these down. Then fit the simplest defensible model:</span>
+<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-88"><a href="#cb11-88" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb11-89"><a href="#cb11-89" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
+<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a>X_tr, X_te, y_tr, y_te, r_tr, r_te, s_tr, s_te, st_tr, st_te <span class="op">=</span> train_test_split(</span>
+<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a>    features, acs[<span class="st">"label"</span>], race, sex, acs[<span class="st">"state"</span>],</span>
+<span id="cb11-96"><a href="#cb11-96" aria-hidden="true" tabindex="-1"></a>    test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>, stratify<span class="op">=</span>acs[<span class="st">"label"</span>])</span>
+<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> make_pipeline(StandardScaler(), LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>))</span>
+<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a>model.fit(X_tr, y_tr)</span>
+<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X_te)</span>
+<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a>The model is crude (occupation and birthplace codes are treated as numbers), which is fine: the audit should be method-agnostic.</span>
+<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fairlearn.metrics <span class="im">import</span> (MetricFrame, count, selection_rate,</span>
+<span id="cb11-107"><a href="#cb11-107" aria-hidden="true" tabindex="-1"></a>    false_positive_rate, false_negative_rate,</span>
+<span id="cb11-108"><a href="#cb11-108" aria-hidden="true" tabindex="-1"></a>    demographic_parity_difference, equalized_odds_difference)</span>
+<span id="cb11-109"><a href="#cb11-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-110"><a href="#cb11-110" aria-hidden="true" tabindex="-1"></a>sensitive <span class="op">=</span> pd.DataFrame({<span class="st">"race"</span>: r_te, <span class="st">"sex"</span>: s_te})</span>
+<span id="cb11-111"><a href="#cb11-111" aria-hidden="true" tabindex="-1"></a>mf <span class="op">=</span> MetricFrame(</span>
+<span id="cb11-112"><a href="#cb11-112" aria-hidden="true" tabindex="-1"></a>    metrics<span class="op">=</span>{<span class="st">"n"</span>: count, <span class="st">"accuracy"</span>: accuracy_score,</span>
+<span id="cb11-113"><a href="#cb11-113" aria-hidden="true" tabindex="-1"></a>             <span class="st">"selection_rate"</span>: selection_rate,</span>
+<span id="cb11-114"><a href="#cb11-114" aria-hidden="true" tabindex="-1"></a>             <span class="st">"fpr"</span>: false_positive_rate, <span class="st">"fnr"</span>: false_negative_rate},</span>
+<span id="cb11-115"><a href="#cb11-115" aria-hidden="true" tabindex="-1"></a>    y_true<span class="op">=</span>y_te, y_pred<span class="op">=</span>y_pred, sensitive_features<span class="op">=</span>sensitive)</span>
+<span id="cb11-116"><a href="#cb11-116" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mf.by_group.sort_values(<span class="st">"n"</span>).<span class="bu">round</span>(<span class="dv">3</span>))</span>
+<span id="cb11-117"><a href="#cb11-117" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;                            n  accuracy  selection_rate    fpr    fnr</span></span>
+<span id="cb11-118"><a href="#cb11-118" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; NHPI            Female  436.0     0.846           0.128  0.057  0.566</span></span>
+<span id="cb11-119"><a href="#cb11-119" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; NHPI            Male    450.0     0.758           0.282  0.155  0.436</span></span>
+<span id="cb11-120"><a href="#cb11-120" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; ...                                (14 cells in all)</span></span>
+<span id="cb11-121"><a href="#cb11-121" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; White           Male 205533.0     0.754           0.461  0.224  0.271</span></span>
+<span id="cb11-122"><a href="#cb11-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-123"><a href="#cb11-123" aria-hidden="true" tabindex="-1"></a>dpd <span class="op">=</span> demographic_parity_difference(y_te, y_pred, sensitive_features<span class="op">=</span>sensitive)</span>
+<span id="cb11-124"><a href="#cb11-124" aria-hidden="true" tabindex="-1"></a>eod <span class="op">=</span> equalized_odds_difference(y_te, y_pred, sensitive_features<span class="op">=</span>sensitive)</span>
+<span id="cb11-125"><a href="#cb11-125" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"DPD </span><span class="sc">{</span>dpd<span class="sc">:.3f}</span><span class="ss">  EOD </span><span class="sc">{</span>eod<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb11-126"><a href="#cb11-126" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; DPD 0.481  EOD 0.545</span></span>
+<span id="cb11-127"><a href="#cb11-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-128"><a href="#cb11-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-129"><a href="#cb11-129" aria-hidden="true" tabindex="-1"></a>These numbers come from one run with fairlearn 0.14.0, scikit-learn 1.9.1, and pandas 3.0.6. The two summaries are not "the" fairness score. Each is the gap between two cells: Asian men, selected at 0.541, and women of some other race, at 0.061, for parity; the false-negative rates of the same two groups, 0.184 and 0.729, for equalized odds. <span class="in">`MetricFrame.by_group`</span> is the centerpiece, and its <span class="in">`n`</span> column tells your reader whether any other number means anything.</span>
+<span id="cb11-130"><a href="#cb11-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-131"><a href="#cb11-131" aria-hidden="true" tabindex="-1"></a>A national auditor also asks whether one model serves every state equally. Pass <span class="in">`st_te`</span> as the sensitive feature and the gap in accuracy between the best and worst state is 0.073 (Utah at 0.809, Wyoming at 0.736).</span>
+<span id="cb11-132"><a href="#cb11-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-133"><a href="#cb11-133" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="The Missing Manual"}</span>
+<span id="cb11-134"><a href="#cb11-134" aria-hidden="true" tabindex="-1"></a><span class="in">`fairlearn`</span> will not tell you which parity metric is defensible. Demographic parity asks whether positive predictions are allocated at the same rate across groups; equalized odds asks whether error rates are balanced given the true label. With unequal base rates they cannot both be satisfied, which is a mathematical result, not a political one. Two quieter surprises. First, <span class="in">`demographic_parity_difference`</span> is the gap between the highest and lowest group, computed over every cell you pass in. Cross state, race, and sex and you get 714 cells, 244 of them with fewer than thirty people, and a parity difference of exactly 1.0: somewhere a tiny cell had everyone selected and another had no one. The headline is set by your smallest group. Second, nothing in the library warns you about small cells. Report <span class="in">`n`</span> beside every metric, suppress cells below a documented minimum, and say in prose which groups the audit cannot speak to.</span>
+<span id="cb11-135"><a href="#cb11-135" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb11-136"><a href="#cb11-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-137"><a href="#cb11-137" aria-hidden="true" tabindex="-1"></a>Save the evaluation set and the model so the workpaper can verify them:</span>
+<span id="cb11-138"><a href="#cb11-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-139"><a href="#cb11-139" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb11-140"><a href="#cb11-140" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib</span>
+<span id="cb11-141"><a href="#cb11-141" aria-hidden="true" tabindex="-1"></a>X_te.assign(label<span class="op">=</span>y_te.values, race<span class="op">=</span>r_te.values, sex<span class="op">=</span>s_te.values,</span>
+<span id="cb11-142"><a href="#cb11-142" aria-hidden="true" tabindex="-1"></a>            state<span class="op">=</span>st_te.values).to_csv(<span class="st">"data/acs_2018_test.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb11-143"><a href="#cb11-143" aria-hidden="true" tabindex="-1"></a>joblib.dump(model, <span class="st">"models/logit-v1.joblib"</span>)</span>
+<span id="cb11-144"><a href="#cb11-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-145"><a href="#cb11-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-146"><a href="#cb11-146" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tutorial, part 3: from notebook to workpaper</span></span>
+<span id="cb11-147"><a href="#cb11-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-148"><a href="#cb11-148" aria-hidden="true" tabindex="-1"></a>A notebook produced those numbers once. An audit has to produce them on demand, with a record of every decision and a log of what changed between runs. Build this layout:</span>
+<span id="cb11-149"><a href="#cb11-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-150"><a href="#cb11-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-151"><a href="#cb11-151" aria-hidden="true" tabindex="-1"></a><span class="in">audit-pipeline/</span></span>
+<span id="cb11-152"><a href="#cb11-152" aria-hidden="true" tabindex="-1"></a><span class="in">├── CHANGELOG.md   Makefile   manifest.yaml   thresholds.yaml   audit.py</span></span>
+<span id="cb11-153"><a href="#cb11-153" aria-hidden="true" tabindex="-1"></a><span class="in">├── data/      models/      reports/</span></span>
+<span id="cb11-154"><a href="#cb11-154" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-155"><a href="#cb11-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-156"><a href="#cb11-156" aria-hidden="true" tabindex="-1"></a><span class="in">`manifest.yaml`</span> is the input contract. A reviewer a year from now should be able to reconstruct the run without guessing.</span>
+<span id="cb11-157"><a href="#cb11-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-158"><a href="#cb11-158" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb11-159"><a href="#cb11-159" aria-hidden="true" tabindex="-1"></a><span class="fu">audit</span><span class="kw">:</span></span>
+<span id="cb11-160"><a href="#cb11-160" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"ACSIncome national disaggregated audit"</span></span>
+<span id="cb11-161"><a href="#cb11-161" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run_id</span><span class="kw">:</span><span class="at"> </span><span class="st">"2027-03-04-001"</span></span>
+<span id="cb11-162"><a href="#cb11-162" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">analyst</span><span class="kw">:</span><span class="at"> </span><span class="st">"your.name@colorado.edu"</span></span>
+<span id="cb11-163"><a href="#cb11-163" aria-hidden="true" tabindex="-1"></a><span class="fu">dataset</span><span class="kw">:</span></span>
+<span id="cb11-164"><a href="#cb11-164" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">source</span><span class="kw">:</span><span class="at"> </span><span class="st">"ACS PUMS 2018 1-Year, 50 states and Puerto Rico, via folktables ACSIncome"</span></span>
+<span id="cb11-165"><a href="#cb11-165" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">local_path</span><span class="kw">:</span><span class="at"> </span><span class="st">"data/acs_2018_test.csv"</span></span>
+<span id="cb11-166"><a href="#cb11-166" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sha256</span><span class="kw">:</span><span class="at"> </span><span class="st">"&lt;output of sha256sum&gt;"</span></span>
+<span id="cb11-167"><a href="#cb11-167" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">retrieved_on</span><span class="kw">:</span><span class="at"> </span><span class="st">"2027-03-04"</span></span>
+<span id="cb11-168"><a href="#cb11-168" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">recoding</span><span class="kw">:</span><span class="at"> </span><span class="st">"RAC1P 3-5 collapsed to AIAN; HISP not used; DC not in state_list"</span></span>
+<span id="cb11-169"><a href="#cb11-169" aria-hidden="true" tabindex="-1"></a><span class="fu">model</span><span class="kw">:</span></span>
+<span id="cb11-170"><a href="#cb11-170" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">path</span><span class="kw">:</span><span class="at"> </span><span class="st">"models/logit-v1.joblib"</span></span>
+<span id="cb11-171"><a href="#cb11-171" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sha256</span><span class="kw">:</span><span class="at"> </span><span class="st">"&lt;output of sha256sum&gt;"</span></span>
+<span id="cb11-172"><a href="#cb11-172" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"StandardScaler + LogisticRegression, random_state=42"</span></span>
+<span id="cb11-173"><a href="#cb11-173" aria-hidden="true" tabindex="-1"></a><span class="fu">protected_attributes</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">race</span><span class="kw">,</span><span class="at"> sex</span><span class="kw">]</span></span>
+<span id="cb11-174"><a href="#cb11-174" aria-hidden="true" tabindex="-1"></a><span class="fu">strata</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">state</span><span class="kw">]</span><span class="co">           # carried in the file, never passed to the model</span></span>
+<span id="cb11-175"><a href="#cb11-175" aria-hidden="true" tabindex="-1"></a><span class="fu">min_cell_size</span><span class="kw">:</span><span class="at"> </span><span class="dv">100</span></span>
+<span id="cb11-176"><a href="#cb11-176" aria-hidden="true" tabindex="-1"></a><span class="fu">thresholds_file</span><span class="kw">:</span><span class="at"> </span><span class="st">"thresholds.yaml"</span></span>
+<span id="cb11-177"><a href="#cb11-177" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-178"><a href="#cb11-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-179"><a href="#cb11-179" aria-hidden="true" tabindex="-1"></a><span class="in">`thresholds.yaml`</span> carries the decision rules separately, because they change on a different cadence and need their own authority:</span>
+<span id="cb11-180"><a href="#cb11-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-181"><a href="#cb11-181" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb11-182"><a href="#cb11-182" aria-hidden="true" tabindex="-1"></a><span class="fu">demographic_parity_difference</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">warn</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.05</span><span class="kw">,</span><span class="at"> </span><span class="fu">fail</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.10</span><span class="kw">}</span></span>
+<span id="cb11-183"><a href="#cb11-183" aria-hidden="true" tabindex="-1"></a><span class="fu">equalized_odds_difference</span><span class="kw">:</span><span class="at">     </span><span class="kw">{</span><span class="fu">warn</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.05</span><span class="kw">,</span><span class="at"> </span><span class="fu">fail</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.10</span><span class="kw">}</span></span>
+<span id="cb11-184"><a href="#cb11-184" aria-hidden="true" tabindex="-1"></a><span class="fu">adopted</span><span class="kw">:</span><span class="at"> </span><span class="st">"2027-03-04"</span></span>
+<span id="cb11-185"><a href="#cb11-185" aria-hidden="true" tabindex="-1"></a><span class="fu">authority</span><span class="kw">: </span><span class="ch">&gt;</span></span>
+<span id="cb11-186"><a href="#cb11-186" aria-hidden="true" tabindex="-1"></a>  Teaching values. A real audit cites the statute, rule, policy,</span>
+<span id="cb11-187"><a href="#cb11-187" aria-hidden="true" tabindex="-1"></a>  or contract clause that set them, and who may change them.</span>
+<span id="cb11-188"><a href="#cb11-188" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-189"><a href="#cb11-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-190"><a href="#cb11-190" aria-hidden="true" tabindex="-1"></a>Most algorithmic audits skip the <span class="in">`authority`</span> field, which is how thresholds drift without anyone deciding to move them.</span>
+<span id="cb11-191"><a href="#cb11-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-192"><a href="#cb11-192" aria-hidden="true" tabindex="-1"></a><span class="in">`audit.py`</span> reads the manifest, verifies the hashes, runs the disaggregation, applies the thresholds, and writes a dated report:</span>
+<span id="cb11-193"><a href="#cb11-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-194"><a href="#cb11-194" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb11-195"><a href="#cb11-195" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hashlib, json, pathlib, sys</span>
+<span id="cb11-196"><a href="#cb11-196" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime, timezone</span>
+<span id="cb11-197"><a href="#cb11-197" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib, pandas <span class="im">as</span> pd, yaml</span>
+<span id="cb11-198"><a href="#cb11-198" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fairlearn.metrics <span class="im">import</span> (MetricFrame, count, selection_rate,</span>
+<span id="cb11-199"><a href="#cb11-199" aria-hidden="true" tabindex="-1"></a>    false_positive_rate, false_negative_rate,</span>
+<span id="cb11-200"><a href="#cb11-200" aria-hidden="true" tabindex="-1"></a>    demographic_parity_difference, equalized_odds_difference)</span>
+<span id="cb11-201"><a href="#cb11-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-202"><a href="#cb11-202" aria-hidden="true" tabindex="-1"></a>SUMMARIES <span class="op">=</span> {<span class="st">"demographic_parity_difference"</span>: demographic_parity_difference,</span>
+<span id="cb11-203"><a href="#cb11-203" aria-hidden="true" tabindex="-1"></a>             <span class="st">"equalized_odds_difference"</span>: equalized_odds_difference}</span>
+<span id="cb11-204"><a href="#cb11-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-205"><a href="#cb11-205" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sha256_of(path):</span>
+<span id="cb11-206"><a href="#cb11-206" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> hashlib.sha256(pathlib.Path(path).read_bytes()).hexdigest()</span>
+<span id="cb11-207"><a href="#cb11-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-208"><a href="#cb11-208" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> verify(m):</span>
+<span id="cb11-209"><a href="#cb11-209" aria-hidden="true" tabindex="-1"></a>    pairs <span class="op">=</span> [(<span class="st">"dataset"</span>, m[<span class="st">"dataset"</span>][<span class="st">"local_path"</span>]), (<span class="st">"model"</span>, m[<span class="st">"model"</span>][<span class="st">"path"</span>])]</span>
+<span id="cb11-210"><a href="#cb11-210" aria-hidden="true" tabindex="-1"></a>    bad <span class="op">=</span> [k <span class="cf">for</span> k, p <span class="kw">in</span> pairs <span class="cf">if</span> sha256_of(p) <span class="op">!=</span> m[k][<span class="st">"sha256"</span>]]</span>
+<span id="cb11-211"><a href="#cb11-211" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> bad:</span>
+<span id="cb11-212"><a href="#cb11-212" aria-hidden="true" tabindex="-1"></a>        sys.exit(<span class="ss">f"hash mismatch: </span><span class="sc">{</span>bad<span class="sc">}</span><span class="ss">"</span>)      <span class="co"># no report for unverified inputs</span></span>
+<span id="cb11-213"><a href="#cb11-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-214"><a href="#cb11-214" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> run_audit(df, model, m):</span>
+<span id="cb11-215"><a href="#cb11-215" aria-hidden="true" tabindex="-1"></a>    attrs <span class="op">=</span> m[<span class="st">"protected_attributes"</span>]</span>
+<span id="cb11-216"><a href="#cb11-216" aria-hidden="true" tabindex="-1"></a>    y_true <span class="op">=</span> df[<span class="st">"label"</span>]</span>
+<span id="cb11-217"><a href="#cb11-217" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">"label"</span>] <span class="op">+</span> attrs <span class="op">+</span> m.get(<span class="st">"strata"</span>, []))</span>
+<span id="cb11-218"><a href="#cb11-218" aria-hidden="true" tabindex="-1"></a>    y_pred <span class="op">=</span> model.predict(X)</span>
+<span id="cb11-219"><a href="#cb11-219" aria-hidden="true" tabindex="-1"></a>    mf <span class="op">=</span> MetricFrame(metrics<span class="op">=</span>{<span class="st">"n"</span>: count, <span class="st">"selection_rate"</span>: selection_rate,</span>
+<span id="cb11-220"><a href="#cb11-220" aria-hidden="true" tabindex="-1"></a>                              <span class="st">"fpr"</span>: false_positive_rate, <span class="st">"fnr"</span>: false_negative_rate},</span>
+<span id="cb11-221"><a href="#cb11-221" aria-hidden="true" tabindex="-1"></a>                     y_true<span class="op">=</span>y_true, y_pred<span class="op">=</span>y_pred, sensitive_features<span class="op">=</span>df[attrs])</span>
+<span id="cb11-222"><a href="#cb11-222" aria-hidden="true" tabindex="-1"></a>    by_group <span class="op">=</span> mf.by_group[mf.by_group[<span class="st">"n"</span>] <span class="op">&gt;=</span> m[<span class="st">"min_cell_size"</span>]]</span>
+<span id="cb11-223"><a href="#cb11-223" aria-hidden="true" tabindex="-1"></a>    summaries <span class="op">=</span> {k: <span class="bu">float</span>(f(y_true, y_pred, sensitive_features<span class="op">=</span>df[attrs]))</span>
+<span id="cb11-224"><a href="#cb11-224" aria-hidden="true" tabindex="-1"></a>                 <span class="cf">for</span> k, f <span class="kw">in</span> SUMMARIES.items()}</span>
+<span id="cb11-225"><a href="#cb11-225" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> by_group, summaries</span>
+<span id="cb11-226"><a href="#cb11-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-227"><a href="#cb11-227" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> evaluate(summaries, thresholds):</span>
+<span id="cb11-228"><a href="#cb11-228" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> []</span>
+<span id="cb11-229"><a href="#cb11-229" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, value <span class="kw">in</span> summaries.items():</span>
+<span id="cb11-230"><a href="#cb11-230" aria-hidden="true" tabindex="-1"></a>        rule <span class="op">=</span> thresholds[name]</span>
+<span id="cb11-231"><a href="#cb11-231" aria-hidden="true" tabindex="-1"></a>        level <span class="op">=</span> (<span class="st">"FAIL"</span> <span class="cf">if</span> value <span class="op">&gt;=</span> rule[<span class="st">"fail"</span>]</span>
+<span id="cb11-232"><a href="#cb11-232" aria-hidden="true" tabindex="-1"></a>                 <span class="cf">else</span> <span class="st">"WARN"</span> <span class="cf">if</span> value <span class="op">&gt;=</span> rule[<span class="st">"warn"</span>] <span class="cf">else</span> <span class="st">"PASS"</span>)</span>
+<span id="cb11-233"><a href="#cb11-233" aria-hidden="true" tabindex="-1"></a>        out.append({<span class="st">"metric"</span>: name, <span class="st">"value"</span>: <span class="bu">round</span>(value, <span class="dv">4</span>), <span class="st">"level"</span>: level})</span>
+<span id="cb11-234"><a href="#cb11-234" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> out</span>
+<span id="cb11-235"><a href="#cb11-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-236"><a href="#cb11-236" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb11-237"><a href="#cb11-237" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> yaml.safe_load(<span class="bu">open</span>(<span class="st">"manifest.yaml"</span>))</span>
+<span id="cb11-238"><a href="#cb11-238" aria-hidden="true" tabindex="-1"></a>    thresholds <span class="op">=</span> yaml.safe_load(<span class="bu">open</span>(m[<span class="st">"thresholds_file"</span>]))</span>
+<span id="cb11-239"><a href="#cb11-239" aria-hidden="true" tabindex="-1"></a>    verify(m)</span>
+<span id="cb11-240"><a href="#cb11-240" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_csv(m[<span class="st">"dataset"</span>][<span class="st">"local_path"</span>])</span>
+<span id="cb11-241"><a href="#cb11-241" aria-hidden="true" tabindex="-1"></a>    by_group, summaries <span class="op">=</span> run_audit(df, joblib.load(m[<span class="st">"model"</span>][<span class="st">"path"</span>]), m)</span>
+<span id="cb11-242"><a href="#cb11-242" aria-hidden="true" tabindex="-1"></a>    report <span class="op">=</span> {<span class="st">"run_id"</span>: m[<span class="st">"audit"</span>][<span class="st">"run_id"</span>],</span>
+<span id="cb11-243"><a href="#cb11-243" aria-hidden="true" tabindex="-1"></a>              <span class="st">"generated_at"</span>: datetime.now(timezone.utc).isoformat(),</span>
+<span id="cb11-244"><a href="#cb11-244" aria-hidden="true" tabindex="-1"></a>              <span class="st">"manifest"</span>: m, <span class="st">"findings"</span>: evaluate(summaries, thresholds),</span>
+<span id="cb11-245"><a href="#cb11-245" aria-hidden="true" tabindex="-1"></a>              <span class="st">"by_group"</span>: by_group.reset_index().to_dict(orient<span class="op">=</span><span class="st">"records"</span>)}</span>
+<span id="cb11-246"><a href="#cb11-246" aria-hidden="true" tabindex="-1"></a>    pathlib.Path(<span class="st">"reports"</span>).mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb11-247"><a href="#cb11-247" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> pathlib.Path(<span class="ss">f"reports/</span><span class="sc">{</span>m[<span class="st">'audit'</span>][<span class="st">'run_id'</span>]<span class="sc">}</span><span class="ss">.json"</span>)</span>
+<span id="cb11-248"><a href="#cb11-248" aria-hidden="true" tabindex="-1"></a>    out.write_text(json.dumps(report, indent<span class="op">=</span><span class="dv">2</span>, default<span class="op">=</span><span class="bu">str</span>))</span>
+<span id="cb11-249"><a href="#cb11-249" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(json.dumps(report[<span class="st">"findings"</span>], indent<span class="op">=</span><span class="dv">2</span>))</span>
+<span id="cb11-250"><a href="#cb11-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-251"><a href="#cb11-251" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb11-252"><a href="#cb11-252" aria-hidden="true" tabindex="-1"></a>    main()</span>
+<span id="cb11-253"><a href="#cb11-253" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; [{"metric": "demographic_parity_difference", "value": 0.4806, "level": "FAIL"},</span></span>
+<span id="cb11-254"><a href="#cb11-254" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt;  {"metric": "equalized_odds_difference", "value": 0.5449, "level": "FAIL"}]</span></span>
+<span id="cb11-255"><a href="#cb11-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-256"><a href="#cb11-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-257"><a href="#cb11-257" aria-hidden="true" tabindex="-1"></a>The script refuses to run on inputs whose hashes do not match the manifest, suppresses small cells by a rule written down in advance, and stamps the run in UTC. Each behavior is borrowed from financial audit practice, where a workpaper exists to be legible to someone who was not in the room.</span>
+<span id="cb11-258"><a href="#cb11-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-259"><a href="#cb11-259" aria-hidden="true" tabindex="-1"></a>The <span class="in">`Makefile`</span> is the one-command interface: an <span class="in">`audit`</span> target that runs <span class="in">`python audit.py`</span> and a <span class="in">`clean`</span> target that removes <span class="in">`reports/*.json`</span>. If a reviewer cannot type <span class="in">`make audit`</span> and get a report, the pipeline is not reproducible. <span class="in">`clean`</span> removes generated reports, never inputs. You do not delete workpapers. You archive them. <span class="in">`CHANGELOG.md`</span> is the narrative companion to the numbers: one dated entry per <span class="in">`run_id`</span>, recording the input hashes, the threshold adoption date, the <span class="in">`fairlearn`</span> and <span class="in">`scikit-learn`</span> versions, and any change in findings with its root cause.</span>
+<span id="cb11-260"><a href="#cb11-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-261"><a href="#cb11-261" aria-hidden="true" tabindex="-1"></a>Commit the directory, run <span class="in">`make audit`</span>, and read the report for what it does not say: which columns were features, whether the model was evaluated on a holdout. A week later, update <span class="in">`run_id`</span> and run again. Usually nothing moves. Sometimes a library release changes a default and a metric shifts in the third decimal place. The discipline is not preventing drift. It is noticing it, logging it, and deciding whether it changes the conclusion.</span>
+<span id="cb11-262"><a href="#cb11-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-263"><a href="#cb11-263" aria-hidden="true" tabindex="-1"></a><span class="fu">## Writing the audit for a non-technical reader</span></span>
+<span id="cb11-264"><a href="#cb11-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-265"><a href="#cb11-265" aria-hidden="true" tabindex="-1"></a>The JSON report is raw material. The audit is what you write around it, and it is the seed of the report genre in @sec-ch-15-reports. Use four sections.</span>
+<span id="cb11-266"><a href="#cb11-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-267"><a href="#cb11-267" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**What the model is, and is not.** A logistic regression trained on one year of national ACS data. A teaching artifact, not a procurement recommendation.</span>
+<span id="cb11-268"><a href="#cb11-268" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Who is in the data.** The per-cell counts, with the smallest cells named in prose, including those below <span class="in">`min_cell_size`</span> that the audit cannot speak to. Audits that silently drop small cells pretend to a completeness they lack.</span>
+<span id="cb11-269"><a href="#cb11-269" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**What the metrics show.** The disaggregated table with a plain-language reading of each gap, its threshold level, and its direction, plus the by-state spread.</span>
+<span id="cb11-270"><a href="#cb11-270" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**What the audit rests on.** The recoding, the omitted Hispanic-origin variable, the missing District of Columbia, self-reported and sampled survey data, a single vintage and a single holdout. Name each choice and how a second auditor might make it differently.</span>
+<span id="cb11-271"><a href="#cb11-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-272"><a href="#cb11-272" aria-hidden="true" tabindex="-1"></a>Section 4 is where audit-washing hides. If the next auditor cannot reproduce your table from your manifest, the audit is not an instrument of oversight. It is a press release.</span>
+<span id="cb11-273"><a href="#cb11-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-274"><a href="#cb11-274" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
+<span id="cb11-275"><a href="#cb11-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-276"><a href="#cb11-276" aria-hidden="true" tabindex="-1"></a>**Exercise 8.1 (Guided, laptop, real public data).** Run the national <span class="in">`ACSIncome`</span> audit above end to end, then build the <span class="in">`audit-pipeline/`</span> directory, fill <span class="in">`manifest.yaml`</span> with real hashes from <span class="in">`sha256sum`</span>, commit it, and run <span class="in">`make audit`</span>. Submit the repository URL and the generated report. If your numbers differ from the chapter's, record your library versions and say where the difference enters.</span>
+<span id="cb11-277"><a href="#cb11-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-278"><a href="#cb11-278" aria-hidden="true" tabindex="-1"></a>**Exercise 8.2 (Guided).** One week later, rerun with a new <span class="in">`run_id`</span>. Write a changelog entry stating the exact <span class="in">`fairlearn`</span> and <span class="in">`scikit-learn`</span> versions and what changed, even if nothing did.</span>
+<span id="cb11-279"><a href="#cb11-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-280"><a href="#cb11-280" aria-hidden="true" tabindex="-1"></a>**Exercise 8.3 (Analytic, real public data).** Load the 2025 federal AI use case inventory. For one agency with at least five high-impact use cases, tabulate every <span class="in">`hi_`</span> column. In 400 words, assess the agency's entries against the four principles of GAO's accountability framework <span class="co">[</span><span class="ot">@gao2021ai</span><span class="co">]</span>. Which workpaper is missing? Distinguish blanks from answers, and name the document you would request to resolve each blank.</span>
+<span id="cb11-281"><a href="#cb11-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-282"><a href="#cb11-282" aria-hidden="true" tabindex="-1"></a>**Exercise 8.4 (Comparative).** In 500 words, compare a published LL144 bias audit summary, the Colorado Act as reenacted by SB 26-189, and M-25-21's high-impact practices on three dimensions: which systems are covered, who performs the assessment, and what is published. Quote each text. Is the LL144 summary audit-washing in Goodman and Trehu's <span class="co">[</span><span class="ot">-@goodman2023</span><span class="co">]</span> sense? Say what evidence would change your verdict.</span>
+<span id="cb11-283"><a href="#cb11-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-284"><a href="#cb11-284" aria-hidden="true" tabindex="-1"></a>**Exercise 8.5 (Open-ended; submittable artifact).** Extend your pipeline with a second folktables task (<span class="in">`ACSEmployment`</span> or <span class="in">`ACSPublicCoverage`</span>) or a second sensitive attribute, still national. Rewrite <span class="in">`thresholds.yaml`</span> so its <span class="in">`authority`</span> field names a real federal body and the instrument it could use to adopt such thresholds (an OMB memorandum, a NIST standard, a GAO recommendation). Then write the four-section audit memo (about 800 words). It becomes the methods and findings of a report addressed to that body (@sec-ch-15-reports).</span>
+<span id="cb11-285"><a href="#cb11-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-286"><a href="#cb11-286" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking ahead</span></span>
+<span id="cb11-287"><a href="#cb11-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-288"><a href="#cb11-288" aria-hidden="true" tabindex="-1"></a>A workpaper records what you did. It does not prove that the code does what the workpaper says. @sec-ch-10-engineering puts this pipeline under test: shape and range checks on a fixture, a regression snapshot, a deliberately introduced bug, a post-incident review, and continuous integration. Engineering also asks who keeps the record when the audited party will not, which is where worker observatories enter.</span>
+<span id="cb11-289"><a href="#cb11-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-290"><a href="#cb11-290" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading and Resources</span></span>
+<span id="cb11-291"><a href="#cb11-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-292"><a href="#cb11-292" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>C. Richard Baker (2005), "<span class="co">[</span><span class="ot">What is the meaning of 'the public interest'? Examining the ideology of the American public accounting profession</span><span class="co">](https://doi.org/10.1108/09513570510620510)</span>," *Accounting, Auditing &amp; Accountability Journal* 18(5). The close reading of AICPA language this chapter leans on.</span>
+<span id="cb11-293"><a href="#cb11-293" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Inioluwa Deborah Raji et al. (2020), "<span class="co">[</span><span class="ot">Closing the AI accountability gap</span><span class="co">](https://doi.org/10.1145/3351095.3372873)</span>," *Proceedings of FAccT 2020*. Audit as a practice rather than a metric.</span>
+<span id="cb11-294"><a href="#cb11-294" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Bryce Goodman and Julia Trehu (2023), "<span class="co">[</span><span class="ot">AI audit washing and accountability</span><span class="co">](https://doi.org/10.2139/ssrn.4227350)</span>." The term in its useful form.</span>
+<span id="cb11-295"><a href="#cb11-295" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>U.S. GAO (2021), *Artificial Intelligence: An Accountability Framework for Federal Agencies and Other Entities*, GAO-21-519SP: <span class="ot">&lt;https://www.gao.gov/products/gao-21-519sp&gt;</span>. The federal auditor's own questions for AI.</span>
+<span id="cb11-296"><a href="#cb11-296" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>OMB, 2025 Federal Agency AI Use Case Inventory: <span class="ot">&lt;https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory&gt;</span>. Read the data dictionary and standardization report in <span class="in">`Validation/`</span> before you count anything.</span>
+<span id="cb11-297"><a href="#cb11-297" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>NYC Department of Consumer and Worker Protection, Local Law 144 page: <span class="ot">&lt;https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page&gt;</span>. Read the final rule, not only the FAQ.</span>
+<span id="cb11-298"><a href="#cb11-298" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Colorado General Assembly, SB 26-189: <span class="ot">&lt;https://leg.colorado.gov/bills/sb26-189&gt;</span>, with SB 24-205 at <span class="ot">&lt;https://leg.colorado.gov/bills/sb24-205&gt;</span>. Read the two side by side.</span>
+<span id="cb11-299"><a href="#cb11-299" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`folktables`</span> repository and paper: <span class="ot">&lt;https://github.com/socialfoundations/folktables&gt;</span>. Read the documentation on the limits of ACS tasks as benchmarks.</span>
+<span id="cb11-300"><a href="#cb11-300" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`fairlearn`</span> user guide: <span class="ot">&lt;https://fairlearn.org/main/user_guide/&gt;</span>. The sections on <span class="in">`MetricFrame`</span> and on disagreement between parity metrics.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-08-accounting.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
