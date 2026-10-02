@@ -1,0 +1,189 @@
+---
+execute:
+  eval: false
+---
+
+# Public Interest Technology and Data for Good {#sec-ch-03-pit-data-for-good}
+
+Public interest data science has neighbors whose self-presentation is strong enough that students often arrive assuming the terms are synonyms. They are not. Public interest technology, data for good, digital government, civic tech, critical data studies, and data justice each have their own institutions, funders, canonical texts, and blind spots. You should know them, because the job listings you will apply for and the foundations that may someday pay your rent draw their vocabulary from these fields. And you should know them now, before the modules begin, because the clearest way to see what this book is asking of you is to see what its neighbors already do well and what they leave unbuilt.
+
+This chapter is sympathetic and skeptical in equal measure. Its organizing concept is **sustainability**, understood not as an aspiration but as a specific configuration of code, people, money, and data that must be maintained or it will rot. In the vocabulary of @sec-ch-02-installed-base, sustainability is **continuity** with a budget line. You will audit two real projects, one from the US public interest technology world and one from the global South, and by the end you should be able to read a launch announcement and estimate, within a rough range of error, whether the project will still exist in five years.
+
+## Six neighbors
+
+Keegan [-@keegan2026] reads each neighboring conversation through one question: what durable capacity does it build, or fail to build, for keeping data-driven systems observable, auditable, and collectively governed?
+
+**Public interest technology (PIT)** designs, deploys, and governs technology to advance the public interest, with explicit commitments to rights and well-being [@DefiningPublicInterest]. Its great contribution is professional scaffolding: fellowships, curricula, career pathways, and coalitions across universities, foundations, and civil society. Its limitation is that capacity-building without enforceable recordkeeping and oversight leaves accountability dependent on goodwill.
+
+**Data for good** applies analytics to poverty, health, education, and disaster response through time-bounded projects and cross-sector partnerships [@aulaSteppingBackData2023]. It delivers rapid capacity to organizations that lack it. It is weakest at sustaining the installed base, the archives, standards, and governance that accountability needs after the partner, the interface, or the grant goes away.
+
+**Digital government**, or GovTech, modernizes public administration through digital services, open data, and platforms [@bharosa2022]. It sits closest to infrastructuring because it operates where procurement, standards, and administrative records are made. The question is whether modernization builds public auditability or deepens vendor-mediated exemption [@silvePoliticalEconomyGovTech2023]. @sec-ch-14-govtech-civic-tech takes this up at the state level, where procurement contracts are written.
+
+**Civic tech** builds tools for service delivery and participation, often from outside government [@aragonCivicTechnologiesResearch2020]. It excels at participatory interfaces and delivery prototypes. Keegan's question for it is what remains after the pilot: who maintains the data, which standards persist, and which oversight pathways are institutionalized. @sec-ch-14-govtech-civic-tech returns to civic tech too.
+
+**Critical data studies** analyzes how data practices construct categories, expand surveillance, and reproduce power [@boyd2012]. It supplies indispensable diagnostic language. It is less consistently oriented toward specifying institutional alternatives that can be sustained, which is why Neff and colleagues [-@neffCritiqueContributePracticeBased2017] urge critics to contribute as well as critique.
+
+**Data justice** treats datafication as a political project, centering redistribution, representation, lived experience, and the capacity to refuse [@taylor2017; @dignazio2020]. Keegan describes a division of labor: data justice specifies what infrastructuring must be *for*, and public interest data infrastructuring builds the records and governance that can realize those aims at scale. @sec-ch-19-critical-data-studies-refusal takes both critical traditions seriously, including where they say this book's framework should not be built at all.
+
+What, then, is public interest data science? It is not a seventh neighbor competing for the same grants. It is the commitment, borrowed from the lineages, to leave behind linked, interpretable, continuous, safely scrutinizable records with someone accountable and a path to remedy. The rest of this chapter tests that commitment against two of the neighbors that have built the most.
+
+## The framing text and the career pipeline
+
+@mcguinness2021 trace public interest technology to the Obama-era US Digital Service and Code for America, arguing that healthcare.gov's 2013 failure and rescue showed that government needed people who could write code, understand policy, and translate between the two. *Power to the Public* is a confident practitioner's book, and it does real work: it names a kind of professional who does not fit the civil-service or tech-industry ladder, and argues that such people should be trained, hired, and paid. The Public Interest Technology University Network, coordinated by New America, built a consortium of universities around that argument [@pitun]. Chambers [-@chambersBigTechAdvocacy2025] shows that the resulting careers extend well beyond government, into "advocacy technologists" working inside mission-driven civil society organizations.
+
+The framing has critics inside the field. Stapleton and colleagues [-@stapletonWhoHasInterest2022], whom you met in @sec-ch-01-introduction, ask who actually has an interest in "public interest technology" when technologists partner with local governments, and pose critical questions about how impacted communities are included, or not, in that work. A pipeline that trains technologists to serve agencies can end up serving the agency's definition of the public, which is the Moses problem in a hoodie.
+
+What the pipeline metaphor also elides is what happens after the fellow ships the thing. Pipelines flow forward; actual projects are more like gardens. @karasti2018 call the least-narrated, least-funded phase *infrastructuring*, and it is where most projects quietly die.
+
+## The rhythm of foundation funding
+
+The pathology is structural. Many PIT and data-for-good projects are funded on short philanthropic grant cycles: design and pilot, then refinement, then "scaling." The implicit theory is that a working pilot will attract a sustaining revenue stream or be absorbed by an institution that already has one. Sometimes it is right. Aula and Bowles [-@aulaSteppingBackData2023] survey the field's trends and argue that it needs to step back from its project-driven, technology-first habits. <!-- TODO: verify this characterization against Aula and Bowles (2023). -->
+
+You can see the pattern in project websites. In year one: blog posts every two weeks and a podcast. In year three: three case studies dated from year two and a dead chat invitation. In year five, either a funding home (a government line item, a membership model, fee-for-service revenue) or a repository whose last meaningful commit was the grant-close deliverable. The audit below tells you which you are looking at before you build on top of it.
+
+## Two running examples: GetCalFresh and Ushahidi
+
+**GetCalFresh** was launched by Code for America to simplify applying for CalFresh, California's SNAP program [@codeforamerica_getcalfresh]. The state application was long and hostile; the GetCalFresh flow took most applicants minutes, and very large numbers of Californians used it. It became the template for an argument that benefits-access technology can measurably move enrollment. The service later began moving from Code for America's operation toward the state's. <!-- TODO: verify GetCalFresh launch year, usage figures, and the date and terms of the transition to California state operation. --> In sustainability terms that is the best possible outcome: a civic-tech pilot becomes a line item in a state agency's budget, and its builders work themselves out of a job.
+
+**Ushahidi** was launched in Nairobi in 2008 to crowdsource reports of post-election violence in Kenya [@ushahidi_about]. Built in days, it has since been deployed in well over a hundred countries during earthquakes, elections, and epidemics. <!-- TODO: verify current deployment-country count on Ushahidi's About page. --> It emerged from a global-South context and has stayed headquartered there, funded through a mix of grants, deployment fees, and partnerships. Its maintenance problem is unusually visible: the code is open source, deployments are often led by local partners with varied capacity, and the organization has been candid about keeping a 2008-vintage platform current.
+
+The pairing is deliberate: one US project that found a government funding home, one global-South project that has survived for well over a decade on a hybrid model. Neither is a failure. Together they show that sustainability is possible, looks different in different institutional contexts, and is the exception rather than the rule.
+
+## A sustainability audit: querying GitHub
+
+The audit asks six questions of any project with a public repository. Where does the code live, under what license, and how active is it? Who maintains it, and who pays them? Who owns the data? What happens when the current grant ends? What labor is invisible in the product: translation, annotation, moderation, cleaning? How does the project score on a simple rubric? The GitHub REST API answers most of the first question. The rest require reading.
+
+```python
+import os
+import requests
+import pandas as pd
+from datetime import datetime, timezone
+
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")  # strongly recommended
+HEADERS = {
+    "Accept": "application/vnd.github+json",
+    "User-Agent": "PublicInterestDataScience/0.1 (your-email@example.edu)",
+    "X-GitHub-Api-Version": "2022-11-28",
+}
+if GITHUB_TOKEN:
+    HEADERS["Authorization"] = f"Bearer {GITHUB_TOKEN}"
+
+
+def gh(path, params=None):
+    url = f"https://api.github.com{path}"
+    response = requests.get(url, headers=HEADERS, params=params, timeout=30)
+    response.raise_for_status()
+    return response
+
+
+def audit_repo(owner, repo):
+    base = f"/repos/{owner}/{repo}"
+    meta = gh(base).json()
+
+    # Contributors: paginate to count, not to list.
+    contributors = gh(f"{base}/contributors",
+                      params={"per_page": 100, "anon": "true"}).json()
+    contributor_count = len(contributors)
+
+    # Open issues and PRs. GitHub counts PRs as issues; split them.
+    issues = gh("/search/issues",
+                params={"q": f"repo:{owner}/{repo} is:open is:issue"}).json()
+    prs = gh("/search/issues",
+             params={"q": f"repo:{owner}/{repo} is:open is:pr"}).json()
+
+    # Last commit date on the default branch.
+    commits = gh(f"{base}/commits", params={"per_page": 1}).json()
+    last_commit = commits[0]["commit"]["committer"]["date"] if commits else None
+    if last_commit:
+        last_commit_dt = datetime.fromisoformat(last_commit.replace("Z", "+00:00"))
+        days_since = (datetime.now(timezone.utc) - last_commit_dt).days
+    else:
+        days_since = None
+
+    license_name = (meta.get("license") or {}).get("spdx_id") or "NONE"
+
+    row = {
+        "repo": f"{owner}/{repo}",
+        "stars": meta.get("stargazers_count"),
+        "forks": meta.get("forks_count"),
+        "license": license_name,
+        "last_commit": last_commit,
+        "days_since_last_commit": days_since,
+        "contributors": contributor_count,
+        "open_issues": issues.get("total_count"),
+        "open_prs": prs.get("total_count"),
+        "default_branch": meta.get("default_branch"),
+        "archived": meta.get("archived"),
+    }
+    return row
+
+
+projects = [
+    ("ushahidi", "platform"),   # the crisis-mapping platform's API
+    ("simonw", "datasette"),    # the publishing tool you will meet in Part II
+]
+
+audit = pd.DataFrame([audit_repo(o, r) for o, r in projects])
+print(audit.T)
+# => one column per project, rows: stars, forks, license, last_commit,
+#    days_since_last_commit, contributors, open_issues, open_prs, archived
+```
+
+Two observations. The `search/issues` endpoint has a stricter rate limit than most (30 requests per minute when authenticated), which is fine for a classroom audit and not for a broad study. And `anon: "true"` on the contributors endpoint includes commits from email addresses that no longer resolve to GitHub accounts, which matters because much historical contribution to PIT projects comes from departed staff whose accounts have lapsed.
+
+::: {.callout-tip title="The Missing Manual"}
+Two traps. First, recent commits are not evidence of sustainability. They might be one person making cosmetic updates before a grant report. Check the *breadth*: run `git shortlog -sne --since="1 year ago"` on a local clone and count the distinct humans making substantive changes. Fifty commits from one person is a solo project that has not been told yet. Twelve commits from seven people is, in this field, genuinely healthy. Second, GitHub limits unauthenticated requests to 60 per hour. Without `GITHUB_TOKEN` set, you will be throttled before the third project and the errors will not be obvious. Create a token, put it in an environment variable, and check your headroom at `/rate_limit` first.
+:::
+
+## Interpreting the audit
+
+The numbers do not tell you who pays the maintainers. For that, read the About page, the annual report, and, for a US nonprofit, the IRS Form 990. The repository with fifteen active contributors may run on a large grant that ends in eighteen months, while the one with three contributors sits in a state agency's operations budget and will quietly run for a decade. The first looks healthier on GitHub. The second is more sustainable.
+
+Score each dimension from 0 to 3, for a total from 0 to 15:
+
+- **Code health.** License present, recent commits, issues triaged, a release in the past year.
+- **Maintenance breadth.** More than one active contributor, and more than one employer among them.
+- **Labor visibility.** The project names the people who do the unglamorous work.
+- **Data ownership.** A written data policy, and a plausible answer to "what happens to the data if the project shuts down?"
+- **Funding model.** A named funder, a stated runway, and a plausible non-grant path.
+
+Twelve or higher suggests the project will probably exist in five years. Below six, do not build a dependency on it. Most real projects land in between, and the rubric's value is less the number than the specific gaps it surfaces.
+
+## Ghost work and the invisible labor
+
+No audit is complete without asking about labor the product does not advertise. @gray2019 call it **ghost work**: the moderation, labeling, transcription, and triage that humans perform to make automated systems appear to work. In the PIT and data-for-good worlds, this labor is often paid little, credited never, and contracted through layers that separate it from the mission-driven organization whose logo is on the product.
+
+Benefits-access projects depend on translation; someone translated the intake flow into the languages applicants speak, and that person's name is rarely on the About page. Crisis-mapping projects depend on verification; every Ushahidi deployment involves people who triage incoming reports, assess plausibility, and decide what to publish. Those verifiers *are* the platform, in a way the software is not. Keegan [-@keegan2026] describes data-for-good work as tool-centric and episodic; one symptom is treating the technology as the thing and the labor as overhead. Your audit should flip that framing.
+
+::: {.callout-note title="In the Public Interest"}
+**Ownership**, as @sec-ch-18-ownership will develop it, means stewardship rather than control, and stewardship is a verb. A project that scores well on "data ownership" here is not one that merely holds the data in a legal-custody sense. It is one where someone is *paid* to migrate the data across storage platforms, answer deletion requests, maintain access controls, and renew the domain. Openness without stewardship is neglect with extra steps; oversight without stewardship is performance art. The most useful question to ask any PIT or data-for-good project is not "is your code open source?" It is "who pays the person who will answer the phone in 2031?"
+:::
+
+## Exercises
+
+**Exercise 3.1 (Guided, real public data).** Run the GitHub audit on `ushahidi/platform` and one other repository of your choice. Then complete the rubric for Ushahidi using its website and any annual reports you can find. Note where the rubric fits poorly: global-South projects often operate under funding, governance, or regulatory conditions a US-centric rubric does not capture. Say so rather than pretending the score is comparable. 500 words plus the audit table.
+
+**Exercise 3.2 (Guided).** Audit one US project: GetCalFresh, Colorado's PEAK benefits portal, or another benefits-access tool. If it has no public repository, note the absence and document what you can from its website, annual report, and news coverage. Produce a filled-in rubric with a paragraph justifying each score.
+
+**Exercise 3.3 (Analytic).** For one audited project, identify three forms of invisible labor. For each, name the task, who likely does it, a rough estimate of annual hours, and one specific way the project could make that labor visible in its public materials. Use @gray2019. 400 words.
+
+**Exercise 3.4 (Comparative).** Choose one project you admire and place it among the six neighbors. Which conversation does it belong to, by funding and self-description? Which installed-base elements from @sec-ch-02-installed-base does it build well, and which does it assume someone else will provide? 500 words.
+
+**Exercise 3.5 (Open-ended).** Return to the project sketch from Exercise 1.5. What would it take to keep it alive for five years after the course ends? Address who hosts it, who owns the domain, who holds the credentials, who answers when it breaks, who pays for storage, and who decides when to retire it. "I will maintain it in my free time" is an answer, but a weak one; say why. 400 to 600 words. You will revisit this plan when you archive your final project in @sec-ch-22-archival-deposits.
+
+## Looking ahead
+
+That completes the foundations. @sec-ch-04-enclosure opens Part II, *Journalism: The City*, with the first pressure: who can observe? It turns the polite `User-Agent` habit from @sec-ch-01-introduction into a responsible scraper, traces how platforms and governments have fenced off data that once supported public scrutiny, and sets up the first portfolio piece, an op-ed built on city data you collected yourself.
+
+## Further Reading and Resources
+
+- Tara Dawson McGuinness and Hana Schank (2021), *[Power to the Public](https://press.princeton.edu/books/hardcover/9780691207759/power-to-the-public)* [@mcguinness2021]. The framing text for the PIT field. Read it as a manifesto, not a diagnosis.
+- Ville Aula and James Bowles (2023), "[Stepping back from data and AI for good: Current trends and ways forward](https://doi.org/10.1177/20539517231173901)," *Big Data & Society* 10(1) [@aulaSteppingBackData2023]. The critical reading for this chapter.
+- Mary L. Gray and Siddharth Suri (2019), *[Ghost Work](https://www.hmhbooks.com/shop/books/ghost-work/9781328566249)* [@gray2019]. The invisible labor behind automated systems.
+- Brian C. Keegan (2026), "Public interest data infrastructuring," under review [@keegan2026]. The section "Public interest conversations" is the source of this chapter's six neighbors.
+- Nitesh Bharosa (2022), "[The rise of GovTech: Trojan horse or blessing in disguise?](https://doi.org/10.1016/j.giq.2022.101692)," *Government Information Quarterly* 39(3) [@bharosa2022]. A preview of @sec-ch-14-govtech-civic-tech.
+- Linnet Taylor (2017), "What is data justice? The case for connecting digital rights and freedoms globally," *Big Data & Society* 4(2) [@taylor2017]. A preview of @sec-ch-19-critical-data-studies-refusal.
+- Public Interest Technology University Network: <https://www.newamerica.org/pit/university-network/> [@pitun]. The US academic consortium's hub.
+- Code for America: <https://codeforamerica.org/>. The longest-running US civic tech organization; its annual reports are candid about what worked.
+- Ushahidi: <https://www.ushahidi.com/> [@ushahidi_about] and its code at <https://github.com/ushahidi>. The long-running global-South counter-example.
+- GitHub REST API documentation: <https://docs.github.com/en/rest> [@github_rest_api]. The reference for the audit code.

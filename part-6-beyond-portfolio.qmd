@@ -1,0 +1,32 @@
+# Beyond the Portfolio
+
+The four modules are finished. You have climbed the ladder from the city to the county to the state to the federal government, and at each rung you produced one portfolio piece: an op-ed, a testimony statement, a report section, and a public comment, each paired with a technical artifact and an installed-base note. This last part is not a fifth module. It has no lineage, no level of government, and no new pressure. It asks two things instead: what would one of those pieces look like if you took it further, and where does the framework that produced all four stop working?
+
+## Course weeks
+
+Part VI covers **Week 16** and the **finals period**. Tuesday of Week 16 pairs the limits of the framework with a hands-on workshop: depositing to Zenodo (practicing first in the Zenodo sandbox) and minting a DOI. Thursday is the book showcase and final studio, where each student presents the chapter-scale pull request they contributed to this book: what they changed, why, and what the book still gets wrong. The final project is due at the end of the finals period.
+
+## The final project
+
+Choose **one** of your four portfolio pieces and take it further in four steps.
+
+1. **Deepen it.** Add new data, carry the analysis to a second level of government, compare it with the module's non-US counter-case, or close the gaps you admitted in your installed-base note. A deeper piece is one whose evidence would survive a hostile reader at the body you addressed.
+2. **Recast it in a new genre.** Rewrite the piece in a genre other than the one its module used: the state audit as a city op-ed, the county records as a state report, the federal comment as testimony. Changing genre changes the audience, the length, the ask, and what counts as evidence, so recasting is a test of whether you understood the first genre. Graduate students may instead use the **research-proposal** genre (@sec-ch-21-research-proposals) and propose the larger study the piece points toward.
+3. **Archive it.** Deposit the final technical artifact and both texts on Zenodo, or another repository that mints a **DOI** (@sec-ch-22-archival-deposits). A DOI is required. An Internet Archive item identifier does not meet the requirement, though an Internet Archive copy is a welcome mirror, and a link to a repository you maintain is not an archive.
+4. **Reflect on it.** Write a 500-word critical-reflection memo: whose interests the work serves and whom it might harm; which affected communities were not consulted; where the framework fails for this case; and what you would do with more time (@sec-ch-23-limits). The memo goes inside the deposit, so the account of the work's limits travels with the work.
+
+**Optional: file a new CORA request.** If you deepen Piece 2, or another piece with a county or state angle, you may file a Colorado Open Records Act request for new records, with the instructor's approval. Colorado agencies typically have three working days to respond, extendable by up to seven more, so file early enough for the records to arrive before the deadline (@sec-ch-09-law).
+
+A submission without the reflection memo or the DOI deposit is incomplete.
+
+Graduate students in INFO 5871 have written a methods memo for every piece: at least five scholarly sources and one methodological choice defended against them. That memo is the seed of a proposal's "gap" and "approach" sections, which is why the proposal genre is open to graduate students here and why @sec-ch-21-research-proposals belongs in this part.
+
+## Why this part ends the book
+
+Each module asked you to borrow a profession's methods and a genre's conventions and to aim them at a body that could act. That is the framework at work: pressures met by values, made durable by an installed base, carried by a lineage, delivered in a genre. Keegan [-@keegan2026] anticipates five critiques of that framework and answers each by asking for more infrastructure. This part asks you to take the critiques further than the framework's own answers do. The book's introduction admits it is US-centric, more comfortable with records than with refusal, and thin on labor and measurement. Part VI asks you to check whether those admissions are true of the cases the book actually uses, and whether they are true of your own work.
+
+## Roadmap
+
+- **@sec-ch-21-research-proposals, Research Proposals.** The proposal as a genre for graduate final projects and as the scholarly backbone of the graduate methods memo: specific aims, budgets and justifications, data management plans, a simulated IRB protocol, and a literature matrix that keeps a methods memo honest.
+- **@sec-ch-22-archival-deposits, Archival Deposits.** The required last step of the final project. Preservation formats, minting a DOI through the Zenodo REST API, preservation plans, and federated deposit with the `internetarchive` client as an optional mirror, practiced on the EPA Toxics Release Inventory and then applied to your own work.
+- **@sec-ch-23-limits, The Limits of the Framework.** The framework turned on itself: the five anticipated critiques, seven limits they leave open, and a reflexive audit that codes the book's own cases by region, level of government, pressure, value, and remedy. It ends with the critical-reflection memo that completes your final project, and with the close of the book.

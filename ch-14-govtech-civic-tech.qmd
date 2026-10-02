@@ -1,0 +1,157 @@
+---
+execute:
+  eval: false
+---
+
+# GovTech and Civic Tech {#sec-ch-14-govtech-civic-tech}
+
+On October 1, 2013, HealthCare.gov launched and immediately collapsed. The federal insurance marketplace had been built by a constellation of contractors through a procurement process whose incentives rewarded compliance with the Statement of Work rather than delivery of a working system. Weeks of public humiliation, a rescue squad recruited from the private sector, and a Presidential apology later, two institutions were born: the United States Digital Service, in the Executive Office of the President, and 18F, in the General Services Administration. Their pitch was simple. Government cannot buy its way out of software problems if the people writing the contracts do not know what software is. Technical competence has to live inside the state, not at the end of a procurement chain.
+
+That conviction has had a rough decade. 18F shipped reusable components, a hiring pipeline for civic-minded technologists, and a reputation for finishing what it started, while spending its whole institutional life as a budget target. In 2025 the General Services Administration shut it down, and the United States Digital Service was renamed by executive order and repurposed. The lesson is not that internal capacity is a bad idea. It is that internal capacity has no natural constituency, whereas vendor capacity has a trade association.
+
+This chapter is the third in the assurance module, and it moves the module's question from the analyst's laptop to the **state** as a buyer. In @sec-ch-12-accounting and @sec-ch-13-engineering, assurance was something you did: a manifest, thresholds, tests, a review. In government, assurance is mostly *bought*, and the contract is where it is specified or surrendered. @sec-ch-03-pit-data-for-good introduced civic tech as one face of public interest technology. Here you meet it alongside **GovTech**, firms that sell software and services to government. The two have different accountability levers. GovTech answers, in principle, through procurement law, contract terms, and audit rights retained by the buyer. Civic tech answers, in principle, to the communities it serves and the funders it relies on. Keegan [-@keegan2026] places GovTech "closest to infrastructuring because it operates where procurement, standards, and administrative records are made," and names the central question: does modernization build public auditability, or deepen "vendor-mediated exemption"?
+
+## Five models on one map
+
+Fix five reference points before going further.
+
+The **United States Digital Service** (2014) deployed small teams of technologists into agencies in crisis: internal capacity, funded through the executive branch, with limited authority to compel. **18F** (2014) was a fee-for-service consultancy to other agencies. Both are US instances of what @brown2017 call "Government as a Platform" (GaaP), in which the state provides shared services that reduce duplication.
+
+The **UK Government Digital Service** (2011) is the elder sibling the US offices copied. Its Service Manual and Service Standard became export goods. Estonia's **X-Road** is not primarily about service design. It is an interoperability layer that lets one agency query another's records without a custom integration. Governance in the Estonian model happens through the interoperability specification: if your system does not speak X-Road, it does not get to play.
+
+The fifth reference point is **IndiaStack**, the layered APIs built around the Aadhaar biometric identity system. It is what GaaP looks like at population scale, and it is the hard case. Enrollment of over a billion people was not meaningfully consented to, because the alternative was exclusion from subsidized rations, banking, and services; @rao2019 tracks how Aadhaar's legal optionality eroded in practice. The case does not discredit the GaaP ambition. It names the stakes of building at that scale without the installed base of @sec-ch-02-installed-base in place.
+
+These five do not share a politics. They share a structural question: where does technical capacity sit, and what does it answer to? For a US state, the usual answer is "with a vendor, under a contract," which makes the contract the place to look.
+
+## Procurement is where the governance is
+
+A Request for Proposal (RFP) is not, at first glance, a governance document. Vendors read it and decide whether to bid. But the RFP is where the buyer declares, in binding language, what the system must do, what records it must produce, what interfaces it must expose, and what happens when the contract ends. If the RFP does not require export in an open format on termination, the vendor owns the database in practice. If it does not require logging, there will be no logs to audit. If it does not reserve the right to publish, the public cannot see what it paid for. Silve [-@silvePoliticalEconomyGovTech2023] and @bharosa2022 both describe the political economy that follows: limited competition, lock-in, and a state that gradually loses the expertise needed to write the next contract.
+
+Make this concrete at the state level. The State of Colorado posts solicitations through a central procurement portal [@bga_procurement], and individual departments buy systems that make or support consequential decisions about benefits, licensing, employment, and services. <!-- TODO: confirm the current name and URL of Colorado's statewide solicitation portal (bga_procurement in references.bib is flagged for verification). --> Assume you are reading a hypothetical Colorado RFP for a system that scores applications for a state benefit and routes some for manual review. The vendor will build a scoring model, a case-management interface, and an API, with milestone payments over three years and a five-year operations-and-maintenance period.
+
+Map what the system would produce. An application is a record. A score is a record. A routing decision, a caseworker override, an appeal, and a model update are records. Each is stored in the vendor's database, forwarded to a state system, or both. The question the RFP has to answer, and often does not, is which records the state owns, in what format they can be exported, and whether anyone outside the vendor can rerun the scoring and disaggregate it.
+
+That last question is where this module's audit enters. Colorado's AI Act (SB 24-205) places duties on deployers of high-risk systems, including impact assessments [@colorado_sb24205]. <!-- TODO: re-check whether, and how, SB 24-205 as amended applies to state agencies as deployers, and the Act's current effective date. --> A state agency cannot honestly complete an impact assessment of a system whose outputs it cannot export and whose model it cannot rerun. The assurance has to be bought in advance.
+
+Canada offers the module's procurement-side counter-case. The Treasury Board's Directive on Automated Decision-Making requires federal institutions to complete an Algorithmic Impact Assessment (AIA) before putting an automated decision system into production [@canada_dadm]. The AIA is a published questionnaire that assigns an impact level from I to IV, and the Directive's requirements (peer review, notice, human involvement, explanation) scale with that level. Completed assessments are published on Canada's open government portal. The design moves part of the audit to before purchase and makes the score public. Its limits are equally instructive: the questionnaire is self-completed by the deploying institution, and its scope is federal, not provincial. <!-- TODO: verify the Directive's current scope, the publication requirement for completed AIAs, and the date of its most recent amendment. -->
+
+Set the three regimes side by side and the variable that matters most is timing. LL144 audits a tool after an employer has bought it, by an auditor the employer hires. Colorado's Act asks deployers to assess systems they already use. Canada's AIA asks the buyer to assess before deployment, and the procurement clause below asks the vendor to deliver the means of assessment before the first payment. The later the assurance arrives, the more it depends on the cooperation of the party being assured, and the more room there is for audit-washing. A state that wants independent verification has to purchase the capacity for it at the moment it has the most leverage, which is before the contract is signed.
+
+::: {.callout-note title="In the Public Interest"}
+The contract is the governance. If an RFP does not require the vendor to export decision records and model outputs in a non-proprietary format, at no added cost, with a documented schema, then the vendor owns the evidence an auditor would need even if the state owns it in law. **Oversight**, as @sec-ch-10-oversight developed it, requires the ability to see, and the specific claim of this chapter is that a state's capacity for independent verification is set at procurement time: an assurance clause that obliges the vendor to deliver what your @sec-ch-12-accounting audit needs (decision logs, protected attributes or a lawful proxy, model versions, and a test suite that runs in CI) is worth more than fifty pages of strategy. Without it, any later audit is an attestation the vendor writes about itself. That is the module's pressure, exemption through audit-washing, installed one contract at a time.
+:::
+
+## Six clauses worth writing
+
+Here are six procurement clauses, expressed as YAML for readability. They are not legal drafting. They are the specification from which a state's attorneys work.
+
+```yaml
+data_export:
+  trigger: [on_demand, quarterly, on_termination]
+  format: [csv, parquet]
+  schema: json_schema
+  destination: buyer_controlled_storage
+  cost: included_in_base_contract
+
+interoperability:
+  api: {style: REST, spec: openapi_3_1, rate_limits_documented: true}
+  identifiers: {persistent: true, resolvable_across_agencies: true}
+
+auditability:
+  immutable_log:
+    events: [score, route, override, appeal, model_update, access_grant]
+    retention_years: 7
+    export_format: ndjson
+  third_party_inspection: {allowed: true, notice_days: 10,
+                           scope: [code, logs, schemas, models]}
+
+algorithmic_assurance:
+  disaggregated_audit:
+    cadence: [pre_deployment, quarterly, on_model_update]
+    artifacts: [manifest, thresholds, changelog, test_suite_in_ci]
+    runnable_by: [buyer, independent_auditor]
+  thresholds_authority: buyer        # the vendor may not move them
+  incident_notice_days: 15
+  public_summary: required
+
+source_code:
+  ownership: buyer
+  delivery: git_repository_with_full_history
+
+vendor_transition:
+  termination_assistance_months: 6
+  knowledge_transfer: documented_runbooks
+  data_migration_tested: annually
+```
+
+Each clause names a failure mode. Omit `data_export` and the vendor can charge an extraction fee on termination. Omit persistent identifiers and, two years later, no one can link a score to its appeal because IDs reset during a migration. Omit `immutable_log` and you cannot tell whether a decision was overridden by a caseworker or by a scheduled job. Omit `vendor_transition` and switching vendors turns out to be impossible, which is how lock-in becomes a permanent governance condition. The new clause, `algorithmic_assurance`, is this module's contribution. It translates the manifest, thresholds, changelog, and CI suite from @sec-ch-12-accounting and @sec-ch-13-engineering into deliverables, and it gives the buyer, not the vendor, authority over thresholds, which closes the drift path that normalization of deviance opens. The incident-notice period here is illustrative; a real one would be set by counsel and aligned with any statutory reporting duty.
+
+## A small Census API exercise: the state's denominator
+
+A disaggregated audit of a state system needs a denominator: who lives where, and how well the data describe them. The Census Bureau's ACS 5-year API [@census_api] gives you that context for all 64 Colorado counties in a few lines.
+
+```python
+import requests
+import pandas as pd
+
+url = "https://api.census.gov/data/2022/acs/acs5"
+params = {
+    "get": "NAME,B19013_001E,B19013_001M",   # median household income, MOE
+    "for": "county:*",
+    "in": "state:08",                          # Colorado
+}
+payload = requests.get(url, params=params, timeout=30).json()
+
+df = pd.DataFrame(payload[1:], columns=payload[0])
+df = df.rename(columns={"B19013_001E": "median_income", "B19013_001M": "moe"})
+df[["median_income", "moe"]] = df[["median_income", "moe"]].apply(
+    pd.to_numeric, errors="coerce")
+df["moe_share"] = df["moe"] / df["median_income"]
+
+print(len(df))
+# => 64
+print(df.sort_values("moe_share", ascending=False)[["NAME", "moe_share"]].head())
+# => small rural counties at the top: their margins of error are a large
+#    share of the estimate itself
+```
+
+::: {.callout-tip title="The Missing Manual"}
+The Census API returns an array of arrays whose first row is the column headers. Feed the raw response to `pd.DataFrame` and your headers become a data row and your first county becomes the column names; `pd.DataFrame(payload[1:], columns=payload[0])` fixes it. Every value arrives as a string, including the numbers, so convert explicitly. Small counties can return sentinel values (large negative numbers) instead of an estimate, which `to_numeric` will happily accept as real; check for them before you average anything. The documentation describes what an endpoint returns. It rarely describes what it does not, such as which geographies have estimates too unreliable to use. Production use calls for a free API key passed as `key=`.
+:::
+
+The interpretive point connects back to the audit. The `moe_share` column is the county-level version of the small-cell problem from @sec-ch-12-accounting. A state system that serves all 64 counties will have few records from the smallest ones, and a statewide audit will either suppress those cells or report noise. Neither is a reason to ignore rural Colorado. Both are reasons to say, in the procurement clause and in the report, how the audit will handle them: pooled years, coarser groupings, or an honest statement of what cannot be known.
+
+## Why the GovTech and civic tech distinction matters
+
+A GovTech vendor answers to its client, the government. If the state writes good contracts, GovTech can deliver public services well. If it writes bad ones, GovTech becomes a way to extract rents while producing systems the public cannot inspect. @bharosa2022 raises the "Trojan horse" worry: a state whose internal capacity has atrophied can no longer write contracts that hold vendors accountable, so GovTech turns extractive even where individual vendors mean well. Taylor [-@taylor2021public] sharpens the point: firms that perform public functions acquire public power without the legitimacy constraints that bind public actors, and contracts are one of the few places those constraints can be reattached.
+
+A civic tech project answers to its funders and, in principle, to its users. @aragon2020 argue for building with communities rather than for them, a methodological commitment that does not solve the funding problem @sec-ch-03-pit-data-for-good diagnosed. The failure modes differ. A failed GovTech contract leaves a locked-in system no one can afford to replace. A failed civic tech project leaves a dead repository and unpaid volunteers. Civic tech's assurance contribution is often outside the contract: the worker observatories of @sec-ch-13-engineering, or a volunteer group that reruns a state's published numbers. Keegan [-@keegan2026] asks of both forms the same question: "what remains after the pilot: who maintains the data, what standards persist, and what oversight pathways are institutionalized." For a state, the answer is written in the contract or the grant agreement, or it is not written anywhere.
+
+## Exercises
+
+**Exercise 14.1 (Guided).** Find an active or recently closed solicitation on Colorado's state procurement portal for a software system that supports decisions about people. Read the Statement of Work in full. Produce a one-page map of the records the system would generate and, for each, whether the solicitation requires it to be exportable by the state and in what format.
+
+**Exercise 14.2 (Applied).** Using the solicitation from 14.1, draft the clauses that would close its gaps, including an `algorithmic_assurance` clause. Each clause should name a record type, format, retention period, and access condition. Exchange drafts with a classmate and defend each clause against a skeptical vendor's likely objection.
+
+**Exercise 14.3 (Technical, laptop, real public data).** Run the Census API call above for Colorado counties. Then choose a second variable relevant to your Piece 3 audit (for example, a population count by race or by sex from a detailed ACS table) and pull it for all 64 counties with margins of error. Produce one chart that shows the estimates with their margins. Write 200 words on which counties your statewide audit can and cannot speak to.
+
+**Exercise 14.4 (Comparative).** In 600 words, compare Canada's Algorithmic Impact Assessment with the impact-assessment duties in Colorado's SB 24-205 and the EU AI Act's conformity assessment. Address who completes the assessment, when, what is published, and who can challenge it. Cite the primary text of each and at least one scholarly source, such as @bharosa2022 or @brown2017. Flag any provision whose current status you could not confirm.
+
+**Exercise 14.5 (Builds Piece 3).** Write the procurement recommendation for your Piece 3 report: a one-page specification, addressed to a named Colorado state body that buys or oversees automated decision systems, stating which audit artifacts a vendor must deliver, who sets thresholds, and how incidents are reported. This becomes one of the recommendations in @sec-ch-15-reports.
+
+## Looking ahead
+
+You now have an audit, a test suite, and a view of where the state buys or gives up assurance. None of it changes anything until it reaches someone who can act. @sec-ch-15-reports is the module's genre chapter: it turns your audit into a report section addressed to a named Colorado state body, with an executive summary that stands on its own, a methods section a skeptical reader can check, and recommendations specific enough to copy into a bill or a contract.
+
+## Further Reading and Resources
+
+- Nitesh Bharosa (2022), "[The rise of GovTech: Trojan horse or blessing in disguise?](https://doi.org/10.1016/j.giq.2022.101692)," *Government Information Quarterly*. A research agenda that names the hard questions.
+- Arthur Silve (2023), "The political economy of GovTech," *IMF Notes*. Procurement, lock-in, and competition from a public-finance angle.
+- Treasury Board of Canada Secretariat, Directive on Automated Decision-Making: <https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592>. Read the impact-level appendix.
+- Government of Canada, Algorithmic Impact Assessment tool: <https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html>. Try the questionnaire on your Piece 3 system. <!-- TODO: confirm URL is current. -->
+- Colorado General Assembly, SB 24-205: <https://leg.colorado.gov/bills/sb24-205>. The state case; read the deployer duties and the bill history.
+- GOV.UK Service Manual: <https://www.gov.uk/service-manual>. Still the best operational reference for designing government services.
+- Estonia's X-Road: <https://x-road.global/>. Interoperability as governance; the technical documentation is unusually honest about tradeoffs.
+- Code for America: <https://codeforamerica.org/>. The US civic tech anchor, with GetCalFresh as case material.
+- US Census Bureau API User Guide: <https://www.census.gov/data/developers/guidance/api-user-guide.html>. Read the known-issues notes before writing code.
+- Linnet Taylor (2021), "[Public actors without public values](https://doi.org/10.1007/s13347-020-00441-4)," *Philosophy & Technology* [@taylor2021public]. Why technology firms performing public functions need public-law constraints. <!-- TODO: verify DOI. -->

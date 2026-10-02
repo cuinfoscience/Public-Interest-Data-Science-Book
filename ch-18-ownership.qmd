@@ -1,0 +1,219 @@
+---
+execute:
+  eval: false
+---
+
+# Ownership {#sec-ch-18-ownership}
+
+A commercial data broker will tell you, if pressed, that it *owns* the nine-hundred-variable dossier it sells about you. Ownership here means a property claim: rights to exclude, alienate, and monetize, backed by contract law. The dossier was assembled, often without your knowledge, from loyalty programs, voter files, credit header data, and the exhaust of a hundred free apps. You do not own it. The broker does.
+
+This chapter argues that ownership in public-interest data science is a different word, and most of the trouble in the field comes from not noticing. Keegan [-@keegan2026] defines ownership as the counter-force to erosion: collective, accountable governance over the preservation, access, and use of public-relevant data, rather than private property or exclusive control. The claim a public-interest steward makes is ownership-as-stewardship, a maintenance obligation that requires labor, authority, and continuity across political cycles. You do not own a public dataset the way a broker owns a dossier. You own it the way a municipal archivist owns the city's property records: accountable for its condition, usability, and survival, and unable to sell it off when the grant runs out.
+
+The last two chapters set up the problem. @sec-ch-16-erosion showed that a volunteer mirror of a federal dataset advances continuity but not authority. @sec-ch-17-planning showed that the people who use and are described by a federal dataset are rarely in the room when it is retired. This chapter asks who should hold the record now, under what rules, for how long, and what it takes to structure that holding so it does not collapse into abandonment or capture. It also asks whether "stewardship" is the right word at all, because for Indigenous nations it is not.
+
+## Two senses of the word
+
+**Ownership-as-property** treats data as an asset with a rights-holder who can license, sell, or destroy it. The vocabulary is real estate and copyright: chain of title, residual rights, assignment. The broker sits here. So, uncomfortably, does a good deal of "open" infrastructure: a university research dataset may be open to collaborators while the technology transfer office treats it as an asset.
+
+**Ownership-as-stewardship** treats data as an ongoing obligation of maintenance, documentation, remediation, and succession. The vocabulary is closer to trusteeship: duties of care, prudence, and loyalty that cannot be dropped without arranging for someone else to take them up. A records manager is a steward. So is the volunteer who keeps a mirror of a retired federal dataset checksummed and online.
+
+Most public-interest infrastructure runs on labor that presumes stewardship inside institutions that default to property. Karasti and Blomberg [-@karasti2018] found that long-running scientific infrastructures work until the person doing the work moves on, then stop working in ways that take years to surface; @sec-ch-03-pit-data-for-good called the uncredited version of this labor ghost work. Schwartz and Cook [-@schwartz2002] made the argument for archives decades ago: what gets kept, and who decides, are political choices all the way down. Stoler [-@stoler2002], reading colonial Dutch archives, showed the archive to be an instrument of power whose silences must be read as carefully as its records.
+
+## The legal skeleton of federal stewardship
+
+Federal data already has a stewardship skeleton, and knowing where it ends is the point. The Federal Records Act requires agencies to preserve records and to destroy them only under disposition schedules approved by the National Archives and Records Administration. The OPEN Government Data Act, Title II of the Foundations for Evidence-Based Policymaking Act of 2018, requires agencies to maintain data inventories and to publish data in open formats by default. <!-- TODO: add bib entries for 44 U.S.C. ch. 31 (Federal Records Act) and Pub. L. 115-435 (Evidence Act) if cited formally. -->
+
+Notice the gap. Retention law governs whether a record is *destroyed*. It says much less about whether the public can *reach* it. A dataset can vanish from a public website while the underlying records remain in agency custody, lawfully retained and practically inaccessible. That is exactly the gap the volunteer mirrors of @sec-ch-16-erosion fill, and exactly why their stewardship has to be designed rather than improvised.
+
+## Data trusts, briefly
+
+One response to the mismatch is the **data trust**: a legal structure in which a trustee holds rights over data on behalf of beneficiaries, with fiduciary duties enforceable in court. The Ada Lovelace Institute's review [@ada_data_trusts] found trusts more proposed than operational, but the proposal forces the right questions: who the beneficiaries are, what the trustee may do, and what remedies exist if the trust is breached. Delacroix and Lawrence [-@delacroix2019] argue for bottom-up trusts in which data subjects themselves are the beneficiary class. You will not stand up a trust here. You will stand up the minimum you can maintain before one exists: tiered access, a threat model, and a stewardship plan.
+
+## Indigenous data sovereignty as a foundational challenge
+
+"Stewardship with duties to beneficiaries" presumes the beneficiaries delegated anything. For many datasets they did not. Te Mana Raraunga [@temanararaunga], the Māori Data Sovereignty Network in Aotearoa New Zealand, argues that Māori data is not a resource to be stewarded on Māori behalf by a non-Māori institution. It belongs to Māori, under Māori governance, as sovereignty rather than trust. In Canada, the First Nations principles of OCAP (ownership, control, access, and possession) [@fnigc_ocap] assert that First Nations collectively own their data, control how it is collected and used, decide who may access it, and should physically possess it. OCAP uses the word "ownership" deliberately, and it does not mean stewardship by someone else. The CARE Principles [@carroll2020] (collective benefit, authority to control, responsibility, ethics) extend the argument to Indigenous data governance generally.
+
+In the United States, federal agencies hold large amounts of data about tribal nations and their citizens, from the Census to health and land records, and the US Indigenous Data Sovereignty Network [@usidsn] has pressed the same claims here. The tools you are about to build assume that a public has delegated stewardship to an institution. They do not work when a people has delegated nothing. @sec-ch-19-critical-data-studies-refusal takes this up, including cases where the right answer is not tiered access but refusal.
+
+## Tutorial: tiering a federal mirror
+
+In @sec-ch-06-openness you cleaned a city campaign finance file. Federal campaign finance has the same shape at national scale. The Federal Election Commission publishes itemized individual contributions with each donor's name, city, state, ZIP code, employer, and occupation, and the OpenFEC API also returns street addresses for many itemized receipts. All of it is legally public. Legal publicness and safe republishability are not the same thing: name plus street address plus employer is enough for harassment well beyond what disclosure law contemplated. The statute itself knows this. The Federal Election Campaign Act bars anyone from selling or using information copied from these reports to solicit contributions or for commercial purposes (52 U.S.C. § 30111(a)(4)), a use restriction written into the law that makes the data public.
+
+Suppose you maintain a mirror of Colorado contributions for researchers and reporters, in case the FEC's interfaces change. You will build three tiers over one SQLite file:
+
+- **Public tier.** Aggregates only: totals by committee and ZIP code. No individual rows.
+- **Researcher tier.** Individual rows without street address. Token-gated and logged per query, for credentialed journalists and researchers with a documented project.
+- **Restricted tier.** Full rows including address. Case by case, granted by a named human, logged in a public register.
+
+### Pull, load, and define the views
+
+```python
+import os, sqlite3, requests, pandas as pd
+
+KEY = os.environ.get("FEC_API_KEY", "DEMO_KEY")  # api.data.gov key; DEMO_KEY is rate-limited
+params = {"api_key": KEY, "contributor_state": "CO",
+          "two_year_transaction_period": 2024, "per_page": 100}
+r = requests.get("https://api.open.fec.gov/v1/schedules/schedule_a/",
+                 params=params, timeout=60)
+rows = r.json()["results"]   # one page; follow "last_indexes" to paginate
+cols = ["sub_id", "committee_id", "contributor_name", "contributor_street_1",
+        "contributor_city", "contributor_zip", "contributor_employer",
+        "contributor_occupation", "contribution_receipt_amount",
+        "contribution_receipt_date"]
+df = pd.DataFrame(rows).reindex(columns=cols)
+df["zip5"] = df["contributor_zip"].str[:5]
+con = sqlite3.connect("fec_co_mirror.db")
+df.to_sql("filings_raw", con, if_exists="replace", index=False)
+len(df)
+# => 100
+```
+
+<!-- TODO: verify OpenFEC schedule_a field names and keyset pagination against https://api.open.fec.gov/developers/ before the term. -->
+
+```sql
+-- Public tier: aggregates with a k-anonymity floor.
+CREATE VIEW public_totals_by_zip AS
+SELECT zip5, COUNT(*) AS n, SUM(contribution_receipt_amount) AS total
+FROM filings_raw GROUP BY zip5 HAVING n >= 5;
+
+-- Researcher tier: individual rows, no street address.
+CREATE VIEW researcher_filings AS
+SELECT sub_id, committee_id, contributor_name, contributor_city, zip5,
+       contributor_employer, contributor_occupation,
+       contribution_receipt_amount, contribution_receipt_date
+FROM filings_raw;
+-- Restricted tier: filings_raw itself, gated at the application layer.
+```
+
+The public view enforces a floor of five contributions per ZIP so an aggregate cannot single out a lone donor. The researcher view drops the street address but keeps employer and occupation, which are newsworthy in ways addresses rarely are. SQLite has no per-row permissions, so the restricted tier is enforced in application code.
+
+### A thin gate with an audit log
+
+```python
+from flask import Flask, request, abort, jsonify
+import hmac, json, datetime
+
+app = Flask(__name__)
+DB, AUDIT_LOG = "fec_co_mirror.db", "access_audit.jsonl"
+TOKEN = os.environ["MIRROR_RESEARCHER_TOKEN"]
+
+def log_query(tier, user, query):
+    entry = {"ts": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+             "tier": tier, "user": user, "query": query}
+    with open(AUDIT_LOG, "a") as f:
+        f.write(json.dumps(entry) + "\n")
+
+@app.route("/public/zip")
+def public_zip():
+    rows = sqlite3.connect(DB).execute("SELECT * FROM public_totals_by_zip").fetchall()
+    log_query("public", "anonymous", "totals_by_zip")
+    return jsonify(rows)
+
+@app.route("/researcher/query", methods=["POST"])
+def researcher_query():
+    token = request.headers.get("X-Research-Token", "")
+    if not hmac.compare_digest(token, TOKEN):
+        abort(401)
+    q = request.json.get("query", "")
+    if not q.strip().lower().startswith("select") or "filings_raw" in q.lower():
+        abort(403)
+    rows = sqlite3.connect(DB).execute(q).fetchall()
+    log_query("researcher", request.headers.get("X-Research-User", "unknown"), q)
+    return jsonify(rows)
+# => GET /public/zip returns [["80302", 41, 12650.0], ...] (illustrative)
+```
+
+This is not a hardened system. A determined attacker can evade two string checks. The point is to make the tiers legible as code, with each tier's permissions visible to a reviewer in one file.
+
+::: {.callout-tip title="The Missing Manual"}
+Environment-variable credentials are not security. They are a social contract with your deployment pipeline, and the pipeline leaks them in ways tutorials rarely mention. A token printed to a container log because someone left `DEBUG=true` on is not a secret anymore. A token captured in a stack trace that an error-tracking service forwarded to a third party is not a secret either. A token committed in a `.env` file two refactors ago and never rotated is, for practical purposes, plaintext. Rotate on a schedule, not only after incidents, and check what your logging captures on exception. Note also that the audit log you just built is itself sensitive: it records who researched whom, and it can be subpoenaed.
+:::
+
+### Decision rules, threat model, and stewardship plan
+
+The code enforces tiers. The decision rules say who belongs in which tier, and they are the part that will be contested, so keep them in a versioned document:
+
+```yaml
+# access_policy.yaml
+dataset: fec_colorado_individual_contributions_mirror
+tiers:
+  public:     {contents: "aggregates, k >= 5", auth: none}
+  researcher: {audience: [credentialed journalists, IRB-approved researchers],
+               contents: "rows without street address",
+               auth: "named token", logging: "per query, 12 months"}
+  restricted: {audience: case-by-case, auth: "two stewards plus public register"}
+revocation: {grounds: [misuse, commercial or solicitation use], appeal: full steward group}
+```
+
+A threat model names who might attack the system and what they want. A workable one is a page: assets (donor rows, addresses, access logs, tokens); actors (a harasser seeking a donor's address, a broker enriching dossiers in violation of the sale-or-use rule, a careless researcher, a party compelling disclosure of the access log); attack paths (token leak, SQL that evades the views, re-identification from small-ZIP aggregates, social engineering a steward); mitigations; and the gaps you have not closed (no rate limiting, no differential privacy). It turns "we took security seriously" into a list someone can check.
+
+The last artifact is new to this chapter and is the one Piece 4 needs: a **stewardship plan**. It answers the four questions on which every volunteer mirror lives or dies: retention, migration, custody, and wind-down. A fixity manifest is the technical core, because checksums are how a copy proves it has not changed since it left the agency.
+
+```python
+import hashlib, pathlib, json
+
+def fixity_manifest(folder):
+    out = {}
+    for p in sorted(pathlib.Path(folder).rglob("*")):
+        if p.is_file():
+            out[str(p)] = hashlib.sha256(p.read_bytes()).hexdigest()
+    return out
+
+json.dump(fixity_manifest("mirror/"), open("manifest-sha256.json", "w"), indent=2)
+# => {"mirror/fec_co_mirror.db": "9f2c...", ...}
+```
+
+```yaml
+# stewardship_plan.yaml
+dataset: <federal dataset from Exercise 16.3>
+source_of_record: <agency, program, URL, retrieval date>
+retention: {keep: "every release", review: annually}
+fixity: {manifest: manifest-sha256.json, verify: monthly}
+migration: {formats: [CSV, Parquet], triggers: [format deprecation, host change]}
+custody:
+  primary: <named steward or role>
+  mirrors: [<institutional repository>, <Internet Archive item>]
+  succession: <who takes over, and how they are told>
+access: <public, or tiered per access_policy.yaml>
+wind_down: {condition: "agency resumes publication with equivalent coverage",
+            action: "freeze, deposit, and point to the agency source"}
+```
+
+The wind-down clause matters more than it looks. A mirror that has no end condition either outlives its stewards or competes with the agency's own record. Saying in advance when you will stop is part of being accountable.
+
+## Why "just use GitHub" is stewardship outsourcing
+
+The shortcut is tempting: aggregates in a public repository, rows in a private one, and let the platform handle authentication and logging. But GitHub is a commercial service operating under terms it may change unilaterally and subject to US sanctions law and takedown claims. None of that makes it unusable. It means "just use GitHub" is not a stewardship decision. It is a stewardship *outsourcing* decision, on terms you did not negotiate. The same holds for any cloud folder or notebook service. Each can sit inside a stewardship arrangement; none of them *is* one.
+
+::: {.callout-note title="In the Public Interest"}
+Ownership-as-stewardship turns the continuity element of the installed base (@sec-ch-02-installed-base) from a slogan into a job. The specific claim for federal data: retention law protects records from destruction but not from disappearing from public view, so the public's practical **ownership** of a federal dataset depends on stewards outside the agency who write down retention, migration, custody, and wind-down, and who can prove fixity. A mirror without that plan loses continuity within two transitions of its own. And the challenge from Te Mana Raraunga and OCAP stands: for data about Indigenous nations, the steward's first obligation may be to return possession, not to keep a copy. @sec-ch-22-archival-deposits picks up custody when you deposit your own work.
+:::
+
+## Exercises
+
+**Exercise 18.1 (Guided; laptop, real data).** Pull at least 500 Colorado individual contributions from the OpenFEC API (paginate with `last_indexes`). Build the two views, run the Flask gate locally, issue one public and one researcher query, and capture the audit log entries. Submit the SQL, the app, and the first ten lines of the log.
+
+**Exercise 18.2 (Analytic).** Write `threat_model.md` and `access_policy.yaml` for Exercise 18.1. Name three actors specific to your setting, three attack paths, three mitigations, and at least two gaps you are not yet mitigating. Explain in one paragraph how the statutory sale-or-use restriction changes your threat model.
+
+**Exercise 18.3 (Applied; Piece 4 component).** Write a stewardship plan for the federal dataset you audited in Exercises 16.1 to 16.3, using the YAML skeleton above, and generate a fixity manifest for a copy you hold. Name a steward by role, a mirror, a succession rule, and a wind-down condition. Use your stakeholder map from Exercise 17.2 to decide who should have a say in the access rules. If you conclude that the dataset should not be mirrored at all, write the refusal specification in @sec-ch-19-critical-data-studies-refusal instead. Save as `exercises/ch18_stewardship/`.
+
+**Exercise 18.4 (Applied research).** Document the governance of one operating body: a data trust or cooperative (UK Biobank, Salus Coop, or a case tracked by the Ada Lovelace Institute) or an Indigenous data governance body (Te Mana Raraunga, the First Nations Information Governance Centre, or a tribal research review board). In 500 to 800 words, cover who governs, on whose behalf, what rights members have, what happens on wind-down, and where the money comes from. Cite governance documents, not journalistic summaries.
+
+**Exercise 18.5 (Open-ended, project-linked).** Return to your project sketch from Exercise 1.5. For each infrastructure your project depends on (hosting, data source, library, registry, funder), name the steward in the ownership-as-stewardship sense. For two of them, write one paragraph on what happens to your project if they stop tomorrow. If your answer is "I would be fine," revisit whether you identified the dependency correctly.
+
+## Looking ahead
+
+You can now hold a federal record with tiers, a threat model, and a plan for its custody and end. @sec-ch-19-critical-data-studies-refusal asks the harder question underneath all of it: whether the record should exist in the form you are preserving. Critical data studies, data justice, and refusal show how each element of the installed base can become a mechanism of harm, and they give you the alternative artifact for Piece 4: a refusal specification.
+
+## Further Reading and Resources
+
+- Helena Karasti and Jeanette Blomberg (2018), "[Studying infrastructuring ethnographically](https://doi.org/10.1007/s10606-017-9296-7)," *Computer Supported Cooperative Work* 27: 233–265. What maintenance labor actually is.
+- Joan M. Schwartz and Terry Cook (2002), "[Archives, records, and power](https://doi.org/10.1007/BF02435628)," *Archival Science* 2: 1–19. The foundational argument for archives as instruments of power.
+- Te Mana Raraunga, "Principles of Māori data sovereignty" (2018): <https://www.temanararaunga.maori.nz/tutohinga>.
+- First Nations Information Governance Centre, "The First Nations Principles of OCAP": <https://fnigc.ca/ocap-training/>.
+- Stephanie Russo Carroll et al. (2020), "[The CARE Principles for Indigenous data governance](https://doi.org/10.5334/dsj-2020-043)," *Data Science Journal* 19: 43.
+- Ada Lovelace Institute (2021), "Exploring legal mechanisms for data stewardship": <https://www.adalovelaceinstitute.org/report/legal-mechanisms-data-stewardship/>.
+- Sylvie Delacroix and Neil D. Lawrence (2019), "[Bottom-up data trusts](https://doi.org/10.1093/idpl/ipz014)," *International Data Privacy Law* 9(4): 236–252.
+- OpenFEC API documentation: <https://api.open.fec.gov/developers/>. The federal campaign finance API used in the tutorial.
+- National Archives and Records Administration, records management: <https://www.archives.gov/records-mgmt>. Where federal retention schedules live. <!-- TODO: verify URL. -->
+- OWASP, "Threat Modeling Cheat Sheet": <https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html>.

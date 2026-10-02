@@ -6,14 +6,14 @@ This appendix collects external resources for readers who want to go further. Ea
 
 ## Cross-cutting tools
 
-- **Datasette** ([datasette.io](https://datasette.io)). Simon Willison's toolkit for publishing SQLite databases as inspectable web applications. Used in Chapters 6, 10, 11, and 22.
-- **Quarto** ([quarto.org](https://quarto.org)). The rendering framework this book is built with. Used implicitly throughout and explicitly in Chapter 18.
-- **The Wayback Machine** ([archive.org/web](https://web.archive.org)). The Internet Archive's web capture service. Used in Chapters 4 and 22.
-- **regulations.gov** ([regulations.gov](https://regulations.gov)). The federal rulemaking docket. Central to Chapter 21.
-- **DMPTool** ([dmptool.org](https://dmptool.org)). Templates for data management plans. Central to Chapter 19.
+- **Datasette** ([datasette.io](https://datasette.io)). Simon Willison's toolkit for publishing SQLite databases as inspectable web applications. Used in Chapters 6, 9, 12, and 22.
+- **Quarto** ([quarto.org](https://quarto.org)). The rendering framework this book is built with. Used implicitly throughout and explicitly in Chapter 15.
+- **The Wayback Machine** ([archive.org/web](https://web.archive.org)). The Internet Archive's web capture service. Used in Chapters 16 and 22.
+- **regulations.gov** ([regulations.gov](https://regulations.gov)). The federal rulemaking docket. Central to Chapter 20.
+- **DMPTool** ([dmptool.org](https://dmptool.org)). Templates for data management plans. Central to Chapter 21.
 - **Zenodo** ([zenodo.org](https://zenodo.org)). CERN's general-purpose research archive. Central to Chapter 22.
-- **fairlearn** ([fairlearn.org](https://fairlearn.org)). Python toolkit for disaggregated performance evaluation. Central to Chapters 7 and 11.
-- **geopandas** ([geopandas.org](https://geopandas.org)). Geographic data for pandas users. Central to Chapter 12.
+- **fairlearn** ([fairlearn.org](https://fairlearn.org)). Python toolkit for disaggregated performance evaluation. Central to Chapters 12 and 13.
+- **geopandas** ([geopandas.org](https://geopandas.org)). Geographic data for pandas users. Central to Chapter 17.
 
 ## Communities and networks
 

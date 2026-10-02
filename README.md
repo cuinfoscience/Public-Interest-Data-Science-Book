@@ -2,15 +2,16 @@
 
 A Quarto textbook by Brian C. Keegan (University of Colorado Boulder, Department of Information Science).
 
-This book teaches data science for public-interest ends. It has five parts:
+This book teaches data science for public-interest ends. It has six parts. The four middle parts are modules that each pair a professional lineage with a level of government and end in a portfolio piece:
 
-1. **Pressures**. Enclosure, exemption, and erosion as structural forces on public knowledge.
-2. **Values**. Openness, oversight, and ownership as the installed base of accountability.
-3. **Lineages**. What data scientists can inherit from journalism, law, accounting, planning, and engineering.
-4. **Adjacent Conversations**. Public interest technology, data for good, GovTech, civic tech, critical data studies, and refusal.
-5. **Genres**. How to actually do the work: op-eds, reports, research proposals, testimony, public comments, and archival deposits.
+1. **Foundations**. The contested public interest; the framework of pressures (enclosure, exemption, erosion), values (openness, oversight, ownership), and the installed base; and neighboring fields.
+2. **Journalism: The City**. Enclosure → openness. Reproduce an investigation, publish city data, write an op-ed.
+3. **Law: The County**. Exemption → oversight. Work with county records already released under CORA, build an exemptions and remedy ledger, write testimony.
+4. **Assurance: The State**. Accounting and engineering. Audit-washing → oversight. Run and test a disaggregated audit, write a report for a state body.
+5. **Planning: The Nation**. Erosion → ownership. Audit a federal dataset's decay, design stewardship or refusal, write a public comment on a federal rulemaking.
+6. **Beyond the Portfolio**. Research proposals, archival deposits, and the limits of the framework.
 
-The book is drafted as the companion to INFO 46XX *Public Interest Data Science*, taught at CU Boulder. It builds on the framework laid out in Keegan (2026), "Public interest data infrastructuring."
+The book is the companion to INFO 4871/5871 *Public Interest Data Science* at CU Boulder (course materials: [cuinfoscience/pids-Spring2027](https://github.com/cuinfoscience/pids-Spring2027)). It builds on the framework laid out in Keegan (2026), "Public interest data infrastructuring."
 
 ## Reading the book
 
@@ -42,7 +43,7 @@ The short version:
 - Every chapter has at least one "Missing Manual" callout and one "In the Public Interest" callout.
 - No em-dashes as a stylistic tic.
 - 4–5 graduated exercises per chapter.
-- Every Part V chapter ends with a submittable artifact.
+- Every module ends with a genre chapter whose last exercise is a submittable portfolio piece.
 
 ## License
 

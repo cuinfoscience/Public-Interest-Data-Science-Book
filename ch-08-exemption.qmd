@@ -1,0 +1,184 @@
+---
+execute:
+  eval: false
+---
+
+# Exemption: Who Must Answer? {#sec-ch-08-exemption}
+
+Part II worked at the scale of a city, from enclosure (@sec-ch-04-enclosure) through openness (@sec-ch-06-openness) to an op-ed for a city audience (@sec-ch-07-op-eds). All of that assumed one problem: the records you needed were hard to reach. This part of the book climbs one rung up the ladder of government, to the county, and takes up a different problem. Suppose you *can* see the outputs of a system. They are on a published spreadsheet, or in a board packet, or scrolling past on a caseworker's screen. Who is obliged to explain how they were produced? Who has to answer when they go wrong? For a remarkable share of consequential automated decisions in the United States in the mid-2020s, the honest answer is: no one with enforceable authority, on any clock that a parent, a reporter, or a county commissioner can use.
+
+Enclosure asks *who can observe?* Exemption asks *who must answer?* Enclosure operates through the terms of access to data. Exemption operates through trade-secret law, procurement contracts, sovereign immunity, statutory carve-outs from public-records regimes, and the plain fact that many public agencies run software they did not build and cannot fully inspect. Pasquale [-@pasquale2016] named this the *black box society*: a condition in which the scoring and sorting machinery of credit, insurance, hiring, and policing is legally and practically sealed off from the people it sorts. Keegan [-@keegan2026] defines exemption as "a lack of enforceable governance," the absence or non-enforcement of duties that would otherwise require disclosure, auditability, and remedy. When the exempt actor is a county department using a vendor's model to decide which families get investigated, the pretense of an arm's-length relationship collapses.
+
+Counties are where this bites. They run jails and sheriff's offices, administer elections, assess property, and in many states deliver the human services that touch the most vulnerable residents. Colorado is one of the handful of states (nine, by one Colorado legislative staff count) where child welfare is state-supervised but county-administered; Pennsylvania also runs child welfare through its counties.<!-- TODO: verify the Pennsylvania county-administered characterization against a primary source (e.g., PA DHS). --> Counties also get less press attention than cities and less legislative scrutiny than states. This chapter takes up two cases. The long example is the Allegheny Family Screening Tool (AFST), a risk-scoring system used since 2016 by the child-welfare hotline of Allegheny County, Pennsylvania. It is a *county* system, documented in county records, and you will build an evidence ledger for it from public sources. The short comparison is the Dutch state's Systeem Risico Indicatie (SyRI), one of the rare cases in which a court found an automated decision system unlawful and shut it down [@syri2020].
+
+## Two kinds of exemption
+
+Separate **legal exemption** from **practical exemption** before you go near a keyboard. Keegan [-@keegan2026] draws the same line.
+
+Legal exemption is the carved-out space where disclosure duties do not reach. Trade-secret protections under the Defend Trade Secrets Act and state analogues travel with a vendor into a county's procurement file. Federal FOIA exemptions 4 (trade secrets) and 7 (law enforcement) are routinely invoked to withhold model specifications and performance audits, and state public-records laws, including Colorado's, have their own versions (@sec-ch-09-law walks through them). The Computer Fraud and Abuse Act (CFAA) historically chilled independent testing: until *Sandvig v. Barr* [@aclu2019], academic auditors faced a credible threat of federal prosecution for creating test accounts that violated a platform's terms. *Sandvig* narrowed that risk for research but did not eliminate civil exposure and did not reach state computer-crime laws. Terms of service tie back to @sec-ch-04-enclosure: what a vendor's lawyers wrote at procurement time continues to govern what the public can ask later.
+
+Practical exemption is the larger space. Even where the law requires disclosure, the route is slow, fragmented, and under-enforced. A reporter files a records request for a vendor contract and receives, weeks later, a PDF with most of its text redacted. A parent whose family was screened in for investigation reads a letter citing an "assessment" without naming the model, the version, the features, or the threshold. The information exists. Nobody is obliged to aggregate it. Exemption does not require secrecy. It only requires that the cost of reconstructing the picture exceed what a resident, a reporter, or an underfunded nonprofit can afford. Fragmentation is the weapon.
+
+::: {.callout-note title="In the Public Interest"}
+**Oversight**, as @sec-ch-10-oversight will develop it, is not a property of a single document. It is a property of the *linkage* between documents: a procurement contract that names a vendor, a methodology report that describes that vendor's model, a records response that discloses subgroup performance, a court filing that tests a denied claim. Exemption thrives on fragmentation because each artifact taken alone is plausible. The contract does not name the model. The methodology report does not mention the contract. The letter to the family mentions neither. Keegan [-@keegan2026] calls the missing ingredient **linkability**, and without it oversight is a pile of disconnected complaints. The specific claim of this chapter is that an evidence ledger is the cheapest linkability infrastructure you can build: it turns scattered county documents into a single record that a lawyer, a commissioner, or a records custodian can be asked to answer.
+:::
+
+## Allegheny Family Screening Tool, as a county object
+
+Allegheny County's Department of Human Services runs the hotline that receives child-welfare referrals. Since August 2016, call screeners have seen, alongside the case narrative, a score produced by the Allegheny Family Screening Tool. The score estimates the likelihood of a future child-welfare event for a child named in the referral, such as removal from the home, within a defined window. A screener uses the score as one input in deciding whether to open an investigation.
+
+Eubanks [-@eubanks2018] treated AFST in *Automating Inequality* as a paradigmatic case of a predictive instrument that extends surveillance into poor families under the banner of decision support. The county and the developers have disputed some of her characterizations and affirmed others. AFST is unusual because a reader can assemble a nontrivial picture of it from public sources, much of it published by the county itself. It is typical because the picture is incomplete, and the incompleteness is not random.
+
+It is also not a Pennsylvania curiosity. When the Associated Press reported in January 2023 that the U.S. Department of Justice was scrutinizing AFST over possible discrimination against families with disabilities, it analyzed Allegheny's algorithm "and those inspired by it," naming Los Angeles County, Oregon, and Douglas County, Colorado [@ho2023]. A county system travels from county to county through procurement and research partnerships. The evidence about it does not travel with it.
+
+## The evidence ledger
+
+The technique is deliberately unglamorous. Read every public document you can find about the system. For each, record what it tells you and, just as importantly, what it does not. The `pandas` DataFrame below is an *evidence ledger*: a structured record of provenance that puts gaps on the same footing as findings.
+
+```python
+import pandas as pd
+
+rows = [
+    {"source": "Allegheny County RFP and vendor selection memo",
+     "date": "2014-11", "type": "procurement",
+     "what_it_tells_us": "Names the selected research team and the "
+         "county data systems to be integrated.",
+     "what_it_doesnt": "Does not disclose price, model family, or "
+         "performance targets."},
+    {"source": "Vaithianathan et al. methodology report",
+     "date": "2019-04", "type": "technical_report",
+     "what_it_tells_us": "Describes features drawn from the county's "
+         "integrated data warehouse; reports AUC and calibration.",
+     "what_it_doesnt": "Does not disclose the production threshold, "
+         "retraining cadence, or deployed subgroup performance."},
+    {"source": "Chouldechova et al., FAT* 2018",
+     "date": "2018-02", "type": "peer_reviewed",
+     "what_it_tells_us": "Subgroup error-rate analysis on a research "
+         "version of the model.",
+     "what_it_doesnt": "Research version is not the fielded tool; "
+         "labels are proxies, as the authors acknowledge."},
+    {"source": "Eubanks, Automating Inequality, ch. 4",
+     "date": "2018-01", "type": "book",
+     "what_it_tells_us": "Situates AFST in the county's data "
+         "integration project; documents community concerns.",
+     "what_it_doesnt": "Predates later model revisions."},
+    {"source": "Associated Press (Ho and Burke)",
+     "date": "2022-04", "type": "press",
+     "what_it_tells_us": "Reports a Carnegie Mellon analysis of "
+         "racial disparity in 'mandatory' screen-in scores.",
+     "what_it_doesnt": "County disputed the data vintage; the story "
+         "cannot show the current version or threshold."},
+    {"source": "Associated Press (Ho and Burke)",
+     "date": "2023-01", "type": "press",
+     "what_it_tells_us": "Reports DOJ scrutiny over disability-related "
+         "features; names counties with similar tools.",
+     "what_it_doesnt": "DOJ materials are not public; we learn an "
+         "inquiry exists, not what it found."},
+]
+# TODO: verify the RFP date and contents against the county's posted
+# procurement documents before treating row 1 as sourced.
+
+evidence = pd.DataFrame(rows)
+evidence["date"] = pd.to_datetime(evidence["date"])
+evidence = evidence.sort_values("date").reset_index(drop=True)
+print(evidence.shape)
+# => (6, 5)
+
+evidence[["date", "source", "what_it_doesnt"]].to_csv(
+    "afst_gaps.csv", index=False)
+```
+
+Six rows is not a lot. That is the point. A mature ledger for a deployed county system might run to forty. The two text columns carry the method. `what_it_tells_us` is the affirmative claim you can cite. `what_it_doesnt` is the negative space: what you would still need to request, subpoena, or discover to make a stronger claim. A one-column ledger is a bibliography. A two-column ledger is the beginning of an accountability argument.
+
+Notice two things. The most technical document, the methodology report [@vaithianathan2019], is silent on the deployed threshold. The most politically charged finding, the federal inquiry [@ho2023], has the least available record. Both are facts about the county's records, not the model's math.
+
+::: {.callout-tip title="The Missing Manual"}
+The methodology report does not say. The procurement memo does not say. The press story cannot say. Those silences are data. A standard failure of accountability writing is to treat absence as a rhetorical flourish ("notably, the county does not disclose...") and move on. Do not move on. Write the absence into the ledger as an object with a date, a source, and a `what_it_doesnt` entry. You will use it when you draft a records request in @sec-ch-09-law and when you testify in @sec-ch-11-testimony. An absence with a citation is one you can ask a custodian to fill, or a court to compel. An absence you only gestured at in prose is a complaint.
+:::
+
+## From a gap to a request
+
+The ledger does more than describe. Each `what_it_doesnt` entry is a candidate line item for a records request, and the request is how a county-level gap becomes a county-level duty to answer. A few lines of `pandas` make that move explicit.
+
+```python
+gaps = evidence.loc[evidence["type"].isin(
+    ["procurement", "technical_report"]), ["source", "what_it_doesnt"]]
+
+for i, row in enumerate(gaps.itertuples(), start=1):
+    print(f"({i}) Records sufficient to show what {row.source} omits: "
+          f"{row.what_it_doesnt}")
+# => (1) Records sufficient to show what Allegheny County RFP ...
+# => (2) Records sufficient to show what Vaithianathan et al. ...
+```
+
+The output is not a finished request. Custodians answer requests for *records*, not questions, so each line still has to be rewritten as a category of document ("contracts and amendments," "validation reports delivered to the county") rather than a question about the model. @sec-ch-09-law shows how. But the habit matters: every gap in your ledger should map to a record that some office holds or a record that no office holds. The second kind is a finding.
+
+## Reading the deployed model from the outside
+
+The ledger tells you what documentation exists. It does not tell you how the model behaves today. Three kinds of external inference are available without breaking any law.
+
+The first is **decision-record inspection**: aggregate screening statistics, where an agency releases them, let you estimate crudely whether the tool shifted screen-in rates, though not individual decisions.
+
+The second is **disparate-impact analysis on outcomes**, using downstream data obtained by request or partnership, as Chouldechova and colleagues [-@chouldechova2018] did for a pre-deployment version.
+
+The third is **audit-by-adversarial-use**: submitting test cases through a live interface. CFAA exposure matters here, and county child-welfare systems expose no interface you could query, which is why audit-by-use is common in hiring and advertising and rare in this domain.
+
+```python
+# Illustrative skeleton. Do not run against a live agency system.
+def selection_rates(decisions):
+    """Screen-in rates by group; one row per referral with columns
+    referral_id, group, screened_in."""
+    g = decisions.groupby("group").agg(
+        n=("referral_id", "count"),
+        screened_in=("screened_in", "sum"))
+    g["rate"] = g["screened_in"] / g["n"]
+    return g.reset_index()
+# Expected output columns: group, n, screened_in, rate
+```
+
+None of this code is the audit. It is scaffolding you build so that, when an agency publishes aggregates or a data-sharing agreement is signed, you have somewhere to put the numbers. The substantive work is upstream: filing the request, negotiating the agreement, obtaining review. The full disaggregated audit is taught in @sec-ch-12-accounting, where it belongs to the assurance lineage.
+
+## When the state is the adversary: SyRI and after
+
+The Dutch case inverts a habit U.S. readers bring to these problems. In the usual U.S. story, the adversary is a commercial vendor whose system a public agency adopted. The vendor holds the trade-secret claim, the agency carries the disclosure duty, and advocates play them against each other. In SyRI, the adversary was the state itself.
+
+Systeem Risico Indicatie was a cross-agency tool that linked welfare, tax, labor, and housing data to score residents for fraud risk, deployed in targeted, mostly low-income neighborhoods. In February 2020, the District Court of The Hague ruled in *NJCM v. the Netherlands* that the legislation authorizing SyRI violated Article 8 of the European Convention on Human Rights, because the state's interest in fraud detection did not justify the system's opacity and breadth [@syri2020]. The ruling did not turn on the model's accuracy. It turned on the state's failure to make the system legible enough for residents to understand and challenge. Successor practices adapted the legal wrapper without abandoning the approach [@deArruda2024], and the *toeslagenaffaire* childcare-benefits scandal exposed a more damaging pattern in the tax administration. Amnesty International [-@amnesty2021] documents how a risk-classification model in that system treated nationality as a risk factor, triggering clawbacks that pushed thousands of families into debt. Families could not learn why they had been flagged, so the pattern surfaced only when journalists and parliamentary inquiry reconstructed it from outside [@rotterdam_lighthouse2023].
+
+Three contrasts with AFST matter. First, the Dutch regime offered a forum (the Article 8 claim) in which system-level opacity could be litigated directly, rather than through the U.S. habit of challenging individual denials. Second, the affected class was organized, through civil-society coalitions and parliamentary allies, well enough to press the claim. Third, the remedy was shutdown, not disclosure: the court did not order SyRI opened. It ordered it stopped. @sec-ch-09-law asks what U.S. doctrine offers in its place, and @sec-ch-10-oversight asks what a remedy pathway looks like at the county scale.
+
+::: {.callout-tip title="The Missing Manual"}
+When the state is the exempt actor, strategies that assume the state is a neutral referee between resident and vendor stop working. Most accountability tooling (model cards, datasheets, fairness audits) is designed for a world in which the state demands accountability from a vendor. In SyRI and the *toeslagenaffaire*, the party deploying the system, the party holding the data, and the party refusing disclosure were the same government. The same can be true of a county: the office that runs the tool may also be the office that answers your records request. Notice when you are in that situation, and notice that your methods have to change.
+:::
+
+## Practical exemption as a design choice
+
+Exemption is not fate. It is a set of design and procurement choices that can be made differently. The EU's 2024 AI Act, New York City's Local Law 144, and Colorado's own AI Act (taken up at the state level in Part IV) are attempts to legislate a floor under transparency. Whether any of them produces working oversight depends on the six installed-base elements named in @sec-ch-02-installed-base: linkable records, interpretable categories, continuity, safe scrutiny, authority that can act, and remedy that reaches the affected. A statute that requires a "model card" without linking it to deployment records produces compliance artifacts and no oversight.
+
+The public-interest response has two parts. The first is the patient work this chapter rehearsed: building ledgers that make absences visible and naming gaps in terms a lawyer or a commissioner can use. The second is designing forward: when you can shape a procurement, a contract, or a county policy, writing linkability in as a requirement. @sec-ch-10-oversight develops both moves.
+
+## Exercises
+
+**Exercise 8.1 (Guided).** Extend the AFST ledger from six rows to at least twelve. Candidate sources: the county's impact evaluations and ethical reviews posted on its analytics site, the developers' published responses, any litigation, and community-organization statements. Fill both text columns for each row, and replace any row you cannot verify. Save as `exercises/ch08_afst_ledger.csv` and write 300 words on the three largest gaps.
+
+**Exercise 8.2 (Piece 2 component, runnable).** Build an evidence ledger for the Boulder County program or office whose released requests you chose from the county's Public Records Archive. Use only public sources you can download on a laptop: the released records themselves, the county's budget documents (<https://bouldercounty.gov/government/budget-and-finance/county-budget/>), Board of County Commissioners agendas, minutes, and packets from the county's meeting portal, and press coverage. Use the same schema, with at least eight rows, and load it with `pandas`. Then run the gap-to-request loop above and mark which `what_it_doesnt` entries the released requests already cover. Save as `piece2/evidence_ledger.csv`. This ledger becomes the backbone of Piece 2.
+
+**Exercise 8.3 (Analytic).** Read the SyRI judgment (ECLI:NL:RBDHA:2020:1878) in English translation. In 500 words, state the legal theory the court used, name the treaty article it rested on, and explain whether an equivalent argument would be available in a U.S. federal court. If you are unsure, name the sources of your uncertainty.
+
+**Exercise 8.4 (Comparative).** Pair a U.S. county-run automated decision system with a European one in a similar domain (child welfare, benefits fraud, pretrial release). Compare vendor disclosure, model documentation, subgroup reporting, notice to affected persons, appeal pathways, and external oversight. Identify the one transparency commitment that would be most transformative if transplanted, and say what would block the transplant. Save as `exercises/ch08_comparison.md`.
+
+**Exercise 8.5 (Open-ended).** For the Boulder County program in Exercise 8.2, write a 1,000-word memo on what would have to change for it to be *observable* in this chapter's sense, addressed to a named county actor (a commissioner, the County Attorney's Office, a department director). Separate what requires state legislation, county policy, litigation, or procurement reform alone. Save as `piece2/observability_memo.md`. You will mine it for the ask in your testimony.
+
+## Looking ahead
+
+Enclosure keeps data out of reach. Exemption keeps the people and institutions that use data out of reach. The ledger you built here names what a county has not told you. The next chapter, @sec-ch-09-law, turns to the lineage that has spent a century building tools for making institutions answer: public interest law. You will learn the statutory geometry of FOIA and the Colorado Open Records Act, track requests the county has already answered in a database, and turn what came back into a table.
+
+## Further Reading and Resources
+
+- Frank Pasquale (2016), *[The Black Box Society](https://www.hup.harvard.edu/books/9780674970847)*. Harvard University Press. The foundational treatment of scored decision-making and the legal architecture of its opacity.
+- Virginia Eubanks (2018), *[Automating Inequality](https://us.macmillan.com/books/9781250215789/automatinginequality)*. St. Martin's Press. Chapter 4 treats AFST in ethnographic depth; read it with and against the developers' published responses.
+- Allegheny County Department of Human Services analytics site, <https://www.alleghenycountyanalytics.us/>. The county's own documentation, read critically and in date order.
+- District Court of The Hague (2020), SyRI judgment, ECLI:NL:RBDHA:2020:1878, <https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2020:1878>.
+- Amnesty International (2021), *Xenophobic Machines*, <https://www.amnesty.org/en/documents/eur35/4686/2021/en/>. The canonical documentation of the *toeslagenaffaire*.
+- Lighthouse Reports (2023), "Inside the Suspicion Machine," <https://www.lighthousereports.com/investigation/inside-the-suspicion-machine/>. Reverse-engineering Rotterdam's welfare-fraud scoring.
+- Knight First Amendment Institute, *Sandvig v. Barr* case page, <https://knightcolumbia.org/cases/sandvig-v-sessions>. Primary documents for the CFAA ruling.
+- Boulder County, County Budget, <https://bouldercounty.gov/government/budget-and-finance/county-budget/>. Budget books and adopted resolutions: the first stop for any county evidence ledger.

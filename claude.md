@@ -4,9 +4,22 @@ This file is the contract future contributors and automated assistants sign when
 
 ## What this book is
 
-*Public Interest Data Science* is a 22-chapter Quarto textbook that teaches data science as a public-interest practice. It organizes its argument around five parts: **Pressures**, **Values**, **Lineages**, **Adjacent Conversations**, and **Genres**. It is the companion volume to the INFO 46XX course at the University of Colorado Boulder and builds on the framework laid out in Keegan (2026), "Public interest data infrastructuring."
+*Public Interest Data Science* is a 23-chapter Quarto textbook that teaches data science as a public-interest practice. It is the companion volume to INFO 4871/5871 at the University of Colorado Boulder and builds on the framework laid out in Keegan (2026), "Public interest data infrastructuring."
 
-The book is opinionated. It takes a position on what "public interest" means (linkability, interpretability, continuity, safe scrutiny, authority, remedy: the installed base) and uses that position as a diagnostic throughout. Chapters do not reproduce the paper. They extend it, test it against particular cases, and, in Part V, translate it into practice.
+The book has six parts. The four middle parts are **modules**; each pairs one professional lineage with one level of government and ends in one portfolio piece:
+
+| Part | Chapters | Lineage | Level | Pressure → value | Genre |
+|---|---|---|---|---|---|
+| I. Foundations | 1–3 | (all) | — | all six, introduced | — |
+| II. Journalism: The City | 4–7 | Journalism | City | Enclosure → openness | Op-ed |
+| III. Law: The County | 8–11 | Law | County | Exemption → oversight | Testimony |
+| IV. Assurance: The State | 12–15 | Accounting and engineering | State | Audit-washing → oversight | Report |
+| V. Planning: The Nation | 16–20 | Planning, civic tech, refusal | Federal | Erosion → ownership | Public comment |
+| VI. Beyond the Portfolio | 21–23 | — | — | Limits of the framework | Proposal, archival deposit |
+
+Each module part follows the same order: **pressure → lineage → value → genre**. Each part opens with a part page (`part-N-*.qmd`) naming its level of government, its cases (a national anchor, a non-US counter-case, and a local case at that level), and its portfolio piece. The course design that the parts follow lives in the course repository at `docs/course-design.md`.
+
+The book is opinionated. It takes a position on what "public interest" means (linkability, interpretability, continuity, safe scrutiny, authority, remedy: the installed base) and uses that position as a diagnostic throughout. Chapters do not reproduce the paper. They extend it, test it against particular cases at particular levels of government, and translate it into practice through the genre chapter that closes each module.
 
 ## Voice
 
@@ -20,7 +33,7 @@ The book is opinionated. It takes a position on what "public interest" means (li
 
 ## Structure of each chapter
 
-Each chapter is approximately 3,000 words (2,700–3,300 is the tolerance; Chapter 16 runs toward the upper bound by design). The structure is not rigid, but every chapter contains:
+Each chapter is approximately 3,000 words (2,700–3,300 is the tolerance; Chapter 19 runs toward the upper bound by design). The structure is not rigid, but every chapter contains:
 
 1. **An opening conceptual frame.** Two to four paragraphs that introduce the chapter's question. Draw on the paper's framework. Name the stakes.
 2. **A transition into a technical problem.** The concept makes a particular failure mode visible. Name it.
@@ -39,7 +52,7 @@ The two callout conventions are load-bearing. Do not skip them.
 
 **The Missing Manual** (`::: {.callout-tip title="The Missing Manual"}`) flags things most textbooks omit: a library's surprising default, a real-world API friction that breaks the tidy example, the politics of a "simple" choice, the gap between what documentation says and what the service actually does. Every chapter needs at least one.
 
-**In the Public Interest** (`::: {.callout-note title="In the Public Interest"}`) explicitly ties the technical material back to openness, oversight, or ownership as defined in Chapters 5–8. Every chapter must reference at least one of these three values, by name, with a specific claim about how the chapter's work advances or complicates it. Do not hand-wave.
+**In the Public Interest** (`::: {.callout-note title="In the Public Interest"}`) explicitly ties the technical material back to openness, oversight, or ownership as introduced in Chapter 2 and developed in Chapters 6, 10, and 18. Every chapter must reference at least one of these three values, by name, with a specific claim about how the chapter's work advances or complicates it. Do not hand-wave.
 
 A chapter may have more of either kind. It may not have fewer.
 
@@ -64,11 +77,11 @@ Prefer the smallest example that makes the point. A 400-line notebook is not a v
 
 Suggested BibTeX entries you cannot verify should go into `references.bib` with a `TODO:` note, not silently added.
 
-## Part V convention: the artifact
+## Genre-chapter convention: the portfolio piece
 
-Part V chapters (17–22) carry an additional convention: each must end with a real artifact the reader has produced. Not a thought experiment, not a paragraph saying what they would write if they wrote one. An actual draft op-ed, a report section they can submit, a proposal specific-aims page, a testimony statement, a public comment on a live rulemaking, or an archival deposit with a resolvable identifier.
+The last chapter of each module part (Chapters 7, 11, 15, and 20) is a genre chapter, and its final exercise is that module's portfolio piece. Not a thought experiment, not a paragraph saying what the reader would write if they wrote one. Every piece has a technical artifact someone else can run, a public text addressed to a named audience at the module's level of government (an op-ed, a testimony statement, a report section, or a public comment on a live rulemaking), and a short installed-base note on provenance, gaps, and AI use. Graduate readers add a methods memo.
 
-A student who finishes the book should be able to point to six submittable artifacts they produced from these chapters. If a Part V chapter's exercise does not produce one, the chapter is not finished.
+The other chapters in a module part each carry at least one exercise that builds a component of the piece. Part VI chapters support the final project: deepen one piece, recast it in a new genre, and deposit it with a DOI (Zenodo or another DOI-minting repository). If a genre chapter's last exercise does not produce a piece, the chapter is not finished.
 
 ## Voice in the technical prose
 
@@ -97,7 +110,8 @@ Before opening a pull request:
 ## What not to do
 
 - Do not rewrite Keegan (2026). Cite it.
-- Do not conflate op-eds, reports, and testimony. Part V's pedagogical value comes from treating each genre as distinct.
+- Do not conflate op-eds, testimony, reports, and public comments. Each module's pedagogical value comes from treating its genre as distinct.
+- Do not break the ladder. A module's local case sits at its level of government (city, county, state, federal); national anchors and non-US counter-cases may sit anywhere.
 - Do not invent datasets, citations, or URLs. Flag gaps with `TODO:` comments.
 - Do not add decorative prose to pad word count. Cut a paragraph before adding one.
 - Do not introduce em-dashes. You were warned.

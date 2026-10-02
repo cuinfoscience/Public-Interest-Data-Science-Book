@@ -1,0 +1,36 @@
+# Foundations
+
+Every later part of this book is a module: one professional lineage, one level of government, one pressure met by one value, one public genre, and one portfolio piece. This part is not a module. It is the opening of the course, and it hands you the vocabulary and tools that all four modules assume.
+
+**Where this part sits.** Foundations covers **course weeks 1 and 2**. Week 1 asks what "the public interest" is and who gets to say. Week 2 introduces the framework from Keegan [-@keegan2026], "Public interest data infrastructuring," and ends with the first lab, in which you make your first request to a public API and your first pull request to the course repository.
+
+This part has no level of government of its own. Instead it introduces the **ladder** the rest of the book climbs: the city in Part II, the county in Part III, the state in Part IV, and the federal government in Part V. The ladder exists because evidence only matters when it reaches a body with the authority to act on it, and because each lineage has a natural home on a particular rung. @sec-ch-02-installed-base explains the reasoning.
+
+**Pressures, values, and lineages, all at once.** The modules each pair one pressure with one value. Here you meet all six together. The three **pressures** narrow the public's capacity to observe and govern data-intensive systems: **enclosure** (who can observe?), **exemption** (who must answer?), and **erosion** (what can be remembered?). The three **values** push back: **openness**, **oversight**, and **ownership**. Values become durable only when they are built into an **installed base** with six elements: linkability, interpretability, continuity, safe scrutiny, authority, and remedy. Every portfolio piece ends with an installed-base note that uses this vocabulary.
+
+You also preview the five **lineages** the modules borrow from: journalism, law, accounting and engineering (taught together as assurance), and planning. Each solved a version of the problem you face, and each has an exclusionary past you will name when you borrow from it.
+
+There is no public genre in this part. Your first public act is smaller and more durable: a branch, a commit, and a pull request.
+
+**Cases.** The opening module uses its cases to show that "the public interest" has always been contested.
+
+- **Anchor case (US): Robert Moses and urban renewal.** A builder who justified expressways through working-class neighborhoods in the name of the public, and the critics, Jane Jacobs foremost among them, who answered with a different public.
+- **Counter-case (non-US): Aadhaar.** India's biometric identity system, defended as inclusion and contested as exclusion and surveillance.
+- **Neighbor cases: GetCalFresh (US) and Ushahidi (Kenya).** Two long-lived projects from public interest technology and data for good, used to ask who pays for maintenance once the launch press is over.
+- **Local case: a minimum viable installed base.** In place of a government body, you instrument a small city's procurement log yourself, adding identifiers, provenance, a retention policy, tiered access, and an escalation log.
+
+**What you submit.** Foundations has no graded portfolio piece. You submit three things that make the graded pieces possible:
+
+1. **Setup.** A working Python, git, and Quarto environment, confirmed by completing the setup handout before week 2.
+2. **A first pull request.** An introduction file opened as a pull request to the course repository during the week 2 lab, along with the lab's pageviews plot and installed-base files committed to your own repository.
+3. **A project sketch.** The two-to-three-paragraph public interest question from Exercise 1.5, which you will revisit as each module adds tools and which may seed your final project.
+
+The opening also starts the clock on your contribution to this book: you will propose one chapter-scale revision as an issue early in Module 1.
+
+**Roadmap.**
+
+- @sec-ch-01-introduction, **Introduction to Public Interest Data Science**, introduces the contested history of the public interest through Moses and Aadhaar, lays out the six parts, the ladder, and the portfolio, and walks you through your first public API request with Wikimedia pageviews.
+- @sec-ch-02-installed-base, **The Installed Base**, introduces all three pressures, all three values, the six elements of the installed base, and the five lineages, explains why the book climbs from the city to the nation, and has you build a minimum viable installed base in code.
+- @sec-ch-03-pit-data-for-good, **Public Interest Technology and Data for Good**, maps the six neighboring conversations (public interest technology, data for good, digital government, civic tech, critical data studies, and data justice), clarifies what public interest data science is and is not, and teaches a sustainability audit with the GitHub API, using GetCalFresh and Ushahidi as running cases.
+
+When you finish this part, Part II begins with @sec-ch-04-enclosure and the first rung of the ladder: the city.

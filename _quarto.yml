@@ -4,7 +4,7 @@ project:
 
 book:
   title: "Public Interest Data Science"
-  subtitle: "Pressures, Values, Lineages, and Genres"
+  subtitle: "Lineages, Levels, and Genres for Accountable Data Work"
   author: "Brian C. Keegan"
   date: "2026"
   description: |
@@ -21,38 +21,41 @@ book:
   page-navigation: true
   chapters:
     - index.qmd
-    - part: "Pressures"
+    - part: part-1-foundations.qmd
       chapters:
         - ch-01-introduction.qmd
-        - ch-02-enclosure.qmd
-        - ch-03-exemption.qmd
-        - ch-04-erosion.qmd
-    - part: "Values"
+        - ch-02-installed-base.qmd
+        - ch-03-pit-data-for-good.qmd
+    - part: part-2-journalism-city.qmd
       chapters:
-        - ch-05-installed-base.qmd
+        - ch-04-enclosure.qmd
+        - ch-05-journalism.qmd
         - ch-06-openness.qmd
-        - ch-07-oversight.qmd
-        - ch-08-ownership.qmd
-    - part: "Lineages"
+        - ch-07-op-eds.qmd
+    - part: part-3-law-county.qmd
       chapters:
-        - ch-09-journalism.qmd
-        - ch-10-law.qmd
-        - ch-11-accounting.qmd
-        - ch-12-planning.qmd
+        - ch-08-exemption.qmd
+        - ch-09-law.qmd
+        - ch-10-oversight.qmd
+        - ch-11-testimony.qmd
+    - part: part-4-assurance-state.qmd
+      chapters:
+        - ch-12-accounting.qmd
         - ch-13-engineering.qmd
-    - part: "Adjacent Conversations"
+        - ch-14-govtech-civic-tech.qmd
+        - ch-15-reports.qmd
+    - part: part-5-planning-nation.qmd
       chapters:
-        - ch-14-pit-data-for-good.qmd
-        - ch-15-govtech-civic-tech.qmd
-        - ch-16-critical-data-studies-refusal.qmd
-    - part: "Genres"
+        - ch-16-erosion.qmd
+        - ch-17-planning.qmd
+        - ch-18-ownership.qmd
+        - ch-19-critical-data-studies-refusal.qmd
+        - ch-20-public-comments.qmd
+    - part: part-6-beyond-portfolio.qmd
       chapters:
-        - ch-17-op-eds.qmd
-        - ch-18-reports.qmd
-        - ch-19-research-proposals.qmd
-        - ch-20-testimony.qmd
-        - ch-21-public-comments.qmd
+        - ch-21-research-proposals.qmd
         - ch-22-archival-deposits.qmd
+        - ch-23-limits.qmd
   appendices:
     - appendix-ai-disclosure.qmd
     - appendix-further.qmd

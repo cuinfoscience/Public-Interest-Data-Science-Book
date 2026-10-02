@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A textbook on doing data science for public-interest ends: diagnosing the structural pressures on public knowledge, articulating the values that push back, learning from the public-interest professions, and contributing to public conversations through the genres that make analysis accountable.">
+
+<title>18&nbsp; Ownership – Public Interest Data Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch-19-critical-data-studies-refusal.html" rel="next">
+<link href="./ch-17-planning.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-9a023c9ade86a60361e96e3e3f11bc54.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-684e263fd5eaab04d06708158183ff95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-063d023c011e3855d99747d2bbbf274a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-5-planning-nation.html">Planning: The Nation</a></li><li class="breadcrumb-item"><a href="./ch-18-ownership.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Ownership</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Public Interest Data Science</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-1-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Public Interest Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-02-installed-base.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Installed Base</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-03-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Public Interest Technology and Data for Good</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-2-journalism-city.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Journalism: The City</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-04-enclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Enclosure: Who Can Observe?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-05-journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-06-openness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Openness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-07-op-eds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Op-Eds</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-3-law-county.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Law: The County</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-08-exemption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Exemption: Who Must Answer?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-09-law.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Law</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-10-oversight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Oversight</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-11-testimony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Testimony</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-4-assurance-state.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assurance: The State</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-12-accounting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Accounting and Auditing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-13-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Engineering</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-14-govtech-civic-tech.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">GovTech and Civic Tech</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-15-reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-5-planning-nation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Planning: The Nation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-16-erosion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Erosion: What Can Be Remembered?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-17-planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-18-ownership.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Ownership</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-19-critical-data-studies-refusal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-20-public-comments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Public Comments</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-6-beyond-portfolio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Beyond the Portfolio</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-21-research-proposals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Research Proposals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-22-archival-deposits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Archival Deposits</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch-23-limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">The Limits of the Framework</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix A: AI Assistance Disclosure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Appendix B: Further Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#two-senses-of-the-word" id="toc-two-senses-of-the-word" class="nav-link active" data-scroll-target="#two-senses-of-the-word"><span class="header-section-number">18.1</span> Two senses of the word</a></li>
+  <li><a href="#the-legal-skeleton-of-federal-stewardship" id="toc-the-legal-skeleton-of-federal-stewardship" class="nav-link" data-scroll-target="#the-legal-skeleton-of-federal-stewardship"><span class="header-section-number">18.2</span> The legal skeleton of federal stewardship</a></li>
+  <li><a href="#data-trusts-briefly" id="toc-data-trusts-briefly" class="nav-link" data-scroll-target="#data-trusts-briefly"><span class="header-section-number">18.3</span> Data trusts, briefly</a></li>
+  <li><a href="#indigenous-data-sovereignty-as-a-foundational-challenge" id="toc-indigenous-data-sovereignty-as-a-foundational-challenge" class="nav-link" data-scroll-target="#indigenous-data-sovereignty-as-a-foundational-challenge"><span class="header-section-number">18.4</span> Indigenous data sovereignty as a foundational challenge</a></li>
+  <li><a href="#tutorial-tiering-a-federal-mirror" id="toc-tutorial-tiering-a-federal-mirror" class="nav-link" data-scroll-target="#tutorial-tiering-a-federal-mirror"><span class="header-section-number">18.5</span> Tutorial: tiering a federal mirror</a></li>
+  <li><a href="#why-just-use-github-is-stewardship-outsourcing" id="toc-why-just-use-github-is-stewardship-outsourcing" class="nav-link" data-scroll-target="#why-just-use-github-is-stewardship-outsourcing"><span class="header-section-number">18.6</span> Why “just use GitHub” is stewardship outsourcing</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">18.7</span> Exercises</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">18.8</span> Looking ahead</a></li>
+  <li><a href="#further-reading-and-resources" id="toc-further-reading-and-resources" class="nav-link" data-scroll-target="#further-reading-and-resources"><span class="header-section-number">18.9</span> Further Reading and Resources</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-18-ownership.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-5-planning-nation.html">Planning: The Nation</a></li><li class="breadcrumb-item"><a href="./ch-18-ownership.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Ownership</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-ch-18-ownership" class="quarto-section-identifier"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Ownership</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>A commercial data broker will tell you, if pressed, that it <em>owns</em> the nine-hundred-variable dossier it sells about you. Ownership here means a property claim: rights to exclude, alienate, and monetize, backed by contract law. The dossier was assembled, often without your knowledge, from loyalty programs, voter files, credit header data, and the exhaust of a hundred free apps. You do not own it. The broker does.</p>
+<p>This chapter argues that ownership in public-interest data science is a different word, and most of the trouble in the field comes from not noticing. Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> defines ownership as the counter-force to erosion: collective, accountable governance over the preservation, access, and use of public-relevant data, rather than private property or exclusive control. The claim a public-interest steward makes is ownership-as-stewardship, a maintenance obligation that requires labor, authority, and continuity across political cycles. You do not own a public dataset the way a broker owns a dossier. You own it the way a municipal archivist owns the city’s property records: accountable for its condition, usability, and survival, and unable to sell it off when the grant runs out.</p>
+<p>The last two chapters set up the problem. <a href="ch-16-erosion.html" class="quarto-xref"><span>Chapter 16</span></a> showed that a volunteer mirror of a federal dataset advances continuity but not authority. <a href="ch-17-planning.html" class="quarto-xref"><span>Chapter 17</span></a> showed that the people who use and are described by a federal dataset are rarely in the room when it is retired. This chapter asks who should hold the record now, under what rules, for how long, and what it takes to structure that holding so it does not collapse into abandonment or capture. It also asks whether “stewardship” is the right word at all, because for Indigenous nations it is not.</p>
+<section id="two-senses-of-the-word" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="two-senses-of-the-word"><span class="header-section-number">18.1</span> Two senses of the word</h2>
+<p><strong>Ownership-as-property</strong> treats data as an asset with a rights-holder who can license, sell, or destroy it. The vocabulary is real estate and copyright: chain of title, residual rights, assignment. The broker sits here. So, uncomfortably, does a good deal of “open” infrastructure: a university research dataset may be open to collaborators while the technology transfer office treats it as an asset.</p>
+<p><strong>Ownership-as-stewardship</strong> treats data as an ongoing obligation of maintenance, documentation, remediation, and succession. The vocabulary is closer to trusteeship: duties of care, prudence, and loyalty that cannot be dropped without arranging for someone else to take them up. A records manager is a steward. So is the volunteer who keeps a mirror of a retired federal dataset checksummed and online.</p>
+<p>Most public-interest infrastructure runs on labor that presumes stewardship inside institutions that default to property. Karasti and Blomberg <span class="citation" data-cites="karasti2018">(<a href="#ref-karasti2018" role="doc-biblioref">2018</a>)</span> found that long-running scientific infrastructures work until the person doing the work moves on, then stop working in ways that take years to surface; <a href="ch-03-pit-data-for-good.html" class="quarto-xref"><span>Chapter 3</span></a> called the uncredited version of this labor ghost work. Schwartz and Cook <span class="citation" data-cites="schwartz2002">(<a href="#ref-schwartz2002" role="doc-biblioref">2002</a>)</span> made the argument for archives decades ago: what gets kept, and who decides, are political choices all the way down. Stoler <span class="citation" data-cites="stoler2002">(<a href="#ref-stoler2002" role="doc-biblioref">2009</a>)</span>, reading colonial Dutch archives, showed the archive to be an instrument of power whose silences must be read as carefully as its records.</p>
+</section>
+<section id="the-legal-skeleton-of-federal-stewardship" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="the-legal-skeleton-of-federal-stewardship"><span class="header-section-number">18.2</span> The legal skeleton of federal stewardship</h2>
+<p>Federal data already has a stewardship skeleton, and knowing where it ends is the point. The Federal Records Act requires agencies to preserve records and to destroy them only under disposition schedules approved by the National Archives and Records Administration. The OPEN Government Data Act, Title II of the Foundations for Evidence-Based Policymaking Act of 2018, requires agencies to maintain data inventories and to publish data in open formats by default. <!-- TODO: add bib entries for 44 U.S.C. ch. 31 (Federal Records Act) and Pub. L. 115-435 (Evidence Act) if cited formally. --></p>
+<p>Notice the gap. Retention law governs whether a record is <em>destroyed</em>. It says much less about whether the public can <em>reach</em> it. A dataset can vanish from a public website while the underlying records remain in agency custody, lawfully retained and practically inaccessible. That is exactly the gap the volunteer mirrors of <a href="ch-16-erosion.html" class="quarto-xref"><span>Chapter 16</span></a> fill, and exactly why their stewardship has to be designed rather than improvised.</p>
+</section>
+<section id="data-trusts-briefly" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="data-trusts-briefly"><span class="header-section-number">18.3</span> Data trusts, briefly</h2>
+<p>One response to the mismatch is the <strong>data trust</strong>: a legal structure in which a trustee holds rights over data on behalf of beneficiaries, with fiduciary duties enforceable in court. The Ada Lovelace Institute’s review <span class="citation" data-cites="ada_data_trusts">(<a href="#ref-ada_data_trusts" role="doc-biblioref">Ada Lovelace Institute 2021</a>)</span> found trusts more proposed than operational, but the proposal forces the right questions: who the beneficiaries are, what the trustee may do, and what remedies exist if the trust is breached. Delacroix and Lawrence <span class="citation" data-cites="delacroix2019">(<a href="#ref-delacroix2019" role="doc-biblioref">2019</a>)</span> argue for bottom-up trusts in which data subjects themselves are the beneficiary class. You will not stand up a trust here. You will stand up the minimum you can maintain before one exists: tiered access, a threat model, and a stewardship plan.</p>
+</section>
+<section id="indigenous-data-sovereignty-as-a-foundational-challenge" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="indigenous-data-sovereignty-as-a-foundational-challenge"><span class="header-section-number">18.4</span> Indigenous data sovereignty as a foundational challenge</h2>
+<p>“Stewardship with duties to beneficiaries” presumes the beneficiaries delegated anything. For many datasets they did not. Te Mana Raraunga <span class="citation" data-cites="temanararaunga">(<a href="#ref-temanararaunga" role="doc-biblioref">Te Mana Raraunga 2018</a>)</span>, the Māori Data Sovereignty Network in Aotearoa New Zealand, argues that Māori data is not a resource to be stewarded on Māori behalf by a non-Māori institution. It belongs to Māori, under Māori governance, as sovereignty rather than trust. In Canada, the First Nations principles of OCAP (ownership, control, access, and possession) <span class="citation" data-cites="fnigc_ocap">(<a href="#ref-fnigc_ocap" role="doc-biblioref">First Nations Information Governance Centre, n.d.</a>)</span> assert that First Nations collectively own their data, control how it is collected and used, decide who may access it, and should physically possess it. OCAP uses the word “ownership” deliberately, and it does not mean stewardship by someone else. The CARE Principles <span class="citation" data-cites="carroll2020">(<a href="#ref-carroll2020" role="doc-biblioref">Carroll et al. 2020</a>)</span> (collective benefit, authority to control, responsibility, ethics) extend the argument to Indigenous data governance generally.</p>
+<p>In the United States, federal agencies hold large amounts of data about tribal nations and their citizens, from the Census to health and land records, and the US Indigenous Data Sovereignty Network <span class="citation" data-cites="usidsn">(<a href="#ref-usidsn" role="doc-biblioref">United States Indigenous Data Sovereignty Network 2024</a>)</span> has pressed the same claims here. The tools you are about to build assume that a public has delegated stewardship to an institution. They do not work when a people has delegated nothing. <a href="ch-19-critical-data-studies-refusal.html" class="quarto-xref"><span>Chapter 19</span></a> takes this up, including cases where the right answer is not tiered access but refusal.</p>
+</section>
+<section id="tutorial-tiering-a-federal-mirror" class="level2" data-number="18.5">
+<h2 data-number="18.5" class="anchored" data-anchor-id="tutorial-tiering-a-federal-mirror"><span class="header-section-number">18.5</span> Tutorial: tiering a federal mirror</h2>
+<p>In <a href="ch-06-openness.html" class="quarto-xref"><span>Chapter 6</span></a> you cleaned a city campaign finance file. Federal campaign finance has the same shape at national scale. The Federal Election Commission publishes itemized individual contributions with each donor’s name, city, state, ZIP code, employer, and occupation, and the OpenFEC API also returns street addresses for many itemized receipts. All of it is legally public. Legal publicness and safe republishability are not the same thing: name plus street address plus employer is enough for harassment well beyond what disclosure law contemplated. The statute itself knows this. The Federal Election Campaign Act bars anyone from selling or using information copied from these reports to solicit contributions or for commercial purposes (52 U.S.C. § 30111(a)(4)), a use restriction written into the law that makes the data public.</p>
+<p>Suppose you maintain a mirror of Colorado contributions for researchers and reporters, in case the FEC’s interfaces change. You will build three tiers over one SQLite file:</p>
+<ul>
+<li><strong>Public tier.</strong> Aggregates only: totals by committee and ZIP code. No individual rows.</li>
+<li><strong>Researcher tier.</strong> Individual rows without street address. Token-gated and logged per query, for credentialed journalists and researchers with a documented project.</li>
+<li><strong>Restricted tier.</strong> Full rows including address. Case by case, granted by a named human, logged in a public register.</li>
+</ul>
+<section id="pull-load-and-define-the-views" class="level3" data-number="18.5.1">
+<h3 data-number="18.5.1" class="anchored" data-anchor-id="pull-load-and-define-the-views"><span class="header-section-number">18.5.1</span> Pull, load, and define the views</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sqlite3, requests, pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>KEY <span class="op">=</span> os.environ.get(<span class="st">"FEC_API_KEY"</span>, <span class="st">"DEMO_KEY"</span>)  <span class="co"># api.data.gov key; DEMO_KEY is rate-limited</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>params <span class="op">=</span> {<span class="st">"api_key"</span>: KEY, <span class="st">"contributor_state"</span>: <span class="st">"CO"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>          <span class="st">"two_year_transaction_period"</span>: <span class="dv">2024</span>, <span class="st">"per_page"</span>: <span class="dv">100</span>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> requests.get(<span class="st">"https://api.open.fec.gov/v1/schedules/schedule_a/"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                 params<span class="op">=</span>params, timeout<span class="op">=</span><span class="dv">60</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> r.json()[<span class="st">"results"</span>]   <span class="co"># one page; follow "last_indexes" to paginate</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">"sub_id"</span>, <span class="st">"committee_id"</span>, <span class="st">"contributor_name"</span>, <span class="st">"contributor_street_1"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"contributor_city"</span>, <span class="st">"contributor_zip"</span>, <span class="st">"contributor_employer"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"contributor_occupation"</span>, <span class="st">"contribution_receipt_amount"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"contribution_receipt_date"</span>]</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(rows).reindex(columns<span class="op">=</span>cols)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"zip5"</span>] <span class="op">=</span> df[<span class="st">"contributor_zip"</span>].<span class="bu">str</span>[:<span class="dv">5</span>]</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">"fec_co_mirror.db"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>df.to_sql(<span class="st">"filings_raw"</span>, con, if_exists<span class="op">=</span><span class="st">"replace"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(df)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; 100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- TODO: verify OpenFEC schedule_a field names and keyset pagination against https://api.open.fec.gov/developers/ before the term. -->
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Public tier: aggregates with a k-anonymity floor.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">VIEW</span> public_totals_by_zip <span class="kw">AS</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> zip5, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> n, <span class="fu">SUM</span>(contribution_receipt_amount) <span class="kw">AS</span> total</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> filings_raw <span class="kw">GROUP</span> <span class="kw">BY</span> zip5 <span class="kw">HAVING</span> n <span class="op">&gt;=</span> <span class="dv">5</span>;</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">-- Researcher tier: individual rows, no street address.</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">VIEW</span> researcher_filings <span class="kw">AS</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> sub_id, committee_id, contributor_name, contributor_city, zip5,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>       contributor_employer, contributor_occupation,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>       contribution_receipt_amount, contribution_receipt_date</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> filings_raw;</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">-- Restricted tier: filings_raw itself, gated at the application layer.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The public view enforces a floor of five contributions per ZIP so an aggregate cannot single out a lone donor. The researcher view drops the street address but keeps employer and occupation, which are newsworthy in ways addresses rarely are. SQLite has no per-row permissions, so the restricted tier is enforced in application code.</p>
+</section>
+<section id="a-thin-gate-with-an-audit-log" class="level3" data-number="18.5.2">
+<h3 data-number="18.5.2" class="anchored" data-anchor-id="a-thin-gate-with-an-audit-log"><span class="header-section-number">18.5.2</span> A thin gate with an audit log</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, request, abort, jsonify</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hmac, json, datetime</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>DB, AUDIT_LOG <span class="op">=</span> <span class="st">"fec_co_mirror.db"</span>, <span class="st">"access_audit.jsonl"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>TOKEN <span class="op">=</span> os.environ[<span class="st">"MIRROR_RESEARCHER_TOKEN"</span>]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> log_query(tier, user, query):</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    entry <span class="op">=</span> {<span class="st">"ts"</span>: datetime.datetime.now(datetime.timezone.utc).isoformat(),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>             <span class="st">"tier"</span>: tier, <span class="st">"user"</span>: user, <span class="st">"query"</span>: query}</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(AUDIT_LOG, <span class="st">"a"</span>) <span class="im">as</span> f:</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        f.write(json.dumps(entry) <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">"/public/zip"</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> public_zip():</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    rows <span class="op">=</span> sqlite3.<span class="ex">connect</span>(DB).execute(<span class="st">"SELECT * FROM public_totals_by_zip"</span>).fetchall()</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    log_query(<span class="st">"public"</span>, <span class="st">"anonymous"</span>, <span class="st">"totals_by_zip"</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jsonify(rows)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">"/researcher/query"</span>, methods<span class="op">=</span>[<span class="st">"POST"</span>])</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> researcher_query():</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    token <span class="op">=</span> request.headers.get(<span class="st">"X-Research-Token"</span>, <span class="st">""</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> hmac.compare_digest(token, TOKEN):</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        abort(<span class="dv">401</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    q <span class="op">=</span> request.json.get(<span class="st">"query"</span>, <span class="st">""</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> q.strip().lower().startswith(<span class="st">"select"</span>) <span class="kw">or</span> <span class="st">"filings_raw"</span> <span class="kw">in</span> q.lower():</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        abort(<span class="dv">403</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    rows <span class="op">=</span> sqlite3.<span class="ex">connect</span>(DB).execute(q).fetchall()</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    log_query(<span class="st">"researcher"</span>, request.headers.get(<span class="st">"X-Research-User"</span>, <span class="st">"unknown"</span>), q)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jsonify(rows)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; GET /public/zip returns [["80302", 41, 12650.0], ...] (illustrative)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is not a hardened system. A determined attacker can evade two string checks. The point is to make the tiers legible as code, with each tier’s permissions visible to a reviewer in one file.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Missing Manual
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Environment-variable credentials are not security. They are a social contract with your deployment pipeline, and the pipeline leaks them in ways tutorials rarely mention. A token printed to a container log because someone left <code>DEBUG=true</code> on is not a secret anymore. A token captured in a stack trace that an error-tracking service forwarded to a third party is not a secret either. A token committed in a <code>.env</code> file two refactors ago and never rotated is, for practical purposes, plaintext. Rotate on a schedule, not only after incidents, and check what your logging captures on exception. Note also that the audit log you just built is itself sensitive: it records who researched whom, and it can be subpoenaed.</p>
+</div>
+</div>
+</section>
+<section id="decision-rules-threat-model-and-stewardship-plan" class="level3" data-number="18.5.3">
+<h3 data-number="18.5.3" class="anchored" data-anchor-id="decision-rules-threat-model-and-stewardship-plan"><span class="header-section-number">18.5.3</span> Decision rules, threat model, and stewardship plan</h3>
+<p>The code enforces tiers. The decision rules say who belongs in which tier, and they are the part that will be contested, so keep them in a versioned document:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># access_policy.yaml</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dataset</span><span class="kw">:</span><span class="at"> fec_colorado_individual_contributions_mirror</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tiers</span><span class="kw">:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">public</span><span class="kw">:</span><span class="at">     </span><span class="kw">{</span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">"aggregates, k &gt;= 5"</span><span class="kw">,</span><span class="at"> </span><span class="fu">auth</span><span class="kw">:</span><span class="at"> none</span><span class="kw">}</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">researcher</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">audience</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">credentialed journalists</span><span class="kw">,</span><span class="at"> IRB-approved researchers</span><span class="kw">],</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">               </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">"rows without street address"</span><span class="kw">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">               </span><span class="fu">auth</span><span class="kw">:</span><span class="at"> </span><span class="st">"named token"</span><span class="kw">,</span><span class="at"> </span><span class="fu">logging</span><span class="kw">:</span><span class="at"> </span><span class="st">"per query, 12 months"</span><span class="kw">}</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">restricted</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">audience</span><span class="kw">:</span><span class="at"> case-by-case</span><span class="kw">,</span><span class="at"> </span><span class="fu">auth</span><span class="kw">:</span><span class="at"> </span><span class="st">"two stewards plus public register"</span><span class="kw">}</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">revocation</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">grounds</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">misuse</span><span class="kw">,</span><span class="at"> commercial or solicitation use</span><span class="kw">],</span><span class="at"> </span><span class="fu">appeal</span><span class="kw">:</span><span class="at"> full steward group</span><span class="kw">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A threat model names who might attack the system and what they want. A workable one is a page: assets (donor rows, addresses, access logs, tokens); actors (a harasser seeking a donor’s address, a broker enriching dossiers in violation of the sale-or-use rule, a careless researcher, a party compelling disclosure of the access log); attack paths (token leak, SQL that evades the views, re-identification from small-ZIP aggregates, social engineering a steward); mitigations; and the gaps you have not closed (no rate limiting, no differential privacy). It turns “we took security seriously” into a list someone can check.</p>
+<p>The last artifact is new to this chapter and is the one Piece 4 needs: a <strong>stewardship plan</strong>. It answers the four questions on which every volunteer mirror lives or dies: retention, migration, custody, and wind-down. A fixity manifest is the technical core, because checksums are how a copy proves it has not changed since it left the agency.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hashlib, pathlib, json</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fixity_manifest(folder):</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> {}</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> p <span class="kw">in</span> <span class="bu">sorted</span>(pathlib.Path(folder).rglob(<span class="st">"*"</span>)):</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> p.is_file():</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>            out[<span class="bu">str</span>(p)] <span class="op">=</span> hashlib.sha256(p.read_bytes()).hexdigest()</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> out</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>json.dump(fixity_manifest(<span class="st">"mirror/"</span>), <span class="bu">open</span>(<span class="st">"manifest-sha256.json"</span>, <span class="st">"w"</span>), indent<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; {"mirror/fec_co_mirror.db": "9f2c...", ...}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stewardship_plan.yaml</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dataset</span><span class="kw">:</span><span class="at"> &lt;federal dataset from Exercise 16.3&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source_of_record</span><span class="kw">:</span><span class="at"> &lt;agency, program, URL, retrieval date&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">retention</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">keep</span><span class="kw">:</span><span class="at"> </span><span class="st">"every release"</span><span class="kw">,</span><span class="at"> </span><span class="fu">review</span><span class="kw">:</span><span class="at"> annually</span><span class="kw">}</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">fixity</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">manifest</span><span class="kw">:</span><span class="at"> manifest-sha256.json</span><span class="kw">,</span><span class="at"> </span><span class="fu">verify</span><span class="kw">:</span><span class="at"> monthly</span><span class="kw">}</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">migration</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">formats</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">CSV</span><span class="kw">,</span><span class="at"> Parquet</span><span class="kw">],</span><span class="at"> </span><span class="fu">triggers</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">format deprecation</span><span class="kw">,</span><span class="at"> host change</span><span class="kw">]}</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">custody</span><span class="kw">:</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> &lt;named steward or role&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">mirrors</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">&lt;institutional repository&gt;</span><span class="kw">,</span><span class="at"> &lt;Internet Archive item&gt;</span><span class="kw">]</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">succession</span><span class="kw">:</span><span class="at"> &lt;who takes over, and how they are told&gt;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">access</span><span class="kw">:</span><span class="at"> &lt;public, or tiered per access_policy.yaml&gt;</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">wind_down</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">condition</span><span class="kw">:</span><span class="at"> </span><span class="st">"agency resumes publication with equivalent coverage"</span><span class="kw">,</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">"freeze, deposit, and point to the agency source"</span><span class="kw">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The wind-down clause matters more than it looks. A mirror that has no end condition either outlives its stewards or competes with the agency’s own record. Saying in advance when you will stop is part of being accountable.</p>
+</section>
+</section>
+<section id="why-just-use-github-is-stewardship-outsourcing" class="level2" data-number="18.6">
+<h2 data-number="18.6" class="anchored" data-anchor-id="why-just-use-github-is-stewardship-outsourcing"><span class="header-section-number">18.6</span> Why “just use GitHub” is stewardship outsourcing</h2>
+<p>The shortcut is tempting: aggregates in a public repository, rows in a private one, and let the platform handle authentication and logging. But GitHub is a commercial service operating under terms it may change unilaterally and subject to US sanctions law and takedown claims. None of that makes it unusable. It means “just use GitHub” is not a stewardship decision. It is a stewardship <em>outsourcing</em> decision, on terms you did not negotiate. The same holds for any cloud folder or notebook service. Each can sit inside a stewardship arrangement; none of them <em>is</em> one.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In the Public Interest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ownership-as-stewardship turns the continuity element of the installed base (<a href="ch-02-installed-base.html" class="quarto-xref"><span>Chapter 2</span></a>) from a slogan into a job. The specific claim for federal data: retention law protects records from destruction but not from disappearing from public view, so the public’s practical <strong>ownership</strong> of a federal dataset depends on stewards outside the agency who write down retention, migration, custody, and wind-down, and who can prove fixity. A mirror without that plan loses continuity within two transitions of its own. And the challenge from Te Mana Raraunga and OCAP stands: for data about Indigenous nations, the steward’s first obligation may be to return possession, not to keep a copy. <a href="ch-22-archival-deposits.html" class="quarto-xref"><span>Chapter 22</span></a> picks up custody when you deposit your own work.</p>
+</div>
+</div>
+</section>
+<section id="exercises" class="level2" data-number="18.7">
+<h2 data-number="18.7" class="anchored" data-anchor-id="exercises"><span class="header-section-number">18.7</span> Exercises</h2>
+<p><strong>Exercise 18.1 (Guided; laptop, real data).</strong> Pull at least 500 Colorado individual contributions from the OpenFEC API (paginate with <code>last_indexes</code>). Build the two views, run the Flask gate locally, issue one public and one researcher query, and capture the audit log entries. Submit the SQL, the app, and the first ten lines of the log.</p>
+<p><strong>Exercise 18.2 (Analytic).</strong> Write <code>threat_model.md</code> and <code>access_policy.yaml</code> for Exercise 18.1. Name three actors specific to your setting, three attack paths, three mitigations, and at least two gaps you are not yet mitigating. Explain in one paragraph how the statutory sale-or-use restriction changes your threat model.</p>
+<p><strong>Exercise 18.3 (Applied; Piece 4 component).</strong> Write a stewardship plan for the federal dataset you audited in Exercises 16.1 to 16.3, using the YAML skeleton above, and generate a fixity manifest for a copy you hold. Name a steward by role, a mirror, a succession rule, and a wind-down condition. Use your stakeholder map from Exercise 17.2 to decide who should have a say in the access rules. If you conclude that the dataset should not be mirrored at all, write the refusal specification in <a href="ch-19-critical-data-studies-refusal.html" class="quarto-xref"><span>Chapter 19</span></a> instead. Save as <code>exercises/ch18_stewardship/</code>.</p>
+<p><strong>Exercise 18.4 (Applied research).</strong> Document the governance of one operating body: a data trust or cooperative (UK Biobank, Salus Coop, or a case tracked by the Ada Lovelace Institute) or an Indigenous data governance body (Te Mana Raraunga, the First Nations Information Governance Centre, or a tribal research review board). In 500 to 800 words, cover who governs, on whose behalf, what rights members have, what happens on wind-down, and where the money comes from. Cite governance documents, not journalistic summaries.</p>
+<p><strong>Exercise 18.5 (Open-ended, project-linked).</strong> Return to your project sketch from Exercise 1.5. For each infrastructure your project depends on (hosting, data source, library, registry, funder), name the steward in the ownership-as-stewardship sense. For two of them, write one paragraph on what happens to your project if they stop tomorrow. If your answer is “I would be fine,” revisit whether you identified the dependency correctly.</p>
+</section>
+<section id="looking-ahead" class="level2" data-number="18.8">
+<h2 data-number="18.8" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">18.8</span> Looking ahead</h2>
+<p>You can now hold a federal record with tiers, a threat model, and a plan for its custody and end. <a href="ch-19-critical-data-studies-refusal.html" class="quarto-xref"><span>Chapter 19</span></a> asks the harder question underneath all of it: whether the record should exist in the form you are preserving. Critical data studies, data justice, and refusal show how each element of the installed base can become a mechanism of harm, and they give you the alternative artifact for Piece 4: a refusal specification.</p>
+</section>
+<section id="further-reading-and-resources" class="level2" data-number="18.9">
+<h2 data-number="18.9" class="anchored" data-anchor-id="further-reading-and-resources"><span class="header-section-number">18.9</span> Further Reading and Resources</h2>
+<ul>
+<li>Helena Karasti and Jeanette Blomberg (2018), “<a href="https://doi.org/10.1007/s10606-017-9296-7">Studying infrastructuring ethnographically</a>,” <em>Computer Supported Cooperative Work</em> 27: 233–265. What maintenance labor actually is.</li>
+<li>Joan M. Schwartz and Terry Cook (2002), “<a href="https://doi.org/10.1007/BF02435628">Archives, records, and power</a>,” <em>Archival Science</em> 2: 1–19. The foundational argument for archives as instruments of power.</li>
+<li>Te Mana Raraunga, “Principles of Māori data sovereignty” (2018): <a href="https://www.temanararaunga.maori.nz/tutohinga" class="uri">https://www.temanararaunga.maori.nz/tutohinga</a>.</li>
+<li>First Nations Information Governance Centre, “The First Nations Principles of OCAP”: <a href="https://fnigc.ca/ocap-training/" class="uri">https://fnigc.ca/ocap-training/</a>.</li>
+<li>Stephanie Russo Carroll et al.&nbsp;(2020), “<a href="https://doi.org/10.5334/dsj-2020-043">The CARE Principles for Indigenous data governance</a>,” <em>Data Science Journal</em> 19: 43.</li>
+<li>Ada Lovelace Institute (2021), “Exploring legal mechanisms for data stewardship”: <a href="https://www.adalovelaceinstitute.org/report/legal-mechanisms-data-stewardship/" class="uri">https://www.adalovelaceinstitute.org/report/legal-mechanisms-data-stewardship/</a>.</li>
+<li>Sylvie Delacroix and Neil D. Lawrence (2019), “<a href="https://doi.org/10.1093/idpl/ipz014">Bottom-up data trusts</a>,” <em>International Data Privacy Law</em> 9(4): 236–252.</li>
+<li>OpenFEC API documentation: <a href="https://api.open.fec.gov/developers/" class="uri">https://api.open.fec.gov/developers/</a>. The federal campaign finance API used in the tutorial.</li>
+<li>National Archives and Records Administration, records management: <a href="https://www.archives.gov/records-mgmt" class="uri">https://www.archives.gov/records-mgmt</a>. Where federal retention schedules live. <!-- TODO: verify URL. --></li>
+<li>OWASP, “Threat Modeling Cheat Sheet”: <a href="https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html" class="uri">https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html</a>.</li>
+</ul>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-ada_data_trusts" class="csl-entry" role="listitem">
+Ada Lovelace Institute. 2021. <span>“Exploring Legal Mechanisms for Data Stewardship.”</span> Ada Lovelace Institute; AI Council. <a href="https://www.adalovelaceinstitute.org/report/legal-mechanisms-data-stewardship/">https://www.adalovelaceinstitute.org/report/legal-mechanisms-data-stewardship/</a>.
+</div>
+<div id="ref-carroll2020" class="csl-entry" role="listitem">
+Carroll, Stephanie Russo, Ibrahim Garba, Oscar L. Figueroa-Rodríguez, Jarita Holbrook, Raymond Lovett, Simeon Materechera, Mark Parsons, et al. 2020. <span>“The <span>CARE</span> Principles for <span>Indigenous</span> Data Governance.”</span> <em>Data Science Journal</em> 19: 43. <a href="https://doi.org/10.5334/dsj-2020-043">https://doi.org/10.5334/dsj-2020-043</a>.
+</div>
+<div id="ref-delacroix2019" class="csl-entry" role="listitem">
+Delacroix, Sylvie, and Neil D. Lawrence. 2019. <span>“Bottom-up Data Trusts: Disturbing the <span><span>‘One Size Fits All’</span></span> Approach to Data Governance.”</span> <em>International Data Privacy Law</em> 9 (4): 236–52. <a href="https://doi.org/10.1093/idpl/ipz014">https://doi.org/10.1093/idpl/ipz014</a>.
+</div>
+<div id="ref-fnigc_ocap" class="csl-entry" role="listitem">
+First Nations Information Governance Centre. n.d. <span>“The <span>First Nations</span> Principles of <span>OCAP</span>.”</span> First Nations Information Governance Centre. <a href="https://fnigc.ca/ocap-training/">https://fnigc.ca/ocap-training/</a>.
+</div>
+<div id="ref-karasti2018" class="csl-entry" role="listitem">
+Karasti, Helena, and Jeanette Blomberg. 2018. <span>“Studying Infrastructuring Ethnographically.”</span> <em>Computer Supported Cooperative Work</em> 27: 233–65. <a href="https://doi.org/10.1007/s10606-017-9296-7">https://doi.org/10.1007/s10606-017-9296-7</a>.
+</div>
+<div id="ref-keegan2026" class="csl-entry" role="listitem">
+Keegan, Brian C. 2026. <span>“Public Interest Data Infrastructuring.”</span> <em>Under Review</em>.
+</div>
+<div id="ref-schwartz2002" class="csl-entry" role="listitem">
+Schwartz, Joan M., and Terry Cook. 2002. <span>“Archives, Records, and Power: The Making of Modern Memory.”</span> <em>Archival Science</em> 2: 1–19. <a href="https://doi.org/10.1007/BF02435628">https://doi.org/10.1007/BF02435628</a>.
+</div>
+<div id="ref-stoler2002" class="csl-entry" role="listitem">
+Stoler, Ann Laura. 2009. <em>Along the Archival Grain: Epistemic Anxieties and Colonial Common Sense</em>. Princeton, NJ: Princeton University Press. <a href="https://press.princeton.edu/books/paperback/9780691146362/along-the-archival-grain">https://press.princeton.edu/books/paperback/9780691146362/along-the-archival-grain</a>.
+</div>
+<div id="ref-temanararaunga" class="csl-entry" role="listitem">
+Te Mana Raraunga. 2018. <span>“Principles of <span class="nocase">M<span class="nocase">ā</span>ori</span> Data Sovereignty.”</span> M<span>ā</span>ori Data Sovereignty Network. <a href="https://www.temanararaunga.maori.nz/tutohinga">https://www.temanararaunga.maori.nz/tutohinga</a>.
+</div>
+<div id="ref-usidsn" class="csl-entry" role="listitem">
+United States Indigenous Data Sovereignty Network. 2024. <span>“<span>USIDSN</span>: Promoting Indigenous Data Sovereignty in the <span>United States</span>.”</span> Native Nations Institute, University of Arizona. <a href="https://usindigenousdata.org/">https://usindigenousdata.org/</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch-17-planning.html" class="pagination-link" aria-label="Planning">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Planning</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch-19-critical-data-studies-refusal.html" class="pagination-link" aria-label="Critical Data Studies, Data Justice, and Refusal">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Critical Data Studies, Data Justice, and Refusal</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Ownership {#sec-ch-18-ownership}</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>A commercial data broker will tell you, if pressed, that it *owns* the nine-hundred-variable dossier it sells about you. Ownership here means a property claim: rights to exclude, alienate, and monetize, backed by contract law. The dossier was assembled, often without your knowledge, from loyalty programs, voter files, credit header data, and the exhaust of a hundred free apps. You do not own it. The broker does.</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>This chapter argues that ownership in public-interest data science is a different word, and most of the trouble in the field comes from not noticing. Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> defines ownership as the counter-force to erosion: collective, accountable governance over the preservation, access, and use of public-relevant data, rather than private property or exclusive control. The claim a public-interest steward makes is ownership-as-stewardship, a maintenance obligation that requires labor, authority, and continuity across political cycles. You do not own a public dataset the way a broker owns a dossier. You own it the way a municipal archivist owns the city's property records: accountable for its condition, usability, and survival, and unable to sell it off when the grant runs out.</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>The last two chapters set up the problem. @sec-ch-16-erosion showed that a volunteer mirror of a federal dataset advances continuity but not authority. @sec-ch-17-planning showed that the people who use and are described by a federal dataset are rarely in the room when it is retired. This chapter asks who should hold the record now, under what rules, for how long, and what it takes to structure that holding so it does not collapse into abandonment or capture. It also asks whether "stewardship" is the right word at all, because for Indigenous nations it is not.</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Two senses of the word</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>**Ownership-as-property** treats data as an asset with a rights-holder who can license, sell, or destroy it. The vocabulary is real estate and copyright: chain of title, residual rights, assignment. The broker sits here. So, uncomfortably, does a good deal of "open" infrastructure: a university research dataset may be open to collaborators while the technology transfer office treats it as an asset.</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>**Ownership-as-stewardship** treats data as an ongoing obligation of maintenance, documentation, remediation, and succession. The vocabulary is closer to trusteeship: duties of care, prudence, and loyalty that cannot be dropped without arranging for someone else to take them up. A records manager is a steward. So is the volunteer who keeps a mirror of a retired federal dataset checksummed and online.</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>Most public-interest infrastructure runs on labor that presumes stewardship inside institutions that default to property. Karasti and Blomberg <span class="co">[</span><span class="ot">-@karasti2018</span><span class="co">]</span> found that long-running scientific infrastructures work until the person doing the work moves on, then stop working in ways that take years to surface; @sec-ch-03-pit-data-for-good called the uncredited version of this labor ghost work. Schwartz and Cook <span class="co">[</span><span class="ot">-@schwartz2002</span><span class="co">]</span> made the argument for archives decades ago: what gets kept, and who decides, are political choices all the way down. Stoler <span class="co">[</span><span class="ot">-@stoler2002</span><span class="co">]</span>, reading colonial Dutch archives, showed the archive to be an instrument of power whose silences must be read as carefully as its records.</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## The legal skeleton of federal stewardship</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>Federal data already has a stewardship skeleton, and knowing where it ends is the point. The Federal Records Act requires agencies to preserve records and to destroy them only under disposition schedules approved by the National Archives and Records Administration. The OPEN Government Data Act, Title II of the Foundations for Evidence-Based Policymaking Act of 2018, requires agencies to maintain data inventories and to publish data in open formats by default. <span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: add bib entries for 44 U.S.C. ch. 31 (Federal Records Act) and Pub. L. 115-435 (Evidence Act) if cited formally. --&gt;</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>Notice the gap. Retention law governs whether a record is *destroyed*. It says much less about whether the public can *reach* it. A dataset can vanish from a public website while the underlying records remain in agency custody, lawfully retained and practically inaccessible. That is exactly the gap the volunteer mirrors of @sec-ch-16-erosion fill, and exactly why their stewardship has to be designed rather than improvised.</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data trusts, briefly</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>One response to the mismatch is the **data trust**: a legal structure in which a trustee holds rights over data on behalf of beneficiaries, with fiduciary duties enforceable in court. The Ada Lovelace Institute's review <span class="co">[</span><span class="ot">@ada_data_trusts</span><span class="co">]</span> found trusts more proposed than operational, but the proposal forces the right questions: who the beneficiaries are, what the trustee may do, and what remedies exist if the trust is breached. Delacroix and Lawrence <span class="co">[</span><span class="ot">-@delacroix2019</span><span class="co">]</span> argue for bottom-up trusts in which data subjects themselves are the beneficiary class. You will not stand up a trust here. You will stand up the minimum you can maintain before one exists: tiered access, a threat model, and a stewardship plan.</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Indigenous data sovereignty as a foundational challenge</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>"Stewardship with duties to beneficiaries" presumes the beneficiaries delegated anything. For many datasets they did not. Te Mana Raraunga <span class="co">[</span><span class="ot">@temanararaunga</span><span class="co">]</span>, the Māori Data Sovereignty Network in Aotearoa New Zealand, argues that Māori data is not a resource to be stewarded on Māori behalf by a non-Māori institution. It belongs to Māori, under Māori governance, as sovereignty rather than trust. In Canada, the First Nations principles of OCAP (ownership, control, access, and possession) <span class="co">[</span><span class="ot">@fnigc_ocap</span><span class="co">]</span> assert that First Nations collectively own their data, control how it is collected and used, decide who may access it, and should physically possess it. OCAP uses the word "ownership" deliberately, and it does not mean stewardship by someone else. The CARE Principles <span class="co">[</span><span class="ot">@carroll2020</span><span class="co">]</span> (collective benefit, authority to control, responsibility, ethics) extend the argument to Indigenous data governance generally.</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>In the United States, federal agencies hold large amounts of data about tribal nations and their citizens, from the Census to health and land records, and the US Indigenous Data Sovereignty Network <span class="co">[</span><span class="ot">@usidsn</span><span class="co">]</span> has pressed the same claims here. The tools you are about to build assume that a public has delegated stewardship to an institution. They do not work when a people has delegated nothing. @sec-ch-19-critical-data-studies-refusal takes this up, including cases where the right answer is not tiered access but refusal.</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tutorial: tiering a federal mirror</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>In @sec-ch-06-openness you cleaned a city campaign finance file. Federal campaign finance has the same shape at national scale. The Federal Election Commission publishes itemized individual contributions with each donor's name, city, state, ZIP code, employer, and occupation, and the OpenFEC API also returns street addresses for many itemized receipts. All of it is legally public. Legal publicness and safe republishability are not the same thing: name plus street address plus employer is enough for harassment well beyond what disclosure law contemplated. The statute itself knows this. The Federal Election Campaign Act bars anyone from selling or using information copied from these reports to solicit contributions or for commercial purposes (52 U.S.C. § 30111(a)(4)), a use restriction written into the law that makes the data public.</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>Suppose you maintain a mirror of Colorado contributions for researchers and reporters, in case the FEC's interfaces change. You will build three tiers over one SQLite file:</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Public tier.** Aggregates only: totals by committee and ZIP code. No individual rows.</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Researcher tier.** Individual rows without street address. Token-gated and logged per query, for credentialed journalists and researchers with a documented project.</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Restricted tier.** Full rows including address. Case by case, granted by a named human, logged in a public register.</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pull, load, and define the views</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sqlite3, requests, pandas <span class="im">as</span> pd</span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>KEY <span class="op">=</span> os.environ.get(<span class="st">"FEC_API_KEY"</span>, <span class="st">"DEMO_KEY"</span>)  <span class="co"># api.data.gov key; DEMO_KEY is rate-limited</span></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>params <span class="op">=</span> {<span class="st">"api_key"</span>: KEY, <span class="st">"contributor_state"</span>: <span class="st">"CO"</span>,</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>          <span class="st">"two_year_transaction_period"</span>: <span class="dv">2024</span>, <span class="st">"per_page"</span>: <span class="dv">100</span>}</span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> requests.get(<span class="st">"https://api.open.fec.gov/v1/schedules/schedule_a/"</span>,</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>                 params<span class="op">=</span>params, timeout<span class="op">=</span><span class="dv">60</span>)</span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> r.json()[<span class="st">"results"</span>]   <span class="co"># one page; follow "last_indexes" to paginate</span></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">"sub_id"</span>, <span class="st">"committee_id"</span>, <span class="st">"contributor_name"</span>, <span class="st">"contributor_street_1"</span>,</span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>        <span class="st">"contributor_city"</span>, <span class="st">"contributor_zip"</span>, <span class="st">"contributor_employer"</span>,</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>        <span class="st">"contributor_occupation"</span>, <span class="st">"contribution_receipt_amount"</span>,</span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>        <span class="st">"contribution_receipt_date"</span>]</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(rows).reindex(columns<span class="op">=</span>cols)</span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"zip5"</span>] <span class="op">=</span> df[<span class="st">"contributor_zip"</span>].<span class="bu">str</span>[:<span class="dv">5</span>]</span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">"fec_co_mirror.db"</span>)</span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>df.to_sql(<span class="st">"filings_raw"</span>, con, if_exists<span class="op">=</span><span class="st">"replace"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(df)</span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; 100</span></span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: verify OpenFEC schedule_a field names and keyset pagination against https://api.open.fec.gov/developers/ before the term. --&gt;</span></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a><span class="in">```sql</span></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="co">-- Public tier: aggregates with a k-anonymity floor.</span></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> VIEW public_totals_by_zip <span class="kw">AS</span></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> zip5, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> n, <span class="fu">SUM</span>(contribution_receipt_amount) <span class="kw">AS</span> total</span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> filings_raw <span class="kw">GROUP</span> <span class="kw">BY</span> zip5 <span class="kw">HAVING</span> n <span class="op">&gt;=</span> <span class="dv">5</span>;</span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="co">-- Researcher tier: individual rows, no street address.</span></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> VIEW researcher_filings <span class="kw">AS</span></span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> sub_id, committee_id, contributor_name, contributor_city, zip5,</span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>       contributor_employer, contributor_occupation,</span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>       contribution_receipt_amount, contribution_receipt_date</span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> filings_raw;</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a><span class="co">-- Restricted tier: filings_raw itself, gated at the application layer.</span></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>The public view enforces a floor of five contributions per ZIP so an aggregate cannot single out a lone donor. The researcher view drops the street address but keeps employer and occupation, which are newsworthy in ways addresses rarely are. SQLite has no per-row permissions, so the restricted tier is enforced in application code.</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a><span class="fu">### A thin gate with an audit log</span></span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, request, abort, jsonify</span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hmac, json, datetime</span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a>DB, AUDIT_LOG <span class="op">=</span> <span class="st">"fec_co_mirror.db"</span>, <span class="st">"access_audit.jsonl"</span></span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>TOKEN <span class="op">=</span> os.environ[<span class="st">"MIRROR_RESEARCHER_TOKEN"</span>]</span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> log_query(tier, user, query):</span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>    entry <span class="op">=</span> {<span class="st">"ts"</span>: datetime.datetime.now(datetime.timezone.utc).isoformat(),</span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>             <span class="st">"tier"</span>: tier, <span class="st">"user"</span>: user, <span class="st">"query"</span>: query}</span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(AUDIT_LOG, <span class="st">"a"</span>) <span class="im">as</span> f:</span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>        f.write(json.dumps(entry) <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">"/public/zip"</span>)</span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> public_zip():</span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a>    rows <span class="op">=</span> sqlite3.<span class="ex">connect</span>(DB).execute(<span class="st">"SELECT * FROM public_totals_by_zip"</span>).fetchall()</span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>    log_query(<span class="st">"public"</span>, <span class="st">"anonymous"</span>, <span class="st">"totals_by_zip"</span>)</span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jsonify(rows)</span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">"/researcher/query"</span>, methods<span class="op">=</span>[<span class="st">"POST"</span>])</span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> researcher_query():</span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>    token <span class="op">=</span> request.headers.get(<span class="st">"X-Research-Token"</span>, <span class="st">""</span>)</span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> hmac.compare_digest(token, TOKEN):</span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a>        abort(<span class="dv">401</span>)</span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>    q <span class="op">=</span> request.json.get(<span class="st">"query"</span>, <span class="st">""</span>)</span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> q.strip().lower().startswith(<span class="st">"select"</span>) <span class="kw">or</span> <span class="st">"filings_raw"</span> <span class="kw">in</span> q.lower():</span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>        abort(<span class="dv">403</span>)</span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a>    rows <span class="op">=</span> sqlite3.<span class="ex">connect</span>(DB).execute(q).fetchall()</span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a>    log_query(<span class="st">"researcher"</span>, request.headers.get(<span class="st">"X-Research-User"</span>, <span class="st">"unknown"</span>), q)</span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jsonify(rows)</span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; GET /public/zip returns [["80302", 41, 12650.0], ...] (illustrative)</span></span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>This is not a hardened system. A determined attacker can evade two string checks. The point is to make the tiers legible as code, with each tier's permissions visible to a reviewer in one file.</span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="The Missing Manual"}</span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>Environment-variable credentials are not security. They are a social contract with your deployment pipeline, and the pipeline leaks them in ways tutorials rarely mention. A token printed to a container log because someone left <span class="in">`DEBUG=true`</span> on is not a secret anymore. A token captured in a stack trace that an error-tracking service forwarded to a third party is not a secret either. A token committed in a <span class="in">`.env`</span> file two refactors ago and never rotated is, for practical purposes, plaintext. Rotate on a schedule, not only after incidents, and check what your logging captures on exception. Note also that the audit log you just built is itself sensitive: it records who researched whom, and it can be subpoenaed.</span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="fu">### Decision rules, threat model, and stewardship plan</span></span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a>The code enforces tiers. The decision rules say who belongs in which tier, and they are the part that will be contested, so keep them in a versioned document:</span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a><span class="co"># access_policy.yaml</span></span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="fu">dataset</span><span class="kw">:</span><span class="at"> fec_colorado_individual_contributions_mirror</span></span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a><span class="fu">tiers</span><span class="kw">:</span></span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">public</span><span class="kw">:</span><span class="at">     </span><span class="kw">{</span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">"aggregates, k &gt;= 5"</span><span class="kw">,</span><span class="at"> </span><span class="fu">auth</span><span class="kw">:</span><span class="at"> none</span><span class="kw">}</span></span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">researcher</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">audience</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">credentialed journalists</span><span class="kw">,</span><span class="at"> IRB-approved researchers</span><span class="kw">],</span></span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a><span class="at">               </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">"rows without street address"</span><span class="kw">,</span></span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a><span class="at">               </span><span class="fu">auth</span><span class="kw">:</span><span class="at"> </span><span class="st">"named token"</span><span class="kw">,</span><span class="at"> </span><span class="fu">logging</span><span class="kw">:</span><span class="at"> </span><span class="st">"per query, 12 months"</span><span class="kw">}</span></span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">restricted</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">audience</span><span class="kw">:</span><span class="at"> case-by-case</span><span class="kw">,</span><span class="at"> </span><span class="fu">auth</span><span class="kw">:</span><span class="at"> </span><span class="st">"two stewards plus public register"</span><span class="kw">}</span></span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a><span class="fu">revocation</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">grounds</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">misuse</span><span class="kw">,</span><span class="at"> commercial or solicitation use</span><span class="kw">],</span><span class="at"> </span><span class="fu">appeal</span><span class="kw">:</span><span class="at"> full steward group</span><span class="kw">}</span></span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a>A threat model names who might attack the system and what they want. A workable one is a page: assets (donor rows, addresses, access logs, tokens); actors (a harasser seeking a donor's address, a broker enriching dossiers in violation of the sale-or-use rule, a careless researcher, a party compelling disclosure of the access log); attack paths (token leak, SQL that evades the views, re-identification from small-ZIP aggregates, social engineering a steward); mitigations; and the gaps you have not closed (no rate limiting, no differential privacy). It turns "we took security seriously" into a list someone can check.</span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a>The last artifact is new to this chapter and is the one Piece 4 needs: a **stewardship plan**. It answers the four questions on which every volunteer mirror lives or dies: retention, migration, custody, and wind-down. A fixity manifest is the technical core, because checksums are how a copy proves it has not changed since it left the agency.</span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hashlib, pathlib, json</span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fixity_manifest(folder):</span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> {}</span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> p <span class="kw">in</span> <span class="bu">sorted</span>(pathlib.Path(folder).rglob(<span class="st">"*"</span>)):</span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> p.is_file():</span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>            out[<span class="bu">str</span>(p)] <span class="op">=</span> hashlib.sha256(p.read_bytes()).hexdigest()</span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> out</span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a>json.dump(fixity_manifest(<span class="st">"mirror/"</span>), <span class="bu">open</span>(<span class="st">"manifest-sha256.json"</span>, <span class="st">"w"</span>), indent<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; {"mirror/fec_co_mirror.db": "9f2c...", ...}</span></span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a><span class="co"># stewardship_plan.yaml</span></span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a><span class="fu">dataset</span><span class="kw">:</span><span class="at"> &lt;federal dataset from Exercise 16.3&gt;</span></span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a><span class="fu">source_of_record</span><span class="kw">:</span><span class="at"> &lt;agency, program, URL, retrieval date&gt;</span></span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a><span class="fu">retention</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">keep</span><span class="kw">:</span><span class="at"> </span><span class="st">"every release"</span><span class="kw">,</span><span class="at"> </span><span class="fu">review</span><span class="kw">:</span><span class="at"> annually</span><span class="kw">}</span></span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a><span class="fu">fixity</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">manifest</span><span class="kw">:</span><span class="at"> manifest-sha256.json</span><span class="kw">,</span><span class="at"> </span><span class="fu">verify</span><span class="kw">:</span><span class="at"> monthly</span><span class="kw">}</span></span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a><span class="fu">migration</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">formats</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">CSV</span><span class="kw">,</span><span class="at"> Parquet</span><span class="kw">],</span><span class="at"> </span><span class="fu">triggers</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">format deprecation</span><span class="kw">,</span><span class="at"> host change</span><span class="kw">]}</span></span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a><span class="fu">custody</span><span class="kw">:</span></span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> &lt;named steward or role&gt;</span></span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">mirrors</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">&lt;institutional repository&gt;</span><span class="kw">,</span><span class="at"> &lt;Internet Archive item&gt;</span><span class="kw">]</span></span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">succession</span><span class="kw">:</span><span class="at"> &lt;who takes over, and how they are told&gt;</span></span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a><span class="fu">access</span><span class="kw">:</span><span class="at"> &lt;public, or tiered per access_policy.yaml&gt;</span></span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a><span class="fu">wind_down</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">condition</span><span class="kw">:</span><span class="at"> </span><span class="st">"agency resumes publication with equivalent coverage"</span><span class="kw">,</span></span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">"freeze, deposit, and point to the agency source"</span><span class="kw">}</span></span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a>The wind-down clause matters more than it looks. A mirror that has no end condition either outlives its stewards or competes with the agency's own record. Saying in advance when you will stop is part of being accountable.</span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why "just use GitHub" is stewardship outsourcing</span></span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a>The shortcut is tempting: aggregates in a public repository, rows in a private one, and let the platform handle authentication and logging. But GitHub is a commercial service operating under terms it may change unilaterally and subject to US sanctions law and takedown claims. None of that makes it unusable. It means "just use GitHub" is not a stewardship decision. It is a stewardship *outsourcing* decision, on terms you did not negotiate. The same holds for any cloud folder or notebook service. Each can sit inside a stewardship arrangement; none of them *is* one.</span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="In the Public Interest"}</span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a>Ownership-as-stewardship turns the continuity element of the installed base (@sec-ch-02-installed-base) from a slogan into a job. The specific claim for federal data: retention law protects records from destruction but not from disappearing from public view, so the public's practical **ownership** of a federal dataset depends on stewards outside the agency who write down retention, migration, custody, and wind-down, and who can prove fixity. A mirror without that plan loses continuity within two transitions of its own. And the challenge from Te Mana Raraunga and OCAP stands: for data about Indigenous nations, the steward's first obligation may be to return possession, not to keep a copy. @sec-ch-22-archival-deposits picks up custody when you deposit your own work.</span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>**Exercise 18.1 (Guided; laptop, real data).** Pull at least 500 Colorado individual contributions from the OpenFEC API (paginate with <span class="in">`last_indexes`</span>). Build the two views, run the Flask gate locally, issue one public and one researcher query, and capture the audit log entries. Submit the SQL, the app, and the first ten lines of the log.</span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>**Exercise 18.2 (Analytic).** Write <span class="in">`threat_model.md`</span> and <span class="in">`access_policy.yaml`</span> for Exercise 18.1. Name three actors specific to your setting, three attack paths, three mitigations, and at least two gaps you are not yet mitigating. Explain in one paragraph how the statutory sale-or-use restriction changes your threat model.</span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a>**Exercise 18.3 (Applied; Piece 4 component).** Write a stewardship plan for the federal dataset you audited in Exercises 16.1 to 16.3, using the YAML skeleton above, and generate a fixity manifest for a copy you hold. Name a steward by role, a mirror, a succession rule, and a wind-down condition. Use your stakeholder map from Exercise 17.2 to decide who should have a say in the access rules. If you conclude that the dataset should not be mirrored at all, write the refusal specification in @sec-ch-19-critical-data-studies-refusal instead. Save as <span class="in">`exercises/ch18_stewardship/`</span>.</span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a>**Exercise 18.4 (Applied research).** Document the governance of one operating body: a data trust or cooperative (UK Biobank, Salus Coop, or a case tracked by the Ada Lovelace Institute) or an Indigenous data governance body (Te Mana Raraunga, the First Nations Information Governance Centre, or a tribal research review board). In 500 to 800 words, cover who governs, on whose behalf, what rights members have, what happens on wind-down, and where the money comes from. Cite governance documents, not journalistic summaries.</span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a>**Exercise 18.5 (Open-ended, project-linked).** Return to your project sketch from Exercise 1.5. For each infrastructure your project depends on (hosting, data source, library, registry, funder), name the steward in the ownership-as-stewardship sense. For two of them, write one paragraph on what happens to your project if they stop tomorrow. If your answer is "I would be fine," revisit whether you identified the dependency correctly.</span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking ahead</span></span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a>You can now hold a federal record with tiers, a threat model, and a plan for its custody and end. @sec-ch-19-critical-data-studies-refusal asks the harder question underneath all of it: whether the record should exist in the form you are preserving. Critical data studies, data justice, and refusal show how each element of the installed base can become a mechanism of harm, and they give you the alternative artifact for Piece 4: a refusal specification.</span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading and Resources</span></span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Helena Karasti and Jeanette Blomberg (2018), "<span class="co">[</span><span class="ot">Studying infrastructuring ethnographically</span><span class="co">](https://doi.org/10.1007/s10606-017-9296-7)</span>," *Computer Supported Cooperative Work* 27: 233–265. What maintenance labor actually is.</span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Joan M. Schwartz and Terry Cook (2002), "<span class="co">[</span><span class="ot">Archives, records, and power</span><span class="co">](https://doi.org/10.1007/BF02435628)</span>," *Archival Science* 2: 1–19. The foundational argument for archives as instruments of power.</span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Te Mana Raraunga, "Principles of Māori data sovereignty" (2018): <span class="ot">&lt;https://www.temanararaunga.maori.nz/tutohinga&gt;</span>.</span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>First Nations Information Governance Centre, "The First Nations Principles of OCAP": <span class="ot">&lt;https://fnigc.ca/ocap-training/&gt;</span>.</span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Stephanie Russo Carroll et al. (2020), "<span class="co">[</span><span class="ot">The CARE Principles for Indigenous data governance</span><span class="co">](https://doi.org/10.5334/dsj-2020-043)</span>," *Data Science Journal* 19: 43.</span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ada Lovelace Institute (2021), "Exploring legal mechanisms for data stewardship": <span class="ot">&lt;https://www.adalovelaceinstitute.org/report/legal-mechanisms-data-stewardship/&gt;</span>.</span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sylvie Delacroix and Neil D. Lawrence (2019), "<span class="co">[</span><span class="ot">Bottom-up data trusts</span><span class="co">](https://doi.org/10.1093/idpl/ipz014)</span>," *International Data Privacy Law* 9(4): 236–252.</span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>OpenFEC API documentation: <span class="ot">&lt;https://api.open.fec.gov/developers/&gt;</span>. The federal campaign finance API used in the tutorial.</span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>National Archives and Records Administration, records management: <span class="ot">&lt;https://www.archives.gov/records-mgmt&gt;</span>. Where federal retention schedules live. <span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: verify URL. --&gt;</span></span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>OWASP, "Threat Modeling Cheat Sheet": <span class="ot">&lt;https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html&gt;</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-18-ownership.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
