@@ -3,9 +3,9 @@ execute:
   eval: false
 ---
 
-# Erosion: What Can Be Remembered? {#sec-ch-04-erosion}
+# Erosion: What Can Be Remembered? {#sec-ch-16-erosion}
 
-A public record that cannot be found is not a public record. A footnote whose URL returns a 404 is a claim without a witness. A training corpus that has been quietly withdrawn is a model whose inputs the public can no longer inspect. This chapter is about the third pressure in Part I, the one that works by subtraction. @sec-ch-02-enclosure asked *who can observe?* @sec-ch-03-exemption asked *who must answer?* This chapter asks *what can be remembered?* and describes the slow, less visible process by which the evidence needed for any answer simply dissolves.
+A public record that cannot be found is not a public record. A footnote whose URL returns a 404 is a claim without a witness. A training corpus that has been quietly withdrawn is a model whose inputs the public can no longer inspect. This chapter is about the third pressure in Part I, the one that works by subtraction. @sec-ch-04-enclosure asked *who can observe?* @sec-ch-08-exemption asked *who must answer?* This chapter asks *what can be remembered?* and describes the slow, less visible process by which the evidence needed for any answer simply dissolves.
 
 Erosion is rarely dramatic. An agency reorganizes a website during a transition and the old paths return 404s. A journal publisher migrates and the DOIs still resolve but the supplementary materials do not. A civic-tech nonprofit runs out of funding and its dashboard goes dark. A machine-learning dataset that trained a generation of models is withdrawn after researchers document abusive content inside it, and the weights of every model trained on it remain in circulation. Any one event looks like an operational hiccup. Taken together, they are the texture of a public record thinning as fast as anyone can thicken it.
 
@@ -171,7 +171,7 @@ recovered = recover_rotten(report)
 Two details bear emphasis. First, a Wayback URL is citable: if the original source is gone, cite the Wayback capture with its timestamp. Second, the Archive allows you to *request* a capture through a separate endpoint (`https://web.archive.org/save/<url>`), which you should treat as a standard move whenever you cite a page you expect to change. Saving a copy at the moment of citation shifts you from hoping the URL will still work to knowing a snapshot exists.
 
 ::: {.callout-note title="In the Public Interest"}
-When you archive a source at the moment of citation, you are exercising a form of ownership the law does not require of you. The page is not yours. You did not write it. You do not host it. What you hold is a responsibility for the evidence your argument rests on. @sec-ch-08-ownership will develop this claim: in a public-interest practice, **ownership** is stewardship over time, not private control. The link you save today is a small instance of that stewardship. @sec-ch-22-archival-deposits teaches the full form, where you deposit datasets and documentation with resolvable identifiers (Zenodo DOIs, Internet Archive items) that outlive any one organization. Between the two is the working habit this chapter asks of you: treat every URL you cite as perishable, and treat capture-at-citation as the default, not the exception.
+When you archive a source at the moment of citation, you are exercising a form of ownership the law does not require of you. The page is not yours. You did not write it. You do not host it. What you hold is a responsibility for the evidence your argument rests on. @sec-ch-18-ownership will develop this claim: in a public-interest practice, **ownership** is stewardship over time, not private control. The link you save today is a small instance of that stewardship. @sec-ch-22-archival-deposits teaches the full form, where you deposit datasets and documentation with resolvable identifiers (Zenodo DOIs, Internet Archive items) that outlive any one organization. Between the two is the working habit this chapter asks of you: treat every URL you cite as perishable, and treat capture-at-citation as the default, not the exception.
 :::
 
 ## Datasheets as a retention practice
@@ -246,9 +246,9 @@ The same logic applies to Google Drive links in syllabi, Dropbox links in footno
 
 ## Closing the triptych
 
-Chapter 2 asked who can observe; Chapter 3 asked who must answer; this chapter asks what can be remembered. Together they are Part I's working diagnosis. Access has narrowed, accountability is exempt, and the record that would let us reason about either is eroding faster than the institutions charged with preserving it can match.
+Chapter 4 asked who can observe; Chapter 8 asked who must answer; this chapter asks what can be remembered. Together they are Part I's working diagnosis. Access has narrowed, accountability is exempt, and the record that would let us reason about either is eroding faster than the institutions charged with preserving it can match.
 
-Part II turns to the values that make a response coherent. @sec-ch-05-installed-base names the installed base explicitly, the six-element framework Keegan [-@keegan2026] proposes and that this book has been gesturing at since @sec-ch-01-introduction. The link-rot audits and datasheets this chapter asks you to write are the first practical instances of what the next part will call **continuity**.
+Part II turns to the values that make a response coherent. @sec-ch-02-installed-base names the installed base explicitly, the six-element framework Keegan [-@keegan2026] proposes and that this book has been gesturing at since @sec-ch-01-introduction. The link-rot audits and datasheets this chapter asks you to write are the first practical instances of what the next part will call **continuity**.
 
 ## Exercises
 
@@ -264,7 +264,7 @@ Part II turns to the values that make a response coherent. @sec-ch-05-installed-
 
 ## Looking ahead
 
-Part I has now laid out its three pressures. Part II begins with Chapter 5, **The Installed Base**, which names the six-element framework that the rest of the book uses as a working definition of public interest. The link-rot function, the Wayback recovery helper, and the datasheet template you built in this chapter are the first instances of a pattern Chapter 5 will generalize: public-interest data science is less a set of analyses than a set of maintenance practices, carried out in public, by people who are willing to do them when nobody's quarterly review depends on it.
+Part I has now laid out its three pressures. Part II begins with Chapter 2, **The Installed Base**, which names the six-element framework that the rest of the book uses as a working definition of public interest. The link-rot function, the Wayback recovery helper, and the datasheet template you built in this chapter are the first instances of a pattern Chapter 2 will generalize: public-interest data science is less a set of analyses than a set of maintenance practices, carried out in public, by people who are willing to do them when nobody's quarterly review depends on it.
 
 ## Further Reading and Resources
 

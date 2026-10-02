@@ -13,21 +13,21 @@ This book is about the practice that takes those systems seriously as objects of
 
 The phrase "public interest" has been doing enormous rhetorical work for a long time, and most of it is contested. Robert Moses invoked it to justify expressways that cut Black neighborhoods in half. Jane Jacobs [-@jacobs1961] used it against him to defend the street life those expressways destroyed. Civil rights lawyers used it to secure access to housing, education, and the franchise. Cause lawyers on the other side used it to dismantle affirmative action. "Public" is a word that asks: which public? Whose interests?
 
-This book does not pretend to settle that question. It takes a position and names the position explicitly. Following Keegan [-@keegan2026], it treats the public interest as operational rather than abstract: the public interest is served when the six elements of what Chapter 5 calls the **installed base** are maintained. Records can be linked. Categories can be interpreted. Evidence persists across political cycles. Researchers and journalists can scrutinize systems without being sued or arrested. Someone has authority to act on what is learned. And the people affected have a path to remedy. When those six elements are in place, "public interest" is not a slogan. It is a working arrangement. When they are missing, even the most benevolent data practice can produce what Eubanks [-@eubanks2018] calls *automating inequality*.
+This book does not pretend to settle that question. It takes a position and names the position explicitly. Following Keegan [-@keegan2026], it treats the public interest as operational rather than abstract: the public interest is served when the six elements of what Chapter 2 calls the **installed base** are maintained. Records can be linked. Categories can be interpreted. Evidence persists across political cycles. Researchers and journalists can scrutinize systems without being sued or arrested. Someone has authority to act on what is learned. And the people affected have a path to remedy. When those six elements are in place, "public interest" is not a slogan. It is a working arrangement. When they are missing, even the most benevolent data practice can produce what Eubanks [-@eubanks2018] calls *automating inequality*.
 
-That is a particular theory. It is not the only one available, and Chapter 16 takes seriously the traditions (Indigenous data sovereignty, abolitionist critique, feminist refusal) that question whether "records" and "linkability" are the right starting places at all. But you have to start somewhere, and "making the installed base visible" is a useful place to start.
+That is a particular theory. It is not the only one available, and Chapter 19 takes seriously the traditions (Indigenous data sovereignty, abolitionist critique, feminist refusal) that question whether "records" and "linkability" are the right starting places at all. But you have to start somewhere, and "making the installed base visible" is a useful place to start.
 
 ## Relative to neighbors
 
 Public interest data science sits next to, and overlaps with, several fields you may already know.
 
-**Data journalism** investigates public questions through computational methods and publishes findings in the press. It is older and, at its best, more politically mature than data science. Chapter 9 treats it as a lineage.
+**Data journalism** investigates public questions through computational methods and publishes findings in the press. It is older and, at its best, more politically mature than data science. Chapter 5 treats it as a lineage.
 
-**Civic technology** and **public interest technology** (PIT) build tools for government and civil society: usable benefits portals, court-filing interfaces, participatory mapping platforms. Chapters 14 and 15 sort out the differences.
+**Civic technology** and **public interest technology** (PIT) build tools for government and civil society: usable benefits portals, court-filing interfaces, participatory mapping platforms. Chapters 3 and 15 sort out the differences.
 
-**Data for good** describes, usually, a philanthropic or industry-led application of commercial methods to socially valued problems. Chapter 14 engages it skeptically.
+**Data for good** describes, usually, a philanthropic or industry-led application of commercial methods to socially valued problems. Chapter 3 engages it skeptically.
 
-**Critical data studies** and **data justice** theorize the politics of data without necessarily building anything. Chapter 16 argues that the practice you will learn in this book is stronger when it can absorb the critique, including the parts of the critique that undercut the book's own framing.
+**Critical data studies** and **data justice** theorize the politics of data without necessarily building anything. Chapter 19 argues that the practice you will learn in this book is stronger when it can absorb the critique, including the parts of the critique that undercut the book's own framing.
 
 Public interest data science is none of these in isolation. It borrows from all of them. It aims for the practical footprint of data journalism, the critical self-awareness of critical data studies, the civic focus of civic tech, and the professional-infrastructure commitment that "data for good" often lacks.
 
@@ -35,9 +35,9 @@ Public interest data science is none of these in isolation. It borrows from all 
 
 The book moves through five parts.
 
-**Part I: Pressures** diagnoses the structural forces that constrain public knowledge in the current moment. Chapter 2 treats enclosure (who can observe), Chapter 3 treats exemption (who must answer), Chapter 4 treats erosion (what can be remembered). These are not the only pressures, but they are the three that organize most of the empirical material through the rest of the book.
+**Part I: Pressures** diagnoses the structural forces that constrain public knowledge in the current moment. Chapter 4 treats enclosure (who can observe), Chapter 8 treats exemption (who must answer), Chapter 16 treats erosion (what can be remembered). These are not the only pressures, but they are the three that organize most of the empirical material through the rest of the book.
 
-**Part II: Values** names the countervailing commitments that hold accountability together. Chapter 5 introduces the installed base and its six elements. Chapters 6–8 build out openness, oversight, and ownership in turn. These values are not abstract ideals. They are practical configurations, and each chapter asks what it takes to sustain them.
+**Part II: Values** names the countervailing commitments that hold accountability together. Chapter 2 introduces the installed base and its six elements. Chapters 6–8 build out openness, oversight, and ownership in turn. These values are not abstract ideals. They are practical configurations, and each chapter asks what it takes to sustain them.
 
 **Part III: Lineages** looks at the professions that have worked out public-interest practice for longer than data science has existed: journalism, law, accounting, planning, engineering. Each chapter extracts a set of methods the reader can import.
 
@@ -154,10 +154,10 @@ First, the English series has different seasonality than the Spanish or Hindi se
 
 Second, all three series are small relative to any major news article. "Public interest" is a reference concept, not a subject of mass curiosity. The size of the audience for public-interest *work* is not large. It is, however, possible to reach it if you know where it is.
 
-Third, the data will drift. Wikipedia articles get renamed, redirected, merged. The endpoint you called today may return a different trajectory next year because the article itself has changed. Chapter 4 takes up the problem of *what can be remembered*; this exercise is your first tiny encounter with it.
+Third, the data will drift. Wikipedia articles get renamed, redirected, merged. The endpoint you called today may return a different trajectory next year because the article itself has changed. Chapter 16 takes up the problem of *what can be remembered*; this exercise is your first tiny encounter with it.
 
 ::: {.callout-note title="In the Public Interest"}
-This chapter's running example is, on the surface, a technical trifle: three line plots of Wikipedia pageviews. But notice what it required. A public API, documented and open. Endpoints that return consistent, structured data. A retention policy that preserves history for at least a decade. A `User-Agent` expectation that asks you to identify yourself rather than hiding. Wikipedia built these as deliberate commitments to **openness** (Chapter 6). If you were trying to do the same exercise against a commercial platform in 2026, you would find most of those commitments have been withdrawn. The pressure of **enclosure** (Chapter 2) makes the simple thing you just did unusually precious. Part of this book's work is to help you notice when the simple thing is actually rare.
+This chapter's running example is, on the surface, a technical trifle: three line plots of Wikipedia pageviews. But notice what it required. A public API, documented and open. Endpoints that return consistent, structured data. A retention policy that preserves history for at least a decade. A `User-Agent` expectation that asks you to identify yourself rather than hiding. Wikipedia built these as deliberate commitments to **openness** (Chapter 6). If you were trying to do the same exercise against a commercial platform in 2026, you would find most of those commitments have been withdrawn. The pressure of **enclosure** (Chapter 4) makes the simple thing you just did unusually precious. Part of this book's work is to help you notice when the simple thing is actually rare.
 :::
 
 ## What you will build
@@ -165,16 +165,16 @@ This chapter's running example is, on the surface, a technical trifle: three lin
 By the end of the book, you will have produced:
 
 - A published, documented civic dataset hosted as a Datasette instance (Chapter 6).
-- A refusal specification for a dataset where refusal is the right answer (Chapter 16).
-- A disaggregated audit of a public model (Chapter 7), wrapped as a reproducible pipeline (Chapter 11).
-- A stakeholder map and geographic visualization of a local decision (Chapter 12).
+- A refusal specification for a dataset where refusal is the right answer (Chapter 19).
+- A disaggregated audit of a public model (Chapter 10), wrapped as a reproducible pipeline (Chapter 12).
+- A stakeholder map and geographic visualization of a local decision (Chapter 17).
 - A tested data pipeline with a deliberately-introduced bug and a written post-incident review (Chapter 13).
-- A class-wide FOIA/CORA tracker with at least one filed request of your own (Chapter 10).
-- An op-ed draft pitched to a named outlet (Chapter 17).
-- A report with reproducible figures (Chapter 18).
-- A research proposal with a data management plan and mock IRB protocol (Chapter 19).
-- A five-minute testimony statement with written addendum (Chapter 20).
-- A substantive comment on a live federal rulemaking (Chapter 21).
+- A class-wide FOIA/CORA tracker with at least one filed request of your own (Chapter 9).
+- An op-ed draft pitched to a named outlet (Chapter 7).
+- A report with reproducible figures (Chapter 15).
+- A research proposal with a data management plan and mock IRB protocol (Chapter 21).
+- A five-minute testimony statement with written addendum (Chapter 11).
+- A substantive comment on a live federal rulemaking (Chapter 20).
 - An archival deposit on the Internet Archive and Zenodo with full metadata (Chapter 22).
 
 A portfolio, in other words. Not an assignment dump. A collection of things you can point to when you apply for a job, a fellowship, a grant, or a seat on a commission, and say: I did this, I published it, here is the permanent link.
@@ -193,13 +193,13 @@ A portfolio, in other words. Not an assignment dump. A collection of things you 
 
 ## Looking ahead
 
-Chapter 2 begins Part I's diagnosis of the pressures on public knowledge. It takes the polite `User-Agent` habit we established here and turns it into a full "responsible scraper" function. More importantly, it asks why polite habits are necessary at all: how the ground of what public-interest work can observe has shifted over the last decade, and what that shift implies for what you should try to do next.
+Chapter 4 begins Part I's diagnosis of the pressures on public knowledge. It takes the polite `User-Agent` habit we established here and turns it into a full "responsible scraper" function. More importantly, it asks why polite habits are necessary at all: how the ground of what public-interest work can observe has shifted over the last decade, and what that shift implies for what you should try to do next.
 
 ## Further Reading and Resources
 
 - Brian C. Keegan (2026), "Public interest data infrastructuring," Under Review. The paper this book extends. Start here.
 - Virginia Eubanks (2018), *[Automating Inequality](https://us.macmillan.com/books/9781250215789/automatinginequality)*. The canonical contemporary text on how data-driven systems reshape welfare, policing, and child services, and why "the public interest" requires attention to whose lives those systems touch.
-- Tara Dawson McGuinness and Hana Schank (2021), *[Power to the Public](https://press.princeton.edu/books/hardcover/9780691207759/power-to-the-public)*. The book-length articulation of public interest technology, useful as a framing text and as a target for critique (Chapter 14 will take up both).
+- Tara Dawson McGuinness and Hana Schank (2021), *[Power to the Public](https://press.princeton.edu/books/hardcover/9780691207759/power-to-the-public)*. The book-length articulation of public interest technology, useful as a framing text and as a target for critique (Chapter 3 will take up both).
 - Mike Ananny and Kate Crawford (2018), "[Seeing without knowing: Limitations of the transparency ideal and its application to algorithmic accountability](https://doi.org/10.1177/1461444816676645)," *New Media & Society*, 20(3): 973–989. A useful counterweight to the assumption that transparency is self-executing.
 - Wikimedia Foundation's Pageviews API documentation: <https://wikimedia.org/api/rest_v1/>. The endpoint you used in this chapter, plus siblings you will find handy later.
 - *The Data Journalism Handbook 2*, ed. Jonathan Gray and Liliana Bounegru (2021), open-access at <https://datajournalism.com/read/handbook/two>. A reader's companion to many of the methods this book will extend.

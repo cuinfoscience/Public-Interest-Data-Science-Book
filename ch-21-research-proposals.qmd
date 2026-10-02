@@ -3,9 +3,9 @@ execute:
   eval: false
 ---
 
-# Research Proposals {#sec-ch-19-research-proposals}
+# Research Proposals {#sec-ch-21-research-proposals}
 
-The op-ed in @sec-ch-17-op-eds argued for a thing that already exists; the report in @sec-ch-18-reports documented a thing that had already happened. The research proposal is stranger than either. It argues, in the present tense, for the significance of work that does not yet exist, using evidence you cannot yet produce, on behalf of findings you cannot yet guarantee, to readers who will decide whether the work should exist at all. You are asking a funder to believe in a future that is currently a document.
+The op-ed in @sec-ch-07-op-eds argued for a thing that already exists; the report in @sec-ch-15-reports documented a thing that had already happened. The research proposal is stranger than either. It argues, in the present tense, for the significance of work that does not yet exist, using evidence you cannot yet produce, on behalf of findings you cannot yet guarantee, to readers who will decide whether the work should exist at all. You are asking a funder to believe in a future that is currently a document.
 
 The hard part is not the methods, which you already have. It is translating a public-interest data question into a shape a funder can recognize, and translating your own working life into a budget that a program officer can defend to a board. By the end of the chapter you will have produced four artifacts: a one-page specific-aims document, a simple budget with a narrative justification, a data management plan (DMP), and a simulated Institutional Review Board (IRB) protocol. None is a submitted grant. All are the documents a submitted grant is made of.
 
@@ -33,7 +33,7 @@ Political economy also shapes what counts as "research." A community-engaged aud
 
 ## The specific-aims page as sales pitch
 
-The specific-aims page is the single most important page of any research proposal. It is one page, the first thing a reviewer reads and often the last. For most foundation reviewers, it is the only thing they will read closely before forming an opinion that is then difficult to move. The report's executive summary from @sec-ch-18-reports is its closest sibling, but runs the opposite direction: the executive summary distills work already done; the specific-aims page promises work not yet done and argues that it is worth paying for.
+The specific-aims page is the single most important page of any research proposal. It is one page, the first thing a reviewer reads and often the last. For most foundation reviewers, it is the only thing they will read closely before forming an opinion that is then difficult to move. The report's executive summary from @sec-ch-15-reports is its closest sibling, but runs the opposite direction: the executive summary distills work already done; the specific-aims page promises work not yet done and argues that it is worth paying for.
 
 A conventional specific-aims page has four moves. First, a significance paragraph naming the public-interest problem in the vocabulary the funder uses. Second, a gap paragraph naming what is not yet known, or audited, or refused. Third, two or three numbered aims, each with a one-sentence hypothesis or deliverable. Fourth, an impact paragraph naming the actors who will act on the results.
 
@@ -118,10 +118,10 @@ Costanza-Chock's design-justice framing [@costanzachock2020] and the CARE Princi
 
 NSF requires a broader-impacts section; most private foundations require something analogous. First-time authors treat these as boilerplate: we will mentor undergraduates, publish open access, present at a conference. Reviewers read past this text without registering it.
 
-The strong version asks who will be better off if the project succeeds, in a way that would not have happened otherwise. It names community partners, open datasets, reproducible code, training opportunities for students who would not otherwise have had them, and downstream uses the research makes possible. It ties to the ownership question from @sec-ch-08-ownership: whose problem is this, and who gets to act on the answer? And it anticipates the sustainability question from @sec-ch-14-pit-data-for-good: when the grant money is gone, does the infrastructure continue, or evaporate with your last invoice?
+The strong version asks who will be better off if the project succeeds, in a way that would not have happened otherwise. It names community partners, open datasets, reproducible code, training opportunities for students who would not otherwise have had them, and downstream uses the research makes possible. It ties to the ownership question from @sec-ch-18-ownership: whose problem is this, and who gets to act on the answer? And it anticipates the sustainability question from @sec-ch-03-pit-data-for-good: when the grant money is gone, does the infrastructure continue, or evaporate with your last invoice?
 
 ::: {.callout-note title="In the Public Interest"}
-The broader-impacts section is where "public interest" becomes concrete and accountable. Do not treat it as boilerplate. Tie it explicitly to **ownership** as you built it in @sec-ch-08-ownership: the community whose data you are using is a partner with a stake in the outcomes, not a population to be studied. Tie it explicitly to **sustainability** as you interrogated it in @sec-ch-14-pit-data-for-good: a funded pilot that dies when the grant ends has not advanced the installed base; it has displaced the attention of staff and community members who will be asked to engage the next funded pilot with less trust. A broader-impacts section that names the partners, names the deliverables they will own at the end, and names the maintenance plan that survives the grant is a broader-impacts section a reviewer will remember. A section that promises mentorship and open-access publication without naming who is mentored, by whom, or where the open-access version will live is a section that reads as filler.
+The broader-impacts section is where "public interest" becomes concrete and accountable. Do not treat it as boilerplate. Tie it explicitly to **ownership** as you built it in @sec-ch-18-ownership: the community whose data you are using is a partner with a stake in the outcomes, not a population to be studied. Tie it explicitly to **sustainability** as you interrogated it in @sec-ch-03-pit-data-for-good: a funded pilot that dies when the grant ends has not advanced the installed base; it has displaced the attention of staff and community members who will be asked to engage the next funded pilot with less trust. A broader-impacts section that names the partners, names the deliverables they will own at the end, and names the maintenance plan that survives the grant is a broader-impacts section a reviewer will remember. A section that promises mentorship and open-access publication without naming who is mentored, by whom, or where the open-access version will live is a section that reads as filler.
 :::
 
 ## Exercises
@@ -140,7 +140,7 @@ Exercises 19.2, 19.3, 19.4, and 19.5 together produce the Part V artifact for th
 
 ## Looking ahead
 
-Chapter 20 (@sec-ch-20-testimony) turns the argument you just made in writing into one you can make out loud in five minutes in front of a legislative committee or a regulatory hearing. The specific-aims page has most of the content you will need; testimony will make you cut it to a tenth of its length and speak it to a room. Chapter 22 (@sec-ch-22-archival-deposits) gives the data your funded project produces a permanent address.
+Chapter 11 (@sec-ch-11-testimony) turns the argument you just made in writing into one you can make out loud in five minutes in front of a legislative committee or a regulatory hearing. The specific-aims page has most of the content you will need; testimony will make you cut it to a tenth of its length and speak it to a room. Chapter 22 (@sec-ch-22-archival-deposits) gives the data your funded project produces a permanent address.
 
 ## Further Reading and Resources
 

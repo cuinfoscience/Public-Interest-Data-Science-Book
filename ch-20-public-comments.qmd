@@ -3,9 +3,9 @@ execute:
   eval: false
 ---
 
-# Public Comments {#sec-ch-21-public-comments}
+# Public Comments {#sec-ch-20-public-comments}
 
-Federal rulemaking is where many of the country's most consequential data-policy fights are decided, and almost nobody you know has written a comment on one. The op-ed in @sec-ch-17-op-eds reaches a general reader. The report in @sec-ch-18-reports reaches a funder. The testimony in @sec-ch-20-testimony reaches a committee that invited you in advance. A public comment on a proposed rule reaches the federal agency drafting the rule, on the agency's schedule, in a form the agency is legally required to read, without anyone inviting you first. The door is open. Most of the profession walks past it.
+Federal rulemaking is where many of the country's most consequential data-policy fights are decided, and almost nobody you know has written a comment on one. The op-ed in @sec-ch-07-op-eds reaches a general reader. The report in @sec-ch-15-reports reaches a funder. The testimony in @sec-ch-11-testimony reaches a committee that invited you in advance. A public comment on a proposed rule reaches the federal agency drafting the rule, on the agency's schedule, in a form the agency is legally required to read, without anyone inviting you first. The door is open. Most of the profession walks past it.
 
 This chapter treats the public comment as a genre. You will read a Notice of Proposed Rulemaking (NPRM), find the specific questions the agency is asking, draft a substantive comment that cites the NPRM's section numbers, and (with instructor approval) submit it through regulations.gov. The running example is one of the mid-2020s' large algorithmic-accountability dockets: the Federal Trade Commission's Commercial Surveillance and Data Security ANPRM (FTC-2022-0053, comment period closed November 2022), or the National Institute of Standards and Technology's AI Risk Management Framework comment cycles from the same period. Both produced thousands of pages of public comment, much of it substantive, all of it now part of the administrative record. They are taught here as historical worked examples; for your own submission you will pick a currently open docket that overlaps your project, using the search workflow described below.
 
@@ -133,7 +133,7 @@ Ninety-five questions is a lot. You are not obliged to answer all of them. You a
 
 ## Tracking the docket over time
 
-A rule you are following will accumulate documents over months: the NPRM, comment-period extensions, supplemental notices, industry responses, occasionally a second NPRM. The SQLite tracker from @sec-ch-10-law adapts here with a small extension: add a `rulemakings` table and a `comments` table alongside the CORA schema.
+A rule you are following will accumulate documents over months: the NPRM, comment-period extensions, supplemental notices, industry responses, occasionally a second NPRM. The SQLite tracker from @sec-ch-09-law adapts here with a small extension: add a `rulemakings` table and a `comments` table alongside the CORA schema.
 
 ```python
 import sqlite3
@@ -167,7 +167,7 @@ with sqlite3.connect(DB_PATH) as conn:
     conn.executescript(SCHEMA)
 ```
 
-Reuse the insert-and-query patterns from Chapter 10. A weekly cron that polls the docket, inserts new documents, and flags rules with `comment_end_date` within 14 days will stop you missing windows. Missing the window is the single most common failure mode for first-time commenters.
+Reuse the insert-and-query patterns from Chapter 9. A weekly cron that polls the docket, inserts new documents, and flags rules with `comment_end_date` within 14 days will stop you missing windows. Missing the window is the single most common failure mode for first-time commenters.
 
 ## The shape of a substantive comment
 
@@ -217,7 +217,7 @@ Many of the most influential comments on the mid-2020s AI rulemakings were coali
 Neither dominates. If your argument rests on a technical audit you conducted, your individual signature is load-bearing and you should sign it yourself. If your argument matches thirty other civil-society groups' arguments, your signature adds to a coalition letter. A heuristic: if what you are saying has not been said in this exact form by any current coalition letter, submit it under your own name.
 
 ::: {.callout-note title="In the Public Interest"}
-A public comment becomes part of the administrative record the moment the agency accepts it. That record is not an archive of opinions; it is the evidentiary base on which future litigation depends. When a rule is challenged in the D.C. Circuit, the court reviews the record for whether the agency adequately considered "significant" comments. A substantive comment you submit in 2026 may be cited in a 2030 opinion vacating a rule for failure to respond. This is oversight as @sec-ch-07-oversight defined it: the authority-and-remedy pair wired into the legal architecture of @sec-ch-10-law. Your comment is not a speech act but a durable artifact that gives courts, journalists, and scholars a reason to look at what the agency did and did not consider. Write it so it reads well out of context six years from now, because that is when it will be read.
+A public comment becomes part of the administrative record the moment the agency accepts it. That record is not an archive of opinions; it is the evidentiary base on which future litigation depends. When a rule is challenged in the D.C. Circuit, the court reviews the record for whether the agency adequately considered "significant" comments. A substantive comment you submit in 2026 may be cited in a 2030 opinion vacating a rule for failure to respond. This is oversight as @sec-ch-10-oversight defined it: the authority-and-remedy pair wired into the legal architecture of @sec-ch-09-law. Your comment is not a speech act but a durable artifact that gives courts, journalists, and scholars a reason to look at what the agency did and did not consider. Write it so it reads well out of context six years from now, because that is when it will be read.
 :::
 
 ## A note on timing and the regulatory calendar

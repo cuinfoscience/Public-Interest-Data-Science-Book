@@ -15,7 +15,7 @@ You can read it straight through, pick chapters relevant to a specific project, 
 The book works through a conceptual arc in five parts:
 
 1. **Pressures**. The structural forces that constrain public knowledge: **enclosure** (access withdrawn), **exemption** (accountability legally or practically avoided), **erosion** (infrastructure and memory decaying through neglect).
-2. **Values**. The countervailing commitments that hold an "installed base" of accountability together: **openness**, **oversight**, and **ownership**. Chapter 5 introduces the six elements of the installed base (linkability, interpretability, continuity, safe scrutiny, authority, and remedy), and the next three chapters build out each value in turn.
+2. **Values**. The countervailing commitments that hold an "installed base" of accountability together: **openness**, **oversight**, and **ownership**. Chapter 2 introduces the six elements of the installed base (linkability, interpretability, continuity, safe scrutiny, authority, and remedy), and the next three chapters build out each value in turn.
 3. **Lineages**. What data scientists can inherit from the professions that have worked out public-interest practice over decades: **journalism** (watchdog methods and provenance), **law** (records, discovery, legal infrastructure), **accounting** (independent audit, reproducibility, change history), **planning** (stakeholder process and geographic imagination), and **engineering** (safety, testing, incident review).
 4. **Adjacent Conversations**. Neighboring fields whose relationship to public interest data science is close and complicated: **public interest technology** and **data for good**, **GovTech** and **civic tech**, and **critical data studies, data justice, and refusal**.
 5. **Genres**. The forms through which data scientists can actually contribute to public conversations: **op-eds**, **reports**, **research proposals**, **testimony**, **public comments** on rulemakings, and **archival deposits**.
@@ -43,7 +43,7 @@ To give the book coherence across 22 chapters, a small set of running examples i
 - Hugging Face model cards and datasheets for audit and documentation exercises.
 - A small synthetic worker-log fixture that lets us teach audit methods without violating anyone's privacy.
 - Public FOIA and CORA request data as a class-wide shared resource.
-- regulations.gov for Chapter 21 and any chapter touching federal rulemaking.
+- regulations.gov for Chapter 20 and any chapter touching federal rulemaking.
 
 By the end of the book you will have built, in parts, a small public-interest data infrastructure of your own: a cleaned and documented civic dataset published with Datasette, a disaggregated audit report, a refusal specification, an op-ed draft, a report with reproducible figures, a research proposal, a piece of testimony, a public comment on a live rulemaking, and an archival deposit on the Internet Archive or Zenodo.
 
@@ -53,11 +53,11 @@ Honesty up front. This book is partial in several ways that matter.
 
 It is **US-centric**. Most of the legal and administrative infrastructure discussed is American: FOIA and CORA, the Administrative Procedure Act, NIST, NSF, NYC Local Law 144. Where European, Latin American, and Global South counterparts exist (the Dutch SyRI case, IndiaStack, Ushahidi, the CARE Principles, Te Mana Raraunga), the book names them and points you to further reading, but it does not pretend to do them justice in three pages.
 
-It is **comfortable with records and less comfortable with refusal**. The installed-base framework takes linkability, durable identifiers, and retention as load-bearing. Chapter 16 takes that comfort seriously as a limit, drawing on Zong and Matias, D'Ignazio and Klein, the CARE Principles, and Indigenous data sovereignty scholarship. Readers who want to start from refusal and arrive at records (rather than the other way around) should read Chapter 16 early and often.
+It is **comfortable with records and less comfortable with refusal**. The installed-base framework takes linkability, durable identifiers, and retention as load-bearing. Chapter 19 takes that comfort seriously as a limit, drawing on Zong and Matias, D'Ignazio and Klein, the CARE Principles, and Indigenous data sovereignty scholarship. Readers who want to start from refusal and arrive at records (rather than the other way around) should read Chapter 19 early and often.
 
-It is **thin on the labor inside data work**. Gray and Suri's *Ghost Work* is cited, and Chapter 14 tries to name invisible maintenance labor explicitly, but a book that seriously treated data-labor economics would look quite different. Consider this an invitation to the reader, or to the next edition.
+It is **thin on the labor inside data work**. Gray and Suri's *Ghost Work* is cited, and Chapter 3 tries to name invisible maintenance labor explicitly, but a book that seriously treated data-labor economics would look quite different. Consider this an invitation to the reader, or to the next edition.
 
-It is **thin on measurement theory**. You will not find a full psychometric critique of the audit metrics in Chapter 7, and you will not find a deep philosophy-of-science treatment of what it means for a model to "work." Those books exist and are cited.
+It is **thin on measurement theory**. You will not find a full psychometric critique of the audit metrics in Chapter 10, and you will not find a deep philosophy-of-science treatment of what it means for a model to "work." Those books exist and are cited.
 
 It **over-relies on the professional-lineage framing**. Treating journalism, law, accounting, planning, and engineering as lineages the field can inherit from is a useful move, but every profession has its own pathologies, and the book does not do equal-time analysis of all of them. Read the criticisms. They are in the further-reading lists.
 
