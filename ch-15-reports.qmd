@@ -5,206 +5,182 @@ execute:
 
 # Reports {#sec-ch-15-reports}
 
-The op-ed you drafted in @sec-ch-07-op-eds travels light: it reaches a commuter, a council member, or a reporter already circling the story, and gets one decision out of them before the next tab loads. The report is the opposite instrument: long, footnoted, designed to be excerpted and cited three years later in a brief you will never see, and written because some institutional reader (a program officer, a legislative staffer, a regulator's policy advisor, an advocacy research director) needs a document they can put in a folder and hand to their general counsel. The op-ed is a knock on the door. The report is the evidence you leave behind after being let in.
+The op-ed you drafted in @sec-ch-07-op-eds travels light: it reaches a commuter or a council member and gets one decision out of them before the next tab loads. The testimony you prepared in @sec-ch-11-testimony is a timed appearance before a county board, spoken once and entered into the record. The report is a third instrument: long, sourced, designed to be excerpted and cited years later in a brief you will never see. Some institutional reader (a legislative staffer, an agency's policy advisor, a task force member, an advocacy research director) needs a document they can put in a folder and hand to their counsel. The op-ed is a knock on the door. Testimony is five minutes in the room. The report is the evidence you leave behind.
 
-This chapter treats the report as a distinct genre with its own history, political economy, and load-bearing conventions. The chapter's artifact is a 10-to-15-page report draft, with a real executive summary, one completed section, at least one reproducible figure built from a committed notebook, and a one-paragraph cover note addressed to a named institutional reader. The starting material is the topic you pitched as an op-ed in @sec-ch-07-op-eds; the audience shifts, but most of the argument does not.
+This is the genre chapter for the assurance module, and its artifact is Piece 3: a report section of about 2,000 words, addressed to a named Colorado **state** body, built on the disaggregated audit you constructed in @sec-ch-12-accounting and tested in @sec-ch-13-engineering. The report is where assurance meets its public. An audit that no one with authority reads is a workpaper in a drawer. A report that cannot show its workpapers is audit-washing with footnotes.
 
-## A short political economy of the think-tank report
+## A short political economy of the policy report
 
-The modern think-tank report is a twentieth-century invention shaped by a funding ecology of foundation grants, corporate sponsorship, occasional government contracts, and a small number of large philanthropic commitments to AI and internet policy. The shops you will cite most often (AI Now, Data & Society, EPIC, CDT, Mozilla, Brookings, New America, Ada Lovelace) sit between academic research and advocacy, and each calibrates that space differently: AI Now is argumentative, Data & Society explanatory, Brookings academic with a policy preamble, Mozilla a designed magazine with citations. Read three before you write your own.
+The modern policy report sits between academic research and advocacy, funded by foundation grants, occasional government contracts, and a small number of large philanthropic commitments to technology policy. The shops you will cite most (AI Now, Data & Society, EPIC, CDT, Brookings, New America, the Ada Lovelace Institute) calibrate that space differently: AI Now is argumentative, Data & Society explanatory, Brookings academic with a policy preamble. Read three before you write your own.
 
-They share a structure: a one-to-two-page executive summary, findings organized by claim, methods folded in or in an appendix, recommendations aimed at a specific institutional actor, and a bibliography. Proportions matter: AI Now spends half its pages on argument and a quarter on evidence; Brookings inverts those; Mozilla spends more on design and less on methods than either. Before you draft, look at where your model report spends its pages. That is where its authors believe the argument lives.
+They share a structure: a short executive summary, findings organized by claim, methods folded in or in an appendix, recommendations aimed at a specific institutional actor, and references. Proportions differ, and they tell you where the authors think the argument lives. Each report also has a reader in mind who is not you. A report that reads as written for a general audience is almost always a worse report.
 
-Each report has a reader in mind who is not you: a Brookings paper on generative AI in the federal workforce is written for a senior civil servant at OMB; a Data & Society primer on worker surveillance for a program officer at a labor-focused foundation; an Access Now report for a UN Special Rapporteur's staff. Reports that read as if written for a general audience are almost without exception worse reports.
+Non-US reports widen the range. Access Now's #KeepItOn reporting builds a shared evidentiary record for UN human rights mechanisms and national litigants. Derechos Digitales in Santiago writes for regional advocacy and for proceedings in the Inter-American system. Paradigm Initiative in Lagos publishes *Londa*, country-by-country baselines on digital rights in Africa [@paradigm_londa]. Less foundation money, more distributed authorship, tighter ties to litigation: the genre bends to the institutions it is trying to reach.
 
 ## Reports that inform and reports that mobilize
 
-There is a useful distinction most authors do not draw explicitly: reports whose job is to inform versus reports whose job is to mobilize. An informing report surveys a field, names the actors, and leaves the reader better oriented. A mobilizing report builds to a demand: a rule the regulator should write, a line-item the legislator should add, a disclosure the company should make. Both are legitimate, and they are not interchangeable. A mobilizing report that reads as merely informing will be ignored by those who could have acted on it; an informing report that reads as mobilizing will be discounted by those who trusted it as a survey.
+Most authors never draw this distinction explicitly. An **informing** report surveys a field, names the actors, and leaves the reader better oriented. A **mobilizing** report builds to a demand: a rule the agency should write, a clause the procurement office should add, a disclosure the vendor should make. Both are legitimate and they are not interchangeable. A mobilizing report that reads as merely informing is ignored by those who could have acted; an informing report that reads as mobilizing is discounted by those who trusted it as a survey.
 
-You can usually tell the difference by reading the recommendations. An informing report hedges ("policymakers should consider a range of approaches"); a mobilizing report is specific ("the Federal Trade Commission should open a Section 6(b) study into the five named vendors within 180 days"). If your recommendations could be photocopied into a different report on a different topic without changing meaning, you have written a report that will not cause anything to happen. That may be the correct choice. Be sure it is a choice.
+Read the recommendations to tell them apart. An informing report hedges ("policymakers should consider a range of approaches"). A mobilizing report is specific ("the agency should require, in its next solicitation, that the vendor deliver decision logs in CSV with a documented schema"). If your recommendations could be photocopied into a report on a different topic without changing meaning, you have written a report that will not cause anything to happen. That may be the right choice. Be sure it is a choice.
 
-Non-US exemplars clarify the range. Access Now's #KeepItOn report is mobilizing, giving UN human rights mechanisms and national-level litigants a shared evidentiary record. Derechos Digitales (Santiago) publishes reports that work as regional advocacy, academic reference, and inputs to Inter-American Court proceedings. Paradigm Initiative (Lagos) publishes Londa to equip African civil society with country-by-country baselines [@paradigm_londa]. The political economy differs: less foundation money, more distributed authorship, tighter integration with litigation and legislative work.
+Piece 3 is a mobilizing section. It ends in recommendations to a body that can act.
 
 ## The executive summary is the report
 
-Most readers will read exactly three things: the title, the executive summary, and the recommendations. Some will glance at the figures. Almost none will read the methods. This is not a failure of the readers: a foundation program officer reads fifteen reports a week, a legislative staffer thirty. They are triaging, and the executive summary is where the triage happens.
+Most readers will read exactly three things: the title, the executive summary, and the recommendations. Some will glance at the figures. Almost none will read the methods. A legislative staffer during session triages dozens of documents a week, and the executive summary is where the triage happens.
 
-The implication is direct. The executive summary is not a summary of the report; it is the argument of the report, compressed to one and a half pages, with the evidence pointers inline. It must stand alone: if a reader forwards only the executive summary to their general counsel, the general counsel should be able to decide whether to recommend a meeting. The recommendations belong in the executive summary, not saved for a climactic reveal. If they are not in the executive summary, they are invisible.
+So the executive summary is not a summary. It is the argument compressed to a page or so, with evidence pointers inline. It must stand alone: if a staffer forwards only the summary to their committee chair, the chair should be able to decide whether to ask for a briefing. The recommendations belong in it. If they are not in the executive summary, they are invisible.
 
-Headings are the report's second skeleton. A skimming reader reads section headings and figure captions, and if the headings read as a coherent outline, the reader will trust the document enough to read further. "Findings" is a weak heading; "Three ways the scoring system diverges from its stated criteria" is a strong one. Write headings as if they were the nut grafs of the sections they introduce.
+Headings are the report's second skeleton. A skimming reader reads headings and figure captions, and if those read as a coherent outline, the reader will trust the document enough to continue. "Findings" is a weak heading. "The model's error rates differ most for groups the state serves least" is a strong one.
 
 ::: {.callout-tip title="The Missing Manual"}
-Most readers will read the executive summary, the headings, and the charts. Write those three layers as if they were the whole report. The executive summary is not a summary; it is the argument compressed to one and a half pages, with evidence pointers inline. If recommendations are not in the executive summary, they are invisible. Test this before sending: print the executive summary, the table of contents, and the figure captions, and hand them to a colleague who has not seen the report. If they can tell you what you found, what you want done, and who should do it, the three-layer skeleton works. If they cannot, your argument lives in places no one will read.
+Test the three-layer skeleton before you send anything. Print the executive summary, the headings, and the figure captions, and hand them to someone who has not seen the report. If they can tell you what you found, what you want done, and who should do it, the skeleton works. If not, your argument lives where no one will read it. A second, more technical trap: if you type the audit's numbers into the prose by hand, the report and the workpaper will drift apart the first time you rerun the audit. Read the numbers from the audit's JSON output inside the report itself, so that a rerun updates both or neither.
 :::
 
 ## Methods transparency as a credibility move
 
-A report is not a peer-reviewed article and does not need to be. What it needs is methods transparency a skeptical reader can audit in an afternoon: a one-page description of how you obtained your data, when, from which endpoint, and with which parameters; a link to a public code repository with the scripts that produced each figure; a datasheet-style note for each dataset you relied on, following the template proposed by Gebru and colleagues [@gebru2021]; and a clear statement of what the analysis cannot support. The last item separates reports people cite from reports people weaponize.
+A report is not a peer-reviewed article. What it needs is methods transparency a skeptical reader can check in an afternoon: where the data came from and when, with which parameters; a link to the repository that produced each figure; a datasheet-style note for each dataset [@gebru2021]; and a clear statement of what the analysis cannot support. The last item separates reports people cite from reports people weaponize.
 
-Methods transparency connects to the accountability infrastructure of @sec-ch-12-accounting and the authority-and-remedy framework of @sec-ch-10-oversight. A report whose claims can be reproduced against public data by a third party survives contact with a hostile reader; a report whose claims rest on private datasets, undocumented pipelines, or one-off notebooks lasts exactly as long as no one asks. You have already learned how to produce the first kind; the report is where you show that you did.
+You have already built most of this. The manifest from @sec-ch-12-accounting answers "which data, which model, which recoding." The thresholds file answers "judged against what, and on whose authority." The changelog answers "what changed since last time." The CI badge from @sec-ch-13-engineering answers "does the code still do what the workpaper says." The four-section audit memo, especially its list of assumptions, becomes your methods section almost verbatim. A methods section that links to all four is short and very hard to dismiss.
 
 ::: {.callout-note title="In the Public Interest"}
-Oversight requires documentation that can travel, and reports are the documentation that travels. The op-ed in @sec-ch-07-op-eds gave a reader a reason to care; the report gives an institution something it can act on, cite, attach to a brief, and hand to counsel. This is **authority** and **remedy** in the sense of @sec-ch-10-oversight: a report without methods transparency gives a reader no grounds to trust it, and a report without specific recommendations gives no actor a path to act. The reproducibility discipline of @sec-ch-12-accounting (documented notebooks, committed code, pinned dependencies, datasheets) is not academic ornament; it is the load-bearing infrastructure that lets your findings travel from your laptop to a rulemaking record to a brief to a ruling without degrading at each step. The credibility of the field depends on that infrastructure holding.
+**Oversight** requires documentation that can travel, and reports are the documentation that travels. The specific claim of this chapter is that a report advances oversight only when it carries its own verification with it: a reader at a state agency, or the vendor's lawyer, must be able to rerun the audit from the linked manifest and get the same table. A report that asserts findings without that path is the audit-washing this module has been arguing against, written by the other side. There is a second failure the genre is prone to: the "report and forget" cycle, in which a report is launched, covered, and shelved. Recommendations aimed at a named body, with an authority it already holds and a date by which it could act, are the defense. They give the reader a remedy to pursue, not just a finding to regret.
 :::
 
 ## The translation gap
 
-You already have the findings and the evidence. Writing a report is overwhelmingly the work of translating those findings into terms an institutional reader can act on, and that translation has three moves first-time authors consistently underestimate.
+You already have findings. Writing the report is mostly translating them into terms an institutional reader can act on, and the translation has three moves first-time authors underestimate.
 
-First, naming the actor. "Someone should regulate this" is not a recommendation; it is a complaint. The recommendation is: the Colorado Department of Regulatory Agencies should open an investigation under C.R.S. section X into the vendor's scoring practices; the legislative staffer should draft language for the next session's HB-25-XXXX. Name the body, the authority, and the calendar.
+**Name the actor.** "Someone should regulate this" is a complaint. A recommendation names the body, the authority it holds, and the calendar it works on.
 
-Second, naming the remedy. An institutional reader cannot act on "transparency"; they can act on a specific disclosure requirement, a specific records release, or a specific audit provision added to a procurement contract. Your recommendation should be copy-pasteable into a draft rule or draft bill. If it is not, it is not yet a recommendation.
+**Name the remedy.** An agency cannot act on "transparency." It can act on a specific disclosure requirement, a records release, a procurement clause (@sec-ch-14-govtech-civic-tech), or a rule. Your recommendation should be close to copy-pasteable into a draft bill, rule, or contract.
 
-Third, naming the trade-off. Every institutional reader has someone in the next room whose job is to poke holes in the recommendation. Your report is stronger if it names the most plausible objection, treats it seriously, and explains why the recommendation still stands. Reports that pretend their recommendations are free lunches get dismissed by the people who know the lunches are not free.
+**Name the trade-off.** Every institutional reader has a colleague whose job is to poke holes. Name the most plausible objection (cost, vendor pushback, privacy risk from collecting protected attributes, the small-cell problem in rural counties) and explain why the recommendation still stands.
+
+## Naming a Colorado state body
+
+The report is not written for "policymakers" any more than the op-ed was written for "the public." At the state level, three kinds of body recur, and each reads differently.
+
+A **legislative committee** writes or amends statutes and oversees agencies. The Colorado General Assembly has committees of reference for each subject area and a Joint Technology Committee that oversees state information technology. <!-- TODO: verify the Joint Technology Committee's current jurisdiction and confirm the relevant committees of reference before the term. --> A committee's staff read for statutory hooks, fiscal implications, and whether your recommendation fits a bill they could carry next session.
+
+A **state agency** writes rules, enforces statutes, and buys systems. Under SB 24-205, the Attorney General's office holds enforcement authority over the Colorado AI Act; the Governor's Office of Information Technology sets standards for state technology. <!-- TODO: re-check SB 24-205's current status and enforcement provisions, and OIT's current role in reviewing AI procurements. --> Agency staff read for whether your evidence would survive a challenge and whether the recommended action is within their existing authority.
+
+A **task force or advisory body** studies a question and reports to the legislature or the governor. Colorado has convened bodies on artificial intelligence and on related questions in recent sessions. <!-- TODO: identify any currently active Colorado task force on AI or automated decision systems, its statutory basis, and its reporting deadline; do not name one in teaching materials until verified. --> Task force members read for options and evidence they can cite in their own report, and they often have the longest time budget.
+
+Pick one body as the primary reader, confirm that it currently exists and has the authority your recommendation assumes, and write the executive summary to it. You cannot serve all three as the primary reader.
 
 ## Quarto as a report stack
 
-Most of the technical apparatus is what you already know. A report is a Quarto project with its own YAML header (not the book's), a main `report.qmd`, one or more `figures.qmd` partials, a `references.bib`, and a directory of committed notebooks that generated each figure. Quarto renders the same source to HTML, PDF (for program officers who print everything), and, via Pandoc, `.docx` (for the policy staffer who runs Track Changes on your recommendations).
-
-A minimal project layout:
+The technical apparatus is what you already know. A report is a Quarto project with its own `_quarto.yml`, a main `report.qmd`, a `references.bib`, and the audit repository as a dependency. Quarto renders the same source to HTML, PDF (for readers who print everything), and `.docx` (for the staffer who will run Track Changes on your recommendations).
 
 ```
 report/
   _quarto.yml
   report.qmd
-  figures.qmd
   references.bib
-  notebooks/
-    fig_01_referral_rates.ipynb
-    fig_02_geographic.ipynb
-  data/
-    hmis_extract_2024q3.csv
-    datasheet.md
+  audit/                 # your audit-pipeline, as a git submodule or copy
+    manifest.yaml  thresholds.yaml  CHANGELOG.md
+    reports/2027-03-11-001.json
   README.md
 ```
 
-A minimal `_quarto.yml`:
-
 ```yaml
+# _quarto.yml
 project:
   type: default
   output-dir: _output
-
 author:
   - name: "Your Name"
-    affiliation: "INFO 46XX, University of Colorado Boulder"
-date: "2026-05-15"
-
+    affiliation: "INFO 4871/5871, University of Colorado Boulder"
 format:
-  html: {toc: true, embed-resources: true, theme: cosmo}
-  pdf: {documentclass: scrartcl, toc: true, number-sections: true}
-  docx: {reference-doc: templates/report-template.docx}
-
+  html: {toc: true, embed-resources: true}
+  pdf: {toc: true, number-sections: true}
+  docx: default
 bibliography: references.bib
-csl: https://www.zotero.org/styles/chicago-author-date
 execute: {echo: false, warning: false}
 ```
 
-A minimal `report.qmd` with an executive-summary callout and an included figures partial:
+The first code cell in `report.qmd` loads the audit's output, so every number in the prose comes from the workpaper:
+
+```python
+#| label: setup
+import json
+audit = json.load(open("audit/reports/2027-03-11-001.json"))
+find = {f["metric"]: f for f in audit["findings"]}
+dpd = find["demographic_parity_difference"]
+eod = find["equalized_odds_difference"]
+```
+
+The executive summary then uses Quarto's inline code instead of typed numbers:
 
 ```markdown
-# Scoring disparities in Boulder County's homelessness response system
+# Disaggregated Error Rates in an Income Classifier Trained on Colorado ACS Data
 
 ::: {.callout-important title="Executive summary"}
-This report documents three ways the vendor's scoring system used by
-Boulder County's Coordinated Entry process diverges from its stated
-criteria. Using HMIS records from July 2023 through June 2024, we find
-that households with recent out-of-state addresses are referred to
-shelter beds at 23 percent, compared to 58 percent for in-state
-households with more than a year of residency (@fig-referral-rates).
-We recommend that the Boulder City Council pause the December 2026
-contract renewal vote, commission an external audit, and release the
-vendor's scoring logic under CORA.
+Prepared for [named Colorado state body]. An audit of a model trained
+on 2018 American Community Survey records for Colorado finds a
+demographic parity difference of `{python} f"{dpd['value']:.2f}"`
+(threshold level: `{python} dpd['level']`) and an equalized odds
+difference of `{python} f"{eod['value']:.2f}"`
+(`{python} eod['level']`). We recommend that [body] (1) ...,
+(2) ..., and (3) ... before [date or session].
 :::
 
-## Three ways the scoring system diverges from its stated criteria
+## Error rates differ most for the groups the data describe least
 
-{{{< include figures.qmd >}}}
+{{{< include sections/findings.qmd >}}}
 
 ## Methods {#sec-methods}
 
-The HMIS extract was obtained through a CORA request (BC-2024-0912).
-The pipeline is committed at
-`https://github.com/yourname/boulder-coord-entry-audit`; the
-datasheet follows the template of @gebru2021.
-
-## Recommendations
-
-1. Pause the December 2026 contract-renewal vote.
-2. Commission an external audit with a disaggregation specification
-   modeled on @sec-ch-10-oversight.
-3. Release the vendor's scoring logic under CORA.
-
-## References {.unnumbered}
+Audit run `{python} audit['run_id']`; manifest, thresholds, changelog,
+and CI-tested code at <https://github.com/yourname/acs-co-audit>.
 ```
 
-The `figures.qmd` partial loads and labels reproducible charts produced by notebooks in `notebooks/`:
+Render all three formats in one pass with `quarto render report.qmd --to html,pdf,docx`, and check that each shows the same numbers:
 
-```python
-#| label: fig-referral-rates
-#| fig-cap: "Shelter referral rate by residency group, Boulder County
-#|   Coordinated Entry, July 2023 to June 2024. Notebook:
-#|   notebooks/fig_01_referral_rates.ipynb"
-
-import pandas as pd
-import matplotlib.pyplot as plt
-
-df = pd.read_csv("data/referral_rates_by_group.csv")
-fig, ax = plt.subplots(figsize=(6.5, 3.8))
-ax.barh(df["group"], df["referral_rate"])
-ax.set_xlabel("Referral rate")
-ax.set_xlim(0, 1)
-fig.tight_layout()
+```bash
+quarto render report.qmd --to html,pdf,docx
+# => Output created: _output/report.html
+# => Output created: _output/report.pdf
+# => Output created: _output/report.docx
 ```
 
-To render as HTML, PDF, and `.docx` in one pass: `quarto render report.qmd --to html,pdf,docx`. The `.docx` output is the one the policy staffer runs Track Changes on; build for it from day one, since retrofitting a Word-compatible template at the last minute is a Friday-afternoon surprise you can avoid.
-
-## Institutional audiences, named
-
-The report is not written for "policymakers" any more than the op-ed was written for "the public." It is written for specific humans in specific roles. Four audiences recur.
-
-**Foundation program officers** fund the work that follows your report. They read for whether the argument fits the portfolio, whether you are the right grantee, and whether the recommendations are actionable. Time budget: ten minutes. First read: executive summary and recommendations.
-
-**Legislative staffers** draft the bills and committee questions. They read for statutory language, a named committee with jurisdiction, and a witness list. Time budget: under ten minutes. First read: executive summary and whatever sidebar most resembles a witness list.
-
-**Regulatory policy advisors** work inside agencies considering a rulemaking or responding to a petition. They read for whether your report supplies evidence that would survive a challenge in the rulemaking record. Their time budget is longer (they will read the methods) but their standard is stricter. They are auditing you.
-
-**Advocacy organization research directors** are the readers most likely to build on your work, reading for fit with their litigation, campaign, or next report, and whether you are a potential collaborator. Their time budget is the longest, and they are most likely to ask for your data.
-
-Identify which of these four your report is primarily for before you draft. Write the executive summary and recommendations to that reader. You cannot serve all four as the primary reader.
+Build for `.docx` from day one. Retrofitting a Word-friendly layout the night before a deadline is a surprise you can schedule out of existence.
 
 ## Reports across the lineages
 
-The report does not belong to data science. It is a shared form across the lineages of Part III: an accounting report (@sec-ch-12-accounting) documents trust through procedural rigor, a planning report (@sec-ch-17-planning) documents a decision through stakeholder mapping, and a public-interest technology report (@sec-ch-03-pit-data-for-good) documents a deployment through user research. When your report borrows from all three, say so. A report visibly self-aware about its genre reads as adult.
+The report does not belong to data science. Within this module alone, it has two ancestors. The auditor's report (@sec-ch-12-accounting) documents trust through procedure: what was examined, against what standard, by whom. The engineer's incident review (@sec-ch-13-engineering) documents failure so that it is not repeated. Piece 3 borrows from both: the audit report's discipline about scope and standards, and the incident review's insistence on specific, assigned, dated changes. Say so in your methods. A report that knows its genre reads as adult.
 
 ## Exercises
 
-**Exercise 18.1 (Structural analysis, US).** Pick a recent AI Now or Data & Society report (2023 or later). Map its structure: how many pages are executive summary, findings, methods, recommendations, appendices? Where does the argument live? Who is the implied institutional reader, and what evidence tells you? Write 400 words. Save as `exercises/ch18_structural_analysis_us.md`. You may use @mcguinness2021 as a framing reference for what "public interest technology" reports are trying to accomplish and how.
+**Exercise 15.1 (Structural analysis, US).** Pick a recent AI Now Institute or Data & Society report. Map its structure: how many pages go to executive summary, findings, methods, recommendations, appendices? Is it informing or mobilizing? Who is the implied institutional reader, and what tells you? Write 400 words.
 
-**Exercise 18.2 (Structural analysis, non-US).** Do the same for a recent report from Access Now, Derechos Digitales, or Paradigm Initiative. Pay particular attention to where the report assumes a reader who is not the US federal government. Compare to your US report from Exercise 18.1 in one paragraph at the end: what conventions differ, and what does that tell you about the political economy of each report's audience? Save as `exercises/ch18_structural_analysis_nonus.md`.
+**Exercise 15.2 (Structural analysis, non-US).** Do the same for a recent report from Access Now, Derechos Digitales, or Paradigm Initiative. Note where it assumes a reader who is not a US government. End with one paragraph comparing it to your report from 15.1: which conventions differ, and what does that say about each report's audience?
 
-**Exercise 18.3 (Executive summary, outline, one full section).** Take the op-ed topic you drafted in @sec-ch-07-op-eds and expand it into a report. Produce three deliverables: (a) a one-and-a-half-page executive summary that includes the recommendations inline; (b) a full section-by-section outline with one-sentence nut grafs for each section; (c) one section (three to five pages) written in full, with figures inline and citations against `references.bib`. Save as `report/report.qmd` in your class repository. Follow the YAML-and-layout conventions in this chapter. This is the core of your Part V artifact. See @gray2021handbook on writing for policy audiences.
+**Exercise 15.3 (Executive summary and outline).** Choose the Colorado state body your Piece 3 report will address. In 150 words, document that it currently exists, cite its source of authority, and name what it can actually do (amend a statute, write a rule, change a procurement standard, recommend). Then draft a one-page executive summary with recommendations inline and a section outline with one-sentence nut grafs. Exchange with a classmate and run the three-layer skeleton test from the Missing Manual callout.
 
-**Exercise 18.4 (Reproducible figure with a committed notebook).** Produce at least one figure for your report from a notebook committed to the repository at `report/notebooks/`. The notebook must: load data from a documented path, document every filter or transformation with a comment, and render the figure to `report/figures/`. Add a datasheet-style provenance note (one page, following @gebru2021) for the dataset the notebook uses. Commit the notebook, the datasheet, and the figure. The figure caption in `figures.qmd` should cite the notebook by filename. Tie this explicitly to the reproducibility discipline you built in @sec-ch-12-accounting.
+**Exercise 15.4 (Reproducible figure, laptop, real public data).** Add a figure to `report.qmd` that plots per-group error rates from your audit's JSON output, with the per-cell `n` labeled and suppressed cells noted in the caption. The caption must cite the audit `run_id`. Rerun the audit with a changed `min_cell_size`, re-render, and confirm that the figure and the inline numbers both update. Commit both renders.
 
-**Exercise 18.5 (Cover notes to three named humans).** Identify three humans (by role, and by name if you can) who would need to read your report for it to matter. At least one must be a foundation program officer or an advocacy research director; at least one must be a legislative staffer or a regulatory policy advisor. For each, draft a one-paragraph cover note tailored to that reader. The cover notes should differ substantively: a program officer's note points to the portfolio fit and the follow-on work; a staffer's note points to the pending bill or hearing; a regulator's note points to the open docket or petition. Save all three as `report/cover_notes.md`. This draws directly on the stakeholder-mapping logic of @sec-ch-03-pit-data-for-good and @sec-ch-17-planning.
+**Exercise 15.5 (Piece 3: Assurance / State / Report).** Submit Piece 3, with all four parts:
 
-Exercises 18.3, 18.4, and 18.5 together produce the Part V artifact: a report draft with an executive summary, one completed section, at least one reproducible figure built from a committed notebook with a datasheet-style provenance note, and three cover notes addressed to named institutional readers. When you have all four components in your class repository, tag the commit `ch18-artifact-v1`. The artifact is the chapter.
+1. **Technical artifact.** A disaggregated audit with manifest, thresholds, changelog, and tests that run in continuous integration, as a reproducible repository a classmate can clone and run.
+2. **Public text.** A report section for a named Colorado state body: executive summary, methods, findings, recommendations (about 2,000 words).
+3. **Installed-base note** (about 300 words). Which pressure did you meet? Which installed-base elements did your artifact build, and which are still missing? Include provenance, license, and an AI-use disclosure.
+4. **Graduate methods memo** (INFO 5871 only; 750–1,000 words). Situate the piece in at least five scholarly sources and defend one methodological choice against the literature.
 
 ## Looking ahead
 
-Chapter 21 (@sec-ch-21-research-proposals) takes the genre into the academic and grantmaking ecosystems. A report documents what you found; a research proposal argues for what you will find if someone funds you. The conventions overlap and diverge in ways that catch first-time authors off guard: the specific-aims page borrows from the executive summary, but the theory of change runs the opposite direction. The work you did on the report's recommendations has already produced most of the proposal's significance section. From there, @sec-ch-11-testimony turns your recommendations into a five-minute spoken statement, and @sec-ch-22-archival-deposits gives your report and its data a permanent address.
+Piece 3 asked whether a state can verify a system it depends on. Part V climbs the last rung of the ladder to the **federal** level and changes the pressure. @sec-ch-16-erosion asks what happens when the record itself decays: datasets withdrawn, links rotted, archives left without a steward. Your audit depends on federal survey infrastructure that someone has to keep running; the folktables call that worked this term is a small act of trust in that continuity. The module that follows ends in a public comment (@sec-ch-20-public-comments), a genre with the most formal route into federal decision-making of any in this book. If you choose Piece 3 for your final project, you might recast it in that genre, or deposit it with a persistent identifier (@sec-ch-22-archival-deposits).
 
 ## Further Reading and Resources
 
-- AI Now Institute, annual reports, <https://ainowinstitute.org/publications>. The canonical example of the mobilizing report in the US technology-policy ecosystem; read at least one cover to cover before drafting your own.
-- Data & Society Research Institute, reports, <https://datasociety.net/library/>. A wider range of report types (primers, case studies, ethnographies). Pay attention to how each is structured for its implied reader.
-- Access Now, #KeepItOn annual internet shutdowns report, <https://www.accessnow.org/campaign/keepiton/>. Canonical non-US advocacy report; note the integration with UN human rights mechanisms.
-- Mozilla Foundation, *Internet Health Report*, <https://internethealthreport.org>. Design-forward, magazine-style report that rewards reading for layout and voice.
-- Paradigm Initiative, *Londa* report on digital rights in Africa [@paradigm_londa], <https://paradigmhq.org/londa>. Distributed-authorship model with country-level reporting; the opposite of the single-institute think-tank report.
-- Quarto project and book documentation, <https://quarto.org/docs/projects/quarto-projects.html> and <https://quarto.org/docs/books/>. The authoritative reference for multi-format rendering; the book you are reading is built with it.
-- Pandoc's Word output documentation, <https://pandoc.org/MANUAL.html#option--reference-doc>. The two-page guide that fixes ninety percent of `.docx` formatting surprises, especially how to use a reference document for headings and styles.
-- Tara Dawson McGuinness and Hana Schank, *[Power to the Public](https://press.princeton.edu/books/hardcover/9780691207759/power-to-the-public)* [@mcguinness2021], for the political economy of public-interest technology reports and the foundations that fund them.
-- *The Data Journalism Handbook 2* [@gray2021handbook], particularly the chapters on report-length investigative projects; the conventions travel.
-- Timnit Gebru and colleagues, "[Datasheets for datasets](https://doi.org/10.1145/3458723)" [@gebru2021]. The provenance-note template you should adapt for every dataset your report relies on.
-- Keegan (2026) [@keegan2026], on the six elements of the installed base and why reports are the genre in which they most often travel.
+- AI Now Institute, publications: <https://ainowinstitute.org/publications>. The mobilizing report in the US technology-policy ecosystem; read one cover to cover.
+- Data & Society, library: <https://datasociety.net/library/>. A wide range of report types; notice how each is built for its implied reader.
+- Access Now, #KeepItOn: <https://www.accessnow.org/campaign/keepiton/>. A non-US advocacy report integrated with UN human rights mechanisms.
+- Derechos Digitales: <https://www.derechosdigitales.org/>. Latin American digital rights research written for regional advocacy and litigation. <!-- TODO: confirm URL. -->
+- Paradigm Initiative, *Londa*: <https://paradigmhq.org/londa>. Distributed, country-by-country reporting; the opposite of the single-institute report.
+- Colorado General Assembly: <https://leg.colorado.gov/>. Committee pages, bill histories, and interim committee schedules; start here to name your body.
+- Quarto documentation on inline code and multi-format output: <https://quarto.org/docs/computations/inline-code.html>. The feature that keeps your prose and your audit in sync.
+- Jonathan Gray and Liliana Bounegru, eds., *The Data Journalism Handbook* (2021) [@gray2021handbook]. Chapters on long-form investigative projects whose conventions travel to reports.
+- Timnit Gebru et al., "[Datasheets for datasets](https://doi.org/10.1145/3458723)" [@gebru2021]. The provenance-note template for every dataset your report relies on.
+- Pandoc manual, reference documents for `.docx`: <https://pandoc.org/MANUAL.html#option--reference-doc>. Fixes most Word formatting surprises.
