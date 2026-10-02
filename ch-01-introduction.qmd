@@ -5,61 +5,60 @@ execute:
 
 # Introduction to Public Interest Data Science {#sec-ch-01-introduction}
 
-Open a newspaper any week and you will find a story about a data-driven system that has shaped a public decision in a way the public did not choose. A county's child-welfare office screens families with an algorithm. A city's benefits portal denies claims for reasons the claimants cannot discover. A federal agency's climate database is quietly reorganized and three years of comparison data vanish. These are not exotic cases. They are the texture of governance in the 2020s.
+Open a newspaper any week and you will find a story about a data-driven system that has shaped a public decision in a way the public did not choose. A county's child-welfare office screens families with an algorithm. A city's benefits portal denies claims for reasons the claimants cannot discover. A federal agency's climate database is quietly reorganized and three years of comparison data vanish. These are not exotic cases. They are ordinary governance in the 2020s.
 
 This book is about the practice that takes those systems seriously as objects of public concern. Not as opportunities to build a better dashboard, though dashboards have their place. Not as abstract ethics problems, though ethics are unavoidable. As infrastructure: settled arrangements of data, code, authority, and labor that shape what the public can know and what it can demand. Public interest data science is the work of making that infrastructure observable, contestable, and, where necessary, reshaped.
 
 ## What does "public interest" even mean
 
-The phrase "public interest" has been doing enormous rhetorical work for a long time, and most of it is contested. Robert Moses invoked it to justify expressways that cut Black neighborhoods in half. Jane Jacobs [-@jacobs1961] used it against him to defend the street life those expressways destroyed. Civil rights lawyers used it to secure access to housing, education, and the franchise. Cause lawyers on the other side used it to dismantle affirmative action. "Public" is a word that asks: which public? Whose interests?
+The phrase "public interest" has an emancipatory history and an exclusionary one, and they are often the same history told from opposite sides of a highway.
 
-This book does not pretend to settle that question. It takes a position and names the position explicitly. Following Keegan [-@keegan2026], it treats the public interest as operational rather than abstract: the public interest is served when the six elements of what Chapter 2 calls the **installed base** are maintained. Records can be linked. Categories can be interpreted. Evidence persists across political cycles. Researchers and journalists can scrutinize systems without being sued or arrested. Someone has authority to act on what is learned. And the people affected have a path to remedy. When those six elements are in place, "public interest" is not a slogan. It is a working arrangement. When they are missing, even the most benevolent data practice can produce what Eubanks [-@eubanks2018] calls *automating inequality*.
+Start with the highway. Robert Moses spent four decades building parks, bridges, and expressways in and around New York City, and he justified nearly all of it in the name of the public. Caro [-@caro1974] documents what that justification covered, including the Cross Bronx Expressway's path through the East Tremont neighborhood, where the route displaced a working-class community that had asked for a modest alternative alignment. Jane Jacobs [-@jacobs1961] answered with a different public interest: the sidewalk, the mixed-use block, the residents already living where the planners drew their lines. Moses's public was the motorist and the regional economy; Jacobs's was the people on the block [@doryClashUrbanPhilosophies2018]. Both said "the public."
 
-That is a particular theory. It is not the only one available, and Chapter 19 takes seriously the traditions (Indigenous data sovereignty, abolitionist critique, feminist refusal) that question whether "records" and "linkability" are the right starting places at all. But you have to start somewhere, and "making the installed base visible" is a useful place to start.
+Now cross an ocean and half a century. India's Aadhaar program has issued a twelve-digit identity number, tied to fingerprints and iris scans, to more than a billion residents. Its advocates framed it as inclusion: an identity for people who had no documents, and an end to "leakage" in welfare programs where benefits went to duplicate or fictitious beneficiaries. Its critics, using the same vocabulary, documented people turned away from ration shops when fingerprint authentication failed, and warned that a single number linking every transaction would make a population legible to the state on terms the population never negotiated [@rao2019]. In 2017 the Supreme Court of India recognized privacy as a fundamental right in *Justice K.S. Puttaswamy (Retd.) v. Union of India*, and in 2018 the Court upheld Aadhaar for welfare delivery while striking down the provision that let private companies require it. <!-- TODO: verify and add bib entries for the 2017 and 2018 Puttaswamy judgments; verify current Aadhaar enrollment figure from UIDAI. --> Both sides were arguing about who counts as the public, and what a data system owes the people it records.
+
+That is why this book does not open with a tidy definition. Washington and Cheung [-@washingtonDefiningPublicInterest2024] go to history (public interest law, curb cuts, shared space) for what a public interest in technology could mean. Stapleton and colleagues [-@stapletonWhoHasInterest2022] ask the sharper question in their title: who *has* an interest in "public interest technology," and who is left out when technologists working with local governments speak for impacted communities? "Public" is a word that asks: which public? Whose interests? Who was in the room?
+
+The book does take a position, and it names the position explicitly. Following Keegan [-@keegan2026], it treats the public interest as operational rather than abstract. The public interest is served when the six elements of what @sec-ch-02-installed-base calls the **installed base** are maintained. Records can be linked. Categories can be interpreted. Evidence persists across political cycles. Researchers and journalists can scrutinize systems without being sued or arrested. Someone has authority to act on what is learned. And the people affected have a path to remedy. When those six elements are in place, "public interest" is a working arrangement rather than a slogan. When they are missing, even the most benevolent data practice can produce what Eubanks [-@eubanks2018] calls *automating inequality*. Aadhaar is a useful test: it is superb at linkability and far weaker at remedy for the person whose fingerprint will not scan.
+
+That is a particular theory, not the only one. @sec-ch-19-critical-data-studies-refusal takes seriously the traditions (Indigenous data sovereignty, abolitionist critique, feminist refusal) that question whether "records" and "linkability" are the right starting places at all, and @sec-ch-23-limits returns to the framework's limits. But you have to start somewhere.
 
 ## Relative to neighbors
 
-Public interest data science sits next to, and overlaps with, several fields you may already know.
-
-**Data journalism** investigates public questions through computational methods and publishes findings in the press. It is older and, at its best, more politically mature than data science. Chapter 5 treats it as a lineage.
-
-**Civic technology** and **public interest technology** (PIT) build tools for government and civil society: usable benefits portals, court-filing interfaces, participatory mapping platforms. Chapters 3 and 15 sort out the differences.
-
-**Data for good** describes, usually, a philanthropic or industry-led application of commercial methods to socially valued problems. Chapter 3 engages it skeptically.
-
-**Critical data studies** and **data justice** theorize the politics of data without necessarily building anything. Chapter 19 argues that the practice you will learn in this book is stronger when it can absorb the critique, including the parts of the critique that undercut the book's own framing.
-
-Public interest data science is none of these in isolation. It borrows from all of them. It aims for the practical footprint of data journalism, the critical self-awareness of critical data studies, the civic focus of civic tech, and the professional-infrastructure commitment that "data for good" often lacks.
+Public interest data science overlaps with several fields you may already know. **Data journalism** investigates public questions computationally and publishes in the press; @sec-ch-05-journalism treats journalism as a lineage. **Public interest technology** and **data for good** build tools and talent pipelines for government and civil society, usually on philanthropic money; @sec-ch-03-pit-data-for-good sorts them out. **Digital government** and **civic tech** build inside and around the state; @sec-ch-14-govtech-civic-tech returns to them when procurement becomes the subject. **Critical data studies** and **data justice** theorize the politics of data and, at their sharpest, refuse it; @sec-ch-19-critical-data-studies-refusal argues that your practice is stronger when it can absorb that critique. Public interest data science borrows from all of them.
 
 ## The arc of the book
 
-The book moves through five parts.
+The book has six parts. The first and last frame the work. The middle four are **modules**, each built on one professional lineage, set at one level of government, and ending in one piece of public writing.
 
-**Part I: Pressures** diagnoses the structural forces that constrain public knowledge in the current moment. Chapter 4 treats enclosure (who can observe), Chapter 8 treats exemption (who must answer), Chapter 16 treats erosion (what can be remembered). These are not the only pressures, but they are the three that organize most of the empirical material through the rest of the book.
+**Part I: Foundations** (this chapter, @sec-ch-02-installed-base, and @sec-ch-03-pit-data-for-good) gives you the whole vocabulary at once: three pressures, three values, the installed base, five lineages, and the neighboring fields.
 
-**Part II: Values** names the countervailing commitments that hold accountability together. Chapter 2 introduces the installed base and its six elements. Chapters 6–8 build out openness, oversight, and ownership in turn. These values are not abstract ideals. They are practical configurations, and each chapter asks what it takes to sustain them.
+The four modules climb a ladder of government, from the city to the nation. Each one follows the same order: a **pressure** that narrows public knowledge, a **lineage** that has already solved a version of the problem, a **value** that pushes back, and a **genre** for reaching the public.
 
-**Part III: Lineages** looks at the professions that have worked out public-interest practice for longer than data science has existed: journalism, law, accounting, planning, engineering. Each chapter extracts a set of methods the reader can import.
+| Part | Lineage | Level | Pressure → value | Genre |
+|---|---|---|---|---|
+| II. Journalism: The City | Journalism | City | Enclosure → openness | Op-ed |
+| III. Law: The County | Law | County | Exemption → oversight as remedy | Testimony |
+| IV. Assurance: The State | Accounting and engineering | State | Exemption (audit-washing) → oversight as verification | Report |
+| V. Planning: The Nation | Planning | Federal | Erosion → ownership | Public comment |
 
-**Part IV: Adjacent Conversations** situates the book in the fields it is not and could be confused with: PIT and data for good, GovTech and civic tech, critical data studies. The treatment is comparative rather than polemical. Each of these fields has something you want, and each has something you should be wary of.
+**Part VI: Beyond the Portfolio** closes the book with research proposals (@sec-ch-21-research-proposals), archival deposits (@sec-ch-22-archival-deposits), and the limits of the whole framework (@sec-ch-23-limits).
 
-**Part V: Genres** is the pivot from seeing to doing. Chapters 17–22 teach the forms through which data scientists contribute to public conversations: op-eds, reports, research proposals, testimony, public comments, archival deposits. Each chapter ends with a real artifact you can submit.
-
-Twenty-two chapters, roughly 3,000 words each. You can read them straight through or pick from the table of contents. Cross-references will tell you when a later chapter depends on an earlier one.
+Each module uses a *new* case rather than one topic carried all term. Each pairs a well-documented national anchor case with a non-US counter-case that tests whether the framework travels, and a local case at the module's level of government: city records in Boulder and Denver, county records requested from Boulder County under the Colorado Open Records Act, Colorado's state AI law and procurement, and a federal dataset at risk alongside a live federal rulemaking. @sec-ch-02-installed-base explains why the lineages map onto those levels in that order.
 
 ## A first request
 
-Before we talk any more about the book, let us do something with it. The rest of this chapter is a short tour of the toolkit you will use throughout, with a first public data retrieval exercise that takes perhaps twenty minutes. If you have Python and git already, you can follow along now. If not, the **Environment setup** sidebar below points you at the installers.
+Enough about the book. Do something with it. The rest of this chapter is a twenty-minute tour of the toolkit, built around a first public data retrieval; it is also the course's first lab. The **Environment setup** sidebar below lists what you need.
 
 ::: {.callout-note title="Environment setup"}
 You need Python 3.11 or newer, git, and a working command line. On macOS and Linux, `python3 --version` and `git --version` should return something reasonable. On Windows, WSL2 works well, as does the official Python installer with the "Add Python to PATH" box ticked. You will also want `pip install pandas requests matplotlib jupyter` before continuing, and a GitHub account if you do not have one already.
 :::
 
-We will retrieve pageview data for the Wikipedia article titled "Public interest," across three different language editions, and look at how the concept's visibility has varied across linguistic publics over time. The example is small, but it puts a handful of habits in place that will recur: fetching from a real public API, handling the response thoughtfully, moving it into a `pandas` DataFrame, plotting it, and asking what the data can and cannot tell you.
+You will retrieve pageview data for the Wikipedia article "Public interest" in three language editions and see how the concept's visibility varies across linguistic publics. The example is small, but it installs habits that recur: fetching from a real public API, handling the response carefully, moving it into a `pandas` DataFrame, plotting it, and asking what the data can and cannot tell you.
 
 ## The Wikimedia pageviews API
 
-Wikimedia Foundation operates a pageviews API that returns view counts for any article on any of their projects, back to 2015. The endpoints are documented at `wikimedia.org/api/rest_v1`. The relevant endpoint for our purposes takes the form:
+Wikimedia Foundation operates a pageviews API that returns view counts for any article on any of their projects, back to 2015. The endpoints are documented at `wikimedia.org/api/rest_v1`. The relevant endpoint takes the form:
 
 ```
 GET /metrics/pageviews/per-article/{project}/{access}/{agent}/{article}/{granularity}/{start}/{end}
@@ -92,7 +91,7 @@ print(data["items"][:2])
 #      'access': 'all-access', 'agent': 'user', 'views': 8442}, ...]
 ```
 
-Three things happened there that you will keep doing. You sent a `User-Agent` header naming yourself and your purpose. You called `raise_for_status()` to turn HTTP errors into Python exceptions. You set a timeout so that if the server hangs, your script does not. The next chapter will make these habits formal as part of a "responsible scraper" function. For now, notice that `requests.get()` does not hand you the response body directly. It hands you a `Response` object, and `.json()` is one of several methods you can call on it.
+You did three things there that you will keep doing: you sent a `User-Agent` header naming yourself, called `raise_for_status()` to turn HTTP errors into exceptions, and set a timeout so a hung server does not hang your script. @sec-ch-04-enclosure turns these habits into a full "responsible scraper" function. For now, notice that `requests.get()` does not hand you the response body directly. It hands you a `Response` object, and `.json()` is one of several methods you can call on it.
 
 ::: {.callout-tip title="The Missing Manual"}
 Most tutorials teach you `requests.get(url).json()` as a single chained call. That works until it does not. The `Response` object carries the status code, headers, cookies, and error context separately from the body. When a request fails (and it will), you need the status code and the headers to understand why; calling `.json()` on a 403 will give you an exception that hides the 403. Write your code so the `Response` survives long enough to inspect. You will thank yourself the first time an API silently starts returning an HTML error page in place of JSON.
@@ -100,7 +99,7 @@ Most tutorials teach you `requests.get(url).json()` as a single chained call. Th
 
 ## Into pandas
 
-A single JSON response is interesting. Three parallel time series for three language editions are more so. We will collect "Public interest" pageviews for English, Spanish, and Hindi Wikipedia and plot them side by side.
+A single JSON response is interesting. Three parallel time series for three language editions are more so. Collect "Public interest" pageviews for English, Spanish, and Hindi Wikipedia and plot them side by side.
 
 ```python
 import pandas as pd
@@ -144,64 +143,60 @@ fig.tight_layout()
 fig.savefig("ch01_pageviews.png", dpi=120)
 ```
 
-If your plot looks reasonable, congratulations: you have just run an end-to-end public-interest data pipeline. Not a large one, but a real one. It fetches from a public API, handles errors, transforms a JSON response into a DataFrame, and produces a figure that would be legible on the front page of a campus paper or in a policy brief.
+If your plot looks reasonable, you have just run an end-to-end public interest data pipeline. Not a large one, but a real one: it fetches from a public API, handles errors, reshapes JSON into a DataFrame, and produces a figure legible in a campus paper or a policy brief.
 
 ## Reading the plot
 
 Three things to notice, because they recur.
 
-First, the English series has different seasonality than the Spanish or Hindi series. English "Public interest" spikes in specific months that tend to correspond to U.S. news cycles: data-broker legislation debates, antitrust hearings, election seasons. Spanish and Hindi series have their own spikes that do not align. The concept of a single global "public interest" is a fiction; there are many publics, and their interests peak on different calendars.
+First, the series do not share a calendar. Look for months where the English series spikes and the Spanish or Hindi series does not, and ask what was in the news in each place that month. A single global "public interest" is a fiction; there are many publics, and their interests peak at different times.
 
-Second, all three series are small relative to any major news article. "Public interest" is a reference concept, not a subject of mass curiosity. The size of the audience for public-interest *work* is not large. It is, however, possible to reach it if you know where it is.
+Second, all three series are small relative to any major news article. "Public interest" is a reference concept, not a subject of mass curiosity. The audience for public interest *work* is small but reachable, if you know where it is.
 
-Third, the data will drift. Wikipedia articles get renamed, redirected, merged. The endpoint you called today may return a different trajectory next year because the article itself has changed. Chapter 16 takes up the problem of *what can be remembered*; this exercise is your first tiny encounter with it.
+Third, the data will drift. Wikipedia articles get renamed, redirected, merged. The endpoint you called today may return a different trajectory next year because the article itself has changed. @sec-ch-16-erosion takes up the problem of *what can be remembered*; this exercise is your first tiny encounter with it.
 
 ::: {.callout-note title="In the Public Interest"}
-This chapter's running example is, on the surface, a technical trifle: three line plots of Wikipedia pageviews. But notice what it required. A public API, documented and open. Endpoints that return consistent, structured data. A retention policy that preserves history for at least a decade. A `User-Agent` expectation that asks you to identify yourself rather than hiding. Wikipedia built these as deliberate commitments to **openness** (Chapter 6). If you were trying to do the same exercise against a commercial platform in 2026, you would find most of those commitments have been withdrawn. The pressure of **enclosure** (Chapter 4) makes the simple thing you just did unusually precious. Part of this book's work is to help you notice when the simple thing is actually rare.
+Three line plots of Wikipedia pageviews look like a trifle. Notice what they required. A public API, documented and open. Endpoints that return consistent, structured data. A retention policy that preserves history for at least a decade. A `User-Agent` expectation that asks you to identify yourself rather than hiding. Wikipedia built these as deliberate commitments to **openness** (@sec-ch-06-openness). If you were trying to do the same exercise against a commercial platform in 2026, you would find most of those commitments have been withdrawn. The pressure of **enclosure** (@sec-ch-04-enclosure) makes the simple thing you just did unusually precious. Part of this book's work is to help you notice when the simple thing is rare.
 :::
 
 ## What you will build
 
-By the end of the book, you will have produced:
+The course this book accompanies is graded on a portfolio, not on exams. Each of the four modules ends in one **portfolio piece**, and every piece has the same four parts: a **technical artifact** (a notebook or small repository a classmate can clone and run), a **public text** in the module's genre for a named audience at the module's level of government, a short **installed-base note** saying which pressure you met and which of the six elements your work built or left missing, and, for graduate students, a **methods memo** that situates the piece in the research literature.
 
-- A published, documented civic dataset hosted as a Datasette instance (Chapter 6).
-- A refusal specification for a dataset where refusal is the right answer (Chapter 19).
-- A disaggregated audit of a public model (Chapter 10), wrapped as a reproducible pipeline (Chapter 12).
-- A stakeholder map and geographic visualization of a local decision (Chapter 17).
-- A tested data pipeline with a deliberately-introduced bug and a written post-incident review (Chapter 13).
-- A class-wide FOIA/CORA tracker with at least one filed request of your own (Chapter 9).
-- An op-ed draft pitched to a named outlet (Chapter 7).
-- A report with reproducible figures (Chapter 15).
-- A research proposal with a data management plan and mock IRB protocol (Chapter 21).
-- A five-minute testimony statement with written addendum (Chapter 11).
-- A substantive comment on a live federal rulemaking (Chapter 20).
-- An archival deposit on the Internet Archive and Zenodo with full metadata (Chapter 22).
+- **Piece 1, Journalism and the city.** Reproduce a published finding, such as ProPublica's "Machine Bias" analysis, extend it with city data you collected responsibly, and write a 750-word op-ed pitched to a named local outlet (@sec-ch-04-enclosure through @sec-ch-07-op-eds).
+- **Piece 2, Law and the county.** File an open-records request, turn the released county records into a table, keep a ledger of exemptions and remedies, and deliver written and oral testimony for a county commission hearing (@sec-ch-08-exemption through @sec-ch-11-testimony).
+- **Piece 3, Assurance and the state.** Run a disaggregated audit with a manifest, thresholds, and tests that run in continuous integration, and write a report section for a named state body (@sec-ch-12-accounting through @sec-ch-15-reports).
+- **Piece 4, Planning and the nation.** Audit a federal dataset for erosion, write a stewardship plan or a refusal specification, and submit a substantive comment on a live federal rulemaking (@sec-ch-16-erosion through @sec-ch-20-public-comments).
 
-A portfolio, in other words. Not an assignment dump. A collection of things you can point to when you apply for a job, a fellowship, a grant, or a seat on a commission, and say: I did this, I published it, here is the permanent link.
+The **final project** takes one piece further in three moves. You *deepen* it (new data, a second level of government, or a comparison with the module's non-US counter-case). You *recast* it in a different genre, so the audit becomes an op-ed or the county records become a report; graduate students may write a research proposal (@sec-ch-21-research-proposals). And you *archive* the artifact and text with a persistent identifier, a DOI minted through Zenodo or an Internet Archive deposit (@sec-ch-22-archival-deposits), alongside a short memo on whose interests the work serves and where the framework fails for your case.
+
+One more thing runs through the term: a chapter-scale pull request to this book, which is a public repository and is wrong in places you will find before the author does.
+
+A portfolio, in other words: things you can point to when you apply for a job, a fellowship, or a seat on a commission, and say: I did this, I published it, here is the permanent link.
 
 ## Exercises
 
-**Exercise 1.1 (Guided).** Install Python 3.11+, git, and the packages listed in the environment setup callout. Clone this book's repository. Create a new branch named `yourname/ch01-helloworld`. Add a single line to `exercises/ch01_helloworld.txt` that reads "Hello from <your name>." Commit with the message `exercise 1.1: hello world` and push the branch. Open a pull request against the course's fork of the repository. Submit the PR URL to the course instructor. The point of this exercise is not the content. It is that the work mechanism (branch, commit, PR) is your default mode from here forward.
+**Exercise 1.1 (Guided).** Install Python 3.11+, git, and the packages listed in the environment setup callout. Clone the course repository. Create a branch named `yourname/intro`. Add a file `introductions/yourname.md` with three sentences: who you are, a public you belong to, and a level of government whose decisions you have felt directly. Commit with the message `intro: yourname` and open a pull request. The content matters less than the mechanism. Branch, commit, and pull request are your default mode from here forward, including for your contribution to this book.
 
-**Exercise 1.2 (Guided).** Adapt the pageviews script to retrieve monthly views for three Wikipedia articles you care about, across three language editions each. Produce one plot comparing them. Write 150 words interpreting what the plot tells you. Save the plot and writeup to `exercises/ch01_pageviews/`. Note at least one choice (which article, which language, which date range) where you had to decide something, and record what you decided and why.
+**Exercise 1.2 (Guided, real public data).** Adapt the pageviews script to retrieve monthly views for three Wikipedia articles you care about, across three language editions each. Produce one plot comparing them. Write 150 words interpreting it. Save the plot and writeup to `exercises/ch01_pageviews/`. Record one choice (article, language, or date range) you had to make, and why.
 
-**Exercise 1.3 (Reflective).** Write a 300-word "data obituary" for an API, dataset, or data portal that has been withdrawn, paywalled, or substantially restricted. Examples to consider: the old Twitter API, Reddit's Pushshift, the federal climate portal's pre-2017 snapshots, a city open-data portal that shut down. Your obituary should name the data source, say what it was useful for, describe what happened to it, and identify who has been worse off since. Cite two sources.
+**Exercise 1.3 (Reflective).** Write a 300-word "data obituary" for an API, dataset, or data portal that has been withdrawn, paywalled, or substantially restricted. Reddit's Pushshift is a classic candidate. Name the source, say what it was useful for, describe what happened to it, and identify who has been worse off since. Cite two sources.
 
-**Exercise 1.4 (Analytic).** Find an op-ed or published column about AI or data policy from the last six months. Read it twice. Identify its explicit or implicit *theory of change*: who is the audience, what action is the piece trying to produce, and what has to be true about that audience for the argument to land? Write 250 words. Do not pick an op-ed you agree with; pick one whose argument you think is doing something politically.
+**Exercise 1.4 (Analytic).** Find a recent public document from a city, county, state, or federal body in which someone invokes "the public interest" (a council resolution, a court filing, an agency press release, a records denial). Write 300 words answering: which public does the document mean, who is left out, and what would have to be on the record for an outsider to check the claim? Compare your answer with the Moses or Aadhaar case.
 
-**Exercise 1.5 (Open-ended).** What is a public-interest data question you want to be able to answer by the end of this book? Write two to three paragraphs: what is the question, who would benefit from the answer, what data would be needed, and what obstacles do you already see. Save it as `exercises/ch01_project_sketch.md`. You will revisit it every few chapters.
+**Exercise 1.5 (Open-ended).** What is a public interest data question you want to answer by the end of the term? Write two to three paragraphs: the question, who would benefit, what data would be needed, which level of government could act on the answer, and what obstacles you already see. Save it as `exercises/ch01_project_sketch.md`. You will revisit it as each module gives you new tools, and it may become the seed of your final project.
 
 ## Looking ahead
 
-Chapter 4 begins Part I's diagnosis of the pressures on public knowledge. It takes the polite `User-Agent` habit we established here and turns it into a full "responsible scraper" function. More importantly, it asks why polite habits are necessary at all: how the ground of what public-interest work can observe has shifted over the last decade, and what that shift implies for what you should try to do next.
+@sec-ch-02-installed-base gives you the full vocabulary in one sitting: the three pressures of enclosure, exemption, and erosion; the three values of openness, oversight, and ownership; the six elements of the installed base; and the five lineages the modules borrow from. It also explains why the book climbs from the city to the nation. Then you will build a minimum viable installed base for a small civic dataset, because the vocabulary is only useful if you can see it in a file.
 
 ## Further Reading and Resources
 
-- Brian C. Keegan (2026), "Public interest data infrastructuring," Under Review. The paper this book extends. Start here.
-- Virginia Eubanks (2018), *[Automating Inequality](https://us.macmillan.com/books/9781250215789/automatinginequality)*. The canonical contemporary text on how data-driven systems reshape welfare, policing, and child services, and why "the public interest" requires attention to whose lives those systems touch.
-- Tara Dawson McGuinness and Hana Schank (2021), *[Power to the Public](https://press.princeton.edu/books/hardcover/9780691207759/power-to-the-public)*. The book-length articulation of public interest technology, useful as a framing text and as a target for critique (Chapter 3 will take up both).
-- Mike Ananny and Kate Crawford (2018), "[Seeing without knowing: Limitations of the transparency ideal and its application to algorithmic accountability](https://doi.org/10.1177/1461444816676645)," *New Media & Society*, 20(3): 973–989. A useful counterweight to the assumption that transparency is self-executing.
-- Wikimedia Foundation's Pageviews API documentation: <https://wikimedia.org/api/rest_v1/>. The endpoint you used in this chapter, plus siblings you will find handy later.
-- *The Data Journalism Handbook 2*, ed. Jonathan Gray and Liliana Bounegru (2021), open-access at <https://datajournalism.com/read/handbook/two>. A reader's companion to many of the methods this book will extend.
-- Hugh Gusterson (2017), "[From Brexit to Trump: Anthropology and the rise of nationalist populism](https://doi.org/10.1111/amet.12469)," *American Ethnologist* 44(2): 209–214. For readers who want a frame for why "the public" has fragmented.
-- The course syllabus and pull-request template for INFO 46XX, in this book's repository. Your first assignment is to open one.
+- Brian C. Keegan (2026), "Public interest data infrastructuring," under review [@keegan2026]. The paper this book extends. Read the introduction now and the rest across the term.
+- Anne L. Washington and Joanne Cheung (2024), "Towards defining the public interest in technology: Lessons from history," *Journal of Integrated Global STEM* 1(2): 67–74 [@washingtonDefiningPublicInterest2024]. The course's framing reading for week 1.
+- Logan Stapleton and colleagues (2022), "Who has an interest in 'public interest technology'?: Critical questions for working with local governments and impacted communities," *CSCW '22 Companion*, 282–286 [@stapletonWhoHasInterest2022]. The critical counterpart.
+- Robert A. Caro (1974), *The Power Broker: Robert Moses and the Fall of New York* [@caro1974]. The chapter titled "One Mile" is the Cross Bronx Expressway story.
+- Ursula Rao and Vijayanka Nair (2019), "Aadhaar: Governing with biometrics," *South Asia: Journal of South Asian Studies* 42(3): 469–481 [@rao2019]. An entry point to the scholarship on Aadhaar.
+- Virginia Eubanks (2018), *[Automating Inequality](https://us.macmillan.com/books/9781250215789/automatinginequality)* [@eubanks2018]. How data-driven systems reshape welfare, policing, and child services.
+- Mike Ananny and Kate Crawford (2018), "[Seeing without knowing](https://doi.org/10.1177/1461444816676645)," *New Media & Society* 20(3): 973–989. A counterweight to the assumption that transparency is self-executing.
+- Wikimedia Foundation's REST API documentation: <https://wikimedia.org/api/rest_v1/>. The endpoint you used in this chapter, plus siblings you will find handy later.
