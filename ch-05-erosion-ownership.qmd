@@ -5,46 +5,41 @@ execute:
 
 # Erosion and Ownership {#sec-ch-05-erosion-ownership}
 
-<!-- MERGE: raw concatenation of ch-16-erosion and ch-18-ownership; to be rewritten into one chapter. -->
+A public record that cannot be found is not a public record. A footnote whose URL returns a 404 is a claim without a witness. A federal time series that stops updating is a question nobody will be able to answer in ten years. Keegan [-@keegan2026] names **erosion** as the third pressure on public knowledge, the one that works by subtraction: the breakdown of the institutions and infrastructures that once made sustained, independent observation possible. @sec-ch-03-enclosure-openness asked *who can observe?* @sec-ch-04-exemption-oversight asked *who must answer?* This chapter asks *what can be remembered?*
 
-<!-- MERGE: half 1 begins: Erosion: What Can Be Remembered? -->
-A public record that cannot be found is not a public record. A footnote whose URL returns a 404 is a claim without a witness. A federal time series that stops updating is a question nobody will be able to answer in ten years. This chapter is about the third pressure, the one that works by subtraction. @sec-ch-03-enclosure-openness asked *who can observe?* @sec-ch-04-exemption-oversight asked *who must answer?* This chapter asks *what can be remembered?* It opens the last module of the book and the last rung of its ladder: the federal government.
+The value that answers erosion is **ownership**, the most misread word in the framework. Keegan defines it as collective, accountable governance over the preservation, access, and use of public-relevant data, not private property or exclusive control: stewardship obligations (retention, migration, custody, succession) held under collective governance that can outlast shifting incentives, such as the grant that ends, the administration that changes, or the platform that rewrites its terms.
 
-You arrive here with installed-base pieces built at three levels. In Part II you documented the provenance of a city dataset. In Part III you built an exemptions and remedy ledger from county records. In Part IV you ran an audit with a manifest and tests for a state body. Every one of those pieces quietly assumed that its sources would stay put. The federal government is where that assumption is tested hardest. It is the largest producer of public data in the United States, the source that city, county, and state analyses lean on for denominators (the Census), baselines (NOAA climate normals), and exposure estimates (EPA monitoring), and it is the level most exposed to wholesale change at each presidential transition.
+Keegan's Case 3, "Sustaining archives in the Anthropocene," shows why the pairing matters. Climate disruption stresses the systems that produce durable public memory (statistical agencies, monitoring networks, scientific repositories) through physical shocks such as heat, flood, and fire, and through governance volatility: under-maintenance, budget cuts, portal shutdowns, vendor churn [@mazurczyk2018; @tansey2015]. Climate politics makes memory adversarial: a decision to stop collecting or stop publishing can quietly remove the evidence needed to validate a model or assign responsibility for harm. Environmental injustice often becomes legible only decades later, and if the observational record has rotted, future publics will have little basis for claims to repair [@ghaddar2016; @robinsonsweet2018]. Keegan's response is a **federated continuity backbone**: libraries, repositories, agencies, community archives, and watchdog partners holding redundant copies under explicit, auditable commitments, so that no single point of failure becomes a single point of erasure.
 
-Erosion is rarely dramatic. An agency reorganizes a website and the old paths return 404s. A program loses its appropriation and its dashboard goes dark. A data product is "retired" in a one-paragraph notice. Any one event looks like an operational hiccup. Taken together, they are the texture of a public record thinning faster than anyone can thicken it. Plantin, Lagoze, Edwards, and Sandvig [-@plantin2016] argue that platforms and public infrastructures run on different clocks, and Karasti and Blomberg [-@karasti2018] name the mismatch: **project time** versus **infrastructure time**. Projects end; infrastructures are supposed not to. When the public record lives inside projects, it ends with them.
+The first half documents erosion and builds a link-rot audit that runs on any government site. A bridge asks how ownership answers erosion and where stewardship turns into control. The second half builds ownership as practice: tiered access, a threat model, and a stewardship plan. The chapter relies on the **installed base** from @sec-ch-02-installed-base, especially two of its six capacities: **continuity**, the ability to return to a source, and **authority**, the standing of a record to be accepted as the record.
 
-## Case: federal memory under transition
+## The pressure: what can be remembered?
 
-The anchor case for this module is the volunteer response to federal data removals. After the November 2016 election, a group of academics and nonprofit staff formed the Environmental Data and Governance Initiative [EDGI, @edgi] to monitor changes to federal environmental websites, and librarians and scientists organized "data rescue" events under the DataRefuge banner, starting at the University of Pennsylvania, to copy federal climate and environmental datasets before they could disappear. EDGI's website-monitoring reports went on to document the removal and rewording of climate-change content across agencies, and the same monitoring infrastructure was ready again for the transitions of 2021 and 2025.
+Erosion is rarely dramatic. An agency reorganizes a website and the old paths return 404s. A program loses its appropriation and its dashboard goes dark. A data product is "retired" in a one-paragraph notice. Each looks like a hiccup; together they are a public record thinning faster than anyone can thicken it. Plantin, Lagoze, Edwards, and Sandvig [-@plantin2016] argue that platforms and public infrastructures run on different clocks, and Karasti and Blomberg [-@karasti2018] name the mismatch: **project time** versus **infrastructure time**. Projects end; infrastructures are supposed not to. When the public record lives inside projects, it ends with them.
 
-The 2025 transition produced a sharper version of the same pattern. Health agencies took down web pages and datasets in early February in response to executive orders, and a federal court later ordered many of them restored. EPA's EJScreen environmental-justice mapping tool went offline, and a coalition of nonprofits and university groups republished a copy. Harvard Law School's Library Innovation Lab mirrored the data.gov catalog. NOAA announced that it would stop updating its Billion-Dollar Weather and Climate Disasters database. <!-- TODO: verify before the term: DataRefuge origin at Penn (Program in the Environmental Humanities, early 2017) and add a bib entry; dates and details of the Feb 2025 HHS/CDC removals and the court order (Doctors for America v. OPM); EJScreen takedown date and the Public Environmental Data Partners mirror; Harvard LIL data.gov archive; NOAA NCEI billion-dollar database retirement (announced May 2025). Add bib entries if cited. -->
+### Federal memory under transition
 
-Two lessons come out of this record. First, volunteer preservation works, partially. Copies made in time survive. Second, a copy is not the same thing as a record. A mirror can preserve the last release of a dataset; it cannot produce the next one. When a series stops being *collected*, the Wayback Machine holds a tombstone, not a continuation. And a mirror run by volunteers has no statutory authority to say that its copy is the authoritative one, which matters the moment someone challenges it in a rulemaking or a courtroom.
+The federal government is the largest producer of public data in the United States, the source that city, county, and state analyses lean on for denominators (the Census), baselines (NOAA climate normals), and exposure estimates (EPA monitoring). It is also the level most exposed to wholesale change at each presidential transition. The anchor case is the volunteer response to federal data removals. After the November 2016 election, a group of academics and nonprofit staff formed the Environmental Data and Governance Initiative [EDGI, @edgi] to monitor changes to federal environmental websites, and librarians and scientists organized "data rescue" events under the DataRefuge banner, starting at the University of Pennsylvania, to copy federal climate and environmental datasets before they could disappear. EDGI's website-monitoring reports went on to document the removal and rewording of climate-change content across agencies, and the same monitoring infrastructure was ready again for the transitions of 2021 and 2025.
 
-Keegan [-@keegan2026] frames this as Case 3, "sustaining archives in the Anthropocene." Climate disruption stresses the systems that produce durable public memory (statistical agencies, monitoring networks, scientific repositories) through both physical shocks and governance volatility [@mazurczyk2018; @tansey2015]. Climate politics makes memory adversarial: a decision to stop collecting or stop publishing can quietly remove the evidence needed to validate a model or assign responsibility for harm. Environmental injustice often becomes legible only decades later, and if the observational record has rotted, future publics will have little basis for claims to repair [@ghaddar2016; @robinsonsweet2018]. Keegan's proposed response is a *federated continuity backbone*: libraries, repositories, agencies, community archives, and watchdog partners holding redundant copies under explicit, auditable commitments, so that no single point of failure becomes a single point of erasure.
+The 2025 transition produced a sharper version of the same pattern. Health agencies took down web pages and datasets in early February in response to executive orders, and a federal court later ordered many of them restored. EPA's EJScreen environmental-justice mapping tool went offline, and a coalition of nonprofits and university groups republished a copy. Harvard Law School's Library Innovation Lab mirrored the data.gov catalog. NOAA announced that it would stop updating its Billion-Dollar Weather and Climate Disasters database. <!-- TODO: verify before the next revision: DataRefuge origin at Penn (Program in the Environmental Humanities, early 2017) and add a bib entry; dates and details of the Feb 2025 HHS/CDC removals and the court order (Doctors for America v. OPM); EJScreen takedown date and the Public Environmental Data Partners mirror; Harvard LIL data.gov archive; NOAA NCEI billion-dollar database retirement (announced May 2025). Add bib entries if cited. -->
 
-## Boulder as the local face of federal memory
+Two lessons follow. First, volunteer preservation works, partially: copies made in time survive. Second, a copy is not a record. A mirror can preserve the last release of a dataset; it cannot produce the next one. When a series stops being *collected*, the Wayback Machine holds a tombstone, not a continuation. And a mirror run by volunteers has no statutory authority to say that its copy is the authoritative one, which matters the moment someone challenges it in a rulemaking or a courtroom.
 
-You do not have to go to Washington to see federal memory being made. Boulder hosts NOAA's David Skaggs Research Center, NIST's Boulder laboratories, and the National Center for Atmospheric Research (NCAR), which UCAR operates with National Science Foundation funding. The National Snow and Ice Data Center sits on the CU Boulder campus. NOAA's Global Monitoring Laboratory, headquartered in Boulder, runs the Mauna Loa Observatory, where a carbon dioxide record that began in 1958 has been kept running for nearly seventy years. That record is the textbook case of infrastructure time: its value comes almost entirely from the fact that nobody let it lapse.
+Federal memory also has a local face. Boulder hosts NOAA's David Skaggs Research Center, NIST's Boulder laboratories, NCAR, and the National Snow and Ice Data Center. NOAA's Global Monitoring Laboratory, headquartered in Boulder, runs the Mauna Loa Observatory, where a carbon dioxide record that began in 1958 has been kept running for nearly seventy years: the textbook case of infrastructure time, valuable almost entirely because nobody let it lapse. Retirements announced in Washington land in places like this as layoffs and discontinued data products. <!-- TODO: verify and, if accurate, cite the December 2025 announcement that NSF would restructure or break up NCAR, and any NSIDC product reductions after NOAA funding changes in 2025. -->
 
-These institutions are also where federal erosion becomes local. Budget proposals, reorganizations, and product retirements announced in Washington land as layoffs, closed offices, and discontinued data products a few miles from your classroom. <!-- TODO: verify and, if accurate, cite the December 2025 announcement that NSF would restructure or break up NCAR, and any NSIDC product reductions after NOAA funding changes in 2025. --> When you choose a federal dataset for Piece 4, a Boulder-produced dataset is a strong choice: you can find its stewards, read their own documentation, and sometimes talk to them.
+### The mundane politics of retention
 
-## The mundane politics of retention
+It is tempting to tell erosion stories as conspiracies. Sometimes they are. More often they are what happens when nobody's job description includes long-term stewardship. Gaffney and Matias [-@gaffney2018] showed that a widely used Reddit corpus was silently missing data in patterned ways, so that a body of published work rested on samples nobody had checked; when Reddit later closed its API (@sec-ch-03-enclosure-openness), years of such corpora became unciteable. Acker and Kreisberg [-@acker2019] describe the archival version: classical archival theory assumes a record sits still long enough to be taken into custody, and the contemporary record does not. Denton and colleagues [-@denton2021] show that when ImageNet was questioned, the record of how it was made had evaporated faster than the dataset. Withdrawals can be the right call and still erode the record: LAION-5B was taken offline in late 2023 after researchers documented child sexual abuse material inside it [@thiel2023], and every paper that trained on it now cites a dataset the reader cannot audit.
 
-It is tempting to tell erosion stories as conspiracies. Sometimes they are. Much more often they are what happens when nobody's job description includes long-term stewardship. You met one version in @sec-ch-03-enclosure-openness: when Reddit closed its API, years of researcher-assembled corpora became unciteable. Gaffney and Matias [-@gaffney2018] had already shown that a widely used Reddit corpus was silently missing data in patterned ways, so that a body of published work rested on samples nobody had checked. The missingness was not announced. It was visible only when someone looked.
+The point is not that every artifact should live forever. It is that when the public loses the ability to return to a source, it loses the ability to audit what was built on it. Erosion is not a failure of tools. It is a failure of incentives and mandates.
 
-Acker and Kreisberg [-@acker2019] describe the archival version of the problem: classical archival theory assumes a record sits still long enough to be taken into custody, and the contemporary record does not. Denton and colleagues [-@denton2021] show the same pattern for machine-learning datasets: when ImageNet was questioned, the record of how it was made had evaporated faster than the dataset. Withdrawals can be the right call and still erode the record. LAION-5B was taken offline in late 2023 after researchers documented child sexual abuse material inside it [@thiel2023], and every paper that trained on it now cites a dataset the reader cannot audit.
+### Tutorial: a link-rot audit with Wayback recovery
 
-Keegan [-@keegan2026] names **continuity** as one of the six elements of the installed base (@sec-ch-02-installed-base). The point is not that every artifact should live forever. The point is that when the public loses the ability to return to a source, it loses the ability to audit what was built on it. Erosion is not a failure of tools. It is a failure of incentives and mandates.
+You will pull federal catalog records, test every resource link, recover what you can from the Wayback Machine, run the same audit on a county site, and write a datasheet for a dataset you did not make. Nothing in the classifier is federal.
 
-## Tutorial: an erosion audit of a federal dataset
+#### Step 1: pull catalog records from data.gov
 
-This tutorial is the technical half of Piece 4. You will pull catalog records for federal datasets, test every resource link, recover what you can from the Wayback Machine, and write a datasheet for a dataset you did not make.
-
-### Step 1: pull catalog records from data.gov
-
-Data.gov runs on CKAN, an open-source catalog whose API needs no key. Each catalog record ("package") lists one or more resources, each with a URL that points back to the agency's own server. That indirection is the point: the catalog record often outlives the file it points to.
+Data.gov runs on CKAN, an open-source catalog whose API (<https://docs.ckan.org/en/latest/api/>) needs no key. Each catalog record ("package") lists resources whose URLs point back to the agency's own server. That indirection is the point: the catalog record often outlives the file it points to.
 
 ```python
 import pandas as pd
@@ -78,9 +73,9 @@ records.shape
 # => (n_resources, 4); the count changes from week to week
 ```
 
-<!-- TODO: verify the data.gov organization slugs (epa-gov, noaa-gov, census-gov) before the term. -->
+<!-- TODO: verify the data.gov organization slugs (epa-gov, noaa-gov, census-gov) before the next revision. -->
 
-### Step 2: classify every link
+#### Step 2: classify every link
 
 A 404 is obvious rot. A redirect to a generic landing page is worse and more common: the link resolves, returns a 200, and gives you nothing.
 
@@ -118,15 +113,15 @@ report.groupby("category").size()
 # (illustrative; your distribution will differ)
 ```
 
-Look at `redirect_offsite` first. A federal URL that now redirects to a different agency, or to a page on a different topic, technically resolves and practically does not.
+Look at `redirect_offsite` first. A federal URL that now redirects to a different agency or topic technically resolves and practically does not.
 
 ::: {.callout-tip title="The Missing Manual"}
-Status codes lie, and federal sites lie in specific ways. A content management system may serve a "soft 404" with HTTP 200. A firewall may answer your script with a block page that your browser never sees. A retired dataset's landing page may return 200 with a one-line notice that the product is "no longer supported." Data.gov adds its own trap: catalog records are harvested from agencies, so a record can persist for months after the file it describes is gone, and its `metadata_modified` date reflects the last harvest, not the last time anyone checked the data. Finally, the Wayback Machine archives HTML landing pages far more reliably than large data files. The most common recovery result is a beautifully preserved landing page whose download link points to nothing. Open a sample of every category in a browser before you report a number.
+Status codes lie, and government sites lie in specific ways. A content management system may serve a "soft 404" with HTTP 200. A firewall may answer your script with a block page that your browser never sees. A retired dataset's landing page may return 200 with a one-line notice that the product is "no longer supported." Data.gov adds its own trap: catalog records are harvested from agencies, so a record can persist for months after the file it describes is gone, and its `metadata_modified` date reflects the last harvest, not the last time anyone checked the data. Finally, the Wayback Machine archives landing pages far more reliably than large data files, so the most common recovery is a beautifully preserved landing page whose download link points to nothing. Open a sample of every category in a browser before you report a number.
 :::
 
-### Step 3: recover and date the rot
+#### Step 3: recover and date the rot
 
-The Wayback Machine's Availability API returns the closest capture to a timestamp. Its CDX API returns the full capture history, which lets you date when a page changed.
+The Wayback Machine's Availability API (documented at <https://archive.org/help/wayback_api.php>) returns the closest capture to a timestamp. Its CDX API returns the full capture history, which lets you date when a page changed.
 
 ```python
 def find_capture(url, timestamp=None):
@@ -161,15 +156,52 @@ history["statuscode"].value_counts()
 #    301     1
 ```
 
-The last `200` before the first `404` brackets the date of loss. That bracket is evidence: you can set it beside a Federal Register notice, a budget document, or an agency announcement. If the original is gone, cite the Wayback capture with its timestamp. If the page still exists, request a capture through `https://web.archive.org/save/<url>` so the next auditor has a baseline.
+The last `200` before the first `404` brackets the date of loss. That bracket is evidence you can set beside a Federal Register notice, a budget document, or an agency announcement. If the original is gone, cite the Wayback capture with its timestamp. If the page still exists, request a capture through `https://web.archive.org/save/<url>` so the next auditor has a baseline.
 
-::: {.callout-note title="In the Public Interest"}
-When you archive a source at the moment of citation, you exercise a kind of **ownership** the law does not require of you. The page is not yours. What you hold is responsibility for the evidence your argument rests on. Keegan [-@keegan2026] defines ownership as collective, accountable governance over the preservation, access, and use of public data, not private control, and @sec-ch-05-erosion-ownership develops that claim. Here is the specific complication federal erosion adds: a volunteer mirror advances *continuity* but not *authority*. The copy survives, but nobody is obliged to accept it as the record. An erosion audit that records checksums, capture timestamps, and the chain of custody from agency server to mirror is how a public-interest copy earns enough authority to be cited in a comment, a report, or a brief.
-:::
+#### Step 4: the same audit on a county site
 
-### Step 4: a datasheet for a dataset you did not make
+Most government sites do not hand you a list of URLs, so you collect the links from a page yourself. Counties are the natural target, because planning happens at the county level: land use dockets, comprehensive plans, and the maps that Planning Commission and Board of County Commissioners decisions cite (@sec-ch-09-planning develops that lineage, @sec-ch-18-public-comments the comments residents file). A comment that cites a dead link to the county's own plan is a weak comment.
 
-In @sec-ch-03-enclosure-openness you wrote a datasheet [@gebru2021] for a file you built. Writing one for a federal dataset is harder and more revealing, because you must reconstruct answers from documentation you did not write. Use the same seven sections, and extend the maintenance section with fields that matter for erosion:
+```python
+from html.parser import HTMLParser
+from urllib.parse import urljoin
+
+class LinkCollector(HTMLParser):
+    """Collect absolute http(s) URLs from <a href> tags."""
+    def __init__(self, base):
+        super().__init__()
+        self.base, self.links = base, set()
+    def handle_starttag(self, tag, attrs):
+        href = dict(attrs).get("href")
+        if tag == "a" and href:
+            url = urljoin(self.base, href)
+            if urlparse(url).scheme in ("http", "https"):  # drops mailto:, tel:, javascript:
+                self.links.add(url)
+
+def links_on_page(url):
+    r = requests.get(url, headers=HEADERS, timeout=30)
+    r.raise_for_status()
+    collector = LinkCollector(url)
+    collector.feed(r.text)
+    return sorted(collector.links)
+
+COMP_PLAN = ("https://bouldercounty.gov/property-and-land/land-use/planning/"
+             "boulder-county-comprehensive-plan/")
+county_links = links_on_page(COMP_PLAN)
+county_report = pd.DataFrame([classify_url(u) for u in county_links])
+county_report.groupby("category").size()
+# => client_error            1
+#    ok                    208
+#    redirect_offsite        3
+#    redirect_same_host      9
+# (a run in early October 2026; the page changes)
+```
+
+Boulder County's plan page is in good health: in that run, all 19 linked PDFs (the plan and its maps, served from a separate `assets.bouldercounty.gov` host) returned 200. Read the flags before you count them. Of the nine `redirect_same_host` rows, four are a missing trailing slash and three are login walls; the other two are pages the county renamed, which is worth tracking. The three `redirect_offsite` rows are a dropped `www.`, a map link shortener, and an old domain forwarding to a new one. The lone `client_error` is a social media site answering a script with HTTP 429, "too many requests": rate limiting, not rot. A one-time snapshot of a well-kept page mostly measures your classifier's false alarms. County erosion shows up over time, so pair Step 4 with Step 3: compare the documents the plan page linked five or ten years ago with those it links now, and ask whether superseded plans, maps, and docket files are reachable anywhere. The page also links to a vendor-hosted meetings portal; where a county's records live on a vendor's domain, a contract change is an erosion event.
+
+#### Step 5: a datasheet as a retention practice
+
+@sec-ch-03-enclosure-openness introduces the datasheet [@gebru2021] as documentation for a file you built, in seven sections: motivation, composition, collection process, preprocessing, uses, distribution, and maintenance. Writing one for a federal dataset you did not make is harder, because you must reconstruct answers from documentation you did not write. It is also a retention practice: a datasheet written today records what the dataset was, who kept it, and under what authority, in case the dataset or its documentation disappears tomorrow. Extend the maintenance section with fields that matter for erosion:
 
 ```python
 MAINTENANCE_EXTENSION = {
@@ -183,85 +215,61 @@ MAINTENANCE_EXTENSION = {
 }
 ```
 
-The `mandate` field does more work than it looks. A dataset that a statute requires erodes differently from one an agency maintains by choice. EPA's Toxics Release Inventory [@epa_tri] exists because the Emergency Planning and Community Right-to-Know Act of 1986 requires facilities to report releases; the decennial census exists because the Constitution requires it. A screening tool or dashboard built on agency initiative can be retired by the agency that built it. When the mandate field reads "discretionary," your stewardship plan in @sec-ch-05-erosion-ownership has to supply the continuity the law does not.
+The `mandate` field matters most. A dataset a statute requires erodes differently from one an agency keeps by choice. EPA's Toxics Release Inventory [@epa_tri] exists because the Emergency Planning and Community Right-to-Know Act of 1986 requires facilities to report releases; the decennial census exists because the Constitution requires it. A dashboard built on agency initiative can be retired by the agency that built it. When the field reads "discretionary," your stewardship plan has to supply the continuity the law does not.
 
-## What the audit can and cannot show
+### What the audit can and cannot show
 
-The audit measures erosion of *access*: links that no longer resolve, files that no longer download. It cannot, on its own, measure erosion of *collection*: a series that still has a working landing page but stopped adding observations. For that you need a different check, a comparison of the most recent observation date against the expected update cadence. A monthly series whose last observation is eight months old has eroded even though every link returns 200.
+The audit measures erosion of *access*. It cannot, on its own, measure erosion of *collection*: a series whose landing page works but which stopped adding observations. For that, compare the most recent observation date against the expected update cadence. A monthly series whose last observation is eight months old has eroded even though every link returns 200.
 
-The audit also cannot tell you who decided. A link went dead; someone chose to reorganize, retire, or defund. Naming that someone, and the process by which they decided, is the work of the next chapter. Planning is the lineage that asks who was in the room when a decision about shared infrastructure was made, and who was not.
+The audit also cannot tell you who decided. A link went dead because someone chose to reorganize, retire, or defund. Who was in the room for that decision, and who was not, is the planning lineage's question (@sec-ch-09-planning).
 
-## Exercises
+## The bridge: how ownership answers erosion, and where stewardship becomes control
 
-**Exercise 16.1 (Guided).** Choose one federal agency (EPA, NOAA, or the Census Bureau) and a topic query. Use `federal_records()` to pull catalog records, then run the link-rot audit over at least 30 resource URLs. Save the result as `exercises/ch16_audit.csv`. In 200 words, describe the distribution of outcomes and name the most consequential broken link.
+The audit finds losses. It also finds an absence: usually, nobody held the obligation to keep the thing. Ownership answers erosion by assigning that obligation, writing it down, and making it survive the departure of whoever wrote it, which is why Keegan treats ownership as governance rather than storage. A hard drive of mirrored files is a copy. A copy with a named steward, a fixity manifest, a succession rule, and a public account of who may use it is the beginning of a record.
 
-**Exercise 16.2 (Guided).** For five broken or offsite-redirecting URLs from 16.1, find the closest Wayback capture and pull the capture history. For each, record the original URL, the capture URL, the timestamp, the bracket within which the resource was lost, and whether the capture contains the data or only a landing page. Request a fresh capture of one page that still works. Save as `exercises/ch16_recoveries.md`.
+Federal data already has a stewardship skeleton. The Federal Records Act requires agencies to preserve records and to destroy them only under disposition schedules approved by the National Archives and Records Administration (its records management guidance is at <https://www.archives.gov/records-mgmt>). The OPEN Government Data Act, Title II of the Foundations for Evidence-Based Policymaking Act of 2018, requires agencies to maintain data inventories and to publish data in open formats by default. <!-- TODO: add bib entries for 44 U.S.C. ch. 31 (Federal Records Act) and Pub. L. 115-435 (Evidence Act) if cited formally. --> <!-- TODO: verify URL. -->
 
-**Exercise 16.3 (Analytic; Piece 4 component).** Pick one federal dataset from 16.1, ideally one produced in Boulder by NOAA, NIST, NCAR, or NSIDC. Write a full datasheet with the seven sections from @sec-ch-03-enclosure-openness plus the maintenance extension above. Where you cannot find an answer, say so and say where you looked. Together with 16.1 and 16.2, this datasheet is the erosion-audit half of Piece 4's technical artifact. Save as `exercises/ch16_datasheet_<dataset>.md`.
+Notice where it ends. Retention law governs whether a record is *destroyed*, not whether the public can *reach* it. A dataset can vanish from a public website while the records remain in agency custody, lawfully retained and practically inaccessible. That is the gap volunteer mirrors fill, and why their stewardship has to be designed rather than improvised.
 
-**Exercise 16.4 (Comparative).** Pick a federal page you care about (an EPA program page, a CDC surveillance page, a NOAA climate page). Use the Wayback Machine to compare its last capture before an administration transition (January 2017, 2021, or 2025) with its first capture six months later. In 500 words, describe what changed in content, framing, and linked resources. Describe; do not editorialize. Save as `exercises/ch16_transition.md`.
+::: {.callout-note title="In the Public Interest"}
+When you archive a source at the moment of citation, you exercise a kind of **ownership** the law does not require: not of the page, but of responsibility for the evidence your argument rests on. The complication erosion adds: a volunteer mirror advances *continuity* but not *authority*. The copy survives, but nobody is obliged to accept it as the record. An audit that records checksums, capture timestamps, and the chain of custody from agency server to mirror is how a public-interest copy earns enough authority to be cited in a comment, a report, or a brief. Ownership, in Keegan's sense, is the work of turning a surviving copy into an accountable one.
+:::
 
-**Exercise 16.5 (Open-ended).** Identify one federal dataset that you believe will not survive the next decade in publicly accessible form. In 600 to 800 words, name the resource, the mechanisms you expect to erode it (access, collection, or both), and one intervention a student or small nonprofit could carry out in a semester. You will turn this memo into a stewardship plan or a refusal specification in @sec-ch-05-erosion-ownership and @sec-ch-13-critical-data-studies-refusal, and revisit it in @sec-ch-19-archival-deposits. Save as `exercises/ch16_endangered.md`.
+Stewardship has a shadow. Whoever holds the copy decides who may see it. The tiers that protect people named in a dataset can become a new enclosure (@sec-ch-03-enclosure-openness), with "responsible access" as the reason nobody else gets in. Keegan's Anthropocene case names this as the co-optation critique: "trust" can be reputational cover, and partnerships can produce enclosure-by-partnership or state-centered control. The response is to make the custodian answerable: written, versioned, challengeable decision rules; independence from the parties whose conduct the record documents; and escalation paths when someone alleges exclusion, manipulation, or disappearance.
 
-## Looking ahead
+## The value: ownership as stewardship
 
-You now have an audit that says what has been lost and roughly when. @sec-ch-09-planning turns to the profession that has spent a century learning to ask who decides what gets built, what gets maintained, and whose knowledge of the terrain counts. Planning will hand you the stakeholder map and the habit of asking who was missing from the room, and it will connect the federal environmental review process to the public comment you will write in @sec-ch-18-public-comments.
+A commercial data broker will tell you, if pressed, that it *owns* the nine-hundred-variable dossier it sells about you, assembled from loyalty programs, voter files, credit header data, and the exhaust of a hundred free apps. Ownership there means rights to exclude, alienate, and monetize, backed by contract law. Public-interest ownership is a different word.
 
-## Further Reading and Resources
+### Two senses of the word
 
-- Jean-Christophe Plantin, Carl Lagoze, Paul N. Edwards, and Christian Sandvig (2016), "[Infrastructure studies meet platform studies in the age of Google and Facebook](https://doi.org/10.1177/1461444816661553)," *New Media & Society* 20(1): 293–310. The clearest statement of the mismatch between platform time and infrastructure time.
-- Helena Karasti and Jeanette Blomberg (2018), "[Studying infrastructuring ethnographically](https://doi.org/10.1007/s10606-017-9296-7)," *Computer Supported Cooperative Work* 27: 233–265. The source for project time versus infrastructure time.
-- Devin Gaffney and J. Nathan Matias (2018), "[Caveat emptor, computational social science](https://doi.org/10.1371/journal.pone.0200162)," *PLOS ONE* 13(7): e0200162. How silent data loss propagates into a literature.
-- Environmental Data and Governance Initiative, *Website Monitoring*: <https://envirodatagov.org/website-monitoring/>. The civil-society project that has tracked federal environmental website changes across three transitions.
-- End of Term Web Archive: <https://eotarchive.org/>. A partnership of libraries and the Internet Archive that crawls federal websites at each presidential transition. <!-- TODO: verify URL and current partner list. -->
-- CKAN API documentation: <https://docs.ckan.org/en/latest/api/>. The catalog software behind data.gov; `package_search` and `package_show` are the two calls you need.
-- Internet Archive, Wayback Machine APIs: <https://archive.org/help/wayback_api.php>. The Availability API and a pointer to the CDX server.
-- Tara Mazurczyk, Nathan Piekielek, Eira Tansey, and Benjamin Goldman (2018), "American archives and climate change: Risks and adaptation," *Climate Risk Management* 20: 111–125 [@mazurczyk2018]. What climate risk means for the physical places where records live.
-- Stanford Internet Observatory (2023), "Identifying and eliminating CSAM in generative ML training data and models": <https://purl.stanford.edu/kh752sm9123>. A case study in what dataset withdrawal involves.
-- Software Heritage: <https://www.softwareheritage.org/>. The archive of record for public source code, useful when the repository behind a federal tool disappears.
+**Ownership-as-property** treats data as an asset with a rights-holder who can license, sell, or destroy it, in the vocabulary of chain of title and assignment. The broker sits here. So, uncomfortably, does a good deal of "open" infrastructure: a university research dataset may be open to collaborators while the technology transfer office treats it as an asset.
 
-<!-- MERGE: half 2 begins: Ownership -->
-A commercial data broker will tell you, if pressed, that it *owns* the nine-hundred-variable dossier it sells about you. Ownership here means a property claim: rights to exclude, alienate, and monetize, backed by contract law. The dossier was assembled, often without your knowledge, from loyalty programs, voter files, credit header data, and the exhaust of a hundred free apps. You do not own it. The broker does.
+**Ownership-as-stewardship** treats data as an ongoing obligation of maintenance, documentation, remediation, and succession, closer to trusteeship: duties of care and loyalty that cannot be dropped without arranging for someone else to take them up. A records manager is a steward. So is the volunteer who keeps a mirror of a retired federal dataset checksummed and online. You do not own a public dataset the way a broker owns a dossier. You own it the way a county archivist owns the property records: accountable for their condition, usability, and survival, and unable to sell them off when the grant runs out.
 
-This chapter argues that ownership in public-interest data science is a different word, and most of the trouble in the field comes from not noticing. Keegan [-@keegan2026] defines ownership as the counter-force to erosion: collective, accountable governance over the preservation, access, and use of public-relevant data, rather than private property or exclusive control. The claim a public-interest steward makes is ownership-as-stewardship, a maintenance obligation that requires labor, authority, and continuity across political cycles. You do not own a public dataset the way a broker owns a dossier. You own it the way a municipal archivist owns the city's property records: accountable for its condition, usability, and survival, and unable to sell it off when the grant runs out.
+Most public-interest infrastructure runs on labor that presumes stewardship inside institutions that default to property. Karasti and Blomberg [-@karasti2018] found that long-running scientific infrastructures work until the person doing the work moves on, then fail in ways that take years to surface. Schwartz and Cook [-@schwartz2002] made the argument for archives decades ago: what gets kept, and who decides, are political choices all the way down. Stoler [-@stoler2002], reading colonial Dutch archives, showed the archive to be an instrument of power whose silences must be read as carefully as its records.
 
-The last two chapters set up the problem. @sec-ch-05-erosion-ownership showed that a volunteer mirror of a federal dataset advances continuity but not authority. @sec-ch-09-planning showed that the people who use and are described by a federal dataset are rarely in the room when it is retired. This chapter asks who should hold the record now, under what rules, for how long, and what it takes to structure that holding so it does not collapse into abandonment or capture. It also asks whether "stewardship" is the right word at all, because for Indigenous nations it is not.
+### Data trusts, briefly
 
-## Two senses of the word
+One response to the mismatch is the **data trust**: a legal structure in which a trustee holds rights over data on behalf of beneficiaries, with fiduciary duties enforceable in court. The Ada Lovelace Institute's review [@ada_data_trusts] found trusts more proposed than operational, but the proposal forces the right questions: who benefits, what the trustee may do, and what remedy exists for breach. Delacroix and Lawrence [-@delacroix2019] argue for bottom-up trusts in which data subjects themselves are the beneficiary class. The tutorial below builds the minimum you can maintain before a trust exists: tiered access, a threat model, and a stewardship plan.
 
-**Ownership-as-property** treats data as an asset with a rights-holder who can license, sell, or destroy it. The vocabulary is real estate and copyright: chain of title, residual rights, assignment. The broker sits here. So, uncomfortably, does a good deal of "open" infrastructure: a university research dataset may be open to collaborators while the technology transfer office treats it as an asset.
+### Indigenous data sovereignty
 
-**Ownership-as-stewardship** treats data as an ongoing obligation of maintenance, documentation, remediation, and succession. The vocabulary is closer to trusteeship: duties of care, prudence, and loyalty that cannot be dropped without arranging for someone else to take them up. A records manager is a steward. So is the volunteer who keeps a mirror of a retired federal dataset checksummed and online.
+"Stewardship with duties to beneficiaries" presumes the beneficiaries delegated anything. For many datasets they did not. Te Mana Raraunga [@temanararaunga], the Māori Data Sovereignty Network in Aotearoa New Zealand, argues that Māori data is not a resource for a non-Māori institution to steward on Māori behalf; it belongs to Māori, under Māori governance, as sovereignty rather than trust. In Canada, the First Nations principles of OCAP (ownership, control, access, and possession) [@fnigc_ocap] assert that First Nations collectively own their data, control how it is collected and used, decide who may access it, and should physically possess it. OCAP uses the word "ownership" deliberately, and it does not mean stewardship by someone else. The CARE Principles [@carroll2020] (collective benefit, authority to control, responsibility, ethics) extend the argument to Indigenous data governance generally.
 
-Most public-interest infrastructure runs on labor that presumes stewardship inside institutions that default to property. Karasti and Blomberg [-@karasti2018] found that long-running scientific infrastructures work until the person doing the work moves on, then stop working in ways that take years to surface; @sec-ch-11-pit-data-for-good called the uncredited version of this labor ghost work. Schwartz and Cook [-@schwartz2002] made the argument for archives decades ago: what gets kept, and who decides, are political choices all the way down. Stoler [-@stoler2002], reading colonial Dutch archives, showed the archive to be an instrument of power whose silences must be read as carefully as its records.
+In the United States, federal agencies hold large amounts of data about tribal nations and their citizens, and the US Indigenous Data Sovereignty Network [@usidsn] has pressed the same claims. The tools below assume a public that has delegated stewardship to an institution. They do not work when a people has delegated nothing; @sec-ch-13-critical-data-studies-refusal takes up cases where the right answer is refusal.
 
-## The legal skeleton of federal stewardship
+### Tutorial: tiering a federal mirror
 
-Federal data already has a stewardship skeleton, and knowing where it ends is the point. The Federal Records Act requires agencies to preserve records and to destroy them only under disposition schedules approved by the National Archives and Records Administration. The OPEN Government Data Act, Title II of the Foundations for Evidence-Based Policymaking Act of 2018, requires agencies to maintain data inventories and to publish data in open formats by default. <!-- TODO: add bib entries for 44 U.S.C. ch. 31 (Federal Records Act) and Pub. L. 115-435 (Evidence Act) if cited formally. -->
+@sec-ch-03-enclosure-openness builds openness on a city campaign finance table; federal campaign finance has the same shape. The Federal Election Commission publishes itemized individual contributions with each donor's name, city, state, ZIP code, employer, and occupation, and the OpenFEC API also returns street addresses for many itemized receipts. All of it is legally public, but legal publicness is not safe republishability: name plus street address plus employer enables harassment well beyond what disclosure law contemplated. The statute knows this. The Federal Election Campaign Act bars anyone from selling or using information copied from these reports to solicit contributions or for commercial purposes (52 U.S.C. § 30111(a)(4)), a use restriction written into the law that makes the data public.
 
-Notice the gap. Retention law governs whether a record is *destroyed*. It says much less about whether the public can *reach* it. A dataset can vanish from a public website while the underlying records remain in agency custody, lawfully retained and practically inaccessible. That is exactly the gap the volunteer mirrors of @sec-ch-05-erosion-ownership fill, and exactly why their stewardship has to be designed rather than improvised.
+Suppose you mirror Colorado contributions for researchers and reporters, in case the FEC's interfaces change. You will build three tiers over one SQLite file:
 
-## Data trusts, briefly
-
-One response to the mismatch is the **data trust**: a legal structure in which a trustee holds rights over data on behalf of beneficiaries, with fiduciary duties enforceable in court. The Ada Lovelace Institute's review [@ada_data_trusts] found trusts more proposed than operational, but the proposal forces the right questions: who the beneficiaries are, what the trustee may do, and what remedies exist if the trust is breached. Delacroix and Lawrence [-@delacroix2019] argue for bottom-up trusts in which data subjects themselves are the beneficiary class. You will not stand up a trust here. You will stand up the minimum you can maintain before one exists: tiered access, a threat model, and a stewardship plan.
-
-## Indigenous data sovereignty as a foundational challenge
-
-"Stewardship with duties to beneficiaries" presumes the beneficiaries delegated anything. For many datasets they did not. Te Mana Raraunga [@temanararaunga], the Māori Data Sovereignty Network in Aotearoa New Zealand, argues that Māori data is not a resource to be stewarded on Māori behalf by a non-Māori institution. It belongs to Māori, under Māori governance, as sovereignty rather than trust. In Canada, the First Nations principles of OCAP (ownership, control, access, and possession) [@fnigc_ocap] assert that First Nations collectively own their data, control how it is collected and used, decide who may access it, and should physically possess it. OCAP uses the word "ownership" deliberately, and it does not mean stewardship by someone else. The CARE Principles [@carroll2020] (collective benefit, authority to control, responsibility, ethics) extend the argument to Indigenous data governance generally.
-
-In the United States, federal agencies hold large amounts of data about tribal nations and their citizens, from the Census to health and land records, and the US Indigenous Data Sovereignty Network [@usidsn] has pressed the same claims here. The tools you are about to build assume that a public has delegated stewardship to an institution. They do not work when a people has delegated nothing. @sec-ch-13-critical-data-studies-refusal takes this up, including cases where the right answer is not tiered access but refusal.
-
-## Tutorial: tiering a federal mirror
-
-In @sec-ch-03-enclosure-openness you cleaned a city campaign finance file. Federal campaign finance has the same shape at national scale. The Federal Election Commission publishes itemized individual contributions with each donor's name, city, state, ZIP code, employer, and occupation, and the OpenFEC API also returns street addresses for many itemized receipts. All of it is legally public. Legal publicness and safe republishability are not the same thing: name plus street address plus employer is enough for harassment well beyond what disclosure law contemplated. The statute itself knows this. The Federal Election Campaign Act bars anyone from selling or using information copied from these reports to solicit contributions or for commercial purposes (52 U.S.C. § 30111(a)(4)), a use restriction written into the law that makes the data public.
-
-Suppose you maintain a mirror of Colorado contributions for researchers and reporters, in case the FEC's interfaces change. You will build three tiers over one SQLite file:
-
-- **Public tier.** Aggregates only: totals by committee and ZIP code. No individual rows.
-- **Researcher tier.** Individual rows without street address. Token-gated and logged per query, for credentialed journalists and researchers with a documented project.
+- **Public tier.** Aggregates only, by committee and ZIP code. No individual rows.
+- **Researcher tier.** Individual rows without street address. Token-gated and logged per query, for credentialed journalists and researchers.
 - **Restricted tier.** Full rows including address. Case by case, granted by a named human, logged in a public register.
 
-### Pull, load, and define the views
+#### Pull, load, and define the views
 
 ```python
 import os, sqlite3, requests, pandas as pd
@@ -284,7 +292,7 @@ len(df)
 # => 100
 ```
 
-<!-- TODO: verify OpenFEC schedule_a field names and keyset pagination against https://api.open.fec.gov/developers/ before the term. -->
+<!-- TODO: verify OpenFEC schedule_a field names and keyset pagination against https://api.open.fec.gov/developers/ before the next revision. -->
 
 ```sql
 -- Public tier: aggregates with a k-anonymity floor.
@@ -303,7 +311,7 @@ FROM filings_raw;
 
 The public view enforces a floor of five contributions per ZIP so an aggregate cannot single out a lone donor. The researcher view drops the street address but keeps employer and occupation, which are newsworthy in ways addresses rarely are. SQLite has no per-row permissions, so the restricted tier is enforced in application code.
 
-### A thin gate with an audit log
+#### A thin gate with an audit log
 
 ```python
 from flask import Flask, request, abort, jsonify
@@ -339,15 +347,15 @@ def researcher_query():
 # => GET /public/zip returns [["80302", 41, 12650.0], ...] (illustrative)
 ```
 
-This is not a hardened system. A determined attacker can evade two string checks. The point is to make the tiers legible as code, with each tier's permissions visible to a reviewer in one file.
+This is not a hardened system; a determined attacker can evade two string checks. The point is to make each tier's permissions legible to a reviewer in one file.
 
 ::: {.callout-tip title="The Missing Manual"}
 Environment-variable credentials are not security. They are a social contract with your deployment pipeline, and the pipeline leaks them in ways tutorials rarely mention. A token printed to a container log because someone left `DEBUG=true` on is not a secret anymore. A token captured in a stack trace that an error-tracking service forwarded to a third party is not a secret either. A token committed in a `.env` file two refactors ago and never rotated is, for practical purposes, plaintext. Rotate on a schedule, not only after incidents, and check what your logging captures on exception. Note also that the audit log you just built is itself sensitive: it records who researched whom, and it can be subpoenaed.
 :::
 
-### Decision rules, threat model, and stewardship plan
+#### Decision rules and a threat model
 
-The code enforces tiers. The decision rules say who belongs in which tier, and they are the part that will be contested, so keep them in a versioned document:
+The code enforces tiers. The decision rules say who belongs in which tier, and they will be contested, so keep them in a versioned document. That is also the answer to stewardship as control: rules a reader can see are rules a reader can challenge.
 
 ```yaml
 # access_policy.yaml
@@ -361,9 +369,11 @@ tiers:
 revocation: {grounds: [misuse, commercial or solicitation use], appeal: full steward group}
 ```
 
-A threat model names who might attack the system and what they want. A workable one is a page: assets (donor rows, addresses, access logs, tokens); actors (a harasser seeking a donor's address, a broker enriching dossiers in violation of the sale-or-use rule, a careless researcher, a party compelling disclosure of the access log); attack paths (token leak, SQL that evades the views, re-identification from small-ZIP aggregates, social engineering a steward); mitigations; and the gaps you have not closed (no rate limiting, no differential privacy). It turns "we took security seriously" into a list someone can check.
+A threat model fits on a page: assets (donor rows, addresses, access logs, tokens); actors (a harasser seeking a donor's address, a broker enriching dossiers in violation of the sale-or-use rule, a careless researcher, a party compelling disclosure of the access log); attack paths (token leak, SQL that evades the views, re-identification from small-ZIP aggregates, social engineering a steward); mitigations; and the gaps you have not closed (no rate limiting, no differential privacy). OWASP's "Threat Modeling Cheat Sheet" (<https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html>) is a serviceable template. It turns "we took security seriously" into a list someone can check.
 
-The last artifact is new to this chapter and is the one Piece 4 needs: a **stewardship plan**. It answers the four questions on which every volunteer mirror lives or dies: retention, migration, custody, and wind-down. A fixity manifest is the technical core, because checksums are how a copy proves it has not changed since it left the agency.
+### A stewardship plan in YAML
+
+Every volunteer mirror lives or dies by its **stewardship plan**: retention, migration, custody, and wind-down. A fixity manifest is the technical core, because checksums prove a copy has not changed since it left the agency.
 
 ```python
 import hashlib, pathlib, json
@@ -381,7 +391,7 @@ json.dump(fixity_manifest("mirror/"), open("manifest-sha256.json", "w"), indent=
 
 ```yaml
 # stewardship_plan.yaml
-dataset: <federal dataset from Exercise 16.3>
+dataset: <federal dataset from Exercise 5.4>
 source_of_record: <agency, program, URL, retrieval date>
 retention: {keep: "every release", review: annually}
 fixity: {manifest: manifest-sha256.json, verify: monthly}
@@ -395,41 +405,45 @@ wind_down: {condition: "agency resumes publication with equivalent coverage",
             action: "freeze, deposit, and point to the agency source"}
 ```
 
-The wind-down clause matters more than it looks. A mirror that has no end condition either outlives its stewards or competes with the agency's own record. Saying in advance when you will stop is part of being accountable.
+The `mirrors` field is where one plan joins Keegan's federated continuity backbone: each mirror is another institution with its own commitments, so losing one steward is not losing the record. The wind-down clause matters too. A mirror with no end condition either outlives its stewards or competes with the agency's own record; saying in advance when you will stop is part of being accountable.
 
-## Why "just use GitHub" is stewardship outsourcing
-
-The shortcut is tempting: aggregates in a public repository, rows in a private one, and let the platform handle authentication and logging. But GitHub is a commercial service operating under terms it may change unilaterally and subject to US sanctions law and takedown claims. None of that makes it unusable. It means "just use GitHub" is not a stewardship decision. It is a stewardship *outsourcing* decision, on terms you did not negotiate. The same holds for any cloud folder or notebook service. Each can sit inside a stewardship arrangement; none of them *is* one.
+"Just use GitHub" is tempting. But GitHub is a commercial service whose terms it may change unilaterally, subject to sanctions law and takedown claims, so choosing it is a stewardship *outsourcing* decision on terms you did not negotiate. The same holds for any cloud folder, and for a county's vendor-hosted meetings portal. Each can sit inside a stewardship arrangement; none of them *is* one.
 
 ::: {.callout-note title="In the Public Interest"}
-Ownership-as-stewardship turns the continuity element of the installed base (@sec-ch-02-installed-base) from a slogan into a job. The specific claim for federal data: retention law protects records from destruction but not from disappearing from public view, so the public's practical **ownership** of a federal dataset depends on stewards outside the agency who write down retention, migration, custody, and wind-down, and who can prove fixity. A mirror without that plan loses continuity within two transitions of its own. And the challenge from Te Mana Raraunga and OCAP stands: for data about Indigenous nations, the steward's first obligation may be to return possession, not to keep a copy. @sec-ch-19-archival-deposits picks up custody when you deposit your own work.
+Ownership-as-stewardship turns the installed base's continuity (@sec-ch-02-installed-base) from a slogan into a job. For federal data, retention law protects records from destruction but not from disappearing from public view, so the public's practical **ownership** of a federal dataset depends on stewards outside the agency who write down retention, migration, custody, and wind-down, and who can prove fixity. A mirror without that plan loses continuity within two transitions of its own. And the challenge from Te Mana Raraunga and OCAP stands: for data about Indigenous nations, the steward's first obligation may be to return possession, not to keep a copy. @sec-ch-19-archival-deposits picks up custody when you deposit your own work.
 :::
 
 ## Exercises
 
-**Exercise 18.1 (Guided; laptop, real data).** Pull at least 500 Colorado individual contributions from the OpenFEC API (paginate with `last_indexes`). Build the two views, run the Flask gate locally, issue one public and one researcher query, and capture the audit log entries. Submit the SQL, the app, and the first ten lines of the log.
+**Exercise 5.1 (Guided; laptop, real data).** Choose one federal agency (EPA, NOAA, or the Census Bureau) and a topic query. Use `federal_records()` to pull catalog records, then run the link-rot audit over at least 30 resource URLs. Save the result as `exercises/ch05_audit.csv`. In 200 words, describe the outcomes and name the most consequential broken link.
 
-**Exercise 18.2 (Analytic).** Write `threat_model.md` and `access_policy.yaml` for Exercise 18.1. Name three actors specific to your setting, three attack paths, three mitigations, and at least two gaps you are not yet mitigating. Explain in one paragraph how the statutory sale-or-use restriction changes your threat model.
+**Exercise 5.2 (Guided).** For five broken or offsite-redirecting URLs from 5.1, find the closest Wayback capture and pull the capture history. For each, record the original URL, the capture URL, the bracket within which the resource was lost, and whether the capture holds the data or only a landing page. Then compare one federal page's last capture before an administration transition (January 2017, 2021, or 2025) with its first capture six months later, describing in 300 words what changed. Describe; do not editorialize. Save as `exercises/ch05_recoveries.md`.
 
-**Exercise 18.3 (Applied; Piece 4 component).** Write a stewardship plan for the federal dataset you audited in Exercises 16.1 to 16.3, using the YAML skeleton above, and generate a fixity manifest for a copy you hold. Name a steward by role, a mirror, a succession rule, and a wind-down condition. Use your stakeholder map from Exercise 17.2 to decide who should have a say in the access rules. If you conclude that the dataset should not be mirrored at all, write the refusal specification in @sec-ch-13-critical-data-studies-refusal instead. Save as `exercises/ch18_stewardship/`.
+**Exercise 5.3 (Guided; county).** Run Step 4 on two Boulder County pages (or your own county's): the comprehensive plan page and one land use page that links to docket documents. Normalize trailing slashes and `www.` and separate rate limiting from rot before you report a number. Then list documents one page linked at its earliest Wayback capture that it no longer links, and say whether each is still on the county site, only in the Wayback Machine, or nowhere. Save as `exercises/ch05_county_audit.md`.
 
-**Exercise 18.4 (Applied research).** Document the governance of one operating body: a data trust or cooperative (UK Biobank, Salus Coop, or a case tracked by the Ada Lovelace Institute) or an Indigenous data governance body (Te Mana Raraunga, the First Nations Information Governance Centre, or a tribal research review board). In 500 to 800 words, cover who governs, on whose behalf, what rights members have, what happens on wind-down, and where the money comes from. Cite governance documents, not journalistic summaries.
+**Exercise 5.4 (Analytic).** Pick one federal dataset from 5.1, ideally from an institution you can reach (in Boulder: NOAA, NIST, NCAR, or NSIDC). Write a datasheet with the seven sections plus the maintenance extension. Where you cannot find an answer, say where you looked. Save as `exercises/ch05_datasheet_<dataset>.md`.
 
-**Exercise 18.5 (Open-ended, project-linked).** Return to your project sketch from Exercise 1.5. For each infrastructure your project depends on (hosting, data source, library, registry, funder), name the steward in the ownership-as-stewardship sense. For two of them, write one paragraph on what happens to your project if they stop tomorrow. If your answer is "I would be fine," revisit whether you identified the dependency correctly.
+**Exercise 5.5 (Technical; laptop, real data).** Pull at least 500 Colorado individual contributions from the OpenFEC API (paginate with `last_indexes`). Build the two views, run the Flask gate locally, and issue one public and one researcher query. Submit the SQL, the app, and the first ten lines of the log.
 
-## Looking ahead
+**Exercise 5.6 (Analytic).** Write `threat_model.md` and `access_policy.yaml` for Exercise 5.5. Name three actors, three attack paths, three mitigations, and two gaps you have not closed. In one paragraph each, explain how the statutory sale-or-use restriction changes your threat model and how your decision rules keep the steward answerable rather than merely in control.
 
-You can now hold a federal record with tiers, a threat model, and a plan for its custody and end. @sec-ch-13-critical-data-studies-refusal asks the harder question underneath all of it: whether the record should exist in the form you are preserving. Critical data studies, data justice, and refusal show how each element of the installed base can become a mechanism of harm, and they give you the alternative artifact for Piece 4: a refusal specification.
+**Exercise 5.7 (Applied research).** Document the governance of one operating body: a data trust or cooperative (UK Biobank, Salus Coop, or an Ada Lovelace Institute case) or an Indigenous data governance body (Te Mana Raraunga, the First Nations Information Governance Centre, or a tribal research review board). In 500 to 800 words, cover who governs, on whose behalf, members' rights, wind-down, and funding. Cite governance documents, not journalistic summaries.
+
+**Exercise 5.8 (Open-ended; submittable artifact).** Identify one public dataset, federal or county, that you believe will not survive the next decade in publicly accessible form. Write a stewardship plan for it from the YAML skeleton, with a fixity manifest for a copy you hold, a steward named by role, a mirror held by another institution, a succession rule, and a wind-down condition. Use a stakeholder map (@sec-ch-09-planning) to decide who has a say in the access rules. Add a 600-word memo naming the mechanisms you expect to erode the dataset (access, collection, or both). If you conclude that the dataset should not be mirrored at all, write a refusal specification (@sec-ch-13-critical-data-studies-refusal) instead. Save as `exercises/ch05_stewardship/`; @sec-ch-19-archival-deposits shows how to deposit it.
+
+## Closing
+
+You now have an audit that says what has been lost and roughly when, and a way to hold what remains: tiers, a threat model, and a plan for custody and an end. The three pressures and values are paired one by one in Chapters 3 to 5, but they do not operate one by one: erosion is often enclosure's long tail, and a stewarded mirror is also an instrument of oversight. Part II turns to the professions that have carried these values, starting with journalism (@sec-ch-06-journalism); planning (@sec-ch-09-planning) asks who decided what got kept. @sec-ch-13-critical-data-studies-refusal asks the harder question underneath this chapter: whether the record should exist in the form you are preserving.
 
 ## Further Reading and Resources
 
-- Helena Karasti and Jeanette Blomberg (2018), "[Studying infrastructuring ethnographically](https://doi.org/10.1007/s10606-017-9296-7)," *Computer Supported Cooperative Work* 27: 233–265. What maintenance labor actually is.
-- Joan M. Schwartz and Terry Cook (2002), "[Archives, records, and power](https://doi.org/10.1007/BF02435628)," *Archival Science* 2: 1–19. The foundational argument for archives as instruments of power.
+- Jean-Christophe Plantin, Carl Lagoze, Paul N. Edwards, and Christian Sandvig (2016), "[Infrastructure studies meet platform studies in the age of Google and Facebook](https://doi.org/10.1177/1461444816661553)," *New Media & Society* 20(1): 293–310. Platform time versus infrastructure time.
+- Helena Karasti and Jeanette Blomberg (2018), "[Studying infrastructuring ethnographically](https://doi.org/10.1007/s10606-017-9296-7)," *Computer Supported Cooperative Work* 27: 233–265. Project time, infrastructure time, and maintenance labor.
+- Tara Mazurczyk, Nathan Piekielek, Eira Tansey, and Benjamin Goldman (2018), "American archives and climate change: Risks and adaptation," *Climate Risk Management* 20: 111–125 [@mazurczyk2018]. What climate risk means for the physical places where records live.
+- Environmental Data and Governance Initiative, *Website Monitoring*: <https://envirodatagov.org/website-monitoring/>. Tracking federal environmental websites across three transitions.
+- End of Term Web Archive: <https://eotarchive.org/>. A partnership of libraries and the Internet Archive that crawls federal websites at each presidential transition. <!-- TODO: verify URL and current partner list. -->
+- Joan M. Schwartz and Terry Cook (2002), "[Archives, records, and power](https://doi.org/10.1007/BF02435628)," *Archival Science* 2: 1–19. Archives as instruments of power.
+- Ada Lovelace Institute (2021), "Exploring legal mechanisms for data stewardship": <https://www.adalovelaceinstitute.org/report/legal-mechanisms-data-stewardship/>.
 - Te Mana Raraunga, "Principles of Māori data sovereignty" (2018): <https://www.temanararaunga.maori.nz/tutohinga>.
 - First Nations Information Governance Centre, "The First Nations Principles of OCAP": <https://fnigc.ca/ocap-training/>.
 - Stephanie Russo Carroll et al. (2020), "[The CARE Principles for Indigenous data governance](https://doi.org/10.5334/dsj-2020-043)," *Data Science Journal* 19: 43.
-- Ada Lovelace Institute (2021), "Exploring legal mechanisms for data stewardship": <https://www.adalovelaceinstitute.org/report/legal-mechanisms-data-stewardship/>.
-- Sylvie Delacroix and Neil D. Lawrence (2019), "[Bottom-up data trusts](https://doi.org/10.1093/idpl/ipz014)," *International Data Privacy Law* 9(4): 236–252.
-- OpenFEC API documentation: <https://api.open.fec.gov/developers/>. The federal campaign finance API used in the tutorial.
-- National Archives and Records Administration, records management: <https://www.archives.gov/records-mgmt>. Where federal retention schedules live. <!-- TODO: verify URL. -->
-- OWASP, "Threat Modeling Cheat Sheet": <https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html>.
