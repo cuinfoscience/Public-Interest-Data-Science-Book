@@ -29,26 +29,38 @@ Public interest data science overlaps with several fields you may already know. 
 
 ## The arc of the book
 
-The book has six parts. The first and last frame the work. The middle four are **modules**, each built on one professional lineage, set at one level of government, and ending in one piece of public writing.
+The book has five parts. They move from diagnosis, to inheritance, to argument with neighbors, to practice, and finally to the framework's own limits.
 
-**Part I: Foundations** (this chapter, @sec-ch-02-installed-base, and @sec-ch-11-pit-data-for-good) gives you the whole vocabulary at once: three pressures, three values, the installed base, five lineages, and the neighboring fields.
+**Part I, Pressures and Values** (this chapter through @sec-ch-05-erosion-ownership), gives you the vocabulary. @sec-ch-02-installed-base introduces three pressures that narrow public knowledge (enclosure, exemption, erosion), three values that push back (openness, oversight, ownership), and the six elements of the installed base, and it places that framework among its intellectual predecessors. The three chapters after it each pair one pressure with the value that answers it.
 
-The four modules climb a ladder of government, from the city to the nation. Each one follows the same order: a **pressure** that narrows public knowledge, a **lineage** that has already solved a version of the problem, a **value** that pushes back, and a **genre** for reaching the public.
+**Part II, Lineages** (@sec-ch-06-journalism to @sec-ch-10-engineering), asks what data science can inherit from five professions that already built public interest traditions: journalism, law, accounting and auditing, planning, and engineering. Each solved a version of your problem, and each carries an exclusionary past you inherit along with the method.
 
-| Part | Lineage | Level | Pressure → value | Genre |
-|---|---|---|---|---|
-| II. Journalism: The City | Journalism | City | Enclosure → openness | Op-ed |
-| III. Law: The County | Law | County | Exemption → oversight as remedy | Testimony |
-| IV. Assurance: The State | Accounting and engineering | State | Exemption (audit-washing) → oversight as verification | Report |
-| V. Planning: The Nation | Planning | Federal | Erosion → ownership | Public comment |
+**Part III, Adjacent Conversations** (@sec-ch-11-pit-data-for-good to @sec-ch-13-critical-data-studies-refusal), maps the neighbors described above and asks what each builds and what it leaves unbuilt.
 
-**Part VI: Beyond the Portfolio** closes the book with research proposals (@sec-ch-16-research-proposals), archival deposits (@sec-ch-19-archival-deposits), and the limits of the whole framework (@sec-ch-20-limits).
+**Part IV, Genres** (@sec-ch-14-op-eds to @sec-ch-19-archival-deposits), turns analysis into public contribution: op-eds, reports, research proposals, testimony, public comments, and archival deposits. Each chapter ends with an artifact you have actually produced, paired with code someone else can run.
 
-Each module uses a *new* case rather than one topic carried all term. Each pairs a well-documented national anchor case with a non-US counter-case that tests whether the framework travels, and a local case at the module's level of government: city records in Boulder and Denver, county records Boulder County has already released under the Colorado Open Records Act, Colorado's state AI law and procurement, and a federal dataset at risk alongside a live federal rulemaking. @sec-ch-02-installed-base explains why the lineages map onto those levels in that order.
+**Part V, Closing** (@sec-ch-20-limits), turns the framework on itself and asks where it fails.
+
+You do not have to read the chapters in order. Each one names the concepts it relies on and links to the chapter that develops them, whether that chapter comes earlier or later. If you need to testify next month, start at @sec-ch-17-testimony and follow its links back to @sec-ch-07-law and @sec-ch-04-exemption-oversight. If you are auditing a model, start at @sec-ch-08-accounting. Courses that use the book, including the one it was written alongside, assign chapters out of sequence. The one chapter worth reading early is @sec-ch-02-installed-base, because nearly every other chapter uses its vocabulary as a diagnostic.
+
+### Each lineage has a level
+
+Evidence matters only if it reaches a body with the authority to act on it, and different public bodies listen through different channels. The lineages and genres therefore each have a natural level of government, and the book's worked examples follow it.
+
+| Level | Lineage | Genre |
+|---|---|---|
+| City | Journalism (@sec-ch-06-journalism) | Op-eds (@sec-ch-14-op-eds) |
+| County | Planning (@sec-ch-09-planning) | Public comments (@sec-ch-18-public-comments) |
+| State | Law (@sec-ch-07-law) | Testimony (@sec-ch-17-testimony) |
+| Nation | Accounting (@sec-ch-08-accounting) and engineering (@sec-ch-10-engineering) | Reports (@sec-ch-15-reports) |
+
+So a journalism chapter works with city records in Boulder and Denver, and the op-ed chapter pitches a city outlet. The planning chapter works with Boulder County's land use records, and the public comment goes to a county board. The law chapter treats Colorado statutes as rule makers, and the testimony goes to a committee of the Colorado General Assembly. The accounting and engineering chapters audit federal systems, and the report goes to a named federal body. The anchor cases (Moses in New York, Aadhaar in India) and the non-US counter-cases may sit at any level, because their job is to test whether the framework travels. @sec-ch-02-installed-base says more about why each lineage lands where it does.
+
+The book is also a public repository, and it is wrong in places you will find before the author does. Pull requests are welcome.
 
 ## A first request
 
-Enough about the book. Do something with it. The rest of this chapter is a twenty-minute tour of the toolkit, built around a first public data retrieval; it is also the course's first lab. The **Environment setup** sidebar below lists what you need.
+Enough about the book. Do something with it. The rest of this chapter is a twenty-minute tour of the toolkit, built around a first public data retrieval. The **Environment setup** sidebar below lists what you need.
 
 ::: {.callout-note title="Environment setup"}
 You need Python 3.11 or newer, git, and a working command line. On macOS and Linux, `python3 --version` and `git --version` should return something reasonable. On Windows, WSL2 works well, as does the official Python installer with the "Add Python to PATH" box ticked. You will also want `pip install pandas requests matplotlib jupyter` before continuing, and a GitHub account if you do not have one already.
@@ -159,24 +171,9 @@ Third, the data will drift. Wikipedia articles get renamed, redirected, merged. 
 Three line plots of Wikipedia pageviews look like a trifle. Notice what they required. A public API, documented and open. Endpoints that return consistent, structured data. A retention policy that preserves history for at least a decade. A `User-Agent` expectation that asks you to identify yourself rather than hiding. Wikipedia built these as deliberate commitments to **openness** (@sec-ch-03-enclosure-openness). If you were trying to do the same exercise against a commercial platform in 2026, you would find most of those commitments have been withdrawn. The pressure of **enclosure** (@sec-ch-03-enclosure-openness) makes the simple thing you just did unusually precious. Part of this book's work is to help you notice when the simple thing is rare.
 :::
 
-## What you will build
-
-The course this book accompanies is graded on a portfolio, not on exams. Each of the four modules ends in one **portfolio piece**, and every piece has the same four parts: a **technical artifact** (a notebook or small repository a classmate can clone and run), a **public text** in the module's genre for a named audience at the module's level of government, a short **installed-base note** saying which pressure you met and which of the six elements your work built or left missing, and, for graduate students, a **methods memo** that situates the piece in the research literature.
-
-- **Piece 1, Journalism and the city.** Reproduce a published finding, such as ProPublica's "Machine Bias" analysis, extend it with city data you collected responsibly, and write a 750-word op-ed pitched to a named local outlet (@sec-ch-03-enclosure-openness through @sec-ch-14-op-eds).
-- **Piece 2, Law and the county.** Choose open-records requests the county has already answered, turn the released records into a table, keep a ledger of exemptions and remedies, and deliver written and oral testimony for a county commission hearing (@sec-ch-04-exemption-oversight through @sec-ch-17-testimony).
-- **Piece 3, Assurance and the state.** Run a disaggregated audit with a manifest, thresholds, and tests that run in continuous integration, and write a report section for a named state body (@sec-ch-08-accounting through @sec-ch-15-reports).
-- **Piece 4, Planning and the nation.** Audit a federal dataset for erosion, write a stewardship plan or a refusal specification, and submit a substantive comment on a live federal rulemaking (@sec-ch-05-erosion-ownership through @sec-ch-18-public-comments).
-
-The **final project** takes one piece further in three moves. You *deepen* it (new data, a second level of government, or a comparison with the module's non-US counter-case). You *recast* it in a different genre, so the audit becomes an op-ed or the county records become a report; graduate students may write a research proposal (@sec-ch-16-research-proposals). And you *archive* the artifact and text with a DOI minted through Zenodo or a similar repository (@sec-ch-19-archival-deposits), alongside a short memo on whose interests the work serves and where the framework fails for your case.
-
-One more thing runs through the term: a chapter-scale pull request to this book, which is a public repository and is wrong in places you will find before the author does.
-
-A portfolio, in other words: things you can point to when you apply for a job, a fellowship, or a seat on a commission, and say: I did this, I published it, here is the permanent link.
-
 ## Exercises
 
-**Exercise 1.1 (Guided).** Install Python 3.11+, git, and the packages listed in the environment setup callout. Clone the course repository. Create a branch named `yourname/intro`. Add a file `introductions/yourname.md` with three sentences: who you are, a public you belong to, and a level of government whose decisions you have felt directly. Commit with the message `intro: yourname` and open a pull request. The content matters less than the mechanism. Branch, commit, and pull request are your default mode from here forward, including for your contribution to this book.
+**Exercise 1.1 (Guided).** Install Python 3.11+, git, and the packages listed in the environment setup callout. Create a public GitHub repository for your work with this book and clone it. Create a branch named `yourname/intro`. Add a file `introductions/yourname.md` with three sentences: who you are, a public you belong to, and a level of government whose decisions you have felt directly. Commit with the message `intro: yourname`, push, and open a pull request against your own main branch. The content matters less than the mechanism. Branch, commit, and pull request are a good default for every exercise in this book, and the same mechanism is how you would propose a correction to the book itself.
 
 **Exercise 1.2 (Guided, real public data).** Adapt the pageviews script to retrieve monthly views for three Wikipedia articles you care about, across three language editions each. Produce one plot comparing them. Write 150 words interpreting it. Save the plot and writeup to `exercises/ch01_pageviews/`. Record one choice (article, language, or date range) you had to make, and why.
 
@@ -184,16 +181,16 @@ A portfolio, in other words: things you can point to when you apply for a job, a
 
 **Exercise 1.4 (Analytic).** Find a recent public document from a city, county, state, or federal body in which someone invokes "the public interest" (a council resolution, a court filing, an agency press release, a records denial). Write 300 words answering: which public does the document mean, who is left out, and what would have to be on the record for an outsider to check the claim? Compare your answer with the Moses or Aadhaar case.
 
-**Exercise 1.5 (Open-ended).** What is a public interest data question you want to answer by the end of the term? Write two to three paragraphs: the question, who would benefit, what data would be needed, which level of government could act on the answer, and what obstacles you already see. Save it as `exercises/ch01_project_sketch.md`. You will revisit it as each module gives you new tools, and it may become the seed of your final project.
+**Exercise 1.5 (Open-ended).** What is a public interest data question you want to answer with the tools in this book? Write two to three paragraphs: the question, who would benefit, what data would be needed, which level of government could act on the answer, and what obstacles you already see. Save it as `exercises/ch01_project_sketch.md`. Revisit it after each part of the book. By the time you reach the genres in Part IV, it should be specific enough to become a submittable artifact: an op-ed, a report section, testimony, or a public comment, depending on which level of government can act on the answer.
 
 ## Looking ahead
 
-@sec-ch-02-installed-base gives you the full vocabulary in one sitting: the three pressures of enclosure, exemption, and erosion; the three values of openness, oversight, and ownership; the six elements of the installed base; and the five lineages the modules borrow from. It also explains why the book climbs from the city to the nation. Then you will build a minimum viable installed base for a small civic dataset, because the vocabulary is only useful if you can see it in a file.
+@sec-ch-02-installed-base gives you the full vocabulary in one sitting: the three pressures of enclosure, exemption, and erosion; the three values of openness, oversight, and ownership; the six elements of the installed base; and the five lineages the rest of the book borrows from. It also places the installed base among its intellectual predecessors, from the politics of artifacts to data infrastructure literacy, and explains why each lineage has a natural level of government. Then you will build a minimum viable installed base for a small civic dataset, because the vocabulary is only useful if you can see it in a file.
 
 ## Further Reading and Resources
 
-- Brian C. Keegan (2026), "Public interest data infrastructuring," under review [@keegan2026]. The paper this book extends. Read the introduction now and the rest across the term.
-- Anne L. Washington and Joanne Cheung (2024), "Towards defining the public interest in technology: Lessons from history," *Journal of Integrated Global STEM* 1(2): 67–74 [@washingtonDefiningPublicInterest2024]. The course's framing reading for week 1.
+- Brian C. Keegan (2026), "Public interest data infrastructuring," under review [@keegan2026]. The paper this book extends. Read the introduction now and return to the rest as the chapters draw on it.
+- Anne L. Washington and Joanne Cheung (2024), "Towards defining the public interest in technology: Lessons from history," *Journal of Integrated Global STEM* 1(2): 67–74 [@washingtonDefiningPublicInterest2024]. A short historical argument for what a public interest in technology could mean.
 - Logan Stapleton and colleagues (2022), "Who has an interest in 'public interest technology'?: Critical questions for working with local governments and impacted communities," *CSCW '22 Companion*, 282–286 [@stapletonWhoHasInterest2022]. The critical counterpart.
 - Robert A. Caro (1974), *The Power Broker: Robert Moses and the Fall of New York* [@caro1974]. The chapter titled "One Mile" is the Cross Bronx Expressway story.
 - Ursula Rao and Vijayanka Nair (2019), "Aadhaar: Governing with biometrics," *South Asia: Journal of South Asian Studies* 42(3): 469–481 [@rao2019]. An entry point to the scholarship on Aadhaar.

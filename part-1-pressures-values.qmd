@@ -1,0 +1,21 @@
+# Pressures and Values
+
+Every public decision that rests on data rests on something older than the data: identifiers someone agreed to keep, categories someone defined, archives someone paid to maintain, and offices someone empowered to act. When those arrangements hold, the public can check what its institutions know and contest what they decide. When they decay, the most careful analysis lands nowhere. This part of the book gives you the vocabulary for telling the two situations apart.
+
+The vocabulary comes from Keegan [-@keegan2026] and has three layers.
+
+The first layer names three **pressures** that narrow the public's capacity to observe and govern data-intensive systems. **Enclosure** asks who can observe: platforms close their APIs and agencies retire their datasets. **Exemption** asks who must answer: powerful firms and agencies operate beyond meaningful scrutiny, through formal carve-outs or through trade secrecy and technical control. **Erosion** asks what can be remembered: portals vanish, contracts lapse, and corpora develop holes nobody notices until a finding depends on them. The pressures reinforce each other. What is enclosed today is easier to erode tomorrow, and what has eroded cannot be scrutinized at all.
+
+The second layer names three **values** that push back. **Openness** answers enclosure with the durable legibility of evidence, not merely access to files. **Oversight** answers exemption with routinized, testable scrutiny backed by an institution that can act on it. **Ownership** answers erosion with collective, accountable stewardship that outlasts any single grant or administration.
+
+The third layer is the **installed base**: the socio-technical settlement where values become durable, or fail to. It has six elements. Records can be **linked**. Categories can be **interpreted**. Evidence has **continuity** across political cycles. Outsiders can practice **safe scrutiny**. Some office has the **authority** to act on what scrutiny finds. Affected people have a path to **remedy**. Most of this book's diagnostic work comes down to asking which of the six is missing.
+
+## How the five chapters fit together
+
+@sec-ch-01-introduction opens with the problem the vocabulary is meant to solve: "the public interest" has been invoked to build expressways through neighborhoods and to enroll a billion people in a biometric identity system, by advocates and critics alike. Rather than define the phrase in the abstract, the chapter proposes treating it operationally, then has you retrieve your first public data from the Wikimedia pageviews API.
+
+@sec-ch-02-installed-base is the framework chapter. It situates the installed base among its intellectual predecessors (the politics of artifacts, the ecology and ethnography of infrastructure, classification and infrastructural inversion, the politics of data, sociotechnical imaginaries, and data infrastructure literacy), then lays out the pressures, values, six elements, and the five professional lineages the rest of the book borrows from. You build a minimum viable installed base for a small procurement log.
+
+The three paired chapters each set one pressure against the value that answers it, with a bridge showing how the value works in practice. @sec-ch-03-enclosure-openness pairs enclosure with openness and builds a responsible scraper. @sec-ch-04-exemption-oversight pairs exemption with oversight, tracing a deployed screening tool through an evidence ledger and a remedy ledger. @sec-ch-05-erosion-ownership pairs erosion with ownership, including the sovereignty claims that complicate any easy account of who should own public-relevant data.
+
+You can read these chapters in any order, and you will likely return to @sec-ch-02-installed-base as a reference. The lineages in Part II (@sec-ch-06-journalism to @sec-ch-10-engineering), the adjacent conversations in Part III (@sec-ch-11-pit-data-for-good to @sec-ch-13-critical-data-studies-refusal), and the genres in Part IV (@sec-ch-14-op-eds to @sec-ch-19-archival-deposits) all use this part's vocabulary as a diagnostic. @sec-ch-20-limits asks where that diagnostic breaks.
