@@ -7,11 +7,11 @@ execute:
 
 Most bridges do not fall down. This is unremarkable until you notice how many there are, how heavy the trucks on them are, and how few engineers are on site at any given bridge on any given day. The low background rate of collapse is a professional accomplishment. It rests on standards, inspection schedules, conservative design margins, licensure, and the slow accumulation of what Henry Petroski [-@petroski1992] calls the knowledge of failure. Engineering became a profession partly by agreeing to pay close attention to its own disasters: the Tay Bridge, the Tacoma Narrows, the DC-10 cargo door. A failure taxonomy on an engineer's bookshelf is one of the most important cultural facts about the field.
 
-Data science does not yet have that bookshelf. It has papers on bias, a growing body of audit work, and a scattered practice of post-incident reviews at firms that run production systems. What it lacks is a professional identity organized around the question "what failed, why, and what will we change so it does not fail again." @sec-ch-08-accounting gave you accounting's half of *assurance*: workpapers, independence, thresholds fixed in advance. This chapter supplies the other half. Keegan [-@keegan2026] describes safety engineering as the lineage that operationalizes **oversight** through "standards, testing, incident learning, and high-reliability operations," creating "feedback loops that keep infrastructures governable rather than merely optimized." The audit you built in the last chapter is the thing under test here. Most of the tests you write will fail at first. That is the point.
+Data science does not yet have that bookshelf. It has papers on bias, a growing body of audit work, and a scattered practice of post-incident reviews at firms that run production systems. What it lacks is a professional identity organized around the question "what failed, why, and what will we change so it does not fail again." @sec-ch-08-accounting develops accounting's half of *assurance*: workpapers, independence, thresholds fixed in advance. This chapter supplies the other half. Keegan [-@keegan2026] describes safety engineering as the lineage that operationalizes **oversight** through "standards, testing, incident learning, and high-reliability operations," creating "feedback loops that keep infrastructures governable rather than merely optimized." The national audit built in @sec-ch-08-accounting is the thing under test here; if you have not built it, the fixture below lets you follow along. Most of the tests you write will fail at first. That is the point.
 
 ## The engineer's duty to the public
 
-Engineering's claim to be a profession rests on codes of ethics that put the public ahead of the client. The National Society of Professional Engineers code places "hold paramount the safety, health, and welfare of the public" first among its fundamental canons. An engineer who signs off on a bridge they know to be unsafe has not disappointed a customer. They have violated a duty to the people who will drive over it, and that duty survives the contract. In the United States the duty is enforced at the **state** level: states license professional engineers, and in Colorado a licensing board within the Department of Regulatory Agencies can discipline or revoke. <!-- TODO: verify the current name of Colorado's engineering licensure board and its placement within DORA. --> That makes engineering a natural lineage for the module that works at the state level.
+Engineering's claim to be a profession rests on codes of ethics that put the public ahead of the client. The National Society of Professional Engineers code places "hold paramount the safety, health, and welfare of the public" first among its fundamental canons. An engineer who signs off on a bridge they know to be unsafe has not disappointed a customer. They have violated a duty to the people who will drive over it, and that duty survives the contract. In the United States the license is a **state** matter: states license professional engineers, and in Colorado a licensing board within the Department of Regulatory Agencies can discipline or revoke. <!-- TODO: verify the current name of Colorado's engineering licensure board and its placement within DORA. --> The learning from failure is national. The National Transportation Safety Board investigates accidents across every state and publishes what it finds, and federal standards bodies turn those findings into rules. That is the level at which this chapter works, testing the national audit built in @sec-ch-08-accounting.
 
 When you write a pipeline that supports a public decision, you inherit a weaker version of that obligation. You cannot stamp a dataset with a license seal. You can agree that the client's deadline does not overrule the public's exposure to a quietly broken number.
 
@@ -19,7 +19,7 @@ When you write a pipeline that supports a public decision, you inherit a weaker 
 
 The second thing you borrow is a vocabulary for how safe systems go bad. Diane Vaughan's [-@vaughan1996] study of the *Challenger* launch decision introduced **normalization of deviance**: over a series of flights, NASA engineers came to treat O-ring erosion as acceptable even though it was never part of the design. Each decision to fly was defensible on the data at hand. The drift was collective and gradual. By the night before the launch, the engineers who objected had to prove the shuttle was unsafe, rather than the other way around. Sidney Dekker [-@dekkerDriftFailureHunting2016] generalizes the pattern as *drift into failure*: no broken component, just a long sequence of locally reasonable adjustments.
 
-The audit pipeline from @sec-ch-08-accounting has an obvious drift path. The model lands at an equalized-odds difference of 0.07 every quarter, just over the 0.05 warning line. Someone proposes raising the warning threshold to 0.08 "to reduce alert fatigue." Nobody objects, because the number has always been 0.07 and nothing bad has happened. A year later the thresholds file is an archaeological record of a standard that moved to meet the system instead of the reverse. That is audit-washing achieved without anyone intending it. Incident reviews and tests, done well, put the question "when did we stop noticing this" on the table and keep it there.
+The audit pipeline from @sec-ch-08-accounting has an obvious drift path. Suppose a better model than the chapter's crude one lands at an equalized-odds difference of 0.07 every quarter, just over the 0.05 warning line. Someone proposes raising the warning threshold to 0.08 "to reduce alert fatigue." Nobody objects, because the number has always been 0.07 and nothing bad has happened. A year later the thresholds file is an archaeological record of a standard that moved to meet the system instead of the reverse. That is audit-washing achieved without anyone intending it. Incident reviews and tests, done well, put the question "when did we stop noticing this" on the table and keep it there.
 
 Karl Weick and Kathleen Sutcliffe's work on high-reliability organizations [@weick1999] describes what organizations with low failure rates share: preoccupation with failure, reluctance to simplify, sensitivity to operations, commitment to resilience, deference to expertise. Charles Perrow [-@perrow1984] answered that some systems are so tightly coupled that accidents in them are "normal." The debate is unresolved and productive. The takeaway is that reliability is organizational before it is technical. Tests do not run themselves.
 
@@ -34,7 +34,7 @@ audit-pipeline/
 ├── tests/
 │   ├── conftest.py
 │   ├── fixtures/
-│   │   ├── tiny_acs_co.csv
+│   │   ├── tiny_acs.csv
 │   │   └── expected.json
 │   ├── test_shape.py
 │   ├── test_rules.py
@@ -42,7 +42,7 @@ audit-pipeline/
 └── .github/workflows/ci.yml
 ```
 
-`tiny_acs_co.csv` is a fifty-row synthetic file with the same columns as the evaluation set you exported from folktables. It looks like the real input but is not, so it can be committed, shared, and run in under a second with no network. Build it so every (race, sex) cell has at least one positive and one negative label; otherwise false positive and false negative rates are undefined for that cell and the snapshot fills with `NaN`. A rule-based stand-in model keeps the tests independent of a pickled file:
+`tiny_acs.csv` is a fifty-row synthetic file with the same columns as the national evaluation set you exported from folktables, including `state`. It looks like the real input but is not, so it can be committed, shared, and run in about a second with no network. Build it so every (race, sex) cell has at least one positive and one negative label; otherwise false positive and false negative rates are undefined for that cell and the snapshot fills with `NaN`. A rule-based stand-in model keeps the tests independent of a pickled file:
 
 ```python
 # tests/conftest.py
@@ -56,7 +56,7 @@ class RuleModel:
 
 @pytest.fixture
 def df():
-    return pd.read_csv("tests/fixtures/tiny_acs_co.csv")
+    return pd.read_csv("tests/fixtures/tiny_acs.csv")
 
 @pytest.fixture
 def rule_model():
@@ -71,7 +71,7 @@ The first tests catch the failure modes a data pipeline actually has. Not "does 
 # tests/test_shape.py
 import pytest
 
-REQUIRED = ["AGEP", "SCHL", "WKHP", "SEX", "RAC1P", "label", "race", "sex"]
+REQUIRED = ["AGEP", "SCHL", "WKHP", "SEX", "RAC1P", "label", "race", "sex", "state"]
 
 def test_required_columns(df):
     missing = set(REQUIRED) - set(df.columns)
@@ -128,9 +128,11 @@ The second test is a governance rule written as code. Nobody can change `thresho
 import json, pathlib
 from audit import run_audit
 
+MANIFEST = {"protected_attributes": ["race", "sex"], "strata": ["state"],
+            "min_cell_size": 1}
+
 def test_summaries_match_snapshot(df, rule_model):
-    manifest = {"protected_attributes": ["race", "sex"], "min_cell_size": 1}
-    _, summaries = run_audit(df, rule_model, manifest)
+    _, summaries = run_audit(df, rule_model, MANIFEST)
     expected = json.loads(pathlib.Path("tests/fixtures/expected.json").read_text())
     for name, value in expected.items():
         assert abs(summaries[name] - value) < 1e-9, name
@@ -143,7 +145,7 @@ Run the suite:
 ```bash
 pytest -q
 # => .............                                   [100%]
-# => 13 passed in 0.6s
+# => 13 passed in 1.3s
 ```
 
 ## Deliberately introducing a bug
@@ -181,13 +183,13 @@ For the threshold bug, the timeline shows it introduced and caught by `pytest` m
 
 ## Incident learning from below: worker observatories
 
-Every review above assumes that the organization running the system also runs the review. Often it does not, and it will not. Keegan's [-@keegan2026] second case, *supporting worker observatories*, is the module's counter-case for exactly that situation. On ride-hailing and delivery platforms, pay formulas, ranking rules, and deactivation triggers change without notice, and the platform keeps the only logs [@jarrahiAlgorithmicManagementWork2021]. When a pay change cuts earnings, there is no published post-incident review, because from the platform's side nothing went wrong.
+Every review above assumes that the organization running the system also runs the review. Often it does not, and it will not. Keegan's [-@keegan2026] second case, *supporting worker observatories*, is this chapter's counter-case for exactly that situation. On ride-hailing and delivery platforms, pay formulas, ranking rules, and deactivation triggers change without notice, and the platform keeps the only logs [@jarrahiAlgorithmicManagementWork2021]. When a pay change cuts earnings, there is no published post-incident review, because from the platform's side nothing went wrong.
 
 Worker observatories build the counter-record. Calacci and Pentland [-@calacciBargainingBlackBoxDesigning2022] built a tool with gig shoppers that let them pool pay data and test whether an algorithm change had lowered earnings. Dalal [-@dalalLessonsWorkersInquiry2024] frames such work as a sociotechnical audit grounded in the tradition of workers' inquiry. In the UK, Worker Info Exchange helps drivers and couriers use data-protection access rights to obtain the data platforms hold about them, turning individual requests into collective evidence. Keegan calls the result "an installed base for contestation": shared conventions for naming events like deactivations, documented methods so evidence cannot be dismissed as "folk statistics," and tiered access, governed by workers, so contributors are not exposed to retaliation [@calacciAccessUnderstandingCollective2023].
 
 Read with this chapter's tools, an observatory is an incident database kept by the people the incident happened to. Its logs are the timeline. Its pooled pay data are the impact section. Its organizers write the contributing factors the platform would leave out. Miceli, Posada, and Yang [-@miceli2022] argue that talk of "bias" in data often hides questions of power over who defines categories and who records what; observatories answer by moving the pen. They also catch drift the platform has normalized, because the worker whose pay falls a little each month notices the gradient that a quarterly dashboard smooths away.
 
-The state-level hook matters here. The Colorado AI Act, as enacted, includes duties to report discovered algorithmic discrimination to the Attorney General. <!-- TODO: verify the reporting duties, who must report, and any deadlines in the current text of SB 24-205 as amended. --> Duties like that create a channel for incident reports, but only for the incidents a developer or deployer chooses to discover. A report from below needs a route in too, which is a question about remedy that @sec-ch-04-exemption-oversight raised and @sec-ch-15-reports will ask you to address to a named state body.
+Official channels show the same gap at every level. The federal AI use case inventory asks agencies whether ongoing monitoring has been established for each high-impact use; of the 227 deployed high-impact uses in the 2025 inventory, 40 answer yes, 85 say in progress, and 102 leave the field blank [@omb_inventory2025]. Colorado's 2024 AI Act would have required developers to report discovered algorithmic discrimination to the Attorney General; its 2026 replacement dropped that duty [@colorado_sb26189]. Self-reporting channels carry only the incidents an operator chooses to discover. A report from below needs a route in too, which is a question about remedy that @sec-ch-04-exemption-oversight raises and @sec-ch-15-reports asks you to address to a named federal body.
 
 ::: {.callout-note title="In the Public Interest"}
 **Oversight** is not a heroic intervention. It is routine scrutiny, organized so that the routine itself surfaces surprises. Tests and continuous integration are that routine at the pipeline layer; they are how you earn the right to make a public claim about a number. The specific claim of this chapter is that oversight fails in two predictable places: in the decision rule that converts a metric into an escalation, where a single swapped comparison launders a failure into a warning, and in the choice of who keeps the incident record. A tested audit addresses the first. Worker observatories address the second, by making the people affected into record-keepers with standing. Both serve the **continuity** element of the installed base (@sec-ch-02-installed-base): the next person who inherits the system can tell, from the tests and the reviews alone, what it is for and when it broke.
@@ -217,19 +219,19 @@ Pin versions in `requirements.txt` (`fairlearn==...`, `scikit-learn==...`) so th
 
 ## Exercises
 
-**Exercise 13.1 (Guided, laptop, real public data).** Add `tests/` to the `audit-pipeline/` you built in @sec-ch-08-accounting, with a shape test, a parametrized range test, a rule test, and a regression snapshot against a fifty-row synthetic fixture. The suite must run in under two seconds. Then point the `df` fixture at your real Colorado evaluation set and run the shape and range tests again. Record which assertions fail on real ACS data and whether each failure is a bug in the data, the code, or the test. Document in `tests/README.md` what each test asserts and why.
+**Exercise 10.1 (Guided, laptop, real public data).** Add `tests/` to the `audit-pipeline/` you built in @sec-ch-08-accounting, with a shape test, a parametrized range test, a rule test, and a regression snapshot against a fifty-row synthetic fixture. The suite must run in under two seconds. Then point the `df` fixture at your real national evaluation set and run the shape and range tests again. Record which assertions fail on real ACS data and whether each failure is a bug in the data, the code, or the test. Document in `tests/README.md` what each test asserts and why.
 
-**Exercise 13.2 (Guided).** On a branch named `demo/bug`, introduce a silent error of your choice: the swapped comparison above, a mis-keyed `RAC1P` map, or a filter that drops a group. Commit it with an honest message, confirm a test fails, then fix it in a second commit. Do not merge. The two-commit history is the artifact. If no test failed, write the test that would have caught it first.
+**Exercise 10.2 (Guided).** On a branch named `demo/bug`, introduce a silent error of your choice: the swapped comparison above, a mis-keyed `RAC1P` map, or a filter that drops a group. Commit it with an honest message, confirm a test fails, then fix it in a second commit. Do not merge. The two-commit history is the artifact. If no test failed, write the test that would have caught it first.
 
-**Exercise 13.3 (Analytic).** Write a post-incident review for the bug in 13.2 using the five-section template, with commit SHAs and UTC timestamps. Write it as though a state legislative staffer might read it, because in the public version of this work one might.
+**Exercise 10.3 (Analytic).** Write a post-incident review for the bug in Exercise 10.2 using the five-section template, with commit SHAs and UTC timestamps. Write it as though an inspector general's staff might read it, because in the public version of this work they might.
 
-**Exercise 13.4 (Builds Piece 3).** Add `.github/workflows/ci.yml` and `test_threshold_change_is_logged`. Push, confirm a green check, then push the bug branch and confirm a red one. Add the CI status badge to your `README.md`. The tested, CI-backed audit is the technical artifact for Piece 3.
+**Exercise 10.4 (Submittable artifact).** Add `.github/workflows/ci.yml` and `test_threshold_change_is_logged`. Push, confirm a green check, then push the bug branch and confirm a red one. Add the CI status badge to your `README.md`. The tested, CI-backed audit is the technical appendix of the report you write in @sec-ch-15-reports.
 
-**Exercise 13.5 (Open-ended).** Find a public worker-led data project (Worker Info Exchange or another observatory you can document from its own publications) and one corporate incident review (Cloudflare, GitLab, or a NASA mishap report). In 500 words, compare them on the five template sections. Which sections does each omit, and why? Who could act on each record, and through what Colorado or federal channel?
+**Exercise 10.5 (Open-ended).** Find a public worker-led data project (Worker Info Exchange or another observatory you can document from its own publications) and one corporate incident review (Cloudflare, GitLab, or a NASA mishap report). In 500 words, compare them on the five template sections. Which sections does each omit, and why? Who could act on each record, and through what federal or state channel?
 
 ## Looking ahead
 
-Tests and reviews are what a careful team does for itself. Most public systems are not built by careful teams inside government. They are bought. @sec-ch-12-govtech-civic-tech turns to the state as a buyer, where assurance is either written into a procurement contract or quietly given up, and where a requirement that a vendor run tests like these in CI and share the results is worth more than any promise in a sales deck.
+Tests and reviews are what a careful team does for itself. Most public systems are not built by careful teams inside government. They are bought. @sec-ch-12-govtech-civic-tech turns to government as a buyer, where assurance is either written into a procurement contract or quietly given up, and where a requirement that a vendor run tests like these in CI and share the results is worth more than any promise in a sales deck.
 
 ## Further Reading and Resources
 

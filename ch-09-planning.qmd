@@ -7,46 +7,52 @@ execute:
 
 Every data project is a planning document in disguise. It proposes that some slice of the world is worth measuring, some category system worth applying, some decision worth making differently once the analysis is done. Every decision to *stop* measuring is a planning document too, usually one nobody was invited to read. Planning has spent the last century learning the consequences of both kinds of proposal. Data scientists have not. This chapter borrows from the planners.
 
-You have already borrowed from three professions: the journalist's verification habits (@sec-ch-06-journalism), the lawyer's habits of record access and remedy (@sec-ch-07-law), and the auditor's and engineer's habits of independent verification and incident review (@sec-ch-08-accounting, @sec-ch-10-engineering). Planning is the fourth lineage and the one this module needs. @sec-ch-05-erosion-ownership left you with an audit of what a federal dataset has lost. Planning asks the questions that come next: who decided, who was affected, who was in the room, who was not, and whose knowledge of the terrain counts as evidence. Keegan [-@keegan2026] puts it in infrastructural terms: planning foregrounds how infrastructures allocate benefits and burdens across space and time, and it supplies the participatory repertoires for negotiating who owns, maintains, and can contest durable systems.
+The other lineages in this part supply verification (journalism, @sec-ch-06-journalism), record access and remedy (law, @sec-ch-07-law), and independent checking and incident review (accounting and engineering, @sec-ch-08-accounting and @sec-ch-10-engineering). Planning asks different questions: who decided, who was affected, who was in the room, who was not, and whose knowledge of the terrain counts as evidence. Keegan [-@keegan2026] puts it in infrastructural terms: planning foregrounds how infrastructures allocate benefits and burdens across space and time, and it supplies the participatory repertoires for negotiating who owns, maintains, and can contest durable systems. That makes planning the lineage of **ownership**, the value @sec-ch-05-erosion-ownership develops.
+
+Planning's natural level in this book is the **county**. In Colorado, counties plan under state statute, and in unincorporated areas the county is the land-use authority: it writes the comprehensive plan, administers the land use code, and hears the applications that turn a parcel into a subdivision or a gravel pit. Your running example is Boulder County. Your anchor case is a decision made elsewhere, on a federal spine, through a consolidated city and county: the reconstruction of Interstate 70 through north Denver.
 
 ## A profession that learned from its mistakes
 
-Planning as you encounter it today is the downstream result of a public fight it mostly lost and then, slowly, learned from. Robert Moses, as @sec-ch-01-introduction noted, ran New York's public works for four decades on a specific theory: the public interest could be computed by a qualified expert, expressed as a highway alignment, and imposed on neighborhoods whose residents could not contest it. Jane Jacobs [-@jacobs1961] took the other side, insisting that people who lived on a block knew things no master plan could capture.
+Modern planning is the result of a public fight it mostly lost and then, slowly, learned from. Robert Moses, as @sec-ch-01-introduction notes, ran New York's public works for four decades on a specific theory: the public interest could be computed by a qualified expert, expressed as a highway alignment, and imposed on neighborhoods whose residents could not contest it. Jane Jacobs [-@jacobs1961] took the other side, insisting that people who lived on a block knew things no master plan could capture.
 
-The work of codifying what Jacobs had demonstrated fell to planners who took the problem seriously *for* planning, not merely *against* it. Paul Davidoff's "Advocacy and Pluralism in Planning" [-@davidoff1965] is the founding document. Davidoff argued that there is no single neutral public interest a competent planner discovers through analysis. There are many publics with conflicting interests, and the planner's job is to make those conflicts legible rather than paper over them with a unitary plan. The profession should supply advocate planners to underserved communities the way the legal profession supplies public defenders.
+Paul Davidoff's "Advocacy and Pluralism in Planning" [-@davidoff1965] codified the lesson *for* planning rather than merely against it. There is no single neutral public interest a competent planner discovers through analysis. There are many publics with conflicting interests, and the planner's job is to make those conflicts legible rather than paper over them with a unitary plan. The profession should supply advocate planners to underserved communities the way the legal profession supplies public defenders.
 
-Advocacy planning did not become the default, but it changed what the default had to argue against. Sherry Arnstein's "ladder of citizen participation" [-@arnstein1969] gave planners a vocabulary for distinguishing real participation from its counterfeits, from manipulation and therapy at the bottom, through information, consultation, and placation, to partnership, delegated power, and citizen control at the top. Marcus Lane's intellectual history [-@lane2005] traces how participation became a procedural requirement in most Western planning regimes, even when its substance was thin. Hashem Dadashpoor and Somayeh Ahani [-@dadashpoor2021] extend the inheritance, insisting that the forces reshaping a region are multiple and not reducible to what the master plan says.
+Advocacy planning did not become the default, but it changed what the default had to argue against. Sherry Arnstein's "ladder of citizen participation" [-@arnstein1969] gave planners a vocabulary for distinguishing real participation from its counterfeits, from manipulation and therapy at the bottom, through information, consultation, and placation, to partnership, delegated power, and citizen control at the top. Marcus Lane's intellectual history [-@lane2005] traces how participation became a procedural requirement in most Western planning regimes, even when its substance was thin.
 
-You inherit this tradition whenever you work with geographic or administrative data. The choropleth expresses a theory about which boundaries matter; the demographic overlay, a theory about which categories count; the stakeholder list, a theory about whose voice will be sought. Planning's contribution is to name these theories as theories and insist they be defended.
+You inherit this tradition whenever you work with geographic data. The choropleth expresses a theory about which boundaries matter; the demographic overlay, a theory about which categories count; the stakeholder list, a theory about whose voice will be sought. Planning's contribution is to name these theories as theories and insist they be defended.
+
+## Boulder County as planner
+
+Colorado law makes it "the duty of a county planning commission to make and adopt a master plan" for unincorporated territory, subject to the county commissioners' approval, after hearings at which it "shall accept and consider oral and written public comments" (C.R.S. § 30-28-106) [@colorado_county_planning]. In Boulder County that document is the Boulder County Comprehensive Plan (BCCP), built on three commitments: channel growth to municipalities, protect agricultural land, and put environmental resources first in land-use decisions [@bouldercounty_bccp]. The county's nine-member appointed **Planning Commission** adopts and amends it. A typical amendment runs as a numbered docket: in December 2022, docket BCCP-22-0002 restored a housing-counseling policy to the plan's Housing Element after a public hearing, and the Commission's resolution adopted it under C.R.S. § 30-28-108 and certified it to the Board under § 30-28-109 [@bouldercounty_pc2022_01].
+
+Day to day, the Community Planning & Permitting department turns the plan and the Land Use Code into decisions on applications. Each is a docket with a number (`LU-23-0017`), a staff recommendation, and, for the larger ones, hearings before the Planning Commission and the Board. Around the City of Boulder, a second plan sits on top: the Boulder Valley Comprehensive Plan, adopted jointly by the city council, the city's planning board, the county commissioners, and the county's Planning Commission. Its 2026 major update, docket BVCP-25-0001, shows how many rooms a single decision has. The four bodies held a work session on April 13, 2026 at which "public testimony will not be taken," a joint public hearing on June 11, and a Board of County Commissioners hearing on June 25 that accepted no further testimony [@bouldercounty_bvcp2026]. <!-- TODO: verify the final adoption date and vote of BVCP-25-0001 before citing an outcome. -->
+
+Which room the public may speak in is itself a planning decision. In spring 2026 county staff limited public comment at two advisory boards, the Parks and Open Space Advisory Committee and the Historic Preservation Advisory Board, to items on the agenda, "bringing it in line with the other boards and commissions," as a county spokesperson put it [@stephenson2026]. On Arnstein's ladder, the rule sets which rung residents may reach, and staff set the agenda.
 
 ## The Allegheny Family Screening Tool, through a planner's eyes
 
-@sec-ch-04-exemption-oversight took up the Allegheny Family Screening Tool as a case of *exemption*: a county risk-scoring system for child-welfare referrals that could not easily be audited from outside. Read the same case through a planning lens and a different failure surfaces. The tool was designed by social scientists, procured by a county, and deployed on families. The families were not in the room. Neither were the front-line caseworkers whose judgment the tool was meant to augment, nor the neighborhoods whose referral rates it would amplify.
+@sec-ch-04-exemption-oversight takes up the Allegheny Family Screening Tool as a case of *exemption*: a county risk-scoring system for child-welfare referrals that could not easily be audited from outside. Read the same county case through a planning lens and a different failure surfaces. The tool was designed by social scientists, procured by a county, and deployed on families who were not in the room; neither were the caseworkers whose judgment it was meant to augment. A planner recognizes the lower rungs of Arnstein's ladder: information transmitted, consultation held, the decision made by the same people who would have made it without consultation. A participation process that does not feed back into who holds **authority** to change the decision, and that produces no path to **remedy** (@sec-ch-02-installed-base) when it goes wrong, is participation in name only.
 
-A planner recognizes the lower rungs of Arnstein's ladder: information transmitted, consultation held, the decision made by the same people who would have made it without consultation. A participation process that does not feed back into who holds **authority** (@sec-ch-04-exemption-oversight) to change the decision, and that produces no path to **remedy** (@sec-ch-02-installed-base) when it goes wrong, is participation in name only.
+## The anchor case: Central 70
 
-## A running example: the Central 70 project
+Central 70 is the reconstruction and widening of Interstate 70 through the Elyria-Swansea and Globeville neighborhoods of Denver, a consolidated city and county. The Colorado Department of Transportation and the Federal Highway Administration published a final environmental impact statement and a record of decision in 2017 [@cdot_i70]. The project lowered the highway below grade, capped a section with a park, and widened the roadway. It also displaced residents, prompted litigation over its environmental review, and intensified concerns about diesel exposure in neighborhoods already cut in half by the 1960s viaduct. <!-- TODO: add a verified news or court source for the displacement, litigation, and air-quality claims; the existing swansea2019 entry has an unverified attribution and is not cited here. -->
 
-You will practice this chapter's tools on a decision with a local footprint and a federal spine: the Central 70 project, the reconstruction and widening of Interstate 70 through the Elyria-Swansea and Globeville neighborhoods of Denver. The Colorado Department of Transportation and the Federal Highway Administration published a final environmental impact statement and a record of decision in 2017 [@cdot_i70]. The project lowered the highway below grade, capped a section with a park, and widened the roadway. It also displaced residents, prompted litigation over its environmental review, and intensified concerns about diesel exposure in neighborhoods already cut in half by the 1960s viaduct [@swansea2019].
-
-Central 70 belongs in a federal module because federal money made it a "major federal action" under the National Environmental Policy Act (NEPA), which required the environmental impact statement, the published drafts, the public comment periods, and the agency's written responses to comments. NEPA review is the federal government's most routine planning procedure, and it is notice-and-comment participation of exactly the kind you will practice in @sec-ch-18-public-comments. It is also eroding. In 2025 the Council on Environmental Quality withdrew its government-wide NEPA regulations, and the Supreme Court's decision in *Seven County Infrastructure Coalition v. Eagle County*, a case that began with a Colorado county's challenge to a Utah rail line, told courts to defer to agencies on how far an environmental review must reach. <!-- TODO: verify before the term: CEQ interim final rule removing NEPA regulations (2025) and Seven County Infrastructure Coalition v. Eagle County, 605 U.S. ___ (2025); add bib entries if cited. Also verify the Central 70 DEIS/SDEIS/FEIS dates for Exercise 17.1. --> The record that let Elyria-Swansea residents contest Central 70 is a record future residents may not get.
-
-Central 70 is heavy material. Students who find it draining may substitute the Alpine-Balsam redevelopment in Boulder [@boulder_alpinebalsam] or another case; the techniques transfer.
+Federal money made Central 70 a "major federal action" under the National Environmental Policy Act (NEPA), which required the environmental impact statement, published drafts, comment periods, and written responses to comments. That process is eroding. In 2025 the Council on Environmental Quality withdrew its government-wide NEPA regulations, and the Supreme Court's decision in *Seven County Infrastructure Coalition v. Eagle County*, which began with a Colorado county's challenge to a Utah rail line, told courts to defer to agencies on how far an environmental review must reach. <!-- TODO: verify CEQ interim final rule removing NEPA regulations (2025) and Seven County Infrastructure Coalition v. Eagle County, 605 U.S. ___ (2025); add bib entries if cited. --> The record that let Elyria-Swansea residents contest Central 70 is a record future residents may not get. A Boulder County docket of your choice works for every technique below.
 
 ## Stakeholders as a structured document
 
-A stakeholder map lists the parties to a decision and records what each wants, can do, and can see. It reflects the mapper's theory of whose interests count; writing the theory down makes it contestable. For a data science workflow, a version-controlled YAML document beats a slide: it reads like prose, diffs in git, and loads into Python.
+A stakeholder map lists the parties to a decision and records what each wants, can do, and can see. It reflects the mapper's theory of whose interests count; writing the theory down makes it contestable. A version-controlled YAML document beats a slide: it reads like prose, diffs in git, and loads into Python.
 
 ```yaml
 # stakeholders_i70.yaml
 decision:
   name: Central 70 reconstruction and widening
   lead_agencies: [Colorado Department of Transportation, Federal Highway Administration]
-  record_of_decision: 2017-01
+  record_of_decision: 2017
   federal_hook: NEPA environmental impact statement
   geography:
     primary_neighborhoods: [Elyria-Swansea, Globeville]
-    county: Denver
+    county: City and County of Denver
     state: CO
 
 stakeholders:
@@ -72,103 +78,112 @@ stakeholders:
     access:
       in_the_room: partially
       documents_produced: [public comments, litigation filings]
-    notes: |
-      Split by the 1964 viaduct. Limited Spanish-language
-      outreach in early EIS phases.
 ```
 
-A complete map would list twenty to thirty entries: FHWA, the City and County of Denver, Denver Public Schools (whose Swansea Elementary sits beside the widened roadway), EPA, neighborhood associations on both sides of the highway, freight and commuter interests, public health researchers, legal aid organizations, and contractors.
-
-Notice what the schema forces. You cannot fill in `power.formal` without deciding what "formal" means here, or `in_the_room` without deciding what "the room" is. For Central 70 there were at least five rooms: NEPA scoping meetings, technical advisory committees, city council chambers, federal court, and the offices where alignment decisions were actually made.
+A complete map would list twenty to thirty entries, from FHWA and EPA to neighborhood associations, public health researchers, and contractors. Notice what the schema forces. You cannot fill in `power.formal` without deciding what "formal" means here, or `in_the_room` without deciding what "the room" is. For Central 70 there were at least five rooms: NEPA scoping meetings, technical advisory committees, city council chambers, federal court, and the offices where alignment decisions were actually made. For a Boulder County docket, list the staff review, the referral agencies, the Planning Commission hearing, and the Board's hearing, and note which of them take testimony.
 
 ## Who was missing from the room
 
-Once the map exists, write a companion document listing whose perspectives are absent or under-represented, and why. For Central 70, a partial list includes renters whose landlords were compensated but who received nothing; undocumented residents who stayed away from public meetings for reasons unrelated to interest; children whose cumulative diesel exposure was the actual health outcome at stake but who had no standing in NEPA; descendants of households displaced by the 1964 viaduct; and residents of neighborhoods outside the corridor whose air quality nonetheless changed.
+Once the map exists, write a companion document listing whose perspectives are absent or under-represented, and why. For Central 70, a partial list includes renters whose landlords were compensated but who received nothing; undocumented residents who stayed away from public meetings for reasons unrelated to interest; children whose cumulative diesel exposure was the health outcome at stake but who had no standing in NEPA; and descendants of households displaced by the original viaduct.
 
-A "who was missing" analysis is a design input, not a ritual apology. If you can name whose perspective is missing, you can design the analysis to compensate: pulling in data the formal process did not surface, or publishing intermediate findings in formats a missing stakeholder could answer.
-
-The same method applies to the federal dataset you audited in @sec-ch-05-erosion-ownership. A dataset has producers (a program office and its contractors), funders (an appropriations line), mandates (a statute or none), downstream users (state health departments, county emergency managers, insurers, journalists, researchers), people described by it, and, after a removal, volunteer mirrors. When a series is retired, ask the planner's question: which of those parties were in the room? Usually the answer is the program office and the budget office. The people described by the data, and the local governments that depended on it, learn about the decision from a notice.
+A "who was missing" analysis is a design input, not a ritual apology: name whose perspective is missing, then design the analysis to compensate, with data the formal process did not surface or findings published in formats a missing stakeholder could answer. The same method applies to a dataset. When a series is retired, as in the erosion audit of @sec-ch-05-erosion-ownership, ask which of its producers, funders, users, and described populations were in the room. Usually the answer is the program office and the budget office.
 
 ## The geographic imagination
 
-Planning's other contribution is the habit of putting decisions on a map. A map is an argument about what counts as "the area," and every map excludes something its maker thought irrelevant. `geopandas` extends `pandas` with a `geometry` column, so a `GeoDataFrame` behaves like a `DataFrame` that knows where each row is. Underneath it is a mixing bowl of `shapely` (geometry), `pyogrio` or `fiona` (file I/O), and `pyproj` (coordinate reference systems). You will spend more time with the third than you expect.
+Planning's other contribution is the habit of putting decisions on a map. A map is an argument about what counts as "the area," and every map excludes something its maker thought irrelevant. `geopandas` extends `pandas` with a `geometry` column, with `shapely`, `pyogrio`, and `pyproj` underneath. You will spend more time with `pyproj` than you expect.
+
+Boulder County publishes its land-use applications as a polygon layer, one shape per parcel per docket, queryable through the county's ArcGIS REST service [@bouldercounty_landuse_layer]. Pull the larger discretionary applications filed since 2020, and Census county subdivisions from TIGER/Line [@census_tiger] to place them:
 
 ```python
 import geopandas as gpd
-import contextily as ctx
-import matplotlib.pyplot as plt
+import pandas as pd
+import requests
 
-# Colorado county subdivisions from Census TIGER/Line
-cousub = gpd.read_file("tl_2023_08_cousub/tl_2023_08_cousub.shp")
-# => GeoDataFrame with NAME, GEOID, geometry; CRS is EPSG:4269 (NAD83)
+# Colorado county subdivisions, TIGER/Line 2023; Boulder County is FIPS 013
+cousub = gpd.read_file("tl_2023_08_cousub.zip")
+boulder = cousub[cousub["COUNTYFP"] == "013"]
+# => 5 rows; CRS is EPSG:4269 (NAD83)
 
-# Block-group demographic overlay (ACS 5-year, 2018-2022)
-acs = gpd.read_file("acs_blockgroups_denver.geojson")
-
-# Project boundary, traced from the FEIS project description
-i70 = gpd.read_file("central70_project_area.geojson")
+LAYER = ("https://maps.bouldercounty.org/arcgis/rest/services/"
+         "PLANNING/OP_Accela_Poly/MapServer/0/query")
+params = {
+    "where": "DocketType IN ('Special Use Review', "
+             "'Limited Impact Special Use Review', 'Rezoning') "
+             "AND ApplicationDate >= DATE '2020-01-01'",
+    "outFields": "CAPID,DocketType,ApplicationDate,ApplicationStatus",
+    "outSR": "4326", "f": "geojson",
+}
+r = requests.get(LAYER, params=params, timeout=60)
+r.raise_for_status()
+dockets = gpd.read_file(r.text)
+dockets["ApplicationDate"] = pd.to_datetime(dockets["ApplicationDate"], unit="ms")
+print(dockets.shape, dockets["CAPID"].nunique())
+# => (273, 5) 207   (as of October 2026)
 ```
 
-Three layers, three potential failure modes. The most common is a coordinate reference system (CRS) mismatch. Layers in NAD83 (EPSG:4269) and Web Mercator (EPSG:3857) will plot together without an exception, because `matplotlib` does not know what a CRS is. They will not line up. Project everything to a common CRS first:
+Two layers, two coordinate reference systems (CRS). They will plot together without an exception, because `matplotlib` does not know what a CRS is. Project everything to a common CRS before you join or measure:
 
 ```python
-target_crs = "EPSG:3857"   # Web Mercator, for contextily basemaps
-cousub, acs, i70 = (g.to_crs(target_crs) for g in (cousub, acs, i70))
-# For distances or areas on the Front Range use EPSG:26913 (UTM 13N);
-# Web Mercator distances are wrong at Denver's latitude.
+crs = "EPSG:26913"            # UTM zone 13N: metres, correct for the Front Range
+boulder, dockets = boulder.to_crs(crs), dockets.to_crs(crs)
 
-fig, ax = plt.subplots(figsize=(10, 10))
-acs.plot(column="pct_poverty", cmap="YlOrRd", linewidth=0.1,
-         edgecolor="gray", legend=True, ax=ax)
-i70.boundary.plot(ax=ax, color="black", linewidth=2)
-ctx.add_basemap(ax, source=ctx.providers.OpenStreetMap.Mapnik)
+per_docket = dockets.dissolve(by="CAPID", aggfunc="first").reset_index()
+points = per_docket.set_geometry(per_docket.representative_point())
+joined = gpd.sjoin(points, boulder[["NAME", "geometry"]], predicate="within")
+print(joined.groupby("NAME").size().sort_values(ascending=False))
+# => Bald Mountain           61
+# => Boulder                 50
+# => Longmont                49
+# => Upper St. Vrain         37
+# => Lafayette-Louisville    10
+
+ax = boulder.plot(color="whitesmoke", edgecolor="gray", figsize=(9, 7))
+points.plot(ax=ax, column="DocketType", legend=True, markersize=6)
 ax.set_axis_off()
-ax.set_title("Central 70 project area and block-group poverty rate\n"
-             "ACS 5-year 2018-2022; boundary from 2017 FEIS")
-fig.savefig("ch17_i70_choropleth.png", dpi=150)
+ax.set_title("Boulder County special use and rezoning dockets, 2020-2026\n"
+             "County land-use layer; TIGER/Line 2023 county subdivisions")
 ```
 
-Warmer colors clustering along the corridor are not a causal claim. They are a descriptive statement about which communities surround the decision. Whether the project caused the pattern, or was caused by the same history that produced it, is a separate question. The map's job is to make the spatial question visible, not to close it.
+The mountain subdivisions carry more discretionary dockets than the plains. That is a descriptive statement about where the county's planning decisions happen, not a causal claim, and it says nothing yet about who lives there. Adding an ACS 5-year block-group table for Boulder County (Exercise 9.3) puts people on the map; the map's job is to make the spatial question visible, not to close it.
 
 ::: {.callout-tip title="The Missing Manual"}
-When `geopandas` breaks, the traceback can come from any of four libraries you did not import. The most common failure is a CRS mismatch, because `matplotlib` will plot incompatible layers without complaint. Always call `.to_crs()` before you join, buffer, measure, or plot. The second most common failure is a shapefile that arrives without its `.prj` sidecar, leaving `geopandas` with no way to know what the coordinates mean. Check for the `.prj` before you open the `.shp`. The third, specific to federal planning records: maps inside an EIS are usually PDFs, not data. Tracing a project boundary from a PDF figure is an act of interpretation, and your caption should say you did it.
+When `geopandas` breaks, the traceback can come from any of several libraries you did not import, and the most common failure, a CRS mismatch, produces no traceback at all. Always call `.to_crs()` before you join, buffer, measure, or plot. Three surprises are specific to county planning data. First, one docket can span several parcels, so the layer has 273 shapes for 207 dockets; count `CAPID`, not rows, or `dissolve` first. Second, ArcGIS REST returns dates as milliseconds since 1970, which is why the code converts them. Third, check the newest date before you treat a layer as current. In October 2026 the most recent application in this layer was dated May 4, 2026, although records were still being edited. A quiet layer may mean a quiet docket, a migration to a new permitting system, or a stalled sync; only the county can say which. <!-- TODO: ask Community Planning & Permitting whether the OP_Accela_Poly layer is still the current source for new applications. --> The layer also carries owner names. Do not request fields you do not need.
 :::
 
 ## Community-informed categorization
 
-The demographic columns you drop into the map are themselves planning artifacts. "Percent below poverty line" is a federal category with a specific history. "Two or more races" did not exist as a Census response option before 2000. Every category is a fossil of an earlier argument about who counted, and as what. Bowker and Star [-@bowker2000], whose work returns in @sec-ch-13-critical-data-studies-refusal, show that category systems that once fit the world come to shape what the world is allowed to look like.
+The demographic columns you add to the map are themselves planning artifacts. "Percent below poverty line" is a federal category with a specific history. "Two or more races" did not exist as a Census response option before 2000. Bowker and Star [-@bowker2000], whose work returns in @sec-ch-13-critical-data-studies-refusal, show that category systems that once fit the world come to shape what the world is allowed to look like. Planning categories do too: "Limited Impact Special Use Review" decides how much public process an application gets.
 
-Community-informed categorization treats category choice as participatory. If the community you are mapping has its own neighborhood boundaries that do not match Census tracts, include both, labeled. If a dimension the community cares about (length of residence, primary language at home) is not in the standard tables, say so in the caption rather than pretending it does not exist. Treating the power to categorize as something held in trust, rather than exercised unilaterally, is the bridge from planning to ownership.
+Community-informed categorization treats category choice as participatory. If the community you are mapping has its own neighborhood or mountain-town boundaries that do not match Census geography, include both, labeled. If a dimension residents care about (length of residence, wildfire rebuild status, primary language at home) is not in the standard tables, say so in the caption rather than pretending it does not exist. Treating the power to categorize as something held in trust, rather than exercised unilaterally, is the bridge from planning to ownership.
 
 ::: {.callout-note title="In the Public Interest"}
-Keegan [-@keegan2026] defines **ownership** as collective, accountable governance over how public-relevant data is preserved, accessed, and used, and @sec-ch-05-erosion-ownership builds it out. Planning is where that value gets procedural teeth. The specific claim: a community that cannot contest the map on which its displacement was planned, or the retirement of the dataset that documented its exposure, has no ownership of its own record in any meaningful sense, whatever the license says. Audit-washing (@sec-ch-08-accounting) has a planning cousin, participation-washing: the map is drawn, the meeting is held, comments are noted, and the decision proceeds as if none of it occurred. You can tell the difference by asking whether any document you produce could change the decision, or whether it was always going to be filed.
+Keegan [-@keegan2026] defines **ownership** as collective, accountable governance over how public-relevant data is preserved, accessed, and used, and @sec-ch-05-erosion-ownership builds it out. Planning is where that value gets procedural teeth. The specific claim: a community that cannot contest the map on which its land use was planned, or find the docket that changed it, has no ownership of its own record in any meaningful sense, whatever the license says. A county that publishes its dockets as a queryable layer, with numbers that link to staff reports and resolutions, has built part of that installed base; a county that limits where residents may speak has narrowed it. Audit-washing (@sec-ch-08-accounting) has a planning cousin, participation-washing: the map is drawn, the meeting is held, comments are noted, and the decision proceeds as if none of it occurred. Ask whether any document you produce could change the decision, or whether it was always going to be filed.
 :::
 
 ## Exercises
 
-**Exercise 17.1 (Guided).** Build a stakeholder map in YAML for a decision with a federal hook: Central 70, another project that went through NEPA review, or a local decision of your choice if you note which federal funds or rules touch it. Include at least ten entries. Commit it as `exercises/ch17_stakeholders_<slug>.yaml` with a two-paragraph `README.md` stating the decision, the records you used, and what you could not find.
+**Exercise 9.1 (Guided).** Build a stakeholder map in YAML for a Boulder County decision (a docket from the land-use layer, a BCCP amendment, or the BVCP update) or for Central 70. Include at least ten entries and list every room in which the decision was discussed, noting which took testimony. Commit it as `exercises/ch09_stakeholders_<slug>.yaml` with a two-paragraph `README.md` stating the decision, the records you used, and what you could not find.
 
-**Exercise 17.2 (Analytic; Piece 4 component).** Build a stakeholder map for the federal dataset you documented in Exercise 16.3, using the same schema with roles for producer, funder, mandate, downstream user, described population, and mirror. Then write a 400-word "who was missing from the room" analysis of the most recent decision that changed the dataset's collection or access. Name at least four groups and, for each, the document or outreach method that would have surfaced them. This map feeds the stewardship plan or refusal specification and the public comment in Piece 4. Save as `exercises/ch17_dataset_stakeholders.yaml` and `exercises/ch17_missing.md`.
+**Exercise 9.2 (Analytic).** Write a 400-word "who was missing from the room" analysis of the decision in Exercise 9.1. Name at least four groups and, for each, the document or outreach method that would have surfaced them. If you instead studied a dataset's retirement in @sec-ch-05-erosion-ownership, apply the same method to it, with roles for producer, funder, mandate, downstream user, described population, and mirror.
 
-**Exercise 17.3 (Technical).** Produce a `geopandas` choropleth for the decision in 17.1, using TIGER/Line geometry [@census_tiger] and an ACS 5-year table, with at least three layers: the administrative base, the demographic variable, and the decision's boundary. Project to a common CRS and document the choice in the caption. Save the figure and notebook to `exercises/ch17_map_<slug>/`.
+**Exercise 9.3 (Technical, laptop, real public data).** Reproduce the docket map above. Then add a third layer: an ACS 5-year block-group variable for Boulder County, joined to TIGER/Line block-group geometry. Project to a common CRS, document the choice in the caption, and write two sentences on what the overlay shows and what it cannot.
 
-**Exercise 17.4 (Reflective).** Reread Eubanks's [-@eubanks2018] Allegheny chapter, which you met in @sec-ch-04-exemption-oversight, or read her Indiana eligibility chapter. Apply her framework to your 17.1 case. Where does the decision's theory of the problem locate the cause of harm? Where would Eubanks locate it? What would change in your stakeholder map if you adopted her framing? 500 words.
+**Exercise 9.4 (Reflective).** Reread Eubanks's [-@eubanks2018] Allegheny chapter, which @sec-ch-04-exemption-oversight discusses, or read her Indiana eligibility chapter. Apply her framework to your Exercise 9.1 case. Where does the decision's theory of the problem locate the cause of harm? Where would Eubanks locate it? What would change in your stakeholder map if you adopted her framing? 500 words.
 
-**Exercise 17.5 (Open-ended).** Design a participatory process that would have produced a materially different outcome for your 17.1 decision: a different alignment, boundary, set of mitigations, timeline, or a decision not to proceed. Name the rung of Arnstein's ladder your process would occupy, who would hold what authority, and the minimum infrastructure (time, money, translation, childcare, data access, legal support) it would require. Then answer the harder question: what would have had to be true about the lead agency, the funding source, or the political moment for this process to happen? 750 words. Save as `exercises/ch17_counterfactual_<slug>.md`.
+**Exercise 9.5 (Open-ended; submittable artifact).** Design a participatory process that could have produced a materially different outcome for your Exercise 9.1 decision. Name the rung of Arnstein's ladder it would occupy, who would hold what authority, and the minimum infrastructure (time, money, translation, childcare, data access, legal support) it would require. Then answer the harder question: what would have had to be true about the county, the applicant, or the political moment for it to happen? 750 words. The analysis is the evidence base for a public comment to the Planning Commission or Board (@sec-ch-18-public-comments).
 
 ## Looking ahead
 
-Planning gave you the habit of asking who was in the room and whose knowledge of the terrain counts. @sec-ch-05-erosion-ownership turns that habit into an obligation. If the people who use and are described by a federal dataset were not in the room when it was retired, who should hold it now, under what rules, and for how long? You will answer with tiered access, a threat model, and a stewardship plan, and you will meet the Indigenous data sovereignty movements that challenge whether "stewardship" is the right word at all.
+Planning gave you the habit of asking who was in the room and whose knowledge of the terrain counts. @sec-ch-05-erosion-ownership turns that habit into an obligation to steward the record, and @sec-ch-18-public-comments turns it into a genre addressed to a county board. The next lineage, engineering (@sec-ch-10-engineering), returns to the national audit and asks a narrower question with the same spirit: when something fails, who keeps the record of how?
 
 ## Further Reading and Resources
 
 - Paul Davidoff (1965), "[Advocacy and Pluralism in Planning](https://doi.org/10.1080/01944366508978187)," *Journal of the American Institute of Planners* 31(4): 331–338. The founding essay for advocacy planning.
 - Sherry R. Arnstein (1969), "[A Ladder of Citizen Participation](https://doi.org/10.1080/01944366908977225)," *Journal of the American Institute of Planners* 35(4): 216–224. The eight-rung ladder you will use to diagnose participation for the rest of your career.
 - Marcus B. Lane (2005), "[Public Participation in Planning: An Intellectual History](https://doi.org/10.1080/00049180500325694)," *Australian Geographer* 36(3): 283–299. The longer arc in which Arnstein and Davidoff are two nodes.
-- Virginia Eubanks (2018), *[Automating Inequality](https://us.macmillan.com/books/9781250215789/automatinginequality)*. The Allegheny, Indiana, and Los Angeles chapters all work for Exercise 17.4.
-- Council on Environmental Quality, NEPA resources: <https://ceq.doe.gov/>. The federal clearinghouse for NEPA guidance and environmental impact statement practice. <!-- TODO: verify current canonical URL after the 2025 regulatory changes. -->
-- Central 70 environmental review documents, published by CDOT and FHWA: <https://www.codot.gov/projects/i70east>. A large real-world federal planning archive, worth reading for what a regulated process produces and what it does not.
-- City of Boulder, Alpine-Balsam area plan: <https://bouldercolorado.gov/projects/alpine-balsam>. A smaller planning process with well-documented engagement phases.
-- U.S. Census TIGER/Line shapefiles: <https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html>. Most U.S. administrative boundaries you will plot come from here.
+- Boulder County Comprehensive Plan: <https://bouldercounty.gov/property-and-land/land-use/planning/boulder-county-comprehensive-plan/>. The plan, its elements, and its maps.
+- Boulder County Planning Commission: <https://bouldercounty.gov/government/boards-and-commissions/planning-commission/>. Agendas, hearing guidelines, and membership.
+- Boulder County Open Data: <https://opendata-bouldercounty.hub.arcgis.com/>. The comprehensive plan and zoning layers, among many others.
+- Central 70 environmental review documents, published by CDOT and FHWA: <https://www.codot.gov/projects/archives/i70east>. A large federal planning archive, worth reading for what a regulated process produces and what it does not.
+- Virginia Eubanks (2018), *[Automating Inequality](https://us.macmillan.com/books/9781250215789/automatinginequality)*. The Allegheny, Indiana, and Los Angeles chapters all work for Exercise 9.4.
 - The GeoPandas user guide: <https://geopandas.org/en/stable/docs.html>. Read the CRS section end to end before you plot anything serious.
-- QGIS: <https://qgis.org/>. The free desktop GIS for handing a reproducible map project to a non-Python collaborator.

@@ -7,53 +7,83 @@ execute:
 
 In October 1929, the New York Stock Exchange lost roughly a quarter of its value in a week. Congress spent the next several years arguing about why, and produced two statutes (the Securities Act of 1933 and the Securities Exchange Act of 1934) that required publicly traded companies to file financial statements examined by an independent auditor. The external audit went from a discretionary service a firm might commission to reassure its banker to a legally mandated act of public verification. The profession that performed it acquired, as part of the bargain, a public interest mandate. A certified public accountant's client is the company paying the invoice. The duty of care runs to shareholders, lenders, regulators, and everyone downstream of the company's claims about itself.
 
-That bargain has been renegotiated since. Arthur Andersen signed off on Enron's financial statements for years before Enron collapsed in 2001. Andersen's consulting practice had been earning more from Enron than its audit practice, and its shredded workpapers became the emblem of audit failure. Andersen did not survive. Congress responded with the Sarbanes-Oxley Act of 2002, which tightened independence rules and created the Public Company Accounting Oversight Board to audit the auditors. The mandate was not abolished. It was recertified under closer supervision.
+That bargain has been renegotiated since. Arthur Andersen signed off on Enron's financial statements for years before Enron collapsed in 2001; its consulting practice had been earning more from Enron than its audit practice, and its shredded workpapers became the emblem of audit failure. Congress responded with the Sarbanes-Oxley Act of 2002, which tightened independence rules and created the Public Company Accounting Oversight Board to audit the auditors. The mandate was recertified under closer supervision.
 
-This chapter opens Part IV, the course's third module, which works at the level of the **state** and treats accounting and engineering together as *assurance*. Keegan [-@keegan2026] codes both as lineages of **oversight**: accounting formalizes "legible records, standardized controls, and independent verification," and engineering adds testing and incident learning (@sec-ch-10-engineering). The pressure is **exemption** (@sec-ch-04-exemption-oversight) in a particular costume. Lee [-@leeProfessionalizationAccountancyHistory1995] describes accountancy's professional history as "protecting the public interest in a self-interested way," and Baker [-@baker2005] finds the profession's own pronouncements invoking "the public" as a legitimating abstraction while serving the paying client. Algorithmic auditing is about to repeat that history unless it studies it.
+Keegan [-@keegan2026] codes accounting as a lineage of **oversight**: it formalizes "legible records, standardized controls, and independent verification." Engineering, its partner in this book's account of *assurance*, adds testing and incident learning (@sec-ch-10-engineering). The pressure both answer is **exemption** (@sec-ch-04-exemption-oversight) in a particular costume. Lee [-@leeProfessionalizationAccountancyHistory1995] describes accountancy's professional history as "protecting the public interest in a self-interested way," and Baker [-@baker2005] finds the profession's own pronouncements invoking "the public" as a legitimating abstraction while serving the paying client. Algorithmic auditing is about to repeat that history unless it studies it.
+
+The natural level for this lineage is the **nation**. Securities law, the Government Accountability Office (GAO), and the inspectors general are federal institutions, and federal agencies now report thousands of uses of AI in their own operations. This chapter's audit therefore runs on national data, and its frame is the federal government's own ledger of the algorithms it uses.
 
 ## Audit-washing: exemption in oversight's clothes
 
 Raji and colleagues [-@raji2020] propose an internal algorithmic auditing framework borrowed from accounting, aerospace, and medicine. It names five stages (scoping, mapping, artifact collection, testing, reflection) and insists on durable, dated workpapers. A good audit produces documents a reasonable outsider could read a year later and use to reconstruct what was examined, what was found, and what was decided. A bad one produces a one-paragraph attestation.
 
-The module's US anchor shows why the distinction matters. New York City's Local Law 144, enforced since July 2023, requires employers using automated employment decision tools to commission an independent "bias audit" within the year before use and to publish a summary of selection rates and impact ratios by sex and race/ethnicity [@nyc_ll144]. Goodman and Trehu [-@goodman2023] use LL144 to illustrate **audit-washing**: audits whose institutional form looks like oversight but whose content is shallow enough to credential almost any system. Some published LL144 audits are serious. Others are short PDFs that say which tool was audited and little about which data, which metric choices, or which population. A regime that accepts both as compliant has granted an exemption while appearing to deny one.
+The federal government has built the first layer of such a record. Executive Order 13960, signed in December 2020, required agencies to inventory their uses of artificial intelligence [@eo13960]. OMB Memorandum M-25-21, issued in April 2025, keeps the annual inventory and requires agencies to apply minimum risk-management practices to use cases they judge "high-impact" [@omb_m2521]. The consolidated 2025 inventory, published on GitHub, lists 3,611 use cases from 41 agencies, 445 of them self-designated high-impact [@omb_inventory2025]. The federal auditor has also written the standard such records should meet. GAO's AI accountability framework organizes its key practices under governance, data, performance, and monitoring, with questions written for auditors and third-party assessors [@gao2021ai]. When GAO examined the first round of inventories, it found that 15 of the 20 agencies reporting use cases had submitted incomplete or inaccurate information [@gao_24105980].
 
-Colorado, your state case, has moved in the same direction at a larger scale. The Colorado AI Act (SB 24-205), signed in 2024, places duties on developers and deployers of "high-risk" AI systems used in consequential decisions, including risk-management programs and impact assessments, and gives the Attorney General enforcement authority [@colorado_sb24205]. <!-- TODO: verify the Act's current effective date, the amendments adopted in later sessions, and whether the impact-assessment and AG-enforcement provisions survive in their original form. Do not state an effective date until re-checked. --> The legislature has revisited the Act since passage, which is itself a lesson: assurance duties are negotiated, delayed, and narrowed long before anyone audits anything. Whether Colorado's impact assessments become workpapers or attestations depends on what the people writing them can demonstrate. The European Union's AI Act is the module's main counter-case: its conformity assessment for high-risk systems (Article 43) borrows the EU product-safety tradition of technical files and notified bodies, and requires either internal control or third-party assessment depending on the system [@eu_aiact2024]. The same consultancies that wrote thin LL144 attestations are selling conformity packages. @sec-ch-12-govtech-civic-tech adds Canada's Algorithmic Impact Assessment and asks how a state buys assurance through procurement.
+Compare the city and the state. New York City's Local Law 144, enforced since July 2023, requires employers using automated employment decision tools to commission an independent "bias audit" and publish a summary of selection rates and impact ratios by sex and race/ethnicity [@nyc_ll144]. Goodman and Trehu [-@goodman2023] use it to illustrate **audit-washing**: audits whose institutional form looks like oversight but whose content is shallow enough to credential almost any system. Some published LL144 audits are serious. Others are short PDFs that say which tool was audited and little about which data, metric choices, or population. A regime that accepts both as compliant has granted an exemption while appearing to deny one.
+
+Colorado's AI Act (SB 24-205) went further on paper, placing risk-management and impact-assessment duties on developers and deployers of "high-risk" systems [@colorado_sb24205]. It never took effect. A 2025 special session delayed it, and in May 2026 the legislature repealed and reenacted it as SB 26-189, effective January 1, 2027, which drops the impact assessments and risk-management programs and keeps notices, explanations of adverse decisions, rights to correction and human review, and Attorney General enforcement [@colorado_sb26189]. <!-- TODO: verify the status of the 2026 federal court challenge to the Colorado Act and whether any stay reaches SB 26-189. --> @sec-ch-07-law reads that sequence as state lawmaking. Here it is a lesson in assurance: audit duties are negotiated, delayed, and narrowed long before anyone audits anything.
 
 ::: {.callout-note title="In the Public Interest"}
-**Oversight**, as @sec-ch-04-exemption-oversight developed it, needs authority and remedy that an audit cannot supply by itself. Accounting adds what an audit must supply on its own: dated workpapers, separation of audit from consulting, standards fixed before the numbers are seen, and a credential that can be revoked. An algorithmic audit that lacks all four performs oversight rather than providing it, and that performance is how exemption survives inside a regime that looks like regulation. The **continuity** element of the installed base (@sec-ch-02-installed-base) matters for the same reason: an audit that cannot be rerun next quarter because the analyst's laptop was wiped is, for public purposes, an audit that did not happen. The specific claim of this chapter is that a manifest, a thresholds file, and a changelog are the minimum installed base for independent verification.
+**Oversight**, as @sec-ch-04-exemption-oversight develops it, needs authority and remedy that an audit cannot supply by itself. Accounting adds what an audit must supply on its own: dated workpapers, separation of audit from consulting, standards fixed before the numbers are seen, and a credential that can be revoked. An algorithmic audit that lacks all four performs oversight rather than providing it, and that performance is how exemption survives inside a regime that looks like regulation. The **continuity** element of the installed base (@sec-ch-02-installed-base) matters for the same reason: an audit that cannot be rerun next quarter because the analyst's laptop was wiped is, for public purposes, an audit that did not happen. The specific claim of this chapter is that a manifest, a thresholds file, and a changelog are the minimum installed base for independent verification.
 :::
 
-## Tutorial, part 1: a disaggregated audit of a Colorado model
+## Tutorial, part 1: reading the federal ledger
 
-Gender Shades [@buolamwini2018] showed that a single accuracy number can hide large disparities across intersectional groups. The disaggregated audit is the technique that refuses the single number. You will run one on **folktables** [@ding2021], which packages American Community Survey (ACS) microdata into prediction tasks, using **fairlearn** for disaggregated metrics. The task, `ACSIncome`, predicts whether a working adult's income exceeds $50,000. It is deliberately banal. Restrict it to Colorado.
+Begin where an auditor begins: with the client's own books. The inventory is a CSV, and its high-impact columns record whether each minimum practice was carried out.
+
+```python
+import pandas as pd
+
+INV = ("https://raw.githubusercontent.com/ombegov/"
+       "2025-Federal-Agency-AI-Use-Case-Inventory/main/Data/"
+       "2025_individually_reported_AI_use_cases.csv")
+inv = pd.read_csv(INV, low_memory=False)
+print(inv.shape)
+# => (3611, 36)   (repository as of May 2026)
+
+hi = inv.query("is_high_impact == 'High-impact' and development_stage == 'Deployed'")
+print(len(hi), hi["hi_assessment_completed"].fillna("(blank)").value_counts().to_dict())
+# => 227 {'(blank)': 101, 'In-progress': 90, 'Yes': 36}
+
+print(hi.loc[hi["hi_assessment_completed"].isna(), "agency_name"].value_counts().head(2))
+# => Department of Veterans Affairs           94
+# => National Credit Union Administration     5
+```
+
+Of 227 deployed high-impact uses, 36 report a completed impact assessment. Do not write "101 have no assessment." A blank is not a "No"; 94 of the blanks come from one agency, which suggests a reporting format rather than 94 separate decisions. An auditor's next move is a request for the agency's own inventory and its supporting documents, not a headline.
+
+## Tutorial, part 2: a disaggregated audit on national data
+
+Gender Shades [@buolamwini2018] showed that a single accuracy number can hide large disparities across intersectional groups. The disaggregated audit is the technique that refuses the single number. You will run one on **folktables** [@ding2021], which packages American Community Survey (ACS) microdata into prediction tasks, using **fairlearn** for disaggregated metrics. The task, `ACSIncome`, predicts whether a working adult's income exceeds $50,000. It is deliberately banal. Load it state by state, keeping only the task's columns, so the national file fits on a laptop.
 
 ```python
 # pip install folktables fairlearn scikit-learn pandas pyyaml joblib
-from folktables import ACSDataSource, ACSIncome
+import pandas as pd
+from folktables import ACSDataSource, ACSIncome, state_list
 
 source = ACSDataSource(survey_year="2018", horizon="1-Year", survey="person")
-co = source.get_data(states=["CO"], download=True)
-features, label, group = ACSIncome.df_to_pandas(co)
-y = label.squeeze()                     # True if PINCP > 50,000
+frames = []
+for st in state_list:                          # 50 states and Puerto Rico
+    raw = source.get_data(states=[st], download=True)
+    X, y, _ = ACSIncome.df_to_pandas(raw)
+    frames.append(X.assign(label=y.squeeze().to_numpy(), state=st))
+acs = pd.concat(frames, ignore_index=True)
 
-print(features.shape, round(y.mean(), 2))
-# => (n, 10), with n in the tens of thousands; record your n in the manifest
+print(acs.shape, round(acs["label"].mean(), 3))
+# => (1664500, 12) 0.369
 ```
 
-<!-- TODO: confirm which ACS survey years the current folktables release downloads cleanly; 2018 is the vintage in the package's documentation. -->
-
-`folktables` returns race as the ACS `RAC1P` code. Recode it, and pull sex from the feature matrix:
+The first run downloads about 2 GB. `state_list` has no District of Columbia, so "national" here means fifty states and Puerto Rico. Write that into the manifest. Now recode race from the ACS `RAC1P` code and sex from `SEX`:
 
 ```python
 RAC1P = {1: "White", 2: "Black", 3: "AIAN", 4: "AIAN", 5: "AIAN",
          6: "Asian", 7: "NHPI", 8: "Some other race", 9: "Two or more"}
-race = group.squeeze().map(RAC1P).fillna("Unknown")
-sex = features["SEX"].map({1: "Male", 2: "Female"})
+race = acs["RAC1P"].map(RAC1P).fillna("Unknown")
+sex = acs["SEX"].map({1: "Male", 2: "Female"})
+features = acs.drop(columns=["label", "state"])
 ```
 
-Check every key of that dictionary against the ACS PUMS data dictionary for your vintage, not against a blog post. Codes 3 through 5 are three American Indian and Alaska Native categories, which this map collapses. Hispanic origin is a separate ACS variable (`HISP`) and is not in the task at all. These are choices. Write them down.
-
-Fit the simplest defensible model:
+Check every key against the ACS PUMS data dictionary for your vintage. Codes 3 through 5 are three American Indian and Alaska Native categories, which this map collapses. Hispanic origin is a separate variable (`HISP`) and is not in the task. `RAC1P` and `SEX` are also model features in `ACSIncome`, which is itself a choice an auditor should question. Write all of these down. Then fit the simplest defensible model:
 
 ```python
 from sklearn.model_selection import train_test_split
@@ -61,17 +91,17 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 
-X_tr, X_te, y_tr, y_te, r_tr, r_te, s_tr, s_te = train_test_split(
-    features, y, race, sex, test_size=0.3, random_state=42, stratify=y)
+X_tr, X_te, y_tr, y_te, r_tr, r_te, s_tr, s_te, st_tr, st_te = train_test_split(
+    features, acs["label"], race, sex, acs["state"],
+    test_size=0.3, random_state=42, stratify=acs["label"])
 model = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
 model.fit(X_tr, y_tr)
 y_pred = model.predict(X_te)
 ```
 
-The model is crude: occupation and birthplace codes are treated as numbers. That is fine. If an audit only works on a model you understand, it is a commentary on your own pipeline. The audit should be method-agnostic.
+The model is crude (occupation and birthplace codes are treated as numbers), which is fine: the audit should be method-agnostic.
 
 ```python
-import pandas as pd
 from sklearn.metrics import accuracy_score
 from fairlearn.metrics import (MetricFrame, count, selection_rate,
     false_positive_rate, false_negative_rate,
@@ -83,41 +113,43 @@ mf = MetricFrame(
              "selection_rate": selection_rate,
              "fpr": false_positive_rate, "fnr": false_negative_rate},
     y_true=y_te, y_pred=y_pred, sensitive_features=sensitive)
-print(mf.by_group.sort_values("n"))
-# => one row per (race, sex) cell; the smallest cells print first
+print(mf.by_group.sort_values("n").round(3))
+# =>                            n  accuracy  selection_rate    fpr    fnr
+# => NHPI            Female  436.0     0.846           0.128  0.057  0.566
+# => NHPI            Male    450.0     0.758           0.282  0.155  0.436
+# => ...                                (14 cells in all)
+# => White           Male 205533.0     0.754           0.461  0.224  0.271
 
 dpd = demographic_parity_difference(y_te, y_pred, sensitive_features=sensitive)
 eod = equalized_odds_difference(y_te, y_pred, sensitive_features=sensitive)
 print(f"DPD {dpd:.3f}  EOD {eod:.3f}")
-# => two different numbers; neither is "the" fairness score
+# => DPD 0.481  EOD 0.545
 ```
 
-`MetricFrame.by_group` is the centerpiece. The `n` column is not optional: it tells your reader whether any of the other numbers mean anything.
+These numbers come from one run with fairlearn 0.14.0, scikit-learn 1.9.1, and pandas 3.0.6. The two summaries are not "the" fairness score. Each is the gap between two cells: Asian men, selected at 0.541, and women of some other race, at 0.061, for parity; the false-negative rates of the same two groups, 0.184 and 0.729, for equalized odds. `MetricFrame.by_group` is the centerpiece, and its `n` column tells your reader whether any other number means anything.
+
+A national auditor also asks whether one model serves every state equally. Pass `st_te` as the sensitive feature and the gap in accuracy between the best and worst state is 0.073 (Utah at 0.809, Wyoming at 0.736).
 
 ::: {.callout-tip title="The Missing Manual"}
-`fairlearn` will not tell you which parity metric is defensible. Demographic parity asks whether positive predictions are allocated at the same rate across groups; equalized odds asks whether error rates are balanced given the true label. With unequal base rates they cannot both be satisfied, which is a mathematical result, not a political one. Two quieter surprises. First, `demographic_parity_difference` is the gap between the highest and lowest group, computed over every cell you pass in, including a cell of thirty people whose rate is mostly noise. The headline number is often set by your smallest group. Second, nothing in the library warns you about small cells. Report `n` beside every metric, suppress cells below a documented minimum, and say in prose which groups the audit cannot speak to.
+`fairlearn` will not tell you which parity metric is defensible. Demographic parity asks whether positive predictions are allocated at the same rate across groups; equalized odds asks whether error rates are balanced given the true label. With unequal base rates they cannot both be satisfied, which is a mathematical result, not a political one. Two quieter surprises. First, `demographic_parity_difference` is the gap between the highest and lowest group, computed over every cell you pass in. Cross state, race, and sex and you get 714 cells, 244 of them with fewer than thirty people, and a parity difference of exactly 1.0: somewhere a tiny cell had everyone selected and another had no one. The headline is set by your smallest group. Second, nothing in the library warns you about small cells. Report `n` beside every metric, suppress cells below a documented minimum, and say in prose which groups the audit cannot speak to.
 :::
 
-Save the evaluation set and the model so the next step can verify them:
+Save the evaluation set and the model so the workpaper can verify them:
 
 ```python
 import joblib
-X_te.assign(label=y_te.values, race=r_te.values, sex=s_te.values) \
-    .to_csv("data/acs_co_2018_test.csv", index=False)
+X_te.assign(label=y_te.values, race=r_te.values, sex=s_te.values,
+            state=st_te.values).to_csv("data/acs_2018_test.csv", index=False)
 joblib.dump(model, "models/logit-v1.joblib")
 ```
 
-## Tutorial, part 2: from notebook to workpaper
+## Tutorial, part 3: from notebook to workpaper
 
-A notebook produced those numbers once. An audit has to produce them on demand, with a record of every decision and a log of what changed between runs. That is the difference between a paragraph and a workpaper. Build this layout:
+A notebook produced those numbers once. An audit has to produce them on demand, with a record of every decision and a log of what changed between runs. Build this layout:
 
 ```
 audit-pipeline/
-├── CHANGELOG.md
-├── Makefile
-├── manifest.yaml
-├── thresholds.yaml
-├── audit.py
+├── CHANGELOG.md   Makefile   manifest.yaml   thresholds.yaml   audit.py
 ├── data/      models/      reports/
 ```
 
@@ -125,20 +157,21 @@ audit-pipeline/
 
 ```yaml
 audit:
-  name: "ACSIncome Colorado disaggregated audit"
+  name: "ACSIncome national disaggregated audit"
   run_id: "2027-03-04-001"
   analyst: "your.name@colorado.edu"
 dataset:
-  source: "ACS PUMS 2018 1-Year, Colorado, via folktables ACSIncome"
-  local_path: "data/acs_co_2018_test.csv"
+  source: "ACS PUMS 2018 1-Year, 50 states and Puerto Rico, via folktables ACSIncome"
+  local_path: "data/acs_2018_test.csv"
   sha256: "<output of sha256sum>"
   retrieved_on: "2027-03-04"
-  recoding: "RAC1P 3-5 collapsed to AIAN; HISP not used"
+  recoding: "RAC1P 3-5 collapsed to AIAN; HISP not used; DC not in state_list"
 model:
   path: "models/logit-v1.joblib"
   sha256: "<output of sha256sum>"
   description: "StandardScaler + LogisticRegression, random_state=42"
 protected_attributes: [race, sex]
+strata: [state]           # carried in the file, never passed to the model
 min_cell_size: 100
 thresholds_file: "thresholds.yaml"
 ```
@@ -154,7 +187,7 @@ authority: >
   or contract clause that set them, and who may change them.
 ```
 
-Financial auditors call the `authority` field authority documentation. Most algorithmic audits skip it, which is how thresholds drift without anyone deciding to move them.
+Most algorithmic audits skip the `authority` field, which is how thresholds drift without anyone deciding to move them.
 
 `audit.py` reads the manifest, verifies the hashes, runs the disaggregation, applies the thresholds, and writes a dated report:
 
@@ -181,7 +214,8 @@ def verify(m):
 def run_audit(df, model, m):
     attrs = m["protected_attributes"]
     y_true = df["label"]
-    y_pred = model.predict(df.drop(columns=["label"] + attrs))
+    X = df.drop(columns=["label"] + attrs + m.get("strata", []))
+    y_pred = model.predict(X)
     mf = MetricFrame(metrics={"n": count, "selection_rate": selection_rate,
                               "fpr": false_positive_rate, "fnr": false_negative_rate},
                      y_true=y_true, y_pred=y_pred, sensitive_features=df[attrs])
@@ -216,73 +250,51 @@ def main():
 
 if __name__ == "__main__":
     main()
-# => [{"metric": "demographic_parity_difference", "value": ..., "level": "WARN"}, ...]
+# => [{"metric": "demographic_parity_difference", "value": 0.4806, "level": "FAIL"},
+# =>  {"metric": "equalized_odds_difference", "value": 0.5449, "level": "FAIL"}]
 ```
 
-Notice what the script does that a notebook would not. It refuses to run on inputs whose hashes do not match the manifest, because a run against unverified inputs is not an audit. It suppresses small cells by a rule written down in advance. It stamps the run in UTC. Each behavior is borrowed from financial audit practice, where a workpaper exists to be legible to someone who was not in the room.
+The script refuses to run on inputs whose hashes do not match the manifest, suppresses small cells by a rule written down in advance, and stamps the run in UTC. Each behavior is borrowed from financial audit practice, where a workpaper exists to be legible to someone who was not in the room.
 
-The `Makefile` is the one-command interface. If a reviewer cannot type `make audit` and get a report, the pipeline is not reproducible:
+The `Makefile` is the one-command interface: an `audit` target that runs `python audit.py` and a `clean` target that removes `reports/*.json`. If a reviewer cannot type `make audit` and get a report, the pipeline is not reproducible. `clean` removes generated reports, never inputs. You do not delete workpapers. You archive them. `CHANGELOG.md` is the narrative companion to the numbers: one dated entry per `run_id`, recording the input hashes, the threshold adoption date, the `fairlearn` and `scikit-learn` versions, and any change in findings with its root cause.
 
-```makefile
-.PHONY: audit clean
-audit:
-	python audit.py
-clean:
-	rm -f reports/*.json
-```
-
-`clean` removes generated reports, never inputs. You do not delete workpapers. You archive them. Finally, `CHANGELOG.md` is the narrative companion to the numbers:
-
-```markdown
-## 2027-03-04-001
-- First run. Dataset and model hashes as in manifest.
-- Thresholds adopted 2027-03-04 (teaching values).
-- Findings: see reports/2027-03-04-001.json.
-
-## 2027-03-11-001
-- Re-run, no manifest changes except run_id.
-- Library versions: record fairlearn and scikit-learn versions here.
-- Changes in findings, if any, and the root cause.
-```
-
-Commit the directory, run `make audit`, and read the report for what it does not say. Does it record which columns were features? Whether the model was evaluated on a holdout? Both choices are defensible; neither is defensible if implicit. A week later, update `run_id` and run again. Usually nothing moves. Sometimes a minor library release changes a default and a metric shifts in the third decimal place. The discipline is not preventing drift. It is noticing it, logging it, and deciding whether it changes the conclusion. The occasional run where it does is why you keep a changelog.
+Commit the directory, run `make audit`, and read the report for what it does not say: which columns were features, whether the model was evaluated on a holdout. A week later, update `run_id` and run again. Usually nothing moves. Sometimes a library release changes a default and a metric shifts in the third decimal place. The discipline is not preventing drift. It is noticing it, logging it, and deciding whether it changes the conclusion.
 
 ## Writing the audit for a non-technical reader
 
-The JSON report is raw material. The audit is what you write around it, and it is the seed of the report you will write in @sec-ch-15-reports. Use four sections.
+The JSON report is raw material. The audit is what you write around it, and it is the seed of the report genre in @sec-ch-15-reports. Use four sections.
 
-1. **What the model is, and is not.** A logistic regression trained on one year of Colorado ACS data. A teaching artifact, not a procurement recommendation.
+1. **What the model is, and is not.** A logistic regression trained on one year of national ACS data. A teaching artifact, not a procurement recommendation.
 2. **Who is in the data.** The per-cell counts, with the smallest cells named in prose, including those below `min_cell_size` that the audit cannot speak to. Audits that silently drop small cells pretend to a completeness they lack.
-3. **What the metrics show.** The disaggregated table with a plain-language reading of each gap, its threshold level, and its direction.
-4. **What the audit rests on.** The recoding, the omitted Hispanic-origin variable, self-reported and sampled survey data, a single vintage and a single holdout. Name each choice and how a second auditor might make it differently.
+3. **What the metrics show.** The disaggregated table with a plain-language reading of each gap, its threshold level, and its direction, plus the by-state spread.
+4. **What the audit rests on.** The recoding, the omitted Hispanic-origin variable, the missing District of Columbia, self-reported and sampled survey data, a single vintage and a single holdout. Name each choice and how a second auditor might make it differently.
 
-Section 4 is where most real audits fail, and where audit-washing hides. If the next auditor cannot reproduce your table from your manifest, the audit is not an instrument of oversight. It is a press release.
+Section 4 is where audit-washing hides. If the next auditor cannot reproduce your table from your manifest, the audit is not an instrument of oversight. It is a press release.
 
 ## Exercises
 
-**Exercise 12.1 (Guided, laptop, real public data).** Run the Colorado `ACSIncome` audit above end to end. Then build the `audit-pipeline/` directory, fill `manifest.yaml` with real hashes from `sha256sum`, commit it, and run `make audit`. Submit the repository URL and the generated report. Graded on completeness, not on whether the model passes.
+**Exercise 8.1 (Guided, laptop, real public data).** Run the national `ACSIncome` audit above end to end, then build the `audit-pipeline/` directory, fill `manifest.yaml` with real hashes from `sha256sum`, commit it, and run `make audit`. Submit the repository URL and the generated report. If your numbers differ from the chapter's, record your library versions and say where the difference enters.
 
-**Exercise 12.2 (Guided).** One week later, rerun with a new `run_id`. Write a changelog entry stating the exact `fairlearn` and `scikit-learn` versions and what changed, even if nothing did. Commit it.
+**Exercise 8.2 (Guided).** One week later, rerun with a new `run_id`. Write a changelog entry stating the exact `fairlearn` and `scikit-learn` versions and what changed, even if nothing did.
 
-**Exercise 12.3 (Analytic).** From the NYC Department of Consumer and Worker Protection's LL144 materials, find one published bias audit summary from a real employer. In 400 words, assess it against the Raji et al. [-@raji2020] stages. Which workpaper is missing? Is it audit-washing in Goodman and Trehu's [-@goodman2023] sense? Say what evidence would change your verdict.
+**Exercise 8.3 (Analytic, real public data).** Load the 2025 federal AI use case inventory. For one agency with at least five high-impact use cases, tabulate every `hi_` column. In 400 words, assess the agency's entries against the four principles of GAO's accountability framework [@gao2021ai]. Which workpaper is missing? Distinguish blanks from answers, and name the document you would request to resolve each blank.
 
-**Exercise 12.4 (Comparative).** In 500 words, compare LL144, the EU AI Act's conformity assessment, and Colorado's SB 24-205 on three dimensions: which systems are covered, who performs the assessment, and what is published. Quote the text of each. Flag any provision of the Colorado Act whose current status you could not confirm.
+**Exercise 8.4 (Comparative).** In 500 words, compare a published LL144 bias audit summary, the Colorado Act as reenacted by SB 26-189, and M-25-21's high-impact practices on three dimensions: which systems are covered, who performs the assessment, and what is published. Quote each text. Is the LL144 summary audit-washing in Goodman and Trehu's [-@goodman2023] sense? Say what evidence would change your verdict.
 
-**Exercise 12.5 (Builds Piece 3).** Extend your pipeline into the audit for Piece 3. Swap in a second folktables task (for example, `ACSEmployment` or `ACSPublicCoverage`) or a second sensitive attribute, still restricted to Colorado. Rewrite `thresholds.yaml` so that its `authority` field names a real Colorado state body and the policy instrument it could use to adopt such thresholds. Then write the four-section audit memo (about 800 words). The memo becomes the methods and findings of your Piece 3 report in @sec-ch-15-reports.
+**Exercise 8.5 (Open-ended; submittable artifact).** Extend your pipeline with a second folktables task (`ACSEmployment` or `ACSPublicCoverage`) or a second sensitive attribute, still national. Rewrite `thresholds.yaml` so its `authority` field names a real federal body and the instrument it could use to adopt such thresholds (an OMB memorandum, a NIST standard, a GAO recommendation). Then write the four-section audit memo (about 800 words). It becomes the methods and findings of a report addressed to that body (@sec-ch-15-reports).
 
 ## Looking ahead
 
-A workpaper records what you did. It does not prove that the code does what the workpaper says. @sec-ch-10-engineering puts this pipeline under test: shape and range checks on a fixture, a regression snapshot, a deliberately introduced bug, a post-incident review, and continuous integration. Engineering also asks who keeps the record when the audited party will not, which is where worker observatories enter the module.
+A workpaper records what you did. It does not prove that the code does what the workpaper says. @sec-ch-10-engineering puts this pipeline under test: shape and range checks on a fixture, a regression snapshot, a deliberately introduced bug, a post-incident review, and continuous integration. Engineering also asks who keeps the record when the audited party will not, which is where worker observatories enter.
 
 ## Further Reading and Resources
 
 - C. Richard Baker (2005), "[What is the meaning of 'the public interest'? Examining the ideology of the American public accounting profession](https://doi.org/10.1108/09513570510620510)," *Accounting, Auditing & Accountability Journal* 18(5). The close reading of AICPA language this chapter leans on.
-- Tom Lee (1995), "The professionalization of accountancy: A history of protecting the public interest in a self-interested way," *Accounting, Auditing & Accountability Journal* 8(4). The title is the argument.
 - Inioluwa Deborah Raji et al. (2020), "[Closing the AI accountability gap](https://doi.org/10.1145/3351095.3372873)," *Proceedings of FAccT 2020*. Audit as a practice rather than a metric.
 - Bryce Goodman and Julia Trehu (2023), "[AI audit washing and accountability](https://doi.org/10.2139/ssrn.4227350)." The term in its useful form.
+- U.S. GAO (2021), *Artificial Intelligence: An Accountability Framework for Federal Agencies and Other Entities*, GAO-21-519SP: <https://www.gao.gov/products/gao-21-519sp>. The federal auditor's own questions for AI.
+- OMB, 2025 Federal Agency AI Use Case Inventory: <https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory>. Read the data dictionary and standardization report in `Validation/` before you count anything.
 - NYC Department of Consumer and Worker Protection, Local Law 144 page: <https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page>. Read the final rule, not only the FAQ.
-- Colorado General Assembly, SB 24-205: <https://leg.colorado.gov/bills/sb24-205>. Read the bill history as well as the text; the amendments are part of the lesson.
-- EU AI Act, Regulation (EU) 2024/1689: <https://eur-lex.europa.eu/eli/reg/2024/1689/oj>. Article 43 and Annexes VI and VII cover conformity assessment.
+- Colorado General Assembly, SB 26-189: <https://leg.colorado.gov/bills/sb26-189>, with SB 24-205 at <https://leg.colorado.gov/bills/sb24-205>. Read the two side by side.
 - `folktables` repository and paper: <https://github.com/socialfoundations/folktables>. Read the documentation on the limits of ACS tasks as benchmarks.
 - `fairlearn` user guide: <https://fairlearn.org/main/user_guide/>. The sections on `MetricFrame` and on disagreement between parity metrics.
-- PCAOB inspection reports: <https://pcaobus.org/oversight/inspections>. What detailed, public criticism of audit workpapers looks like.
