@@ -9,7 +9,7 @@ The evidence ledger you built in @sec-ch-08-exemption ends in a list of things a
 
 This chapter treats law as a lineage, not because data scientists should become lawyers, but because few professions have thought harder about pursuing the public interest under adversarial conditions. Keegan [-@keegan2026] describes public interest law as the lineage that "translates values into enforceable procedures": rights to access, duties to disclose, standards of review, and remedies. You will read two law and society scholars on what public interest lawyering is, learn the statutory geometry of FOIA and the Colorado Open Records Act (CORA), and sit with the fact that the same infrastructure that enables accountability work can be turned against the people it is supposed to serve.
 
-The running example is the class's coordinated set of CORA requests to **Boulder County**, filed during the Week 4 lab. The class files six to eight requests rather than one per student, so that no county office is swamped, and each student analyzes one. You will leave with a SQLite tracker, a request letter, and a notebook that turns a county PDF into a table you can check.
+The running example is **Boulder County**'s Public Records Archive, the part of its Open Records Center where the county posts CORA requests that others filed and it has already answered. You will not file a request in this module; you choose released requests and work with what came back. You will leave with a SQLite tracker populated from the archive, a critical eye for request letters, and a notebook that turns a county PDF into a table you can check.
 
 ## Public interest lawyering as a profession
 
@@ -17,7 +17,7 @@ Albiston and Nielsen [-@albiston2017] studied the U.S. public interest law field
 
 Albiston and Nielsen's empirical argument is that the field has settled into a two-tier structure. A small number of well-funded organizations (the ACLU, the NAACP Legal Defense Fund, the Electronic Frontier Foundation) work at the level of appellate strategy and legislative advocacy. A much larger tier of legal aid societies and clinics absorbs front-line demand in family court, eviction proceedings, and benefits appeals. The first tier has strategic leverage. The second has caseload and direct contact with the people served.
 
-The analogy for data science is not strained. A few civil-society organizations work at the policy tier; a much larger set of journalists, organizers, and county staff does the front-line work of unpicking a broken benefits portal. County records are second-tier work, and this chapter's tools aim there.
+In data science, a few civil-society organizations work at the policy tier; a much larger set of journalists, organizers, and county staff does the front-line work of unpicking a broken benefits portal. County records are second-tier work, and this chapter's tools aim there.
 
 ## FOIA, CORA, and the statutory geometry
 
@@ -30,7 +30,7 @@ Every state has a parallel statute. Colorado's is CORA, C.R.S. § 24-72-201 et s
 - **There is no administrative appeal.** If a request is denied, the path runs through written notice of intent to sue and then district court, with attorney fees available to a prevailing requester [@cfoic]. @sec-ch-10-oversight builds that pathway into a ledger.
 - **Criminal justice records follow a separate law.** The Colorado Criminal Justice Records Act (CCJRA) lets a custodian withhold records if disclosure would be "contrary to the public interest," a balancing test the custodian applies and must articulate. Boulder County routes requests for Sheriff's Office records through a separate records page rather than its general CORA portal.
 
-That last point shapes how you write. A request asking for "all emails from the Sheriff mentioning license plate readers" invites the custodian to classify everything as criminal justice records and apply the CCJRA balancing test. The same request phrased as "administrative records concerning the procurement and contracting of automated license plate reader technology, including contracts, invoices, and vendor correspondence" names administrative categories and makes that classification harder to justify. This is the specificity a reporter brings to a sourcing interview, translated into statutory language.
+That last point shapes how you write. A request asking for "all emails from the Sheriff mentioning license plate readers" invites the custodian to classify everything as criminal justice records and apply the CCJRA balancing test. The same request phrased as "administrative records concerning the procurement and contracting of automated license plate reader technology, including contracts, invoices, and vendor correspondence" names administrative categories and makes that classification harder to justify.
 
 ::: {.callout-tip title="The Missing Manual"}
 Most records-request advice assumes your request succeeds the first time. It does not. A well-managed request produces a negotiation: the first response will be partial, redacted, mis-scoped, delayed with an extension notice, or held behind a fee estimate. Warren and colleagues [-@warrenRequestAtlasSupportingSlow2025] designed their request tool around exactly this slow, iterative process. Design your tracker the same way: log follow-ups, extension notices, and the grounds given for each redaction. Redactions are metadata: the pattern of what an office blacks out tells you its legal theory before it states one. If three of four releases redact the same paragraph under the same exemption, you have a de facto policy you can write about, cite in testimony, or hand to a lawyer.
@@ -38,11 +38,11 @@ Most records-request advice assumes your request succeeds the first time. It doe
 
 ## The CFAA and the chilling effect
 
-Legal infrastructure is not only a resource for accountability work. It also limits what that work may try. The Computer Fraud and Abuse Act (CFAA), enacted in 1986, criminalizes "unauthorized access" to a "protected computer." For most of its life the statute was read broadly enough that violating a website's terms of service (creating test accounts to audit a housing platform, for example) exposed a researcher to federal liability. Researchers reasonably declined to do the research.
+Legal infrastructure is not only a resource for accountability work. It also limits what that work may try. The Computer Fraud and Abuse Act (CFAA), enacted in 1986, criminalizes "unauthorized access" to a "protected computer." For most of its life the statute was read broadly enough that violating a website's terms of service (creating test accounts to audit a housing platform, for example) exposed a researcher to federal liability.
 
 *Sandvig v. Barr*, brought by the ACLU on behalf of Christian Sandvig and co-plaintiffs [@aclu2019], challenged that reading. The plaintiffs wanted to audit online employment and housing platforms for race and gender discrimination using paired accounts that technically violated the platforms' terms. They sought a declaration that the CFAA did not criminalize their research. In March 2020, the U.S. District Court for the District of Columbia ruled for them on statutory grounds, holding that violating terms of service does not by itself make access unauthorized. The Supreme Court's 2021 decision in *Van Buren v. United States* narrowed the statute further in a separate case.
 
-The chilling effect *Sandvig* addressed is an infrastructure problem. A statute that criminalizes a research method does not need to prosecute anyone. Ambient uncertainty is enough to make review boards decline and graduate students pick another dissertation. *Sandvig* is the counter-example: an audit population that exists because a civil-society organization absorbed the legal cost of clarifying the rule. Note the two levels: federal courts set which research methods are safe, and a county custodian decides which records you get.
+The chilling effect *Sandvig* addressed is an infrastructure problem. A statute that criminalizes a research method does not need to prosecute anyone. Ambient uncertainty is enough to make review boards decline and graduate students pick another dissertation. *Sandvig* is the counter-example: an audit population that exists because a civil-society organization absorbed the legal cost of clarifying the rule.
 
 ## SyRI, discovery, and weaponization
 
@@ -54,7 +54,7 @@ Public-records laws are neutral on their face. In practice they can be turned ag
 
 ## Amicus briefs and MuckRock
 
-Data scientists can contribute to legal work without becoming lawyers. The amicus curiae ("friend of the court") brief, in which computer scientists or statisticians explain to a court what an algorithm or a disparity measure does, is a recognized genre, and @sec-ch-11-testimony takes up its close cousin. MuckRock, the nonprofit records-request platform, is the closest thing the U.S. has to shared request infrastructure, and its archive of prior releases is worth searching before you file [@muckrock]. Its public-by-default posture has costs, though, and a classroom needs a tracker even for requests it is not ready to expose. A SQLite database is the right scale.
+Data scientists can contribute to legal work without becoming lawyers. The amicus curiae ("friend of the court") brief, in which computer scientists or statisticians explain to a court what an algorithm or a disparity measure does, is a recognized genre, and @sec-ch-11-testimony takes up its close cousin. MuckRock, the nonprofit records-request platform, is the closest thing the U.S. has to shared request infrastructure, and its archive of prior releases is worth searching before you file [@muckrock]. Boulder County's Public Records Archive is a county-run cousin. To study either as data, you need a tracker, and SQLite is the right scale.
 
 ## Tutorial, part 1: a CORA tracker in SQLite
 
@@ -72,6 +72,7 @@ CREATE TABLE IF NOT EXISTS requests (
     agency TEXT NOT NULL,            -- e.g. 'Boulder County'
     office TEXT NOT NULL,            -- the office that holds the records
     date_submitted TEXT NOT NULL,
+    date_closed TEXT,                -- as the archive reports it
     description TEXT NOT NULL,
     regime TEXT NOT NULL CHECK (regime IN ('CORA','CCJRA','FOIA','other')),
     status TEXT NOT NULL
@@ -116,17 +117,17 @@ def cora_clock(date_submitted, holidays=()):
     return {"due": (start + 3 * day).date().isoformat(),
             "extended_due": (start + 10 * day).date().isoformat()}
 
-print(cora_clock("2027-01-28"))   # the Week 4 lab, a Thursday
+print(cora_clock("2027-01-28"))   # a request filed on a Thursday
 # => {'due': '2027-02-02', 'extended_due': '2027-02-11'}
 print(cora_clock("2027-02-10", holidays=["2027-02-15"]))
 # => {'due': '2027-02-16', 'extended_due': '2027-02-25'}
 ```
 
-Pass the county's actual holiday calendar, not the federal one you assume it follows. The clock is not self-enforcing: a query that flags requests past `extended_due` and drafts a reminder is the most effective code in records work.
+Pass the county's actual holiday calendar, not the federal one you assume it follows. For an archived request, compare its `date_closed` with `due` and `extended_due`: across many requests, the share closed late measures an office's practice, not one requester's luck. <!-- TODO: verify which fields the archive shows per request. -->
 
 ## Drafting the letter
 
-A CORA letter is four short paragraphs. The tone is formal, specificity is load-bearing, and statutory citations do real work. Here is a template retargeted to a county office; bracketed text is yours to fill.
+Every archived request is someone else's letter, and its wording explains much of what came back. It is also the letter you would write for an optional final-project request, filed with instructor approval. A CORA letter is four short paragraphs. The tone is formal, specificity is load-bearing, and statutory citations do real work. Bracketed text is yours to fill.
 
 > Dear Records Custodian,
 >
@@ -144,7 +145,7 @@ Four things do work. The citation shows you know the law. The enumerated categor
 
 ## Tutorial, part 2: from a county PDF to a table
 
-Released records arrive as PDFs. Some are born digital, exported from a word processor or a finance system, and carry a text layer. Others are scans of paper and need optical character recognition (OCR). Try the text layer first. If your class's request has not come back yet, you will practice on the fallback corpus: Boulder County's own public records, such as Board of County Commissioners agendas, minutes, and packets, and budget documents.
+Released records arrive as PDFs. Some are born digital, exported from a word processor or a finance system, and carry a text layer. Others are scans of paper and need optical character recognition (OCR). Try the text layer first. Practice on the county's other public records (Board of County Commissioners agendas, minutes, and packets, and budget documents), which can also supplement what the archive released.
 
 The example uses Resolution 2025-058, in which the Board adopted the county's 2026 budget by summarizing expenditures and revenues for each fund [@bouldercounty_res2025058]. It is four pages, born digital, and typical of what county records look like.
 
@@ -214,17 +215,17 @@ The same two funds are spelled differently on different pages of one resolution.
 
 ## Exercises
 
-**Exercise 9.1 (Piece 2 component, guided).** Take the request your class filed with Boulder County during the Week 4 lab. Insert it into the tracker with its office, regime, and submission date, compute its clock with `cora_clock`, write a query that drafts a reminder for any request past `extended_due`, and record every response or extension notice verbatim in `grounds_cited`. Add your final request letter as `piece2/request_letter.md`. If you are drafting a new request, adapt the template above to your office and topic and have your instructor review it before submission.
+**Exercise 9.1 (Piece 2 component, guided).** Choose one or more released requests from Boulder County's Public Records Archive (<https://bouldercountyco.govqa.us/WEBAPP/_rs/supporthome.aspx>). Enter each in the tracker with its office, dates requested and closed, outcome, and fees; record any exemptions cited verbatim in `grounds_cited`; and hash every released file into `documents`. Add at least five other archived requests to the same office for comparison, and write a query that flags any closed after `extended_due`. In `piece2/request_critique.md`, note which wording in your chosen request shaped the response.
 
-**Exercise 9.2 (Piece 2 component, runnable).** Download Resolution 2025-058 from Boulder County's budget page and reproduce the extraction and total check above. Then point the same notebook at one Board of County Commissioners packet from the county's meeting portal (<https://pub-bouldercounty.escribemeetings.com/>) or at your own released records. Report which tables extracted cleanly, which failed the total check, and why. Save as `piece2/extraction.ipynb`. This is the extraction notebook for Piece 2.
+**Exercise 9.2 (Piece 2 component, runnable).** Download Resolution 2025-058 from Boulder County's budget page and reproduce the extraction and total check above. Then point the same notebook at one Board of County Commissioners packet from the county's meeting portal (<https://pub-bouldercounty.escribemeetings.com/>) or at the records released for your chosen request. Report which tables extracted cleanly, which failed the total check, and why. Save as `piece2/extraction.ipynb`. This is the extraction notebook for Piece 2.
 
 **Exercise 9.3 (Reading).** Read the *Sandvig v. Barr* complaint and the March 2020 opinion. In 400 words, summarize the plaintiffs' theory, the government's response, and the narrow statutory ground on which the court ruled. Name one argument the court did not reach.
 
-**Exercise 9.4 (Open-ended).** Identify a public-interest question about Boulder County that you could answer with records but not from public datasets alone. In two pages, name the records, the office, the exemption fights you expect, and what you would do with the records. Save as `exercises/ch09_records_plan.md`. Strong plans become next year's coordinated requests.
+**Exercise 9.4 (Open-ended).** Identify a public-interest question about Boulder County that you could answer with records but not from public datasets alone. In two pages, name the records, the office, the exemption fights you expect, and what you would do with the records. Save as `exercises/ch09_records_plan.md`. It is the starting point for an optional final-project request (instructor approval required).
 
 ## Looking ahead
 
-Records work is slow. The timeline from a first letter to a usable table is measured in weeks at best, and a court fight can stretch it by a year. Reporters and lawyers budget for this. Data scientists trained on the responsiveness of an API often do not, which is why the class filed its requests in Week 4. What comes back will rarely be everything you asked for. The next chapter, @sec-ch-10-oversight, takes what was withheld as evidence in its own right: you will build a ledger of the exemptions the county cited and the remedy pathways each one leaves open.
+Records work is slow. The timeline from a first letter to a usable table is measured in weeks at best, and a court fight can stretch it by a year. Reporters and lawyers budget for this. Data scientists trained on the responsiveness of an API often do not, which is why this module works from requests the county has already answered. What comes back is rarely everything a requester asked for. The next chapter, @sec-ch-10-oversight, takes what was withheld as evidence in its own right: you will build a ledger of the exemptions the county cited and the remedy pathways each one leaves open.
 
 ## Further Reading and Resources
 

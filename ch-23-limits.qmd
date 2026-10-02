@@ -104,7 +104,7 @@ Sandvig v. Barr (CFAA),III,US,federal,exemption,oversight,records,clean
 Allegheny Family Screening Tool,III,US,county,exemption,oversight,records,clean
 SyRI,III,Europe,national,exemption,oversight,refusal,clean
 Dutch childcare benefits scandal,III,Europe,national,exemption,oversight,refusal,clean
-Boulder County CORA requests,III,US,county,exemption,oversight,records,clean
+Boulder County released CORA requests,III,US,county,exemption,oversight,records,clean
 Haugen Senate testimony,III,US,federal,enclosure,oversight,records,clean
 NYC Local Law 144,IV,US,city,exemption,oversight,records,clean
 Gender Shades,IV,US,non_state,exemption,oversight,records,clean
@@ -237,7 +237,7 @@ This chapter is about **ownership** of the framework itself. Someone owns the fr
 
 ## Closing the book
 
-The book began with a few lines of Python against the Wikimedia pageviews API and a claim that "public interest" is an operational question rather than a slogan. It ends with a deposited piece of work, a persistent identifier, and a memo about where that work falls short. That sequence is the practice: build the record, then audit the record, including the one you built.
+The book began with a few lines of Python against the Wikimedia pageviews API and a claim that "public interest" is an operational question rather than a slogan. It ends with a deposited piece of work, a DOI, and a memo about where that work falls short. That sequence is the practice: build the record, then audit the record, including the one you built.
 
 The framework will change. The next version should start from more places than Boulder, take refusal as a first move rather than a final chapter, count the people who keep the records alive, and admit that the ladder of government is a scaffold, not a law of nature. Some of those revisions will come from readers of this edition. The repository accepts pull requests.
 

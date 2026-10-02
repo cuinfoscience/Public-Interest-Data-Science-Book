@@ -9,7 +9,7 @@ Each of your four portfolio pieces addressed an audience that already exists. Th
 
 An archival deposit is different. You are contributing to a conversation with a public that does not yet exist. A graduate student in 2048 reading old EPA Toxics Release Inventory data to reconstruct an environmental-justice claim. A city staffer in 2035 looking for Colorado groundwater trends that a federal agency has since stopped publishing. A journalist in 2060 writing a retrospective on federal climate portals reorganized during this decade. None of those readers can be pitched to, invited, or surveyed. They will find what you deposited if, and only if, it is still there.
 
-That is why the deposit is the required last step of the final project. You take one portfolio piece, deepen it, recast it in a new genre, write a critical-reflection memo (@sec-ch-23-limits), and then archive the technical artifact and both texts on Zenodo or the Internet Archive with a persistent identifier. A submission without the deposit is incomplete. The deposit is where openness, oversight, and ownership (@sec-ch-06-openness, @sec-ch-10-oversight, @sec-ch-18-ownership) come to rest in a single physical-digital object: a bitstream, a checksum, a resolvable identifier, a provenance record, held by an institution committed to keeping them. This chapter teaches the workflow on a federal dataset at risk, the kind you audited in @sec-ch-16-erosion, and then applies it to your own project.
+That is why the deposit is the required last step of the final project. You take one portfolio piece, deepen it, recast it in a new genre, write a critical-reflection memo (@sec-ch-23-limits), and then archive the technical artifact and both texts on Zenodo, or another repository that mints a DOI. Only a DOI meets the requirement; an Internet Archive item identifier does not. A submission without the DOI deposit is incomplete. The deposit is where openness, oversight, and ownership (@sec-ch-06-openness, @sec-ch-10-oversight, @sec-ch-18-ownership) come to rest in a single physical-digital object: a bitstream, a checksum, a resolvable identifier, a provenance record, held by an institution committed to keeping them. This chapter teaches the workflow on a federal dataset at risk, the kind you audited in @sec-ch-16-erosion, and then applies it to your own project.
 
 ## Archives and climate, archives and memory
 
@@ -23,9 +23,9 @@ Ghaddar [-@ghaddar2016] and Robinson-Sweet [-@robinsonsweet2018] describe a seco
 
 A "durable" archive is not a synonym for "a server you rent." Durability is an institutional property: a mandate to preserve, a budget funded across political cycles, a succession plan, and federated backup so the loss of one building does not destroy the collection. A handful of institutions meet that standard. Several more claim to and do not.
 
-**The Internet Archive** operates the Wayback Machine and a general items repository [@ia_docs]. It accepts almost anything, mints durable URLs, and exposes a Python client. Its legal status has been repeatedly challenged in court, a sign of how much it matters.
+**The Internet Archive** operates the Wayback Machine and a general items repository [@ia_docs]. It accepts almost anything, mints durable URLs (not DOIs), and exposes a Python client. That makes it a fine mirror, not this course's deposit of record. Its legal status has been repeatedly challenged in court, a sign of how much it matters.
 
-**Zenodo**, operated by CERN, accepts datasets, code, and papers up to 50GB, mints a Digital Object Identifier (DOI) on publication, and preserves what it holds on CERN's long-term infrastructure [@zenodo_api]. A Zenodo DOI is the shortest path from a student laptop to a citable identifier.
+**Zenodo**, operated by CERN, accepts datasets, code, and papers up to 50GB, mints a Digital Object Identifier (DOI) on publication, and preserves what it holds on CERN's long-term infrastructure [@zenodo_api]. A Zenodo DOI is the shortest path from a student laptop to a citable identifier, and it is what the final project requires.
 
 **Figshare** and **OSF** play similar roles; OSF integrates tightly with research-project workflows [@osf_docs]. **ICPSR** at the University of Michigan is the oldest social-science data archive and the standard for survey data and restricted-use materials [@icpsr_about]. **Dryad** is the preferred repository for the life sciences [@dryad_about]. **Dataverse** is a federated platform at dozens of universities; **DASH** at NCAR is the domain archive for atmospheric data.
 
@@ -37,7 +37,7 @@ Notice what is not on this list. GitHub is not a preservation institution; its r
 
 That list is also a political arrangement. LOCKSS's founding claim is in its name: safety comes from redundancy across independent custodians [@lockss]. When the EPA's climate pages were reorganized in 2017, EDGI's volunteer "data rescue" events moved copies of at-risk datasets into Internet Archive items before the changes took effect. No single institution was going to do that; a federation did.
 
-An archival deposit is therefore political as well as technical. Depositing the same dataset in two independent repositories, in two jurisdictions, hedges against any one failing, being captured, or being compelled. The final project requires one persistent identifier from either repository. This chapter recommends both. That redundancy is not theater; it is the minimum viable federation.
+An archival deposit is therefore political as well as technical. Depositing the same dataset in two independent repositories, in two jurisdictions, hedges against any one failing, being captured, or being compelled. The final project requires a DOI, so Zenodo is the deposit of record. This chapter recommends an Internet Archive mirror as well. That redundancy is not theater; it is the minimum viable federation.
 
 ## The running example: EPA Toxics Release Inventory
 
@@ -57,9 +57,9 @@ Before any upload, convert your artifacts into formats still readable in fifty y
 
 You will work harder than you want on this step. Do it anyway. Format choice is the variable most strongly associated with whether your deposit is legible in thirty years.
 
-## Using the Internet Archive client
+## Mirroring with the Internet Archive client
 
-The `internetarchive` Python client and its `ia` command-line companion are the fastest way to deposit [@ia_docs]. Run `ia configure` once to store your credentials, then upload. The item identifier is a short unique string that becomes part of the URL (`https://archive.org/details/<identifier>`). Identifiers are forever; choose one that describes the content.
+The DOI deposit comes next; an optional mirror comes first, so the DOI record can point to it. The `internetarchive` Python client and its `ia` command-line companion are the fastest way to make one [@ia_docs]. Run `ia configure` once to store your credentials, then upload. The item identifier is a short unique string that becomes part of the URL (`https://archive.org/details/<identifier>`). Identifiers are forever; choose one that describes the content.
 
 ```python
 from internetarchive import upload, get_item
@@ -102,7 +102,7 @@ The `internetarchive` client returns success codes on uploads that silently fail
 
 ## Minting a DOI with Zenodo
 
-Zenodo's REST API issues a DOI on publication, which is what makes it the right second archive in the federated pair [@zenodo_api]. Request a personal access token from `zenodo.org/account/settings/applications/`, scope it to `deposit:write` and `deposit:actions`, and treat it like a password.
+Zenodo's REST API issues a DOI on publication, which is what makes it the deposit of record in the federated pair [@zenodo_api]. Request a personal access token from `zenodo.org/account/settings/applications/`, scope it to `deposit:write` and `deposit:actions`, and treat it like a password.
 
 ```python
 import os, requests
@@ -134,7 +134,7 @@ meta = {"metadata": {
     "keywords": ["environment", "toxics", "EPA", "TRI",
                  "environmental justice", "at-risk data"],
     "license": "cc-zero", "language": "eng",
-    "related_identifiers": [
+    "related_identifiers": [  # drop the first entry if you made no mirror
         {"identifier": "https://archive.org/details/epa-tri-2022-basic-mirror",
          "relation": "isIdenticalTo", "resource_type": "dataset"},
         {"identifier": "https://www.epa.gov/toxics-release-inventory-tri-program",
@@ -179,7 +179,7 @@ You may also deposit the other three portfolio pieces as a collection, with the 
 
 ## Verifying and citing
 
-A deposit that cannot be cited is a backup. A deposit that can be cited is a contribution. After publication, resolve the DOI and confirm it lands. Paste the Internet Archive URL into a fresh logged-out session and confirm you can download the files. Compute their SHA-256 and compare to what you deposited. Then write the citation, substituting your minted DOI for the `XXXXXXX` placeholder, in the form your future readers will paste:
+A deposit that cannot be cited is a backup. A deposit that can be cited is a contribution. After publication, resolve the DOI and confirm it lands. If you made a mirror, paste the Internet Archive URL into a fresh logged-out session and confirm you can download the files. Compute their SHA-256 and compare to what you deposited. Then write the citation, substituting your minted DOI for the `XXXXXXX` placeholder, in the form your future readers will paste:
 
 > Your Name (2027). *EPA Toxics Release Inventory, 2022 Basic Data File (mirror)* [Dataset]. Zenodo. `https://doi.org/10.5281/zenodo.XXXXXXX`. Also at Internet Archive: `https://archive.org/details/epa-tri-2022-basic-mirror`.
 
@@ -187,15 +187,15 @@ That citation, on your CV and project pages, is the shortest route from "I did t
 
 ## Exercises
 
-**Exercise 22.1 (Guided).** Install the `internetarchive` client and register at archive.org. Pick an at-risk federal environmental dataset; the endangered resource you named at the end of @sec-ch-16-erosion is a natural choice, as is EPA TRI 2022, a NOAA Climate Data Online file, or a USGS groundwater extract. Download it, convert to CSV and Parquet, write a one-page datasheet following @sec-ch-16-erosion, and deposit the bundle as an Internet Archive item with full Dublin Core metadata. Verify with `ia metadata <item_id>` that every file has non-zero size and a matching SHA-1. Submit the item URL and verification output.
+**Exercise 22.1 (Guided, mirror).** Install the `internetarchive` client and register at archive.org. Pick an at-risk federal environmental dataset; the endangered resource you named at the end of @sec-ch-16-erosion is a natural choice, as is EPA TRI 2022, a NOAA Climate Data Online file, or a USGS groundwater extract. Download it, convert to CSV and Parquet, write a one-page datasheet following @sec-ch-16-erosion, and deposit the bundle as an Internet Archive item with full Dublin Core metadata. Verify with `ia metadata <item_id>` that every file has non-zero size and a matching SHA-1. Submit the item URL and verification output.
 
-**Exercise 22.2 (Guided).** Create a Zenodo account, request an access token, and test the deposit flow against `sandbox.zenodo.org` before going live. Then deposit to production Zenodo with a `related_identifiers` entry pointing back to your Internet Archive item. Verify the DOI resolves (allow up to an hour). Submit the DOI, the resolved URL, and a note on how long resolution took.
+**Exercise 22.2 (Guided).** Create a Zenodo account, request an access token, and test the deposit flow against `sandbox.zenodo.org` before going live. Then deposit to production Zenodo with a `related_identifiers` entry pointing back to your Internet Archive mirror. Verify the DOI resolves (allow up to an hour). Submit the DOI, the resolved URL, and a note on how long resolution took.
 
 **Exercise 22.3 (Reflective).** Write a two-to-three-page preservation plan for the dataset. Address retention, migration, custodianship, and access and refusal (tying back to @sec-ch-18-ownership and @sec-ch-19-critical-data-studies-refusal). Reuse the sustainability plan from the last exercise of @sec-ch-03-pit-data-for-good as the custodianship spine. Commit the plan into the deposit as `preservation_plan.md` and update the metadata to reference it.
 
-**Exercise 22.4 (Final project deposit).** Deposit your final project: the deepened technical artifact in preservation formats, the original and recast texts, the README with provenance, a datasheet, the preservation plan, and the critical-reflection memo from @sec-ch-23-limits. Mint a persistent identifier on Zenodo or the Internet Archive (both, ideally, cross-linked with `related_identifiers`). Verify the files, resolve the identifier from a logged-out browser, and put the full citation at the top of your final-project submission. Optionally add your other three portfolio pieces as a collection.
+**Exercise 22.4 (Final project deposit).** Deposit your final project: the deepened technical artifact in preservation formats, the original and recast texts, the README with provenance, a datasheet, the preservation plan, and the critical-reflection memo from @sec-ch-23-limits. Mint a DOI on Zenodo or another DOI-minting repository; an Internet Archive identifier does not count. A cross-linked Internet Archive mirror is optional. Verify the files, resolve the DOI from a logged-out browser, and put the full citation at the top of your final-project submission. Optionally add your other three portfolio pieces as a collection.
 
-**Exercise 22.5 (Open-ended).** Propose a public-interest data infrastructure that should exist in 2035 but does not. A federated archive of state benefits-administration audit logs, a repository of municipal algorithmic impact assessments, a climate-resilient mirror of at-risk federal datasets: anything you have wanted to see while working through this book. Three to five pages. Address what it is, what publics it serves, what the first five years of building it look like year by year, what an archival-deposit strategy for its outputs entails, and who bears the maintenance labor across decades. You are not committing to build it; you are demonstrating that you can imagine one and describe what imagining it seriously requires.
+**Exercise 22.5 (Open-ended).** Propose a public-interest data infrastructure that should exist in 2035 but does not. A federated archive of state benefits-administration audit logs, a repository of municipal algorithmic impact assessments, a climate-resilient mirror of at-risk federal datasets: anything you have wanted to see while working through this book. Three to five pages. Address what it is, what publics it serves, what the first five years of building it look like year by year, what an archival-deposit strategy for its outputs entails, and who bears the maintenance labor across decades. You are not committing to build it.
 
 ## Closing
 
@@ -203,7 +203,7 @@ A deposit is a promise to a reader you will never meet, and a promise needs an h
 
 ## Further Reading and Resources
 
-- Internet Archive, *Python library documentation*: <https://archive.org/developers/internetarchive/>. The canonical reference for the client used throughout this chapter.
+- Internet Archive, *Python library documentation*: <https://archive.org/developers/internetarchive/>. The canonical reference for the client used for this chapter's mirror.
 - Zenodo, *REST API documentation*: <https://developers.zenodo.org>. Authoritative for the deposit flow; test in the sandbox at <https://sandbox.zenodo.org> before going live.
 - ICPSR, *Guide to social science data preparation and archiving*: <https://www.icpsr.umich.edu/files/deposit/dataprep.pdf>. Sixty years of social-science data stewardship, distilled.
 - Open Science Framework, *OSF help documentation*: <https://help.osf.io/>. The project-scaffolded alternative to Zenodo.

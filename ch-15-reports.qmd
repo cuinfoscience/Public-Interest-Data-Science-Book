@@ -170,7 +170,7 @@ The report does not belong to data science. Within this module alone, it has two
 
 ## Looking ahead
 
-Piece 3 asked whether a state can verify a system it depends on. Part V climbs the last rung of the ladder to the **federal** level and changes the pressure. @sec-ch-16-erosion asks what happens when the record itself decays: datasets withdrawn, links rotted, archives left without a steward. Your audit depends on federal survey infrastructure that someone has to keep running; the folktables call that worked this term is a small act of trust in that continuity. The module that follows ends in a public comment (@sec-ch-20-public-comments), a genre with the most formal route into federal decision-making of any in this book. If you choose Piece 3 for your final project, you might recast it in that genre, or deposit it with a persistent identifier (@sec-ch-22-archival-deposits).
+Piece 3 asked whether a state can verify a system it depends on. Part V climbs the last rung of the ladder to the **federal** level and changes the pressure. @sec-ch-16-erosion asks what happens when the record itself decays: datasets withdrawn, links rotted, archives left without a steward. Your audit depends on federal survey infrastructure that someone has to keep running; the folktables call that worked this term is a small act of trust in that continuity. The module that follows ends in a public comment (@sec-ch-20-public-comments), a genre with the most formal route into federal decision-making of any in this book. If you choose Piece 3 for your final project, you might recast it in that genre, or deposit it with a DOI (@sec-ch-22-archival-deposits).
 
 ## Further Reading and Resources
 

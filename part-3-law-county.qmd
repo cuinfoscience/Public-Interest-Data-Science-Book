@@ -14,13 +14,13 @@ The lineage is **law**, and in particular public interest lawyering: the traditi
 
 - **National anchors.** *Sandvig v. Barr* and the Computer Fraud and Abuse Act, a federal case that narrowed the legal risk of independently auditing online platforms [@aclu2019]; and the Allegheny Family Screening Tool, a risk-scoring system used by a Pennsylvania county's child-welfare hotline since 2016, and a model for tools in other counties, including one in Colorado [@ho2023].
 - **Non-US counter-case.** *NJCM v. the Netherlands*, in which a Dutch court held in 2020 that the legislation behind the SyRI welfare-fraud system violated Article 8 of the European Convention on Human Rights [@syri2020].
-- **Local case.** Coordinated Colorado Open Records Act (CORA) requests to **Boulder County**. The class files six to eight requests during the Week 4 lab, rather than one per student, so that no county office is overwhelmed, and each student analyzes the records that come back from one request. If a response is late, costly, or withheld, the student works from a fallback corpus of the county's own public records: Board of County Commissioners agendas, minutes, and packets, and budget documents. The withholding then becomes evidence. This is the county end of Keegan's [-@keegan2026] Case 1, "Mining municipal archives": records formally public but practically opaque.
+- **Local case.** Records that **Boulder County** has already released under the Colorado Open Records Act (CORA), as posted in the **Public Records Archive** of the county's Open Records Center (<https://bouldercountyco.govqa.us/WEBAPP/_rs/supporthome.aspx>). You do not file new requests in this module. Each student chooses one or more requests that someone else already filed and the county already answered, and works with the released records. The archive's request and response metadata (the office, the dates requested and closed, the outcome, redactions, exemptions cited, and fees) is data in its own right, so a request answered late, partly, or not at all is evidence too. The county's other public records (Board of County Commissioners agendas, minutes, and packets, and budget documents) can supplement the archive. Filing a new CORA request is an optional final-project activity, with the instructor's approval. This is the county end of Keegan's [-@keegan2026] Case 1, "Mining municipal archives": records formally public but practically opaque.
 
 ## Portfolio piece
 
 Module 2 ends in **Piece 2: Law / County / Testimony**, due Friday, February 26, 2027. You submit:
 
-1. a **technical artifact**: a CORA request letter and tracker entry; an extraction notebook that turns released (or fallback) Boulder County records into a table; and an exemptions and remedy ledger;
+1. a **technical artifact**: tracker entries for the released request(s) you chose from Boulder County's Public Records Archive; an extraction notebook that turns the released records into a table; and an exemptions and remedy ledger;
 2. a **public text**: written testimony (about 1,000 words) and a timed oral statement (recorded, 3–5 minutes) for a Boulder County Board of County Commissioners hearing;
 3. an **installed-base note** of about 300 words on the pressure you met, the elements you built and those still missing, with provenance, license, and an AI-use disclosure; and
 4. for INFO 5871 students, a **graduate methods memo** of 750–1,000 words.
@@ -35,8 +35,8 @@ Module 2 ends in **Piece 2: Law / County / Testimony**, due Friday, February 26,
 
 @sec-ch-08-exemption names the pressure: an evidence ledger for the Allegheny Family Screening Tool, read against SyRI, that turns gaps into candidate records requests.
 
-@sec-ch-09-law introduces the lineage: public interest lawyering, FOIA and CORA, the CFAA and *Sandvig*, a CORA tracker in SQLite, a request letter, and an extraction notebook that turns a county budget resolution into a checked table.
+@sec-ch-09-law introduces the lineage: public interest lawyering, FOIA and CORA, the CFAA and *Sandvig*, a CORA tracker in SQLite populated from the county's Public Records Archive, how to draft (and critically read) a request letter, and an extraction notebook that turns a county budget resolution into a checked table.
 
-@sec-ch-10-oversight develops the value: routine auditability versus episodic audits, escalation pathways tested for accessibility and consequence, and an exemptions and remedy ledger built from CORA responses.
+@sec-ch-10-oversight develops the value: routine auditability versus episodic audits, escalation pathways tested for accessibility and consequence, and an exemptions and remedy ledger built from released requests in the county's Public Records Archive.
 
 @sec-ch-11-testimony closes with the genre: a timed oral statement and a written statement for a Board of County Commissioners hearing, and Piece 2.

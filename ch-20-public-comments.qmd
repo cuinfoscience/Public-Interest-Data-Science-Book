@@ -174,7 +174,7 @@ Submitting the comment to the agency is optional and requires instructor approva
 
 ## Looking ahead
 
-With Piece 4 you have written for all four rungs of the ladder: a city outlet, a county board, a state body, and a federal agency. Part VI, Beyond the Portfolio, is where one of those pieces goes further. @sec-ch-21-research-proposals introduces the research proposal, a genre graduate students may use to recast a piece for the final project. @sec-ch-22-archival-deposits then teaches you to deposit your final work with a persistent identifier, so that your audit and your comment outlive the agency web pages they were written to protect. That last step closes the loop this module opened: you will become, in a small way, a steward of the record.
+With Piece 4 you have written for all four rungs of the ladder: a city outlet, a county board, a state body, and a federal agency. Part VI, Beyond the Portfolio, is where one of those pieces goes further. @sec-ch-21-research-proposals introduces the research proposal, a genre graduate students may use to recast a piece for the final project. @sec-ch-22-archival-deposits then teaches you to deposit your final work with a DOI, so that your audit and your comment outlive the agency web pages they were written to protect. That last step closes the loop this module opened: you will become, in a small way, a steward of the record.
 
 ## Further Reading and Resources
 

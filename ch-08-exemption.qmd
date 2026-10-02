@@ -160,7 +160,7 @@ The public-interest response has two parts. The first is the patient work this c
 
 **Exercise 8.1 (Guided).** Extend the AFST ledger from six rows to at least twelve. Candidate sources: the county's impact evaluations and ethical reviews posted on its analytics site, the developers' published responses, any litigation, and community-organization statements. Fill both text columns for each row, and replace any row you cannot verify. Save as `exercises/ch08_afst_ledger.csv` and write 300 words on the three largest gaps.
 
-**Exercise 8.2 (Piece 2 component, runnable).** Build an evidence ledger for the Boulder County program or office that your class's coordinated Colorado Open Records Act request concerns. Use only public sources you can download on a laptop: the county's budget documents (<https://bouldercounty.gov/government/budget-and-finance/county-budget/>), Board of County Commissioners agendas, minutes, and packets from the county's meeting portal, and press coverage. Use the same schema, with at least eight rows, and load it with `pandas`. Then run the gap-to-request loop above and mark which `what_it_doesnt` entries your class's request already covers. Save as `piece2/evidence_ledger.csv`. This ledger becomes the backbone of Piece 2.
+**Exercise 8.2 (Piece 2 component, runnable).** Build an evidence ledger for the Boulder County program or office whose released requests you chose from the county's Public Records Archive. Use only public sources you can download on a laptop: the released records themselves, the county's budget documents (<https://bouldercounty.gov/government/budget-and-finance/county-budget/>), Board of County Commissioners agendas, minutes, and packets from the county's meeting portal, and press coverage. Use the same schema, with at least eight rows, and load it with `pandas`. Then run the gap-to-request loop above and mark which `what_it_doesnt` entries the released requests already cover. Save as `piece2/evidence_ledger.csv`. This ledger becomes the backbone of Piece 2.
 
 **Exercise 8.3 (Analytic).** Read the SyRI judgment (ECLI:NL:RBDHA:2020:1878) in English translation. In 500 words, state the legal theory the court used, name the treaty article it rested on, and explain whether an equivalent argument would be available in a U.S. federal court. If you are unsure, name the sources of your uncertainty.
 
@@ -170,7 +170,7 @@ The public-interest response has two parts. The first is the patient work this c
 
 ## Looking ahead
 
-Enclosure keeps data out of reach. Exemption keeps the people and institutions that use data out of reach. The ledger you built here names what a county has not told you. The next chapter, @sec-ch-09-law, turns to the lineage that has spent a century building tools for making institutions answer: public interest law. You will learn the statutory geometry of FOIA and the Colorado Open Records Act, track your class's requests in a database, and turn what comes back into a table.
+Enclosure keeps data out of reach. Exemption keeps the people and institutions that use data out of reach. The ledger you built here names what a county has not told you. The next chapter, @sec-ch-09-law, turns to the lineage that has spent a century building tools for making institutions answer: public interest law. You will learn the statutory geometry of FOIA and the Colorado Open Records Act, track requests the county has already answered in a database, and turn what came back into a table.
 
 ## Further Reading and Resources
 

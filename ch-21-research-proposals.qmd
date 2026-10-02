@@ -94,7 +94,7 @@ A serviceable DMP covers six sections.
 
 **Sharing.** What you will make public, and where. A de-identified derived dataset on Zenodo [@zenodo_api] with a CC-BY license and a DOI; a code repository on GitHub linked from the dataset record; a datasheet following Gebru and colleagues [@gebru2021]. If something will not be shared, say why.
 
-**Preservation.** Where the shared outputs live after you stop paying attention. Zenodo and the Internet Archive provide preservation commitments; @sec-ch-22-archival-deposits walks you through the deposit that every final project requires. A GitHub repo you maintain is not a preservation plan.
+**Preservation.** Where the shared outputs live after you stop paying attention. Zenodo and the Internet Archive provide preservation commitments, but the deposit every final project requires must carry a DOI, such as the one Zenodo mints (@sec-ch-22-archival-deposits). A GitHub repo you maintain is not a preservation plan.
 
 The DMP is where you operationalize the installed base for your own project: linkability in formats and standards, interpretability in the datasheet, continuity in preservation, safe scrutiny in sharing.
 
@@ -164,13 +164,13 @@ The broader-impacts section is where "public interest" becomes concrete and acco
 
 **Exercise 21.3 (Specific-aims page).** If you are using the proposal genre for the final project, draft a one-page specific-aims document for a one-year, $50,000 study that grows out of the portfolio piece you are deepening. Target a plausible funder at the right scale: the Gates Family Foundation, the Boettcher Foundation, or a university seed-grant program. Read three of their recent awards first. Use the four-move structure and name the government body from your piece in the impact paragraph. Rewrite five times. Save the fifth draft as `proposal/specific_aims.md`.
 
-**Exercise 21.4 (Budget and DMP).** Produce a budget (adapt the pandas example or write `proposal/budget.csv`) with personnel, direct costs, and indirects at the funder's actual cap, and a one-page narrative justification. Then draft a two-page DMP with the DMPTool template [@dmptool], covering all six sections, naming the datasheet standard [@gebru2021], and naming as the preservation host the Zenodo or Internet Archive record you will create in @sec-ch-22-archival-deposits. Save as `proposal/budget_justification.md` and `proposal/dmp.md`.
+**Exercise 21.4 (Budget and DMP).** Produce a budget (adapt the pandas example or write `proposal/budget.csv`) with personnel, direct costs, and indirects at the funder's actual cap, and a one-page narrative justification. Then draft a two-page DMP with the DMPTool template [@dmptool], covering all six sections, naming the datasheet standard [@gebru2021], and naming as the preservation host the Zenodo record and DOI you will create in @sec-ch-22-archival-deposits. Save as `proposal/budget_justification.md` and `proposal/dmp.md`.
 
 **Exercise 21.5 (Simulated IRB protocol and assembly).** Draft a simulated IRB protocol covering consent, risk, data handling, benefits, and conflicts of interest, grounded in the Belmont Report [@belmont1978] and the revised Common Rule [@common_rule]. If the project is probably exempt, say so and explain why. Save as `proposal/irb_protocol.md`. Then assemble the specific-aims page, budget, DMP, and protocol as your recast final-project text, ready to deposit alongside the deepened technical artifact.
 
 ## Closing
 
-A proposal is a promise about future work, and a promise is only as good as the record it leaves. The next chapter turns your final project, proposal or otherwise, into that record: a deposit with a persistent identifier (@sec-ch-22-archival-deposits). The chapter after that asks what the whole framework, including the proposal genre's habit of translating every problem into fundable aims, cannot see (@sec-ch-23-limits).
+A proposal is a promise about future work, and a promise is only as good as the record it leaves. The next chapter turns your final project, proposal or otherwise, into that record: a deposit with a DOI (@sec-ch-22-archival-deposits). The chapter after that asks what the whole framework, including the proposal genre's habit of translating every problem into fundable aims, cannot see (@sec-ch-23-limits).
 
 ## Further Reading and Resources
 
