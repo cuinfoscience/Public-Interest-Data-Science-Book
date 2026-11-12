@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -95,18 +95,19 @@ div.csl-indent {
 <link href="./ch-02-installed-base.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-5a1953863e1f72ef3b996ef827f01ca7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-5de16f5e46225c21e2daa90d340bf64f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-3218d7d29a29f08bc4fdf3802c3e3ca5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-5de16f5e46225c21e2daa90d340bf64f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-64093fbce31f7d982dd5978587aea001.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-9f9c5abca8a84316e379a71bf0dea7ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-64093fbce31f7d982dd5978587aea001.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0ad0bed1a91577636a034c605622b557.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a6d37c80349318dfa2caa801ede739a0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-0ad0bed1a91577636a034c605622b557.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -138,7 +139,7 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -161,6 +162,7 @@ div.csl-indent {
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -190,13 +192,19 @@ div.csl-indent {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -290,6 +298,7 @@ div.csl-indent {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -304,13 +313,13 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-1-pressures-values.html">Pressures and Values</a></li><li class="breadcrumb-item"><a href="./ch-03-enclosure-openness.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure and Openness</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-1-pressures-values.html">Pressures and Values</a></li><li class="breadcrumb-item"><a href="./ch-03-enclosure-openness.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure and Openness</span></a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -321,7 +330,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Public Interest Data Science</a> 
@@ -344,7 +353,7 @@ div.csl-indent {
           </li>
       </ul>
     </div>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
     </div>
       </div>
@@ -364,12 +373,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-1-pressures-values.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pressures and Values</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Pressures and Values</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section: Pressures and Values">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
@@ -405,12 +414,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-2-lineages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lineages</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Lineages</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section: Lineages">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch-06-journalism.html" class="sidebar-item-text sidebar-link">
@@ -446,12 +455,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-3-adjacent-conversations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Adjacent Conversations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Adjacent Conversations</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section: Adjacent Conversations">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch-11-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
@@ -475,12 +484,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-4-genres.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Genres</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Genres</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section: Genres">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch-14-op-eds.html" class="sidebar-item-text sidebar-link">
@@ -522,12 +531,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-5-closing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Closing</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-5-label">Closing</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section: Closing">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch-20-limits.html" class="sidebar-item-text sidebar-link">
@@ -538,13 +547,10 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-controls="quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-6-label">Appendices</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" aria-labelledby="quarto-sidebar-section-6-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
@@ -565,7 +571,7 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
@@ -579,10 +585,10 @@ div.csl-indent {
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-03-enclosure-openness.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-1-pressures-values.html">Pressures and Values</a></li><li class="breadcrumb-item"><a href="./ch-03-enclosure-openness.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure and Openness</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-1-pressures-values.html">Pressures and Values</a></li><li class="breadcrumb-item"><a href="./ch-03-enclosure-openness.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure and Openness</span></a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title"><span id="sec-ch-03-enclosure-openness" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Enclosure and Openness</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
@@ -603,7 +609,7 @@ div.csl-indent {
 
 <p>In the sixteenth and seventeenth centuries, across England and Scotland, common pastures and woodlands that had been used collectively for generations were fenced off by landowners and Parliament. The legal instruments were workmanlike. The consequences were not. Villagers who had grazed sheep on the commons and gleaned fallen grain from open fields found themselves dependent on wage labor, migrating to cities, or both. Enclosure was not a failure of the commons. It was a project, by those with power, to convert shared resources into private ones, often with the language of improvement attached.</p>
 <p>James Boyle <span class="citation" data-cites="boyle2017">(<a href="#ref-boyle2017" role="doc-biblioref">2017</a>)</span> argued two decades ago that a “second enclosure movement” was underway, this time over ideas, code, and data. The enclosure most relevant to this book has moved past ideas and into observation itself. Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> names it as the first of three pressures on public knowledge: enclosure reorganizes <strong>who can observe</strong>, redesigning interfaces, archives, and rights-to-know so that scrutiny becomes costly or infeasible. The value that answers it is <strong>openness</strong>, which Keegan defines not as downloadability but as the <strong>durable legibility of evidentiary traces</strong>: records that a non-expert can still find, read, cite, and compare long after the moment they were posted.</p>
-<p>This chapter pairs the pressure with the value. The first half shows enclosure at two scales: global platforms, where it is loud, and city hall, where it is quiet and often more consequential. A bridge asks what openness can and cannot do against enclosure, including when the public-interest choice is not to collect at all. The second half builds openness as a practice on a real city campaign finance table that is formally open and practically treacherous. The worked examples sit at the city, the level where journalism (<a href="ch-06-journalism.html" class="quarto-xref"><span>Chapter 6</span></a>) and op-eds (<a href="ch-14-op-eds.html" class="quarto-xref"><span>Chapter 14</span></a>) do their work.</p>
+<p>This chapter pairs the pressure with the value. The first half shows enclosure at two scales: global platforms, where it is loud, and city hall, where it is quiet and often more consequential. A bridge asks what openness can and cannot do against enclosure, including when the public-interest choice is not to collect at all. The second half builds openness as a practice on a real city campaign finance table that is formally open and practically treacherous. The worked examples use city records, the same records that journalism (<a href="ch-06-journalism.html" class="quarto-xref"><span>Chapter 6</span></a>) and op-eds (<a href="ch-14-op-eds.html" class="quarto-xref"><span>Chapter 14</span></a>) draw on.</p>
 <p>The chapter relies on one concept from <a href="ch-02-installed-base.html" class="quarto-xref"><span>Chapter 2</span></a>: the <strong>installed base</strong>, the six capacities (linkability, interpretability, continuity, safe scrutiny, authority, and remedy) that let a data system serve the public rather than merely invoke it. Enclosure attacks linkability, interpretability, and safe scrutiny. Openness rebuilds them.</p>
 <section id="the-pressure-who-can-observe" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="the-pressure-who-can-observe"><span class="header-section-number">3.1</span> The pressure: who can observe?</h2>
@@ -691,7 +697,7 @@ div.csl-indent {
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># =&gt; 60   (as of October 2026: one request per minute for crawlers)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The parser answers per path and user agent and surfaces any declared crawl delay. A sixty-second crawl delay is a strong hint that the city does not want its portal pages crawled, and a weak hint about where it does want you to go: the documented data API.</p>
 <p>Terms of Service are harder. For years it was unclear whether violating a ToS could be prosecuted as “unauthorized access” under the U.S. Computer Fraud and Abuse Act (CFAA). The <em>Sandvig v. Barr</em> litigation <span class="citation" data-cites="aclu2019">(<a href="#ref-aclu2019" role="doc-biblioref">American Civil Liberties Union 2019</a>)</span> established in 2020 that academic research violating a ToS is not by that fact alone a criminal CFAA violation. That is not a blanket license: you can still be sued, banned, or sent a cease-and-desist. Read the ToS, save a dated copy, and know which clauses you rely on. <a href="ch-04-exemption-oversight.html" class="quarto-xref"><span>Chapter 4</span></a> returns to the CFAA as a shield for the audited.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -836,7 +842,7 @@ div.csl-indent {
 <p>Against platform enclosure, openness cannot reopen an API. It can make sure that whatever you did observe stays observable: copies you control, provenance that lets a stranger check them, and a deposit that outlives your access (<a href="ch-19-archival-deposits.html" class="quarto-xref"><span>Chapter 19</span></a>). It also obliges honesty: a study conditioned on platform-provided data is a study of what the platform chose to show you. Against soft enclosure at city hall, openness reaches further, because the records are already public in law. The work there is to turn posted records into published ones, which the second half of this chapter does.</p>
 <p>Openness also fails in two ways that Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> anticipates in the first case, mining municipal archives, and both apply to you. The first is capacity: many cities lack the staff to do more than post, and proposals for metadata standards or AI-assisted search can read as techno-solutionism from people who will not maintain them. The answer is shared services (common tooling, templates, and custodial partnerships with libraries and archives) rather than heroic one-off projects. The second is vendor capture: a commercial indexing service can make records searchable while creating a new enclosure around public memory, producing what Keegan calls “transparency theater.” The test is whether indices are exportable, ranking is auditable, and the public, not the vendor, controls the memory layer. A student scraper that indexes a city’s packets for one semester and then disappears is a project, not infrastructure.</p>
 <p>Finally, openness is not maximal collection, and sometimes not collecting is the legitimate choice. Keegan treats visibility as something to be governed: without safeguards, maximal openness can become a vector for harassment, retaliation, or extraction. Zong and Matias <span class="citation" data-cites="zong2024">(<a href="#ref-zong2024" role="doc-biblioref">2024</a>)</span> treat refusal by data subjects as a legitimate counter-move rather than an obstacle, and <a href="ch-13-critical-data-studies-refusal.html" class="quarto-xref"><span>Chapter 13</span></a> argues that declining to collect, or declining to republish, can be the public-interest choice. A city vendor’s <code>Disallow: /</code> is a procurement artifact you may reasonably route around through a documented API or a records request. A community forum’s request not to be scraped is a different kind of signal. Enclosure is a fence built by the powerful around what they hold; refusal is a boundary drawn by the less powerful around themselves. Openness answers the first and should respect the second.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -956,7 +962,7 @@ div.csl-indent {
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>clean.to_parquet(<span class="st">"data/boulder_contributions_clean.parquet"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Two formats, intentionally. CSV is the compatibility format. Parquet preserves the types you just fought to recover, including ZIP codes as text, so whoever reads it next does not repeat your work. Notice what is missing from <code>keep</code>: the <code>street</code> column. That is a decision, not an oversight, and the end of this section explains it.</p>
 <p>Three habits are worth naming. Every destructive transformation keeps the original column (<code>amount_raw</code> beside <code>amount</code>, <code>city</code> beside <code>city_is_boulder</code>). Failures stay visible rather than dropped. And every normalization is documented inline, because “we treated 26 spellings as Boulder” is a choice future you will have forgotten, and one with a caveat: a mailing city of “Boulder” is not the same as an address inside city limits, since some unincorporated addresses use a Boulder mailing city. The committee check makes the linkability point concrete. If you joined filings across elections by committee name, you would silently merge different committees from different cycles; the clerk’s year-coded number is the identifier, and it is the column you must never drop.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -974,7 +980,7 @@ div.csl-indent {
 <h3 data-number="3.3.5" class="anchored" data-anchor-id="writing-the-readme-and-the-datasheet"><span class="header-section-number">3.3.5</span> Writing the README and the datasheet</h3>
 <p>A README is the first thing a non-specialist reads and often the only thing. Write it as prose, with six sections: <strong>what this is</strong> (one plain paragraph); <strong>provenance</strong> (source URL, retrieval date, and your <code>provenance.jsonl</code>); <strong>what was done to it</strong> (a short narrative pointing to the script); <strong>column documentation</strong> (every column, units, missing-value conventions); <strong>license</strong>; and <strong>canonical citation</strong> (a versioned URL and date until <a href="ch-19-archival-deposits.html" class="quarto-xref"><span>Chapter 19</span></a> gives you a DOI).</p>
 <p>A <strong>datasheet</strong> is for auditors and future maintainers. Gebru and colleagues <span class="citation" data-cites="gebru2021">(<a href="#ref-gebru2021" role="doc-biblioref">2021</a>)</span> proposed the form; a compact version has seven sections: motivation, composition (including sensitive fields such as donor street addresses), collection process (under what legal authority), preprocessing, uses (appropriate and cautioned), distribution, and maintenance. For this dataset, “maintenance” is where you write down that the series stopped in 2018 and nobody said so. Two pages is plenty: a reader who will never meet you should be able to decide from it whether to trust the file. <a href="ch-05-erosion-ownership.html" class="quarto-xref"><span>Chapter 5</span></a> returns to datasheets as a defense against forgetting.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1134,15 +1140,50 @@ Zuiderwijk, Anneke, and Marijn Janssen. 2014. <span>“Open Data Policies, Their
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -1272,7 +1313,8 @@ Zuiderwijk, Anneke, and Marijn Janssen. 2014. <span>“Open Data Policies, Their
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -1281,8 +1323,69 @@ Zuiderwijk, Anneke, and Marijn Janssen. 2014. <span>“Open Data Policies, Their
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -1296,6 +1399,7 @@ Zuiderwijk, Anneke, and Marijn Janssen. 2014. <span>“Open Data Policies, Their
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1458,44 +1562,54 @@ Zuiderwijk, Anneke, and Marijn Janssen. 2014. <span>“Open Data Policies, Their
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1594,7 +1708,10 @@ Zuiderwijk, Anneke, and Marijn Janssen. 2014. <span>“Open Data Policies, Their
     }
   });
   </script>
-<nav class="page-navigation">
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+<nav class="page-navigation" aria-label="Page">
   <div class="nav-page nav-page-previous">
       <a href="./ch-02-installed-base.html" class="pagination-link" aria-label="The Installed Base">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Installed Base</span></span>
@@ -1617,7 +1734,7 @@ Zuiderwijk, Anneke, and Marijn Janssen. 2014. <span>“Open Data Policies, Their
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>James Boyle <span class="co">[</span><span class="ot">-@boyle2017</span><span class="co">]</span> argued two decades ago that a "second enclosure movement" was underway, this time over ideas, code, and data. The enclosure most relevant to this book has moved past ideas and into observation itself. Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> names it as the first of three pressures on public knowledge: enclosure reorganizes **who can observe**, redesigning interfaces, archives, and rights-to-know so that scrutiny becomes costly or infeasible. The value that answers it is **openness**, which Keegan defines not as downloadability but as the **durable legibility of evidentiary traces**: records that a non-expert can still find, read, cite, and compare long after the moment they were posted.</span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>This chapter pairs the pressure with the value. The first half shows enclosure at two scales: global platforms, where it is loud, and city hall, where it is quiet and often more consequential. A bridge asks what openness can and cannot do against enclosure, including when the public-interest choice is not to collect at all. The second half builds openness as a practice on a real city campaign finance table that is formally open and practically treacherous. The worked examples sit at the city, the level where journalism (@sec-ch-06-journalism) and op-eds (@sec-ch-14-op-eds) do their work.</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>This chapter pairs the pressure with the value. The first half shows enclosure at two scales: global platforms, where it is loud, and city hall, where it is quiet and often more consequential. A bridge asks what openness can and cannot do against enclosure, including when the public-interest choice is not to collect at all. The second half builds openness as a practice on a real city campaign finance table that is formally open and practically treacherous. The worked examples use city records, the same records that journalism (@sec-ch-06-journalism) and op-eds (@sec-ch-14-op-eds) draw on.</span>
 <span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>The chapter relies on one concept from @sec-ch-02-installed-base: the **installed base**, the six capacities (linkability, interpretability, continuity, safe scrutiny, authority, and remedy) that let a data system serve the public rather than merely invoke it. Enclosure attacks linkability, interpretability, and safe scrutiny. Openness rebuilds them.</span>
 <span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>

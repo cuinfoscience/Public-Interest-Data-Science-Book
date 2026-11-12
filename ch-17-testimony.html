@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -95,18 +95,19 @@ div.csl-indent {
 <link href="./ch-16-research-proposals.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-5a1953863e1f72ef3b996ef827f01ca7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-5de16f5e46225c21e2daa90d340bf64f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-3218d7d29a29f08bc4fdf3802c3e3ca5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-5de16f5e46225c21e2daa90d340bf64f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-64093fbce31f7d982dd5978587aea001.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-9f9c5abca8a84316e379a71bf0dea7ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-64093fbce31f7d982dd5978587aea001.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0ad0bed1a91577636a034c605622b557.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a6d37c80349318dfa2caa801ede739a0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-0ad0bed1a91577636a034c605622b557.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -138,7 +139,7 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -161,6 +162,7 @@ div.csl-indent {
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -190,13 +192,19 @@ div.csl-indent {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -290,6 +298,7 @@ div.csl-indent {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -304,13 +313,13 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-4-genres.html">Genres</a></li><li class="breadcrumb-item"><a href="./ch-17-testimony.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testimony</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-4-genres.html">Genres</a></li><li class="breadcrumb-item"><a href="./ch-17-testimony.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testimony</span></a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -321,7 +330,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Public Interest Data Science</a> 
@@ -344,7 +353,7 @@ div.csl-indent {
           </li>
       </ul>
     </div>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
     </div>
       </div>
@@ -364,12 +373,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-1-pressures-values.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pressures and Values</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Pressures and Values</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section: Pressures and Values">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
@@ -405,12 +414,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-2-lineages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lineages</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Lineages</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section: Lineages">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch-06-journalism.html" class="sidebar-item-text sidebar-link">
@@ -446,12 +455,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-3-adjacent-conversations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Adjacent Conversations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Adjacent Conversations</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section: Adjacent Conversations">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch-11-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
@@ -475,12 +484,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-4-genres.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Genres</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Genres</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section: Genres">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch-14-op-eds.html" class="sidebar-item-text sidebar-link">
@@ -522,12 +531,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-5-closing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Closing</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-5-label">Closing</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section: Closing">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch-20-limits.html" class="sidebar-item-text sidebar-link">
@@ -538,13 +547,10 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-controls="quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-6-label">Appendices</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" aria-labelledby="quarto-sidebar-section-6-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
@@ -565,7 +571,7 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
@@ -583,10 +589,10 @@ div.csl-indent {
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-17-testimony.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-4-genres.html">Genres</a></li><li class="breadcrumb-item"><a href="./ch-17-testimony.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testimony</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-4-genres.html">Genres</a></li><li class="breadcrumb-item"><a href="./ch-17-testimony.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testimony</span></a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title"><span id="sec-ch-17-testimony" class="quarto-section-identifier"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testimony</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
@@ -607,7 +613,7 @@ div.csl-indent {
 
 <p>A legislative committee room is an unusual venue for data science. At the Colorado State Capitol, the General Assembly’s guide to public hearings asks that you not cheer, boo, or applaud, that you leave signs and placards outside, and that you not wear clothing that announces a position on a bill before the committee <span class="citation" data-cites="coga_hearing_guide">(<a href="#ref-coga_hearing_guide" role="doc-biblioref">Colorado General Assembly, n.d.</a>)</span>. You sign up to testify through the legislature’s website, in person or remotely. Your laptop is closed. The committee sits at the front, the bill’s sponsor has presented it, and the chair calls witnesses. When the chair calls your name, a clock starts, and when it runs out you will not get the extra thirty seconds you wish for.</p>
 <p>Testimony is a genre. Like the op-ed in <a href="ch-14-op-eds.html" class="quarto-xref"><span>Chapter 14</span></a> and the report in <a href="ch-15-reports.html" class="quarto-xref"><span>Chapter 15</span></a>, it has conventions you can learn and a specific theory of what counts as contribution. Unlike those genres, it is also a performance, delivered in public and preserved in the record of a governing body. A well-argued op-ed persuades at scale. A well-argued report becomes institutional evidence. Testimony becomes <em>voice in the record</em>: a durable, citable mark that a particular person said a particular thing to a particular body on a particular day. The genre’s rules follow from that.</p>
-<p>This chapter sets testimony at the <strong>state</strong> level, where law is made. The legal lineage (<a href="ch-07-law.html" class="quarto-xref"><span>Chapter 7</span></a>) treats statutes such as the Colorado Open Records Act (CORA) as the rules that decide what the public can see and what remedies it has when a custodian says no. Those rules are changed in the General Assembly, and committee hearings are where the public speaks to the people changing them. You will need evidence: a tracker of released records requests and an extraction notebook (<a href="ch-07-law.html" class="quarto-xref"><span>Chapter 7</span></a>), and a ledger of the exemptions custodians cited and the remedies each leaves open (<a href="ch-04-exemption-oversight.html" class="quarto-xref"><span>Chapter 4</span></a>). From that evidence you will write a timed oral statement of about three minutes, a written statement of about 1,000 words for the record, and prepared answers to the questions you can anticipate. The mechanics transfer: congressional hearings, county boards, and European parliamentary consultations share a common structure even when the clocks differ.</p>
+<p>The worked example is a committee hearing of the Colorado <strong>General Assembly</strong>, where state law is made. The legal lineage (<a href="ch-07-law.html" class="quarto-xref"><span>Chapter 7</span></a>) treats statutes such as the Colorado Open Records Act (CORA) as the rules that decide what the public can see and what remedies it has when a custodian says no. Those rules are changed in the General Assembly, and committee hearings are where the public speaks to the people changing them. You will need evidence: a tracker of released records requests and an extraction notebook (<a href="ch-07-law.html" class="quarto-xref"><span>Chapter 7</span></a>), and a ledger of the exemptions custodians cited and the remedies each leaves open (<a href="ch-04-exemption-oversight.html" class="quarto-xref"><span>Chapter 4</span></a>). From that evidence you will write a timed oral statement of about three minutes, a written statement of about 1,000 words for the record, and prepared answers to the questions you can anticipate. The mechanics transfer: congressional hearings, county boards, and European parliamentary consultations share a common structure even when the clocks differ.</p>
 <section id="what-testimony-is-and-is-not" class="level2" data-number="17.1">
 <h2 data-number="17.1" class="anchored" data-anchor-id="what-testimony-is-and-is-not"><span class="header-section-number">17.1</span> What testimony is and is not</h2>
 <p>An op-ed is persuasion at scale; you do not know your reader, and the outlet is the introduction. A report is institutional evidence; the sponsor’s imprint carries you. Testimony is neither. It is voice. At a congressional hearing, a committee invites you because of who you are, and witness selection signals which perspectives it wants on the record. At a Colorado General Assembly committee hearing on a bill, nobody has to invite you. You are a resident, a student, or a researcher who signed up. That is a strength as well as a limit: the committee hears from you because the process is open to the public, not because a staffer chose you.</p>
@@ -619,7 +625,7 @@ div.csl-indent {
 <li><strong>Questions.</strong> Committee members may question witnesses after they speak. The exchange also continues afterward, with staff, the sponsor, lobbyists, and reporters, and you need answers ready.</li>
 </ol>
 <p>Frances Haugen’s October 2021 appearance before a Senate Commerce subcommittee is a useful genre case at the federal level <span class="citation" data-cites="haugen2021">(<a href="#ref-haugen2021" role="doc-biblioref">Haugen 2021</a>)</span>. Read the transcript twice. The first time, notice how much of it is about Haugen: her training, the team she worked on, the internal research she saw. The personal voice is load-bearing; without it, the claim that the company knew about its products’ harms is an assertion, and with it the claim is a witness account. The second time, mark every specific ask. There are fewer than you expect, and they are not buried. Compare her with the civil-society organizations that submitted evidence during the negotiation of the EU AI Act. Their voice was institutional rather than personal, their texts were longer, and their asks were often line edits to draft articles. Both are testimony. The difference lies in who is speaking and what the body can change.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -629,7 +635,7 @@ div.csl-indent {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Oversight</strong>, as <a href="ch-04-exemption-oversight.html" class="quarto-xref"><span>Chapter 4</span></a> defines it, needs authority and remedy, and a legislature is where both are written. CORA’s exemptions and its remedies (a written denial, a notice of intent, a district court action) exist because a General Assembly enacted them, and a later General Assembly can widen or narrow them. Testimony is how evidence about how those rules work in practice reaches the people who can change them, in public. Written testimony submitted through the legislature’s website becomes part of the public record <span class="citation" data-cites="coga_remote_testimony2025">(<a href="#ref-coga_remote_testimony2025" role="doc-biblioref">Executive Committee of the Legislative Council, Colorado General Assembly 2025</a>)</span>, a public document (<a href="ch-07-law.html" class="quarto-xref"><span>Chapter 7</span></a>) that a reporter, a future requester, or a litigant can cite years from now. The specific claim of this chapter is that testimony advances oversight only when it pairs a verifiable finding with an ask the committee in the room has the authority to grant; testimony addressed to the wrong level of government is a complaint with good production values. <a href="ch-19-archival-deposits.html" class="quarto-xref"><span>Chapter 19</span></a> takes up the deposit that keeps your version available even if the legislature’s website changes.</p>
+<p><strong>Oversight</strong>, as <a href="ch-04-exemption-oversight.html" class="quarto-xref"><span>Chapter 4</span></a> defines it, needs authority and remedy, and a legislature is where both are written. CORA’s exemptions and its remedies (a written denial, a notice of intent, a district court action) exist because a General Assembly enacted them, and a later General Assembly can widen or narrow them. Testimony is how evidence about how those rules work in practice reaches the people who can change them, in public. Written testimony submitted through the legislature’s website becomes part of the public record <span class="citation" data-cites="coga_remote_testimony2025">(<a href="#ref-coga_remote_testimony2025" role="doc-biblioref">Executive Committee of the Legislative Council, Colorado General Assembly 2025</a>)</span>, a public document (<a href="ch-07-law.html" class="quarto-xref"><span>Chapter 7</span></a>) that a reporter, a future requester, or a litigant can cite years from now. The specific claim of this chapter is that testimony advances oversight only when it pairs a verifiable finding with an ask the committee in the room has the authority to grant; testimony addressed to a body that cannot grant the ask is a complaint with good production values. <a href="ch-19-archival-deposits.html" class="quarto-xref"><span>Chapter 19</span></a> takes up the deposit that keeps your version available even if the legislature’s website changes.</p>
 </div>
 </div>
 </section>
@@ -672,7 +678,7 @@ div.csl-indent {
 [2:40-3:00]  Thank the committee. Stop talking.</code></pre>
 <p>If the chair allows more time, expand the middle, not the ends: add a second finding, one sentence on what the bill does well, and the specific amendment language you want. Do not add to the introduction. Your credentials are the least interesting thing about your statement.</p>
 <p>Your first sentence should fit in one breath. “Thank you, Chair and members of the committee. My name is [name]; I am a student at the University of Colorado Boulder and a Boulder County resident, and I am here in support of [bill number] with one amendment” is fine, but only if the next sentence is specific.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -782,15 +788,50 @@ Office of Legislative Legal Services, Colorado General Assembly. n.d. <em>Consti
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -920,7 +961,8 @@ Office of Legislative Legal Services, Colorado General Assembly. n.d. <em>Consti
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -929,8 +971,69 @@ Office of Legislative Legal Services, Colorado General Assembly. n.d. <em>Consti
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -944,6 +1047,7 @@ Office of Legislative Legal Services, Colorado General Assembly. n.d. <em>Consti
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1106,44 +1210,54 @@ Office of Legislative Legal Services, Colorado General Assembly. n.d. <em>Consti
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1242,7 +1356,10 @@ Office of Legislative Legal Services, Colorado General Assembly. n.d. <em>Consti
     }
   });
   </script>
-<nav class="page-navigation">
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+<nav class="page-navigation" aria-label="Page">
   <div class="nav-page nav-page-previous">
       <a href="./ch-16-research-proposals.html" class="pagination-link" aria-label="Research Proposals">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Research Proposals</span></span>
@@ -1265,7 +1382,7 @@ Office of Legislative Legal Services, Colorado General Assembly. n.d. <em>Consti
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>Testimony is a genre. Like the op-ed in @sec-ch-14-op-eds and the report in @sec-ch-15-reports, it has conventions you can learn and a specific theory of what counts as contribution. Unlike those genres, it is also a performance, delivered in public and preserved in the record of a governing body. A well-argued op-ed persuades at scale. A well-argued report becomes institutional evidence. Testimony becomes *voice in the record*: a durable, citable mark that a particular person said a particular thing to a particular body on a particular day. The genre's rules follow from that.</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>This chapter sets testimony at the **state** level, where law is made. The legal lineage (@sec-ch-07-law) treats statutes such as the Colorado Open Records Act (CORA) as the rules that decide what the public can see and what remedies it has when a custodian says no. Those rules are changed in the General Assembly, and committee hearings are where the public speaks to the people changing them. You will need evidence: a tracker of released records requests and an extraction notebook (@sec-ch-07-law), and a ledger of the exemptions custodians cited and the remedies each leaves open (@sec-ch-04-exemption-oversight). From that evidence you will write a timed oral statement of about three minutes, a written statement of about 1,000 words for the record, and prepared answers to the questions you can anticipate. The mechanics transfer: congressional hearings, county boards, and European parliamentary consultations share a common structure even when the clocks differ.</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>The worked example is a committee hearing of the Colorado **General Assembly**, where state law is made. The legal lineage (@sec-ch-07-law) treats statutes such as the Colorado Open Records Act (CORA) as the rules that decide what the public can see and what remedies it has when a custodian says no. Those rules are changed in the General Assembly, and committee hearings are where the public speaks to the people changing them. You will need evidence: a tracker of released records requests and an extraction notebook (@sec-ch-07-law), and a ledger of the exemptions custodians cited and the remedies each leaves open (@sec-ch-04-exemption-oversight). From that evidence you will write a timed oral statement of about three minutes, a written statement of about 1,000 words for the record, and prepared answers to the questions you can anticipate. The mechanics transfer: congressional hearings, county boards, and European parliamentary consultations share a common structure even when the clocks differ.</span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## What testimony is and is not</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
@@ -1281,7 +1398,7 @@ Office of Legislative Legal Services, Colorado General Assembly. n.d. <em>Consti
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>Frances Haugen's October 2021 appearance before a Senate Commerce subcommittee is a useful genre case at the federal level <span class="co">[</span><span class="ot">@haugen2021</span><span class="co">]</span>. Read the transcript twice. The first time, notice how much of it is about Haugen: her training, the team she worked on, the internal research she saw. The personal voice is load-bearing; without it, the claim that the company knew about its products' harms is an assertion, and with it the claim is a witness account. The second time, mark every specific ask. There are fewer than you expect, and they are not buried. Compare her with the civil-society organizations that submitted evidence during the negotiation of the EU AI Act. Their voice was institutional rather than personal, their texts were longer, and their asks were often line edits to draft articles. Both are testimony. The difference lies in who is speaking and what the body can change.</span>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="In the Public Interest"}</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>**Oversight**, as @sec-ch-04-exemption-oversight defines it, needs authority and remedy, and a legislature is where both are written. CORA's exemptions and its remedies (a written denial, a notice of intent, a district court action) exist because a General Assembly enacted them, and a later General Assembly can widen or narrow them. Testimony is how evidence about how those rules work in practice reaches the people who can change them, in public. Written testimony submitted through the legislature's website becomes part of the public record <span class="co">[</span><span class="ot">@coga_remote_testimony2025</span><span class="co">]</span>, a public document (@sec-ch-07-law) that a reporter, a future requester, or a litigant can cite years from now. The specific claim of this chapter is that testimony advances oversight only when it pairs a verifiable finding with an ask the committee in the room has the authority to grant; testimony addressed to the wrong level of government is a complaint with good production values. @sec-ch-19-archival-deposits takes up the deposit that keeps your version available even if the legislature's website changes.</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>**Oversight**, as @sec-ch-04-exemption-oversight defines it, needs authority and remedy, and a legislature is where both are written. CORA's exemptions and its remedies (a written denial, a notice of intent, a district court action) exist because a General Assembly enacted them, and a later General Assembly can widen or narrow them. Testimony is how evidence about how those rules work in practice reaches the people who can change them, in public. Written testimony submitted through the legislature's website becomes part of the public record <span class="co">[</span><span class="ot">@coga_remote_testimony2025</span><span class="co">]</span>, a public document (@sec-ch-07-law) that a reporter, a future requester, or a litigant can cite years from now. The specific claim of this chapter is that testimony advances oversight only when it pairs a verifiable finding with an ask the committee in the room has the authority to grant; testimony addressed to a body that cannot grant the ask is a complaint with good production values. @sec-ch-19-archival-deposits takes up the deposit that keeps your version available even if the legislature's website changes.</span>
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## The scenario</span></span>

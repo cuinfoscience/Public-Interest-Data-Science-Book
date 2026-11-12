@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -95,18 +95,19 @@ div.csl-indent {
 <link href="./part-2-lineages.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-5a1953863e1f72ef3b996ef827f01ca7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-5de16f5e46225c21e2daa90d340bf64f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-3218d7d29a29f08bc4fdf3802c3e3ca5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-5de16f5e46225c21e2daa90d340bf64f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-64093fbce31f7d982dd5978587aea001.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-9f9c5abca8a84316e379a71bf0dea7ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-64093fbce31f7d982dd5978587aea001.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0ad0bed1a91577636a034c605622b557.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a6d37c80349318dfa2caa801ede739a0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-0ad0bed1a91577636a034c605622b557.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -138,7 +139,7 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -161,6 +162,7 @@ div.csl-indent {
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -190,13 +192,19 @@ div.csl-indent {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -290,6 +298,7 @@ div.csl-indent {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -304,13 +313,13 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-2-lineages.html">Lineages</a></li><li class="breadcrumb-item"><a href="./ch-06-journalism.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Journalism</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-2-lineages.html">Lineages</a></li><li class="breadcrumb-item"><a href="./ch-06-journalism.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Journalism</span></a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -321,7 +330,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Public Interest Data Science</a> 
@@ -344,7 +353,7 @@ div.csl-indent {
           </li>
       </ul>
     </div>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
     </div>
       </div>
@@ -364,12 +373,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-1-pressures-values.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pressures and Values</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Pressures and Values</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section: Pressures and Values">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch-01-introduction.html" class="sidebar-item-text sidebar-link">
@@ -405,12 +414,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-2-lineages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lineages</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Lineages</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section: Lineages">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch-06-journalism.html" class="sidebar-item-text sidebar-link active">
@@ -446,12 +455,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-3-adjacent-conversations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Adjacent Conversations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Adjacent Conversations</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section: Adjacent Conversations">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch-11-pit-data-for-good.html" class="sidebar-item-text sidebar-link">
@@ -475,12 +484,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-4-genres.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Genres</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Genres</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section: Genres">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch-14-op-eds.html" class="sidebar-item-text sidebar-link">
@@ -522,12 +531,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-5-closing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Closing</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-5-label">Closing</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section: Closing">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch-20-limits.html" class="sidebar-item-text sidebar-link">
@@ -538,13 +547,10 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-controls="quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-6-label">Appendices</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" aria-labelledby="quarto-sidebar-section-6-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-ai-disclosure.html" class="sidebar-item-text sidebar-link">
@@ -565,7 +571,7 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
@@ -574,7 +580,7 @@ div.csl-indent {
   <li><a href="#the-anchor-case-reproducing-machine-bias" id="toc-the-anchor-case-reproducing-machine-bias" class="nav-link" data-scroll-target="#the-anchor-case-reproducing-machine-bias"><span class="header-section-number">6.3</span> The anchor case: reproducing “Machine Bias”</a></li>
   <li><a href="#flores-bechtel-and-lowenkamp-the-rejoinder" id="toc-flores-bechtel-and-lowenkamp-the-rejoinder" class="nav-link" data-scroll-target="#flores-bechtel-and-lowenkamp-the-rejoinder"><span class="header-section-number">6.4</span> Flores, Bechtel, and Lowenkamp: the rejoinder</a></li>
   <li><a href="#counter-case-the-pegasus-project" id="toc-counter-case-the-pegasus-project" class="nav-link" data-scroll-target="#counter-case-the-pegasus-project"><span class="header-section-number">6.5</span> Counter-case: the Pegasus Project</a></li>
-  <li><a href="#city-level-practice-local-data-journalism" id="toc-city-level-practice-local-data-journalism" class="nav-link" data-scroll-target="#city-level-practice-local-data-journalism"><span class="header-section-number">6.6</span> City-level practice: local data journalism</a></li>
+  <li><a href="#local-practice-city-data-journalism" id="toc-local-practice-city-data-journalism" class="nav-link" data-scroll-target="#local-practice-city-data-journalism"><span class="header-section-number">6.6</span> Local practice: city data journalism</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">6.7</span> Exercises</a></li>
   <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">6.8</span> Looking ahead</a></li>
   <li><a href="#further-reading-and-resources" id="toc-further-reading-and-resources" class="nav-link" data-scroll-target="#further-reading-and-resources"><span class="header-section-number">6.9</span> Further Reading and Resources</a></li>
@@ -582,10 +588,10 @@ div.csl-indent {
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/edit/main/ch-06-journalism.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cuinfoscience/Public-Interest-Data-Science-Book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-2-lineages.html">Lineages</a></li><li class="breadcrumb-item"><a href="./ch-06-journalism.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Journalism</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-2-lineages.html">Lineages</a></li><li class="breadcrumb-item"><a href="./ch-06-journalism.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Journalism</span></a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title"><span id="sec-ch-06-journalism" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Journalism</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
@@ -606,7 +612,7 @@ div.csl-indent {
 
 <p>Who gets to observe public life, and on what terms? <a href="ch-03-enclosure-openness.html" class="quarto-xref"><span>Chapter 3</span></a> treats that question as a contest between enclosure and openness. Journalism is the profession that has been answering that question, in practice and under pressure, for longer than data science has had a name. A reporter who sits on a leaked database for six months while corroborating the identities of the people inside it is doing, as routine practice, the work this book keeps trying to name: maintaining provenance, verifying claims against sources, and deciding what the public needs to see. If you want to make data science useful to the public, journalism is the lineage most worth reading as a set of instructions rather than as inspiration.</p>
 <p>Keegan <span class="citation" data-cites="keegan2026">(<a href="#ref-keegan2026" role="doc-biblioref">2026</a>)</span> describes journalism’s contribution as maintaining the <em>evidentiary surface</em> of public life: the archives, provenance, verification routines, and publication practices that keep systems observable and contestable even when powerful actors prefer opacity. Newsrooms worked out methods for verifying records against sources, for publishing under legal threat, for collaborating across borders on datasets no one outlet could analyze alone, and for extending right of reply to the subjects of an investigation before the story ran. Imported into academic or civic data work, these routines raise the evidentiary floor in ways the field’s internal conversations about “reproducibility” rarely manage on their own.</p>
-<p>The chapter’s anchor case is the investigation that pulled the fairness-in-machine-learning conversation into public view in 2016: ProPublica’s “Machine Bias” analysis of the COMPAS recidivism risk score <span class="citation" data-cites="angwin2016">(<a href="#ref-angwin2016" role="doc-biblioref">Angwin et al. 2016</a>)</span>. You will download ProPublica’s published data, reproduce one of its central statistics, compare your numbers to the article’s, and read the rejoinder from Flores, Bechtel, and Lowenkamp <span class="citation" data-cites="flores2016">(<a href="#ref-flores2016" role="doc-biblioref">2016</a>)</span>. The point is not to adjudicate the dispute. The point is to notice what made the dispute possible, and what it cost ProPublica to invite it. Then the chapter turns to the level where this lineage now does most of its unglamorous work: the city.</p>
+<p>The chapter’s anchor case is the investigation that pulled the fairness-in-machine-learning conversation into public view in 2016: ProPublica’s “Machine Bias” analysis of the COMPAS recidivism risk score <span class="citation" data-cites="angwin2016">(<a href="#ref-angwin2016" role="doc-biblioref">Angwin et al. 2016</a>)</span>. You will download ProPublica’s published data, reproduce one of its central statistics, compare your numbers to the article’s, and read the rejoinder from Flores, Bechtel, and Lowenkamp <span class="citation" data-cites="flores2016">(<a href="#ref-flores2016" role="doc-biblioref">2016</a>)</span>. The point is not to adjudicate the dispute. The point is to notice what made the dispute possible, and what it cost ProPublica to invite it. Then the chapter turns to the city, where much of this lineage’s unglamorous work now happens.</p>
 <section id="the-watchdog-role-operationalized" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="the-watchdog-role-operationalized"><span class="header-section-number">6.1</span> The watchdog role, operationalized</h2>
 <p>The “Fourth Estate” is a metaphor that carries more than it can cash out. No constitution creates a fourth branch of government. What exists is a loose professional arrangement: newsrooms with libel insurance, public-records statutes that force documents into the open, editors who can say no to a story, and a readership that funds the operation, imperfectly and with worsening economics. Ettema <span class="citation" data-cites="ettemaJournalismReasongivingDeliberative2007">(<a href="#ref-ettemaJournalismReasongivingDeliberative2007" role="doc-biblioref">2007</a>)</span> describes the result as reason-giving: journalism’s mission is to make institutions explain themselves in public. The watchdog function is that arrangement working well enough to subject powerful institutions to scrutiny they would prefer to avoid.</p>
@@ -690,7 +696,7 @@ div.csl-indent {
 <li>The article’s table may have been computed from a differently filtered file than the one you loaded; the notebook and the repository’s other CSVs are where to look.</li>
 </ul>
 <p>Write a brief methods note documenting the commit hash you pinned, the filter, the binarization rule, and the precise numbers you got. This note is the artifact that lets a future reader distinguish a substantive disagreement with ProPublica from a transcription error in your pipeline. It is also the first half of a provenance file.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="The Missing Manual">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -709,7 +715,7 @@ div.csl-indent {
 <h2 data-number="6.4" class="anchored" data-anchor-id="flores-bechtel-and-lowenkamp-the-rejoinder"><span class="header-section-number">6.4</span> Flores, Bechtel, and Lowenkamp: the rejoinder</h2>
 <p>Flores and colleagues <span class="citation" data-cites="flores2016">(<a href="#ref-flores2016" role="doc-biblioref">2016</a>)</span> responded in <em>Federal Probation</em>, arguing that ProPublica’s framing confused distinct fairness criteria and that, on the criteria relevant to how risk assessments are used in court, COMPAS performed comparably across racial groups. Their critique turned on the difference between equal false-positive rates (ProPublica’s focus) and equal predictive value (the vendor’s focus). Chouldechova <span class="citation" data-cites="chouldechova2018">(<a href="#ref-chouldechova2018" role="doc-biblioref">2018</a>)</span> and the broader fair-ML literature established that these criteria cannot all hold when base rates differ across groups. The impossibility result is not an escape hatch. It is a forcing function: choose which criterion matters for the decision the tool informs, and own the choice.</p>
 <p>Read the rejoinder alongside your reproduction. Notice which criticisms your replication can speak to (the binarization, the filters) and which require data ProPublica did not release. Notice also that the rejoinder exists at all because the data was public. A privately held investigation of a proprietary tool would not have generated the follow-up literature that now fills a shelf.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="In the Public Interest">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -729,9 +735,9 @@ div.csl-indent {
 <p>Three features make it the right counter-case. First, verification had to be built, not borrowed. A number on a list is not proof of infection, and the consortium said so. Amnesty International’s Security Lab examined phones forensically, published its methodology, and released the Mobile Verification Toolkit as open-source software; the Citizen Lab at the University of Toronto independently peer-reviewed the method <span class="citation" data-cites="amnesty_pegasus_forensics2021">(<a href="#ref-amnesty_pegasus_forensics2021" role="doc-biblioref">Amnesty International Security Lab 2021</a>)</span>. That is publication with documentation under adversarial conditions. Second, the subject was not a vendor in a county courthouse but states using spyware against reporters, so right of reply and legal review carried physical as well as reputational risk. Third, the collaboration itself was the infrastructure: shared secure platforms, coordinated publication, and the rule that silencing one reporter does not silence the story. The same model runs through the ICIJ’s Panama Papers and through Lighthouse Reports’ algorithmic investigations in Europe, including the Rotterdam welfare-algorithm reporting discussed in <a href="ch-04-exemption-oversight.html" class="quarto-xref"><span>Chapter 4</span></a>.</p>
 <p>The lesson for a data scientist is not that you should investigate spyware. It is that verification routines scale when they are published as tools and methods others can run, and that a framework built on records requests assumes a state that answers them.</p>
 </section>
-<section id="city-level-practice-local-data-journalism" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="city-level-practice-local-data-journalism"><span class="header-section-number">6.6</span> City-level practice: local data journalism</h2>
-<p>Journalism’s natural level of government in this book is the city, and the watchdog function there is thin. Zeng and George <span class="citation" data-cites="zengGhostsNewspapersPublic2022">(<a href="#ref-zengGhostsNewspapersPublic2022" role="doc-biblioref">2022</a>)</span> argue that as the commercial newspaper model has collapsed, public interest journalism survives less as an industry than as a movement: nonprofits, collaborations, and civic volunteers carrying the work. In Boulder and Denver that ecosystem includes nonprofit newsrooms, a surviving daily, digital local outlets, and a statewide nonprofit, many of which publish data-driven stories about city budgets, housing, elections, and council decisions. <a href="ch-14-op-eds.html" class="quarto-xref"><span>Chapter 14</span></a> names the specific outlets you might write for.</p>
+<section id="local-practice-city-data-journalism" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="local-practice-city-data-journalism"><span class="header-section-number">6.6</span> Local practice: city data journalism</h2>
+<p>Much of this book’s journalism works with city records in Boulder and Denver, and the watchdog function at city hall is thin. Zeng and George <span class="citation" data-cites="zengGhostsNewspapersPublic2022">(<a href="#ref-zengGhostsNewspapersPublic2022" role="doc-biblioref">2022</a>)</span> argue that as the commercial newspaper model has collapsed, public interest journalism survives less as an industry than as a movement: nonprofits, collaborations, and civic volunteers carrying the work. In Boulder and Denver that ecosystem includes nonprofit newsrooms, a surviving daily, digital local outlets, and a statewide nonprofit, many of which publish data-driven stories about city budgets, housing, elections, and council decisions. <a href="ch-14-op-eds.html" class="quarto-xref"><span>Chapter 14</span></a> names the specific outlets you might write for.</p>
 <p>Local data journalism has the same four standards and fewer people. A city hall reporter may cover council, planning, police, and schools in a week. That scarcity is why civic infrastructure matters: programs like City Bureau’s Documenters, which pays residents to attend and document public meetings, and open-source tools like the Council Data Project <span class="citation" data-cites="brownCouncilDataProject2021">(<a href="#ref-brownCouncilDataProject2021" role="doc-biblioref">Brown et al. 2021</a>)</span> turn meeting records into material reporters can search. Research on local meetings shows what is at stake. Einstein, Palmer, and Glick <span class="citation" data-cites="einsteinWhoParticipatesLocal2019">(<a href="#ref-einsteinWhoParticipatesLocal2019" role="doc-biblioref">2019</a>)</span> used meeting minutes to show that the residents who speak at land-use meetings are unrepresentative of the public they speak for, a finding that depended on records being readable at scale.</p>
 <p>The city is also where a reproduction is hardest. You can reproduce “Machine Bias” because ProPublica published its notebook; a local story is harder, because local outlets rarely do. That difficulty is itself a finding worth writing down.</p>
 </section>
@@ -745,7 +751,7 @@ div.csl-indent {
 </section>
 <section id="looking-ahead" class="level2" data-number="6.8">
 <h2 data-number="6.8" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">6.8</span> Looking ahead</h2>
-<p>Journalism shows you what a public evidentiary surface looks like when it works. <a href="ch-03-enclosure-openness.html" class="quarto-xref"><span>Chapter 3</span></a> turns that practice into a value you can build: what it takes to make a city dataset not merely posted but published, with provenance, documentation, a license, and a home. <a href="ch-14-op-eds.html" class="quarto-xref"><span>Chapter 14</span></a> turns a reproduction and extension into the genre that reaches a city’s readers and its council. The next lineage, law, supplies the machinery behind public records: <a href="ch-07-law.html" class="quarto-xref"><span>Chapter 7</span></a> treats it at the level of the state, where records statutes are written.</p>
+<p>Journalism shows you what a public evidentiary surface looks like when it works. <a href="ch-03-enclosure-openness.html" class="quarto-xref"><span>Chapter 3</span></a> turns that practice into a value you can build: what it takes to make a city dataset not merely posted but published, with provenance, documentation, a license, and a home. <a href="ch-14-op-eds.html" class="quarto-xref"><span>Chapter 14</span></a> turns a reproduction and extension into the genre that reaches a city’s readers and its council. The next lineage, law, supplies the machinery behind public records: <a href="ch-07-law.html" class="quarto-xref"><span>Chapter 7</span></a> reads it through Colorado’s records statute, written by the state legislature.</p>
 </section>
 <section id="further-reading-and-resources" class="level2" data-number="6.9">
 <h2 data-number="6.9" class="anchored" data-anchor-id="further-reading-and-resources"><span class="header-section-number">6.9</span> Further Reading and Resources</h2>
@@ -816,15 +822,50 @@ Zeng, Yuan, and Cherian George. 2022. <span>“The <span>Ghosts</span> of <span>
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -954,7 +995,8 @@ Zeng, Yuan, and Cherian George. 2022. <span>“The <span>Ghosts</span> of <span>
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -963,8 +1005,69 @@ Zeng, Yuan, and Cherian George. 2022. <span>“The <span>Ghosts</span> of <span>
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -978,6 +1081,7 @@ Zeng, Yuan, and Cherian George. 2022. <span>“The <span>Ghosts</span> of <span>
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1140,44 +1244,54 @@ Zeng, Yuan, and Cherian George. 2022. <span>“The <span>Ghosts</span> of <span>
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1276,7 +1390,10 @@ Zeng, Yuan, and Cherian George. 2022. <span>“The <span>Ghosts</span> of <span>
     }
   });
   </script>
-<nav class="page-navigation">
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+<nav class="page-navigation" aria-label="Page">
   <div class="nav-page nav-page-previous">
       <a href="./part-2-lineages.html" class="pagination-link" aria-label="Lineages">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lineages</span>
@@ -1299,7 +1416,7 @@ Zeng, Yuan, and Cherian George. 2022. <span>“The <span>Ghosts</span> of <span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>Keegan <span class="co">[</span><span class="ot">-@keegan2026</span><span class="co">]</span> describes journalism's contribution as maintaining the *evidentiary surface* of public life: the archives, provenance, verification routines, and publication practices that keep systems observable and contestable even when powerful actors prefer opacity. Newsrooms worked out methods for verifying records against sources, for publishing under legal threat, for collaborating across borders on datasets no one outlet could analyze alone, and for extending right of reply to the subjects of an investigation before the story ran. Imported into academic or civic data work, these routines raise the evidentiary floor in ways the field's internal conversations about "reproducibility" rarely manage on their own.</span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>The chapter's anchor case is the investigation that pulled the fairness-in-machine-learning conversation into public view in 2016: ProPublica's "Machine Bias" analysis of the COMPAS recidivism risk score <span class="co">[</span><span class="ot">@angwin2016</span><span class="co">]</span>. You will download ProPublica's published data, reproduce one of its central statistics, compare your numbers to the article's, and read the rejoinder from Flores, Bechtel, and Lowenkamp <span class="co">[</span><span class="ot">-@flores2016</span><span class="co">]</span>. The point is not to adjudicate the dispute. The point is to notice what made the dispute possible, and what it cost ProPublica to invite it. Then the chapter turns to the level where this lineage now does most of its unglamorous work: the city.</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>The chapter's anchor case is the investigation that pulled the fairness-in-machine-learning conversation into public view in 2016: ProPublica's "Machine Bias" analysis of the COMPAS recidivism risk score <span class="co">[</span><span class="ot">@angwin2016</span><span class="co">]</span>. You will download ProPublica's published data, reproduce one of its central statistics, compare your numbers to the article's, and read the rejoinder from Flores, Bechtel, and Lowenkamp <span class="co">[</span><span class="ot">-@flores2016</span><span class="co">]</span>. The point is not to adjudicate the dispute. The point is to notice what made the dispute possible, and what it cost ProPublica to invite it. Then the chapter turns to the city, where much of this lineage's unglamorous work now happens.</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## The watchdog role, operationalized</span></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
@@ -1425,9 +1542,9 @@ Zeng, Yuan, and Cherian George. 2022. <span>“The <span>Ghosts</span> of <span>
 <span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a>The lesson for a data scientist is not that you should investigate spyware. It is that verification routines scale when they are published as tools and methods others can run, and that a framework built on records requests assumes a state that answers them.</span>
 <span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a><span class="fu">## City-level practice: local data journalism</span></span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a><span class="fu">## Local practice: city data journalism</span></span>
 <span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>Journalism's natural level of government in this book is the city, and the watchdog function there is thin. Zeng and George <span class="co">[</span><span class="ot">-@zengGhostsNewspapersPublic2022</span><span class="co">]</span> argue that as the commercial newspaper model has collapsed, public interest journalism survives less as an industry than as a movement: nonprofits, collaborations, and civic volunteers carrying the work. In Boulder and Denver that ecosystem includes nonprofit newsrooms, a surviving daily, digital local outlets, and a statewide nonprofit, many of which publish data-driven stories about city budgets, housing, elections, and council decisions. @sec-ch-14-op-eds names the specific outlets you might write for.</span>
+<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>Much of this book's journalism works with city records in Boulder and Denver, and the watchdog function at city hall is thin. Zeng and George <span class="co">[</span><span class="ot">-@zengGhostsNewspapersPublic2022</span><span class="co">]</span> argue that as the commercial newspaper model has collapsed, public interest journalism survives less as an industry than as a movement: nonprofits, collaborations, and civic volunteers carrying the work. In Boulder and Denver that ecosystem includes nonprofit newsrooms, a surviving daily, digital local outlets, and a statewide nonprofit, many of which publish data-driven stories about city budgets, housing, elections, and council decisions. @sec-ch-14-op-eds names the specific outlets you might write for.</span>
 <span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a>Local data journalism has the same four standards and fewer people. A city hall reporter may cover council, planning, police, and schools in a week. That scarcity is why civic infrastructure matters: programs like City Bureau's Documenters, which pays residents to attend and document public meetings, and open-source tools like the Council Data Project <span class="co">[</span><span class="ot">@brownCouncilDataProject2021</span><span class="co">]</span> turn meeting records into material reporters can search. Research on local meetings shows what is at stake. Einstein, Palmer, and Glick <span class="co">[</span><span class="ot">-@einsteinWhoParticipatesLocal2019</span><span class="co">]</span> used meeting minutes to show that the residents who speak at land-use meetings are unrepresentative of the public they speak for, a finding that depended on records being readable at scale.</span>
 <span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a></span>
@@ -1447,7 +1564,7 @@ Zeng, Yuan, and Cherian George. 2022. <span>“The <span>Ghosts</span> of <span>
 <span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking ahead</span></span>
 <span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a>Journalism shows you what a public evidentiary surface looks like when it works. @sec-ch-03-enclosure-openness turns that practice into a value you can build: what it takes to make a city dataset not merely posted but published, with provenance, documentation, a license, and a home. @sec-ch-14-op-eds turns a reproduction and extension into the genre that reaches a city's readers and its council. The next lineage, law, supplies the machinery behind public records: @sec-ch-07-law treats it at the level of the state, where records statutes are written.</span>
+<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a>Journalism shows you what a public evidentiary surface looks like when it works. @sec-ch-03-enclosure-openness turns that practice into a value you can build: what it takes to make a city dataset not merely posted but published, with provenance, documentation, a license, and a home. @sec-ch-14-op-eds turns a reproduction and extension into the genre that reaches a city's readers and its council. The next lineage, law, supplies the machinery behind public records: @sec-ch-07-law reads it through Colorado's records statute, written by the state legislature.</span>
 <span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading and Resources</span></span>
 <span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a></span>
