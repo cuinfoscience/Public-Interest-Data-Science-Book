@@ -77,7 +77,7 @@ New infrastructure never lands on a blank site. It inherits prior wiring, format
 
 **Safe scrutiny.** Researchers, journalists, auditors, and communities can examine the system without being sued, arrested, or retaliated against. Tiered access belongs here: governed visibility that protects people without becoming an excuse for exemption.
 
-**Authority.** A named office has the responsibility and power to act on what scrutiny reveals. An audit that lands on no one's desk is a training exercise.
+**Authority.** A named office has the responsibility and power to act on what scrutiny reveals. An audit that lands on no one's desk is a training exercise. Evidence matters only if it reaches a body that can act on it, through a channel that body is obliged, or at least inclined, to hear; much of Part IV is about finding that channel.
 
 **Remedy.** The people affected have accessible, protected, consequential paths to contest decisions and correct the record. Remedy often has no software layer at all; it lives in appeals, ombuds offices, and organizing.
 
@@ -90,17 +90,6 @@ Data science did not invent the problem of making expertise answer to the public
 **Journalism** maintains the evidentiary surface of public life through archives, verification, and publication (@sec-ch-06-journalism). **Law** translates values into enforceable procedures: rights to access, duties to disclose, standards of review, and remedies (@sec-ch-07-law). **Accounting** built a public interest mandate around independence and verification after audits failed the public [@baker2005] (@sec-ch-08-accounting). **Planning** learned, through advocacy planning [@davidoff1965] and the backlash against figures like Moses, that technical choices allocate burdens across space and time, and that affected people belong in the room (@sec-ch-09-planning). **Engineering** made safety, testing, and incident learning into codes [@petroski1992] (@sec-ch-10-engineering).
 
 Every lineage also has an exclusionary past. Borrowing a method means borrowing its blind spots, and each lineage chapter asks you to name them.
-
-## The natural level of each lineage
-
-The **authority** element implies that evidence matters only if it reaches a body that can act on it. Each lineage, and the genre that carries its work to the public, has a natural level of government where that body sits.
-
-- **City: journalism and op-eds.** City records are abundant and scattered, local news has thinned, and an op-ed in a local outlet can be read by every council member (@sec-ch-06-journalism, @sec-ch-14-op-eds).
-- **County: planning and public comments.** Counties zone unincorporated land, adopt comprehensive plans, and keep land use dockets; Boulder County's Planning Commission and Board of County Commissioners take public comment, and the county publishes what it releases under open records requests (@sec-ch-09-planning, @sec-ch-18-public-comments).
-- **State: law and testimony.** The state writes the rules: open-records statutes such as the Colorado Open Records Act [@cora_statute] and AI legislation such as Colorado's AI Act, passed in 2024 as SB 24-205 and repealed and reenacted in 2026 as SB 26-189 [@colorado_sb24205; @colorado_sb26189]. Committees of the Colorado General Assembly hear testimony during the session, which runs from January into May (@sec-ch-07-law, @sec-ch-17-testimony).
-- **Nation: accounting, engineering, and reports.** Federal agencies deploy automated decision systems, publish AI use-case inventories, and answer to the GAO, inspectors general, congressional committees, and standards bodies like NIST (@sec-ch-08-accounting, @sec-ch-10-engineering, @sec-ch-15-reports).
-
-These are defaults, not walls. Anchor cases and non-US counter-cases sit at whatever level they happened at, real problems cross levels, and the stack itself is a US federal arrangement that other countries organize differently.
 
 ## Diagnosing a missing element
 

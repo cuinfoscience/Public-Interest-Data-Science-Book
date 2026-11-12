@@ -10,7 +10,7 @@ Keegan's discussion sorts the lineages and the conversations into three roles. *
 
 ## How the part works
 
-Each chapter can be read on its own. Each names the concepts it borrows (the installed base, the three pressures and their values from @sec-ch-03-enclosure-openness through @sec-ch-05-erosion-ownership, and the audit of @sec-ch-08-accounting) and links to where they are developed. The worked examples sit at whatever level of government the conversation works at. GovTech follows the book's rule for assurance and goes to the **nation**, where federal procurement decides what a vendor must hand back. The other conversations are mostly organized outside government altogether, which is part of what they teach.
+Each chapter can be read on its own. Each names the concepts it borrows (the installed base, the three pressures and their values from @sec-ch-03-enclosure-openness through @sec-ch-05-erosion-ownership, and the audit of @sec-ch-08-accounting) and links to where they are developed. The worked examples sit wherever the conversation does its work. GovTech's example is federal, because federal procurement decides what a vendor must hand back. The other conversations are mostly organized outside government altogether, which is part of what they teach.
 
 ## Roadmap
 
