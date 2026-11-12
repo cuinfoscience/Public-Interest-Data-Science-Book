@@ -205,7 +205,7 @@ Publish the record on Zenodo (or another repository that mints a DOI) so that it
 
 ## Closing
 
-A deposit is a promise to a reader you will never meet, and a promise needs an honest account of its limits. That is why the account of limits travels inside the deposit. The last chapter, @sec-ch-20-limits, turns the book's framework on itself: whose records it prefers, whose refusals it postpones, and which levels of government it assumes will be there to read what you archived.
+A deposit is a promise to a reader you will never meet, and a promise needs an honest account of its limits. That is why the account of limits travels inside the deposit. The last chapter, @sec-ch-20-limits, turns the book's framework on itself: whose records it prefers, whose refusals it postpones, and which institutions it assumes will be there to read what you archived.
 
 ## Further Reading and Resources
 

@@ -160,7 +160,7 @@ The last `200` before the first `404` brackets the date of loss. That bracket is
 
 #### Step 4: the same audit on a county site
 
-Most government sites do not hand you a list of URLs, so you collect the links from a page yourself. Counties are the natural target, because planning happens at the county level: land use dockets, comprehensive plans, and the maps that Planning Commission and Board of County Commissioners decisions cite (@sec-ch-09-planning develops that lineage, @sec-ch-18-public-comments the comments residents file). A comment that cites a dead link to the county's own plan is a weak comment.
+Most government sites do not hand you a list of URLs, so you collect the links from a page yourself. A county site is a good target, because so much planning happens there: land use dockets, comprehensive plans, and the maps that Planning Commission and Board of County Commissioners decisions cite (@sec-ch-09-planning develops that lineage, @sec-ch-18-public-comments the comments residents file). A comment that cites a dead link to the county's own plan is a weak comment.
 
 ```python
 from html.parser import HTMLParser

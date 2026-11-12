@@ -18,8 +18,6 @@ The book is organized by theme, not by course week. It has five parts:
 
 Chapters 3 to 5 pair each pressure with the value that answers it. A course may assign chapters out of order; the companion course does (see `docs/course-design.md` in the course repository). Write each chapter so a reader who arrives at it out of order can still follow it: name the concepts it relies on and link to the chapter that develops them, whether that chapter comes earlier or later.
 
-**Levels of government.** The lineages and genres each have a natural level, and the book's worked examples follow it: journalism and op-eds at the **city**; planning and public comments at the **county**; law and testimony at the **state**; accounting, engineering, and reports at the **nation**. Anchor cases and non-US counter-cases may sit at any level.
-
 The book is opinionated. It takes a position on what "public interest" means (linkability, interpretability, continuity, safe scrutiny, authority, remedy: the installed base) and uses that position as a diagnostic throughout. Chapters do not reproduce the paper. They extend it, test it against particular cases, and, in Part IV, translate it into practice.
 
 ## Voice
@@ -80,7 +78,7 @@ Suggested BibTeX entries you cannot verify should go into `references.bib` with 
 
 ## Part IV convention: the artifact
 
-Part IV chapters (14–19) carry an additional convention: each must end with a real artifact the reader has produced. Not a thought experiment, not a paragraph saying what they would write if they wrote one. An actual op-ed for a city outlet, a report section for a named national body, a proposal specific-aims page, testimony for a state legislative committee, a public comment on a live county (or state or federal) matter, or an archival deposit with a DOI.
+Part IV chapters (14–19) carry an additional convention: each must end with a real artifact the reader has produced. Not a thought experiment, not a paragraph saying what they would write if they wrote one. An actual op-ed for a named outlet, a report section for a named public body, a proposal specific-aims page, testimony for a named committee, a public comment on a live matter before a body that must consider it, or an archival deposit with a DOI.
 
 Each artifact pairs a public text with a technical artifact someone else can run and a short note on provenance, gaps, and AI use. If a Part IV chapter's last exercise does not produce one, the chapter is not finished.
 

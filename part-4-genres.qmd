@@ -4,20 +4,20 @@ A finding that never reaches someone who can act on it has not yet entered publi
 
 Genre matters because readers sort what they receive by form before they weigh it by content. An editor reads a pitch for its peg. A legislative staffer reads an executive summary for its recommendations. A program officer reads a specific-aims page for its fit with an open call. A committee chair hears testimony against a clock. A county planner reads a public comment for the code criteria it addresses. A future researcher searches a repository for a persistent identifier. Send the right finding in the wrong form and it is filed, skimmed, or missed. Keegan [-@keegan2026] argues that public interest work depends on an installed base of linkability, interpretability, continuity, safe scrutiny, authority, and remedy; genres are where that installed base meets the institutions that hold authority and offer remedy.
 
-The genres also have natural audiences, and most have a natural level of government. The book's worked examples follow them:
+Each genre also has a natural audience, and each chapter's worked example addresses a named one:
 
-- **Op-eds** (@sec-ch-14-op-eds) reach a **city**: residents, council members, and the reporters who cover them, through a local outlet.
-- **Reports** (@sec-ch-15-reports) reach the **nation**: a named federal body such as a congressional committee, the Government Accountability Office, an inspector general, or the National Institute of Standards and Technology, which reads for evidence it can cite and recommendations it can adopt.
-- **Research proposals** (@sec-ch-16-research-proposals) reach funders and review panels. They have no single level; the government body your proposal names in its impact paragraph supplies one.
-- **Testimony** (@sec-ch-17-testimony) reaches the **state**: a committee of the Colorado General Assembly hearing a bill during its January-to-May session.
-- **Public comments** (@sec-ch-18-public-comments) reach the **county**: a Planning Commission or Board of County Commissioners deciding a land use docket. The same genre works at the state and federal levels, through agency rulemaking.
+- **Op-eds** (@sec-ch-14-op-eds) reach residents, elected officials, and the reporters who cover them, through an outlet those readers already trust. The worked example is pitched to a Boulder or Denver outlet.
+- **Reports** (@sec-ch-15-reports) reach a body that reads for evidence it can cite and recommendations it can adopt. The worked example addresses a named federal body such as a congressional committee, the Government Accountability Office, an inspector general, or the National Institute of Standards and Technology.
+- **Research proposals** (@sec-ch-16-research-proposals) reach funders and review panels, and through the impact paragraph, whichever public body the work would inform.
+- **Testimony** (@sec-ch-17-testimony) reaches a legislative committee hearing a bill against a clock. The worked example is a committee of the Colorado General Assembly during its January-to-May session.
+- **Public comments** (@sec-ch-18-public-comments) reach a body obliged to consider them. The worked example is Boulder County's Planning Commission or Board of County Commissioners deciding a land use docket; the same genre works at the state and federal levels, through agency rulemaking.
 - **Archival deposits** (@sec-ch-19-archival-deposits) reach readers who do not yet exist, through a repository that mints a persistent identifier.
 
-The levels are a teaching device, not a law of nature; a city can hold a hearing, and Congress reads op-eds. But pairing each genre with the level where it does the most work keeps you from writing to "policymakers," a reader who does not exist.
+Naming the reader is the discipline. A city can hold a hearing, and Congress reads op-eds, but a piece written to "policymakers" is written to a reader who does not exist.
 
 ## The artifact convention
 
-Every chapter in this part ends with a real artifact, not a description of one. The final exercise of each chapter asks you to produce something you could submit tomorrow: an op-ed and pitch for a named city outlet, a report section for a named federal body, a proposal package for a named funder's open call, written and oral testimony for a state legislative committee, a comment on a live county (or state or federal) matter, or a deposit with a DOI.
+Every chapter in this part ends with a real artifact, not a description of one. The final exercise of each chapter asks you to produce something you could submit tomorrow: an op-ed and pitch for a named outlet, a report section for a named public body, a proposal package for a named funder's open call, written and oral testimony for a named legislative committee, a comment on a live matter before a body that must consider it, or a deposit with a DOI.
 
 Each artifact has three parts:
 

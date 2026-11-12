@@ -10,7 +10,7 @@ This book teaches data science for public-interest ends. It has five parts:
 4. **Genres**. How to actually do the work: op-eds, reports, research proposals, testimony, public comments, and archival deposits.
 5. **Closing**. The limits of the framework.
 
-Chapters are written to be read out of order. Lineages and genres each have a natural level of government (journalism and op-eds at the city; planning and public comments at the county; law and testimony at the state; accounting, engineering, and reports at the nation).
+Chapters are written to be read out of order.
 
 The book is the companion to INFO 4871/5871 *Public Interest Data Science* at CU Boulder (course materials: [cuinfoscience/pids-Spring2027](https://github.com/cuinfoscience/pids-Spring2027)), which assigns its chapters out of order. It builds on the framework laid out in Keegan (2026), "Public interest data infrastructuring."
 

@@ -22,8 +22,6 @@ The book has five parts:
 4. **Genres** (@sec-ch-14-op-eds to @sec-ch-19-archival-deposits). The forms through which data scientists contribute to public conversations: **op-eds**, **reports**, **research proposals**, **testimony**, **public comments**, and **archival deposits**.
 5. **Closing** (@sec-ch-20-limits). The limits of the framework itself.
 
-Lineages and genres each have a natural level of government, and the worked examples follow it: journalism and op-eds at the **city**; planning and public comments at the **county**; law and testimony at the **state**; accounting, engineering, and reports at the **nation**.
-
 ## How the book is built
 
 Every chapter interweaves conceptual narrative with runnable Python tutorials at roughly a 50/50 balance. You will read two or three pages of argument, then read and run two or three pages of code that makes the argument visible in a specific case, then return to the argument. This is deliberate. Concepts without technique produce earnest seminars. Technique without concepts produces dashboards that nobody trusts.
@@ -36,12 +34,12 @@ Chapters in Part IV have one additional rule: they must end with a real submitta
 
 ## Running examples
 
-To give the book coherence across 20 chapters, a small set of running examples is threaded throughout, arranged by level of government. When a chapter needs a case, it reaches for one of these before inventing a new one:
+To give the book coherence across 20 chapters, a small set of running examples is threaded throughout. Most come from Boulder, Denver, Colorado, and federal sources, grouped here by where the records come from. When a chapter needs a case, it reaches for one of these before inventing a new one:
 
-- **City:** City of Boulder and City and County of Denver records (campaign finance, meeting minutes, agendas, budgets, permits, 311 requests).
-- **County:** Boulder County as planner and record keeper: land use matters, planning documents, and records already released under the Colorado Open Records Act (from the Public Records Archive of its Open Records Center).
-- **State:** Colorado law as rule maker: the Colorado Open Records Act, the Colorado AI Act, and the General Assembly.
-- **Nation:** national data from the American Community Survey (via `folktables`), federal automated decision systems, federal environmental and scientific data (EPA, NOAA, USGS, Census) as at-risk datasets, and regulations.gov for federal rulemaking.
+- **Boulder and Denver:** City of Boulder and City and County of Denver records (campaign finance, meeting minutes, agendas, budgets, permits, 311 requests).
+- **Boulder County:** Boulder County as planner and record keeper: land use matters, planning documents, and records already released under the Colorado Open Records Act (from the Public Records Archive of its Open Records Center).
+- **Colorado:** Colorado law as rule maker: the Colorado Open Records Act, the Colorado AI Act, and the General Assembly.
+- **Federal and national sources:** national data from the American Community Survey (via `folktables`), federal automated decision systems, federal environmental and scientific data (EPA, NOAA, USGS, Census) as at-risk datasets, and regulations.gov for federal rulemaking.
 - Census and FRED APIs for demographic and economic context.
 - Wikipedia and Internet Archive APIs for archival work and link-rot audits.
 - Hugging Face model cards and datasheets for audit and documentation exercises.

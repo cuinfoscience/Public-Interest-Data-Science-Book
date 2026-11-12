@@ -11,7 +11,7 @@ That bargain has been renegotiated since. Arthur Andersen signed off on Enron's 
 
 Keegan [-@keegan2026] codes accounting as a lineage of **oversight**: it formalizes "legible records, standardized controls, and independent verification." Engineering, its partner in this book's account of *assurance*, adds testing and incident learning (@sec-ch-10-engineering). The pressure both answer is **exemption** (@sec-ch-04-exemption-oversight) in a particular costume. Lee [-@leeProfessionalizationAccountancyHistory1995] describes accountancy's professional history as "protecting the public interest in a self-interested way," and Baker [-@baker2005] finds the profession's own pronouncements invoking "the public" as a legitimating abstraction while serving the paying client. Algorithmic auditing is about to repeat that history unless it studies it.
 
-The natural level for this lineage is the **nation**. Securities law, the Government Accountability Office (GAO), and the inspectors general are federal institutions, and federal agencies now report thousands of uses of AI in their own operations. This chapter's audit therefore runs on national data, and its frame is the federal government's own ledger of the algorithms it uses.
+The worked example is **national**. Securities law, the Government Accountability Office (GAO), and the inspectors general are federal institutions, and federal agencies now report thousands of uses of AI in their own operations. This chapter's audit therefore runs on national data, and its frame is the federal government's own ledger of the algorithms it uses.
 
 ## Audit-washing: exemption in oversight's clothes
 

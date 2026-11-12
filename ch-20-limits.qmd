@@ -5,7 +5,7 @@ execute:
 
 # The Limits of the Framework {#sec-ch-20-limits}
 
-For nineteen chapters this book has used one framework as a diagnostic. Three pressures (enclosure, exemption, erosion) narrow what the public can observe; three values (openness, oversight, ownership) push back; an installed base of identifiers, records, access tiers, retention rules, and escalation pathways makes those values last. The worked examples applied it at four levels of government: a city's council and campaign finance records, a county's land use dockets and records archive, a state's open records statute and AI law, and the nation's AI inventories and vanishing datasets. This closing chapter does the thing every good audit eventually does: it points the instrument at itself.
+For nineteen chapters this book has used one framework as a diagnostic. Three pressures (enclosure, exemption, erosion) narrow what the public can observe; three values (openness, oversight, ownership) push back; an installed base of identifiers, records, access tiers, retention rules, and escalation pathways makes those values last. The worked examples applied it to a city's council and campaign finance records, a county's land use dockets and records archive, a state's open records statute and AI law, and the nation's AI inventories and vanishing datasets. This closing chapter does the thing every good audit eventually does: it points the instrument at itself.
 
 A framework that cannot name where it fails is not a framework; it is a brand. Keegan [-@keegan2026] anticipates five critiques and treats each as a *design constraint* on the installed base rather than an attack to deflect. But a framework's author is the person least able to see what it cannot see. The book's introduction lists five ways it is partial: US-centric, comfortable with records and less comfortable with refusal, thin on labor, thin on measurement theory, and over-reliant on professional lineages. Those admissions are honest. They are also unaudited.
 
@@ -55,13 +55,13 @@ The installed base makes records durable, not valid. A disaggregated audit in @s
 
 Each lineage solved a version of the accountability problem, and each carries pathologies the book mostly presents as lessons rather than inheritances. Public interest law splits into a well-funded strategic tier and an overstretched front-line tier [@albiston2017]. Accounting's independence norms coexisted with Arthur Andersen. Planning's "public interest" built Robert Moses's expressways before Davidoff [-@davidoff1965] tried to pluralize it. @stapletonWhoHasInterest2022 ask who benefits when a field claims the label "public interest" at all. Borrowing a profession's methods borrows its gatekeeping and its assumptions about who gets to speak.
 
-### Four levels that presume the building
+### Institutions that presume the building
 
-The book gives each lineage and genre a level of government: journalism and op-eds the city, planning and public comments the county, law and testimony the state, accounting, engineering, and reports the nation. Matching evidence and genre to the body that can act presumes that each level holds a functioning institution: a council that holds hearings, a county that reads comments, a legislature that hears testimony, an agency that reads reports. When the federal agency is the one deleting the datasets, a report to it is addressed to the eroder. When a tribal nation, an employer, a platform, or the European Union is the body that matters, the four levels have no place for it at all. They are a teaching device built for dense, functioning institutions, and they travel badly to places and moments without them.
+The authority and remedy elements, and every genre in Part IV, assume that someone is home to receive the evidence: a council that holds hearings, a county board that reads comments, a legislature that hears testimony, an agency that reads reports. Matching evidence to the body that can act presumes that the body still works. When the federal agency is the one deleting the datasets, a report to it is addressed to the eroder. When a tribal nation, an employer, a platform, or the European Union is the body that matters, the familiar American stack of city, county, state, and nation has no office for it at all. The genres were built for dense, functioning institutions, and they travel badly to places and moments without them.
 
 ## From suspicion to a count
 
-A better move than arguing borrows from @sec-ch-08-accounting: stop asserting and start sampling. If the book is US-centric, the cases it uses should be disproportionately American. If it prefers records to refusal, the remedies it reaches for should be disproportionately "more records." If the four levels presume functioning governments, a large share of cases should address no government at those levels.
+A better move than arguing borrows from @sec-ch-08-accounting: stop asserting and start sampling. If the book is US-centric, the cases it uses should be disproportionately American. If it prefers records to refusal, the remedies it reaches for should be disproportionately "more records." If the framework presumes functioning American-style governments, a sizable share of cases should address bodies outside the city, county, state, and nation it knows best.
 
 These are claims about a corpus, and the book is a corpus. Turning cases into rows makes every column a judgment; the tutorial makes those judgments explicit, so you can disagree with them in code rather than in vibes.
 
@@ -73,7 +73,7 @@ Each row is a case the book uses as an anchor, counter-case, or worked example, 
 
 - `part`: the book part where the case does its main work (I to IV; Part V holds only this chapter).
 - `region`: `US`, or the region of the non-US case.
-- `level`: the level of government that the case's remedy addresses. The four levels are `city`, `county`, `state`, and `nation`, where `nation` means any national government, US or not. Everything else gets `supranational`, `indigenous_nation`, or `non_state` (a platform, employer, vendor, or network).
+- `level`: where the body that the case's remedy addresses sits. Governments get `city`, `county`, `state`, or `nation`, where `nation` means any national government, US or not. Everything else gets `supranational`, `indigenous_nation`, or `non_state` (a platform, employer, vendor, or network). The code describes where cases sit, not where they belong.
 - `pressure`: `enclosure`, `exemption`, or `erosion`.
 - `value`: `openness`, `oversight`, or `ownership`.
 - `remedy`: `records` if the book's response is more or better records (disclosure, audits, archives, access), `refusal` if it is less collection, less linkage, or not building the system.
@@ -137,7 +137,7 @@ Thirty-six cases is not every example in the book; the selection, which favors t
 
 ### Tabulate
 
-Start with geography, then the levels, then the remedy.
+Start with geography, then where the remedy is addressed, then the remedy itself.
 
 ```python
 cases["us"] = cases["region"].eq("US").map({True: "US", False: "non-US"})
@@ -220,14 +220,14 @@ Read the tables as evidence with a known sampling frame and known coder bias, no
 
 **Refusal does not fit the taxonomy.** Six of the eight refusal cases were coded `forced`, against four of twenty-eight records cases. When a case's answer is "do not collect," the coder had to stretch "ownership" to cover it and invent a pressure (usually "enclosure") that the community itself might reject. Te Mana Raraunga does not describe Māori data as *enclosed*; it describes it as *Māori*. The framework's vocabulary has no native word for that.
 
-**The four levels do not hold the world.** The US cases spread almost evenly across the levels (five city, five county, five state, seven nation), but that evenness measures the book's own rule for assigning lineages and genres to levels, not the world. Coding any national government as `nation` lets five non-US cases sit on the levels, yet none of them reaches a Part IV genre. Nine of thirty-six cases address no government at the four levels at all: five non-state actors (two of them American, the Reddit API and Gender Shades), two supranational regimes, and two Indigenous nations.
+**The familiar stack does not hold the world.** The US cases spread almost evenly across city, county, state, and nation (five, five, five, and seven), but that evenness reflects which running examples the book chose, not the world. Coding any national government as `nation` lets five non-US cases sit in the stack, yet none of them reaches a Part IV genre. Nine of thirty-six cases address no government in the stack at all: five non-state actors (two of them American, the Reddit API and Gender Shades), two supranational regimes, and two Indigenous nations.
 
 **Labor and measurement are absent because they were never columns.** No code records who did the work or whether the measure was valid. That absence is the most important finding and the hardest to see, because a table counts only what its code book names. Exercise 20.2 asks you to add the columns.
 
 None of this refutes the framework. It locates it. @neffCritiqueContributePracticeBased2017 argue that critical data studies and data science improve each other only when critique is practiced *inside* the work. A framework that ships with its own audit, and invites you to recode it, is doing that.
 
 ::: {.callout-note title="In the Public Interest"}
-This chapter is about **ownership** of the framework itself. Someone owns the framework's definitions: what counts as a "record," which pressures have names, which levels of government count. Ownership in the sense of @sec-ch-05-erosion-ownership means stewardship with duties to beneficiaries, and the beneficiaries of a framework are the communities it is applied to. The specific claim: the reflexive audit is a stewardship tool only if its code book is open to revision by the people being coded. A case table that Te Mana Raraunga or Worker Info Exchange could not edit is a records-first instrument describing refusal from the outside. Opening the code book (literally, as a pull request to this book) is how the framework's ownership becomes shared rather than declared.
+This chapter is about **ownership** of the framework itself. Someone owns the framework's definitions: what counts as a "record," which pressures have names, which institutions count as able to act. Ownership in the sense of @sec-ch-05-erosion-ownership means stewardship with duties to beneficiaries, and the beneficiaries of a framework are the communities it is applied to. The specific claim: the reflexive audit is a stewardship tool only if its code book is open to revision by the people being coded. A case table that Te Mana Raraunga or Worker Info Exchange could not edit is a records-first instrument describing refusal from the outside. Opening the code book (literally, as a pull request to this book) is how the framework's ownership becomes shared rather than declared.
 :::
 
 ## Exercises
@@ -246,7 +246,7 @@ This chapter is about **ownership** of the framework itself. Someone owns the fr
 
 The book began with a few lines of Python against the Wikimedia pageviews API and a claim that "public interest" is an operational question rather than a slogan. It ends with a count of the book's own blind spots and a memo about where your work falls short. That sequence is the practice: build the record, then audit the record, including the one you built.
 
-The framework will change. The next version should start from more places than Boulder, take refusal as a first move rather than a neighbor's idea, count the people who keep the records alive, and admit that the four levels of government are a scaffold, not a law of nature. Some of those revisions will come from readers; the repository accepts pull requests.
+The framework will change. The next version should start from more places than Boulder, take refusal as a first move rather than a neighbor's idea, count the people who keep the records alive, and stop assuming that a functioning institution waits at the other end of every genre. Some of those revisions will come from readers; the repository accepts pull requests.
 
 Until then, the work is the same as it was on page one. Find the pressure. Name the value. Build the installed base that lets the value last, and ask, every time, who it is for and who it leaves out. Then deposit what you made, so that the next public, the one that will argue with you, can find it.
 
